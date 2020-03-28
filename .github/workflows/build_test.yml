@@ -1,0 +1,83 @@
+name: 'Build test'
+
+on: [pull_request]
+
+jobs:
+  build:
+    name: ${{ matrix.os }} Qt ${{ matrix.qt_version }}
+    runs-on: ${{ matrix.os }}-latest
+    strategy:
+      matrix:
+        os: [ubuntu, windows] #, macos]
+        qt_version:
+          - 5.12.7 # LTS
+          - 5.14.1 # latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+
+      - name: 'Dependencies: restore Qt from cache'
+        id: cache-qt
+        uses: actions/cache@v1
+        with:
+          path: ../Qt
+          key: qt-${{ matrix.os }}-${{ matrix.qt_version }}
+
+      - name: 'Dependencies: set up Qt environment'
+        uses: ouuan/install-qt-action@ouuan
+        with:
+          aqtversion: '==0.7.1'
+          cached: ${{ steps.cache-qt.outputs.cache-hit }}
+          version: ${{ matrix.qt_version }}
+
+      - name: '[linux] Dependencies: install efivar'
+        run: sudo apt-get install libefiboot1 libefiboot-dev libefivar-dev
+        shell: bash
+        if: matrix.os == 'ubuntu'
+
+      - name: 'Configure: create build directory'
+        run: mkdir -p build
+
+      - name: '[linux] Configure: build with clang'
+        run: |
+          qmake -spec linux-clang ..
+        shell: bash
+        env:
+          BUILD_VERSION: 0.0.0-${{ github.sha }}
+        working-directory: build
+        if: matrix.os == 'ubuntu'
+
+      - name: '[unix] Build'
+        run: |
+          make debug
+          make clean
+          mv efibooteditor debug/
+        shell: bash
+        working-directory: build
+        if: matrix.os != 'windows'
+
+      - name: '[windows] Configure: build with MSVC'
+        run: |
+          call "%programfiles(x86)%\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat" || exit /b
+          qmake .. || exit /b
+        shell: cmd
+        env:
+          BUILD_VERSION: 0.0.0-${{ github.sha }}
+        working-directory: build
+        if: matrix.os == 'windows'
+
+      - name: '[windows] Build'
+        run: |
+          call "%programfiles(x86)%\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat" || exit /b
+          nmake debug || exit /b
+          nmake clean || exit /b
+        shell: cmd
+        working-directory: build
+        if: matrix.os == 'windows'
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: EFIBootEditor-${{ github.sha }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}
+          path: build/debug

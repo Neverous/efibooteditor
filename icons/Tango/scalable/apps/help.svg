@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="48px" width="48px" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<metadata>
+<rdf:RDF>
+  <cc:Work rdf:about="">
+	<dc:format>image/svg+xml</dc:format>
+	<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+	<dc:title></dc:title>
+	<dc:date>2005-03-10</dc:date>
+	<dc:creator>
+	  <cc:Agent>
+		<dc:title>Jakub Steiner</dc:title>
+	  </cc:Agent>
+	</dc:creator>
+	<dc:source>http://jimmac.musichall.cz</dc:source>
+	<dc:subject>
+	  <rdf:Bag>
+		<rdf:li>help</rdf:li>
+		<rdf:li>browser</rdf:li>
+		<rdf:li>documentation</rdf:li>
+		<rdf:li>docs</rdf:li>
+		<rdf:li>man</rdf:li>
+		<rdf:li>info</rdf:li>
+	  </rdf:Bag>
+	</dc:subject>
+	<cc:license rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/"/>
+  </cc:Work>
+  <cc:License rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+	<cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+	<cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+	<cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+  </cc:License>
+</rdf:RDF>
+</metadata>
+<defs>
+	<linearGradient id="c">
+		<stop stop-color="#fff" offset="0"/>
+		<stop stop-color="#fff" stop-opacity="0" offset="1"/>
+	</linearGradient>
+	<linearGradient id="h" x1="15.929" xlink:href="#c" gradientUnits="userSpaceOnUse" x2="51.53" y1="9.07" y2="64.25"/>
+	<linearGradient id="b" x1="27.427" xlink:href="#c" gradientUnits="userSpaceOnUse" x2="15.76" y1="30.842" y2="13.171"/>
+	<radialGradient id="f" gradientUnits="userSpaceOnUse" cy="23.1" cx="22.904" r="19.828">
+		<stop stop-color="#c5c5c5" offset="0"/>
+		<stop stop-color="#c8c8c8" offset=".237"/>
+		<stop stop-color="#d1d1d1" offset=".408"/>
+		<stop stop-color="#e1e1e1" offset=".559"/>
+		<stop stop-color="#f7f7f7" offset=".696"/>
+		<stop stop-color="#fff" offset=".736"/>
+		<stop stop-color="#fcfcfc" offset=".819"/>
+		<stop stop-color="#f2f2f2" offset=".881"/>
+		<stop stop-color="#e2e2e2" offset=".936"/>
+		<stop stop-color="#ccc" offset=".988"/>
+		<stop stop-color="#c5c5c5" offset="1"/>
+	</radialGradient>
+	<radialGradient id="g" gradientUnits="userSpaceOnUse" cy="23.357" cx="22.81" r="25.59">
+		<stop stop-color="#210101" offset="0"/>
+		<stop stop-color="#ff747e" offset=".5"/>
+		<stop stop-color="#830000" offset="1"/>
+	</radialGradient>
+	<radialGradient id="d" gradientUnits="userSpaceOnUse" cy="13" cx="13" r="7.6">
+		<stop stop-color="#3c3c3c" offset="0"/>
+		<stop stop-color="#3e3e3e" offset=".363"/>
+		<stop stop-color="#454545" offset=".494"/>
+		<stop stop-color="#505050" offset=".588"/>
+		<stop stop-color="#616161" offset=".663"/>
+		<stop stop-color="#777" offset=".728"/>
+		<stop stop-color="#939393" offset=".785"/>
+		<stop stop-color="#b2b2b2" offset=".835"/>
+		<stop stop-color="#d2d2d2" offset=".876"/>
+		<stop stop-color="#cecece" offset=".9"/>
+		<stop stop-color="#c3c3c3" offset=".922"/>
+		<stop stop-color="#afafaf" offset=".945"/>
+		<stop stop-color="#949494" offset=".967"/>
+		<stop stop-color="#717171" offset=".988"/>
+		<stop stop-color="#5b5b5b" offset="1"/>
+	</radialGradient>
+	<radialGradient id="e" gradientUnits="userSpaceOnUse" cy="39.3" cx="24.8" gradientTransform="matrix(1 0 0 .32911 0 26.366)" r="23.7">
+		<stop offset="0"/>
+		<stop stop-opacity="0" offset="1"/>
+	</radialGradient>
+</defs>
+<ellipse opacity=".42" rx="23.7" ry="7.8" cy="39.3" cx="24.8" fill="url(#e)"/>
+<g fill="none">
+	<circle id="a" cx="13.417" stroke="url(#d)" cy="13.246" r="7" stroke-width="1.7"/>
+	<use xlink:href="#a" x="21" y=".1"/>
+	<use xlink:href="#a" y="21.5"/>
+	<use xlink:href="#a" x="21.1" y="21.5"/>
+	<circle r="13.22" stroke="url(#f)" cy="24" cx="24" stroke-width="11"/>
+	<path d="m15.1 7.56l5.388 9.379c-1.796 0.998-2.594 1.733-3.486 3.361l-9.685-4.558c1.197-2.993 4.989-6.984 7.783-8.181m25.17 7.571l-9.287 5.335c-1.019-1.716-1.872-2.444-3.359-3.359l4.545-9.682c2.964 1.186 6.916 4.94 8.101 7.706m-7.379 25.26l-5.423-9.426c1.631-0.916 2.47-1.786 3.466-3.463l9.837 4.612c-1.212 3.03-5.253 7.07-7.879 8.277m-25.372-7.6l9.347-5.388c0.998 1.796 1.733 2.438 3.392 3.486l-4.558 9.684c-2.993-1.197-6.984-5.188-8.181-7.782" fill="url(#g)"/>
+	<circle stroke="url(#b)" cx="24" cy="24" r="8.3"/>
+	<circle cy="24" cx="24" r="18.1" stroke="url(#h)"/>
+	<g stroke="#606060" stroke-width=".88">
+		<circle cx="24" cy="24" r="7.5"/>
+		<circle cx="24" cy="24" r="19"/>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BootEntryForm</class>
+ <widget class="QWidget" name="BootEntryForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>423</width>
+    <height>385</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="toolTip">
+   <string>Entry form</string>
+  </property>
+  <property name="statusTip">
+   <string>Entry form</string>
+  </property>
+  <property name="whatsThis">
+   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry form&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </property>
+  <layout class="QFormLayout" name="formLayout">
+   <property name="labelAlignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+   <item row="0" column="0">
+    <widget class="QLabel" name="description_label">
+     <property name="toolTip">
+      <string>Description</string>
+     </property>
+     <property name="statusTip">
+      <string>Description</string>
+     </property>
+     <property name="whatsThis">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Description&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Description</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="description_text">
+     <property name="toolTip">
+      <string>Description</string>
+     </property>
+     <property name="statusTip">
+      <string>Description</string>
+     </property>
+     <property name="whatsThis">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Description&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="inputMethodHints">
+      <set>Qt::ImhLatinOnly|Qt::ImhNoPredictiveText</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="path_label">
+     <property name="toolTip">
+      <string>Path</string>
+     </property>
+     <property name="statusTip">
+      <string>Path</string>
+     </property>
+     <property name="whatsThis">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Path&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Path</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <layout class="QVBoxLayout" name="paths_box" stretch="1,0">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="DevicePathListView" name="paths_list">
+       <property name="toolTip">
+        <string>Paths list</string>
+       </property>
+       <property name="statusTip">
+        <string>Paths list</string>
+       </property>
+       <property name="whatsThis">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Paths list&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QAbstractScrollArea::AdjustToContents</enum>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="horizontalScrollMode">
+        <enum>QAbstractItemView::ScrollPerPixel</enum>
+       </property>
+       <property name="movement">
+        <enum>QListView::Snap</enum>
+       </property>
+       <property name="resizeMode">
+        <enum>QListView::Adjust</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="paths_actions" stretch="0,0,0,0,0,1">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="path_move_up">
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Move up</string>
+         </property>
+         <property name="statusTip">
+          <string>Move up</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move up&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset theme="up">
+           <normaloff>.</normaloff>.</iconset>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="path_move_down">
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Move down</string>
+         </property>
+         <property name="statusTip">
+          <string>Move down</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move down&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset theme="down">
+           <normaloff>.</normaloff>.</iconset>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="path_remove">
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Remove</string>
+         </property>
+         <property name="statusTip">
+          <string>Remove</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset theme="remove">
+           <normaloff>.</normaloff>.</iconset>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="path_edit">
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Edit</string>
+         </property>
+         <property name="statusTip">
+          <string>Edit</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Edit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset theme="edit">
+           <normaloff>.</normaloff>.</iconset>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="path_add">
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Add</string>
+         </property>
+         <property name="statusTip">
+          <string>Add</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset theme="add">
+           <normaloff>.</normaloff>.</iconset>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="paths_actions_spacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="optional_data_label">
+     <property name="toolTip">
+      <string>Optional data</string>
+     </property>
+     <property name="statusTip">
+      <string>Optional data</string>
+     </property>
+     <property name="whatsThis">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Optional</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <layout class="QVBoxLayout" name="optional_data_box" stretch="0,1">
+     <item>
+      <widget class="QComboBox" name="optional_data_format_combo">
+       <property name="toolTip">
+        <string>Optional data format</string>
+       </property>
+       <property name="statusTip">
+        <string>Optional data format</string>
+       </property>
+       <property name="whatsThis">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>BASE64</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>UTF-16</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>UTF-8</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>HEX</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPlainTextEdit" name="optional_data_text">
+       <property name="font">
+        <font>
+         <family>Monospace</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Optional data</string>
+       </property>
+       <property name="statusTip">
+        <string>Optional data</string>
+       </property>
+       <property name="whatsThis">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="attributes_label">
+     <property name="toolTip">
+      <string>Attributes</string>
+     </property>
+     <property name="statusTip">
+      <string>Attributes</string>
+     </property>
+     <property name="whatsThis">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Attributes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Attributes</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <layout class="QGridLayout" name="attributes_box">
+     <item row="0" column="0">
+      <widget class="QCheckBox" name="attribute_active">
+       <property name="toolTip">
+        <string>Active</string>
+       </property>
+       <property name="statusTip">
+        <string>Active</string>
+       </property>
+       <property name="whatsThis">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Active&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>Active</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QCheckBox" name="attribute_force_reconnect">
+       <property name="toolTip">
+        <string>Force reconnect</string>
+       </property>
+       <property name="statusTip">
+        <string>Force reconnect</string>
+       </property>
+       <property name="whatsThis">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Force reconnect&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>Force reconnect</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QCheckBox" name="attribute_hidden">
+       <property name="toolTip">
+        <string>Hidden</string>
+       </property>
+       <property name="statusTip">
+        <string>Hidden</string>
+       </property>
+       <property name="whatsThis">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hidden&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>Hidden</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <spacer name="attribute_box_spacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="4" column="1">
+    <widget class="QComboBox" name="categoty_combo">
+     <property name="toolTip">
+      <string>Category</string>
+     </property>
+     <property name="statusTip">
+      <string>Category</string>
+     </property>
+     <property name="whatsThis">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Category&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Boot</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>App</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="category_label">
+     <property name="toolTip">
+      <string>Category</string>
+     </property>
+     <property name="statusTip">
+      <string>Category</string>
+     </property>
+     <property name="whatsThis">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Category&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Category</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DevicePathListView</class>
+   <extends>QListView</extends>
+   <header>../../src/include/devicepathlistview.h</header>
+   <slots>
+    <slot>removeCurrentRow()</slot>
+    <slot>insertRow()</slot>
+    <slot>moveCurrentRowUp()</slot>
+    <slot>moveCurrentRowDown()</slot>
+    <slot>editCurrentRow()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>description_text</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>BootEntryForm</receiver>
+   <slot>descriptionEdited(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>239</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>211</x>
+     <y>207</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>optional_data_text</sender>
+   <signal>textChanged()</signal>
+   <receiver>BootEntryForm</receiver>
+   <slot>optionalDataEdited()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>239</x>
+     <y>305</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>211</x>
+     <y>207</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>path_add</sender>
+   <signal>clicked()</signal>
+   <receiver>paths_list</receiver>
+   <slot>insertRow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>397</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>116</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>path_remove</sender>
+   <signal>clicked()</signal>
+   <receiver>paths_list</receiver>
+   <slot>removeCurrentRow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>397</x>
+     <y>113</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>116</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>path_move_up</sender>
+   <signal>clicked()</signal>
+   <receiver>paths_list</receiver>
+   <slot>moveCurrentRowUp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>397</x>
+     <y>143</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>116</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>path_move_down</sender>
+   <signal>clicked()</signal>
+   <receiver>paths_list</receiver>
+   <slot>moveCurrentRowDown()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>397</x>
+     <y>173</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>116</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>attribute_active</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>BootEntryForm</receiver>
+   <slot>attributeActiveChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>133</x>
+     <y>285</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>211</x>
+     <y>192</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>attribute_hidden</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>BootEntryForm</receiver>
+   <slot>attributeHiddenChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>233</x>
+     <y>285</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>211</x>
+     <y>192</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>attribute_force_reconnect</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>BootEntryForm</receiver>
+   <slot>attributeForceReconnectChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>133</x>
+     <y>314</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>211</x>
+     <y>192</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>categoty_combo</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>BootEntryForm</receiver>
+   <slot>categoryChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>243</x>
+     <y>345</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>211</x>
+     <y>192</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>path_edit</sender>
+   <signal>clicked()</signal>
+   <receiver>paths_list</receiver>
+   <slot>editCurrentRow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>172</x>
+     <y>123</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>243</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>optional_data_format_combo</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>BootEntryForm</receiver>
+   <slot>optionalDataFormatChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>247</x>
+     <y>157</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>211</x>
+     <y>192</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>descriptionEdited(QString)</slot>
+  <slot>optionalDataFormatChanged(int)</slot>
+  <slot>optionalDataEdited()</slot>
+  <slot>attributeActiveChanged(int)</slot>
+  <slot>attributeHiddenChanged(int)</slot>
+  <slot>attributeForceReconnectChanged(int)</slot>
+  <slot>categoryChanged(int)</slot>
+ </slots>
+</ui>

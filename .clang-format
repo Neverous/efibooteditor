@@ -1,0 +1,19 @@
+﻿---
+BasedOnStyle: WebKit
+BreakBeforeBraces: Allman
+Cpp11BracedListStyle: 'true'
+NamespaceIndentation: None
+PointerAlignment: Right
+SpaceBeforeCpp11BracedList: 'false'
+SpaceBeforeCtorInitializerColon: 'false'
+SpaceBeforeInheritanceColon: 'false'
+SpaceBeforeParens: Never
+SpaceBeforeRangeBasedForLoopColon: 'false'
+SpaceInEmptyParentheses: 'false'
+SpacesInAngles: 'false'
+SpacesInCStyleCastParentheses: 'false'
+SpacesInContainerLiterals: 'false'
+SpacesInParentheses: 'false'
+SpacesInSquareBrackets: 'false'
+
+...

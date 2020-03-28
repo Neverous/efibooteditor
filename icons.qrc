@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/Tango/index.theme</file>
+        <file>icons/Tango/scalable/devices/harddrive.svg</file>
+        <file>icons/Tango/scalable/actions/add.svg</file>
+        <file>icons/Tango/scalable/actions/document-save.svg</file>
+        <file>icons/Tango/scalable/actions/down.svg</file>
+        <file>icons/Tango/scalable/actions/exit.svg</file>
+        <file>icons/Tango/scalable/actions/up.svg</file>
+        <file>icons/Tango/scalable/actions/remove.svg</file>
+        <file>icons/Tango/scalable/actions/reload.svg</file>
+        <file>icons/Tango/scalable/mimetypes/document.svg</file>
+        <file>icons/Tango/scalable/actions/edit.svg</file>
+        <file>icons/Tango/scalable/apps/help.svg</file>
+        <file>icons/Tango/scalable/actions/undo.svg</file>
+        <file>icons/Tango/scalable/actions/redo.svg</file>
+        <file>icons/Tango/scalable/actions/document-export.svg</file>
+        <file>icons/Tango/scalable/actions/document-import.svg</file>
+        <file>icons/Tango/scalable/categories/preferences-system.svg</file>
+        <file>icons/Tango/scalable/devices/system.svg</file>
+    </qresource>
+</RCC>
