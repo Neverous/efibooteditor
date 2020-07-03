@@ -4,7 +4,7 @@ GUI for managing EFI Boot Manager configuration.
 ![Screenshot](doc/screenshot.png)
 
 ### Requirements
-* [QT](//www.qt.io/) (>=5.12.6)
+* [QT](//www.qt.io/) (>=5.12.9)
 * [efivar](//github.com/rhboot/efivar) (>=37) on linux
 
 ## License

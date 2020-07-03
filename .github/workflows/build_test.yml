@@ -10,8 +10,8 @@ jobs:
       matrix:
         os: [ubuntu, windows] #, macos]
         qt_version:
-          - 5.12.7 # LTS
-          - 5.14.1 # latest
+          - 5.12.9 # LTS
+          - 5.15.0 # latest
 
     steps:
       - name: Checkout source code
@@ -25,9 +25,8 @@ jobs:
           key: qt-${{ matrix.os }}-${{ matrix.qt_version }}
 
       - name: 'Dependencies: set up Qt environment'
-        uses: ouuan/install-qt-action@ouuan
+        uses: jurplel/install-qt-action@v2
         with:
-          aqtversion: '==0.7.1'
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
           version: ${{ matrix.qt_version }}
 
