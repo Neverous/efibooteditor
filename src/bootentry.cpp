@@ -35,7 +35,7 @@ auto BootEntry::fromEFIBootLoadOption(
             value.optional_data_format = OptionalDataFormat::Utf8;
     }
 
-    if(value.optional_data_format == OptionalDataFormat::Base64 && load_option.optional_data.size() % sizeof(wchar_t) == 0)
+    if(value.optional_data_format == OptionalDataFormat::Base64 && load_option.optional_data.size() % sizeof(char16_t) == 0)
     {
         codec = QTextCodec::codecForName("UTF-16");
         QTextCodec::ConverterState state;
@@ -146,7 +146,7 @@ auto BootEntry::change_optional_data_format(BootEntry::OptionalDataFormat format
         break;
 
     case OptionalDataFormat::Utf16:
-        if(static_cast<uint>(bytes.size()) % sizeof(wchar_t) != 0)
+        if(static_cast<uint>(bytes.size()) % sizeof(char16_t) != 0)
             return false;
 
         codec = QTextCodec::codecForName("UTF-16");

@@ -245,7 +245,7 @@ public:
     QVector<Device_path::ANY> file_path = {};
     QString optional_data = "";
     quint32 attributes = 0;
-    quint32 efi_attributes = 0;
+    quint32 efi_attributes = EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS;
 
     bool is_next_boot = false;
 
