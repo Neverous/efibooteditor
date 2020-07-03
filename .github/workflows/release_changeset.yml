@@ -2,7 +2,7 @@ name: Update changeset
 
 on:
   push:
-    branches: [actions]
+    branches: [master]
 
 jobs:
   update_release_draft:
