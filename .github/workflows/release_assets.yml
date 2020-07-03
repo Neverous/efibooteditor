@@ -102,8 +102,8 @@ jobs:
       matrix:
         os: [ubuntu, windows] #, macos]
         qt_version:
-          - 5.12.7 # LTS
-          - 5.14.1 # latest
+          - 5.12.9 # LTS
+          - 5.15.0 # latest
 
     steps:
       - name: Get release version
