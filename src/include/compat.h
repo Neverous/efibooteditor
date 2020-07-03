@@ -107,7 +107,7 @@ const int HEX_BASE = 16;
 inline bool isxnumber(const std::tstring_view &string)
 {
 #if defined(UNICODE) || defined(_UNICODE)
-    return std::all_of(std::begin(string), std::end(string), [](wchar_t chr) { return iswxdigit(chr); });
+    return std::all_of(std::begin(string), std::end(string), [](char16_t chr) { return iswxdigit(chr); });
 #else
     return std::all_of(std::begin(string), std::end(string), [](unsigned char chr) { return std::isxdigit(chr); });
 #endif

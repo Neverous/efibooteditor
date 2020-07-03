@@ -863,6 +863,7 @@ inline std::tstring get_error_trace()
         output += _tcserror(error);
         output += _T(": ");
         output += message;
+        output += _T("\n");
     }
 
     return output;

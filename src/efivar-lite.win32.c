@@ -72,7 +72,7 @@ int efi_get_variable(efi_guid_t guid, const TCHAR *name, uint8_t **data, size_t 
 int efi_del_variable(efi_guid_t guid, const TCHAR *name)
 {
     // FIXME: Can't find an official way to do this ?
-    BOOL ret = SetFirmwareEnvironmentVariableEx(name, guid.data, NULL, 0, EFI_VARIABLE_ATTRIBUTE_NON_VOLATILE | EFI_VARIABLE_ATTRIBUTE_BOOTSERVICE_ACCESS | EFI_VARIABLE_ATTRIBUTE_RUNTIME_ACCESS);
+    BOOL ret = SetFirmwareEnvironmentVariableEx(name, guid.data, NULL, 0, EFI_VARIABLE_ATTRIBUTE_DEFAULTS);
     return ret == 0 ? -1 : 0;
 }
 

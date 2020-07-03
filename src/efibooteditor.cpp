@@ -187,7 +187,7 @@ void EFIBootEditor::saveBootConfiguration()
 
         auto load_option = entry.toEFIBootLoadOption();
         if(!EFIBoot::set_variable(EFIBoot::efi_guid_global, name, EFIBoot::Variable<EFIBoot::Load_option>{load_option, entry.efi_attributes}))
-            return show_error(tr("Error saving entries!"), QStringFromStdTString(EFIBoot::get_error_trace()));
+            return show_error(tr("Error saving entries!"), QString("Entry %1:\n").arg(index + 1) + QStringFromStdTString(EFIBoot::get_error_trace()));
 
         ++index;
     }
