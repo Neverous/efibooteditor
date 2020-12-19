@@ -125,16 +125,12 @@ QSize QWidgetItemDelegate<Widget, Item>::sizeHint(const QStyleOptionViewItem &op
     auto widget = renderer.getWidget(const_cast<QWidget *>(option.widget), item, option.rect);
 
     QSize hint;
-#ifdef QLISTVIEW_SIZEHINT_BUG
     // BUG: option.rect is not updated on list resize ;( ignore it and use parent widget size instead
     // https://bugreports.qt.io/browse/QTBUG-11227
     auto fixed_rect = option.widget->geometry();
     fixed_rect.adjust(0, 0, -2, -2);
     fixed_rect.setHeight(widget->heightForWidth(fixed_rect.width()));
     hint = fixed_rect.size();
-#else
-    hint = widget->sizeHint();
-#endif
     return hint;
 }
 
@@ -155,6 +151,17 @@ bool QWidgetItemDelegate<Widget, Item>::editorEvent(QEvent *event, QAbstractItem
         case QEvent::MouseMove:
         {
             QMouseEvent *mouse_event = static_cast<QMouseEvent *>(event);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            auto position = widget->mapFromParent(mouse_event->position());
+            QWidget *child = widget->childAt(position.toPoint());
+            if(child)
+            {
+                auto child_position = child->mapFromParent(position);
+                // All I need is to set localPosition...
+                QMouseEvent child_event{mouse_event->type(), child_position, mouse_event->scenePosition(), mouse_event->globalPosition(), mouse_event->button(), mouse_event->buttons(), mouse_event->modifiers(), Qt::MouseEventSource::MouseEventSynthesizedByApplication, mouse_event->pointingDevice()};
+                result = QApplication::sendEvent(child, &child_event);
+            }
+#else
             auto pos = widget->mapFromParent(mouse_event->pos());
             mouse_event->setLocalPos(pos);
 
@@ -165,6 +172,7 @@ bool QWidgetItemDelegate<Widget, Item>::editorEvent(QEvent *event, QAbstractItem
                 mouse_event->setLocalPos(child_pos);
                 result = QApplication::sendEvent(child, event);
             }
+#endif
             break;
         }
 

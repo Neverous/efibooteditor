@@ -34,7 +34,7 @@ auto DriveInfo::get_all(bool refresh) -> QVector<DriveInfo>
         else
         {
             driveinfo.signature_type = DriveInfo::SIGNATURE::MBR;
-            auto parts = part.fileName().splitRef("-");
+            auto parts = part.fileName().split("-");
             uint l = parts[0].toUInt(nullptr, HEX_BASE);
             ushort w1 = parts[1].toUShort(nullptr, HEX_BASE);
             driveinfo.signature = QUuid{l, w1, 0, 0, 0, 0, 0, 0, 0, 0, 0};

@@ -21,15 +21,20 @@ win32: QMAKE_TARGET_COPYRIGHT   = "Copyright (C) 2020 EFI Boot Editor"
 
 
 QT += core gui widgets
+greaterThan(QT_MAJOR_VERSION, 5): QT+= core5compat
 
 CONFIG += debug_and_release c++latest rtti_off exceptions_off strict_c++ strict_c c11
 win32: CONFIG += windows embed_manifest_exe windeployqt
 
 
-DEFINES += QT_DEPRECATED_WARNINGS QT_DISABLE_DEPRECATED_BEFORE=0x060000 QLISTVIEW_SIZEHINT_BUG VERSION=\\\"$${BUILD_VERSION}\\\"
+DEFINES += QT_DEPRECATED_WARNINGS QT_DISABLE_DEPRECATED_BEFORE=0x060000 VERSION=\\\"$${BUILD_VERSION}\\\"
 win32: QMAKE_LFLAGS += /MANIFESTUAC:level=\'requireAdministrator\'
 
 unix: QMAKE_CXXFLAGS += -Wall -Wpedantic -Werror -pedantic -Wshadow -Weffc++ -std=c++2a
+# Fix warning in qt includes
+equals(QT_MAJOR_VERSION, 5):unix: QMAKE_CXXFLAGS += -isystem /usr/include/qt -isystem /usr/include/qt/QtCore -isystem /usr/include/qt/QtGui
+equals(QT_MAJOR_VERSION, 6):unix: QMAKE_CXXFLAGS += -isystem /usr/include/qt6 -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCore5Compat
+
 unix: QMAKE_CFLAGS += -Wall -Wpedantic -Werror -pedantic -Wshadow -std=c11
 win32: QMAKE_CXXFLAGS += /Wall /permissive- /WX /std:c++latest
 win32: QMAKE_CFLAGS += /Wall /permissive- /WX
