@@ -39,6 +39,8 @@ win32: QMAKE_CFLAGS += /Wall /permissive- /WX
 unix: QMAKE_CXXFLAGS += -isystem $$[QT_INSTALL_HEADERS]
 win32: QMAKE_CXXFLAGS += /experimental:external /external:W0 /external:I $$[QT_INSTALL_HEADERS]
 
+# C4355: 'this' : used in base member initializer list
+win32: QMAKE_CXXFLAGS += /wd4355
 # Disable some warnings from external libraries (QT, MSVC)
 # C4371: 'classname': layout of class may have changed from a previous version of the compiler due to better packing of member 'member'
 win32: QMAKE_CXXFLAGS += /wd4371
