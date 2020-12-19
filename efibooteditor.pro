@@ -52,6 +52,8 @@ win32: QMAKE_CFLAGS += /wd4710
 # C4711: function 'function' selected for inline expansion
 win32: QMAKE_CXXFLAGS += /wd4711
 win32: QMAKE_CFLAGS += /wd4711
+# C4866: compiler may not enforce left-to-right evaluation order for call to 'C++17 operator'
+win32: QMAKE_CXXFLAGS += /wd4866
 # C4946: reinterpret_cast used between related classes: 'class1' and 'class2'
 win32: QMAKE_CXXFLAGS += /wd4946
 # C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
