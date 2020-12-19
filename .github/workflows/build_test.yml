@@ -5,13 +5,16 @@ on: [pull_request]
 jobs:
   build:
     name: ${{ matrix.os }} Qt ${{ matrix.qt_version }}
-    runs-on: ${{ matrix.os }}-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu, windows] #, macos]
+        os: [ubuntu-20.04, windows-2019] #, macos-11.0]
         qt_version:
           - 5.15.2 # LTS
           - 6.0.0 # latest
+        include:
+          - os: ubuntu-18.04
+            qt_version: 5.15.2
 
     steps:
       - name: Checkout source code
