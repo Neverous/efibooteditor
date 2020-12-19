@@ -36,7 +36,7 @@ jobs:
       - name: '[linux] Dependencies: install efivar'
         run: sudo apt-get install libefiboot1 libefiboot-dev libefivar-dev
         shell: bash
-        if: matrix.os == 'ubuntu'
+        if: startsWith(matrix.os, 'ubuntu')
 
       - name: 'Configure: create build directory'
         run: mkdir -p build
@@ -48,7 +48,7 @@ jobs:
         env:
           BUILD_VERSION: 0.0.0-${{ github.sha }}
         working-directory: build
-        if: matrix.os == 'ubuntu'
+        if: startsWith(matrix.os, 'ubuntu')
 
       - name: '[unix] Build'
         run: |
@@ -57,7 +57,7 @@ jobs:
           mv efibooteditor debug/
         shell: bash
         working-directory: build
-        if: matrix.os != 'windows'
+        if: ${{ ! startsWith(matrix.os, 'windows') }}
 
       - name: '[windows] Configure: build with MSVC'
         run: |
@@ -67,7 +67,7 @@ jobs:
         env:
           BUILD_VERSION: 0.0.0-${{ github.sha }}
         working-directory: build
-        if: matrix.os == 'windows'
+        if: startsWith(matrix.os, 'windows')
 
       - name: '[windows] Build'
         run: |
@@ -76,7 +76,7 @@ jobs:
           nmake clean || exit /b
         shell: cmd
         working-directory: build
-        if: matrix.os == 'windows'
+        if: startsWith(matrix.os, 'windows')
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v1
