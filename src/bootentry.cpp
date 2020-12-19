@@ -180,7 +180,7 @@ auto BootEntry::change_optional_data_format(BootEntry::OptionalDataFormat format
 auto BootEntry::get_raw_optional_data() const -> QByteArray
 {
     QByteArray bytes;
-    QTextEncoder *encoder = nullptr;
+    std::unique_ptr<QTextEncoder> encoder = nullptr;
     switch(optional_data_format)
     {
     case OptionalDataFormat::Base64:
@@ -188,12 +188,12 @@ auto BootEntry::get_raw_optional_data() const -> QByteArray
         break;
 
     case OptionalDataFormat::Utf16:
-        encoder = QTextCodec::codecForName("UTF-16")->makeEncoder(QTextCodec::ConversionFlag::IgnoreHeader);
+        encoder.reset(QTextCodec::codecForName("UTF-16")->makeEncoder(QTextCodec::IgnoreHeader));
         bytes = encoder->fromUnicode(optional_data);
         break;
 
     case OptionalDataFormat::Utf8:
-        encoder = QTextCodec::codecForName("UTF-8")->makeEncoder(QTextCodec::ConversionFlag::IgnoreHeader);
+        encoder.reset(QTextCodec::codecForName("UTF-8")->makeEncoder(QTextCodec::IgnoreHeader));
         bytes = encoder->fromUnicode(optional_data);
         break;
 
