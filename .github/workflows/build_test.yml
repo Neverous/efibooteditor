@@ -32,6 +32,7 @@ jobs:
         with:
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
           version: ${{ matrix.qt_version }}
+          modules: 'qt5compat'
 
       - name: '[linux] Dependencies: install efivar'
         run: sudo apt-get install libefiboot1 libefiboot-dev libefivar-dev
