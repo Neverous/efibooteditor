@@ -81,7 +81,7 @@ auto BootEntry::fromJSON(const QJsonObject &obj) -> std::optional<BootEntry>
     try_read_3(attributes, Double, Int);
     try_read_3(efi_attributes, Double, Int);
     check_type(file_path, Array);
-    for(auto device_path: obj["file_path"].toArray())
+    for(const auto &device_path: obj["file_path"].toArray())
     {
         auto dp = device_path.toObject();
         auto path = get_default(Device_path::JSON_readers(), QString("%1/%2").arg(dp["type"].toString(), dp["subtype"].toString()), [](const auto &) { return std::nullopt; })(dp);
