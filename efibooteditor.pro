@@ -31,13 +31,13 @@ DEFINES += QT_DEPRECATED_WARNINGS QT_DISABLE_DEPRECATED_BEFORE=0x060000 VERSION=
 win32: QMAKE_LFLAGS += /MANIFESTUAC:level=\'requireAdministrator\'
 
 unix: QMAKE_CXXFLAGS += -Wall -Wpedantic -Werror -pedantic -Wshadow -Weffc++ -std=c++2a
-# Fix warning in qt includes
-equals(QT_MAJOR_VERSION, 5):unix: QMAKE_CXXFLAGS += -isystem /usr/include/qt -isystem /usr/include/qt/QtCore -isystem /usr/include/qt/QtGui
-equals(QT_MAJOR_VERSION, 6):unix: QMAKE_CXXFLAGS += -isystem /usr/include/qt6 -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCore5Compat
-
 unix: QMAKE_CFLAGS += -Wall -Wpedantic -Werror -pedantic -Wshadow -std=c11
 win32: QMAKE_CXXFLAGS += /Wall /permissive- /WX /std:c++latest
 win32: QMAKE_CFLAGS += /Wall /permissive- /WX
+
+# Ignore warnings in qt includes
+unix: QMAKE_CXXFLAGS += -isystem $$[QT_INSTALL_HEADERS]
+win32: QMAKE_CXXFLAGS += /experimental:external /external:W0 /external:I $$[QT_INSTALL_HEADERS]
 
 # Disable some warnings from external libraries (QT, MSVC)
 # C4371: 'classname': layout of class may have changed from a previous version of the compiler due to better packing of member 'member'
