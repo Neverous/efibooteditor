@@ -150,7 +150,7 @@ auto BootEntry::change_optional_data_format(BootEntry::OptionalDataFormat format
             return false;
 
         codec = QTextCodec::codecForName("UTF-16");
-        temp_optional_data = codec->toUnicode(bytes.constData(), bytes.size(), &state);
+        temp_optional_data = codec->toUnicode(bytes.constData(), static_cast<int>(bytes.size()), &state);
         if(state.invalidChars != 0)
             return false;
 
@@ -158,7 +158,7 @@ auto BootEntry::change_optional_data_format(BootEntry::OptionalDataFormat format
 
     case OptionalDataFormat::Utf8:
         codec = QTextCodec::codecForName("UTF-8");
-        temp_optional_data = codec->toUnicode(bytes.constData(), bytes.size(), &state);
+        temp_optional_data = codec->toUnicode(bytes.constData(), static_cast<int>(bytes.size()), &state);
         if(state.invalidChars != 0)
             return false;
 

@@ -27,7 +27,7 @@ auto DevicePathProxyListModel::rowCount(const QModelIndex &parent) const -> int
     if(!boot_entry_file_path)
         return 0;
 
-    return boot_entry_file_path->size();
+    return static_cast<int>(boot_entry_file_path->size());
 }
 
 auto DevicePathProxyListModel::data(const QModelIndex &index, int) const -> QVariant

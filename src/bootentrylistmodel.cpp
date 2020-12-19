@@ -11,7 +11,7 @@ auto BootEntryListModel::rowCount(const QModelIndex &parent) const -> int
     if(parent.isValid())
         return 0;
 
-    return entries.count();
+    return static_cast<int>(entries.count());
 }
 
 auto BootEntryListModel::data(const QModelIndex &index, int) const -> QVariant
