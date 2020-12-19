@@ -570,12 +570,11 @@ void EFIBootEditor::showAboutBox()
 void EFIBootEditor::closeEvent(QCloseEvent *event)
 {
     event->ignore();
-    show_confirmation(
-        tr("Are you sure you want to quit?"),
-        QMessageBox::Yes | QMessageBox::No,
-        QMessageBox::Yes,
-        qApp,
-        &QApplication::quit);
+    confirmation->setText(tr("Are you sure you want to quit?"));
+    confirmation->setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    confirmation->exec();
+    if(confirmation->clickedButton() == confirmation->button(QMessageBox::Yes))
+        event->accept();
 }
 
 void EFIBootEditor::show_error(const QString &message, const QString &details)
