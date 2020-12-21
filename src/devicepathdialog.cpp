@@ -29,8 +29,8 @@ auto DevicePathDialog::toDevicePath() const -> Device_path::ANY
     case 1:
     {
         Device_path::HID hid;
-        hid.hid = ui->hid_text->text().toULongLong(nullptr, HEX_BASE);
-        hid.uid = ui->uid_text->text().toULongLong(nullptr, HEX_BASE);
+        hid.hid = ui->hid_text->text().toUInt(nullptr, HEX_BASE);
+        hid.uid = ui->uid_text->text().toUInt(nullptr, HEX_BASE);
         return hid;
     }
     case 2:

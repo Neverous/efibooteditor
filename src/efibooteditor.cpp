@@ -62,7 +62,7 @@ void EFIBootEditor::resetBootConfiguration()
             invalid_keys.push_back("Timeout");
         else
         {
-            auto [value, attributes] = *variable;
+            const auto &[value, attributes] = *variable;
             ui->timeout_number->setValue(value);
         }
     }
@@ -74,7 +74,7 @@ void EFIBootEditor::resetBootConfiguration()
             invalid_keys.push_back("BootNext");
         else
         {
-            auto [value, attributes] = *variable;
+            const auto &[value, attributes] = *variable;
             next_boot = value;
         }
     }
@@ -86,16 +86,16 @@ void EFIBootEditor::resetBootConfiguration()
             invalid_keys.push_back("BootOrder");
         else
         {
-            auto [value, attributes] = *variable;
+            const auto &[value, attributes] = *variable;
             order = value;
 
-            for(auto index: order)
+            for(const auto &index: order)
                 ordered_entry.insert(index);
         }
     }
 
     // Add entries not in BootOrder at the end
-    for(auto [name, guid]: name_to_guid)
+    for(const auto &[name, guid]: name_to_guid)
     {
         if(name.length() != 8 || name.substr(0, 4) != _T("Boot"))
             continue;
@@ -113,7 +113,7 @@ void EFIBootEditor::resetBootConfiguration()
     }
 
     entries_list_model.clear();
-    for(auto index: order)
+    for(const auto &index: order)
     {
         auto qname = QString("Boot%1").arg(index, 4, HEX_BASE, QChar('0'));
         auto name = QStringToStdTString(qname);
@@ -125,7 +125,7 @@ void EFIBootEditor::resetBootConfiguration()
             continue;
         }
 
-        auto [value, attributes] = *variable;
+        const auto &[value, attributes] = *variable;
 
         // Translate STL to QTL
         auto entry = BootEntry::fromEFIBootLoadOption(value);
@@ -249,7 +249,6 @@ void EFIBootEditor::importJSONEFIData(const QJsonObject &input)
     int next_boot = -1;
     std::vector<uint16_t> order;
     std::unordered_set<unsigned long> ordered_entry;
-    QStringList invalid_keys;
 
     if(input.contains("Timeout"))
     {
@@ -273,7 +272,7 @@ void EFIBootEditor::importJSONEFIData(const QJsonObject &input)
             return show_error(tr("Error importing boot configuration!"), tr("Couldn't parse BootOrder: array expected"));
 
         int i = 0;
-        for(auto index: input["BootOrder"].toArray())
+        for(const auto &index: input["BootOrder"].toArray())
         {
             if(!index.isDouble())
                 return show_error(tr("Error importing boot configuration!"), tr("Couldn't parse BootOrder[%1]: number expected").arg(i));
@@ -304,7 +303,7 @@ void EFIBootEditor::importJSONEFIData(const QJsonObject &input)
     }
 
     entries_list_model.clear();
-    for(auto index: order)
+    for(const auto &index: order)
     {
         auto name = QString("%1").arg(index, 4, HEX_BASE, QChar('0'));
         auto entry = BootEntry::fromJSON(boot[name].toObject());
@@ -397,7 +396,7 @@ void EFIBootEditor::importRawEFIData(const QJsonObject &input)
     }
 
     entries_list_model.clear();
-    for(auto index: order)
+    for(const auto &index: order)
     {
         auto name = QString("%1").arg(index, 4, HEX_BASE, QChar('0'));
         if(!boot[name].isObject())
@@ -469,23 +468,23 @@ void EFIBootEditor::dump()
 {
     QString file_name = QFileDialog::getSaveFileName(this, tr("Save Raw EFI Dump"), "", tr("JSON documents (*.json)"));
     if(!file_name.isEmpty())
-        emit dumpRawEFIData(file_name);
+        dumpRawEFIData(file_name);
 }
 
 void EFIBootEditor::dumpRawEFIData(const QString &file_name)
 {
     QJsonObject output;
     output["_Type"] = "raw";
-    auto name_to_guid = EFIBoot::get_variables([](const EFIBoot::efi_guid_t &guid, const std::tstring_view name) {
+    const auto name_to_guid = EFIBoot::get_variables([](const EFIBoot::efi_guid_t &guid, const std::tstring_view name) {
         return guid == EFIBoot::efi_guid_global && (name.substr(0, 4) == _T("Boot") || name == _T("Timeout"));
     });
 
     if(name_to_guid.count(_T("Timeout")))
     {
-        auto variable = EFIBoot::get_variable<EFIBoot::Raw_data>(name_to_guid[_T("Timeout")], _T("Timeout"));
+        const auto variable = EFIBoot::get_variable<EFIBoot::Raw_data>(name_to_guid.at(_T("Timeout")), _T("Timeout"));
         if(variable)
         {
-            auto [value, attributes] = *variable;
+            const auto &[value, attributes] = *variable;
             QJsonObject timeout;
             timeout["raw_data"] = QString(QByteArray::fromRawData(reinterpret_cast<const char *>(value.data()), static_cast<int>(value.size())).toBase64());
             timeout["efi_attributes"] = static_cast<int>(attributes);
@@ -495,10 +494,10 @@ void EFIBootEditor::dumpRawEFIData(const QString &file_name)
 
     if(name_to_guid.count(_T("BootNext")))
     {
-        auto variable = EFIBoot::get_variable<EFIBoot::Raw_data>(name_to_guid[_T("BootNext")], _T("BootNext"));
+        const auto variable = EFIBoot::get_variable<EFIBoot::Raw_data>(name_to_guid.at(_T("BootNext")), _T("BootNext"));
         if(variable)
         {
-            auto [value, attributes] = *variable;
+            const auto &[value, attributes] = *variable;
             QJsonObject boot_next;
             boot_next["raw_data"] = QString(QByteArray::fromRawData(reinterpret_cast<const char *>(value.data()), static_cast<int>(value.size())).toBase64());
             boot_next["efi_attributes"] = static_cast<int>(attributes);
@@ -508,10 +507,10 @@ void EFIBootEditor::dumpRawEFIData(const QString &file_name)
 
     if(name_to_guid.count(_T("BootOrder")))
     {
-        auto variable = EFIBoot::get_list_variable<EFIBoot::Raw_data>(name_to_guid[_T("BootOrder")], _T("BootOrder"));
+        const auto variable = EFIBoot::get_list_variable<EFIBoot::Raw_data>(name_to_guid.at(_T("BootOrder")), _T("BootOrder"));
         if(variable)
         {
-            auto [value, attributes] = *variable;
+            const auto &[value, attributes] = *variable;
             QJsonObject boot_order;
             boot_order["raw_data"] = QString(QByteArray::fromRawData(reinterpret_cast<const char *>(value.data()), static_cast<int>(value.size())).toBase64());
             boot_order["efi_attributes"] = static_cast<int>(attributes);
@@ -520,7 +519,7 @@ void EFIBootEditor::dumpRawEFIData(const QString &file_name)
     }
 
     QJsonObject entries;
-    for(auto [name, guid]: name_to_guid)
+    for(const auto &[name, guid]: name_to_guid)
     {
         if(name.length() != 8 || name.substr(0, 4) != _T("Boot"))
             continue;
@@ -530,11 +529,11 @@ void EFIBootEditor::dumpRawEFIData(const QString &file_name)
             continue;
 
         QString qname = QStringFromStdTString(suffix);
-        auto variable = EFIBoot::get_variable<EFIBoot::Raw_data>(name_to_guid[name], name);
+        const auto variable = EFIBoot::get_variable<EFIBoot::Raw_data>(name_to_guid.at(name), name);
         if(!variable)
             return show_error(tr("Error dumping raw EFI data!"));
 
-        auto [value, attributes] = *variable;
+        const auto &[value, attributes] = *variable;
         QJsonObject boot;
         boot["raw_data"] = QString(QByteArray::fromRawData(reinterpret_cast<const char *>(value.data()), static_cast<int>(value.size())).toBase64());
         boot["efi_attributes"] = static_cast<int>(attributes);
@@ -571,12 +570,11 @@ void EFIBootEditor::showAboutBox()
 void EFIBootEditor::closeEvent(QCloseEvent *event)
 {
     event->ignore();
-    show_confirmation(
-        tr("Are you sure you want to quit?"),
-        QMessageBox::Yes | QMessageBox::No,
-        QMessageBox::Yes,
-        qApp,
-        &QApplication::quit);
+    confirmation->setText(tr("Are you sure you want to quit?"));
+    confirmation->setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    confirmation->exec();
+    if(confirmation->clickedButton() == confirmation->button(QMessageBox::Yes))
+        event->accept();
 }
 
 void EFIBootEditor::show_error(const QString &message, const QString &details)

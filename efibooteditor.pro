@@ -21,12 +21,13 @@ win32: QMAKE_TARGET_COPYRIGHT   = "Copyright (C) 2020 EFI Boot Editor"
 
 
 QT += core gui widgets
+greaterThan(QT_MAJOR_VERSION, 5): QT+= core5compat
 
 CONFIG += debug_and_release c++latest rtti_off exceptions_off strict_c++ strict_c c11
 win32: CONFIG += windows embed_manifest_exe windeployqt
 
 
-DEFINES += QT_DEPRECATED_WARNINGS QT_DISABLE_DEPRECATED_BEFORE=0x060000 QLISTVIEW_SIZEHINT_BUG VERSION=\\\"$${BUILD_VERSION}\\\"
+DEFINES += QT_DEPRECATED_WARNINGS QT_DISABLE_DEPRECATED_BEFORE=0x060000 VERSION=\\\"$${BUILD_VERSION}\\\"
 win32: QMAKE_LFLAGS += /MANIFESTUAC:level=\'requireAdministrator\'
 
 unix: QMAKE_CXXFLAGS += -Wall -Wpedantic -Werror -pedantic -Wshadow -Weffc++ -std=c++2a
@@ -34,6 +35,12 @@ unix: QMAKE_CFLAGS += -Wall -Wpedantic -Werror -pedantic -Wshadow -std=c11
 win32: QMAKE_CXXFLAGS += /Wall /permissive- /WX /std:c++latest
 win32: QMAKE_CFLAGS += /Wall /permissive- /WX
 
+# Ignore warnings in qt includes
+unix: QMAKE_CXXFLAGS += -isystem $$[QT_INSTALL_HEADERS]
+win32: QMAKE_CXXFLAGS += /experimental:external /external:W0 /external:I $$[QT_INSTALL_HEADERS]
+
+# C4355: 'this' : used in base member initializer list
+win32: QMAKE_CXXFLAGS += /wd4355
 # Disable some warnings from external libraries (QT, MSVC)
 # C4371: 'classname': layout of class may have changed from a previous version of the compiler due to better packing of member 'member'
 win32: QMAKE_CXXFLAGS += /wd4371
@@ -45,6 +52,8 @@ win32: QMAKE_CFLAGS += /wd4710
 # C4711: function 'function' selected for inline expansion
 win32: QMAKE_CXXFLAGS += /wd4711
 win32: QMAKE_CFLAGS += /wd4711
+# C4866: compiler may not enforce left-to-right evaluation order for call to 'C++17 operator'
+win32: QMAKE_CXXFLAGS += /wd4866
 # C4946: reinterpret_cast used between related classes: 'class1' and 'class2'
 win32: QMAKE_CXXFLAGS += /wd4946
 # C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
