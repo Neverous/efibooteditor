@@ -23,21 +23,21 @@ win32: QMAKE_TARGET_COPYRIGHT   = "Copyright (C) 2020 EFI Boot Editor"
 QT += core gui widgets
 greaterThan(QT_MAJOR_VERSION, 5): QT+= core5compat
 
-CONFIG += debug_and_release c++latest rtti_off exceptions_off strict_c++ strict_c c11
+CONFIG += debug_and_release rtti_off exceptions_off strict_c++ strict_c c11 c++17
 win32: CONFIG += windows embed_manifest_exe windeployqt
 
 
 DEFINES += QT_DEPRECATED_WARNINGS QT_DISABLE_DEPRECATED_BEFORE=0x060000 VERSION=\\\"$${BUILD_VERSION}\\\"
 win32: QMAKE_LFLAGS += /MANIFESTUAC:level=\'requireAdministrator\'
 
-unix: QMAKE_CXXFLAGS += -Wall -Wpedantic -Werror -pedantic -Wshadow -Weffc++ -std=c++2a
+unix: QMAKE_CXXFLAGS += -Wall -Wpedantic -Werror -pedantic -Wshadow -Weffc++
 unix: QMAKE_CFLAGS += -Wall -Wpedantic -Werror -pedantic -Wshadow -std=c11
 win32: QMAKE_CXXFLAGS += /Wall /permissive- /WX /std:c++latest
 win32: QMAKE_CFLAGS += /Wall /permissive- /WX
 
 # Ignore warnings in qt includes
-unix: QMAKE_CXXFLAGS += -isystem $$[QT_INSTALL_HEADERS]
-win32: QMAKE_CXXFLAGS += /experimental:external /external:W0 /external:I $$[QT_INSTALL_HEADERS]
+unix: QMAKE_CXXFLAGS += -isystem $$[QT_INSTALL_HEADERS] -isystem $$[QT_INSTALL_HEADERS]/QtCore -isystem $$[QT_INSTALL_HEADERS]/QtCore5Compat
+win32: QMAKE_CXXFLAGS += /experimental:external /external:W0 /external:I $$[QT_INSTALL_HEADERS] /external:I $$[QT_INSTALL_HEADERS]/QtCore /external:I $$[QT_INSTALL_HEADERS]/QtCore5Compat
 
 # C4355: 'this' : used in base member initializer list
 win32: QMAKE_CXXFLAGS += /wd4355

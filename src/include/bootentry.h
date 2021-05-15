@@ -8,7 +8,6 @@
 #include <QVector>
 
 #include "efiboot.h"
-#include "qcompat.h"
 
 namespace Device_path
 {
@@ -218,7 +217,7 @@ template <class Type>
 inline bool register_json_reader()
 {
     auto key = QString("%1/%2").arg(Type::TYPE).arg(Type::SUBTYPE);
-    if(JSON_readers().contains(key))
+    if(JSON_readers().find(key) != JSON_readers().end())
         return true;
 
     JSON_readers()[key] = [](const auto &obj) -> std::optional<ANY> { return Type::fromJSON(obj); };
