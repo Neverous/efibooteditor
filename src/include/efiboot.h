@@ -168,7 +168,7 @@ inline bool register_deserializer()
     dp.header.type = Type::TYPE;
     dp.header.subtype = Type::SUBTYPE;
 
-    if(deserializers().contains(dp._type_subtype))
+    if(deserializers().find(dp._type_subtype) != deserializers().end())
         return true;
 
     deserializers()[dp._type_subtype] = [](const void *data, size_t data_size) -> std::optional<ANY> { return deserialize<Type>(data, data_size); };
