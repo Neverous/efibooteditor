@@ -59,6 +59,8 @@ win32: QMAKE_CXXFLAGS += /wd4946
 # C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
 win32: QMAKE_CXXFLAGS += /wd5045
 win32: QMAKE_CFLAGS += /wd5045
+# C5204: 'type-name': class has virtual functions, but its trivial destructor is not virtual; instances of objects derived from this class may not be destructed correctly
+win32: QMAKE_CXXFLAGS += /wd5204
 
 # error: keyword is hidden by macro definition
 unix: QMAKE_CXXFLAGS += -Wno-keyword-macro
