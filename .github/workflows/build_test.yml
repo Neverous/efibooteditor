@@ -18,7 +18,7 @@ jobs:
         os: [ubuntu-20.04, windows-2019] #, macos-11.0]
         qt_version:
           - 5.15.2 # LTS
-          - 6.2.0 # latest
+          - 6.2.1 # latest
         include:
           - os: ubuntu-18.04
             qt_version: 5.15.2
