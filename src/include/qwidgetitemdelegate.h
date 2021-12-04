@@ -18,44 +18,9 @@ public:
 private:
     friend class Guard;
 
-    class Renderer
-    {
-        const QWidgetItemDelegate<Widget, Item> &delegate;
-        Widget widget;
-
-        class Guard: private QObject
-        {
-            friend class Renderer;
-
-            Renderer &renderer;
-
-            Guard(const Guard &) = delete;
-            Guard &operator=(const Guard &) = delete;
-
-        public:
-            ~Guard();
-            operator Widget *() { return &renderer.widget; }
-            Widget *operator->() { return &renderer.widget; }
-
-        private:
-            Guard(Renderer &_renderer, QWidget *parent, const Item &item, const QRect &geometry);
-        };
-
-        Renderer(const Renderer &) = delete;
-        Renderer &operator=(const Renderer &) = delete;
-
-    public:
-        Renderer(const QWidgetItemDelegate<Widget, Item> &_delegate)
-            : delegate(_delegate)
-            , widget()
-        {
-        }
-        Guard getWidget(QWidget *parent, const Item &item, const QRect &geometry) { return {*this, parent, item, geometry}; }
-    };
-
-    mutable Renderer renderer;
-    mutable Renderer painter;
-    mutable Renderer event_handler;
+    mutable Widget renderer;
+    mutable Widget painter;
+    Widget event_handler;
 
 public:
     explicit QWidgetItemDelegate(QObject *parent = nullptr);
@@ -71,28 +36,11 @@ protected:
 };
 
 template <class Widget, class Item>
-QWidgetItemDelegate<Widget, Item>::Renderer::Guard::~Guard()
-{
-    renderer.widget.setParent(nullptr);
-}
-
-template <class Widget, class Item>
-QWidgetItemDelegate<Widget, Item>::Renderer::Guard::Guard(QWidgetItemDelegate<Widget, Item>::Renderer &_renderer, QWidget *parent, const Item &item, const QRect &geometry)
-    : renderer{_renderer}
-{
-    renderer.widget.setParent(parent);
-    renderer.delegate.setupWidgetFromItem(renderer.widget, item);
-    renderer.widget.setGeometry(geometry);
-    // force layout
-    renderer.widget.grab();
-}
-
-template <class Widget, class Item>
 QWidgetItemDelegate<Widget, Item>::QWidgetItemDelegate(QObject *parent)
     : QStyledItemDelegate(parent)
-    , renderer(*this)
-    , painter(*this)
-    , event_handler(*this)
+    , renderer()
+    , painter()
+    , event_handler()
 {
 }
 
@@ -103,15 +51,17 @@ void QWidgetItemDelegate<Widget, Item>::paint(QPainter *_painter, const QStyleOp
         return QStyledItemDelegate::paint(_painter, option, index);
 
     auto item = index.data().value<Item>();
-    auto widget = this->painter.getWidget(const_cast<QWidget *>(option.widget), item, option.rect);
-
+    setupWidgetFromItem(painter, item);
+    painter.setParent(const_cast<QWidget *>(option.widget));
+    painter.setGeometry(option.rect);
     _painter->save();
     if(option.state & QStyle::State_Selected)
         _painter->fillRect(option.rect, option.palette.highlight());
 
     _painter->translate(option.rect.topLeft());
-    widget->render(_painter, QPoint{}, QRegion{}, QWidget::RenderFlag::DrawChildren);
+    painter.render(_painter, QPoint{}, QRegion{}, QWidget::RenderFlag::DrawChildren);
     _painter->restore();
+    painter.setParent(nullptr);
     return;
 }
 
@@ -122,16 +72,12 @@ QSize QWidgetItemDelegate<Widget, Item>::sizeHint(const QStyleOptionViewItem &op
         return QStyledItemDelegate::sizeHint(option, index);
 
     auto item = index.data().value<Item>();
-    auto widget = renderer.getWidget(const_cast<QWidget *>(option.widget), item, option.rect);
+    setupWidgetFromItem(renderer, item);
+    renderer.grab(); // force layout
 
-    QSize hint;
-    // BUG: option.rect is not updated on list resize ;( ignore it and use parent widget size instead
-    // https://bugreports.qt.io/browse/QTBUG-11227
-    auto fixed_rect = option.widget->geometry();
-    fixed_rect.adjust(0, 0, -2, -2);
-    fixed_rect.setHeight(widget->heightForWidth(fixed_rect.width()));
-    hint = fixed_rect.size();
-    return hint;
+    auto rect = option.rect;
+    rect.setHeight(renderer.heightForWidth(option.rect.width()));
+    return rect.size();
 }
 
 template <class Widget, class Item>
@@ -141,7 +87,10 @@ bool QWidgetItemDelegate<Widget, Item>::editorEvent(QEvent *event, QAbstractItem
     {
         bool result = false;
         auto item = index.data().value<Item>();
-        auto widget = event_handler.getWidget(const_cast<QWidget *>(option.widget), item, option.rect);
+        setupWidgetFromItem(event_handler, item);
+        event_handler.setParent(const_cast<QWidget *>(option.widget));
+        event_handler.setGeometry(option.rect);
+        event_handler.grab(); // force layout
 
         switch(event->type())
         {
@@ -152,8 +101,8 @@ bool QWidgetItemDelegate<Widget, Item>::editorEvent(QEvent *event, QAbstractItem
         {
             QMouseEvent *mouse_event = static_cast<QMouseEvent *>(event);
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-            auto position = widget->mapFromParent(mouse_event->position());
-            QWidget *child = widget->childAt(position.toPoint());
+            auto position = event_handler.mapFromParent(mouse_event->position());
+            QWidget *child = event_handler.childAt(position.toPoint());
             if(child)
             {
                 auto child_position = child->mapFromParent(position);
@@ -162,10 +111,10 @@ bool QWidgetItemDelegate<Widget, Item>::editorEvent(QEvent *event, QAbstractItem
                 result = QApplication::sendEvent(child, &child_event);
             }
 #else
-            auto pos = widget->mapFromParent(mouse_event->pos());
+            auto pos = event_handler.mapFromParent(mouse_event->pos());
             mouse_event->setLocalPos(pos);
 
-            QWidget *child = widget->childAt(pos);
+            QWidget *child = event_handler.childAt(pos);
             if(child)
             {
                 auto child_pos = child->mapFromParent(pos);
@@ -181,10 +130,12 @@ bool QWidgetItemDelegate<Widget, Item>::editorEvent(QEvent *event, QAbstractItem
         }
 
         if(!event->isAccepted())
-            result = QApplication::sendEvent(widget, event);
+            result = QApplication::sendEvent(&event_handler, event);
 
         if(event->isAccepted())
-            handleWidgetDelegateEventResult(event, model, option, index, *widget, result);
+            handleWidgetDelegateEventResult(event, model, option, index, event_handler, result);
+
+        event_handler.setParent(nullptr);
     }
 
     return QStyledItemDelegate::editorEvent(event, model, option, index);
