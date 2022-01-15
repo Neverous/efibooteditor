@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #pragma once
 
-#include "../compat.h"
 #include "efivar.h"
 #include <errno.h>
 #include <limits.h>
@@ -124,7 +123,8 @@ enum EFIDP_END
 };
 
 /* utility functions */
-typedef union {
+typedef union
+{
     efidp_header header;
     efidp_type_subtype _type_subtype;
     efidp_pci pci;

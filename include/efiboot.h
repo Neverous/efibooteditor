@@ -14,21 +14,25 @@
 
 #include "compat.h"
 
-// clang-format off
-template <class... Ts> struct overloaded : Ts... { using Ts::operator()...; };
-template <class... Ts> overloaded(Ts...) -> overloaded<Ts...>;
-// clang-format on
+template <class... Ts>
+struct overloaded: Ts...
+{
+    using Ts::operator()...;
+    overloaded(const overloaded &) = delete;
+    overloaded &operator=(const overloaded &) = delete;
+};
+
+template <class... Ts>
+overloaded(Ts...) -> overloaded<Ts...>;
 
 namespace EFIBoot
 {
 
-// clang-format off
 extern "C"
 {
-#include "efivar-lite/efivar.h"
 #include "efivar-lite/efiboot-loadopt.h"
+#include "efivar-lite/efivar.h"
 }
-// clang-format on
 
 inline bool operator==(const efi_guid_t &first, const efi_guid_t &second)
 {
@@ -46,6 +50,12 @@ namespace Device_path
 template <class Type>
 inline bool register_deserializer();
 #define REGISTER_DESERIALIZER(type) static const bool is_##type##_deserializer_registered = register_deserializer<type>()
+
+#if defined(_MSC_VER)
+#pragma warning(push)
+// C4820: 'bytes' bytes padding added after construct 'member_name'
+#pragma warning(disable : 4820)
+#endif
 
 enum TYPE
 {
@@ -171,7 +181,8 @@ inline bool register_deserializer()
     if(deserializers().find(dp._type_subtype) != deserializers().end())
         return true;
 
-    deserializers()[dp._type_subtype] = [](const void *data, size_t data_size) -> std::optional<ANY> { return deserialize<Type>(data, data_size); };
+    deserializers()[dp._type_subtype] = [](const void *data, size_t data_size) -> std::optional<ANY>
+    { return deserialize<Type>(data, data_size); };
     return true;
 }
 
@@ -185,6 +196,10 @@ struct Load_option
     Raw_data optional_data = {};
     uint32_t attributes = 0;
 };
+
+#if defined(_MSC_VER)
+#pragma warning(pop)
+#endif
 
 enum Load_option_attribute : uint32_t
 {
@@ -361,10 +376,12 @@ inline std::optional<std::vector<Type>> deserialize_list(const void *data, size_
 {
     return deserialize_list<Type>(
         data, data_size,
-        [](const void *) -> size_t {
+        [](const void *) -> size_t
+        {
             return sizeof(Type);
         },
-        [](const void *ptr, size_t) -> const void * {
+        [](const void *ptr, size_t) -> const void *
+        {
             return static_cast<const void *>(static_cast<const Type *>(ptr) + 1);
         });
 }
@@ -394,11 +411,13 @@ inline std::optional<Load_option> deserialize(const void *data, size_t data_size
 
     auto file_path = deserialize_list<Device_path::ANY>(
         device_path, device_path_size,
-        [](const void *ptr) -> size_t {
+        [](const void *ptr) -> size_t
+        {
             auto size = efidp_node_size(static_cast<const_efidp>(ptr));
             return reinterpret_cast<size_t &>(size);
         },
-        [](const void *ptr, const size_t bytes_left) -> const void * {
+        [](const void *ptr, const size_t bytes_left) -> const void *
+        {
             const_efidp dp = static_cast<const_efidp>(ptr);
             ssize_t size = efidp_node_size(dp);
             if(reinterpret_cast<size_t &>(size) > bytes_left)
@@ -748,13 +767,16 @@ inline std::optional<Device_path::ANY> deserialize(const void *data, size_t data
     if(dp->header.type == Device_path::End::TYPE && dp->header.subtype == Device_path::End::SUBTYPE)
         return Device_path::ANY{};
 
-    return get_default(Device_path::deserializers(), dp->_type_subtype, [](const void *, size_t) { return std::nullopt; })(dp, data_size);
+    return get_default(Device_path::deserializers(), dp->_type_subtype, [](const void *, size_t)
+        { return std::nullopt; })(dp, data_size);
 }
 
 template <>
 inline size_t serialize(Raw_data &output, const Device_path::ANY &device_path)
 {
-    return std::visit([&output](const auto &dp) -> size_t { return serialize(output, dp); }, device_path);
+    return std::visit([&output](const auto &dp) -> size_t
+        { return serialize(output, dp); },
+        device_path);
 }
 
 inline std::unordered_map<std::tstring, efi_guid_t> get_variables(Filter_fn filter_fn)
@@ -775,7 +797,8 @@ inline std::unordered_map<std::tstring, efi_guid_t> get_variables(Filter_fn filt
 
 inline std::unordered_map<std::tstring, efi_guid_t> get_variables()
 {
-    return get_variables([](const efi_guid_t &, const std::tstring_view) { return true; });
+    return get_variables([](const efi_guid_t &, const std::tstring_view)
+        { return true; });
 }
 
 template <class Type>
@@ -846,6 +869,8 @@ inline std::tstring get_error_trace()
         int line = 0;
         TCHAR *message = nullptr;
         int error = 0;
+        const int ERROR_STR_BUFFER_SIZE = 1024;
+        TCHAR error_str[ERROR_STR_BUFFER_SIZE] = {};
 
         rc = efi_error_get(i, &filename, &function, &line, &message, &error);
         if(rc < 0)
@@ -854,13 +879,17 @@ inline std::tstring get_error_trace()
         if(rc == 0)
             break;
 
+        rc = _tcserror_s(error_str, ERROR_STR_BUFFER_SIZE - 1, error);
+        if(rc != 0)
+            output += _T("error translating error code to string\n");
+
         output += filename;
         output += _T(":");
         output += std::to_tstring(line);
         output += _T(" ");
         output += function;
         output += _T("(): ");
-        output += _tcserror(error);
+        output += error_str;
         output += _T(": ");
         output += message;
         output += _T("\n");

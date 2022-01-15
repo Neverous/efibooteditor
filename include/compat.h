@@ -28,13 +28,17 @@ typedef SSIZE_T ssize_t;
 
 #ifdef _WIN32
 #include <Windows.h>
+#include <stdio.h>
 #include <tchar.h>
 #undef interface
 #else
 #include <sys/types.h>
 typedef char TCHAR;
 #define _T
-#define _tcserror strerror
+inline int _tcserror_s(TCHAR *buffer, size_t size, int errnum)
+{
+    return strerror_r(errnum, buffer, size) == NULL;
+}
 #endif
 
 #ifdef __cplusplus
@@ -107,9 +111,11 @@ const int HEX_BASE = 16;
 inline bool isxnumber(const std::tstring_view &string)
 {
 #if defined(UNICODE) || defined(_UNICODE)
-    return std::all_of(std::begin(string), std::end(string), [](char16_t chr) { return iswxdigit(chr); });
+    return std::all_of(std::begin(string), std::end(string), [](char16_t chr)
+        { return iswxdigit(chr); });
 #else
-    return std::all_of(std::begin(string), std::end(string), [](unsigned char chr) { return std::isxdigit(chr); });
+    return std::all_of(std::begin(string), std::end(string), [](unsigned char chr)
+        { return std::isxdigit(chr); });
 #endif
 }
 

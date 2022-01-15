@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
-#include "include/efibooteditor.h"
+#include "efibooteditor.h"
 
-#include "include/bootentry.h"
-#include "include/efiboot.h"
-#include "ui_efibooteditor.h"
+#include "bootentry.h"
+#include "efiboot.h"
+#include "form/ui_efibooteditor.h"
 #include <QButtonGroup>
 #include <QFileDialog>
 #include <QJsonArray>
@@ -51,9 +51,8 @@ void EFIBootEditor::resetBootConfiguration()
     std::unordered_set<unsigned long> ordered_entry;
     QStringList invalid_keys;
 
-    auto name_to_guid = EFIBoot::get_variables([](const EFIBoot::efi_guid_t &guid, const std::tstring_view name) {
-        return guid == EFIBoot::efi_guid_global && (name.substr(0, 4) == _T("Boot") || name == _T("Timeout"));
-    });
+    auto name_to_guid = EFIBoot::get_variables([](const EFIBoot::efi_guid_t &guid, const std::tstring_view name)
+        { return guid == EFIBoot::efi_guid_global && (name.substr(0, 4) == _T("Boot") || name == _T("Timeout")); });
 
     if(name_to_guid.count(_T("Timeout")))
     {
@@ -168,9 +167,8 @@ void EFIBootEditor::saveBootConfiguration()
     quint16 index = 0;
     std::vector<uint16_t> boot_order;
 
-    auto old_entries = EFIBoot::get_variables([](const EFIBoot::efi_guid_t &guid, const std::tstring_view name) {
-        return guid == EFIBoot::efi_guid_global && name.length() == 8 && name.substr(0, 4) == _T("Boot") && isxnumber(name.substr(4));
-    });
+    auto old_entries = EFIBoot::get_variables([](const EFIBoot::efi_guid_t &guid, const std::tstring_view name)
+        { return guid == EFIBoot::efi_guid_global && name.length() == 8 && name.substr(0, 4) == _T("Boot") && isxnumber(name.substr(4)); });
 
     for(const auto &entry: entries_list_model.getEntries())
     {
@@ -475,9 +473,8 @@ void EFIBootEditor::dumpRawEFIData(const QString &file_name)
 {
     QJsonObject output;
     output["_Type"] = "raw";
-    const auto name_to_guid = EFIBoot::get_variables([](const EFIBoot::efi_guid_t &guid, const std::tstring_view name) {
-        return guid == EFIBoot::efi_guid_global && (name.substr(0, 4) == _T("Boot") || name == _T("Timeout"));
-    });
+    const auto name_to_guid = EFIBoot::get_variables([](const EFIBoot::efi_guid_t &guid, const std::tstring_view name)
+        { return guid == EFIBoot::efi_guid_global && (name.substr(0, 4) == _T("Boot") || name == _T("Timeout")); });
 
     if(name_to_guid.count(_T("Timeout")))
     {

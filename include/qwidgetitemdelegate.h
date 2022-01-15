@@ -24,11 +24,13 @@ private:
 
 public:
     explicit QWidgetItemDelegate(QObject *parent = nullptr);
+    QWidgetItemDelegate(const QWidgetItemDelegate &) = delete;
+    QWidgetItemDelegate &operator=(const QWidgetItemDelegate &) = delete;
 
     void paint(QPainter *_painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
-    virtual void setupWidgetFromItem(Widget &, const Item &) const {}
+    virtual void setupWidgetFromItem(Widget &, const Item &) const { }
     virtual bool handleWidgetDelegateEventResult(const QEvent *, QAbstractItemModel *, const QStyleOptionViewItem &, const QModelIndex &, const Widget &, bool result) const { return result; }
 
 protected:
@@ -92,12 +94,8 @@ bool QWidgetItemDelegate<Widget, Item>::editorEvent(QEvent *event, QAbstractItem
         event_handler.setGeometry(option.rect);
         event_handler.grab(); // force layout
 
-        switch(event->type())
-        {
-        case QEvent::MouseButtonPress:
-        case QEvent::MouseButtonRelease:
-        case QEvent::MouseButtonDblClick:
-        case QEvent::MouseMove:
+        const auto passthrough_events = {QEvent::MouseButtonPress, QEvent::MouseButtonRelease, QEvent::MouseButtonDblClick, QEvent::MouseMove};
+        if(std::find(std::begin(passthrough_events), std::end(passthrough_events), event->type()) != std::end(passthrough_events))
         {
             QMouseEvent *mouse_event = static_cast<QMouseEvent *>(event);
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
@@ -122,11 +120,6 @@ bool QWidgetItemDelegate<Widget, Item>::editorEvent(QEvent *event, QAbstractItem
                 result = QApplication::sendEvent(child, event);
             }
 #endif
-            break;
-        }
-
-        default:
-            break;
         }
 
         if(!event->isAccepted())

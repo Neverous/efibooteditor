@@ -19,6 +19,8 @@ private:
 
 public:
     explicit DevicePathDialog(QWidget *parent = nullptr);
+    DevicePathDialog(const DevicePathDialog &) = delete;
+    DevicePathDialog &operator=(const DevicePathDialog &) = delete;
     ~DevicePathDialog();
 
     Device_path::ANY toDevicePath() const;

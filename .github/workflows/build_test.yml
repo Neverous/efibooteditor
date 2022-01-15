@@ -32,6 +32,12 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v2
 
+      - name: Update Windows SDK
+        uses: fbactions/setup-winsdk@v1
+        with:
+          winsdk-build-version: 19041
+        if: startsWith(matrix.os, 'windows')
+
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v1
         with:
@@ -57,11 +63,11 @@ jobs:
         if: startsWith(matrix.os, 'ubuntu')
 
       - name: 'Configure: create build directory'
-        run: mkdir -p build
+        run: mkdir -p build/debug
 
       - name: '[linux] Configure: build with clang'
         run: |
-          qmake -spec linux-clang ..
+          CC=clang CXX=clang++ cmake -DCMAKE_BUILD_TYPE=Debug ..
         shell: bash
         env:
           BUILD_VERSION: 0.0.0-${{ github.sha }}
@@ -70,8 +76,7 @@ jobs:
 
       - name: '[unix] Build'
         run: |
-          make debug
-          make clean
+          cmake --build . --config Debug
           mv efibooteditor debug/
         shell: bash
         working-directory: build
@@ -80,7 +85,7 @@ jobs:
       - name: '[windows] Configure: build with MSVC'
         run: |
           call "%programfiles(x86)%\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat" || exit /b
-          qmake .. || exit /b
+          cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_SYSTEM_VERSION=10.0.19041.0 .. || exit /b
         shell: cmd
         env:
           BUILD_VERSION: 0.0.0-${{ github.sha }}
@@ -90,8 +95,7 @@ jobs:
       - name: '[windows] Build'
         run: |
           call "%programfiles(x86)%\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat" || exit /b
-          nmake debug || exit /b
-          nmake clean || exit /b
+          cmake --build . --config Debug || exit /b
         shell: cmd
         working-directory: build
         if: startsWith(matrix.os, 'windows')

@@ -10,10 +10,12 @@ class BootEntryListView: public QListView
     Q_OBJECT
 
 private:
-    BootEntryDelegate delegate = {};
+    BootEntryDelegate delegate;
 
 public:
     explicit BootEntryListView(QWidget *parent = nullptr);
+    BootEntryListView(const BootEntryListView &) = delete;
+    BootEntryListView &operator=(const BootEntryListView &) = delete;
 
 protected:
     void selectionChanged(const QItemSelection &selection, const QItemSelection &) override;

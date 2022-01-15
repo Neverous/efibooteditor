@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
-#include "include/bootentrylistview.h"
+#include "bootentrylistview.h"
 
 BootEntryListView::BootEntryListView(QWidget *parent)
     : QListView{parent}
+    , delegate{}
 {
     setItemDelegate(&delegate);
 }

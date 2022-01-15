@@ -504,7 +504,7 @@
   <customwidget>
    <class>DevicePathListView</class>
    <extends>QListView</extends>
-   <header>../../src/include/devicepathlistview.h</header>
+   <header>devicepathlistview.h</header>
    <slots>
     <slot>removeCurrentRow()</slot>
     <slot>insertRow()</slot>
