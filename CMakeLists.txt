@@ -84,7 +84,7 @@ if(WIN32)
     set(CMAKE_INCLUDE_SYSTEM_FLAG_C /external:I)
 
     target_compile_options(${PROJECT_NAME} PRIVATE
-        /std:c++latest /Wall /permissive- /WX
+        $<$<COMPILE_LANGUAGE:CXX>:/std:c++latest> /Wall /permissive- /WX
         # Ignore warnings in external includes
         /experimental:external /external:anglebrackets /external:W0
         # Disable some warnings

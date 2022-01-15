@@ -32,6 +32,12 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v2
 
+      - name: Update Windows SDK
+        uses: fbactions/setup-winsdk@v1
+        with:
+          winsdk-build-version: 19041
+        if: startsWith(matrix.os, 'windows')
+
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v1
         with:
@@ -79,7 +85,7 @@ jobs:
       - name: '[windows] Configure: build with MSVC'
         run: |
           call "%programfiles(x86)%\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat" || exit /b
-          cmake -DCMAKE_BUILD_TYPE=Debug .. || exit /b
+          cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_SYSTEM_VERSION=10.0.19041.0 .. || exit /b
         shell: cmd
         env:
           BUILD_VERSION: 0.0.0-${{ github.sha }}
