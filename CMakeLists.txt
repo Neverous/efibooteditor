@@ -199,15 +199,10 @@ install(PROGRAMS ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS}
     DESTINATION lib
 )
 
-if(TARGET Qt5::windeployqt)
+if(WIN32)
     add_custom_command(TARGET ${PROJECT_NAME}
         POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E remove_directory "${CMAKE_CURRENT_BINARY_DIR}/windeployqt"
         COMMAND set PATH=%PATH%$<SEMICOLON>${QT_INSTALL_PREFIX}/bin
-        COMMAND Qt5::windeployqt --dir "${CMAKE_CURRENT_BINARY_DIR}/dist" "$<TARGET_FILE_DIR:${PROJECT_NAME}>/$<TARGET_FILE_NAME:${PROJECT_NAME}>"
-    )
-
-    install(DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/dist/"
-        DESTINATION dist
+        COMMAND windeployqt --dir $<TARGET_FILE_DIR:${PROJECT_NAME}> "$<TARGET_FILE_DIR:${PROJECT_NAME}>/$<TARGET_FILE_NAME:${PROJECT_NAME}>"
     )
 endif()

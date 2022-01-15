@@ -89,7 +89,6 @@ jobs:
         run: |
           call "%programfiles(x86)%\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat" || exit /b
           cmake --build . --config Release || exit /b
-          ls -la *
         shell: cmd
         working-directory: build
         if: startsWith(matrix.os, 'windows')
