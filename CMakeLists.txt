@@ -87,6 +87,9 @@ if(WIN32)
         /std:c++latest /Wall /permissive- /WX
         # Ignore warnings in external includes
         /experimental:external /external:anglebrackets /external:W0
+        # Disable some warnings
+        # C4710: 'function' : function not inlined
+        /wd4710
     )
 endif()
 

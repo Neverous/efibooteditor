@@ -16,6 +16,12 @@ template <class Type>
 inline bool register_json_reader();
 #define REGISTER_JSON_READER(type) static const bool is_##type##_json_reader_registered = register_json_reader<type>()
 
+#if defined(_MSC_VER)
+#pragma warning(push)
+// C4820: 'bytes' bytes padding added after construct 'member_name'
+#pragma warning(disable : 4820)
+#endif
+
 class PCI
 {
 public:
@@ -268,5 +274,9 @@ public:
 private:
     QByteArray get_raw_optional_data() const;
 };
+
+#if defined(_MSC_VER)
+#pragma warning(pop)
+#endif
 
 Q_DECLARE_METATYPE(const BootEntry *)

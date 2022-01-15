@@ -14,21 +14,25 @@
 
 #include "compat.h"
 
-// clang-format off
-template <class... Ts> struct overloaded : Ts... { using Ts::operator()...; };
-template <class... Ts> overloaded(Ts...) -> overloaded<Ts...>;
-// clang-format on
+template <class... Ts>
+struct overloaded: Ts...
+{
+    using Ts::operator()...;
+    overloaded(const overloaded &) = delete;
+    overloaded &operator=(const overloaded &) = delete;
+};
+
+template <class... Ts>
+overloaded(Ts...) -> overloaded<Ts...>;
 
 namespace EFIBoot
 {
 
-// clang-format off
 extern "C"
 {
-#include "efivar-lite/efivar.h"
 #include "efivar-lite/efiboot-loadopt.h"
+#include "efivar-lite/efivar.h"
 }
-// clang-format on
 
 inline bool operator==(const efi_guid_t &first, const efi_guid_t &second)
 {
@@ -46,6 +50,12 @@ namespace Device_path
 template <class Type>
 inline bool register_deserializer();
 #define REGISTER_DESERIALIZER(type) static const bool is_##type##_deserializer_registered = register_deserializer<type>()
+
+#if defined(_MSC_VER)
+#pragma warning(push)
+// C4820: 'bytes' bytes padding added after construct 'member_name'
+#pragma warning(disable : 4820)
+#endif
 
 enum TYPE
 {
@@ -186,6 +196,10 @@ struct Load_option
     Raw_data optional_data = {};
     uint32_t attributes = 0;
 };
+
+#if defined(_MSC_VER)
+#pragma warning(pop)
+#endif
 
 enum Load_option_attribute : uint32_t
 {
@@ -855,6 +869,8 @@ inline std::tstring get_error_trace()
         int line = 0;
         TCHAR *message = nullptr;
         int error = 0;
+        const int ERROR_STR_BUFFER_SIZE = 1024;
+        TCHAR error_str[ERROR_STR_BUFFER_SIZE] = {};
 
         rc = efi_error_get(i, &filename, &function, &line, &message, &error);
         if(rc < 0)
@@ -863,13 +879,17 @@ inline std::tstring get_error_trace()
         if(rc == 0)
             break;
 
+        rc = _tcserror_s(error_str, ERROR_STR_BUFFER_SIZE - 1, error);
+        if(rc != 0)
+            output += _T("error translating error code to string\n");
+
         output += filename;
         output += _T(":");
         output += std::to_tstring(line);
         output += _T(" ");
         output += function;
         output += _T("(): ");
-        output += _tcserror(error);
+        output += error_str;
         output += _T(": ");
         output += message;
         output += _T("\n");

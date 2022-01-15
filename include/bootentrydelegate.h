@@ -7,6 +7,11 @@
 
 class BootEntryDelegate: public QWidgetItemDelegate<BootEntryWidget, const BootEntry *>
 {
+public:
+    inline BootEntryDelegate() { }
+    BootEntryDelegate(const BootEntryDelegate &) = delete;
+    BootEntryDelegate &operator=(const BootEntryDelegate &) = delete;
+
 protected:
     void setupWidgetFromItem(Widget &widget, const Item &item) const override;
     bool handleWidgetDelegateEventResult(const QEvent *event, QAbstractItemModel *model, const QStyleOptionViewItem &option, const QModelIndex &index, const Widget &widget, bool result) const override;

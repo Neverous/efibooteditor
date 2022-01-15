@@ -28,13 +28,17 @@ typedef SSIZE_T ssize_t;
 
 #ifdef _WIN32
 #include <Windows.h>
+#include <stdio.h>
 #include <tchar.h>
 #undef interface
 #else
 #include <sys/types.h>
 typedef char TCHAR;
 #define _T
-#define _tcserror strerror
+inline int _tcserror_s(TCHAR *buffer, size_t size, int errnum)
+{
+    return strerror_r(errnum, buffer, size) == NULL;
+}
 #endif
 
 #ifdef __cplusplus

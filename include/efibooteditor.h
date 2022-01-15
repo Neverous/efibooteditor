@@ -26,6 +26,8 @@ private:
 
 public:
     explicit EFIBootEditor(QWidget *parent = nullptr);
+    EFIBootEditor(const EFIBootEditor &) = delete;
+    EFIBootEditor &operator=(const EFIBootEditor &) = delete;
     ~EFIBootEditor() override;
 
 public slots:

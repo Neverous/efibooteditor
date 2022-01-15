@@ -3,6 +3,7 @@
 
 BootEntryListView::BootEntryListView(QWidget *parent)
     : QListView{parent}
+    , delegate{}
 {
     setItemDelegate(&delegate);
 }

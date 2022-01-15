@@ -21,6 +21,8 @@ private:
 
 public:
     explicit BootEntryWidget(QWidget *parent = nullptr);
+    BootEntryWidget(const BootEntryWidget &) = delete;
+    BootEntryWidget &operator=(const BootEntryWidget &) = delete;
     ~BootEntryWidget() override;
 
     void set_description(const QString &description);

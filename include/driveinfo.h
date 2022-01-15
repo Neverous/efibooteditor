@@ -5,6 +5,12 @@
 #include <QUuid>
 #include <QVector>
 
+#if defined(_MSC_VER)
+#pragma warning(push)
+// C4820: 'bytes' bytes padding added after construct 'member_name'
+#pragma warning(disable : 4820)
+#endif
+
 class DriveInfo
 {
     static QVector<DriveInfo> all;
@@ -30,5 +36,9 @@ public:
 
     bool operator<(const DriveInfo &info) { return name < info.name; }
 };
+
+#if defined(_MSC_VER)
+#pragma warning(pop)
+#endif
 
 Q_DECLARE_METATYPE(DriveInfo)

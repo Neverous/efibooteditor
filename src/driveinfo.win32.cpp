@@ -55,7 +55,7 @@ QVector<DriveInfo> DriveInfo::get_all(bool refresh)
         {
         case PARTITION_STYLE_GPT:
             driveinfo.signature_type = DriveInfo::SIGNATURE::GUID;
-            driveinfo.name += QString(" (%1)").arg(QStringFromTCharArray(partition_information.Gpt.Name));
+            driveinfo.name += QString(" (%1)").arg(QString::fromWCharArray(partition_information.Gpt.Name));
             driveinfo.signature = partition_information.Gpt.PartitionId;
             break;
 
@@ -64,14 +64,15 @@ QVector<DriveInfo> DriveInfo::get_all(bool refresh)
             driveinfo.signature = partition_information.Mbr.PartitionId;
             break;
 
+        case PARTITION_STYLE_RAW:
         default:
             driveinfo.signature_type = DriveInfo::SIGNATURE::NONE;
             break;
         }
 
         driveinfo.partition = partition_information.PartitionNumber;
-        driveinfo.start = partition_information.StartingOffset.QuadPart;
-        driveinfo.size = partition_information.PartitionLength.QuadPart;
+        driveinfo.start = static_cast<quint64>(partition_information.StartingOffset.QuadPart);
+        driveinfo.size = static_cast<quint64>(partition_information.PartitionLength.QuadPart);
         all.append(driveinfo);
     }
 

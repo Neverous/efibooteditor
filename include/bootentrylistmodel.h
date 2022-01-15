@@ -17,6 +17,8 @@ private:
 
 public:
     explicit BootEntryListModel(QObject *parent = nullptr);
+    BootEntryListModel(const BootEntryListModel &) = delete;
+    BootEntryListModel &operator=(const BootEntryListModel &) = delete;
 
     // Header:
     QVariant headerData(int, Qt::Orientation, int = Qt::DisplayRole) const override { return {}; }

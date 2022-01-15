@@ -13,6 +13,9 @@ public:
         setWordWrap(true);
     }
 
+    QLabelWrapped(const QLabelWrapped &) = delete;
+    QLabelWrapped &operator=(const QLabelWrapped &) = delete;
+
     QSize sizeHint() const override
     {
         auto w = width();
