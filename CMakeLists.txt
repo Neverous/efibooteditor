@@ -90,6 +90,8 @@ if(WIN32)
         # Disable some warnings
         # C4710: 'function' : function not inlined
         /wd4710
+        # C4711: function 'function' selected for inline expansion
+        /wd4711
         # C4866: compiler may not enforce left-to-right evaluation order for call to 'C++17 operator'
         /wd4866
         # C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
