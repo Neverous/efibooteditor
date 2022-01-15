@@ -40,9 +40,12 @@ endif()
 
 message(STATUS "Qt: ${QT_VERSION_MAJOR}")
 
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Gui REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR}
+    COMPONENTS
+        Core
+        Gui
+        Widgets
+    REQUIRED)
 
 add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE
     src/main.cpp
@@ -58,9 +61,9 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 
 if(${QT_VERSION_MAJOR} GREATER 5)
     find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core5Compat REQUIRED)
-        target_link_libraries(${PROJECT_NAME} PRIVATE
-            Qt::Core5Compat
-        )
+    target_link_libraries(${PROJECT_NAME} PRIVATE
+        Qt::Core5Compat
+    )
 endif()
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE
@@ -72,35 +75,18 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
 if(UNIX)
     target_compile_options(${PROJECT_NAME} PRIVATE
         -Wall -Wpedantic -Werror -pedantic -Wshadow $<$<COMPILE_LANGUAGE:CXX>:-Weffc++>
-        # error: keyword is hidden by macro definition
-        $<$<COMPILE_LANGUAGE:CXX>:-Wno-keyword-macro>
     )
 endif()
 
 if(WIN32)
+    # Fix ignoring warnings in system includes
+    set(CMAKE_INCLUDE_SYSTEM_FLAG_CXX /external:I)
+    set(CMAKE_INCLUDE_SYSTEM_FLAG_C /external:I)
+
     target_compile_options(${PROJECT_NAME} PRIVATE
         /std:c++latest /Wall /permissive- /WX
         # Ignore warnings in external includes
-        /experimental:external /external:W0
-        # C4355: 'this' : used in base member initializer list
-        /wd4355
-        # Disable some warnings from external libraries (QT, MSVC)
-        # C4371: 'classname': layout of class may have changed from a previous version of the compiler due to better packing of member 'member'
-        /wd4371
-        # C4619: #pragma warning : there is no warning number 'number'
-        /wd4619
-        # C4710: 'function' : function not inlined
-        /wd4710
-        # C4711: function 'function' selected for inline expansion
-        /wd4711
-        # C4866: compiler may not enforce left-to-right evaluation order for call to 'C++17 operator'
-        /wd4866
-        # C4946: reinterpret_cast used between related classes: 'class1' and 'class2'
-        /wd4946
-        # C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
-        /wd5045
-        # C5204: 'type-name': class has virtual functions, but its trivial destructor is not virtual; instances of objects derived from this class may not be destructed correctly
-        /wd5204
+        /experimental:external /external:anglebrackets /external:W0
     )
 endif()
 

@@ -44,7 +44,7 @@ jobs:
         if: startsWith(matrix.os, 'ubuntu')
 
       - name: 'Configure: create build directory'
-        run: mkdir -p build
+        run: mkdir -p build/release
 
       - name: Get release version
         id: vars
@@ -63,8 +63,7 @@ jobs:
 
       - name: '[unix] Build'
         run: |
-          make
-          make clean
+          cmake --build . --config Release
           mv efibooteditor release/
         shell: bash
         working-directory: build
@@ -83,9 +82,8 @@ jobs:
       - name: '[windows] Build'
         run: |
           call "%programfiles(x86)%\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat" || exit /b
-          nmake || exit /b
-          nmake clean || exit /b
-          nmake windeployqt || exit /b
+          cmake --build . --config Release || exit /b
+          cmake --build . --target windeployqt || exit /b
           rm release/efibooteditor.windeployqt
         shell: cmd
         working-directory: build

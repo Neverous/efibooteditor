@@ -57,7 +57,7 @@ jobs:
         if: startsWith(matrix.os, 'ubuntu')
 
       - name: 'Configure: create build directory'
-        run: mkdir -p build
+        run: mkdir -p build/debug
 
       - name: '[linux] Configure: build with clang'
         run: |
@@ -70,8 +70,7 @@ jobs:
 
       - name: '[unix] Build'
         run: |
-          make
-          make clean
+          cmake --build . --config Debug
           mv efibooteditor debug/
         shell: bash
         working-directory: build
@@ -90,8 +89,7 @@ jobs:
       - name: '[windows] Build'
         run: |
           call "%programfiles(x86)%\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat" || exit /b
-          nmake || exit /b
-          nmake clean || exit /b
+          cmake --build . --config Debug || exit /b
         shell: cmd
         working-directory: build
         if: startsWith(matrix.os, 'windows')
