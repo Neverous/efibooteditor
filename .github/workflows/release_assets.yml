@@ -54,7 +54,7 @@ jobs:
 
       - name: '[linux] Configure: build with clang'
         run: |
-          qmake -spec linux-clang ..
+          CC=clang CXX=clang++ cmake ..
         shell: bash
         env:
           BUILD_VERSION: ${{ steps.vars.outputs.version }}
@@ -63,7 +63,7 @@ jobs:
 
       - name: '[unix] Build'
         run: |
-          make release
+          make
           make clean
           mv efibooteditor release/
         shell: bash
@@ -73,7 +73,7 @@ jobs:
       - name: '[windows] Configure: build with MSVC'
         run: |
           call "%programfiles(x86)%\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat" || exit /b
-          qmake .. || exit /b
+          cmake .. || exit /b
         shell: cmd
         env:
           BUILD_VERSION: ${{ steps.vars.outputs.version }}
@@ -83,9 +83,9 @@ jobs:
       - name: '[windows] Build'
         run: |
           call "%programfiles(x86)%\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat" || exit /b
-          nmake release || exit /b
+          nmake || exit /b
           nmake clean || exit /b
-          nmake release-windeployqt || exit /b
+          nmake windeployqt || exit /b
           rm release/efibooteditor.windeployqt
         shell: cmd
         working-directory: build

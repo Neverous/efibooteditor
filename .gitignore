@@ -32,8 +32,6 @@ qrc_*.cpp
 Thumbs.db
 *.res
 *.rc
-/.qmake.cache
-/.qmake.stash
 
 # qtcreator generated files
 *.pro.user*
@@ -52,7 +50,7 @@ Thumbs.db
 *.sln
 *.suo
 *.vcproj
-*vcproj.*.*.user
+*.user
 *.ncb
 *.sdf
 *.opensdf

@@ -124,7 +124,8 @@ enum EFIDP_END
 };
 
 /* utility functions */
-typedef union {
+typedef union
+{
     efidp_header header;
     efidp_type_subtype _type_subtype;
     efidp_pci pci;

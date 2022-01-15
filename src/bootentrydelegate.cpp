@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
-#include "include/bootentrydelegate.h"
-#include "include/bootentry.h"
-#include "include/bootentrylistmodel.h"
+#include "bootentrydelegate.h"
+#include "bootentry.h"
+#include "bootentrylistmodel.h"
 
 void BootEntryDelegate::setupWidgetFromItem(Widget &widget, const Item &item) const
 {

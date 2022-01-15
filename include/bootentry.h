@@ -220,7 +220,8 @@ inline bool register_json_reader()
     if(JSON_readers().find(key) != JSON_readers().end())
         return true;
 
-    JSON_readers()[key] = [](const auto &obj) -> std::optional<ANY> { return Type::fromJSON(obj); };
+    JSON_readers()[key] = [](const auto &obj) -> std::optional<ANY>
+    { return Type::fromJSON(obj); };
     return true;
 }
 

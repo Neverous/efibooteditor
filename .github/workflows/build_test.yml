@@ -61,7 +61,7 @@ jobs:
 
       - name: '[linux] Configure: build with clang'
         run: |
-          qmake -spec linux-clang ..
+          CC=clang CXX=clang++ cmake -DCMAKE_BUILD_TYPE=Debug ..
         shell: bash
         env:
           BUILD_VERSION: 0.0.0-${{ github.sha }}
@@ -70,7 +70,7 @@ jobs:
 
       - name: '[unix] Build'
         run: |
-          make debug
+          make
           make clean
           mv efibooteditor debug/
         shell: bash
@@ -80,7 +80,7 @@ jobs:
       - name: '[windows] Configure: build with MSVC'
         run: |
           call "%programfiles(x86)%\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat" || exit /b
-          qmake .. || exit /b
+          cmake -DCMAKE_BUILD_TYPE=Debug .. || exit /b
         shell: cmd
         env:
           BUILD_VERSION: 0.0.0-${{ github.sha }}
@@ -90,7 +90,7 @@ jobs:
       - name: '[windows] Build'
         run: |
           call "%programfiles(x86)%\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat" || exit /b
-          nmake debug || exit /b
+          nmake || exit /b
           nmake clean || exit /b
         shell: cmd
         working-directory: build

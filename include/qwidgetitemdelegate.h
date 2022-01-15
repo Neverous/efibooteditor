@@ -28,7 +28,7 @@ public:
     void paint(QPainter *_painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
-    virtual void setupWidgetFromItem(Widget &, const Item &) const {}
+    virtual void setupWidgetFromItem(Widget &, const Item &) const { }
     virtual bool handleWidgetDelegateEventResult(const QEvent *, QAbstractItemModel *, const QStyleOptionViewItem &, const QModelIndex &, const Widget &, bool result) const { return result; }
 
 protected:

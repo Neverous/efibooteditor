@@ -3,7 +3,7 @@
 #include <QCommandLineParser>
 #include <QMessageBox>
 
-#include "include/efibooteditor.h"
+#include "efibooteditor.h"
 
 auto main(int argc, char *argv[]) -> int
 {

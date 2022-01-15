@@ -501,7 +501,7 @@
   <customwidget>
    <class>BootEntryListView</class>
    <extends>QListView</extends>
-   <header>../../src/include/bootentrylistview.h</header>
+   <header>bootentrylistview.h</header>
    <slots>
     <signal>selected(QModelIndex)</signal>
     <slot>removeCurrentRow()</slot>
@@ -513,7 +513,7 @@
   <customwidget>
    <class>BootEntryForm</class>
    <extends>QWidget</extends>
-   <header>../../src/include/bootentryform.h</header>
+   <header>bootentryform.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

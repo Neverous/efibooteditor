@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
-#include "include/bootentrywidget.h"
-#include "include/bootentry.h"
-#include "ui_bootentrywidget.h"
+#include "bootentrywidget.h"
+#include "bootentry.h"
+#include "form/ui_bootentrywidget.h"
 #include <QMouseEvent>
 
 BootEntryWidget::BootEntryWidget(QWidget *parent)

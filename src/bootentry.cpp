@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
-#include "include/bootentry.h"
+#include "bootentry.h"
 
-#include "include/efiboot.h"
+#include "efiboot.h"
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QTextCodec>
@@ -50,7 +50,9 @@ auto BootEntry::fromEFIBootLoadOption(
     value.attributes = load_option.attributes;
 
     for(const auto &device_path: load_option.file_path)
-        value.file_path.push_back(std::visit([](const auto &path) -> Device_path::ANY { return path; }, device_path));
+        value.file_path.push_back(std::visit([](const auto &path) -> Device_path::ANY
+            { return path; },
+            device_path));
 
     return value;
 }
@@ -67,7 +69,9 @@ auto BootEntry::toEFIBootLoadOption() const -> EFIBoot::Load_option
 
     load_option.attributes = attributes;
     for(const auto &device_path: file_path)
-        load_option.file_path.push_back(std::visit([](const auto &obj) -> EFIBoot::Device_path::ANY { return obj.toEFIBootDevicePath(); }, device_path));
+        load_option.file_path.push_back(std::visit([](const auto &obj) -> EFIBoot::Device_path::ANY
+            { return obj.toEFIBootDevicePath(); },
+            device_path));
 
     return load_option;
 }
@@ -84,7 +88,8 @@ auto BootEntry::fromJSON(const QJsonObject &obj) -> std::optional<BootEntry>
     for(const auto &device_path: obj["file_path"].toArray())
     {
         auto dp = device_path.toObject();
-        auto path = get_default(Device_path::JSON_readers(), QString("%1/%2").arg(dp["type"].toString(), dp["subtype"].toString()), [](const auto &) { return std::nullopt; })(dp);
+        auto path = get_default(Device_path::JSON_readers(), QString("%1/%2").arg(dp["type"].toString(), dp["subtype"].toString()), [](const auto &)
+            { return std::nullopt; })(dp);
         if(!path)
             return std::nullopt;
 
@@ -104,7 +109,9 @@ auto BootEntry::toJSON() const -> QJsonObject
     load_option["efi_attributes"] = static_cast<int>(efi_attributes);
     QJsonArray file_path_json;
     for(const auto &device_path: file_path)
-        file_path_json.push_back(std::visit([](const auto &obj) -> QJsonObject { return obj.toJSON(); }, device_path));
+        file_path_json.push_back(std::visit([](const auto &obj) -> QJsonObject
+            { return obj.toJSON(); },
+            device_path));
 
     load_option["file_path"] = file_path_json;
     return load_option;
@@ -124,7 +131,9 @@ auto BootEntry::format_file_path(bool refresh) const -> QString
         if(!file_path_str.isEmpty())
             file_path_str += "/";
 
-        file_path_str += std::visit([refresh](const auto &obj) { return obj.toString(refresh); }, device_path);
+        file_path_str += std::visit([refresh](const auto &obj)
+            { return obj.toString(refresh); },
+            device_path);
     }
 
     return file_path_str;

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
-#include "include/devicepathdialog.h"
-#include "include/driveinfo.h"
-#include "ui_devicepathdialog.h"
+#include "devicepathdialog.h"
+#include "driveinfo.h"
+#include "form/ui_devicepathdialog.h"
 
 DevicePathDialog::DevicePathDialog(QWidget *parent)
     : QDialog(parent)
@@ -99,6 +99,7 @@ void DevicePathDialog::setDevicePath(const Device_path::ANY *_device_path)
 
     std::visit(
         overloaded{
+            // clang-format off
             [&](const Device_path::PCI &pci) { setPCIForm(pci); },
             [&](const Device_path::HID &hid) { setHIDForm(hid); },
             [&](const Device_path::SATA &sata) { setSATAForm(sata); },
@@ -106,6 +107,7 @@ void DevicePathDialog::setDevicePath(const Device_path::ANY *_device_path)
             [&](const Device_path::File &file) { setFileForm(file); },
             [&](const Device_path::FirmwareFile &firmware_file) { setFirmwareFileForm(firmware_file); },
             [&](const Device_path::FirmwareVolume &firmware_volume) { setFirmwareVolumeForm(firmware_volume); },
+            // clang-format on
         },
         *_device_path);
 

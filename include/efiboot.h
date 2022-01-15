@@ -171,7 +171,8 @@ inline bool register_deserializer()
     if(deserializers().find(dp._type_subtype) != deserializers().end())
         return true;
 
-    deserializers()[dp._type_subtype] = [](const void *data, size_t data_size) -> std::optional<ANY> { return deserialize<Type>(data, data_size); };
+    deserializers()[dp._type_subtype] = [](const void *data, size_t data_size) -> std::optional<ANY>
+    { return deserialize<Type>(data, data_size); };
     return true;
 }
 
@@ -361,10 +362,12 @@ inline std::optional<std::vector<Type>> deserialize_list(const void *data, size_
 {
     return deserialize_list<Type>(
         data, data_size,
-        [](const void *) -> size_t {
+        [](const void *) -> size_t
+        {
             return sizeof(Type);
         },
-        [](const void *ptr, size_t) -> const void * {
+        [](const void *ptr, size_t) -> const void *
+        {
             return static_cast<const void *>(static_cast<const Type *>(ptr) + 1);
         });
 }
@@ -394,11 +397,13 @@ inline std::optional<Load_option> deserialize(const void *data, size_t data_size
 
     auto file_path = deserialize_list<Device_path::ANY>(
         device_path, device_path_size,
-        [](const void *ptr) -> size_t {
+        [](const void *ptr) -> size_t
+        {
             auto size = efidp_node_size(static_cast<const_efidp>(ptr));
             return reinterpret_cast<size_t &>(size);
         },
-        [](const void *ptr, const size_t bytes_left) -> const void * {
+        [](const void *ptr, const size_t bytes_left) -> const void *
+        {
             const_efidp dp = static_cast<const_efidp>(ptr);
             ssize_t size = efidp_node_size(dp);
             if(reinterpret_cast<size_t &>(size) > bytes_left)
@@ -748,13 +753,16 @@ inline std::optional<Device_path::ANY> deserialize(const void *data, size_t data
     if(dp->header.type == Device_path::End::TYPE && dp->header.subtype == Device_path::End::SUBTYPE)
         return Device_path::ANY{};
 
-    return get_default(Device_path::deserializers(), dp->_type_subtype, [](const void *, size_t) { return std::nullopt; })(dp, data_size);
+    return get_default(Device_path::deserializers(), dp->_type_subtype, [](const void *, size_t)
+        { return std::nullopt; })(dp, data_size);
 }
 
 template <>
 inline size_t serialize(Raw_data &output, const Device_path::ANY &device_path)
 {
-    return std::visit([&output](const auto &dp) -> size_t { return serialize(output, dp); }, device_path);
+    return std::visit([&output](const auto &dp) -> size_t
+        { return serialize(output, dp); },
+        device_path);
 }
 
 inline std::unordered_map<std::tstring, efi_guid_t> get_variables(Filter_fn filter_fn)
@@ -775,7 +783,8 @@ inline std::unordered_map<std::tstring, efi_guid_t> get_variables(Filter_fn filt
 
 inline std::unordered_map<std::tstring, efi_guid_t> get_variables()
 {
-    return get_variables([](const efi_guid_t &, const std::tstring_view) { return true; });
+    return get_variables([](const efi_guid_t &, const std::tstring_view)
+        { return true; });
 }
 
 template <class Type>

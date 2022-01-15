@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
-#include "include/bootentrylistmodel.h"
+#include "bootentrylistmodel.h"
 
 BootEntryListModel::BootEntryListModel(QObject *parent)
     : QAbstractListModel{parent}
@@ -50,16 +50,16 @@ void BootEntryListModel::setNextBootEntry(const QModelIndex &index, bool value)
             return;
 
         if(next_boot.isValid() && checkIndex(next_boot))
-            changeData(next_boot, [](BootEntry &entry) {
+            changeData(next_boot, [](BootEntry &entry)
+                {
                 entry.is_next_boot = false;
-                return true;
-            });
+                return true; });
 
         next_boot = index;
-        changeData(next_boot, [](BootEntry &entry) {
+        changeData(next_boot, [](BootEntry &entry)
+            {
             entry.is_next_boot = true;
-            return true;
-        });
+            return true; });
 
         return;
     }
@@ -67,10 +67,10 @@ void BootEntryListModel::setNextBootEntry(const QModelIndex &index, bool value)
     if(next_boot != index)
         return;
 
-    changeData(next_boot, [](BootEntry &entry) {
+    changeData(next_boot, [](BootEntry &entry)
+        {
         entry.is_next_boot = false;
-        return true;
-    });
+        return true; });
 
     next_boot = QModelIndex{};
 }

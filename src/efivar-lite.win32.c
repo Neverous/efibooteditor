@@ -2,9 +2,9 @@
 /*
  * efivar interface <> WinAPI translation.
  */
-#include "include/compat.h"
-#include "include/efivar-lite/efiboot-loadopt.h"
-#include "include/efivar-lite/efivar.h"
+#include "compat.h"
+#include "efivar-lite/efiboot-loadopt.h"
+#include "efivar-lite/efivar.h"
 #include <Windows.h>
 
 #pragma comment(lib, "advapi32.lib")

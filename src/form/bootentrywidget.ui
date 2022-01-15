@@ -197,7 +197,7 @@
   <customwidget>
    <class>QLabelWrapped</class>
    <extends>QLabel</extends>
-   <header>../../src/include/qlabelwrapped.h</header>
+   <header>qlabelwrapped.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

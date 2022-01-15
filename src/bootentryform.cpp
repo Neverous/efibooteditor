@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
-#include "include/bootentryform.h"
-#include "ui_bootentryform.h"
+#include "bootentryform.h"
+#include "form/ui_bootentryform.h"
 
 #include <QMessageBox>
 
@@ -46,10 +46,10 @@ void BootEntryForm::descriptionEdited(const QString &text)
     if(!isEnabled())
         return;
 
-    entries_list_model->changeData(current_index, [&text](BootEntry &entry) {
+    entries_list_model->changeData(current_index, [&text](BootEntry &entry)
+        {
         entry.description = text;
-        return true;
-    });
+        return true; });
 }
 
 void BootEntryForm::optionalDataFormatChanged(int format)
@@ -57,13 +57,13 @@ void BootEntryForm::optionalDataFormatChanged(int format)
     if(!isEnabled())
         return;
 
-    bool success = entries_list_model->changeData(current_index, [&](BootEntry &entry) {
+    bool success = entries_list_model->changeData(current_index, [&](BootEntry &entry)
+        {
         bool result = entry.change_optional_data_format(static_cast<BootEntry::OptionalDataFormat>(format));
         if(result)
             ui->optional_data_text->setPlainText(entry.optional_data);
 
-        return result;
-    });
+        return result; });
 
     if(!success)
     {
@@ -77,10 +77,10 @@ void BootEntryForm::optionalDataEdited()
     if(!isEnabled())
         return;
 
-    entries_list_model->changeData(current_index, [&](BootEntry &entry) {
+    entries_list_model->changeData(current_index, [&](BootEntry &entry)
+        {
         entry.optional_data = ui->optional_data_text->toPlainText();
-        return true;
-    });
+        return true; });
 }
 
 void BootEntryForm::attributeActiveChanged(int state)
@@ -88,10 +88,10 @@ void BootEntryForm::attributeActiveChanged(int state)
     if(!isEnabled())
         return;
 
-    entries_list_model->changeData(current_index, [state](BootEntry &entry) {
+    entries_list_model->changeData(current_index, [state](BootEntry &entry)
+        {
         entry.attributes = (entry.attributes & ~EFIBoot::LOAD_OPTION_ACTIVE) | (state ? EFIBoot::LOAD_OPTION_ACTIVE : EFIBoot::LOAD_OPTION_EMPTY);
-        return true;
-    });
+        return true; });
 }
 
 void BootEntryForm::attributeHiddenChanged(int state)
@@ -99,10 +99,10 @@ void BootEntryForm::attributeHiddenChanged(int state)
     if(!isEnabled())
         return;
 
-    entries_list_model->changeData(current_index, [state](BootEntry &entry) {
+    entries_list_model->changeData(current_index, [state](BootEntry &entry)
+        {
         entry.attributes = (entry.attributes & ~EFIBoot::LOAD_OPTION_HIDDEN) | (state ? EFIBoot::LOAD_OPTION_HIDDEN : EFIBoot::LOAD_OPTION_EMPTY);
-        return true;
-    });
+        return true; });
 }
 
 void BootEntryForm::attributeForceReconnectChanged(int state)
@@ -110,10 +110,10 @@ void BootEntryForm::attributeForceReconnectChanged(int state)
     if(!isEnabled())
         return;
 
-    entries_list_model->changeData(current_index, [state](BootEntry &entry) {
+    entries_list_model->changeData(current_index, [state](BootEntry &entry)
+        {
         entry.attributes = (entry.attributes & ~EFIBoot::LOAD_OPTION_FORCE_RECONNECT) | (state ? EFIBoot::LOAD_OPTION_FORCE_RECONNECT : EFIBoot::LOAD_OPTION_EMPTY);
-        return true;
-    });
+        return true; });
 }
 
 void BootEntryForm::categoryChanged(int index)
@@ -121,8 +121,8 @@ void BootEntryForm::categoryChanged(int index)
     if(!isEnabled())
         return;
 
-    entries_list_model->changeData(current_index, [index](BootEntry &entry) {
+    entries_list_model->changeData(current_index, [index](BootEntry &entry)
+        {
         entry.attributes = (entry.attributes & ~EFIBoot::LOAD_OPTION_CATEGORY_MASK) | (index ? EFIBoot::LOAD_OPTION_CATEGORY_APP : EFIBoot::LOAD_OPTION_CATEGORY_BOOT);
-        return true;
-    });
+        return true; });
 }
