@@ -34,7 +34,7 @@ public:
 public:
     static QVector<DriveInfo> get_all(bool refresh = false);
 
-    bool operator<(const DriveInfo &info) { return name < info.name; }
+    bool operator<(const DriveInfo &info) const { return name < info.name; }
 };
 
 #if defined(_MSC_VER)
