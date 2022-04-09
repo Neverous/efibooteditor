@@ -117,7 +117,7 @@ jobs:
         run: echo ::set-output name=version::${GITHUB_REF##*/}
 
       - name: Download artifacts
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v3
         with:
           name: EFIBootEditor-${{ github.sha }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}
           path: efibooteditor-${{ steps.vars.outputs.version }}
