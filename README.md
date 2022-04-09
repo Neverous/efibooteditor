@@ -8,4 +8,4 @@ GUI for managing EFI Boot Manager configuration.
 * [efivar](//github.com/rhboot/efivar) (>=37) on linux
 
 ## License
-This project is licensed under the LGPLv3 License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the LGPLv3 License - see the [LICENSE](LICENSE.txt) file for details
