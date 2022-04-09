@@ -58,13 +58,13 @@ jobs:
         shell: bash
         env:
           BUILD_VERSION: ${{ steps.vars.outputs.version }}
+          BUILD_OS: ${{ matrix.os }}
         working-directory: build
         if: startsWith(matrix.os, 'ubuntu')
 
       - name: '[unix] Build'
         run: |
-          cmake --build . --config Release
-          mv efibooteditor release/
+          cmake --build . --config Release --target package
         shell: bash
         working-directory: build
         if: ${{ ! startsWith(matrix.os, 'windows') }}
@@ -72,26 +72,29 @@ jobs:
       - name: '[windows] Configure: build with MSVC'
         run: |
           call "%programfiles%\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64 || exit /b
-          cmake -DCMAKE_SYSTEM_VERSION=10.0.19041.0 .. || exit /b
+          cmake -DCMAKE_SYSTEM_VERSION=10.0.19041.0 ..|| exit /b
         shell: cmd
         env:
           BUILD_VERSION: ${{ steps.vars.outputs.version }}
+          BUILD_OS: ${{ matrix.os }}
         working-directory: build
         if: startsWith(matrix.os, 'windows')
 
       - name: '[windows] Build'
         run: |
           call "%programfiles%\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64 || exit /b
-          cmake --build . --config Release || exit /b
+          cmake --build . --config Release --target package || exit /b
         shell: cmd
         working-directory: build
         if: startsWith(matrix.os, 'windows')
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: EFIBootEditor-${{ github.sha }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}
-          path: build/release
+          path: |
+            build/dist
+            !build/dist/_CPack_Packages
 
   upload-asset:
     name: Upload release asset
@@ -119,16 +122,46 @@ jobs:
           name: EFIBootEditor-${{ github.sha }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}
           path: efibooteditor-${{ steps.vars.outputs.version }}
 
-      - name: Prepare assets
-        run: |
-          zip -9 -r release.zip efibooteditor-${{ steps.vars.outputs.version }}
-
-      - name: Upload release asset
+      - name: '[linux] Upload TGZ'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: release.zip
+          asset_path: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.tar.gz
+          asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.tar.gz
+          asset_content_type: application/tar+gzip
+        if: startsWith(matrix.os, 'ubuntu')
+
+      - name: '[linux] Upload DEB'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.deb
+          asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.deb
+          asset_content_type: application/vnd.debian.binary-package
+        if: startsWith(matrix.os, 'ubuntu')
+
+      - name: '[windows] Upload ZIP'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.zip
           asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.zip
           asset_content_type: application/zip
+        if: startsWith(matrix.os, 'windows')
+
+      - name: '[windows] Upload MSI'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.msi
+          asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.msi
+          asset_content_type: application/x-ole-storage
+        if: startsWith(matrix.os, 'windows')
