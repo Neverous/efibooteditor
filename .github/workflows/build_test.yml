@@ -39,7 +39,7 @@ jobs:
 
       - name: 'Dependencies: restore Qt from cache'
         id: cache-qt
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ../Qt
           key: qt-${{ matrix.os }}-${{ matrix.qt_version }}
