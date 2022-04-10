@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #pragma once
 
+#include <stdbool.h>
+
 /* attributes */
 #if defined(__GNUC__) && !defined(__clang__)
 #define ATTR_ARTIFICIAL __attribute__((__artificial__))
@@ -28,10 +30,15 @@ typedef SSIZE_T ssize_t;
 
 #ifdef _WIN32
 #include <Windows.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <tchar.h>
 #undef interface
+typedef uint32_t mode_t;
 #else
+#include <stdio.h>
+#include <string.h>
+#include <sys/stat.h>
 #include <sys/types.h>
 typedef char TCHAR;
 #define _T
@@ -39,6 +46,8 @@ inline int _tcserror_s(TCHAR *buffer, size_t size, int errnum)
 {
     return strerror_r(errnum, buffer, size) == NULL;
 }
+
+#define _sntprintf_s(buffer, buffer_size, count, format, ...) snprintf(buffer, buffer_size, format, __VA_ARGS__)
 #endif
 
 #ifdef __cplusplus

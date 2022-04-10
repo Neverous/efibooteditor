@@ -123,16 +123,11 @@ if(UNIX AND NOT APPLE)
     )
 endif()
 
-if(UNIX)
-    target_sources(${PROJECT_NAME} PRIVATE
-        src/efivar-lite.unix.c
-    )
-endif()
-
 if(WIN32)
     target_sources(${PROJECT_NAME} PRIVATE
         src/driveinfo.win32.cpp
         src/efivar-lite.win32.c
+        src/efivar-lite.c
     )
 endif()
 

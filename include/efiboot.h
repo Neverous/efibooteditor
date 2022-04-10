@@ -245,10 +245,10 @@ template <class Type = Raw_data>
 std::optional<Variable<std::vector<Type>>> get_list_variable(const efi_guid_t &guid, const std::tstring &name);
 
 template <class Type = Raw_data>
-bool set_variable(const efi_guid_t &guid, const std::tstring &name, const Variable<Type> &variable);
+bool set_variable(const efi_guid_t &guid, const std::tstring &name, const Variable<Type> &variable, mode_t mode);
 
 template <class Type = Raw_data>
-bool set_list_variable(const efi_guid_t &guid, const std::tstring &name, const Variable<std::vector<Type>> &variable);
+bool set_list_variable(const efi_guid_t &guid, const std::tstring &name, const Variable<std::vector<Type>> &variable, mode_t mode);
 
 inline std::optional<std::tstring> init()
 {
@@ -836,21 +836,21 @@ inline std::optional<Variable<std::vector<Type>>> get_list_variable(const efi_gu
 }
 
 template <class Type>
-inline bool set_variable(const efi_guid_t &guid, const std::tstring &name, const Variable<Type> &variable)
+inline bool set_variable(const efi_guid_t &guid, const std::tstring &name, const Variable<Type> &variable, mode_t mode)
 {
     auto [value, attributes] = variable;
     Raw_data bytes;
     size_t size = serialize(bytes, value);
-    return efi_set_variablex(guid, name.c_str(), bytes.data(), size, attributes) == 0;
+    return efi_set_variable(guid, name.c_str(), bytes.data(), size, attributes, mode) == 0;
 }
 
 template <class Type>
-inline bool set_list_variable(const efi_guid_t &guid, const std::tstring &name, const Variable<std::vector<Type>> &variable)
+inline bool set_list_variable(const efi_guid_t &guid, const std::tstring &name, const Variable<std::vector<Type>> &variable, mode_t mode)
 {
     auto [value, attributes] = variable;
     Raw_data bytes;
     size_t size = serialize_list(bytes, value);
-    return efi_set_variablex(guid, name.c_str(), bytes.data(), size, attributes) == 0;
+    return efi_set_variable(guid, name.c_str(), bytes.data(), size, attributes, mode) == 0;
 }
 
 inline bool del_variable(const efi_guid_t &guid, const std::tstring &name)

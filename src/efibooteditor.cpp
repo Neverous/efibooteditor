@@ -184,7 +184,7 @@ void EFIBootEditor::saveBootConfiguration()
             old_entries.erase(_entry);
 
         auto load_option = entry.toEFIBootLoadOption();
-        if(!EFIBoot::set_variable(EFIBoot::efi_guid_global, name, EFIBoot::Variable<EFIBoot::Load_option>{load_option, entry.efi_attributes}))
+        if(!EFIBoot::set_variable(EFIBoot::efi_guid_global, name, EFIBoot::Variable<EFIBoot::Load_option>{load_option, entry.efi_attributes}, EFIBoot::EFI_VARIABLE_MODE_DEFAULTS))
             return show_error(tr("Error saving entries!"), QString("Entry %1:\n").arg(index + 1) + QStringFromStdTString(EFIBoot::get_error_trace()));
 
         ++index;
@@ -197,16 +197,16 @@ void EFIBootEditor::saveBootConfiguration()
     }
 
     // Save order
-    if(!EFIBoot::set_list_variable(EFIBoot::efi_guid_global, _T("BootOrder"), EFIBoot::Variable<std::vector<uint16_t>>{boot_order, EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS}))
+    if(!EFIBoot::set_list_variable(EFIBoot::efi_guid_global, _T("BootOrder"), EFIBoot::Variable<std::vector<uint16_t>>{boot_order, EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS}, EFIBoot::EFI_VARIABLE_MODE_DEFAULTS))
         return show_error(tr("Error saving boot order!"), QStringFromStdTString(EFIBoot::get_error_trace()));
 
     // Save next boot
-    if(next_boot != -1 && !EFIBoot::set_variable(EFIBoot::efi_guid_global, _T("BootNext"), EFIBoot::Variable<int32_t>{next_boot, EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS}))
+    if(next_boot != -1 && !EFIBoot::set_variable(EFIBoot::efi_guid_global, _T("BootNext"), EFIBoot::Variable<int32_t>{next_boot, EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS}, EFIBoot::EFI_VARIABLE_MODE_DEFAULTS))
         return show_error(tr("Error saving next boot!"), QStringFromStdTString(EFIBoot::get_error_trace()));
 
     // Save timeout
     auto timeout = static_cast<uint16_t>(ui->timeout_number->value());
-    if(!EFIBoot::set_variable(EFIBoot::efi_guid_global, _T("Timeout"), EFIBoot::Variable<uint16_t>{timeout, EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS}))
+    if(!EFIBoot::set_variable(EFIBoot::efi_guid_global, _T("Timeout"), EFIBoot::Variable<uint16_t>{timeout, EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS}, EFIBoot::EFI_VARIABLE_MODE_DEFAULTS))
         return show_error(tr("Error saving timeout!"), QStringFromStdTString(EFIBoot::get_error_trace()));
 }
 
