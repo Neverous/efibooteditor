@@ -122,7 +122,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: EFIBootEditor-${{ github.sha }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}
-          path: efibooteditor-${{ steps.vars.outputs.version }}
+          path: .
 
       - name: '[linux] Upload TGZ'
         uses: actions/upload-release-asset@v1
