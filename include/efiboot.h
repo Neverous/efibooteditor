@@ -71,8 +71,8 @@ struct PCI
     static const uint8_t TYPE = HW;
     static const uint8_t SUBTYPE = 0x01;
 
-    uint8_t function;
-    uint8_t device;
+    uint8_t function = 0;
+    uint8_t device = 0;
 };
 REGISTER_DESERIALIZER(PCI);
 
@@ -81,8 +81,8 @@ struct HID
     static const uint8_t TYPE = ACPI;
     static const uint8_t SUBTYPE = 0x01;
 
-    uint32_t hid;
-    uint32_t uid;
+    uint32_t hid = 0;
+    uint32_t uid = 0;
 };
 REGISTER_DESERIALIZER(HID);
 
@@ -91,9 +91,9 @@ struct SATA
     static const uint8_t TYPE = MSG;
     static const uint8_t SUBTYPE = 0x12;
 
-    uint16_t hba_port;
-    uint16_t port_multiplier_port;
-    uint16_t lun;
+    uint16_t hba_port = 0;
+    uint16_t port_multiplier_port = 0;
+    uint16_t lun = 0;
 };
 REGISTER_DESERIALIZER(SATA);
 
@@ -784,7 +784,7 @@ inline std::unordered_map<std::tstring, efi_guid_t> get_variables(Filter_fn filt
     std::unordered_map<std::tstring, efi_guid_t> variables;
     efi_guid_t *guid = nullptr;
     TCHAR *name = nullptr;
-    for(int ret = 0; (ret = efi_get_next_variable_name(&guid, &name)) > 0;)
+    while(efi_get_next_variable_name(&guid, &name) > 0)
     {
         if(!filter_fn(*guid, name))
             continue;

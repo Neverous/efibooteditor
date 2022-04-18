@@ -16,7 +16,8 @@ auto DriveInfo::get_all(bool refresh) -> QVector<DriveInfo>
         return all;
 
     partuuid.setFilter(QDir::Files);
-    for(const auto &part: partuuid.entryInfoList())
+    const auto partitions = partuuid.entryInfoList();
+    for(const auto &part: partitions)
     {
         if(!part.isSymLink())
             continue;

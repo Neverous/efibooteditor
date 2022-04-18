@@ -160,14 +160,14 @@ void DevicePathDialog::setHDForm(const Device_path::HD &hd)
             if(found)
             {
                 ui->disk_combo->setCurrentIndex(index);
-                emit diskChoiceChanged(index);
+                diskChoiceChanged(index);
                 return;
             }
         }
     }
 
     ui->disk_combo->setCurrentIndex(ui->disk_combo->count() - 1);
-    emit diskChoiceChanged(ui->disk_combo->currentIndex());
+    diskChoiceChanged(ui->disk_combo->currentIndex());
 
     switch(hd.signature_type)
     {
@@ -184,7 +184,7 @@ void DevicePathDialog::setHDForm(const Device_path::HD &hd)
         break;
     }
 
-    emit signatureTypeChoiceChanged(ui->signature_type_combo->currentIndex());
+    signatureTypeChoiceChanged(ui->signature_type_combo->currentIndex());
     if(hd.signature_type != EFIBoot::Device_path::SIGNATURE::NONE)
         ui->signature_text->setText(hd.partition_signature.toString());
 
@@ -214,7 +214,8 @@ void DevicePathDialog::setFirmwareVolumeForm(const Device_path::FirmwareVolume &
 void DevicePathDialog::refreshDiskCombo(bool force)
 {
     ui->disk_combo->clear();
-    for(const auto &drive: DriveInfo::get_all(force))
+    const auto drives = DriveInfo::get_all(force);
+    for(const auto &drive: drives)
     {
         QVariant item;
         item.setValue(drive);
@@ -226,7 +227,7 @@ void DevicePathDialog::refreshDiskCombo(bool force)
 
     int index = ui->disk_combo->count() - 1;
     ui->disk_combo->setCurrentIndex(index);
-    emit diskChoiceChanged(index);
+    diskChoiceChanged(index);
 }
 
 void DevicePathDialog::resetDiskCombo()
@@ -244,7 +245,7 @@ void DevicePathDialog::diskChoiceChanged(int index)
     ui->size_text->setDisabled(disabled);
 
     ui->signature_type_combo->setCurrentIndex(0);
-    emit signatureTypeChoiceChanged(ui->signature_type_combo->currentIndex());
+    signatureTypeChoiceChanged(ui->signature_type_combo->currentIndex());
     ui->partition_number->clear();
     ui->start_text->clear();
     ui->size_text->clear();
@@ -268,7 +269,7 @@ void DevicePathDialog::diskChoiceChanged(int index)
         break;
     }
 
-    emit signatureTypeChoiceChanged(ui->signature_type_combo->currentIndex());
+    signatureTypeChoiceChanged(ui->signature_type_combo->currentIndex());
     if(driveinfo.signature_type != DriveInfo::SIGNATURE::NONE)
         ui->signature_text->setText(driveinfo.signature.toString());
 
@@ -335,7 +336,7 @@ void DevicePathDialog::resetHDForm()
 {
     refreshDiskCombo(false);
     ui->signature_type_combo->setCurrentIndex(0);
-    emit signatureTypeChoiceChanged(ui->signature_type_combo->currentIndex());
+    signatureTypeChoiceChanged(ui->signature_type_combo->currentIndex());
     ui->partition_number->clear();
     ui->start_text->clear();
     ui->size_text->clear();
