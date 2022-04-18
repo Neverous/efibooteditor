@@ -82,7 +82,7 @@ typedef struct
     uint8_t partition_format;
     uint8_t signature_type;
 #ifdef __ia64
-    uint8_t _padding[6]; /* Emperically needed */
+    uint8_t _padding[6]; /* Empirically needed */
 #endif
 } efidp_hd;
 

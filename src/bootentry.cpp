@@ -85,7 +85,8 @@ auto BootEntry::fromJSON(const QJsonObject &obj) -> std::optional<BootEntry>
     try_read_3(attributes, Double, Int);
     try_read_3(efi_attributes, Double, Int);
     check_type(file_path, Array);
-    for(const auto &device_path: obj["file_path"].toArray())
+    const auto file_path = obj["file_path"].toArray();
+    for(const auto &device_path: file_path)
     {
         auto dp = device_path.toObject();
         auto path = get_default(Device_path::JSON_readers(), QString("%1/%2").arg(dp["type"].toString(), dp["subtype"].toString()), [](const auto &)
@@ -360,7 +361,7 @@ auto Device_path::HD::toEFIBootDevicePath() const -> EFIBoot::Device_path::HD
     hd.partition_size = partition_size;
     hd.partition_number = partition_number;
     hd.partition_format = partition_format;
-    memcpy(&hd.partition_signature, &partition_signature, sizeof(partition_signature));
+    memcpy(hd.partition_signature.data(), &partition_signature, sizeof(partition_signature));
     hd.signature_type = signature_type;
     return hd;
 }
@@ -468,7 +469,7 @@ Device_path::FirmwareFile::FirmwareFile(const EFIBoot::Device_path::Firmware_fil
 auto Device_path::FirmwareFile::toEFIBootDevicePath() const -> EFIBoot::Device_path::Firmware_file
 {
     EFIBoot::Device_path::Firmware_file firmware_file;
-    memcpy(&firmware_file.name, &name, sizeof(name));
+    memcpy(firmware_file.name.data(), &name, sizeof(name));
     return firmware_file;
 }
 
@@ -508,7 +509,7 @@ Device_path::FirmwareVolume::FirmwareVolume(const EFIBoot::Device_path::Firmware
 auto Device_path::FirmwareVolume::toEFIBootDevicePath() const -> EFIBoot::Device_path::Firmware_volume
 {
     EFIBoot::Device_path::Firmware_volume firmware_volume;
-    memcpy(&firmware_volume.name, &name, sizeof(name));
+    memcpy(firmware_volume.name.data(), &name, sizeof(name));
     return firmware_volume;
 }
 

@@ -214,7 +214,7 @@ void EFIBootEditor::import()
 {
     auto file_name = QFileDialog::getOpenFileName(this, tr("Open Boot Configuration Dump"), "", tr("JSON Documents (*.json)"));
     if(!file_name.isEmpty())
-        emit importBootConfiguration(file_name);
+        importBootConfiguration(file_name);
 }
 
 void EFIBootEditor::importBootConfiguration(const QString &file_name)
@@ -270,7 +270,8 @@ void EFIBootEditor::importJSONEFIData(const QJsonObject &input)
             return show_error(tr("Error importing boot configuration!"), tr("Couldn't parse BootOrder: array expected"));
 
         int i = 0;
-        for(const auto &index: input["BootOrder"].toArray())
+        const auto boot_order = input["BootOrder"].toArray();
+        for(const auto &index: boot_order)
         {
             if(!index.isDouble())
                 return show_error(tr("Error importing boot configuration!"), tr("Couldn't parse BootOrder[%1]: number expected").arg(i));
@@ -286,7 +287,8 @@ void EFIBootEditor::importJSONEFIData(const QJsonObject &input)
         return show_error(tr("Error importing boot configuration!"), tr("Couldn't parse Boot: object expected"));
 
     const auto boot = input["Boot"].toObject();
-    for(const auto &name: boot.keys())
+    const auto keys = boot.keys();
+    for(const auto &name: keys)
     {
         bool success = false;
         auto index = name.toULong(&success, HEX_BASE);
@@ -321,6 +323,7 @@ void EFIBootEditor::importRawEFIData(const QJsonObject &input)
     int next_boot = -1;
     std::vector<uint16_t> order;
     std::unordered_set<unsigned long> ordered_entry;
+    QStringList invalid_keys;
 
     if(input.contains("Timeout"))
     {
@@ -334,9 +337,9 @@ void EFIBootEditor::importRawEFIData(const QJsonObject &input)
         auto raw_data = QByteArray::fromBase64(timeout["raw_data"].toString().toUtf8());
         auto value = EFIBoot::deserialize<uint16_t>(raw_data.constData(), static_cast<size_t>(raw_data.size()));
         if(!value)
-            return show_error(tr("Error importing boot configuration!"), tr("Couldn't parse Timeout/raw_data"));
-
-        ui->timeout_number->setValue(*value);
+            invalid_keys.push_back("Timeout/raw_data");
+        else
+            ui->timeout_number->setValue(*value);
     }
 
     if(input.contains("BootNext"))
@@ -351,9 +354,9 @@ void EFIBootEditor::importRawEFIData(const QJsonObject &input)
         auto raw_data = QByteArray::fromBase64(boot_next["raw_data"].toString().toUtf8());
         auto value = EFIBoot::deserialize<int32_t>(raw_data.constData(), static_cast<size_t>(raw_data.size()));
         if(!value)
-            return show_error(tr("Error importing boot configuration!"), tr("Couldn't parse BootNext/raw_data"));
-
-        next_boot = *value;
+            invalid_keys.push_back("BootNext/raw_data");
+        else
+            next_boot = *value;
     }
 
     if(input.contains("BootOrder"))
@@ -368,23 +371,26 @@ void EFIBootEditor::importRawEFIData(const QJsonObject &input)
         auto raw_data = QByteArray::fromBase64(boot_order["raw_data"].toString().toUtf8());
         auto value = EFIBoot::deserialize_list<uint16_t>(raw_data.constData(), static_cast<size_t>(raw_data.size()));
         if(!value)
-            return show_error(tr("Error importing boot configuration!"), tr("Couldn't parse BootOrder/raw_data"));
-
-        order = *value;
-        for(auto index: order)
-            ordered_entry.insert(index);
+            invalid_keys.push_back("BootOrder/raw_data");
+        else
+        {
+            order = *value;
+            for(auto index: order)
+                ordered_entry.insert(index);
+        }
     }
 
     if(!input["Boot"].isObject())
         return show_error(tr("Error importing boot configuration!"), tr("Couldn't parse Boot: object expected"));
 
     const auto boot = input["Boot"].toObject();
-    for(const auto &name: boot.keys())
+    const auto keys = boot.keys();
+    for(const auto &name: keys)
     {
         bool success = true;
         auto index = name.toULong(&success, HEX_BASE);
         if(!success)
-            return show_error(tr("Error importing boot configuration!"), tr("Couldn't parse Boot/%1: hexadecimel number expected").arg(name));
+            return show_error(tr("Error importing boot configuration!"), tr("Couldn't parse Boot/%1: hexadecimal number expected").arg(name));
 
         if(ordered_entry.count(index))
             continue;
@@ -407,21 +413,26 @@ void EFIBootEditor::importRawEFIData(const QJsonObject &input)
         auto raw_data = QByteArray::fromBase64(boot_entry["raw_data"].toString().toUtf8());
         auto value = EFIBoot::deserialize<EFIBoot::Load_option>(raw_data.constData(), static_cast<size_t>(raw_data.size()));
         if(!value)
-            return show_error(tr("Error importing boot configuration!"), tr("Couldn't parse Boot/%1/raw_data").arg(name));
-
-        // Translate STL to QTL
-        auto entry = BootEntry::fromEFIBootLoadOption(*value);
-        entry.efi_attributes = static_cast<quint32>(boot_entry["efi_attributes"].toInt());
-        entry.is_next_boot = next_boot == index;
-        entries_list_model.appendRow(entry);
+            invalid_keys.push_back(QString("Boot/%1/raw_data").arg(name));
+        else
+        {
+            // Translate STL to QTL
+            auto entry = BootEntry::fromEFIBootLoadOption(*value);
+            entry.efi_attributes = static_cast<quint32>(boot_entry["efi_attributes"].toInt());
+            entry.is_next_boot = next_boot == index;
+            entries_list_model.appendRow(entry);
+        }
     }
+
+    if(!invalid_keys.isEmpty())
+        show_error(tr("Error importing boot configuration!"), tr("Couldn't deserialize keys: %1").arg(invalid_keys.join(", ")));
 }
 
 void EFIBootEditor::export_()
 {
     QString file_name = QFileDialog::getSaveFileName(this, tr("Save Boot Configuration Dump"), "", tr("JSON documents (*.json)"));
     if(!file_name.isEmpty())
-        emit exportBootConfiguration(file_name);
+        exportBootConfiguration(file_name);
 }
 
 void EFIBootEditor::exportBootConfiguration(const QString &file_name)

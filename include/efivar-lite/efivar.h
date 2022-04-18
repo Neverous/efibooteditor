@@ -56,5 +56,3 @@ extern int efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name) ATTR_NONN
 extern int efi_guid_cmp(const efi_guid_t *a, const efi_guid_t *b);
 
 extern int efi_error_get(unsigned int n, TCHAR **const filename, TCHAR **const function, int *line, TCHAR **const message, int *error) ATTR_NONNULL(2, 3, 4, 5, 6);
-
-#include "efivar-dp.h"
