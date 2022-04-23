@@ -46,6 +46,39 @@ auto DevicePathDialog::toDevicePath() const -> Device_path::ANY
         vendor.data = this->getVendorData(ui->vendor_data_format_combo->currentIndex());
         return vendor;
     }
+    case FormIndex::MACAddress:
+    {
+        Device_path::MACAddress mac_address;
+        mac_address.address = ui->mac_address_text->text();
+        mac_address.if_type = static_cast<quint8>(ui->if_type_number->value());
+        return mac_address;
+    }
+    case FormIndex::IPv4:
+    {
+        Device_path::IPv4 ipv4;
+        ipv4.local_ip_address.setAddress(ui->ipv4_local_ip_text->text());
+        ipv4.local_port = static_cast<quint16>(ui->ipv4_local_port_number->value());
+        ipv4.remote_ip_address.setAddress(ui->ipv4_remote_ip_text->text());
+        ipv4.remote_port = static_cast<quint16>(ui->ipv4_remote_port_number->value());
+        ipv4.protocol = static_cast<quint16>(ui->ipv4_protocol_number->value());
+        ipv4.static_ip_address = ui->ipv4_static->isChecked();
+        ipv4.gateway_ip_address.setAddress(ui->ipv4_gateway_ip_text->text());
+        ipv4.subnet_mask.setAddress(ui->ipv4_subnet_mask_text->text());
+        return ipv4;
+    }
+    case FormIndex::IPv6:
+    {
+        Device_path::IPv6 ipv6;
+        ipv6.local_ip_address.setAddress(ui->ipv6_local_ip_text->text());
+        ipv6.local_port = static_cast<quint16>(ui->ipv6_local_port_number->value());
+        ipv6.remote_ip_address.setAddress(ui->ipv6_remote_ip_text->text());
+        ipv6.remote_port = static_cast<quint16>(ui->ipv6_remote_port_number->value());
+        ipv6.protocol = static_cast<quint16>(ui->ipv6_protocol_number->value());
+        ipv6.ip_address_origin = static_cast<quint8>(ui->ipv6_origin_combo->currentIndex());
+        ipv6.gateway_ip_address.setAddress(ui->ipv6_gateway_ip_text->text());
+        ipv6.prefix_length = static_cast<quint8>(ui->ipv6_prefix_length_number->value());
+        return ipv6;
+    }
     case FormIndex::SATA:
     {
         Device_path::SATA sata;
@@ -116,6 +149,9 @@ void DevicePathDialog::setDevicePath(const Device_path::ANY *_device_path)
             [&](const Device_path::PCI &pci) { setPCIForm(pci); },
             [&](const Device_path::HID &hid) { setHIDForm(hid); },
             [&](const Device_path::Vendor &vendor) { setVendorForm(vendor); },
+            [&](const Device_path::MACAddress &mac_address) { setMACAddressForm(mac_address); },
+            [&](const Device_path::IPv4 &ipv4) { setIPv4Form(ipv4); },
+            [&](const Device_path::IPv6 &ipv6) { setIPv6Form(ipv6); },
             [&](const Device_path::SATA &sata) { setSATAForm(sata); },
             [&](const Device_path::HD &hd) { setHDForm(hd); },
             [&](const Device_path::File &file) { setFileForm(file); },
@@ -148,6 +184,39 @@ void DevicePathDialog::setVendorForm(const Device_path::Vendor &vendor)
     ui->vendor_guid_text->setText(vendor.guid.toString(QUuid::WithoutBraces));
     ui->vendor_data_format_combo->setCurrentIndex(0); // BASE64
     ui->vendor_data_text->setPlainText(vendor.data.toBase64());
+}
+
+void DevicePathDialog::setMACAddressForm(const Device_path::MACAddress &mac_address)
+{
+    ui->options->setCurrentIndex(FormIndex::MACAddress);
+    ui->mac_address_text->setText(mac_address.address);
+    ui->if_type_number->setValue(mac_address.if_type);
+}
+
+void DevicePathDialog::setIPv4Form(const Device_path::IPv4 &ipv4)
+{
+    ui->options->setCurrentIndex(FormIndex::IPv4);
+    ui->ipv4_local_ip_text->setText(ipv4.local_ip_address.toString());
+    ui->ipv4_local_port_number->setValue(ipv4.local_port);
+    ui->ipv4_remote_ip_text->setText(ipv4.remote_ip_address.toString());
+    ui->ipv4_remote_port_number->setValue(ipv4.remote_port);
+    ui->ipv4_protocol_number->setValue(ipv4.protocol);
+    ui->ipv4_static->setChecked(ipv4.static_ip_address);
+    ui->ipv4_gateway_ip_text->setText(ipv4.gateway_ip_address.toString());
+    ui->ipv4_subnet_mask_text->setText(ipv4.subnet_mask.toString());
+}
+
+void DevicePathDialog::setIPv6Form(const Device_path::IPv6 &ipv6)
+{
+    ui->options->setCurrentIndex(FormIndex::IPv6);
+    ui->ipv6_local_ip_text->setText(ipv6.local_ip_address.toString());
+    ui->ipv6_local_port_number->setValue(ipv6.local_port);
+    ui->ipv6_remote_ip_text->setText(ipv6.remote_ip_address.toString());
+    ui->ipv6_remote_port_number->setValue(ipv6.remote_port);
+    ui->ipv6_protocol_number->setValue(ipv6.protocol);
+    ui->ipv6_origin_combo->setCurrentIndex(ipv6.ip_address_origin);
+    ui->ipv6_gateway_ip_text->setText(ipv6.gateway_ip_address.toString());
+    ui->ipv6_prefix_length_number->setValue(ipv6.prefix_length);
 }
 
 void DevicePathDialog::setSATAForm(const Device_path::SATA &sata)
@@ -378,6 +447,9 @@ void DevicePathDialog::resetForms()
     resetPCIForm();
     resetHIDForm();
     resetVendorForm();
+    resetMACAddressForm();
+    resetIPv4Form();
+    resetIPv6Form();
     resetSATAForm();
     resetHDForm();
     resetFileForm();
@@ -431,6 +503,44 @@ void DevicePathDialog::resetVendorForm()
     ui->vendor_data_format_combo->setCurrentIndex(0);
     vendor_data_format_combo_index = 0;
     ui->vendor_data_text->clear();
+}
+
+void DevicePathDialog::resetMACAddressForm()
+{
+    ui->mac_address_text->setInputMask("<hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh;0");
+    ui->mac_address_text->clear();
+    ui->if_type_number->clear();
+}
+
+void DevicePathDialog::resetIPv4Form()
+{
+    ui->ipv4_local_ip_text->setInputMask("000.000.000.000");
+    ui->ipv4_local_ip_text->clear();
+    ui->ipv4_local_port_number->clear();
+    ui->ipv4_remote_ip_text->setInputMask("000.000.000.000");
+    ui->ipv4_remote_ip_text->clear();
+    ui->ipv4_remote_port_number->clear();
+    ui->ipv4_protocol_number->clear();
+    ui->ipv4_static->setChecked(false);
+    ui->ipv4_gateway_ip_text->setInputMask("000.000.000.000");
+    ui->ipv4_gateway_ip_text->clear();
+    ui->ipv4_subnet_mask_text->setInputMask("000.000.000.000");
+    ui->ipv4_subnet_mask_text->clear();
+}
+
+void DevicePathDialog::resetIPv6Form()
+{
+    ui->ipv6_local_ip_text->setInputMask("<hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh");
+    ui->ipv6_local_ip_text->clear();
+    ui->ipv6_local_port_number->clear();
+    ui->ipv6_remote_ip_text->setInputMask("<hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh");
+    ui->ipv6_remote_ip_text->clear();
+    ui->ipv6_remote_port_number->clear();
+    ui->ipv6_protocol_number->clear();
+    ui->ipv6_origin_combo->setCurrentIndex(0);
+    ui->ipv6_gateway_ip_text->setInputMask("<hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh");
+    ui->ipv6_gateway_ip_text->clear();
+    ui->ipv6_prefix_length_number->clear();
 }
 
 void DevicePathDialog::resetSATAForm()

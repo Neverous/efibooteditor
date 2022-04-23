@@ -40,6 +40,9 @@ enum EFIDP_ACPI
 enum EFIDP_MSG
 {
     EFIDP_MSG_VENDOR = 0x0a,
+    EFIDP_MSG_MAC_ADDRESS = 0x0b,
+    EFIDP_MSG_IPV4 = 0x0c,
+    EFIDP_MSG_IPV6 = 0x0d,
     EFIDP_MSG_SATA = 0x12,
 };
 
@@ -71,6 +74,39 @@ typedef struct
     uint8_t guid[16];
     uint8_t data[1];
 } efidp_vendor;
+
+typedef struct
+{
+    efidp_header header;
+    uint8_t address[32];
+    uint8_t if_type;
+} efidp_mac_address;
+
+typedef struct
+{
+    efidp_header header;
+    uint8_t local_ip_address[4];
+    uint8_t remote_ip_address[4];
+    uint16_t local_port;
+    uint16_t remote_port;
+    uint16_t protocol;
+    efidp_boolean static_ip_address;
+    uint8_t gateway_ip_address[4];
+    uint8_t subnet_mask[4];
+} efidp_ipv4;
+
+typedef struct
+{
+    efidp_header header;
+    uint8_t local_ip_address[16];
+    uint8_t remote_ip_address[16];
+    uint16_t local_port;
+    uint16_t remote_port;
+    uint16_t protocol;
+    uint8_t ip_address_origin;
+    uint8_t prefix_length;
+    uint8_t gateway_ip_address[16];
+} efidp_ipv6;
 
 typedef struct
 {
@@ -139,6 +175,9 @@ typedef union
     efidp_pci pci;
     efidp_hid hid;
     efidp_vendor vendor;
+    efidp_mac_address mac_address;
+    efidp_ipv4 ipv4;
+    efidp_ipv6 ipv6;
     efidp_sata sata;
     efidp_hd hd;
     efidp_file file;

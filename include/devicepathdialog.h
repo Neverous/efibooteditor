@@ -66,11 +66,14 @@ private:
         PCI = 0,
         HID = 1,
         Vendor = 2,
-        SATA = 3,
-        HD = 4,
-        File = 5,
-        FirmwareFile = 6,
-        FirmwareVolume = 7,
+        MACAddress = 3,
+        IPv4 = 4,
+        IPv6 = 5,
+        SATA = 6,
+        HD = 7,
+        File = 8,
+        FirmwareFile = 9,
+        FirmwareVolume = 10,
     };
 
     enum VendorDataFormat
@@ -97,6 +100,9 @@ public:
     void setPCIForm(const Device_path::PCI &pci);
     void setHIDForm(const Device_path::HID &hid);
     void setVendorForm(const Device_path::Vendor &vendor);
+    void setMACAddressForm(const Device_path::MACAddress &mac_address);
+    void setIPv4Form(const Device_path::IPv4 &ipv4);
+    void setIPv6Form(const Device_path::IPv6 &ipv6);
     void setSATAForm(const Device_path::SATA &sata);
     void setHDForm(const Device_path::HD &hd);
     void setFileForm(const Device_path::File &file);
@@ -109,6 +115,9 @@ private:
     void resetHIDForm();
     QByteArray getVendorData(int format) const;
     void resetVendorForm();
+    void resetMACAddressForm();
+    void resetIPv4Form();
+    void resetIPv6Form();
     void resetSATAForm();
     void resetHDForm();
     void resetFileForm();

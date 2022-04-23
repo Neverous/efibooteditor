@@ -96,6 +96,48 @@ struct Vendor
 };
 REGISTER_DESERIALIZER(Vendor);
 
+struct MAC_address
+{
+    static const uint8_t TYPE = MSG;
+    static const uint8_t SUBTYPE = 0x0b;
+
+    std::array<uint8_t, 32> address = {};
+    uint8_t if_type = 0;
+};
+REGISTER_DESERIALIZER(MAC_address);
+
+struct IPv4
+{
+    static const uint8_t TYPE = MSG;
+    static const uint8_t SUBTYPE = 0x0c;
+
+    std::array<uint8_t, 4> local_ip_address = {};
+    std::array<uint8_t, 4> remote_ip_address = {};
+    uint16_t local_port = 0;
+    uint16_t remote_port = 0;
+    uint16_t protocol = 0;
+    bool static_ip_address = false;
+    std::array<uint8_t, 4> gateway_ip_address = {};
+    std::array<uint8_t, 4> subnet_mask = {};
+};
+REGISTER_DESERIALIZER(IPv4);
+
+struct IPv6
+{
+    static const uint8_t TYPE = MSG;
+    static const uint8_t SUBTYPE = 0x0d;
+
+    std::array<uint8_t, 16> local_ip_address = {};
+    std::array<uint8_t, 16> remote_ip_address = {};
+    uint16_t local_port = 0;
+    uint16_t remote_port = 0;
+    uint16_t protocol = 0;
+    uint8_t ip_address_origin = 0;
+    uint8_t prefix_length = 0;
+    std::array<uint8_t, 16> gateway_ip_address = {};
+};
+REGISTER_DESERIALIZER(IPv6);
+
 struct SATA
 {
     static const uint8_t TYPE = MSG;
@@ -165,6 +207,9 @@ typedef std::variant<
     PCI,
     HID,
     Vendor,
+    MAC_address,
+    IPv4,
+    IPv6,
     SATA,
     HD,
     File,
@@ -610,6 +655,141 @@ inline size_t serialize(Raw_data &output, const Device_path::Vendor &vendor)
     bytes += serialize(output, length);
     bytes += serialize(output, vendor.guid);
     bytes += serialize(output, vendor.data);
+    length = static_cast<uint16_t>(bytes);
+    memcpy(&output[pos], &length, sizeof(length));
+    return bytes;
+}
+
+template <>
+inline std::optional<Device_path::MAC_address> deserialize(const void *data, size_t data_size)
+{
+    const efidp_mac_address *dp = static_cast<const efidp_mac_address *>(data);
+    if(dp->header.length != data_size)
+        return std::nullopt;
+
+    if(dp->header.type != Device_path::TYPE::MSG)
+        return std::nullopt;
+
+    if(dp->header.subtype != Device_path::MAC_address::SUBTYPE)
+        return std::nullopt;
+
+    Device_path::MAC_address value;
+    std::copy(std::begin(dp->address), std::end(dp->address), std::begin(value.address));
+    value.if_type = dp->if_type;
+    return {value};
+}
+
+template <>
+inline size_t serialize(Raw_data &output, const Device_path::MAC_address &mac_address)
+{
+    size_t bytes = 0;
+    uint8_t type = Device_path::TYPE::MSG;
+    bytes += serialize(output, type);
+    uint8_t subtype = Device_path::MAC_address::SUBTYPE;
+    bytes += serialize(output, subtype);
+    size_t pos = output.size();
+    uint16_t length = 0;
+    bytes += serialize(output, length);
+    bytes += serialize(output, mac_address.address);
+    bytes += serialize(output, mac_address.if_type);
+    length = static_cast<uint16_t>(bytes);
+    memcpy(&output[pos], &length, sizeof(length));
+    return bytes;
+}
+
+template <>
+inline std::optional<Device_path::IPv4> deserialize(const void *data, size_t data_size)
+{
+    const efidp_ipv4 *dp = static_cast<const efidp_ipv4 *>(data);
+    if(dp->header.length != data_size)
+        return std::nullopt;
+
+    if(dp->header.type != Device_path::TYPE::MSG)
+        return std::nullopt;
+
+    if(dp->header.subtype != Device_path::IPv4::SUBTYPE)
+        return std::nullopt;
+
+    Device_path::IPv4 value;
+    std::copy(std::begin(dp->local_ip_address), std::end(dp->local_ip_address), std::begin(value.local_ip_address));
+    std::copy(std::begin(dp->remote_ip_address), std::end(dp->remote_ip_address), std::begin(value.remote_ip_address));
+    value.local_port = dp->local_port;
+    value.remote_port = dp->remote_port;
+    value.protocol = dp->protocol;
+    value.static_ip_address = dp->static_ip_address;
+    std::copy(std::begin(dp->gateway_ip_address), std::end(dp->gateway_ip_address), std::begin(value.gateway_ip_address));
+    std::copy(std::begin(dp->subnet_mask), std::end(dp->subnet_mask), std::begin(value.subnet_mask));
+    return {value};
+}
+
+template <>
+inline size_t serialize(Raw_data &output, const Device_path::IPv4 &ipv4)
+{
+    size_t bytes = 0;
+    uint8_t type = Device_path::TYPE::MSG;
+    bytes += serialize(output, type);
+    uint8_t subtype = Device_path::IPv4::SUBTYPE;
+    bytes += serialize(output, subtype);
+    size_t pos = output.size();
+    uint16_t length = 0;
+    bytes += serialize(output, length);
+    bytes += serialize(output, ipv4.local_ip_address);
+    bytes += serialize(output, ipv4.remote_ip_address);
+    bytes += serialize(output, ipv4.local_port);
+    bytes += serialize(output, ipv4.remote_port);
+    bytes += serialize(output, ipv4.protocol);
+    bytes += serialize(output, ipv4.static_ip_address);
+    bytes += serialize(output, ipv4.gateway_ip_address);
+    bytes += serialize(output, ipv4.subnet_mask);
+    length = static_cast<uint16_t>(bytes);
+    memcpy(&output[pos], &length, sizeof(length));
+    return bytes;
+}
+
+template <>
+inline std::optional<Device_path::IPv6> deserialize(const void *data, size_t data_size)
+{
+    const efidp_ipv6 *dp = static_cast<const efidp_ipv6 *>(data);
+    if(dp->header.length != data_size)
+        return std::nullopt;
+
+    if(dp->header.type != Device_path::TYPE::MSG)
+        return std::nullopt;
+
+    if(dp->header.subtype != Device_path::IPv6::SUBTYPE)
+        return std::nullopt;
+
+    Device_path::IPv6 value;
+    std::copy(std::begin(dp->local_ip_address), std::end(dp->local_ip_address), std::begin(value.local_ip_address));
+    std::copy(std::begin(dp->remote_ip_address), std::end(dp->remote_ip_address), std::begin(value.remote_ip_address));
+    value.local_port = dp->local_port;
+    value.remote_port = dp->remote_port;
+    value.protocol = dp->protocol;
+    value.ip_address_origin = dp->ip_address_origin;
+    value.prefix_length = dp->prefix_length;
+    std::copy(std::begin(dp->gateway_ip_address), std::end(dp->gateway_ip_address), std::begin(value.gateway_ip_address));
+    return {value};
+}
+
+template <>
+inline size_t serialize(Raw_data &output, const Device_path::IPv6 &ipv6)
+{
+    size_t bytes = 0;
+    uint8_t type = Device_path::TYPE::MSG;
+    bytes += serialize(output, type);
+    uint8_t subtype = Device_path::IPv6::SUBTYPE;
+    bytes += serialize(output, subtype);
+    size_t pos = output.size();
+    uint16_t length = 0;
+    bytes += serialize(output, length);
+    bytes += serialize(output, ipv6.local_ip_address);
+    bytes += serialize(output, ipv6.remote_ip_address);
+    bytes += serialize(output, ipv6.local_port);
+    bytes += serialize(output, ipv6.remote_port);
+    bytes += serialize(output, ipv6.protocol);
+    bytes += serialize(output, ipv6.ip_address_origin);
+    bytes += serialize(output, ipv6.prefix_length);
+    bytes += serialize(output, ipv6.gateway_ip_address);
     length = static_cast<uint16_t>(bytes);
     memcpy(&output[pos], &length, sizeof(length));
     return bytes;

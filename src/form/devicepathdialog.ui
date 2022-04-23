@@ -47,7 +47,7 @@
       <enum>QTabWidget::West</enum>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>5</number>
      </property>
      <property name="documentMode">
       <bool>true</bool>
@@ -106,6 +106,15 @@
        </item>
        <item row="0" column="1">
         <widget class="QSpinBox" name="function_number">
+         <property name="toolTip">
+          <string>Function</string>
+         </property>
+         <property name="statusTip">
+          <string>Function</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Function&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
          <property name="maximum">
           <number>7</number>
          </property>
@@ -113,6 +122,15 @@
        </item>
        <item row="1" column="1">
         <widget class="QSpinBox" name="device_number">
+         <property name="toolTip">
+          <string>Device</string>
+         </property>
+         <property name="statusTip">
+          <string>Device</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
          <property name="maximum">
           <number>31</number>
          </property>
@@ -253,6 +271,15 @@
         <layout class="QVBoxLayout" name="vendor_data_box">
          <item>
           <widget class="QComboBox" name="vendor_data_format_combo">
+           <property name="toolTip">
+            <string>Data format</string>
+           </property>
+           <property name="statusTip">
+            <string>Data format</string>
+           </property>
+           <property name="whatsThis">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
            <item>
             <property name="text">
              <string>BASE64</string>
@@ -308,6 +335,588 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="mac_tab">
+      <attribute name="icon">
+       <iconset theme="network-wired"></iconset>
+      </attribute>
+      <attribute name="title">
+       <string>MAC</string>
+      </attribute>
+      <layout class="QFormLayout" name="formLayout">
+       <property name="labelAlignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="mac_address_label">
+         <property name="toolTip">
+          <string>MAC address</string>
+         </property>
+         <property name="statusTip">
+          <string>MAC address</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>MAC address</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="mac_address_text">
+         <property name="toolTip">
+          <string>MAC address</string>
+         </property>
+         <property name="statusTip">
+          <string>MAC address</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="if_type_label">
+         <property name="toolTip">
+          <string>Interface type</string>
+         </property>
+         <property name="statusTip">
+          <string>Interface type</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Interface type</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QSpinBox" name="if_type_number">
+         <property name="toolTip">
+          <string>Interface type</string>
+         </property>
+         <property name="statusTip">
+          <string>Interface type</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="ipv4_tab">
+      <attribute name="icon">
+       <iconset theme="network-wired"></iconset>
+      </attribute>
+      <attribute name="title">
+       <string>IPv4</string>
+      </attribute>
+      <layout class="QFormLayout" name="formLayout_2">
+       <property name="labelAlignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="ipv4_local_ip_label">
+         <property name="toolTip">
+          <string>Local IP address</string>
+         </property>
+         <property name="statusTip">
+          <string>Local IP address</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Local IP</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="ipv4_local_port_label">
+         <property name="toolTip">
+          <string>Local port</string>
+         </property>
+         <property name="statusTip">
+          <string>Local port</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Local port</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="ipv4_remote_ip_label">
+         <property name="toolTip">
+          <string>Remote IP address</string>
+         </property>
+         <property name="statusTip">
+          <string>Remote IP address</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Remote IP</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="ipv4_remote_port_label">
+         <property name="toolTip">
+          <string>Remote port</string>
+         </property>
+         <property name="statusTip">
+          <string>Remote port</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Remote port</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="ipv4_local_ip_text">
+         <property name="toolTip">
+          <string>Local IP address</string>
+         </property>
+         <property name="statusTip">
+          <string>Local IP address</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QSpinBox" name="ipv4_local_port_number">
+         <property name="toolTip">
+          <string>Local port</string>
+         </property>
+         <property name="statusTip">
+          <string>Local port</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="ipv4_remote_ip_text">
+         <property name="toolTip">
+          <string>Remote IP address</string>
+         </property>
+         <property name="statusTip">
+          <string>Remote IP address</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QSpinBox" name="ipv4_remote_port_number">
+         <property name="toolTip">
+          <string>Remote port</string>
+         </property>
+         <property name="statusTip">
+          <string>Remote port</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="ipv4_protocol_label">
+         <property name="toolTip">
+          <string>Protocol</string>
+         </property>
+         <property name="statusTip">
+          <string>Protocol</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocol&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Protocol</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QSpinBox" name="ipv4_protocol_number">
+         <property name="toolTip">
+          <string>Protocol</string>
+         </property>
+         <property name="statusTip">
+          <string>Protocol</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocol&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="ipv4_static_label">
+         <property name="toolTip">
+          <string>Static IP address</string>
+         </property>
+         <property name="statusTip">
+          <string>Static IP address</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Static IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Static</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QCheckBox" name="ipv4_static">
+         <property name="toolTip">
+          <string>Static IP address</string>
+         </property>
+         <property name="statusTip">
+          <string>Static IP address</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Static IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="ipv4_gateway_ip_label">
+         <property name="toolTip">
+          <string>Gateway IP address</string>
+         </property>
+         <property name="statusTip">
+          <string>Gateway IP address</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Gateway IP</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="ipv4_gateway_ip_text">
+         <property name="toolTip">
+          <string>Gateway IP address</string>
+         </property>
+         <property name="statusTip">
+          <string>Gateway IP address</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="ipv4_subnet_mask_label">
+         <property name="toolTip">
+          <string>Subnet mask</string>
+         </property>
+         <property name="statusTip">
+          <string>Subnet mask</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnet mask&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Subnet mask</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLineEdit" name="ipv4_subnet_mask_text">
+         <property name="toolTip">
+          <string>Subnet mask</string>
+         </property>
+         <property name="statusTip">
+          <string>Subnet mask</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnet mask&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="ipv6_tab">
+      <attribute name="icon">
+       <iconset theme="network-wired"></iconset>
+      </attribute>
+      <attribute name="title">
+       <string>IPv6</string>
+      </attribute>
+      <layout class="QFormLayout" name="formLayout_3">
+       <property name="labelAlignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="ipv6_local_ip_label">
+         <property name="toolTip">
+          <string>Local IP address</string>
+         </property>
+         <property name="statusTip">
+          <string>Local IP address</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Local IP</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="ipv6_local_port_label">
+         <property name="toolTip">
+          <string>Local port</string>
+         </property>
+         <property name="statusTip">
+          <string>Local port</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Local port</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="ipv6_remote_ip_label">
+         <property name="toolTip">
+          <string>Remote IP address</string>
+         </property>
+         <property name="statusTip">
+          <string>Remote IP address</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Remote IP</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="ipv6_remote_port_label">
+         <property name="toolTip">
+          <string>Remote port</string>
+         </property>
+         <property name="statusTip">
+          <string>Remote port</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Remote port</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="ipv6_protocol_label">
+         <property name="toolTip">
+          <string>Protocol</string>
+         </property>
+         <property name="statusTip">
+          <string>Protocol</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocol&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Protocol</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="ipv6_origin_label">
+         <property name="toolTip">
+          <string>IP address origin</string>
+         </property>
+         <property name="statusTip">
+          <string>IP address origin</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IP address origin&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Origin</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="ipv6_gateway_ip_label">
+         <property name="toolTip">
+          <string>Gateway IP address</string>
+         </property>
+         <property name="statusTip">
+          <string>Gateway IP address</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Gateway IP</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="ipv6_prefix_length_label">
+         <property name="toolTip">
+          <string>Prefix length</string>
+         </property>
+         <property name="statusTip">
+          <string>Prefix length</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Prefix length&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Prefix length</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="ipv6_local_ip_text">
+         <property name="toolTip">
+          <string>Local IP address</string>
+         </property>
+         <property name="statusTip">
+          <string>Local IP address</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QSpinBox" name="ipv6_local_port_number">
+         <property name="toolTip">
+          <string>Local port</string>
+         </property>
+         <property name="statusTip">
+          <string>Local port</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="ipv6_remote_ip_text">
+         <property name="toolTip">
+          <string>Remote IP address</string>
+         </property>
+         <property name="statusTip">
+          <string>Remote IP address</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QSpinBox" name="ipv6_remote_port_number">
+         <property name="toolTip">
+          <string>Remote port</string>
+         </property>
+         <property name="statusTip">
+          <string>Remote port</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QSpinBox" name="ipv6_protocol_number">
+         <property name="toolTip">
+          <string>Protocol</string>
+         </property>
+         <property name="statusTip">
+          <string>Protocol</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocol&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QComboBox" name="ipv6_origin_combo">
+         <property name="toolTip">
+          <string>IP address origin</string>
+         </property>
+         <property name="statusTip">
+          <string>IP address origin</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IP address origin&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>Static</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Stateless auto-configuration</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Stateful auto-configuration</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="ipv6_gateway_ip_text">
+         <property name="toolTip">
+          <string>Gateway IP address</string>
+         </property>
+         <property name="statusTip">
+          <string>Gateway IP address</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QSpinBox" name="ipv6_prefix_length_number">
+         <property name="toolTip">
+          <string>Prefix length</string>
+         </property>
+         <property name="statusTip">
+          <string>Prefix length</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Prefix length&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
      <widget class="QWidget" name="sata_tab">
       <property name="toolTip">
        <string>SATA</string>
@@ -331,16 +940,16 @@
        <item row="0" column="0">
         <widget class="QLabel" name="hba_port_label">
          <property name="toolTip">
-          <string>HBA Port</string>
+          <string>HBA port</string>
          </property>
          <property name="statusTip">
-          <string>HBA Port</string>
+          <string>HBA port</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HBA Port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HBA port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
-          <string>HBA Port</string>
+          <string>HBA port</string>
          </property>
         </widget>
        </item>
@@ -378,6 +987,15 @@
        </item>
        <item row="0" column="1">
         <widget class="QSpinBox" name="hba_port_number">
+         <property name="toolTip">
+          <string>HBA port</string>
+         </property>
+         <property name="statusTip">
+          <string>HBA port</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HBA port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
          <property name="maximum">
           <number>65534</number>
          </property>
@@ -385,6 +1003,15 @@
        </item>
        <item row="1" column="1">
         <widget class="QSpinBox" name="port_multiplier_port_number">
+         <property name="toolTip">
+          <string>Port multiplier port</string>
+         </property>
+         <property name="statusTip">
+          <string>Port multiplier port</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Port multiplier port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
          <property name="maximum">
           <number>65535</number>
          </property>
@@ -392,6 +1019,15 @@
        </item>
        <item row="2" column="1">
         <widget class="QSpinBox" name="lun_number">
+         <property name="toolTip">
+          <string>LUN</string>
+         </property>
+         <property name="statusTip">
+          <string>LUN</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;LUN&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
          <property name="maximum">
           <number>65535</number>
          </property>
