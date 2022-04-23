@@ -151,8 +151,7 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset theme="up">
-           <normaloff>.</normaloff>.</iconset>
+          <iconset theme="up"></iconset>
          </property>
          <property name="default">
           <bool>false</bool>
@@ -183,8 +182,7 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset theme="down">
-           <normaloff>.</normaloff>.</iconset>
+          <iconset theme="down"></iconset>
          </property>
          <property name="default">
           <bool>false</bool>
@@ -215,8 +213,7 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset theme="remove">
-           <normaloff>.</normaloff>.</iconset>
+          <iconset theme="remove"></iconset>
          </property>
          <property name="default">
           <bool>false</bool>
@@ -247,8 +244,7 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset theme="edit">
-           <normaloff>.</normaloff>.</iconset>
+          <iconset theme="edit"></iconset>
          </property>
          <property name="default">
           <bool>false</bool>
@@ -279,8 +275,7 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset theme="add">
-           <normaloff>.</normaloff>.</iconset>
+          <iconset theme="add"></iconset>
          </property>
          <property name="default">
           <bool>false</bool>

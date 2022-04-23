@@ -39,6 +39,7 @@ enum EFIDP_ACPI
 
 enum EFIDP_MSG
 {
+    EFIDP_MSG_VENDOR = 0x0a,
     EFIDP_MSG_SATA = 0x12,
 };
 
@@ -63,6 +64,13 @@ typedef struct
     uint32_t hid;
     uint32_t uid;
 } efidp_hid;
+
+typedef struct
+{
+    efidp_header header;
+    uint8_t guid[16];
+    uint8_t data[1];
+} efidp_vendor;
 
 typedef struct
 {
@@ -130,6 +138,7 @@ typedef union
     efidp_type_subtype _type_subtype;
     efidp_pci pci;
     efidp_hid hid;
+    efidp_vendor vendor;
     efidp_sata sata;
     efidp_hd hd;
     efidp_file file;

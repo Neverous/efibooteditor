@@ -26,8 +26,7 @@
    <string>EFI Boot Editor</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="preferences-system">
-    <normaloff>.</normaloff>.</iconset>
+   <iconset theme="preferences-system"></iconset>
   </property>
   <widget class="QWidget" name="boot">
    <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,0,2">
@@ -91,8 +90,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset theme="add">
-          <normaloff>.</normaloff>.</iconset>
+         <iconset theme="add"></iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -123,8 +121,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset theme="remove">
-          <normaloff>.</normaloff>.</iconset>
+         <iconset theme="remove"></iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -155,8 +152,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset theme="up">
-          <normaloff>.</normaloff>.</iconset>
+         <iconset theme="up"></iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -187,8 +183,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset theme="down">
-          <normaloff>.</normaloff>.</iconset>
+         <iconset theme="down"></iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -378,8 +373,7 @@
   </widget>
   <action name="exit">
    <property name="icon">
-    <iconset theme="exit">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="exit"></iconset>
    </property>
    <property name="text">
     <string>Exit</string>
@@ -396,8 +390,7 @@
   </action>
   <action name="save">
    <property name="icon">
-    <iconset theme="document-save">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-save"></iconset>
    </property>
    <property name="text">
     <string>Save</string>
@@ -414,8 +407,7 @@
   </action>
   <action name="reload">
    <property name="icon">
-    <iconset theme="reload">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="reload"></iconset>
    </property>
    <property name="text">
     <string>Reload</string>
@@ -432,8 +424,7 @@
   </action>
   <action name="about">
    <property name="icon">
-    <iconset theme="help">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="help"></iconset>
    </property>
    <property name="text">
     <string>About EFI Boot Editor</string>
@@ -447,8 +438,7 @@
   </action>
   <action name="export_">
    <property name="icon">
-    <iconset theme="document-export">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-export"></iconset>
    </property>
    <property name="text">
     <string>Export</string>
@@ -465,8 +455,7 @@
   </action>
   <action name="import_">
    <property name="icon">
-    <iconset theme="document-import">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-import"></iconset>
    </property>
    <property name="text">
     <string>Import</string>
@@ -483,8 +472,7 @@
   </action>
   <action name="dump_raw_efi_data">
    <property name="icon">
-    <iconset theme="document-export">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-export"></iconset>
    </property>
    <property name="text">
     <string>Dump raw EFI data</string>

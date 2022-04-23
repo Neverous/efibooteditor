@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>240</height>
+    <width>600</width>
+    <height>350</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>500</width>
-    <height>240</height>
+    <width>600</width>
+    <height>350</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -44,10 +44,10 @@
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Options&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="tabPosition">
-      <enum>QTabWidget::North</enum>
+      <enum>QTabWidget::West</enum>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <property name="documentMode">
       <bool>true</bool>
@@ -63,7 +63,7 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="system"/>
+       <iconset theme="system"></iconset>
       </attribute>
       <attribute name="title">
        <string>PCI</string>
@@ -71,15 +71,6 @@
       <layout class="QFormLayout" name="pci_layout">
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="function_label">
@@ -140,7 +131,7 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="system"/>
+       <iconset theme="system"></iconset>
       </attribute>
       <attribute name="title">
        <string>HID</string>
@@ -148,15 +139,6 @@
       <layout class="QFormLayout" name="hid_layout">
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="hid_label">
@@ -224,6 +206,108 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="vendor_tab">
+      <attribute name="icon">
+       <iconset theme="document"></iconset>
+      </attribute>
+      <attribute name="title">
+       <string>Vendor</string>
+      </attribute>
+      <layout class="QFormLayout" name="vendor_layout">
+       <property name="labelAlignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="vendor_guid_label">
+         <property name="toolTip">
+          <string>Vendor GUID</string>
+         </property>
+         <property name="statusTip">
+          <string>Firmware GUID</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware GUID&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>GUID</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="vendor_guid_text">
+         <property name="toolTip">
+          <string>GUID</string>
+         </property>
+         <property name="statusTip">
+          <string>GUID</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GUID&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="inputMask">
+          <string>&lt;HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <layout class="QVBoxLayout" name="vendor_data_box">
+         <item>
+          <widget class="QComboBox" name="vendor_data_format_combo">
+           <item>
+            <property name="text">
+             <string>BASE64</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>UTF-16</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>UTF-8</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>HEX</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPlainTextEdit" name="vendor_data_text">
+           <property name="toolTip">
+            <string>Data</string>
+           </property>
+           <property name="statusTip">
+            <string>Data</string>
+           </property>
+           <property name="whatsThis">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="vendor_data_label">
+         <property name="toolTip">
+          <string>Vendor data</string>
+         </property>
+         <property name="statusTip">
+          <string>Vendor data</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Data</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
      <widget class="QWidget" name="sata_tab">
       <property name="toolTip">
        <string>SATA</string>
@@ -235,7 +319,7 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SATA&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="harddrive"/>
+       <iconset theme="harddrive"></iconset>
       </attribute>
       <attribute name="title">
        <string>SATA</string>
@@ -243,15 +327,6 @@
       <layout class="QFormLayout" name="sata_layout">
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="hba_port_label">
@@ -335,8 +410,7 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disk&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="harddrive">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="harddrive"></iconset>
       </attribute>
       <attribute name="title">
        <string>HD</string>
@@ -344,15 +418,6 @@
       <layout class="QFormLayout" name="hd_layout">
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="disk_label">
@@ -414,8 +479,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset theme="reload">
-             <normaloff>.</normaloff>.</iconset>
+            <iconset theme="reload"></iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -609,8 +673,7 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="document">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="document"></iconset>
       </attribute>
       <attribute name="title">
        <string>File</string>
@@ -618,15 +681,6 @@
       <layout class="QFormLayout" name="file_layout">
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="filename_label">
@@ -670,8 +724,7 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="document">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="document"></iconset>
       </attribute>
       <attribute name="title">
        <string>Firmware file</string>
@@ -679,15 +732,6 @@
       <layout class="QFormLayout" name="firmware_file_layout">
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="firmware_file_label">
@@ -734,8 +778,7 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware volume tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="document">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="document"></iconset>
       </attribute>
       <attribute name="title">
        <string>Firmware volume</string>
@@ -743,15 +786,6 @@
       <layout class="QFormLayout" name="firmware_volume_layout">
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="firmware_volume_label">
@@ -895,10 +929,27 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>vendor_data_format_combo</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>DevicePathDialog</receiver>
+   <slot>vendorDataFormatChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>226</x>
+     <y>93</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>249</x>
+     <y>119</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>resetDiskCombo()</slot>
   <slot>diskChoiceChanged(int)</slot>
   <slot>signatureTypeChoiceChanged(int)</slot>
+  <slot>vendorDataFormatChanged(int)</slot>
  </slots>
 </ui>

@@ -86,6 +86,16 @@ struct HID
 };
 REGISTER_DESERIALIZER(HID);
 
+struct Vendor
+{
+    static const uint8_t TYPE = MSG;
+    static const uint8_t SUBTYPE = 0x0a;
+
+    std::array<uint8_t, 16> guid = {};
+    Raw_data data = {};
+};
+REGISTER_DESERIALIZER(Vendor);
+
 struct SATA
 {
     static const uint8_t TYPE = MSG;
@@ -154,6 +164,7 @@ struct End
 typedef std::variant<
     PCI,
     HID,
+    Vendor,
     SATA,
     HD,
     File,
@@ -560,6 +571,45 @@ inline size_t serialize(Raw_data &output, const Device_path::HID &hid)
     bytes += serialize(output, length);
     bytes += serialize(output, hid.hid);
     bytes += serialize(output, hid.uid);
+    length = static_cast<uint16_t>(bytes);
+    memcpy(&output[pos], &length, sizeof(length));
+    return bytes;
+}
+
+template <>
+inline std::optional<Device_path::Vendor> deserialize(const void *data, size_t data_size)
+{
+    const efidp_vendor *dp = static_cast<const efidp_vendor *>(data);
+    if(dp->header.length != data_size)
+        return std::nullopt;
+
+    if(dp->header.type != Device_path::TYPE::MSG)
+        return std::nullopt;
+
+    if(dp->header.subtype != Device_path::Vendor::SUBTYPE)
+        return std::nullopt;
+
+    Device_path::Vendor value;
+    std::copy(std::begin(dp->guid), std::end(dp->guid), std::begin(value.guid));
+    size_t data_length = data_size - sizeof(dp->header) - sizeof(dp->guid) / sizeof(dp->guid[0]);
+    value.data.resize(data_length);
+    std::copy(std::begin(dp->data), std::next(std::begin(dp->data), static_cast<int>(data_length)), std::begin(value.data));
+    return {value};
+}
+
+template <>
+inline size_t serialize(Raw_data &output, const Device_path::Vendor &vendor)
+{
+    size_t bytes = 0;
+    uint8_t type = Device_path::TYPE::MSG;
+    bytes += serialize(output, type);
+    uint8_t subtype = Device_path::Vendor::SUBTYPE;
+    bytes += serialize(output, subtype);
+    size_t pos = output.size();
+    uint16_t length = 0;
+    bytes += serialize(output, length);
+    bytes += serialize(output, vendor.guid);
+    bytes += serialize(output, vendor.data);
     length = static_cast<uint16_t>(bytes);
     memcpy(&output[pos], &length, sizeof(length));
     return bytes;

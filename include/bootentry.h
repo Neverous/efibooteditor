@@ -72,6 +72,31 @@ public:
 };
 REGISTER_JSON_READER(HID);
 
+class Vendor
+{
+public:
+    static constexpr auto TYPE = "MSG";
+    static constexpr auto SUBTYPE = "Vendor";
+
+private:
+    mutable QString string = "";
+
+public:
+    QUuid guid = {};
+    QByteArray data = {};
+
+public:
+    Vendor() = default;
+    Vendor(const EFIBoot::Device_path::Vendor &vendor);
+    EFIBoot::Device_path::Vendor toEFIBootDevicePath() const;
+
+    static std::optional<Vendor> fromJSON(const QJsonObject &obj);
+    QJsonObject toJSON() const;
+
+    QString toString(bool refresh = true) const;
+};
+REGISTER_JSON_READER(Vendor);
+
 class SATA
 {
 public:
@@ -202,6 +227,7 @@ REGISTER_JSON_READER(FirmwareVolume);
 typedef std::variant<
     PCI,
     HID,
+    Vendor,
     SATA,
     HD,
     File,
