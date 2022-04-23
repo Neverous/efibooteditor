@@ -269,6 +269,9 @@
          <bool>false</bool>
         </property>
         <layout class="QFormLayout" name="global_form">
+         <property name="fieldGrowthPolicy">
+          <enum>QFormLayout::ExpandingFieldsGrow</enum>
+         </property>
          <item row="0" column="0">
           <widget class="QLabel" name="timeout_label">
            <property name="toolTip">
@@ -284,6 +287,12 @@
          </item>
          <item row="0" column="1">
           <widget class="QSpinBox" name="timeout_number">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="toolTip">
             <string>Ttimeout</string>
            </property>

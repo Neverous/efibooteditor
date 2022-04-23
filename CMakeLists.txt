@@ -22,6 +22,10 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 set(CMAKE_DEBUG_POSTFIX "d")
 
+set(MACOSX_BUNDLE_BUNDLE_NAME ${PROJECT_NAME_CAPITALIZED})
+set(MACOSX_BUNDLE_BUNDLE_VERSION ${VERSION})
+set(MACOSX_BUNDLE_GUI_IDENTIFIER ${PROJECT_NAME_CAPITALIZED})
+
 # Link time optimization support check
 include(CheckIPOSupported)
 check_ipo_supported(RESULT ipo)
@@ -133,6 +137,14 @@ if(WIN32)
     )
 endif()
 
+if(APPLE)
+    target_sources(${PROJECT_NAME} PRIVATE
+        src/driveinfo.darwin.cpp
+        src/efivar-lite.darwin.c
+        src/efivar-lite.c
+    )
+endif()
+
 # Headers:
 target_sources(${PROJECT_NAME} PRIVATE
     include/bootentry.h
@@ -168,11 +180,19 @@ target_sources(${PROJECT_NAME} PRIVATE
 qt_add_resources(RESOURCES icons.qrc)
 target_sources(${PROJECT_NAME} PRIVATE ${RESOURCES})
 
-if(UNIX)
+if(APPLE)
+    target_link_libraries(${PROJECT_NAME} PRIVATE
+        "-framework CoreFoundation"
+        "-framework DiskArbitration"
+        "-framework IOKit"
+    )
+
+elseif(UNIX)
     target_link_libraries(${PROJECT_NAME} PRIVATE
         efiboot
         efivar
     )
+
 endif()
 
 if(WIN32)
@@ -204,18 +224,30 @@ install(PROGRAMS ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS}
     TYPE BIN
 )
 
-# Bundle Qt Libraries on Windows
+# Bundle Qt Libraries
 if(WIN32)
+    if(NOT WINDEPLOYQT_EXECUTABLE)
+        find_program(WINDEPLOYQT_EXECUTABLE NAMES windeployqt HINTS ${QT${QT_VERSION_MAJOR}_INSTALL_PREFIX}/bin REQUIRED)
+    endif()
+
     add_custom_command(TARGET ${PROJECT_NAME}
         POST_BUILD
-        COMMAND set PATH=%PATH%$<SEMICOLON>${QT_INSTALL_PREFIX}/bin
-        COMMAND windeployqt --dir ${CMAKE_BINARY_DIR}/qt "$<TARGET_FILE_DIR:${PROJECT_NAME}>/$<TARGET_FILE_NAME:${PROJECT_NAME}>"
+        COMMAND ${WINDEPLOYQT_EXECUTABLE} --dir ${CMAKE_BINARY_DIR}/qt --no-compiler-runtime "$<TARGET_FILE_DIR:${PROJECT_NAME}>/$<TARGET_FILE_NAME:${PROJECT_NAME}>"
     )
 
     install(DIRECTORY "${CMAKE_BINARY_DIR}/qt/"
         TYPE BIN
     )
 
+elseif(APPLE)
+    if(NOT MACDEPLOYQT_EXECUTABLE)
+        find_program(MACDEPLOYQT_EXECUTABLE NAMES macdeployqt HINTS ${QT${QT_VERSION_MAJOR}_INSTALL_PREFIX}/bin REQUIRED)
+    endif()
+
+    add_custom_command(TARGET ${PROJECT_NAME}
+        POST_BUILD
+        COMMAND ${MACDEPLOYQT_EXECUTABLE} "$<TARGET_BUNDLE_DIR:${PROJECT_NAME}>" -always-overwrite
+    )
 endif()
 
 # CPack
@@ -248,9 +280,16 @@ if(WIN32)
     set(CPACK_WIX_ROOT_FEATURE_DESCRIPTION "${CPACK_PACKAGE_DESCRIPTION_SUMMARY}")
     set(CPACK_WIX_UPGRADE_GUID "4DC9BB3B-A552-49D8-A04B-5C13353DB826")
 
+elseif(APPLE)
+    set(CPACK_PACKAGE_TARGET_OS_NAME "macosx")
+    set(CPACK_GENERATOR DragNDrop TZST)
+
+    set(CPACK_BUNDLE_ICON ${CPACK_PACKAGE_ICON})
+    set(CPACK_INCLUDE_TOPLEVEL_DIRECTORY NO)
+
 else()
     set(CPACK_PACKAGE_TARGET_OS_NAME "linux")
-    set(CPACK_GENERATOR DEB TGZ)
+    set(CPACK_GENERATOR DEB TZST)
 
     set(CPACK_DEBIAN_COMPRESSION_TYPE "zstd")
     set(CPACK_DEBIAN_PACKAGE_SECTION "admin")

@@ -103,6 +103,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: EFIBootEditor-${{ github.sha }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}
-          path: |
-            build/dist
-            !build/dist/_CPack_Packages
+          if-no-files-found: error
+          path: build/dist/EFIBootEditor-*

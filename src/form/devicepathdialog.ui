@@ -47,7 +47,10 @@
       <enum>QTabWidget::West</enum>
      </property>
      <property name="currentIndex">
-      <number>5</number>
+      <number>4</number>
+     </property>
+     <property name="usesScrollButtons">
+      <bool>true</bool>
      </property>
      <property name="documentMode">
       <bool>true</bool>
@@ -69,6 +72,9 @@
        <string>PCI</string>
       </attribute>
       <layout class="QFormLayout" name="pci_layout">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
@@ -106,6 +112,12 @@
        </item>
        <item row="0" column="1">
         <widget class="QSpinBox" name="function_number">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="toolTip">
           <string>Function</string>
          </property>
@@ -122,6 +134,12 @@
        </item>
        <item row="1" column="1">
         <widget class="QSpinBox" name="device_number">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="toolTip">
           <string>Device</string>
          </property>
@@ -155,6 +173,9 @@
        <string>HID</string>
       </attribute>
       <layout class="QFormLayout" name="hid_layout">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
@@ -186,7 +207,7 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;\0\xhhhhhhhh</string>
+          <string>&lt;\0\xhhhhhhhh;0</string>
          </property>
         </widget>
        </item>
@@ -218,7 +239,7 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UID in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;\0\xhhhhhhhh</string>
+          <string>&lt;\0\xhhhhhhhh;0</string>
          </property>
         </widget>
        </item>
@@ -232,6 +253,9 @@
        <string>Vendor</string>
       </attribute>
       <layout class="QFormLayout" name="vendor_layout">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
@@ -343,6 +367,9 @@
        <string>MAC</string>
       </attribute>
       <layout class="QFormLayout" name="formLayout">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
@@ -393,6 +420,12 @@
        </item>
        <item row="1" column="1">
         <widget class="QSpinBox" name="if_type_number">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="toolTip">
           <string>Interface type</string>
          </property>
@@ -414,6 +447,9 @@
        <string>IPv4</string>
       </attribute>
       <layout class="QFormLayout" name="formLayout_2">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
@@ -496,6 +532,12 @@
        </item>
        <item row="1" column="1">
         <widget class="QSpinBox" name="ipv4_local_port_number">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="toolTip">
           <string>Local port</string>
          </property>
@@ -522,6 +564,12 @@
        </item>
        <item row="3" column="1">
         <widget class="QSpinBox" name="ipv4_remote_port_number">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="toolTip">
           <string>Remote port</string>
          </property>
@@ -551,6 +599,12 @@
        </item>
        <item row="4" column="1">
         <widget class="QSpinBox" name="ipv4_protocol_number">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="toolTip">
           <string>Protocol</string>
          </property>
@@ -580,6 +634,12 @@
        </item>
        <item row="5" column="1">
         <widget class="QCheckBox" name="ipv4_static">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="toolTip">
           <string>Static IP address</string>
          </property>
@@ -665,6 +725,9 @@
        <string>IPv6</string>
       </attribute>
       <layout class="QFormLayout" name="formLayout_3">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
@@ -811,6 +874,12 @@
        </item>
        <item row="1" column="1">
         <widget class="QSpinBox" name="ipv6_local_port_number">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="toolTip">
           <string>Local port</string>
          </property>
@@ -837,6 +906,12 @@
        </item>
        <item row="3" column="1">
         <widget class="QSpinBox" name="ipv6_remote_port_number">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="toolTip">
           <string>Remote port</string>
          </property>
@@ -850,6 +925,12 @@
        </item>
        <item row="4" column="1">
         <widget class="QSpinBox" name="ipv6_protocol_number">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="toolTip">
           <string>Protocol</string>
          </property>
@@ -863,6 +944,12 @@
        </item>
        <item row="5" column="1">
         <widget class="QComboBox" name="ipv6_origin_combo">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="toolTip">
           <string>IP address origin</string>
          </property>
@@ -904,6 +991,12 @@
        </item>
        <item row="7" column="1">
         <widget class="QSpinBox" name="ipv6_prefix_length_number">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="toolTip">
           <string>Prefix length</string>
          </property>
@@ -934,6 +1027,9 @@
        <string>SATA</string>
       </attribute>
       <layout class="QFormLayout" name="sata_layout">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
@@ -987,6 +1083,12 @@
        </item>
        <item row="0" column="1">
         <widget class="QSpinBox" name="hba_port_number">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="toolTip">
           <string>HBA port</string>
          </property>
@@ -1003,6 +1105,12 @@
        </item>
        <item row="1" column="1">
         <widget class="QSpinBox" name="port_multiplier_port_number">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="toolTip">
           <string>Port multiplier port</string>
          </property>
@@ -1019,6 +1127,12 @@
        </item>
        <item row="2" column="1">
         <widget class="QSpinBox" name="lun_number">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="toolTip">
           <string>LUN</string>
          </property>
@@ -1052,6 +1166,9 @@
        <string>HD</string>
       </attribute>
       <layout class="QFormLayout" name="hd_layout">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
@@ -1078,6 +1195,12 @@
          </property>
          <item>
           <widget class="QComboBox" name="disk_combo">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="toolTip">
             <string>Choose disk</string>
            </property>
@@ -1212,6 +1335,12 @@
        </item>
        <item row="2" column="1">
         <widget class="QSpinBox" name="partition_number">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="toolTip">
           <string>Partition number</string>
          </property>
@@ -1257,7 +1386,7 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition start offset in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;\0\xhhhhhhhhhhhhhhhh</string>
+          <string>&lt;\0\xhhhhhhhhhhhhhhhh;0</string>
          </property>
          <property name="text">
           <string>0x</string>
@@ -1292,7 +1421,7 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition size in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;\0\xhhhhhhhhhhhhhhhh</string>
+          <string>&lt;\0\xhhhhhhhhhhhhhhhh;0</string>
          </property>
         </widget>
        </item>
@@ -1315,6 +1444,9 @@
        <string>File</string>
       </attribute>
       <layout class="QFormLayout" name="file_layout">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
@@ -1366,6 +1498,9 @@
        <string>Firmware file</string>
       </attribute>
       <layout class="QFormLayout" name="firmware_file_layout">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
@@ -1420,6 +1555,9 @@
        <string>Firmware volume</string>
       </attribute>
       <layout class="QFormLayout" name="firmware_volume_layout">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
