@@ -297,6 +297,257 @@ auto Device_path::HID::toString(bool refresh) const -> QString
     return string = QString("Acpi(0x%1, 0x%2)").arg(hid, 0, HEX_BASE).arg(uid, 0, HEX_BASE);
 }
 
+static_assert(sizeof(Device_path::Vendor::guid) == sizeof(EFIBoot::Device_path::Vendor::guid));
+
+Device_path::Vendor::Vendor(const EFIBoot::Device_path::Vendor &vendor)
+    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
+{
+    memcpy(reinterpret_cast<void *>(&guid), &vendor.guid, sizeof(vendor.guid));
+}
+
+auto Device_path::Vendor::toEFIBootDevicePath() const -> EFIBoot::Device_path::Vendor
+{
+    EFIBoot::Device_path::Vendor value = {};
+    memcpy(value.guid.data(), &guid, sizeof(guid));
+    value.data.resize(static_cast<size_t>(data.size()));
+    std::copy(std::begin(data), std::end(data), std::begin(value.data));
+    return value;
+}
+
+auto Device_path::Vendor::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::Vendor>
+{
+    Vendor value;
+    check_obj();
+    check_type(guid, String);
+    value.guid = QUuid::fromString(obj["guid"].toString());
+    check_type(data, String);
+    value.data = QByteArray::fromBase64(obj["data"].toString().toUtf8());
+    return {value};
+}
+
+auto Device_path::Vendor::toJSON() const -> QJsonObject
+{
+    QJsonObject value;
+    value["type"] = TYPE;
+    value["subtype"] = SUBTYPE;
+    value["guid"] = guid.toString();
+    value["data"] = static_cast<QString>(data.toBase64());
+    return value;
+}
+
+auto Device_path::Vendor::toString(bool refresh) const -> QString
+{
+    if(string.size() && !refresh)
+        return string;
+
+    return string = QString("VenMsg(%1, [%2B])").arg(guid.toString(QUuid::WithoutBraces)).arg(data.size());
+}
+
+Device_path::MACAddress::MACAddress(const EFIBoot::Device_path::MAC_address &mac_address)
+    : address{QByteArray::fromRawData(reinterpret_cast<const char *>(mac_address.address.data()), static_cast<int>(mac_address.address.size())).toHex()}
+    , if_type{mac_address.if_type}
+{
+}
+
+auto Device_path::MACAddress::toEFIBootDevicePath() const -> EFIBoot::Device_path::MAC_address
+{
+    EFIBoot::Device_path::MAC_address value = {};
+    auto address_bytes = QByteArray::fromHex(address.toUtf8());
+    memcpy(value.address.data(), address_bytes.data(), value.address.size());
+    value.if_type = if_type;
+    return value;
+}
+
+auto Device_path::MACAddress::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::MACAddress>
+{
+    MACAddress value;
+    check_obj();
+    try_read(address, String);
+    try_read_3(if_type, Double, Int);
+    return {value};
+}
+
+auto Device_path::MACAddress::toJSON() const -> QJsonObject
+{
+    QJsonObject value;
+    value["type"] = TYPE;
+    value["subtype"] = SUBTYPE;
+    value["address"] = address;
+    value["if_type"] = if_type;
+    return value;
+}
+
+auto Device_path::MACAddress::toString(bool refresh) const -> QString
+{
+    if(string.size() && !refresh)
+        return string;
+
+    return string = QString("MAC(%1, %2)").arg(address.left(12)).arg(if_type);
+}
+
+static_assert(sizeof(Device_path::IPv4::local_ip_address.toIPv4Address()) == sizeof(EFIBoot::Device_path::IPv4::local_ip_address));
+static_assert(sizeof(Device_path::IPv4::remote_ip_address.toIPv4Address()) == sizeof(EFIBoot::Device_path::IPv4::remote_ip_address));
+static_assert(sizeof(Device_path::IPv4::gateway_ip_address.toIPv4Address()) == sizeof(EFIBoot::Device_path::IPv4::gateway_ip_address));
+static_assert(sizeof(Device_path::IPv4::subnet_mask.toIPv4Address()) == sizeof(EFIBoot::Device_path::IPv4::subnet_mask));
+
+Device_path::IPv4::IPv4(const EFIBoot::Device_path::IPv4 &ipv4)
+    : local_ip_address{*reinterpret_cast<const quint32 *>(ipv4.local_ip_address.data())}
+    , remote_ip_address{*reinterpret_cast<const quint32 *>(ipv4.remote_ip_address.data())}
+    , local_port{ipv4.local_port}
+    , remote_port{ipv4.remote_port}
+    , protocol{ipv4.protocol}
+    , static_ip_address{ipv4.static_ip_address}
+    , gateway_ip_address{*reinterpret_cast<const quint32 *>(ipv4.gateway_ip_address.data())}
+    , subnet_mask{*reinterpret_cast<const quint32 *>(ipv4.subnet_mask.data())}
+{
+}
+
+auto Device_path::IPv4::toEFIBootDevicePath() const -> EFIBoot::Device_path::IPv4
+{
+    EFIBoot::Device_path::IPv4 value = {};
+    auto ip_address = local_ip_address.toIPv4Address();
+    memcpy(value.local_ip_address.data(), &ip_address, sizeof(ip_address));
+    ip_address = remote_ip_address.toIPv4Address();
+    memcpy(value.remote_ip_address.data(), &ip_address, sizeof(ip_address));
+    value.local_port = local_port;
+    value.remote_port = remote_port;
+    value.protocol = protocol;
+    value.static_ip_address = static_ip_address;
+    ip_address = gateway_ip_address.toIPv4Address();
+    memcpy(value.gateway_ip_address.data(), &ip_address, sizeof(ip_address));
+    ip_address = subnet_mask.toIPv4Address();
+    memcpy(value.subnet_mask.data(), &ip_address, sizeof(ip_address));
+    return value;
+}
+
+auto Device_path::IPv4::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::IPv4>
+{
+    IPv4 value;
+    check_obj();
+    try_read(local_ip_address, String);
+    try_read(remote_ip_address, String);
+    try_read_3(local_port, Double, Int);
+    try_read_3(remote_port, Double, Int);
+    try_read_3(protocol, Double, Int);
+    try_read(static_ip_address, Bool);
+    try_read(gateway_ip_address, String);
+    try_read(subnet_mask, String);
+    return {value};
+}
+
+auto Device_path::IPv4::toJSON() const -> QJsonObject
+{
+    QJsonObject value;
+    value["type"] = TYPE;
+    value["subtype"] = SUBTYPE;
+    value["local_ip_address"] = local_ip_address.toString();
+    value["remote_ip_address"] = remote_ip_address.toString();
+    value["local_port"] = local_port;
+    value["remote_port"] = remote_port;
+    value["protocol"] = protocol;
+    value["static_ip_address"] = static_ip_address;
+    value["gateway_ip_address"] = gateway_ip_address.toString();
+    value["subnet_mask"] = subnet_mask.toString();
+    return value;
+}
+
+auto Device_path::IPv4::toString(bool refresh) const -> QString
+{
+    if(string.size() && !refresh)
+        return string;
+
+    return string = QString("IPv4(%1:%2, %3, %4, %5:%6, %7, %8)").arg(remote_ip_address.toString()).arg(remote_port).arg(protocol).arg(static_ip_address ? "Static" : "DHCP", local_ip_address.toString()).arg(local_port).arg(gateway_ip_address.toString(), subnet_mask.toString());
+}
+
+static_assert(sizeof(Device_path::IPv6::local_ip_address.toIPv6Address()) == sizeof(EFIBoot::Device_path::IPv6::local_ip_address));
+static_assert(sizeof(Device_path::IPv6::remote_ip_address.toIPv6Address()) == sizeof(EFIBoot::Device_path::IPv6::remote_ip_address));
+static_assert(sizeof(Device_path::IPv6::gateway_ip_address.toIPv6Address()) == sizeof(EFIBoot::Device_path::IPv6::gateway_ip_address));
+
+Device_path::IPv6::IPv6(const EFIBoot::Device_path::IPv6 &ipv6)
+    : local_ip_address{ipv6.local_ip_address.data()}
+    , remote_ip_address{ipv6.remote_ip_address.data()}
+    , local_port{ipv6.local_port}
+    , remote_port{ipv6.remote_port}
+    , protocol{ipv6.protocol}
+    , ip_address_origin{ipv6.ip_address_origin}
+    , prefix_length{ipv6.prefix_length}
+    , gateway_ip_address{ipv6.gateway_ip_address.data()}
+{
+}
+
+auto Device_path::IPv6::toEFIBootDevicePath() const -> EFIBoot::Device_path::IPv6
+{
+    EFIBoot::Device_path::IPv6 value = {};
+    auto ip_address = local_ip_address.toIPv6Address();
+    memcpy(value.local_ip_address.data(), &ip_address, sizeof(ip_address));
+    ip_address = remote_ip_address.toIPv6Address();
+    memcpy(value.remote_ip_address.data(), &ip_address, sizeof(ip_address));
+    value.local_port = local_port;
+    value.remote_port = remote_port;
+    value.protocol = protocol;
+    value.ip_address_origin = ip_address_origin;
+    value.prefix_length = prefix_length;
+    ip_address = gateway_ip_address.toIPv6Address();
+    memcpy(value.gateway_ip_address.data(), &ip_address, sizeof(ip_address));
+    return value;
+}
+
+auto Device_path::IPv6::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::IPv6>
+{
+    IPv6 value;
+    check_obj();
+    try_read(local_ip_address, String);
+    try_read(remote_ip_address, String);
+    try_read_3(local_port, Double, Int);
+    try_read_3(remote_port, Double, Int);
+    try_read_3(protocol, Double, Int);
+    try_read_3(ip_address_origin, Double, Int);
+    try_read_3(prefix_length, Double, Int);
+    try_read(gateway_ip_address, String);
+    return {value};
+}
+
+auto Device_path::IPv6::toJSON() const -> QJsonObject
+{
+    QJsonObject value;
+    value["type"] = TYPE;
+    value["subtype"] = SUBTYPE;
+    value["local_ip_address"] = local_ip_address.toString();
+    value["remote_ip_address"] = remote_ip_address.toString();
+    value["local_port"] = local_port;
+    value["remote_port"] = remote_port;
+    value["protocol"] = protocol;
+    value["ip_address_origin"] = ip_address_origin;
+    value["prefix_length"] = prefix_length;
+    value["gateway_ip_address"] = gateway_ip_address.toString();
+    return value;
+}
+
+auto Device_path::IPv6::toString(bool refresh) const -> QString
+{
+    if(string.size() && !refresh)
+        return string;
+
+    QString origin;
+    switch(ip_address_origin)
+    {
+    case 0:
+        origin = "Static";
+        break;
+    case 1:
+        origin = "StatelessAutoConfigure";
+        break;
+    case 2:
+        origin = "StatefulAutoConfigure";
+        break;
+    default:
+        origin = QString::number(ip_address_origin);
+        break;
+    }
+
+    return string = QString("IPv6(%1:%2, %3, %4, %5:%6, %7, %8)").arg(remote_ip_address.toString()).arg(remote_port).arg(protocol).arg(origin, local_ip_address.toString()).arg(local_port).arg(gateway_ip_address.toString()).arg(prefix_length);
+}
+
 Device_path::SATA::SATA(const EFIBoot::Device_path::SATA &sata)
     : hba_port{sata.hba_port}
     , port_multiplier_port{sata.port_multiplier_port}

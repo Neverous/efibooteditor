@@ -151,8 +151,7 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset theme="up">
-           <normaloff>.</normaloff>.</iconset>
+          <iconset theme="up"></iconset>
          </property>
          <property name="default">
           <bool>false</bool>
@@ -183,8 +182,7 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset theme="down">
-           <normaloff>.</normaloff>.</iconset>
+          <iconset theme="down"></iconset>
          </property>
          <property name="default">
           <bool>false</bool>
@@ -215,8 +213,7 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset theme="remove">
-           <normaloff>.</normaloff>.</iconset>
+          <iconset theme="remove"></iconset>
          </property>
          <property name="default">
           <bool>false</bool>
@@ -247,8 +244,7 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset theme="edit">
-           <normaloff>.</normaloff>.</iconset>
+          <iconset theme="edit"></iconset>
          </property>
          <property name="default">
           <bool>false</bool>
@@ -279,8 +275,7 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset theme="add">
-           <normaloff>.</normaloff>.</iconset>
+          <iconset theme="add"></iconset>
          </property>
          <property name="default">
           <bool>false</bool>
@@ -705,6 +700,22 @@
     <hint type="destinationlabel">
      <x>211</x>
      <y>192</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>paths_list</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>paths_list</receiver>
+   <slot>editCurrentRow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>76</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>249</x>
+     <y>76</y>
     </hint>
    </hints>
   </connection>

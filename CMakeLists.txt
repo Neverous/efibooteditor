@@ -46,6 +46,7 @@ find_package(Qt${QT_VERSION_MAJOR}
     COMPONENTS
         Core
         Gui
+        Network
         Widgets
     REQUIRED)
 
@@ -58,6 +59,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_SOURCE_DIR}/include"
 target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt::Core
     Qt::Gui
+    Qt::Network
     Qt::Widgets
 )
 

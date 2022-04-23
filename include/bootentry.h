@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #pragma once
 
+#include <QHostAddress>
 #include <QMetaType>
 #include <QString>
 #include <QUuid>
@@ -71,6 +72,118 @@ public:
     QString toString(bool refresh = true) const;
 };
 REGISTER_JSON_READER(HID);
+
+class Vendor
+{
+public:
+    static constexpr auto TYPE = "MSG";
+    static constexpr auto SUBTYPE = "Vendor";
+
+private:
+    mutable QString string = "";
+
+public:
+    QUuid guid = {};
+    QByteArray data = {};
+
+public:
+    Vendor() = default;
+    Vendor(const EFIBoot::Device_path::Vendor &vendor);
+    EFIBoot::Device_path::Vendor toEFIBootDevicePath() const;
+
+    static std::optional<Vendor> fromJSON(const QJsonObject &obj);
+    QJsonObject toJSON() const;
+
+    QString toString(bool refresh = true) const;
+};
+REGISTER_JSON_READER(Vendor);
+
+class MACAddress
+{
+public:
+    static constexpr auto TYPE = "MSG";
+    static constexpr auto SUBTYPE = "MAC_ADDRESS";
+
+private:
+    mutable QString string = "";
+
+public:
+    QString address = "";
+    quint8 if_type = 0;
+
+public:
+    MACAddress() = default;
+    MACAddress(const EFIBoot::Device_path::MAC_address &mac_address);
+    EFIBoot::Device_path::MAC_address toEFIBootDevicePath() const;
+
+    static std::optional<MACAddress> fromJSON(const QJsonObject &obj);
+    QJsonObject toJSON() const;
+
+    QString toString(bool refresh = true) const;
+};
+REGISTER_JSON_READER(MACAddress);
+
+class IPv4
+{
+public:
+    static constexpr auto TYPE = "MSG";
+    static constexpr auto SUBTYPE = "IPV4";
+
+private:
+    mutable QString string = "";
+
+public:
+    QHostAddress local_ip_address = {};
+    QHostAddress remote_ip_address = {};
+    quint16 local_port = 0;
+    quint16 remote_port = 0;
+    quint16 protocol = 0;
+    bool static_ip_address = false;
+    QHostAddress gateway_ip_address = {};
+    QHostAddress subnet_mask = {};
+
+public:
+    IPv4() = default;
+    IPv4(const EFIBoot::Device_path::IPv4 &ipv4);
+    EFIBoot::Device_path::IPv4 toEFIBootDevicePath() const;
+
+    static std::optional<IPv4> fromJSON(const QJsonObject &obj);
+    QJsonObject toJSON() const;
+
+    QString toString(bool refresh = true) const;
+};
+REGISTER_JSON_READER(IPv4);
+
+class IPv6
+{
+public:
+    static constexpr auto TYPE = "MSG";
+    static constexpr auto SUBTYPE = "IPV6";
+
+private:
+    mutable QString string = "";
+
+public:
+    QHostAddress local_ip_address = {};
+    QHostAddress remote_ip_address = {};
+    quint16 local_port = 0;
+    quint16 remote_port = 0;
+    quint16 protocol = 0;
+    quint8 ip_address_origin = 0;
+    quint8 prefix_length = 0;
+    QHostAddress gateway_ip_address = {};
+
+public:
+    IPv6() = default;
+    IPv6(const EFIBoot::Device_path::IPv6 &ipv6);
+    EFIBoot::Device_path::IPv6 toEFIBootDevicePath() const;
+
+    static std::optional<IPv6> fromJSON(const QJsonObject &obj);
+    QJsonObject toJSON() const;
+
+    QString toString(bool refresh = true) const;
+};
+REGISTER_JSON_READER(IPv6);
 
 class SATA
 {
@@ -202,6 +315,10 @@ REGISTER_JSON_READER(FirmwareVolume);
 typedef std::variant<
     PCI,
     HID,
+    Vendor,
+    MACAddress,
+    IPv4,
+    IPv6,
     SATA,
     HD,
     File,

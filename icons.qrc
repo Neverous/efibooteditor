@@ -18,5 +18,6 @@
         <file>icons/Tango/scalable/actions/document-import.svg</file>
         <file>icons/Tango/scalable/categories/preferences-system.svg</file>
         <file>icons/Tango/scalable/devices/system.svg</file>
+        <file>icons/Tango/scalable/devices/network-wired.svg</file>
     </qresource>
 </RCC>
