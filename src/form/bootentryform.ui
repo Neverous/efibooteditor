@@ -703,6 +703,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>paths_list</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>paths_list</receiver>
+   <slot>editCurrentRow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>76</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>249</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>descriptionEdited(QString)</slot>
