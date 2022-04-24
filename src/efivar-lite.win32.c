@@ -43,6 +43,13 @@ int efi_variables_supported(void)
         return 0;
     }
 
+    FIRMWARE_TYPE firmware_type;
+    if(!GetFirmwareType(&firmware_type) || firmware_type != FirmwareTypeUefi)
+    {
+        last_winapi_function = _T("GetFirmwareType");
+        return 0;
+    }
+
     uint8_t *data = NULL;
     size_t data_size = 0;
     uint32_t attributes = 0;

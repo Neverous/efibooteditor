@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-20.04, windows-2022] #, macos-11.0]
+        os: [ubuntu-20.04, windows-2022, macos-11]
         qt_version:
           - 5.15.2 # OS LTS
           - 6.2.4 # LTS
@@ -53,7 +53,7 @@ jobs:
           echo ::set-output name=version::${GITHUB_REF##*/}
         shell: bash
 
-      - name: '[linux] Configure: build with clang'
+      - name: '[unix] Configure: build with clang'
         run: |
           CC=clang CXX=clang++ cmake ..
         shell: bash
@@ -61,7 +61,7 @@ jobs:
           BUILD_VERSION: ${{ steps.vars.outputs.version }}
           BUILD_OS: ${{ matrix.os }}
         working-directory: build
-        if: startsWith(matrix.os, 'ubuntu')
+        if: ${{ ! startsWith(matrix.os, 'windows') }}
 
       - name: '[unix] Build'
         run: |
@@ -93,9 +93,8 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: EFIBootEditor-${{ github.sha }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}
-          path: |
-            build/dist
-            !build/dist/_CPack_Packages
+          if-no-files-found: error
+          path: build/dist/EFIBootEditor-*
 
   upload-asset:
     name: Upload release asset
@@ -104,7 +103,7 @@ jobs:
     needs: build
     strategy:
       matrix:
-        os: [ubuntu-20.04, windows-2022] #, macos-11.0]
+        os: [ubuntu-20.04, windows-2022] #, macos-11]
         qt_version:
           - 5.15.2 # OS LTS
           - 6.2.4 # LTS
@@ -124,14 +123,14 @@ jobs:
           name: EFIBootEditor-${{ github.sha }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}
           path: .
 
-      - name: '[linux] Upload TGZ'
+      - name: '[linux] Upload TZST'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.tar.gz
-          asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.tar.gz
+          asset_path: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.tar.zst
+          asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.tar.zst
           asset_content_type: application/tar+gzip
         if: startsWith(matrix.os, 'ubuntu')
 
@@ -167,3 +166,25 @@ jobs:
           asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.msi
           asset_content_type: application/x-ole-storage
         if: startsWith(matrix.os, 'windows')
+
+      - name: '[macos] Upload TZST'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.tar.zst
+          asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.tar.zst
+          asset_content_type: application/tar+gzip
+        if: startsWith(matrix.os, 'macos')
+
+      - name: '[macos] Upload DMG'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.dmg
+          asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.dmg
+          asset_content_type: application/octet-stream
+        if: startsWith(matrix.os, 'macos')
