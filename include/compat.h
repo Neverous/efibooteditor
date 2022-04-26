@@ -44,7 +44,7 @@ typedef char TCHAR;
 #define _T
 inline int _tcserror_s(TCHAR *buffer, size_t size, int errnum)
 {
-#ifdef __APPLE__
+#if defined(__APPLE__) || ((_POSIX_C_SOURCE >= 200112L) && !_GNU_SOURCE)
     return strerror_r(errnum, buffer, size);
 #else
     return strerror_r(errnum, buffer, size) == NULL;

@@ -14,6 +14,6 @@ typedef struct efi_load_option_s
 } efi_load_option;
 #pragma pack(pop)
 
-extern efidp efi_loadopt_path(efi_load_option *load_option, ssize_t size_limit) ATTR_NONNULL(1);
-extern uint16_t efi_loadopt_pathlen(efi_load_option *load_option, ssize_t size_limit) ATTR_NONNULL(1) ATTR_VISIBILITY("default");
-extern int efi_loadopt_optional_data(efi_load_option *load_option, size_t load_option_size, uint8_t **optional_data, size_t *optional_data_size) ATTR_NONNULL(1, 3) ATTR_VISIBILITY("default");
+efidp efi_loadopt_path(efi_load_option *load_option, ssize_t size_limit) ATTR_NONNULL(1);
+uint16_t efi_loadopt_pathlen(efi_load_option *load_option, ssize_t size_limit) ATTR_NONNULL(1) ATTR_VISIBILITY("default");
+int efi_loadopt_optional_data(efi_load_option *load_option, size_t load_option_size, uint8_t **optional_data, size_t *optional_data_size) ATTR_NONNULL(1, 3) ATTR_VISIBILITY("default");

@@ -21,12 +21,15 @@ auto main(int argc, char *argv[]) -> int
             QStringFromStdTString(*error_message));
     }
 
-    EFIBootEditor w;
-    w.show();
-
     QCommandLineParser parser;
     parser.addHelpOption();
     parser.addVersionOption();
     parser.process(a);
+
+    EFIBootEditor w;
+    w.show();
+
+    QApplication::processEvents();
+    w.resetBootConfiguration();
     return QApplication::exec();
 }

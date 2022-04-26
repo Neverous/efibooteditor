@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QProgressDialog>
 #include <memory>
 
 #include "bootentrylistmodel.h"
@@ -23,6 +24,7 @@ private:
     BootEntryListModel entries_list_model{};
     std::unique_ptr<QMessageBox> confirmation = nullptr;
     std::unique_ptr<QMessageBox> error = nullptr;
+    std::unique_ptr<QProgressDialog> progress = nullptr;
 
 public:
     explicit EFIBootEditor(QWidget *parent = nullptr);
@@ -54,4 +56,7 @@ private:
     void show_error(const QString &message, const QString &details = "");
     template <class Receiver, typename Slot>
     void show_confirmation(const QString &message, const QMessageBox::StandardButtons &buttons, const QMessageBox::StandardButton &confirmation_button, Receiver confirmation_context, Slot confirmation_slot);
+
+    void show_progress_bar(int step, int total, const QString &details = "");
+    void hide_progress_bar();
 };
