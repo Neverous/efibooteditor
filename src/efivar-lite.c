@@ -54,10 +54,11 @@ static const TCHAR *enumerated_variable_names[] = {
 
 static TCHAR variable_name_buffer[32];
 
-static size_t current_variable = 0;
+const int EFI_MAX_VARIABLES = sizeof(variable_names) / sizeof(variable_names[0]) + sizeof(enumerated_variable_names) / sizeof(enumerated_variable_names[0]) * 65536;
 
 int _efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name)
 {
+    static size_t current_variable = 0;
     *guid = NULL;
     *name = NULL;
     size_t index = current_variable;

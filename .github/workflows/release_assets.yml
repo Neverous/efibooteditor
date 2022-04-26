@@ -25,17 +25,26 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
-      - name: 'Dependencies: restore Qt from cache'
-        id: cache-qt
+      - name: '[unix] Dependencies: restore Qt from cache'
+        id: cache-qt-unix
         uses: actions/cache@v3
         with:
-          path: ../Qt
+          path: ~/work/efibooteditor/Qt
           key: qt-${{ matrix.os }}-${{ matrix.qt_version }}
+        if: ${{ ! startsWith(matrix.os, 'windows') }}
+
+      - name: '[windows] Dependencies: restore Qt from cache'
+        id: cache-qt-windows
+        uses: actions/cache@v3
+        with:
+          path: D:\a\efibooteditor\Qt
+          key: qt-${{ matrix.os }}-${{ matrix.qt_version }}
+        if: ${{ startsWith(matrix.os, 'windows') }}
 
       - name: 'Dependencies: set up Qt environment'
         uses: jurplel/install-qt-action@v2
         with:
-          cached: ${{ steps.cache-qt.outputs.cache-hit }}
+          cached: ${{ steps.cache-qt-unix.outputs.cache-hit || steps.cache-qt-windows.outputs.cache-hit }}
           version: ${{ matrix.qt_version }}
           modules: 'qt5compat'
 

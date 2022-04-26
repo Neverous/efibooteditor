@@ -112,15 +112,30 @@ int efi_set_variable(efi_guid_t guid, const char *name, uint8_t *data, size_t da
     return 0;
 }
 
+static void (*efi_get_next_variable_name_progress_cb)(int, int) = NULL;
+
+void efi_set_get_next_variable_name_progress_cb(void (*progress_cb)(int, int))
+{
+    efi_get_next_variable_name_progress_cb = progress_cb;
+}
+
 int _efi_get_next_variable_name(efi_guid_t **guid, char **name);
 
 int efi_get_next_variable_name(efi_guid_t **guid, char **name)
 {
+    extern const int EFI_MAX_VARIABLES;
+    static int current_variable = 0;
     while(1)
     {
+        if(efi_get_next_variable_name_progress_cb)
+            efi_get_next_variable_name_progress_cb(current_variable++, EFI_MAX_VARIABLES);
+
         int ret = _efi_get_next_variable_name(guid, name);
         if(ret <= 0)
+        {
+            current_variable = 0;
             return ret;
+        }
 
         CFStringRef name_cf = _get_nvram_variable_name(*guid, *name);
         if(name_cf == NULL)

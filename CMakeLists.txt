@@ -125,6 +125,7 @@ target_sources(${PROJECT_NAME} PRIVATE
 
 if(UNIX AND NOT APPLE)
     target_sources(${PROJECT_NAME} PRIVATE
+        src/efivar-lite.linux.c
         src/driveinfo.linux.cpp
     )
 endif()
