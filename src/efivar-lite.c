@@ -54,11 +54,11 @@ static const TCHAR *enumerated_variable_names[] = {
 
 static TCHAR variable_name_buffer[32];
 
-const int EFI_MAX_VARIABLES = sizeof(variable_names) / sizeof(variable_names[0]) + sizeof(enumerated_variable_names) / sizeof(enumerated_variable_names[0]) * 65536;
+const size_t EFI_MAX_VARIABLES = sizeof(variable_names) / sizeof(variable_names[0]) + sizeof(enumerated_variable_names) / sizeof(enumerated_variable_names[0]) * 65536u;
 
+static size_t current_variable = 0u;
 int _efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name)
 {
-    static size_t current_variable = 0;
     *guid = NULL;
     *name = NULL;
     size_t index = current_variable;
@@ -71,10 +71,10 @@ int _efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name)
     }
 
     index -= sizeof(variable_names) / sizeof(variable_names[0]);
-    if(index / 65536 < sizeof(enumerated_variable_names) / sizeof(enumerated_variable_names[0]))
+    if(index / 65536u < sizeof(enumerated_variable_names) / sizeof(enumerated_variable_names[0]))
     {
-        size_t enum_index = index / 65536;
-        size_t enum_value = index - enum_index * 65536;
+        size_t enum_index = index / 65536u;
+        size_t enum_value = index - enum_index * 65536u;
         *guid = (efi_guid_t *)&efi_guid_global;
         _sntprintf_s(variable_name_buffer, 32, 31, _T("%s%04zx"), enumerated_variable_names[enum_index], enum_value);
         *name = (TCHAR *)&variable_name_buffer;
@@ -82,10 +82,10 @@ int _efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name)
         return 1;
     }
 
-    index -= sizeof(enumerated_variable_names) / sizeof(enumerated_variable_names[0]) * 65536;
-    if(index == 0)
+    index -= sizeof(enumerated_variable_names) / sizeof(enumerated_variable_names[0]) * 65536u;
+    if(index == 0u)
     {
-        current_variable = 0;
+        current_variable = 0u;
         return 0;
     }
 
@@ -119,10 +119,10 @@ uint16_t efi_loadopt_pathlen(efi_load_option *opt, ssize_t limit)
     uint16_t len = opt->file_path_list_length;
     if(limit >= 0)
     {
-        if(len > limit)
+        if(len > (size_t)limit)
             return 0;
 
-        if((size_t)limit - offsetof(efi_load_option, file_path_list_length) < len)
+        if((size_t)limit - len < offsetof(efi_load_option, file_path_list_length))
             return 0;
     }
 

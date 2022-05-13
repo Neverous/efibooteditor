@@ -55,11 +55,11 @@ void EFIBootEditor::resetBootConfiguration()
     auto name_to_guid = EFIBoot::get_variables(
         [](const EFIBoot::efi_guid_t &guid, const std::tstring_view name)
         { return guid == EFIBoot::efi_guid_global && (name.substr(0, 4) == _T("Boot") || name == _T("Timeout")); },
-        [&](int step, int total)
-        { show_progress_bar(step, total + 1, "Searching EFI Boot Manager entries..."); });
+        [&](size_t step, size_t total)
+        { show_progress_bar(step, total + 1u, "Searching EFI Boot Manager entries..."); });
 
-    int step = 0;
-    const int total_steps = static_cast<int>(name_to_guid.size() + 1);
+    size_t step = 0;
+    const size_t total_steps = name_to_guid.size() + 1u;
     if(name_to_guid.count(_T("Timeout")))
     {
         show_progress_bar(step++, total_steps, "Processing EFI Boot Manager entries (Timeout)...");
@@ -139,7 +139,7 @@ void EFIBootEditor::resetBootConfiguration()
         // Translate STL to QTL
         auto entry = BootEntry::fromEFIBootLoadOption(value);
         entry.efi_attributes = attributes;
-        entry.is_next_boot = next_boot == index;
+        entry.is_next_boot = next_boot == static_cast<int>(index);
         entries_list_model.appendRow(entry);
     }
 
@@ -183,11 +183,11 @@ void EFIBootEditor::saveBootConfiguration()
     auto old_entries = EFIBoot::get_variables(
         [](const EFIBoot::efi_guid_t &guid, const std::tstring_view name)
         { return guid == EFIBoot::efi_guid_global && name.length() == 8 && name.substr(0, 4) == _T("Boot") && isxnumber(name.substr(4)); },
-        [&](int step, int total)
-        { show_progress_bar(step, total + 1, "Searching old EFI Boot Manager entries..."); });
+        [&](size_t step, size_t total)
+        { show_progress_bar(step, total + 1u, "Searching old EFI Boot Manager entries..."); });
 
-    int step = 0;
-    int total_steps = entries_list_model.getEntries().size() + 1;
+    size_t step = 0;
+    size_t total_steps = static_cast<size_t>(entries_list_model.getEntries().size()) + 1u;
     for(const auto &entry: entries_list_model.getEntries())
     {
         auto qname = QString("Boot%1").arg(index, 4, HEX_BASE, QChar('0'));
@@ -211,7 +211,7 @@ void EFIBootEditor::saveBootConfiguration()
     }
 
     step = 0;
-    total_steps = static_cast<int>(old_entries.size() + 1);
+    total_steps = old_entries.size() + 1u;
     for(const auto &[name, guid]: old_entries)
     {
         show_progress_bar(step++, total_steps, QString("Removing old EFI Boot Manager entries (%1)...").arg(QStringFromStdTString(name)));
@@ -280,8 +280,8 @@ void EFIBootEditor::importJSONEFIData(const QJsonObject &input)
     std::vector<uint16_t> order;
     std::unordered_set<unsigned long> ordered_entry;
 
-    int step = 0;
-    const int total_steps = input.size() + 1;
+    size_t step = 0;
+    const size_t total_steps = static_cast<size_t>(input.size()) + 1u;
     if(input.contains("Timeout"))
     {
         show_progress_bar(step++, total_steps, "Importing EFI Boot Manager entries (Timeout)...");
@@ -351,7 +351,7 @@ void EFIBootEditor::importJSONEFIData(const QJsonObject &input)
             return show_error(tr("Error importing boot configuration!"), tr("Couldn't parse boot entry %1").arg(name));
         }
 
-        entry->is_next_boot = next_boot == index;
+        entry->is_next_boot = next_boot == static_cast<int>(index);
         entries_list_model.appendRow(*entry);
     }
 
@@ -366,8 +366,8 @@ void EFIBootEditor::importRawEFIData(const QJsonObject &input)
     std::unordered_set<unsigned long> ordered_entry;
     QStringList invalid_keys;
 
-    int step = 0;
-    const int total_steps = input.size() + 1;
+    size_t step = 0;
+    const size_t total_steps = static_cast<size_t>(input.size()) + 1u;
     if(input.contains("Timeout"))
     {
         show_progress_bar(step++, total_steps, "Importing EFI Boot Manager entries (Timeout)...");
@@ -466,7 +466,7 @@ void EFIBootEditor::importRawEFIData(const QJsonObject &input)
             // Translate STL to QTL
             auto entry = BootEntry::fromEFIBootLoadOption(*value);
             entry.efi_attributes = static_cast<quint32>(boot_entry["efi_attributes"].toInt());
-            entry.is_next_boot = next_boot == index;
+            entry.is_next_boot = next_boot == static_cast<int>(index);
             entries_list_model.appendRow(entry);
         }
     }
@@ -492,8 +492,8 @@ void EFIBootEditor::exportBootConfiguration(const QString &file_name)
     QJsonArray boot_order;
     QJsonObject output;
     QJsonObject entries;
-    int step = 0;
-    const int total_steps = entries_list_model.getEntries().size() + 1;
+    size_t step = 0;
+    const size_t total_steps = static_cast<size_t>(entries_list_model.getEntries().size()) + 1u;
     for(const auto &entry: entries_list_model.getEntries())
     {
         if((entry.attributes & EFIBoot::LOAD_OPTION_CATEGORY_MASK) == EFIBoot::LOAD_OPTION_CATEGORY_BOOT)
@@ -542,11 +542,11 @@ void EFIBootEditor::dumpRawEFIData(const QString &file_name)
     const auto name_to_guid = EFIBoot::get_variables(
         [](const EFIBoot::efi_guid_t &guid, const std::tstring_view name)
         { return guid == EFIBoot::efi_guid_global && (name.substr(0, 4) == _T("Boot") || name == _T("Timeout")); },
-        [&](int step, int total)
-        { show_progress_bar(step, total + 1, "Searching EFI Boot Manager entries..."); });
+        [&](size_t step, size_t total)
+        { show_progress_bar(step, total + 1u, "Searching EFI Boot Manager entries..."); });
 
-    int step = 0;
-    const int total_steps = static_cast<int>(name_to_guid.size() + 1);
+    size_t step = 0;
+    const size_t total_steps = name_to_guid.size() + 1u;
     if(name_to_guid.count(_T("Timeout")))
     {
         show_progress_bar(step++, total_steps, "Exporting EFI Boot Manager entries (Timeout)...");
@@ -666,11 +666,11 @@ void EFIBootEditor::show_confirmation(const QString &message, const QMessageBox:
     confirmation->show();
 }
 
-void EFIBootEditor::show_progress_bar(int step, int total, const QString &details)
+void EFIBootEditor::show_progress_bar(size_t step, size_t total, const QString &details)
 {
-    progress->setMaximum(total);
+    progress->setMaximum(static_cast<int>(total));
     progress->setLabelText(details);
-    progress->setValue(step);
+    progress->setValue(static_cast<int>(step));
 }
 
 void EFIBootEditor::hide_progress_bar()

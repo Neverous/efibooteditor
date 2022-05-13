@@ -273,7 +273,7 @@ enum Load_option_attribute : uint32_t
 typedef std::function<bool(const efi_guid_t &, const std::tstring_view)> Filter_fn;
 typedef std::function<const void *(const void *, const size_t)> Advance_fn;
 typedef std::function<size_t(const void *)> Size_fn;
-typedef std::function<void(int, int)> Progress_fn;
+typedef std::function<void(size_t, size_t)> Progress_fn;
 
 template <class Type = Raw_data>
 using Variable = std::tuple<Type, uint32_t>;
@@ -1019,7 +1019,7 @@ inline std::unordered_map<std::tstring, efi_guid_t> get_variables(Filter_fn filt
     efi_guid_t *guid = nullptr;
     TCHAR *name = nullptr;
     _get_variables_progress_fn = progress_fn;
-    efi_set_get_next_variable_name_progress_cb([](int step, int total) noexcept
+    efi_set_get_next_variable_name_progress_cb([](size_t step, size_t total) noexcept
         { try { if(_get_variables_progress_fn)_get_variables_progress_fn(step, total); } catch (...) {} });
 
     while(efi_get_next_variable_name(&guid, &name) > 0)
@@ -1037,7 +1037,7 @@ inline std::unordered_map<std::tstring, efi_guid_t> get_variables(Filter_fn filt
 
 inline std::unordered_map<std::tstring, efi_guid_t> get_variables(Filter_fn filter_fn)
 {
-    return get_variables(filter_fn, [](int, int) {});
+    return get_variables(filter_fn, [](size_t, size_t) {});
 }
 
 inline std::unordered_map<std::tstring, efi_guid_t> get_variables()
@@ -1045,7 +1045,7 @@ inline std::unordered_map<std::tstring, efi_guid_t> get_variables()
     return get_variables(
         [](const efi_guid_t &, const std::tstring_view)
         { return true; },
-        [](int, int) {});
+        [](size_t, size_t) {});
 }
 
 template <class Type>

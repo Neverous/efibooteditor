@@ -19,6 +19,7 @@ int efi_variables_supported(void)
     if(LookupPrivilegeValue(NULL, SE_SYSTEM_ENVIRONMENT_NAME, &luid))
     {
         TOKEN_PRIVILEGES tp;
+        memset(&tp, 0, sizeof(tp));
         tp.PrivilegeCount = 1;
         tp.Privileges[0].Luid = luid;
         tp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
@@ -44,6 +45,7 @@ int efi_variables_supported(void)
     }
 
     FIRMWARE_TYPE firmware_type;
+    memset(&firmware_type, 0, sizeof(firmware_type));
     if(!GetFirmwareType(&firmware_type) || firmware_type != FirmwareTypeUefi)
     {
         last_winapi_function = _T("GetFirmwareType");
@@ -103,19 +105,19 @@ int efi_set_variable(efi_guid_t guid, const TCHAR *name, uint8_t *data, size_t d
     return ret == 0 ? -1 : 0;
 }
 
-static void (*efi_get_next_variable_name_progress_cb)(int, int) = NULL;
+static void (*efi_get_next_variable_name_progress_cb)(size_t, size_t) = NULL;
 
-void efi_set_get_next_variable_name_progress_cb(void (*progress_cb)(int, int))
+void efi_set_get_next_variable_name_progress_cb(void (*progress_cb)(size_t, size_t))
 {
     efi_get_next_variable_name_progress_cb = progress_cb;
 }
 
 int _efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name);
 
+static size_t current_variable = 0u;
 int efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name)
 {
-    extern const int EFI_MAX_VARIABLES;
-    static int current_variable = 0;
+    extern const size_t EFI_MAX_VARIABLES;
     while(1)
     {
         if(efi_get_next_variable_name_progress_cb)
@@ -124,7 +126,7 @@ int efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name)
         int ret = _efi_get_next_variable_name(guid, name);
         if(ret <= 0)
         {
-            current_variable = 0;
+            current_variable = 0u;
             return ret;
         }
 
@@ -149,10 +151,10 @@ static TCHAR error_buffer[1024];
 
 int efi_error_get(unsigned int n, TCHAR **const filename, TCHAR **const function, int *line, TCHAR **const message, int *error)
 {
-    if(n == 1)
+    if(n == 1u)
         return 0;
 
-    if(n > 1)
+    if(n > 1u)
         return -1;
 
     *filename = _T("windows.h");

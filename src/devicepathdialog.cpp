@@ -93,7 +93,7 @@ auto DevicePathDialog::toDevicePath() const -> Device_path::ANY
         hd.signature_type = static_cast<quint8>(ui->signature_type_combo->currentIndex());
         hd.partition_format = hd.signature_type ? hd.signature_type : static_cast<quint8>(EFIBoot::Device_path::SIGNATURE::MBR);
         hd.partition_number = static_cast<quint32>(ui->partition_number->value());
-        switch(hd.signature_type)
+        switch(static_cast<EFIBoot::Device_path::SIGNATURE>(hd.signature_type))
         {
         case EFIBoot::Device_path::SIGNATURE::GUID:
             hd.partition_signature = QUuid::fromString(ui->signature_text->text());
@@ -101,6 +101,10 @@ auto DevicePathDialog::toDevicePath() const -> Device_path::ANY
 
         case EFIBoot::Device_path::SIGNATURE::MBR:
             hd.partition_signature = QUuid{ui->signature_text->text().toUInt(nullptr, HEX_BASE), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+            break;
+
+        case EFIBoot::Device_path::SIGNATURE::NONE:
+            hd.partition_signature = {};
             break;
         }
 
@@ -236,7 +240,7 @@ void DevicePathDialog::setHDForm(const Device_path::HD &hd)
         if(static_cast<quint8>(drive_info.signature_type) == hd.signature_type && drive_info.partition == hd.partition_number)
         {
             bool found = false;
-            switch(drive_info.signature_type)
+            switch(static_cast<DriveInfo::SIGNATURE>(drive_info.signature_type))
             {
             case DriveInfo::SIGNATURE::GUID:
                 found = drive_info.signature == hd.partition_signature;
@@ -260,7 +264,7 @@ void DevicePathDialog::setHDForm(const Device_path::HD &hd)
     ui->disk_combo->setCurrentIndex(ui->disk_combo->count() - 1);
     diskChoiceChanged(ui->disk_combo->currentIndex());
 
-    switch(hd.signature_type)
+    switch(static_cast<EFIBoot::Device_path::SIGNATURE>(hd.signature_type))
     {
     case EFIBoot::Device_path::SIGNATURE::NONE:
         ui->signature_type_combo->setCurrentIndex(0);
@@ -345,7 +349,7 @@ void DevicePathDialog::diskChoiceChanged(int index)
         return;
 
     const auto &driveinfo = ui->disk_combo->itemData(index).value<DriveInfo>();
-    switch(driveinfo.signature_type)
+    switch(static_cast<DriveInfo::SIGNATURE>(driveinfo.signature_type))
     {
     case DriveInfo::SIGNATURE::NONE:
         ui->signature_type_combo->setCurrentIndex(0);
@@ -371,21 +375,21 @@ void DevicePathDialog::diskChoiceChanged(int index)
 
 void DevicePathDialog::signatureTypeChoiceChanged(int index)
 {
-    switch(index)
+    switch(static_cast<DriveInfo::SIGNATURE>(index))
     {
-    case 0:
+    case DriveInfo::SIGNATURE::NONE:
         ui->signature_text->setDisabled(true);
         ui->signature_text->setInputMask("");
         ui->signature_text->clear();
         break;
 
-    case 1:
+    case DriveInfo::SIGNATURE::MBR:
         ui->signature_text->setDisabled(ui->disk_combo->currentIndex() + 1 != ui->disk_combo->count());
         ui->signature_text->setInputMask("<\\0\\xHHHHHHHH;_");
         ui->signature_text->clear();
         break;
 
-    case 2:
+    case DriveInfo::SIGNATURE::GUID:
         ui->signature_text->setDisabled(ui->disk_combo->currentIndex() + 1 != ui->disk_combo->count());
         ui->signature_text->setInputMask("<HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_");
         ui->signature_text->clear();
