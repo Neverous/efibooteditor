@@ -88,7 +88,7 @@ auto BootEntryListModel::insertRows(int row, int count, const QModelIndex &paren
 {
     beginInsertRows(parent, row, row + count - 1);
     for(int c = 0; c < count; ++c)
-        entries.insert(row + c, {});
+        entries.insert(static_cast<qsizetype>(row) + c, {});
 
     endInsertRows();
     return true;
@@ -117,7 +117,7 @@ auto BootEntryListModel::moveRows(const QModelIndex &sourceParent, int sourceRow
 {
     beginMoveRows(sourceParent, sourceRow, sourceRow + count, destinationParent, destinationChild);
     for(int c = 0; c < count; ++c)
-        entries.move(sourceRow, destinationChild + (sourceRow < destinationChild ? 0 : c));
+        entries.move(sourceRow, static_cast<qsizetype>(destinationChild) + (sourceRow < destinationChild ? 0 : c));
 
     endMoveRows();
     return true;

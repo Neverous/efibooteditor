@@ -57,6 +57,6 @@ private:
     template <class Receiver, typename Slot>
     void show_confirmation(const QString &message, const QMessageBox::StandardButtons &buttons, const QMessageBox::StandardButton &confirmation_button, Receiver confirmation_context, Slot confirmation_slot);
 
-    void show_progress_bar(int step, int total, const QString &details = "");
+    void show_progress_bar(size_t step, size_t total, const QString &details = "");
     void hide_progress_bar();
 };

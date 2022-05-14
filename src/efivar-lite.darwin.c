@@ -13,7 +13,7 @@ const efi_guid_t efi_guid_global = {"8BE4DF61-93CA-11D2-AA0D-00E098032B8C"};
 
 static io_registry_entry_t options_entry;
 static kern_return_t err;
-static char *last_iokit_function = NULL;
+static const char *last_iokit_function = NULL;
 
 int efi_variables_supported(void)
 {
@@ -112,19 +112,19 @@ int efi_set_variable(efi_guid_t guid, const char *name, uint8_t *data, size_t da
     return 0;
 }
 
-static void (*efi_get_next_variable_name_progress_cb)(int, int) = NULL;
+static void (*efi_get_next_variable_name_progress_cb)(size_t, size_t) = NULL;
 
-void efi_set_get_next_variable_name_progress_cb(void (*progress_cb)(int, int))
+void efi_set_get_next_variable_name_progress_cb(void (*progress_cb)(size_t, size_t))
 {
     efi_get_next_variable_name_progress_cb = progress_cb;
 }
 
 int _efi_get_next_variable_name(efi_guid_t **guid, char **name);
 
+static size_t current_variable = 0;
 int efi_get_next_variable_name(efi_guid_t **guid, char **name)
 {
-    extern const int EFI_MAX_VARIABLES;
-    static int current_variable = 0;
+    extern const size_t EFI_MAX_VARIABLES;
     while(1)
     {
         if(efi_get_next_variable_name_progress_cb)
@@ -133,7 +133,7 @@ int efi_get_next_variable_name(efi_guid_t **guid, char **name)
         int ret = _efi_get_next_variable_name(guid, name);
         if(ret <= 0)
         {
-            current_variable = 0;
+            current_variable = 0u;
             return ret;
         }
 
@@ -148,7 +148,7 @@ int efi_get_next_variable_name(efi_guid_t **guid, char **name)
 
         size_t length = CFDataGetLength(value_cf);
         CFRelease(value_cf);
-        if(length > 0)
+        if(length > 0u)
             return ret;
     }
 }
@@ -160,16 +160,16 @@ int efi_guid_cmp(const efi_guid_t *a, const efi_guid_t *b)
 
 int efi_error_get(unsigned int n, char **const filename, char **const function, int *line, char **const message, int *error)
 {
-    if(n == 1)
+    if(n == 1u)
         return 0;
 
-    if(n > 1)
+    if(n > 1u)
         return -1;
 
     *filename = "IOKitLib.h";
     *line = -1;
     *error = (int)errno; // FIXME
-    *function = last_iokit_function;
+    *function = (char *)last_iokit_function;
     *message = mach_error_string(err);
     return 1;
 }

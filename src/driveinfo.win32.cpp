@@ -22,14 +22,14 @@ QVector<DriveInfo> DriveInfo::get_all(bool refresh)
         DriveInfo driveinfo{};
         TCHAR device_name[MAX_PATH];
         size_t length = _tcslen(volume_name);
-        if(length != 49)
+        if(length != 49u)
             continue;
 
-        volume_name[length - 1] = _T('\0');
+        volume_name[length - 1u] = _T('\0');
         if(!QueryDosDevice(&volume_name[4], device_name, ARRAYSIZE(device_name)))
             continue;
 
-        volume_name[length - 1] = _T('\\');
+        volume_name[length - 1u] = _T('\\');
 
         PARTITION_INFORMATION_EX partition_information;
 

@@ -149,7 +149,7 @@ auto BootEntry::change_optional_data_format(BootEntry::OptionalDataFormat format
     auto bytes = get_raw_optional_data();
     QTextCodec::ConverterState state;
     QString temp_optional_data;
-    switch(format)
+    switch(static_cast<OptionalDataFormat>(format))
     {
     case OptionalDataFormat::Base64:
         temp_optional_data = bytes.toBase64();
@@ -191,7 +191,7 @@ auto BootEntry::get_raw_optional_data() const -> QByteArray
 {
     QByteArray bytes;
     std::unique_ptr<QTextEncoder> encoder = nullptr;
-    switch(optional_data_format)
+    switch(static_cast<OptionalDataFormat>(optional_data_format))
     {
     case OptionalDataFormat::Base64:
         bytes = QByteArray::fromBase64(optional_data.toUtf8());
@@ -302,12 +302,14 @@ static_assert(sizeof(Device_path::Vendor::guid) == sizeof(EFIBoot::Device_path::
 Device_path::Vendor::Vendor(const EFIBoot::Device_path::Vendor &vendor)
     : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
 {
+    static_assert(sizeof(vendor.guid) == sizeof(guid));
     memcpy(reinterpret_cast<void *>(&guid), &vendor.guid, sizeof(vendor.guid));
 }
 
 auto Device_path::Vendor::toEFIBootDevicePath() const -> EFIBoot::Device_path::Vendor
 {
     EFIBoot::Device_path::Vendor value = {};
+    static_assert(sizeof(guid) == sizeof(value.guid));
     memcpy(value.guid.data(), &guid, sizeof(guid));
     value.data.resize(static_cast<size_t>(data.size()));
     std::copy(std::begin(data), std::end(data), std::begin(value.data));
@@ -406,16 +408,20 @@ auto Device_path::IPv4::toEFIBootDevicePath() const -> EFIBoot::Device_path::IPv
 {
     EFIBoot::Device_path::IPv4 value = {};
     auto ip_address = local_ip_address.toIPv4Address();
+    static_assert(sizeof(ip_address) == sizeof(value.local_ip_address));
     memcpy(value.local_ip_address.data(), &ip_address, sizeof(ip_address));
     ip_address = remote_ip_address.toIPv4Address();
+    static_assert(sizeof(ip_address) == sizeof(value.remote_ip_address));
     memcpy(value.remote_ip_address.data(), &ip_address, sizeof(ip_address));
     value.local_port = local_port;
     value.remote_port = remote_port;
     value.protocol = protocol;
     value.static_ip_address = static_ip_address;
     ip_address = gateway_ip_address.toIPv4Address();
+    static_assert(sizeof(ip_address) == sizeof(value.gateway_ip_address));
     memcpy(value.gateway_ip_address.data(), &ip_address, sizeof(ip_address));
     ip_address = subnet_mask.toIPv4Address();
+    static_assert(sizeof(ip_address) == sizeof(value.subnet_mask));
     memcpy(value.subnet_mask.data(), &ip_address, sizeof(ip_address));
     return value;
 }
@@ -479,8 +485,10 @@ auto Device_path::IPv6::toEFIBootDevicePath() const -> EFIBoot::Device_path::IPv
 {
     EFIBoot::Device_path::IPv6 value = {};
     auto ip_address = local_ip_address.toIPv6Address();
+    static_assert(sizeof(ip_address) == sizeof(value.local_ip_address));
     memcpy(value.local_ip_address.data(), &ip_address, sizeof(ip_address));
     ip_address = remote_ip_address.toIPv6Address();
+    static_assert(sizeof(ip_address) == sizeof(value.remote_ip_address));
     memcpy(value.remote_ip_address.data(), &ip_address, sizeof(ip_address));
     value.local_port = local_port;
     value.remote_port = remote_port;
@@ -488,6 +496,7 @@ auto Device_path::IPv6::toEFIBootDevicePath() const -> EFIBoot::Device_path::IPv
     value.ip_address_origin = ip_address_origin;
     value.prefix_length = prefix_length;
     ip_address = gateway_ip_address.toIPv6Address();
+    static_assert(sizeof(ip_address) == sizeof(value.gateway_ip_address));
     memcpy(value.gateway_ip_address.data(), &ip_address, sizeof(ip_address));
     return value;
 }
@@ -602,6 +611,7 @@ Device_path::HD::HD(const EFIBoot::Device_path::HD &hd)
     , partition_format{hd.partition_format}
     , signature_type{hd.signature_type}
 {
+    static_assert(sizeof(hd.partition_signature) == sizeof(partition_signature));
     memcpy(reinterpret_cast<void *>(&partition_signature), &hd.partition_signature, sizeof(hd.partition_signature));
 }
 
@@ -612,6 +622,7 @@ auto Device_path::HD::toEFIBootDevicePath() const -> EFIBoot::Device_path::HD
     hd.partition_size = partition_size;
     hd.partition_number = partition_number;
     hd.partition_format = partition_format;
+    static_assert(sizeof(partition_signature) == sizeof(hd.partition_signature));
     memcpy(hd.partition_signature.data(), &partition_signature, sizeof(partition_signature));
     hd.signature_type = signature_type;
     return hd;
@@ -714,12 +725,14 @@ static_assert(sizeof(Device_path::FirmwareFile::name) == sizeof(EFIBoot::Device_
 
 Device_path::FirmwareFile::FirmwareFile(const EFIBoot::Device_path::Firmware_file &firmware_file)
 {
+    static_assert(sizeof(firmware_file.name) == sizeof(name));
     memcpy(reinterpret_cast<void *>(&name), &firmware_file.name, sizeof(firmware_file.name));
 }
 
 auto Device_path::FirmwareFile::toEFIBootDevicePath() const -> EFIBoot::Device_path::Firmware_file
 {
     EFIBoot::Device_path::Firmware_file firmware_file;
+    static_assert(sizeof(name) == sizeof(firmware_file.name));
     memcpy(firmware_file.name.data(), &name, sizeof(name));
     return firmware_file;
 }
@@ -754,12 +767,14 @@ static_assert(sizeof(Device_path::FirmwareVolume::name) == sizeof(EFIBoot::Devic
 
 Device_path::FirmwareVolume::FirmwareVolume(const EFIBoot::Device_path::Firmware_volume &firmware_volume)
 {
+    static_assert(sizeof(firmware_volume.name) == sizeof(name));
     memcpy(reinterpret_cast<void *>(&name), &firmware_volume.name, sizeof(firmware_volume.name));
 }
 
 auto Device_path::FirmwareVolume::toEFIBootDevicePath() const -> EFIBoot::Device_path::Firmware_volume
 {
     EFIBoot::Device_path::Firmware_volume firmware_volume;
+    static_assert(sizeof(name) == sizeof(firmware_volume.name));
     memcpy(firmware_volume.name.data(), &name, sizeof(name));
     return firmware_volume;
 }

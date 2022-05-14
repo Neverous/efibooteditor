@@ -126,7 +126,7 @@ bool QWidgetItemDelegate<Widget, Item>::editorEvent(QEvent *event, QAbstractItem
             result = QApplication::sendEvent(&event_handler, event);
 
         if(event->isAccepted())
-            handleWidgetDelegateEventResult(event, model, option, index, event_handler, result);
+            result = handleWidgetDelegateEventResult(event, model, option, index, event_handler, result);
 
         event_handler.setParent(nullptr);
     }
