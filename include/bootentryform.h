@@ -34,6 +34,7 @@ private:
     const BootEntry *current_item = nullptr;
 
 private slots:
+    void indexEdited(const QString &text);
     void descriptionEdited(const QString &text);
     void optionalDataFormatChanged(int format);
     void optionalDataEdited();

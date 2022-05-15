@@ -1,7 +1,8 @@
 # EFI Boot Editor
 GUI for managing EFI Boot Manager configuration.
 
-![Screenshot](doc/screenshot.png)
+![EFIBootEditor](doc/efibooteditor.png)
+![Device path dialog](doc/devicepathdialog.png)
 
 ### Requirements
 * [QT](//www.qt.io/) (>=5.15.2)

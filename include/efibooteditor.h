@@ -38,6 +38,7 @@ public slots:
     void import();
     void export_();
     void dump();
+    void reorder();
     void resetBootConfiguration();
     void enableBootEntryEditor(const QModelIndex &index);
     void disableBootEntryEditor();
@@ -46,6 +47,7 @@ public slots:
     void exportBootConfiguration(const QString &file_name);
     void dumpRawEFIData(const QString &file_name);
     void showAboutBox();
+    void reorderBootEntries();
 
 private:
     void closeEvent(QCloseEvent *event) override;

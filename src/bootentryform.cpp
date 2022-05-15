@@ -29,6 +29,7 @@ void BootEntryForm::setItem(const QModelIndex &index, const BootEntry *item)
 
     setDisabled(true);
 
+    ui->index_text->setText(QString("0x%1").arg(item ? item->index : 0, 4, HEX_BASE, QChar('0')));
     ui->description_text->setText(item ? item->description : "");
     paths_proxy_list_model.setBootEntryItem(index, item);
     ui->optional_data_text->setPlainText(item ? item->optional_data : "");
@@ -39,6 +40,20 @@ void BootEntryForm::setItem(const QModelIndex &index, const BootEntry *item)
     ui->categoty_combo->setCurrentIndex(item && (item->attributes & EFIBoot::LOAD_OPTION_CATEGORY_APP));
 
     setDisabled(!item);
+}
+
+void BootEntryForm::indexEdited(const QString &text)
+{
+    if(!isEnabled())
+        return;
+
+    entries_list_model->changeData(current_index, [&text](BootEntry &entry)
+        {
+        bool success = false;
+        quint16 index = text.right(text.size()-2).toUShort(&success, HEX_BASE);
+        if(success)
+            entry.index = index;
+        return success; });
 }
 
 void BootEntryForm::descriptionEdited(const QString &text)

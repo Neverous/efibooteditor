@@ -5,6 +5,7 @@
 
 void BootEntryDelegate::setupWidgetFromItem(Widget &widget, const Item &item) const
 {
+    widget.set_index(item->index);
     widget.set_description(item->description);
     widget.set_data(item->optional_data);
     widget.set_file_path(item->format_file_path(false));

@@ -15,6 +15,11 @@ BootEntryWidget::~BootEntryWidget()
 {
 }
 
+void BootEntryWidget::set_index(const quint32 index)
+{
+    ui->index->setText(QString("%1").arg(index, 4, HEX_BASE, QChar('0')).toUpper());
+}
+
 void BootEntryWidget::set_description(const QString &description)
 {
     ui->description->setText(description);

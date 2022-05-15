@@ -1,0 +1,189 @@
+{
+    "Boot": {
+        "0000": {
+            "attributes": 1,
+            "description": "Windows Boot Manager",
+            "efi_attributes": 7,
+            "file_path": [
+                {
+                    "partition_format": 2,
+                    "partition_number": 1,
+                    "partition_signature": "{721c8b66-426c-4e86-8e99-3457c46ab0b9}",
+                    "partition_size": "0x32",
+                    "partition_start": "0x1cd6",
+                    "signature_type": 2,
+                    "subtype": "HD",
+                    "type": "MEDIA"
+                },
+                {
+                    "name": "\\EFI\\Microsoft\\Boot\\bootmgfw.efi",
+                    "subtype": "FILE",
+                    "type": "MEDIA"
+                }
+            ],
+            "optional_data": "V0lORE9XUwABAAAAiAAAAHgAAABCAEMARABPAEIASgBFAEMAVAA9AHsAOQBkAGUAYQA4ADYAMgBjAC0ANQBjAGQAZAAtADQAZQA3ADAALQBhAGMAYwAxAC0AZgAzADIAYgAzADQANABkADQANwA5ADUAfQAAADkAAQAAABAAAAAEAAAAf/8EAA==",
+            "optional_data_format": 0
+        },
+        "0001": {
+            "attributes": 1,
+            "description": "Arch Linux",
+            "efi_attributes": 7,
+            "file_path": [
+                {
+                    "partition_format": 2,
+                    "partition_number": 1,
+                    "partition_signature": "{721c8b66-426c-4e86-8e99-3457c46ab0b9}",
+                    "partition_size": "0x32",
+                    "partition_start": "0x15876",
+                    "signature_type": 2,
+                    "subtype": "HD",
+                    "type": "MEDIA"
+                },
+                {
+                    "name": "\\vmlinuz-linux",
+                    "subtype": "FILE",
+                    "type": "MEDIA"
+                }
+            ],
+            "optional_data": "root=/dev/sda2 rw initrd=\\initramfs-linux.img init=/lib/systemd/systemd quiet logo.nologo console=tty1",
+            "optional_data_format": 1
+        },
+        "0010": {
+            "attributes": 256,
+            "description": "Setup",
+            "efi_attributes": 7,
+            "file_path": [
+                {
+                    "name": "{721c8b66-426c-4e86-8e99-3457c46ab0b9}",
+                    "subtype": "FIRMWARE_FILE",
+                    "type": "MEDIA"
+                }
+            ],
+            "optional_data": "",
+            "optional_data_format": 2
+        },
+        "0011": {
+            "attributes": 256,
+            "description": "Boot Menu",
+            "efi_attributes": 7,
+            "file_path": [
+                {
+                    "name": "{721c8b66-426c-4e86-8e99-3457c46ab0b9}",
+                    "subtype": "FIRMWARE_FILE",
+                    "type": "MEDIA"
+                }
+            ],
+            "optional_data": "",
+            "optional_data_format": 2
+        },
+        "0012": {
+            "attributes": 256,
+            "description": "Diagnostic Splash",
+            "efi_attributes": 7,
+            "file_path": [
+                {
+                    "name": "{721c8b66-426c-4e86-8e99-3457c46ab0b9}",
+                    "subtype": "FIRMWARE_FILE",
+                    "type": "MEDIA"
+                }
+            ],
+            "optional_data": "",
+            "optional_data_format": 2
+        },
+        "0017": {
+            "attributes": 257,
+            "description": "PCI LAN: EFI Network (IPv4)",
+            "efi_attributes": 7,
+            "file_path": [
+                {
+                    "hid": 167985616,
+                    "subtype": "HID",
+                    "type": "ACPI",
+                    "uid": 0
+                },
+                {
+                    "device": 28,
+                    "function": 3,
+                    "subtype": "PCI",
+                    "type": "HW"
+                },
+                {
+                    "device": 0,
+                    "function": 0,
+                    "subtype": "PCI",
+                    "type": "HW"
+                },
+                {
+                    "address": "54ee7562e09c0000000000000000000000000000000000000000000000000000",
+                    "if_type": 0,
+                    "subtype": "MAC_ADDRESS",
+                    "type": "MSG"
+                },
+                {
+                    "gateway_ip_address": "0.0.0.0",
+                    "local_ip_address": "0.0.0.0",
+                    "local_port": 0,
+                    "protocol": 0,
+                    "remote_ip_address": "0.0.0.0",
+                    "remote_port": 0,
+                    "static_ip_address": false,
+                    "subnet_mask": "0.0.0.0",
+                    "subtype": "IPV4",
+                    "type": "MSG"
+                }
+            ],
+            "optional_data": "꡸꽊⨫仼鲧쳵㶏̸",
+            "optional_data_format": 1
+        },
+        "0019": {
+            "attributes": 385,
+            "description": "PCI LAN: EFI Network (IPv6)",
+            "efi_attributes": 7,
+            "file_path": [
+                {
+                    "hid": 167985616,
+                    "subtype": "HID",
+                    "type": "ACPI",
+                    "uid": 0
+                },
+                {
+                    "device": 28,
+                    "function": 3,
+                    "subtype": "PCI",
+                    "type": "HW"
+                },
+                {
+                    "device": 0,
+                    "function": 0,
+                    "subtype": "PCI",
+                    "type": "HW"
+                },
+                {
+                    "address": "54ee7562e09c0000000000000000000000000000000000000000000000000000",
+                    "if_type": 0,
+                    "subtype": "MAC_ADDRESS",
+                    "type": "MSG"
+                },
+                {
+                    "gateway_ip_address": "::",
+                    "ip_address_origin": 0,
+                    "local_ip_address": "::",
+                    "local_port": 0,
+                    "prefix_length": 64,
+                    "protocol": 0,
+                    "remote_ip_address": "::",
+                    "remote_port": 0,
+                    "subtype": "IPV6",
+                    "type": "MSG"
+                }
+            ],
+            "optional_data": "꡸꽊⨫仼鲧쳵㶏̸",
+            "optional_data_format": 1
+        }
+    },
+    "BootOrder": [
+        0,
+        1
+    ],
+    "Timeout": 10
+}
