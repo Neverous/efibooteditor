@@ -502,7 +502,6 @@ QByteArray DevicePathDialog::getVendorData(int index) const
 
 void DevicePathDialog::resetVendorForm()
 {
-    ui->vendor_guid_text->setInputMask("<HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_");
     ui->vendor_guid_text->clear();
     ui->vendor_data_format_combo->setCurrentIndex(0);
     vendor_data_format_combo_index = 0;
@@ -511,38 +510,30 @@ void DevicePathDialog::resetVendorForm()
 
 void DevicePathDialog::resetMACAddressForm()
 {
-    ui->mac_address_text->setInputMask("<hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh;0");
     ui->mac_address_text->clear();
     ui->if_type_number->clear();
 }
 
 void DevicePathDialog::resetIPv4Form()
 {
-    ui->ipv4_local_ip_text->setInputMask("000.000.000.000");
     ui->ipv4_local_ip_text->clear();
     ui->ipv4_local_port_number->clear();
-    ui->ipv4_remote_ip_text->setInputMask("000.000.000.000");
     ui->ipv4_remote_ip_text->clear();
     ui->ipv4_remote_port_number->clear();
     ui->ipv4_protocol_number->clear();
     ui->ipv4_static->setChecked(false);
-    ui->ipv4_gateway_ip_text->setInputMask("000.000.000.000");
     ui->ipv4_gateway_ip_text->clear();
-    ui->ipv4_subnet_mask_text->setInputMask("000.000.000.000");
     ui->ipv4_subnet_mask_text->clear();
 }
 
 void DevicePathDialog::resetIPv6Form()
 {
-    ui->ipv6_local_ip_text->setInputMask("<hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh");
     ui->ipv6_local_ip_text->clear();
     ui->ipv6_local_port_number->clear();
-    ui->ipv6_remote_ip_text->setInputMask("<hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh");
     ui->ipv6_remote_ip_text->clear();
     ui->ipv6_remote_port_number->clear();
     ui->ipv6_protocol_number->clear();
     ui->ipv6_origin_combo->setCurrentIndex(0);
-    ui->ipv6_gateway_ip_text->setInputMask("<hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh");
     ui->ipv6_gateway_ip_text->clear();
     ui->ipv6_prefix_length_number->clear();
 }
@@ -576,6 +567,5 @@ void DevicePathDialog::resetFirmwareFileForm()
 
 void DevicePathDialog::resetFirmwareVolumeForm()
 {
-    ui->firmware_volume_text->setInputMask("<HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_");
     ui->firmware_volume_text->clear();
 }

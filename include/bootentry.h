@@ -364,6 +364,7 @@ public:
         Hex = 3,
     };
 
+    quint16 index = 0;
     QString description = "New entry";
     QVector<Device_path::ANY> file_path = {};
     QString optional_data = "";

@@ -194,6 +194,37 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="entries_reorder">
+        <property name="maximumSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Reorder entries</string>
+        </property>
+        <property name="statusTip">
+         <string>Reorder entries</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to adjust the order of all entries based on their position on the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset theme="format-justify-left"></iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
        <spacer name="entries_actions_spacer">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -708,6 +739,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>entries_reorder</sender>
+   <signal>clicked()</signal>
+   <receiver>EFIBootEditor</receiver>
+   <slot>reorder()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>191</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>enableBootEntryEditor(QModelIndex)</slot>
@@ -718,5 +765,6 @@
   <slot>export_()</slot>
   <slot>import()</slot>
   <slot>dump()</slot>
+  <slot>reorder()</slot>
  </slots>
 </ui>
