@@ -650,7 +650,7 @@ void EFIBootEditor::showAboutBox()
         this);
     about->setInformativeText(tr(
         "<p>License: <a href='http://www.gnu.org/licenses/lgpl.html'>GNU LGPL Version 3</a></p>"
-        "<p>On *nix uses <a href='https://github.com/rhboot/efivar'>efivar</a> for EFI variables access.</p>"
+        "<p>On Linux uses <a href='https://github.com/rhboot/efivar'>efivar</a> for EFI variables access.</p>"
         "<p>Uses Tango Icons as fallback icons</p>"
         "<p>The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</p>"));
     QObject::connect(about->button(QMessageBox::Close), &QAbstractButton::clicked, about, &QObject::deleteLater);
