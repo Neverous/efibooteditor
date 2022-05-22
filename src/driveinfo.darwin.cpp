@@ -70,7 +70,7 @@ auto DriveInfo::get_all(bool refresh) -> QVector<DriveInfo>
             CFRelease(value_cf);
         }
 
-        int block_size = -1;
+        uint32_t block_size = 0;
         value_cf = IORegistryEntryCreateCFProperty(disk_service_io, CFSTR(kIOMediaPreferredBlockSizeKey), kCFAllocatorDefault, 0);
         if(value_cf != nullptr)
         {

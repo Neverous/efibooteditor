@@ -58,7 +58,7 @@ int efi_get_variable(efi_guid_t guid, const char *name, uint8_t **data, size_t *
         return -1;
     }
 
-    *data_size = CFDataGetLength(value_cf);
+    *data_size = (size_t)CFDataGetLength(value_cf);
     free(variable_data_buffer);
     variable_data_buffer = malloc(*data_size);
     if(!variable_data_buffer)
@@ -88,11 +88,14 @@ int efi_del_variable(efi_guid_t guid, const char *name)
 
 int efi_set_variable(efi_guid_t guid, const char *name, uint8_t *data, size_t data_size, uint32_t attributes, mode_t mode)
 {
+    (void)attributes;
+    (void)mode;
+
     CFStringRef name_cf = _get_nvram_variable_name(&guid, name);
     if(name_cf == NULL)
         return -1;
 
-    CFDataRef value_cf = CFDataCreateWithBytesNoCopy(kCFAllocatorDefault, data, data_size, kCFAllocatorDefault);
+    CFDataRef value_cf = CFDataCreateWithBytesNoCopy(kCFAllocatorDefault, data, (CFIndex)data_size, kCFAllocatorDefault);
     if(value_cf == NULL)
     {
         last_iokit_function = "CFDataCreateWithBytesNoCopy";
@@ -146,9 +149,9 @@ int efi_get_next_variable_name(efi_guid_t **guid, char **name)
         if(value_cf == NULL)
             continue;
 
-        size_t length = CFDataGetLength(value_cf);
+        CFIndex length = CFDataGetLength(value_cf);
         CFRelease(value_cf);
-        if(length > 0u)
+        if(length > 0)
             return ret;
     }
 }
