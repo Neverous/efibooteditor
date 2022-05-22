@@ -76,20 +76,22 @@ REGISTER_JSON_READER(HID);
 class Vendor
 {
 public:
-    static constexpr auto TYPE = "MSG";
-    static constexpr auto SUBTYPE = "Vendor";
+    static constexpr auto TYPE = "MULTI";
+    static constexpr auto SUBTYPE = "VENDOR";
 
 private:
     mutable QString string = "";
 
 public:
+    quint8 _type = 0;
     QUuid guid = {};
     QByteArray data = {};
 
 public:
     Vendor() = default;
-    Vendor(const EFIBoot::Device_path::Vendor &vendor);
-    EFIBoot::Device_path::Vendor toEFIBootDevicePath() const;
+    Vendor(const EFIBoot::Device_path::HWVendor &vendor);
+    Vendor(const EFIBoot::Device_path::MSGVendor &vendor);
+    EFIBoot::Device_path::ANY toEFIBootDevicePath() const;
 
     static std::optional<Vendor> fromJSON(const QJsonObject &obj);
     QJsonObject toJSON() const;
@@ -312,6 +314,77 @@ public:
 };
 REGISTER_JSON_READER(FirmwareVolume);
 
+class End
+{
+public:
+    static constexpr auto TYPE = "END";
+    static constexpr auto SUBTYPE = "MULTI";
+
+private:
+    mutable QString string = "";
+
+public:
+    EFIBoot::EFIDP_END _subtype = EFIBoot::EFIDP_END_ENTIRE;
+
+public:
+    End() = default;
+    End(const EFIBoot::Device_path::End_instance &)
+        : _subtype{EFIBoot::EFIDP_END_INSTANCE}
+    {
+    }
+    End(const EFIBoot::Device_path::End_entire &)
+        : _subtype{EFIBoot::EFIDP_END_ENTIRE}
+    {
+    }
+    EFIBoot::Device_path::ANY toEFIBootDevicePath() const
+    {
+        switch(_subtype)
+        {
+        case EFIBoot::EFIDP_END_INSTANCE:
+            return EFIBoot::Device_path::End_instance{};
+            break;
+
+        case EFIBoot::EFIDP_END_ENTIRE:
+            return EFIBoot::Device_path::End_entire{};
+            break;
+        }
+
+        return {};
+    }
+
+    static std::optional<End> fromJSON(const QJsonObject &obj);
+    QJsonObject toJSON() const;
+
+    QString toString(bool refresh = true) const;
+};
+REGISTER_JSON_READER(End);
+
+class Unknown
+{
+public:
+    static constexpr auto TYPE = "UNK";
+    static constexpr auto SUBTYPE = "UNKNOWN";
+
+private:
+    mutable QString string = "";
+
+public:
+    quint8 type = 0;
+    quint8 subtype = 0;
+    QByteArray data = {};
+
+public:
+    Unknown() = default;
+    Unknown(const EFIBoot::Device_path::Unknown &unknown);
+    EFIBoot::Device_path::Unknown toEFIBootDevicePath() const;
+
+    static std::optional<Unknown> fromJSON(const QJsonObject &obj);
+    QJsonObject toJSON() const;
+
+    QString toString(bool refresh = true) const;
+};
+REGISTER_JSON_READER(Unknown);
+
 typedef std::variant<
     PCI,
     HID,
@@ -323,7 +396,9 @@ typedef std::variant<
     HD,
     File,
     FirmwareFile,
-    FirmwareVolume>
+    FirmwareVolume,
+    End,
+    Unknown>
     ANY;
 
 extern std::unique_ptr<std::unordered_map<QString, std::function<std::optional<ANY>(const QJsonObject &)>>> JSON_readers__instance;

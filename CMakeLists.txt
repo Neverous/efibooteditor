@@ -82,7 +82,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
 
 if(UNIX)
     target_compile_options(${PROJECT_NAME} PRIVATE
-        -Wall -Wpedantic -Werror -pedantic -Wshadow $<$<COMPILE_LANGUAGE:CXX>:-Weffc++>
+        -Wall -Wpedantic -Werror -pedantic -Wshadow -Wextra -Wconversion $<$<COMPILE_LANGUAGE:CXX>:-Weffc++>
     )
 endif()
 

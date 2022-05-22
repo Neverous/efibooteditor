@@ -74,9 +74,11 @@ private:
         File = 8,
         FirmwareFile = 9,
         FirmwareVolume = 10,
+        End = 11,
+        Unknown = 12,
     };
 
-    enum VendorDataFormat
+    enum DataFormat
     {
         Base64 = 0,
         Utf16 = 1,
@@ -84,9 +86,13 @@ private:
         Hex = 3,
     };
 
+    typedef DataFormat VendorDataFormat;
+    typedef DataFormat UnknownDataFormat;
+
     HorizontalTabStyle horizontal_tab_style;
     std::unique_ptr<Ui::DevicePathDialog> ui;
     int vendor_data_format_combo_index;
+    int unknown_data_format_combo_index;
 
 public:
     explicit DevicePathDialog(QWidget *parent = nullptr);
@@ -108,12 +114,15 @@ public:
     void setFileForm(const Device_path::File &file);
     void setFirmwareFileForm(const Device_path::FirmwareFile &firmware_file);
     void setFirmwareVolumeForm(const Device_path::FirmwareVolume &firmware_volume);
+    void setEndForm(const EFIBoot::EFIDP_END subtype);
+    void setUnknownForm(const Device_path::Unknown &unknown);
 
 private:
     void resetForms();
     void resetPCIForm();
     void resetHIDForm();
-    QByteArray getVendorData(int format) const;
+    QByteArray getVendorData(int index) const;
+    QByteArray getUnknownData(int index) const;
     void resetVendorForm();
     void resetMACAddressForm();
     void resetIPv4Form();
@@ -123,6 +132,8 @@ private:
     void resetFileForm();
     void resetFirmwareFileForm();
     void resetFirmwareVolumeForm();
+    void resetEndForm();
+    void resetUnknownForm();
     void refreshDiskCombo(bool force);
 
 private slots:
@@ -130,6 +141,7 @@ private slots:
     void diskChoiceChanged(int index);
     void signatureTypeChoiceChanged(int index);
     void vendorDataFormatChanged(int index);
+    void unknownDataFormatChanged(int index);
 };
 
 #if defined(_MSC_VER)

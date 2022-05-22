@@ -64,7 +64,7 @@ auto DevicePathProxyListModel::insertRows(int row, int count, const QModelIndex 
     boot_entry_list_model->changeData(boot_entry_index, [row, count](BootEntry &entry)
         {
         for(int c = 0; c < count; ++c)
-            entry.file_path.insert(static_cast<qsizetype>(row) + c, {});
+            entry.file_path.insert(static_cast<decltype(entry.file_path)::size_type>(row) + c, {});
 
         entry.format_file_path();
         return true; });
@@ -92,7 +92,7 @@ auto DevicePathProxyListModel::moveRows(const QModelIndex &sourceParent, int sou
     boot_entry_list_model->changeData(boot_entry_index, [sourceRow, count, destinationChild](BootEntry &entry)
         {
         for(int c = 0; c < count; ++c)
-            entry.file_path.move(sourceRow, static_cast<qsizetype>(destinationChild) + (sourceRow < destinationChild ? 0 : c));
+            entry.file_path.move(sourceRow, static_cast<decltype(entry.file_path)::size_type>(destinationChild) + (sourceRow < destinationChild ? 0 : c));
 
         entry.format_file_path();
         return true; });

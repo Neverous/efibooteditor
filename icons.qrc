@@ -20,5 +20,7 @@
         <file>icons/Tango/scalable/devices/system.svg</file>
         <file>icons/Tango/scalable/devices/network-wired.svg</file>
         <file>icons/Tango/scalable/actions/format-justify-left.svg</file>
+        <file>icons/Tango/scalable/actions/system-search.svg</file>
+        <file>icons/Tango/scalable/actions/stop.svg</file>
     </qresource>
 </RCC>

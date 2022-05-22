@@ -59,47 +59,57 @@ inline bool register_deserializer();
 
 enum TYPE
 {
-    HW = 0x01,
-    ACPI = 0x02,
-    MSG = 0x03,
-    MEDIA = 0x04,
-    END = 0x7F,
+    HW = EFIDP_TYPE_HW,
+    ACPI = EFIDP_TYPE_ACPI,
+    MSG = EFIDP_TYPE_MSG,
+    MEDIA = EFIDP_TYPE_MEDIA,
+    END = EFIDP_TYPE_END,
 };
 
 struct PCI
 {
     static const uint8_t TYPE = HW;
-    static const uint8_t SUBTYPE = 0x01;
+    static const uint8_t SUBTYPE = EFIDP_HW_PCI;
 
     uint8_t function = 0;
     uint8_t device = 0;
 };
 REGISTER_DESERIALIZER(PCI);
 
+struct HWVendor
+{
+    static const uint8_t TYPE = HW;
+    static const uint8_t SUBTYPE = EFIDP_HW_VENDOR;
+
+    std::array<uint8_t, 16> guid = {};
+    Raw_data data = {};
+};
+REGISTER_DESERIALIZER(HWVendor);
+
 struct HID
 {
     static const uint8_t TYPE = ACPI;
-    static const uint8_t SUBTYPE = 0x01;
+    static const uint8_t SUBTYPE = EFIDP_ACPI_HID;
 
     uint32_t hid = 0;
     uint32_t uid = 0;
 };
 REGISTER_DESERIALIZER(HID);
 
-struct Vendor
+struct MSGVendor
 {
     static const uint8_t TYPE = MSG;
-    static const uint8_t SUBTYPE = 0x0a;
+    static const uint8_t SUBTYPE = EFIDP_MSG_VENDOR;
 
     std::array<uint8_t, 16> guid = {};
     Raw_data data = {};
 };
-REGISTER_DESERIALIZER(Vendor);
+REGISTER_DESERIALIZER(MSGVendor);
 
 struct MAC_address
 {
     static const uint8_t TYPE = MSG;
-    static const uint8_t SUBTYPE = 0x0b;
+    static const uint8_t SUBTYPE = EFIDP_MSG_MAC_ADDRESS;
 
     std::array<uint8_t, 32> address = {};
     uint8_t if_type = 0;
@@ -109,7 +119,7 @@ REGISTER_DESERIALIZER(MAC_address);
 struct IPv4
 {
     static const uint8_t TYPE = MSG;
-    static const uint8_t SUBTYPE = 0x0c;
+    static const uint8_t SUBTYPE = EFIDP_MSG_IPV4;
 
     std::array<uint8_t, 4> local_ip_address = {};
     std::array<uint8_t, 4> remote_ip_address = {};
@@ -125,7 +135,7 @@ REGISTER_DESERIALIZER(IPv4);
 struct IPv6
 {
     static const uint8_t TYPE = MSG;
-    static const uint8_t SUBTYPE = 0x0d;
+    static const uint8_t SUBTYPE = EFIDP_MSG_IPV6;
 
     std::array<uint8_t, 16> local_ip_address = {};
     std::array<uint8_t, 16> remote_ip_address = {};
@@ -141,7 +151,7 @@ REGISTER_DESERIALIZER(IPv6);
 struct SATA
 {
     static const uint8_t TYPE = MSG;
-    static const uint8_t SUBTYPE = 0x12;
+    static const uint8_t SUBTYPE = EFIDP_MSG_SATA;
 
     uint16_t hba_port = 0;
     uint16_t port_multiplier_port = 0;
@@ -159,7 +169,7 @@ enum SIGNATURE
 struct HD
 {
     static const uint8_t TYPE = MEDIA;
-    static const uint8_t SUBTYPE = 0x01;
+    static const uint8_t SUBTYPE = EFIDP_MEDIA_HD;
 
     uint64_t partition_start = 0;
     uint64_t partition_size = 0;
@@ -173,7 +183,7 @@ REGISTER_DESERIALIZER(HD);
 struct File
 {
     static const uint8_t TYPE = MEDIA;
-    static const uint8_t SUBTYPE = 0x04;
+    static const uint8_t SUBTYPE = EFIDP_MEDIA_FILE;
 
     std::u16string name = u"";
 };
@@ -182,7 +192,7 @@ REGISTER_DESERIALIZER(File);
 struct Firmware_file
 {
     static const uint8_t TYPE = MEDIA;
-    static const uint8_t SUBTYPE = 0x06;
+    static const uint8_t SUBTYPE = EFIDP_MEDIA_FIRMWARE_FILE;
 
     std::array<uint8_t, 16> name = {};
 };
@@ -191,22 +201,38 @@ REGISTER_DESERIALIZER(Firmware_file);
 struct Firmware_volume
 {
     static const uint8_t TYPE = MEDIA;
-    static const uint8_t SUBTYPE = 0x07;
+    static const uint8_t SUBTYPE = EFIDP_MEDIA_FIRMWARE_VOLUME;
 
     std::array<uint8_t, 16> name = {};
 };
 REGISTER_DESERIALIZER(Firmware_volume);
 
-struct End
+struct End_instance
 {
     static const uint8_t TYPE = END;
-    static const uint8_t SUBTYPE = 0xFF;
+    static const uint8_t SUBTYPE = EFIDP_END_INSTANCE;
+};
+REGISTER_DESERIALIZER(End_instance);
+
+struct End_entire
+{
+    static const uint8_t TYPE = END;
+    static const uint8_t SUBTYPE = EFIDP_END_ENTIRE;
+};
+REGISTER_DESERIALIZER(End_entire);
+
+struct Unknown
+{
+    uint8_t TYPE = 0;
+    uint8_t SUBTYPE = 0;
+    Raw_data data = {};
 };
 
 typedef std::variant<
     PCI,
+    HWVendor,
     HID,
-    Vendor,
+    MSGVendor,
     MAC_address,
     IPv4,
     IPv6,
@@ -214,7 +240,10 @@ typedef std::variant<
     HD,
     File,
     Firmware_file,
-    Firmware_volume>
+    Firmware_volume,
+    End_instance,
+    End_entire,
+    Unknown>
     ANY;
 
 extern std::unique_ptr<std::unordered_map<uint16_t, std::function<std::optional<ANY>(const void *, size_t)>>> deserializers__instance;
@@ -455,6 +484,66 @@ size_t serialize_list(Raw_data &output, const std::vector<Type> &value)
 }
 
 template <>
+inline std::optional<Device_path::End_instance> deserialize(const void *data, size_t data_size)
+{
+    const efidp_header *dp = static_cast<const efidp_header *>(data);
+    if(dp->length != data_size)
+        return std::nullopt;
+
+    if(dp->type != Device_path::End_instance::TYPE)
+        return std::nullopt;
+
+    if(dp->subtype != Device_path::End_instance::SUBTYPE)
+        return std::nullopt;
+
+    Device_path::End_instance value;
+    return {value};
+}
+
+template <>
+inline size_t serialize(Raw_data &output, const Device_path::End_instance &)
+{
+    size_t bytes = 0;
+    uint8_t type = Device_path::End_instance::TYPE;
+    bytes += serialize(output, type);
+    uint8_t subtype = Device_path::End_instance::SUBTYPE;
+    bytes += serialize(output, subtype);
+    uint16_t length = static_cast<uint16_t>(bytes + sizeof(uint16_t));
+    bytes += serialize(output, length);
+    return bytes;
+}
+
+template <>
+inline std::optional<Device_path::End_entire> deserialize(const void *data, size_t data_size)
+{
+    const efidp_header *dp = static_cast<const efidp_header *>(data);
+    if(dp->length != data_size)
+        return std::nullopt;
+
+    if(dp->type != Device_path::End_entire::TYPE)
+        return std::nullopt;
+
+    if(dp->subtype != Device_path::End_entire::SUBTYPE)
+        return std::nullopt;
+
+    Device_path::End_entire value;
+    return {value};
+}
+
+template <>
+inline size_t serialize(Raw_data &output, const Device_path::End_entire &)
+{
+    size_t bytes = 0;
+    uint8_t type = Device_path::End_entire::TYPE;
+    bytes += serialize(output, type);
+    uint8_t subtype = Device_path::End_entire::SUBTYPE;
+    bytes += serialize(output, subtype);
+    uint16_t length = static_cast<uint16_t>(bytes + sizeof(uint16_t));
+    bytes += serialize(output, length);
+    return bytes;
+}
+
+template <>
 inline std::optional<Load_option> deserialize(const void *data, size_t data_size)
 {
     Load_option value;
@@ -481,20 +570,12 @@ inline std::optional<Load_option> deserialize(const void *data, size_t data_size
             if(reinterpret_cast<size_t &>(size) > bytes_left)
                 return nullptr;
 
-            if(reinterpret_cast<size_t &>(size) == bytes_left)
-                return static_cast<const uint8_t *>(ptr) + bytes_left;
-
-            const_efidp next = nullptr;
-            if(efidp_next_instance(dp, &next) < 0 && efidp_next_node(dp, &next) < 0)
-                return nullptr;
-
-            return next;
+            return static_cast<const uint8_t *>(ptr) + size;
         });
 
     if(!file_path || file_path->empty())
         return std::nullopt;
 
-    file_path->pop_back(); // pop END tag
     value.file_path = *file_path;
 
     uint8_t *optional_data = nullptr;
@@ -514,19 +595,6 @@ inline std::optional<Load_option> deserialize(const void *data, size_t data_size
 }
 
 template <>
-inline size_t serialize(Raw_data &output, const Device_path::End &)
-{
-    size_t bytes = 0;
-    uint8_t type = Device_path::TYPE::END;
-    bytes += serialize(output, type);
-    uint8_t subtype = Device_path::End::SUBTYPE;
-    bytes += serialize(output, subtype);
-    uint16_t length = static_cast<uint16_t>(bytes + sizeof(uint16_t));
-    bytes += serialize(output, length);
-    return bytes;
-}
-
-template <>
 inline size_t serialize(Raw_data &output, const Load_option &load_option)
 {
     size_t size = 0;
@@ -539,8 +607,14 @@ inline size_t serialize(Raw_data &output, const Load_option &load_option)
     size += serialize(output, zero);
     {
         file_path_list_size = static_cast<uint16_t>(serialize_list(output, load_option.file_path));
-        Device_path::End end;
-        file_path_list_size += static_cast<uint16_t>(serialize(output, end));
+        if(!load_option.file_path.size() || std::visit([](const auto &device_path)
+                                                { return device_path.SUBTYPE; },
+                                                load_option.file_path.back())
+                != Device_path::End_entire::SUBTYPE)
+        {
+            Device_path::End_entire end;
+            file_path_list_size += static_cast<uint16_t>(serialize(output, end));
+        }
         size += file_path_list_size;
         memcpy(&output[file_path_list_length_pos], &file_path_list_size, sizeof(file_path_list_size));
     }
@@ -556,7 +630,7 @@ inline std::optional<Device_path::PCI> deserialize(const void *data, size_t data
     if(dp->header.length != data_size)
         return std::nullopt;
 
-    if(dp->header.type != Device_path::TYPE::HW)
+    if(dp->header.type != Device_path::PCI::TYPE)
         return std::nullopt;
 
     if(dp->header.subtype != Device_path::PCI::SUBTYPE)
@@ -572,7 +646,7 @@ template <>
 inline size_t serialize(Raw_data &output, const Device_path::PCI &pci)
 {
     size_t bytes = 0;
-    uint8_t type = Device_path::TYPE::HW;
+    uint8_t type = Device_path::PCI::TYPE;
     bytes += serialize(output, type);
     uint8_t subtype = Device_path::PCI::SUBTYPE;
     bytes += serialize(output, subtype);
@@ -587,13 +661,52 @@ inline size_t serialize(Raw_data &output, const Device_path::PCI &pci)
 }
 
 template <>
+inline std::optional<Device_path::HWVendor> deserialize(const void *data, size_t data_size)
+{
+    const efidp_vendor *dp = static_cast<const efidp_vendor *>(data);
+    if(dp->header.length != data_size)
+        return std::nullopt;
+
+    if(dp->header.type != Device_path::HWVendor::TYPE)
+        return std::nullopt;
+
+    if(dp->header.subtype != Device_path::HWVendor::SUBTYPE)
+        return std::nullopt;
+
+    Device_path::HWVendor value;
+    std::copy(std::begin(dp->guid), std::end(dp->guid), std::begin(value.guid));
+    size_t data_length = data_size - sizeof(dp->header) - sizeof(dp->guid) / sizeof(dp->guid[0]);
+    value.data.resize(data_length);
+    std::copy(std::begin(dp->data), std::next(std::begin(dp->data), static_cast<int>(data_length)), std::begin(value.data));
+    return {value};
+}
+
+template <>
+inline size_t serialize(Raw_data &output, const Device_path::HWVendor &vendor)
+{
+    size_t bytes = 0;
+    uint8_t type = Device_path::HWVendor::TYPE;
+    bytes += serialize(output, type);
+    uint8_t subtype = Device_path::HWVendor::SUBTYPE;
+    bytes += serialize(output, subtype);
+    size_t pos = output.size();
+    uint16_t length = 0;
+    bytes += serialize(output, length);
+    bytes += serialize(output, vendor.guid);
+    bytes += serialize(output, vendor.data);
+    length = static_cast<uint16_t>(bytes);
+    memcpy(&output[pos], &length, sizeof(length));
+    return bytes;
+}
+
+template <>
 inline std::optional<Device_path::HID> deserialize(const void *data, size_t data_size)
 {
     const efidp_hid *dp = static_cast<const efidp_hid *>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
-    if(dp->header.type != Device_path::TYPE::ACPI)
+    if(dp->header.type != Device_path::HID::TYPE)
         return std::nullopt;
 
     if(dp->header.subtype != Device_path::HID::SUBTYPE)
@@ -609,7 +722,7 @@ template <>
 inline size_t serialize(Raw_data &output, const Device_path::HID &hid)
 {
     size_t bytes = 0;
-    uint8_t type = Device_path::TYPE::ACPI;
+    uint8_t type = Device_path::HID::TYPE;
     bytes += serialize(output, type);
     uint8_t subtype = Device_path::HID::SUBTYPE;
     bytes += serialize(output, subtype);
@@ -624,19 +737,19 @@ inline size_t serialize(Raw_data &output, const Device_path::HID &hid)
 }
 
 template <>
-inline std::optional<Device_path::Vendor> deserialize(const void *data, size_t data_size)
+inline std::optional<Device_path::MSGVendor> deserialize(const void *data, size_t data_size)
 {
     const efidp_vendor *dp = static_cast<const efidp_vendor *>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
-    if(dp->header.type != Device_path::TYPE::MSG)
+    if(dp->header.type != Device_path::MSGVendor::TYPE)
         return std::nullopt;
 
-    if(dp->header.subtype != Device_path::Vendor::SUBTYPE)
+    if(dp->header.subtype != Device_path::MSGVendor::SUBTYPE)
         return std::nullopt;
 
-    Device_path::Vendor value;
+    Device_path::MSGVendor value;
     std::copy(std::begin(dp->guid), std::end(dp->guid), std::begin(value.guid));
     size_t data_length = data_size - sizeof(dp->header) - sizeof(dp->guid) / sizeof(dp->guid[0]);
     value.data.resize(data_length);
@@ -645,12 +758,12 @@ inline std::optional<Device_path::Vendor> deserialize(const void *data, size_t d
 }
 
 template <>
-inline size_t serialize(Raw_data &output, const Device_path::Vendor &vendor)
+inline size_t serialize(Raw_data &output, const Device_path::MSGVendor &vendor)
 {
     size_t bytes = 0;
-    uint8_t type = Device_path::TYPE::MSG;
+    uint8_t type = Device_path::MSGVendor::TYPE;
     bytes += serialize(output, type);
-    uint8_t subtype = Device_path::Vendor::SUBTYPE;
+    uint8_t subtype = Device_path::MSGVendor::SUBTYPE;
     bytes += serialize(output, subtype);
     size_t pos = output.size();
     uint16_t length = 0;
@@ -669,7 +782,7 @@ inline std::optional<Device_path::MAC_address> deserialize(const void *data, siz
     if(dp->header.length != data_size)
         return std::nullopt;
 
-    if(dp->header.type != Device_path::TYPE::MSG)
+    if(dp->header.type != Device_path::MAC_address::TYPE)
         return std::nullopt;
 
     if(dp->header.subtype != Device_path::MAC_address::SUBTYPE)
@@ -685,7 +798,7 @@ template <>
 inline size_t serialize(Raw_data &output, const Device_path::MAC_address &mac_address)
 {
     size_t bytes = 0;
-    uint8_t type = Device_path::TYPE::MSG;
+    uint8_t type = Device_path::MAC_address::TYPE;
     bytes += serialize(output, type);
     uint8_t subtype = Device_path::MAC_address::SUBTYPE;
     bytes += serialize(output, subtype);
@@ -706,7 +819,7 @@ inline std::optional<Device_path::IPv4> deserialize(const void *data, size_t dat
     if(dp->header.length != data_size)
         return std::nullopt;
 
-    if(dp->header.type != Device_path::TYPE::MSG)
+    if(dp->header.type != Device_path::IPv4::TYPE)
         return std::nullopt;
 
     if(dp->header.subtype != Device_path::IPv4::SUBTYPE)
@@ -728,7 +841,7 @@ template <>
 inline size_t serialize(Raw_data &output, const Device_path::IPv4 &ipv4)
 {
     size_t bytes = 0;
-    uint8_t type = Device_path::TYPE::MSG;
+    uint8_t type = Device_path::IPv4::TYPE;
     bytes += serialize(output, type);
     uint8_t subtype = Device_path::IPv4::SUBTYPE;
     bytes += serialize(output, subtype);
@@ -755,7 +868,7 @@ inline std::optional<Device_path::IPv6> deserialize(const void *data, size_t dat
     if(dp->header.length != data_size)
         return std::nullopt;
 
-    if(dp->header.type != Device_path::TYPE::MSG)
+    if(dp->header.type != Device_path::IPv6::TYPE)
         return std::nullopt;
 
     if(dp->header.subtype != Device_path::IPv6::SUBTYPE)
@@ -777,7 +890,7 @@ template <>
 inline size_t serialize(Raw_data &output, const Device_path::IPv6 &ipv6)
 {
     size_t bytes = 0;
-    uint8_t type = Device_path::TYPE::MSG;
+    uint8_t type = Device_path::IPv6::TYPE;
     bytes += serialize(output, type);
     uint8_t subtype = Device_path::IPv6::SUBTYPE;
     bytes += serialize(output, subtype);
@@ -804,7 +917,7 @@ inline std::optional<Device_path::SATA> deserialize(const void *data, size_t dat
     if(dp->header.length != data_size)
         return std::nullopt;
 
-    if(dp->header.type != Device_path::TYPE::MSG)
+    if(dp->header.type != Device_path::SATA::TYPE)
         return std::nullopt;
 
     if(dp->header.subtype != Device_path::SATA::SUBTYPE)
@@ -821,7 +934,7 @@ template <>
 inline size_t serialize(Raw_data &output, const Device_path::SATA &sata)
 {
     size_t bytes = 0;
-    uint8_t type = Device_path::TYPE::MSG;
+    uint8_t type = Device_path::SATA::TYPE;
     bytes += serialize(output, type);
     uint8_t subtype = Device_path::SATA::SUBTYPE;
     bytes += serialize(output, subtype);
@@ -843,7 +956,7 @@ inline std::optional<Device_path::HD> deserialize(const void *data, size_t data_
     if(dp->header.length != data_size)
         return std::nullopt;
 
-    if(dp->header.type != Device_path::TYPE::MEDIA)
+    if(dp->header.type != Device_path::HD::TYPE)
         return std::nullopt;
 
     if(dp->header.subtype != Device_path::HD::SUBTYPE)
@@ -863,7 +976,7 @@ template <>
 inline size_t serialize(Raw_data &output, const Device_path::HD &hd)
 {
     size_t bytes = 0;
-    uint8_t type = Device_path::TYPE::MEDIA;
+    uint8_t type = Device_path::HD::TYPE;
     bytes += serialize(output, type);
     uint8_t subtype = Device_path::HD::SUBTYPE;
     bytes += serialize(output, subtype);
@@ -888,7 +1001,7 @@ inline std::optional<Device_path::File> deserialize(const void *data, size_t dat
     if(dp->header.length != data_size)
         return std::nullopt;
 
-    if(dp->header.type != Device_path::TYPE::MEDIA)
+    if(dp->header.type != Device_path::File::TYPE)
         return std::nullopt;
 
     if(dp->header.subtype != Device_path::File::SUBTYPE)
@@ -904,7 +1017,7 @@ template <>
 inline size_t serialize(Raw_data &output, const Device_path::File &file)
 {
     size_t bytes = 0;
-    uint8_t type = Device_path::TYPE::MEDIA;
+    uint8_t type = Device_path::File::TYPE;
     bytes += serialize(output, type);
     uint8_t subtype = Device_path::File::SUBTYPE;
     bytes += serialize(output, subtype);
@@ -926,7 +1039,7 @@ inline std::optional<Device_path::Firmware_file> deserialize(const void *data, s
     if(dp->header.length != data_size)
         return std::nullopt;
 
-    if(dp->header.type != Device_path::TYPE::MEDIA)
+    if(dp->header.type != Device_path::Firmware_file::TYPE)
         return std::nullopt;
 
     if(dp->header.subtype != Device_path::Firmware_file::SUBTYPE)
@@ -941,7 +1054,7 @@ template <>
 inline size_t serialize(Raw_data &output, const Device_path::Firmware_file &firmware_file)
 {
     size_t bytes = 0;
-    uint8_t type = Device_path::TYPE::MEDIA;
+    uint8_t type = Device_path::Firmware_file::TYPE;
     bytes += serialize(output, type);
     uint8_t subtype = Device_path::Firmware_file::SUBTYPE;
     bytes += serialize(output, subtype);
@@ -961,7 +1074,7 @@ inline std::optional<Device_path::Firmware_volume> deserialize(const void *data,
     if(dp->header.length != data_size)
         return std::nullopt;
 
-    if(dp->header.type != Device_path::TYPE::MEDIA)
+    if(dp->header.type != Device_path::Firmware_volume::TYPE)
         return std::nullopt;
 
     if(dp->header.subtype != Device_path::Firmware_volume::SUBTYPE)
@@ -976,7 +1089,7 @@ template <>
 inline size_t serialize(Raw_data &output, const Device_path::Firmware_volume &firmware_volume)
 {
     size_t bytes = 0;
-    uint8_t type = Device_path::TYPE::MEDIA;
+    uint8_t type = Device_path::Firmware_volume::TYPE;
     bytes += serialize(output, type);
     uint8_t subtype = Device_path::Firmware_volume::SUBTYPE;
     bytes += serialize(output, subtype);
@@ -990,17 +1103,45 @@ inline size_t serialize(Raw_data &output, const Device_path::Firmware_volume &fi
 }
 
 template <>
+inline std::optional<Device_path::Unknown> deserialize(const void *data, size_t data_size)
+{
+    const efidp_header *dp = static_cast<const efidp_header *>(data);
+    if(dp->length != data_size)
+        return std::nullopt;
+
+    Device_path::Unknown value;
+    value.TYPE = dp->type;
+    value.SUBTYPE = dp->subtype;
+
+    size_t data_length = data_size - sizeof(dp);
+    value.data.resize(data_length);
+    std::copy(reinterpret_cast<const uint8_t *>(dp + 1), std::next(reinterpret_cast<const uint8_t *>(dp), static_cast<int>(data_length)), std::begin(value.data));
+    return {value};
+}
+
+template <>
+inline size_t serialize(Raw_data &output, const Device_path::Unknown &unknown)
+{
+    size_t bytes = 0;
+    bytes += serialize(output, unknown.TYPE);
+    bytes += serialize(output, unknown.SUBTYPE);
+    size_t pos = output.size();
+    uint16_t length = 0;
+    bytes += serialize(output, length);
+    bytes += serialize(output, unknown.data);
+    length = static_cast<uint16_t>(bytes);
+    memcpy(&output[pos], &length, sizeof(length));
+    return bytes;
+}
+
+template <>
 inline std::optional<Device_path::ANY> deserialize(const void *data, size_t data_size)
 {
     const_efidp dp = static_cast<const_efidp>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
-    if(dp->header.type == Device_path::End::TYPE && dp->header.subtype == Device_path::End::SUBTYPE)
-        return Device_path::ANY{};
-
-    return get_default(Device_path::deserializers(), dp->_type_subtype, [](const void *, size_t)
-        { return std::nullopt; })(dp, data_size);
+    return get_default(Device_path::deserializers(), dp->_type_subtype, deserialize<Device_path::Unknown>)(dp, data_size);
 }
 
 template <>
