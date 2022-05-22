@@ -85,7 +85,7 @@ auto DriveInfo::get_all(bool refresh) -> QVector<DriveInfo>
             CFRelease(value_cf);
         }
 
-        if(block_size > 0)
+        if(block_size > 0u)
             driveinfo.start /= block_size;
 
         value_cf = CFDictionaryGetValue(disk_info_cf, kDADiskDescriptionMediaSizeKey);

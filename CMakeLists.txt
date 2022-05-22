@@ -289,6 +289,7 @@ elseif(APPLE)
     set(CPACK_INCLUDE_TOPLEVEL_DIRECTORY NO)
 
 else()
+    include(GNUInstallDirs)
     install(FILES misc/EFIBootEditor.desktop DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
     install(FILES misc/org.x.efibooteditor.policy DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/polkit-1/actions/)
     install(FILES misc/EFIBootEditor.metainfo.xml DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/metainfo)
