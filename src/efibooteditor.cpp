@@ -596,7 +596,7 @@ void EFIBootEditor::dumpRawEFIData(const QString &file_name)
     if(name_to_guid.count(_T("BootOrder")))
     {
         show_progress_bar(step++, total_steps, tr("Exporting EFI Boot Manager entries (%1)...").arg("BootOrder"));
-        const auto variable = EFIBoot::get_list_variable<EFIBoot::Raw_data>(name_to_guid.at(_T("BootOrder")), _T("BootOrder"));
+        const auto variable = EFIBoot::get_variable<EFIBoot::Raw_data>(name_to_guid.at(_T("BootOrder")), _T("BootOrder"));
         if(variable)
         {
             const auto &[value, attributes] = *variable;
