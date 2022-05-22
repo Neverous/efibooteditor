@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=EFI Boot Editor
+Comment=GUI for editing EFI Boot Manager entries
+Exec=pkexec efibooteditor
+Icon=preferences-system
+StartupNotify=true
+Terminal=false
+Categories=Settings;System;Qt;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;
