@@ -297,29 +297,60 @@ auto Device_path::HID::toString(bool refresh) const -> QString
     return string = QString("Acpi(0x%1, 0x%2)").arg(hid, 0, HEX_BASE).arg(uid, 0, HEX_BASE);
 }
 
-static_assert(sizeof(Device_path::Vendor::guid) == sizeof(EFIBoot::Device_path::Vendor::guid));
+static_assert(sizeof(Device_path::Vendor::guid) == sizeof(EFIBoot::Device_path::HWVendor::guid));
+static_assert(sizeof(Device_path::Vendor::guid) == sizeof(EFIBoot::Device_path::MSGVendor::guid));
 
-Device_path::Vendor::Vendor(const EFIBoot::Device_path::Vendor &vendor)
-    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
+Device_path::Vendor::Vendor(const EFIBoot::Device_path::HWVendor &vendor)
+    : _type{vendor.TYPE}
+    , data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
 {
     static_assert(sizeof(vendor.guid) == sizeof(guid));
     memcpy(reinterpret_cast<void *>(&guid), &vendor.guid, sizeof(vendor.guid));
 }
 
-auto Device_path::Vendor::toEFIBootDevicePath() const -> EFIBoot::Device_path::Vendor
+Device_path::Vendor::Vendor(const EFIBoot::Device_path::MSGVendor &vendor)
+    : _type{vendor.TYPE}
+    , data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
 {
-    EFIBoot::Device_path::Vendor value = {};
-    static_assert(sizeof(guid) == sizeof(value.guid));
-    memcpy(value.guid.data(), &guid, sizeof(guid));
-    value.data.resize(static_cast<size_t>(data.size()));
-    std::copy(std::begin(data), std::end(data), std::begin(value.data));
-    return value;
+    static_assert(sizeof(vendor.guid) == sizeof(guid));
+    memcpy(reinterpret_cast<void *>(&guid), &vendor.guid, sizeof(vendor.guid));
+}
+
+auto Device_path::Vendor::toEFIBootDevicePath() const -> EFIBoot::Device_path::ANY
+{
+    switch(_type)
+    {
+    case EFIBoot::Device_path::HWVendor::TYPE:
+    {
+        EFIBoot::Device_path::HWVendor value = {};
+        static_assert(sizeof(guid) == sizeof(value.guid));
+        memcpy(value.guid.data(), &guid, sizeof(guid));
+        value.data.resize(static_cast<size_t>(data.size()));
+        std::copy(std::begin(data), std::end(data), std::begin(value.data));
+        return value;
+    }
+    break;
+
+    case EFIBoot::Device_path::MSGVendor::TYPE:
+    {
+        EFIBoot::Device_path::MSGVendor value = {};
+        static_assert(sizeof(guid) == sizeof(value.guid));
+        memcpy(value.guid.data(), &guid, sizeof(guid));
+        value.data.resize(static_cast<size_t>(data.size()));
+        std::copy(std::begin(data), std::end(data), std::begin(value.data));
+        return value;
+    }
+    break;
+    }
+
+    return {};
 }
 
 auto Device_path::Vendor::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::Vendor>
 {
     Vendor value;
     check_obj();
+    try_read_3(_type, Double, Int);
     check_type(guid, String);
     value.guid = QUuid::fromString(obj["guid"].toString());
     check_type(data, String);
@@ -332,6 +363,7 @@ auto Device_path::Vendor::toJSON() const -> QJsonObject
     QJsonObject value;
     value["type"] = TYPE;
     value["subtype"] = SUBTYPE;
+    value["_type"] = _type;
     value["guid"] = guid.toString();
     value["data"] = static_cast<QString>(data.toBase64());
     return value;
@@ -342,7 +374,19 @@ auto Device_path::Vendor::toString(bool refresh) const -> QString
     if(string.size() && !refresh)
         return string;
 
-    return string = QString("VenMsg(%1, [%2B])").arg(guid.toString(QUuid::WithoutBraces)).arg(data.size());
+    const char *type_string = "Unk";
+    switch(_type)
+    {
+    case EFIBoot::Device_path::HWVendor::TYPE:
+        type_string = "Hw";
+        break;
+
+    case EFIBoot::Device_path::MSGVendor::TYPE:
+        type_string = "Msg";
+        break;
+    }
+
+    return string = QString("Ven%1(%2, [%3B])").arg(type_string, guid.toString(QUuid::WithoutBraces)).arg(data.size());
 }
 
 Device_path::MACAddress::MACAddress(const EFIBoot::Device_path::MAC_address &mac_address)
@@ -803,6 +847,88 @@ auto Device_path::FirmwareVolume::toString(bool refresh) const -> QString
         return string;
 
     return string = QString("Fv(%1)").arg(name.toString(QUuid::WithoutBraces));
+}
+
+auto Device_path::End::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::End>
+{
+    End value;
+    check_obj();
+    try_read_3(_subtype, Double, Int);
+    return {value};
+}
+
+auto Device_path::End::toJSON() const -> QJsonObject
+{
+    QJsonObject end_instance;
+    end_instance["type"] = TYPE;
+    end_instance["subtype"] = SUBTYPE;
+    end_instance["_subtype"] = _subtype;
+    return end_instance;
+}
+
+auto Device_path::End::toString(bool refresh) const -> QString
+{
+    if(string.size() && !refresh)
+        return string;
+
+    const char *subtype_string = "Unknown";
+    switch(_subtype)
+    {
+    case EFIBoot::EFIDP_END_INSTANCE:
+        subtype_string = "Instance";
+        break;
+
+    case EFIBoot::EFIDP_END_ENTIRE:
+        subtype_string = "Entire";
+        break;
+    }
+
+    return string = QString("End(%1)").arg(subtype_string);
+}
+
+Device_path::Unknown::Unknown(const EFIBoot::Device_path::Unknown &unknown)
+    : type{unknown.TYPE}
+    , subtype{unknown.SUBTYPE}
+    , data{QByteArray::fromRawData(reinterpret_cast<const char *>(unknown.data.data()), static_cast<int>(unknown.data.size()))}
+{
+}
+
+auto Device_path::Unknown::toEFIBootDevicePath() const -> EFIBoot::Device_path::Unknown
+{
+    EFIBoot::Device_path::Unknown value = {};
+    value.TYPE = type;
+    value.SUBTYPE = subtype;
+    value.data.resize(static_cast<size_t>(data.size()));
+    std::copy(std::begin(data), std::end(data), std::begin(value.data));
+    return value;
+}
+
+auto Device_path::Unknown::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::Unknown>
+{
+    Unknown value;
+    check_obj();
+    try_read_3(type, Double, Int);
+    try_read_3(subtype, Double, Int);
+    check_type(data, String);
+    value.data = QByteArray::fromBase64(obj["data"].toString().toUtf8());
+    return {value};
+}
+
+auto Device_path::Unknown::toJSON() const -> QJsonObject
+{
+    QJsonObject value;
+    value["type"] = type;
+    value["subtype"] = subtype;
+    value["data"] = static_cast<QString>(data.toBase64());
+    return value;
+}
+
+auto Device_path::Unknown::toString(bool refresh) const -> QString
+{
+    if(string.size() && !refresh)
+        return string;
+
+    return string = QString("Unknown(0x%1, 0x%2, [%3B])").arg(type, 0, HEX_BASE).arg(subtype, 0, HEX_BASE).arg(data.size());
 }
 
 #undef try_read_3

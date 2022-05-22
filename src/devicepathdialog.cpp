@@ -11,6 +11,7 @@ DevicePathDialog::DevicePathDialog(QWidget *parent)
     , horizontal_tab_style{}
     , ui{std::make_unique<Ui::DevicePathDialog>()}
     , vendor_data_format_combo_index{}
+    , unknown_data_format_combo_index{}
 {
     ui->setupUi(this);
     setDevicePath(nullptr);
@@ -42,8 +43,14 @@ auto DevicePathDialog::toDevicePath() const -> Device_path::ANY
     case FormIndex::Vendor:
     {
         Device_path::Vendor vendor;
+        if(ui->vendor_type_combo->currentIndex() == 0)
+            vendor._type = EFIBoot::Device_path::HWVendor::TYPE;
+
+        else
+            vendor._type = EFIBoot::Device_path::MSGVendor::TYPE;
+
         vendor.guid = QUuid::fromString(ui->vendor_guid_text->text());
-        vendor.data = this->getVendorData(ui->vendor_data_format_combo->currentIndex());
+        vendor.data = getVendorData(ui->vendor_data_format_combo->currentIndex());
         return vendor;
     }
     case FormIndex::MACAddress:
@@ -133,6 +140,27 @@ auto DevicePathDialog::toDevicePath() const -> Device_path::ANY
         firmware_volume.name = QUuid::fromString(ui->firmware_volume_text->text());
         return firmware_volume;
     }
+
+    case FormIndex::End:
+    {
+        Device_path::End end;
+        if(ui->end_subtype_combo->currentIndex() == 0)
+            end._subtype = EFIBoot::EFIDP_END_INSTANCE;
+
+        else
+            end._subtype = EFIBoot::EFIDP_END_ENTIRE;
+
+        return end;
+    }
+
+    case FormIndex::Unknown:
+    {
+        Device_path::Unknown unknown;
+        unknown.type = static_cast<quint8>(ui->unknown_type_text->text().toUShort(nullptr, HEX_BASE));
+        unknown.subtype = static_cast<quint8>(ui->unknown_subtype_text->text().toUShort(nullptr, HEX_BASE));
+        unknown.data = getUnknownData(ui->unknown_data_format_combo->currentIndex());
+        return unknown;
+    }
     }
 
     return {};
@@ -161,6 +189,8 @@ void DevicePathDialog::setDevicePath(const Device_path::ANY *_device_path)
             [&](const Device_path::File &file) { setFileForm(file); },
             [&](const Device_path::FirmwareFile &firmware_file) { setFirmwareFileForm(firmware_file); },
             [&](const Device_path::FirmwareVolume &firmware_volume) { setFirmwareVolumeForm(firmware_volume); },
+            [&](const Device_path::End &end) { setEndForm(end._subtype); },
+            [&](const Device_path::Unknown &unknown) { setUnknownForm(unknown); },
             // clang-format on
         },
         *_device_path);
@@ -185,8 +215,10 @@ void DevicePathDialog::setHIDForm(const Device_path::HID &hid)
 void DevicePathDialog::setVendorForm(const Device_path::Vendor &vendor)
 {
     ui->options->setCurrentIndex(FormIndex::Vendor);
+    ui->vendor_type_combo->setCurrentIndex(vendor._type == EFIBoot::Device_path::HWVendor::TYPE ? 0 : 1);
     ui->vendor_guid_text->setText(vendor.guid.toString(QUuid::WithoutBraces));
-    ui->vendor_data_format_combo->setCurrentIndex(0); // BASE64
+    ui->vendor_data_format_combo->setCurrentIndex(VendorDataFormat::Base64);
+    vendor_data_format_combo_index = 0;
     ui->vendor_data_text->setPlainText(vendor.data.toBase64());
 }
 
@@ -304,6 +336,22 @@ void DevicePathDialog::setFirmwareVolumeForm(const Device_path::FirmwareVolume &
 {
     ui->options->setCurrentIndex(FormIndex::FirmwareVolume);
     ui->firmware_volume_text->setText(firmware_volume.name.toString());
+}
+
+void DevicePathDialog::setEndForm(const EFIBoot::EFIDP_END subtype)
+{
+    ui->options->setCurrentIndex(FormIndex::End);
+    ui->end_subtype_combo->setCurrentIndex(subtype == EFIBoot::EFIDP_END_INSTANCE ? 0 : 1);
+}
+
+void DevicePathDialog::setUnknownForm(const Device_path::Unknown &unknown)
+{
+    ui->options->setCurrentIndex(FormIndex::Unknown);
+    ui->unknown_type_text->setText(QString::number(unknown.type, HEX_BASE));
+    ui->unknown_subtype_text->setText(QString::number(unknown.subtype, HEX_BASE));
+    ui->unknown_data_format_combo->setCurrentIndex(UnknownDataFormat::Base64);
+    unknown_data_format_combo_index = 0;
+    ui->unknown_data_text->setPlainText(unknown.data.toBase64());
 }
 
 void DevicePathDialog::refreshDiskCombo(bool force)
@@ -446,6 +494,55 @@ void DevicePathDialog::vendorDataFormatChanged(int index)
     vendor_data_format_combo_index = index;
 }
 
+void DevicePathDialog::unknownDataFormatChanged(int index)
+{
+    QTextCodec *codec = nullptr;
+    QTextCodec::ConverterState state;
+    bool success = false;
+    QByteArray input = getUnknownData(unknown_data_format_combo_index);
+    QString output;
+    switch(static_cast<UnknownDataFormat>(index))
+    {
+    case UnknownDataFormat::Base64:
+        output = input.toBase64();
+        success = true;
+        break;
+
+    case UnknownDataFormat::Utf16:
+        if(static_cast<uint>(input.size()) % sizeof(char16_t) == 0)
+        {
+            codec = QTextCodec::codecForName("UTF-16");
+            output = codec->toUnicode(input.constData(), static_cast<int>(input.size()), &state);
+            success = state.invalidChars == 0;
+        }
+        break;
+
+    case UnknownDataFormat::Utf8:
+        codec = QTextCodec::codecForName("UTF-8");
+        output = codec->toUnicode(input.constData(), static_cast<int>(input.size()), &state);
+        success = state.invalidChars == 0;
+        break;
+
+    case UnknownDataFormat::Hex:
+        output = input.toHex();
+        success = true;
+        break;
+    }
+
+    if(output.contains(QChar(0)))
+        success = false;
+
+    if(!success)
+    {
+        QMessageBox::critical(this, qApp->applicationName(), tr("Couldn't change Vendor data format!"));
+        ui->unknown_data_format_combo->setCurrentIndex(unknown_data_format_combo_index);
+        return;
+    }
+
+    ui->unknown_data_text->setPlainText(output);
+    unknown_data_format_combo_index = index;
+}
+
 void DevicePathDialog::resetForms()
 {
     resetPCIForm();
@@ -459,6 +556,8 @@ void DevicePathDialog::resetForms()
     resetFileForm();
     resetFirmwareFileForm();
     resetFirmwareVolumeForm();
+    resetEndForm();
+    resetUnknownForm();
 }
 
 void DevicePathDialog::resetPCIForm()
@@ -500,10 +599,38 @@ QByteArray DevicePathDialog::getVendorData(int index) const
     return {};
 }
 
+QByteArray DevicePathDialog::getUnknownData(int index) const
+{
+    std::unique_ptr<QTextEncoder> encoder = nullptr;
+    switch(static_cast<UnknownDataFormat>(index))
+    {
+    case UnknownDataFormat::Base64:
+        return QByteArray::fromBase64(ui->unknown_data_text->toPlainText().toUtf8());
+        break;
+
+    case UnknownDataFormat::Utf16:
+        encoder.reset(QTextCodec::codecForName("UTF-16")->makeEncoder(QTextCodec::IgnoreHeader));
+        return encoder->fromUnicode(ui->unknown_data_text->toPlainText());
+        break;
+
+    case UnknownDataFormat::Utf8:
+        encoder.reset(QTextCodec::codecForName("UTF-8")->makeEncoder(QTextCodec::IgnoreHeader));
+        return encoder->fromUnicode(ui->unknown_data_text->toPlainText());
+        break;
+
+    case UnknownDataFormat::Hex:
+        return QByteArray::fromHex(ui->unknown_data_text->toPlainText().toUtf8());
+        break;
+    }
+
+    return {};
+}
+
 void DevicePathDialog::resetVendorForm()
 {
     ui->vendor_guid_text->clear();
-    ui->vendor_data_format_combo->setCurrentIndex(0);
+    ui->vendor_type_combo->setCurrentIndex(0);
+    ui->vendor_data_format_combo->setCurrentIndex(VendorDataFormat::Base64);
     vendor_data_format_combo_index = 0;
     ui->vendor_data_text->clear();
 }
@@ -568,4 +695,18 @@ void DevicePathDialog::resetFirmwareFileForm()
 void DevicePathDialog::resetFirmwareVolumeForm()
 {
     ui->firmware_volume_text->clear();
+}
+
+void DevicePathDialog::resetEndForm()
+{
+    ui->end_subtype_combo->setCurrentIndex(0);
+}
+
+void DevicePathDialog::resetUnknownForm()
+{
+    ui->unknown_type_text->clear();
+    ui->unknown_subtype_text->clear();
+    ui->unknown_data_format_combo->setCurrentIndex(UnknownDataFormat::Base64);
+    unknown_data_format_combo_index = 0;
+    ui->unknown_data_text->clear();
 }

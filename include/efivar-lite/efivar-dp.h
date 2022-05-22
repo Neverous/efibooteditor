@@ -30,6 +30,7 @@ enum EFIDP_TYPE
 enum EFIDP_HW
 {
     EFIDP_HW_PCI = 0x01,
+    EFIDP_HW_VENDOR = 0x04,
 };
 
 enum EFIDP_ACPI
