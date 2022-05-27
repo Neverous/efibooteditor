@@ -677,7 +677,7 @@ inline std::optional<Device_path::HWVendor> deserialize(const void *data, size_t
     std::copy(std::begin(dp->guid), std::end(dp->guid), std::begin(value.guid));
     size_t data_length = data_size - sizeof(dp->header) - sizeof(dp->guid) / sizeof(dp->guid[0]);
     value.data.resize(data_length);
-    std::copy(std::begin(dp->data), std::next(std::begin(dp->data), static_cast<int>(data_length)), std::begin(value.data));
+    memcpy(&value.data[0], dp->data, data_length);
     return {value};
 }
 
@@ -753,7 +753,7 @@ inline std::optional<Device_path::MSGVendor> deserialize(const void *data, size_
     std::copy(std::begin(dp->guid), std::end(dp->guid), std::begin(value.guid));
     size_t data_length = data_size - sizeof(dp->header) - sizeof(dp->guid) / sizeof(dp->guid[0]);
     value.data.resize(data_length);
-    std::copy(std::begin(dp->data), std::next(std::begin(dp->data), static_cast<int>(data_length)), std::begin(value.data));
+    memcpy(&value.data[0], dp->data, data_length);
     return {value};
 }
 
@@ -1113,9 +1113,9 @@ inline std::optional<Device_path::Unknown> deserialize(const void *data, size_t 
     value.TYPE = dp->type;
     value.SUBTYPE = dp->subtype;
 
-    size_t data_length = data_size - sizeof(dp);
+    size_t data_length = data_size - sizeof(*dp);
     value.data.resize(data_length);
-    std::copy(reinterpret_cast<const uint8_t *>(dp + 1), std::next(reinterpret_cast<const uint8_t *>(dp), static_cast<int>(data_length)), std::begin(value.data));
+    memcpy(&value.data[0], dp + 1, data_length);
     return {value};
 }
 
