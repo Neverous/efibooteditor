@@ -22,9 +22,11 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 set(CMAKE_DEBUG_POSTFIX "d")
 
+set(CMAKE_INSTALL_DEFAULT_COMPONENT_NAME Program)
 set(MACOSX_BUNDLE_BUNDLE_NAME ${PROJECT_NAME_CAPITALIZED})
 set(MACOSX_BUNDLE_BUNDLE_VERSION ${VERSION})
 set(MACOSX_BUNDLE_GUI_IDENTIFIER ${PROJECT_NAME_CAPITALIZED})
+
 
 # Link time optimization support check
 if(("${CMAKE_BUILD_TYPE}" STREQUAL "Release") OR ("${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo"))
@@ -77,21 +79,65 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
     VERSION="$ENV{BUILD_VERSION}"
 )
 
-if(UNIX)
+# GCC
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     target_compile_options(${PROJECT_NAME} PRIVATE
         -Wall -Wpedantic -Werror -pedantic -Wshadow -Wextra -Wconversion $<$<COMPILE_LANGUAGE:CXX>:-Weffc++>
     )
 endif()
 
-if(WIN32)
+# Clang
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    if(CMAKE_CXX_COMPILER_FRONTEND_VARIANT STREQUAL "MSVC") # MSVC compatibility mode
+        # Fix ignoring warnings in system includes
+        set(CMAKE_INCLUDE_SYSTEM_FLAG_CXX /imsvc)
+        set(CMAKE_INCLUDE_SYSTEM_FLAG_C /imsvc)
+
+        # Clang-cl for some reason ignores all normal methods...
+        foreach(INCLUDE_DIR ${Qt${QT_VERSION_MAJOR}Core_INCLUDE_DIRS} ${Qt${QT_VERSION_MAJOR}Gui_INCLUDE_DIRS} ${Qt${QT_VERSION_MAJOR}Network_INCLUDE_DIRS} ${Qt${QT_VERSION_MAJOR}Widgets_INCLUDE_DIRS})
+            target_compile_options(${PROJECT_NAME} PRIVATE "SHELL:/imsvc ${INCLUDE_DIR}")
+        endforeach()
+
+        # Disable compatibility warnings
+        target_compile_options(${PROJECT_NAME} PRIVATE
+            -Wno-c++20-compat
+            -Wno-c++98-compat
+            -Wno-c++98-compat-pedantic
+            -Wno-cast-qual
+            -Wno-exit-time-destructors
+            -Wno-extra-semi-stmt
+            -Wno-global-constructors
+            -Wno-old-style-cast
+            -Wno-redundant-parens
+            -Wno-reserved-identifier
+            -Wno-return-std-move-in-c++11
+            -Wno-unknown-warning-option
+            -Wno-zero-as-null-pointer-constant
+        )
+    else() # Standard
+        target_compile_options(${PROJECT_NAME} PRIVATE
+            -Wall -Wpedantic -Werror -pedantic -Wshadow -Wextra -Wconversion $<$<COMPILE_LANGUAGE:CXX>:-Weffc++>
+        )
+    endif()
+endif()
+
+# MSVC
+if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     # Fix ignoring warnings in system includes
     set(CMAKE_INCLUDE_SYSTEM_FLAG_CXX /external:I)
     set(CMAKE_INCLUDE_SYSTEM_FLAG_C /external:I)
 
     target_compile_options(${PROJECT_NAME} PRIVATE
+        # Ignore warnings in external includes
+        /experimental:external
+    )
+endif()
+
+if(WIN32)
+    target_compile_options(${PROJECT_NAME} PRIVATE
         $<$<COMPILE_LANGUAGE:CXX>:/std:c++latest> /Wall /permissive- /WX
         # Ignore warnings in external includes
-        /experimental:external /external:anglebrackets /external:W0
+        /external:anglebrackets /external:W0
         # Disable some warnings
         # C4710: 'function' : function not inlined
         /wd4710
@@ -122,24 +168,26 @@ target_sources(${PROJECT_NAME} PRIVATE
 
 if(UNIX AND NOT APPLE)
     target_sources(${PROJECT_NAME} PRIVATE
-        src/efivar-lite.linux.c
         src/driveinfo.linux.cpp
+        src/efivar-lite.linux.c
     )
 endif()
 
 if(WIN32)
     target_sources(${PROJECT_NAME} PRIVATE
         src/driveinfo.win32.cpp
-        src/efivar-lite.win32.c
         src/efivar-lite.c
+        src/efivar-lite.common.h
+        src/efivar-lite.win32.c
     )
 endif()
 
 if(APPLE)
     target_sources(${PROJECT_NAME} PRIVATE
         src/driveinfo.darwin.cpp
-        src/efivar-lite.darwin.c
         src/efivar-lite.c
+        src/efivar-lite.common.h
+        src/efivar-lite.darwin.c
     )
 endif()
 
@@ -160,8 +208,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     include/efiboot.h
     include/efibooteditor.h
     include/efivar-lite/efiboot-loadopt.h
-    include/efivar-lite/efivar.h
     include/efivar-lite/efivar-dp.h
+    include/efivar-lite/efivar.h
     include/qlabelwrapped.h
     include/qwidgetitemdelegate.h
 )
@@ -215,12 +263,8 @@ install(TARGETS ${PROJECT_NAME}
 )
 
 set(CMAKE_INSTALL_UCRT_LIBRARIES TRUE)
-
+set(CMAKE_INSTALL_SYSTEM_RUNTIME_COMPONENT Runtime)
 include(InstallRequiredSystemLibraries)
-
-install(PROGRAMS ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS}
-    TYPE BIN
-)
 
 # Bundle Qt Libraries
 if(WIN32)
@@ -235,10 +279,14 @@ if(WIN32)
 
     install(DIRECTORY "${CMAKE_BINARY_DIR}/qt/"
         TYPE BIN
+        COMPONENT Runtime
     )
 
     if(("${CMAKE_BUILD_TYPE}" STREQUAL "Debug") OR ("${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo"))
-        install(FILES "$<TARGET_PDB_FILE:${PROJECT_NAME}>" DESTINATION bin)
+        install(FILES "$<TARGET_PDB_FILE:${PROJECT_NAME}>"
+            DESTINATION bin
+            COMPONENT Debug
+        )
     endif()
 
 elseif(APPLE)
@@ -291,9 +339,18 @@ elseif(APPLE)
 
 else()
     include(GNUInstallDirs)
-    install(FILES misc/EFIBootEditor.desktop DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
-    install(FILES misc/org.x.efibooteditor.policy DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/polkit-1/actions/)
-    install(FILES misc/EFIBootEditor.metainfo.xml DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/metainfo)
+    install(FILES misc/EFIBootEditor.desktop
+        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications
+        COMPONENT Desktop
+    )
+    install(FILES misc/org.x.efibooteditor.policy
+        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/polkit-1/actions/
+        COMPONENT Desktop
+    )
+    install(FILES misc/EFIBootEditor.metainfo.xml
+        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/metainfo
+        COMPONENT Desktop
+    )
 
     set(CPACK_PACKAGE_TARGET_OS_NAME "linux")
     set(CPACK_GENERATOR DEB TZST)
@@ -325,5 +382,31 @@ if(NOT ("$ENV{BUILD_OS}" STREQUAL ""))
 endif()
 
 set(CPACK_PACKAGE_FILE_NAME "${PROJECT_NAME_CAPITALIZED}-v${PROJECT_VERSION}-${CPACK_PACKAGE_TARGET_OS_NAME}-qt-${Qt${QT_VERSION_MAJOR}_VERSION}")
+
+include(CPackComponent)
+cpack_add_component(Program
+    DISPLAY_NAME EFIBootEditor
+    DESCRIPTION "Main executable"
+    REQUIRED
+)
+
+cpack_add_component(Desktop
+    DISPLAY_NAME "Desktop files"
+    DESCRIPTION "Useful files for running in Desktop Environment"
+    DEPENDS Program
+)
+
+cpack_add_component(Runtime
+    DISPLAY_NAME "Runtime libraries"
+    DESCRIPTION "Necessary runtime libraries"
+    DEPENDS Program
+)
+
+cpack_add_component(Debug
+    DISPLAY_NAME "Debug symbols"
+    DESCRIPTION "Debug symbols to aid troubleshooting"
+    DISABLED
+    DEPENDS Program
+)
 
 include(CPack)
