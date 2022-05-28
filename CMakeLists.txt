@@ -27,15 +27,12 @@ set(MACOSX_BUNDLE_BUNDLE_VERSION ${VERSION})
 set(MACOSX_BUNDLE_GUI_IDENTIFIER ${PROJECT_NAME_CAPITALIZED})
 
 # Link time optimization support check
-include(CheckIPOSupported)
-check_ipo_supported(RESULT ipo)
-if(ipo)
-    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
-endif()
-
-# Default build type
-if("${CMAKE_BUILD_TYPE}" STREQUAL "")
-    set(CMAKE_BUILD_TYPE Release)
+if(("${CMAKE_BUILD_TYPE}" STREQUAL "Release") OR ("${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo"))
+    include(CheckIPOSupported)
+    check_ipo_supported(RESULT ipo)
+    if(ipo)
+        set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
+    endif()
 endif()
 
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
@@ -202,7 +199,7 @@ if(WIN32)
     )
 endif()
 
-if(UNIX)
+if(("${CMAKE_BUILD_TYPE}" STREQUAL "Release") AND UNIX)
     set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_RELEASE -s)
 endif()
 
@@ -233,12 +230,16 @@ if(WIN32)
 
     add_custom_command(TARGET ${PROJECT_NAME}
         POST_BUILD
-        COMMAND ${WINDEPLOYQT_EXECUTABLE} --dir ${CMAKE_BINARY_DIR}/qt --no-compiler-runtime "$<TARGET_FILE_DIR:${PROJECT_NAME}>/$<TARGET_FILE_NAME:${PROJECT_NAME}>"
+        COMMAND ${WINDEPLOYQT_EXECUTABLE} --dir ${CMAKE_BINARY_DIR}/qt --no-compiler-runtime --pdb "$<TARGET_FILE_DIR:${PROJECT_NAME}>/$<TARGET_FILE_NAME:${PROJECT_NAME}>"
     )
 
     install(DIRECTORY "${CMAKE_BINARY_DIR}/qt/"
         TYPE BIN
     )
+
+    if(("${CMAKE_BUILD_TYPE}" STREQUAL "Debug") OR ("${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo"))
+        install(FILES "$<TARGET_PDB_FILE:${PROJECT_NAME}>" DESTINATION bin)
+    endif()
 
 elseif(APPLE)
     if(NOT MACDEPLOYQT_EXECUTABLE)
@@ -313,7 +314,7 @@ else()
         endif()
     endif()
 
-    if("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+    if(("${CMAKE_BUILD_TYPE}" STREQUAL "Debug") OR ("${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo"))
         set(CPACK_DEBIAN_DEBUGINFO_PACKAGE ON)
     endif()
 endif()

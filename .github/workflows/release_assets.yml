@@ -64,7 +64,7 @@ jobs:
 
       - name: '[unix] Configure: build with clang'
         run: |
-          CC=clang CXX=clang++ cmake ..
+          CC=clang CXX=clang++ cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
         shell: bash
         env:
           BUILD_VERSION: ${{ steps.vars.outputs.version }}
@@ -74,7 +74,7 @@ jobs:
 
       - name: '[unix] Build'
         run: |
-          cmake --build . --config Release --target package
+          cmake --build . --config RelWithDebInfo --target package
         shell: bash
         working-directory: build
         if: ${{ ! startsWith(matrix.os, 'windows') }}
@@ -82,7 +82,7 @@ jobs:
       - name: '[windows] Configure: build with MSVC'
         run: |
           call "%programfiles%\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64 || exit /b
-          cmake -DCMAKE_SYSTEM_VERSION=10.0.19041.0 ..|| exit /b
+          cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_SYSTEM_VERSION=10.0.19041.0 ..|| exit /b
         shell: cmd
         env:
           BUILD_VERSION: ${{ steps.vars.outputs.version }}
@@ -93,7 +93,7 @@ jobs:
       - name: '[windows] Build'
         run: |
           call "%programfiles%\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64 || exit /b
-          cmake --build . --config Release --target package || exit /b
+          cmake --build . --config RelWithDebInfo --target package || exit /b
         shell: cmd
         working-directory: build
         if: startsWith(matrix.os, 'windows')
@@ -151,6 +151,17 @@ jobs:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.deb
           asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.deb
+          asset_content_type: application/vnd.debian.binary-package
+        if: startsWith(matrix.os, 'ubuntu')
+
+      - name: '[linux] Upload DDEB'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-dbgsym.ddeb
+          asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-dbgsym.ddeb
           asset_content_type: application/vnd.debian.binary-package
         if: startsWith(matrix.os, 'ubuntu')
 
