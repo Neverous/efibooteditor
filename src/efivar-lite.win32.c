@@ -2,9 +2,10 @@
 /*
  * efivar interface <> WinAPI translation.
  */
-#include <windows.h>
+#include <Windows.h>
 
 #include "compat.h"
+#include "efivar-lite.common.h"
 #include "efivar-lite/efiboot-loadopt.h"
 #include "efivar-lite/efivar.h"
 
@@ -112,12 +113,9 @@ void efi_set_get_next_variable_name_progress_cb(void (*progress_cb)(size_t, size
     efi_get_next_variable_name_progress_cb = progress_cb;
 }
 
-int _efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name);
-
 static size_t current_variable = 0u;
 int efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name)
 {
-    extern const size_t EFI_MAX_VARIABLES;
     while(1)
     {
         if(efi_get_next_variable_name_progress_cb)

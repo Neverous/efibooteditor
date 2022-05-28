@@ -1,4 +1,4 @@
-name: 'Build test'
+name: Build test
 
 on:
   push:
@@ -9,20 +9,27 @@ on:
     - cron: '36 10 * * 5'
 
 jobs:
-  build:
-    name: ${{ matrix.os }} Qt ${{ matrix.qt_version }}
+  build-linux:
+    name: ${{ matrix.os }} Qt ${{ matrix.qt_version }} with ${{ matrix.compiler }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-20.04, windows-2022, macos-11]
+        os: [ubuntu-20.04, ubuntu-22.04]
         qt_version:
           - 5.15.2 # OS LTS
           - 6.2.4 # LTS
           - 6.3.0 # latest
+        compiler:
+          - Clang
+          - GCC
         include:
           - os: ubuntu-18.04
             qt_version: 5.15.2
+            compiler: Clang
+          - os: ubuntu-18.04
+            qt_version: 5.15.2
+            compiler: GCC
 
     permissions:
       actions: read
@@ -38,94 +45,215 @@ jobs:
         with:
           languages: 'cpp'
 
-      - name: '[unix] Dependencies: restore Qt from cache'
-        id: cache-qt-unix
+      - name: Restore Qt from cache
+        id: cache-qt
         uses: actions/cache@v3
         with:
           path: ~/work/efibooteditor/Qt
           key: qt-${{ matrix.os }}-${{ matrix.qt_version }}
-        if: ${{ ! startsWith(matrix.os, 'windows') }}
 
-      - name: '[windows] Dependencies: restore Qt from cache'
-        id: cache-qt-windows
-        uses: actions/cache@v3
-        with:
-          path: D:\a\efibooteditor\Qt
-          key: qt-${{ matrix.os }}-${{ matrix.qt_version }}
-        if: ${{ startsWith(matrix.os, 'windows') }}
-
-      - name: 'Dependencies: set up Qt environment'
+      - name: Set up Qt environment
         uses: jurplel/install-qt-action@v2
         with:
-          cached: ${{ steps.cache-qt-unix.outputs.cache-hit || steps.cache-qt-windows.outputs.cache-hit }}
+          cached: ${{ steps.cache-qt.outputs.cache-hit }}
           version: ${{ matrix.qt_version }}
           modules: 'qt5compat'
 
-      - name: '[linux] Dependencies: install efivar'
+      - name: Install efivar
         run: sudo apt-get install libefiboot1 libefiboot-dev libefivar-dev
         shell: bash
-        if: startsWith(matrix.os, 'ubuntu')
 
-      - name: 'Configure: create build directory'
+      - name: Create build directory
         run: mkdir -p build/debug
 
-      - name: '[unix] Configure: build with clang'
+      - name: Configure build with ${{ matrix.compiler }}
         run: |
-          CC=clang CXX=clang++ cmake -DCMAKE_BUILD_TYPE=Debug ..
+          if [ "${{ matrix.compiler }}" = "Clang" ]; then
+            export CC=clang
+            export CXX=clang++
+          elif [ "${{ matrix.compiler }}" = "GCC" ]; then
+            export CC=gcc
+            export CXX=g++
+          fi;
+          cmake -DCMAKE_BUILD_TYPE=Debug ..
         shell: bash
         env:
           BUILD_VERSION: 0.0.0-${{ github.sha }}
           BUILD_OS: ${{ matrix.os }}
         working-directory: build
-        if: ${{ ! startsWith(matrix.os, 'windows') }}
 
-      - name: '[unix] Build'
+      - name: Build
         run: |
           cmake --build . --config Debug --target package
         shell: bash
         working-directory: build
-        if: ${{ ! startsWith(matrix.os, 'windows') }}
 
-      - name: '[windows] Configure: build with MSVC'
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: EFIBootEditor-${{ github.sha }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-${{ matrix.compiler }}
+          if-no-files-found: error
+          path: build/dist/EFIBootEditor-*
+
+  build-windows:
+    name: ${{ matrix.os }} Qt ${{ matrix.qt_version }} with ${{ matrix.compiler }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2019, windows-2022]
+        qt_version:
+          - 5.15.2 # OS LTS
+          - 6.2.4 # LTS
+          - 6.3.0 # latest
+        compiler:
+          - Clang
+          - MSVC
+
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: 'cpp'
+
+      - name: Restore Qt from cache
+        id: cache-qt
+        uses: actions/cache@v3
+        with:
+          path: D:\a\efibooteditor\Qt
+          key: qt-${{ matrix.os }}-${{ matrix.qt_version }}
+
+      - name: Set up Qt environment
+        uses: jurplel/install-qt-action@v2
+        with:
+          cached: ${{ steps.cache-qt.outputs.cache-hit }}
+          version: ${{ matrix.qt_version }}
+          modules: 'qt5compat'
+
+      - name: Create build directory
+        run: mkdir -p build/debug
+
+      - name: Configure build with ${{ matrix.compiler }}
         run: |
-          call "%programfiles%\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64 || exit /b
-          cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_SYSTEM_VERSION=10.0.19041.0 .. || exit /b
+          if "${{ endsWith(matrix.os, '2019') }}"=="true" set VCVARSALL=%programfiles(x86)%\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat
+          if "${{ endsWith(matrix.os, '2022') }}"=="true" set VCVARSALL=%programfiles%\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat
+          call "%VCVARSALL%" x64 || exit /b
+          if "${{ matrix.compiler }}"=="Clang" set COMPILER="-T ClangCL"
+          cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_SYSTEM_VERSION=10.0.19041.0 %COMPILER% .. || exit /b
         shell: cmd
         env:
           BUILD_VERSION: 0.0.0-${{ github.sha }}
           BUILD_OS: ${{ matrix.os }}
         working-directory: build
-        if: startsWith(matrix.os, 'windows')
 
-      - name: '[windows] Build'
+      - name: Build
         run: |
-          call "%programfiles%\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64 || exit /b
           cmake --build . --config Debug --target package || exit /b
         shell: cmd
         working-directory: build
-        if: startsWith(matrix.os, 'windows')
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
 
-      - name: '[windows] Perform MSVC Code Analysis'
+      - name: Perform MSVC Code Analysis
         uses: microsoft/msvc-code-analysis-action@v0.1.0
         id: msvc-analysis
         with:
           cmakeBuildDirectory: ${{ github.workspace }}/build
           buildConfiguration: Debug
           ruleset: NativeRecommendedRules.ruleset
-        if: startsWith(matrix.os, 'windows')
+        if: ${{ matrix.compiler == 'MSVC' }}
 
-      - name: '[windows] Upload MSVC Code Analysis results to GitHub'
+      - name: Upload MSVC Code Analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: ${{ steps.msvc-analysis.outputs.sarif }}
-        if: startsWith(matrix.os, 'windows')
+        if: ${{ matrix.compiler == 'MSVC' }}
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: EFIBootEditor-${{ github.sha }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}
+          name: EFIBootEditor-${{ github.sha }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-${{ matrix.compiler }}
+          if-no-files-found: error
+          path: build/dist/EFIBootEditor-*
+
+  build-macos:
+    name: ${{ matrix.os }} Qt ${{ matrix.qt_version }} with ${{ matrix.compiler }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-10.15, macos-11, macos-12]
+        qt_version:
+          - 5.15.2 # OS LTS
+          - 6.2.4 # LTS
+          - 6.3.0 # latest
+        compiler:
+          - Clang
+
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: 'cpp'
+
+      - name: Restore Qt from cache
+        id: cache-qt
+        uses: actions/cache@v3
+        with:
+          path: ~/work/efibooteditor/Qt
+          key: qt-${{ matrix.os }}-${{ matrix.qt_version }}
+
+      - name: Set up Qt environment
+        uses: jurplel/install-qt-action@v2
+        with:
+          cached: ${{ steps.cache-qt.outputs.cache-hit }}
+          version: ${{ matrix.qt_version }}
+          modules: 'qt5compat'
+
+      - name: Create build directory
+        run: mkdir -p build/debug
+
+      - name: Configure build with Clang
+        run: |
+          cmake -DCMAKE_BUILD_TYPE=Debug ..
+        shell: bash
+        env:
+          BUILD_VERSION: 0.0.0-${{ github.sha }}
+          BUILD_OS: ${{ matrix.os }}
+        working-directory: build
+
+      - name: Build
+        run: |
+          cmake --build . --config Debug --target package
+        shell: bash
+        working-directory: build
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: EFIBootEditor-${{ github.sha }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-${{ matrix.compiler }}
           if-no-files-found: error
           path: build/dist/EFIBootEditor-*

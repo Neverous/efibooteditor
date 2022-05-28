@@ -1,4 +1,4 @@
-name: 'Codacy Code Analysis'
+name: Codacy Code Analysis
 
 on:
   push:

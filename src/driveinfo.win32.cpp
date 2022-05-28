@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
-#include <windows.h>
+#include <Windows.h>
 
 #include "compat.h"
 #include "driveinfo.h"
@@ -65,7 +65,6 @@ QVector<DriveInfo> DriveInfo::get_all(bool refresh)
             break;
 
         case PARTITION_STYLE_RAW:
-        default:
             driveinfo.signature_type = DriveInfo::SIGNATURE::NONE;
             break;
         }

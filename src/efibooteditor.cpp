@@ -69,6 +69,7 @@ void EFIBootEditor::resetBootConfiguration()
         else
         {
             const auto &[value, attributes] = *variable;
+            (void)attributes;
             ui->timeout_number->setValue(value);
         }
     }
@@ -82,6 +83,7 @@ void EFIBootEditor::resetBootConfiguration()
         else
         {
             const auto &[value, attributes] = *variable;
+            (void)attributes;
             next_boot = value;
         }
     }
@@ -95,6 +97,7 @@ void EFIBootEditor::resetBootConfiguration()
         else
         {
             const auto &[value, attributes] = *variable;
+            (void)attributes;
             order = value;
 
             for(const auto &index: order)
@@ -105,6 +108,7 @@ void EFIBootEditor::resetBootConfiguration()
     // Add entries not in BootOrder at the end
     for(const auto &[name, guid]: name_to_guid)
     {
+        (void)guid;
         if(name.length() != 8 || name.substr(0, 4) != _T("Boot"))
             continue;
 
@@ -321,7 +325,7 @@ void EFIBootEditor::importJSONEFIData(const QJsonObject &input)
 
         int i = 0;
         const auto boot_order = input["BootOrder"].toArray();
-        for(const auto &index: boot_order)
+        for(const auto index: boot_order)
         {
             if(!index.isDouble())
                 return show_error(tr("Error importing boot configuration!"), tr("Couldn't parse BootOrder[%1]: number expected").arg(i));
@@ -610,6 +614,7 @@ void EFIBootEditor::dumpRawEFIData(const QString &file_name)
     QJsonObject entries;
     for(const auto &[name, guid]: name_to_guid)
     {
+        (void)guid;
         if(name.length() != 8 || name.substr(0, 4) != _T("Boot"))
             continue;
 

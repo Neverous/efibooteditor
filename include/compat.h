@@ -56,6 +56,7 @@ inline int _tcserror_s(TCHAR *buffer, size_t size, int errnum)
 
 #ifdef __cplusplus
 #include <QString>
+#include <cctype>
 #include <fstream>
 #include <sstream>
 #include <string>
@@ -128,7 +129,7 @@ inline bool isxnumber(const std::tstring_view &string)
         { return iswxdigit(chr); });
 #else
     return std::all_of(std::begin(string), std::end(string), [](unsigned char chr)
-        { return std::isxdigit(chr); });
+        { return isxdigit(chr); });
 #endif
 }
 

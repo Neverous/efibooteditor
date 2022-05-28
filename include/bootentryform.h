@@ -21,7 +21,7 @@ public:
     explicit BootEntryForm(QWidget *parent = nullptr);
     BootEntryForm(const BootEntryForm &) = delete;
     BootEntryForm &operator=(const BootEntryForm &) = delete;
-    ~BootEntryForm();
+    ~BootEntryForm() override;
 
     void setBootEntryListModel(BootEntryListModel &model);
     void setItem(const QModelIndex &index, const BootEntry *item);

@@ -2,6 +2,7 @@
 #include <stddef.h>
 
 #include "compat.h"
+#include "efivar-lite.common.h"
 #include "efivar-lite/efiboot-loadopt.h"
 
 // UEFI Specification, Version 2.8

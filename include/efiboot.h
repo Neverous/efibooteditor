@@ -2,7 +2,6 @@
 #pragma once
 
 #include <array>
-#include <charconv>
 #include <functional>
 #include <memory>
 #include <optional>
@@ -607,13 +606,14 @@ inline size_t serialize(Raw_data &output, const Load_option &load_option)
     size += serialize(output, zero);
     {
         file_path_list_size = static_cast<uint16_t>(serialize_list(output, load_option.file_path));
+        // Always set END_ENTIRE tag at the end of device path
         if(!load_option.file_path.size() || std::visit([](const auto &device_path)
                                                 { return device_path.SUBTYPE; },
                                                 load_option.file_path.back())
                 != Device_path::End_entire::SUBTYPE)
         {
             Device_path::End_entire end;
-            file_path_list_size += static_cast<uint16_t>(serialize(output, end));
+            file_path_list_size = static_cast<uint16_t>(file_path_list_size + static_cast<uint16_t>(serialize(output, end))); // Older GCC complains about conversion when using += `conversion from ‘int’ to ‘uint16_t’ {aka ‘short unsigned int’} may change value`
         }
         size += file_path_list_size;
         memcpy(&output[file_path_list_length_pos], &file_path_list_size, sizeof(file_path_list_size));

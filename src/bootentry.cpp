@@ -86,7 +86,7 @@ auto BootEntry::fromJSON(const QJsonObject &obj) -> std::optional<BootEntry>
     try_read_3(efi_attributes, Double, Int);
     check_type(file_path, Array);
     const auto file_path = obj["file_path"].toArray();
-    for(const auto &device_path: file_path)
+    for(const auto device_path: file_path)
     {
         auto dp = device_path.toObject();
         auto path = get_default(Device_path::JSON_readers(), QString("%1/%2").arg(dp["type"].toString(), dp["subtype"].toString()), [](const auto &)
@@ -329,7 +329,6 @@ auto Device_path::Vendor::toEFIBootDevicePath() const -> EFIBoot::Device_path::A
         std::copy(std::begin(data), std::end(data), std::begin(value.data));
         return value;
     }
-    break;
 
     case EFIBoot::Device_path::MSGVendor::TYPE:
     {
@@ -340,7 +339,6 @@ auto Device_path::Vendor::toEFIBootDevicePath() const -> EFIBoot::Device_path::A
         std::copy(std::begin(data), std::end(data), std::begin(value.data));
         return value;
     }
-    break;
     }
 
     return {};
