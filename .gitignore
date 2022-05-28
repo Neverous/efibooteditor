@@ -71,4 +71,4 @@ Thumbs.db
 
 # Build
 # -----
-build/
+build*/
