@@ -20,7 +20,7 @@ public:
     HorizontalTabStyle(const HorizontalTabStyle &) = delete;
     HorizontalTabStyle &operator=(const HorizontalTabStyle &) = delete;
 
-    QSize sizeFromContents(ContentsType type, const QStyleOption *option, const QSize &size, const QWidget *widget) const
+    QSize sizeFromContents(ContentsType type, const QStyleOption *option, const QSize &size, const QWidget *widget) const override
     {
         QSize s = QProxyStyle::sizeFromContents(type, option, size, widget);
         if(type == QStyle::CT_TabBarTab)
@@ -29,7 +29,7 @@ public:
         return s;
     }
 
-    void drawControl(ControlElement element, const QStyleOption *option, QPainter *painter, const QWidget *widget) const
+    void drawControl(ControlElement element, const QStyleOption *option, QPainter *painter, const QWidget *widget) const override
     {
         if(element != CE_TabBarTabLabel)
         {
@@ -75,7 +75,7 @@ private:
         FirmwareFile = 9,
         FirmwareVolume = 10,
         End = 11,
-        Unknown = 12,
+        Unknown_ = 12,
     };
 
     enum DataFormat
@@ -98,7 +98,7 @@ public:
     explicit DevicePathDialog(QWidget *parent = nullptr);
     DevicePathDialog(const DevicePathDialog &) = delete;
     DevicePathDialog &operator=(const DevicePathDialog &) = delete;
-    ~DevicePathDialog();
+    ~DevicePathDialog() override;
 
     Device_path::ANY toDevicePath() const;
 

@@ -6,6 +6,7 @@
 #include <mach/mach_error.h>
 
 #include "compat.h"
+#include "efivar-lite.common.h"
 #include "efivar-lite/efiboot-loadopt.h"
 #include "efivar-lite/efivar.h"
 
@@ -17,7 +18,7 @@ static const char *last_iokit_function = NULL;
 
 int efi_variables_supported(void)
 {
-    options_entry = IORegistryEntryFromPath(kIOMasterPortDefault, "IODeviceTree:/options");
+    options_entry = IORegistryEntryFromPath(MACH_PORT_NULL, "IODeviceTree:/options");
     if(!options_entry)
     {
         last_iokit_function = "IORegistryEntryFromPath";
@@ -122,12 +123,9 @@ void efi_set_get_next_variable_name_progress_cb(void (*progress_cb)(size_t, size
     efi_get_next_variable_name_progress_cb = progress_cb;
 }
 
-int _efi_get_next_variable_name(efi_guid_t **guid, char **name);
-
 static size_t current_variable = 0;
 int efi_get_next_variable_name(efi_guid_t **guid, char **name)
 {
-    extern const size_t EFI_MAX_VARIABLES;
     while(1)
     {
         if(efi_get_next_variable_name_progress_cb)

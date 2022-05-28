@@ -111,7 +111,7 @@ auto DevicePathDialog::toDevicePath() const -> Device_path::ANY
             break;
 
         case EFIBoot::Device_path::SIGNATURE::NONE:
-            hd.partition_signature = {};
+            hd.partition_signature = QUuid{};
             break;
         }
 
@@ -153,7 +153,7 @@ auto DevicePathDialog::toDevicePath() const -> Device_path::ANY
         return end;
     }
 
-    case FormIndex::Unknown:
+    case FormIndex::Unknown_:
     {
         Device_path::Unknown unknown;
         unknown.type = static_cast<quint8>(ui->unknown_type_text->text().toUShort(nullptr, HEX_BASE));
@@ -346,7 +346,7 @@ void DevicePathDialog::setEndForm(const EFIBoot::EFIDP_END subtype)
 
 void DevicePathDialog::setUnknownForm(const Device_path::Unknown &unknown)
 {
-    ui->options->setCurrentIndex(FormIndex::Unknown);
+    ui->options->setCurrentIndex(FormIndex::Unknown_);
     ui->unknown_type_text->setText(QString::number(unknown.type, HEX_BASE));
     ui->unknown_subtype_text->setText(QString::number(unknown.subtype, HEX_BASE));
     ui->unknown_data_format_combo->setCurrentIndex(UnknownDataFormat::Base64);
@@ -579,21 +579,17 @@ QByteArray DevicePathDialog::getVendorData(int index) const
     {
     case VendorDataFormat::Base64:
         return QByteArray::fromBase64(ui->vendor_data_text->toPlainText().toUtf8());
-        break;
 
     case VendorDataFormat::Utf16:
         encoder.reset(QTextCodec::codecForName("UTF-16")->makeEncoder(QTextCodec::IgnoreHeader));
         return encoder->fromUnicode(ui->vendor_data_text->toPlainText());
-        break;
 
     case VendorDataFormat::Utf8:
         encoder.reset(QTextCodec::codecForName("UTF-8")->makeEncoder(QTextCodec::IgnoreHeader));
         return encoder->fromUnicode(ui->vendor_data_text->toPlainText());
-        break;
 
     case VendorDataFormat::Hex:
         return QByteArray::fromHex(ui->vendor_data_text->toPlainText().toUtf8());
-        break;
     }
 
     return {};
@@ -606,21 +602,17 @@ QByteArray DevicePathDialog::getUnknownData(int index) const
     {
     case UnknownDataFormat::Base64:
         return QByteArray::fromBase64(ui->unknown_data_text->toPlainText().toUtf8());
-        break;
 
     case UnknownDataFormat::Utf16:
         encoder.reset(QTextCodec::codecForName("UTF-16")->makeEncoder(QTextCodec::IgnoreHeader));
         return encoder->fromUnicode(ui->unknown_data_text->toPlainText());
-        break;
 
     case UnknownDataFormat::Utf8:
         encoder.reset(QTextCodec::codecForName("UTF-8")->makeEncoder(QTextCodec::IgnoreHeader));
         return encoder->fromUnicode(ui->unknown_data_text->toPlainText());
-        break;
 
     case UnknownDataFormat::Hex:
         return QByteArray::fromHex(ui->unknown_data_text->toPlainText().toUtf8());
-        break;
     }
 
     return {};
