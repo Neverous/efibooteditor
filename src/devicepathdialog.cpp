@@ -156,8 +156,8 @@ auto DevicePathDialog::toDevicePath() const -> Device_path::ANY
     case FormIndex::Unknown_:
     {
         Device_path::Unknown unknown;
-        unknown.type = static_cast<quint8>(ui->unknown_type_text->text().toUShort(nullptr, HEX_BASE));
-        unknown.subtype = static_cast<quint8>(ui->unknown_subtype_text->text().toUShort(nullptr, HEX_BASE));
+        unknown._type = static_cast<quint8>(ui->unknown_type_text->text().toUShort(nullptr, HEX_BASE));
+        unknown._subtype = static_cast<quint8>(ui->unknown_subtype_text->text().toUShort(nullptr, HEX_BASE));
         unknown.data = getUnknownData(ui->unknown_data_format_combo->currentIndex());
         return unknown;
     }
@@ -347,8 +347,8 @@ void DevicePathDialog::setEndForm(const EFIBoot::EFIDP_END subtype)
 void DevicePathDialog::setUnknownForm(const Device_path::Unknown &unknown)
 {
     ui->options->setCurrentIndex(FormIndex::Unknown_);
-    ui->unknown_type_text->setText(toHex(unknown.type));
-    ui->unknown_subtype_text->setText(toHex(unknown.subtype));
+    ui->unknown_type_text->setText(toHex(unknown._type));
+    ui->unknown_subtype_text->setText(toHex(unknown._subtype));
     ui->unknown_data_format_combo->setCurrentIndex(UnknownDataFormat::Base64);
     unknown_data_format_combo_index = 0;
     ui->unknown_data_text->setPlainText(unknown.data.toBase64());

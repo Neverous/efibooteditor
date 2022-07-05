@@ -885,8 +885,8 @@ auto Device_path::End::toString(bool refresh) const -> QString
 }
 
 Device_path::Unknown::Unknown(const EFIBoot::Device_path::Unknown &unknown)
-    : type{unknown.TYPE}
-    , subtype{unknown.SUBTYPE}
+    : _type{unknown.TYPE}
+    , _subtype{unknown.SUBTYPE}
     , data{QByteArray::fromRawData(reinterpret_cast<const char *>(unknown.data.data()), static_cast<int>(unknown.data.size()))}
 {
 }
@@ -894,8 +894,8 @@ Device_path::Unknown::Unknown(const EFIBoot::Device_path::Unknown &unknown)
 auto Device_path::Unknown::toEFIBootDevicePath() const -> EFIBoot::Device_path::Unknown
 {
     EFIBoot::Device_path::Unknown value = {};
-    value.TYPE = type;
-    value.SUBTYPE = subtype;
+    value.TYPE = _type;
+    value.SUBTYPE = _subtype;
     value.data.resize(static_cast<size_t>(data.size()));
     std::copy(std::begin(data), std::end(data), std::begin(value.data));
     return value;
@@ -905,8 +905,8 @@ auto Device_path::Unknown::fromJSON(const QJsonObject &obj) -> std::optional<Dev
 {
     Unknown value;
     check_obj();
-    try_read_3(type, Double, Int);
-    try_read_3(subtype, Double, Int);
+    try_read_3(_type, Double, Int);
+    try_read_3(_subtype, Double, Int);
     check_type(data, String);
     value.data = QByteArray::fromBase64(obj["data"].toString().toUtf8());
     return {value};
@@ -915,8 +915,10 @@ auto Device_path::Unknown::fromJSON(const QJsonObject &obj) -> std::optional<Dev
 auto Device_path::Unknown::toJSON() const -> QJsonObject
 {
     QJsonObject value;
-    value["type"] = type;
-    value["subtype"] = subtype;
+    value["type"] = TYPE;
+    value["subtype"] = SUBTYPE;
+    value["_type"] = _type;
+    value["_subtype"] = _subtype;
     value["data"] = static_cast<QString>(data.toBase64());
     return value;
 }
@@ -926,7 +928,7 @@ auto Device_path::Unknown::toString(bool refresh) const -> QString
     if(string.size() && !refresh)
         return string;
 
-    return string = QString("Unknown(%1, %2, [%3B])").arg(toHex(type), toHex(subtype)).arg(data.size());
+    return string = QString("Unknown(%1, %2, [%3B])").arg(toHex(_type), toHex(_subtype)).arg(data.size());
 }
 
 #undef try_read_3
