@@ -208,8 +208,8 @@ void DevicePathDialog::setPCIForm(const Device_path::PCI &pci)
 void DevicePathDialog::setHIDForm(const Device_path::HID &hid)
 {
     ui->options->setCurrentIndex(FormIndex::HID);
-    ui->hid_text->setText(QString::number(hid.hid, HEX_BASE));
-    ui->uid_text->setText(QString::number(hid.uid, HEX_BASE));
+    ui->hid_text->setText(toHex(hid.hid));
+    ui->uid_text->setText(toHex(hid.uid));
 }
 
 void DevicePathDialog::setVendorForm(const Device_path::Vendor &vendor)
@@ -316,8 +316,8 @@ void DevicePathDialog::setHDForm(const Device_path::HD &hd)
         ui->signature_text->setText(hd.partition_signature.toString());
 
     ui->partition_number->setValue(static_cast<int>(hd.partition_number));
-    ui->start_text->setText(QString::number(hd.partition_start, HEX_BASE));
-    ui->size_text->setText(QString::number(hd.partition_size, HEX_BASE));
+    ui->start_text->setText(toHex(hd.partition_start));
+    ui->size_text->setText(toHex(hd.partition_size));
 }
 
 void DevicePathDialog::setFileForm(const Device_path::File &file)
@@ -347,8 +347,8 @@ void DevicePathDialog::setEndForm(const EFIBoot::EFIDP_END subtype)
 void DevicePathDialog::setUnknownForm(const Device_path::Unknown &unknown)
 {
     ui->options->setCurrentIndex(FormIndex::Unknown_);
-    ui->unknown_type_text->setText(QString::number(unknown.type, HEX_BASE));
-    ui->unknown_subtype_text->setText(QString::number(unknown.subtype, HEX_BASE));
+    ui->unknown_type_text->setText(toHex(unknown.type));
+    ui->unknown_subtype_text->setText(toHex(unknown.subtype));
     ui->unknown_data_format_combo->setCurrentIndex(UnknownDataFormat::Base64);
     unknown_data_format_combo_index = 0;
     ui->unknown_data_text->setPlainText(unknown.data.toBase64());
@@ -417,8 +417,8 @@ void DevicePathDialog::diskChoiceChanged(int index)
         ui->signature_text->setText(driveinfo.signature.toString());
 
     ui->partition_number->setValue(static_cast<int>(driveinfo.partition));
-    ui->start_text->setText(QString::number(driveinfo.start, HEX_BASE));
-    ui->size_text->setText(QString::number(driveinfo.size, HEX_BASE));
+    ui->start_text->setText(toHex(driveinfo.start));
+    ui->size_text->setText(toHex(driveinfo.size));
 }
 
 void DevicePathDialog::signatureTypeChoiceChanged(int index)

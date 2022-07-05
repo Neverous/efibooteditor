@@ -294,7 +294,7 @@ auto Device_path::HID::toString(bool refresh) const -> QString
     if(string.size() && !refresh)
         return string;
 
-    return string = QString("Acpi(0x%1, 0x%2)").arg(hid, 0, HEX_BASE).arg(uid, 0, HEX_BASE);
+    return string = QString("Acpi(%1, %2)").arg(toHex(hid), toHex(uid));
 }
 
 static_assert(sizeof(Device_path::Vendor::guid) == sizeof(EFIBoot::Device_path::HWVendor::guid));
@@ -691,8 +691,8 @@ auto Device_path::HD::toJSON() const -> QJsonObject
     QJsonObject hd;
     hd["type"] = TYPE;
     hd["subtype"] = SUBTYPE;
-    hd["partition_start"] = QString("0x%1").arg(partition_start, 0, HEX_BASE);
-    hd["partition_size"] = QString("0x%1").arg(partition_size, 0, HEX_BASE);
+    hd["partition_start"] = toHex(partition_start);
+    hd["partition_size"] = toHex(partition_size);
     hd["partition_number"] = static_cast<int>(partition_number);
     hd["partition_format"] = static_cast<int>(partition_format);
     hd["partition_signature"] = partition_signature.toString();
@@ -705,12 +705,12 @@ auto Device_path::HD::toString(bool refresh) const -> QString
     if(string.size() && !refresh)
         return string;
 
-    QString format = QString("HD(%1, %2, %3. 0x%4, 0x%5)").arg(partition_number);
+    QString format = QString("HD(%1, %2, %3. %4, %5)").arg(partition_number);
     switch(signature_type)
     {
     case EFIBoot::Device_path::SIGNATURE::MBR:
     {
-        format = format.arg("MBR", QString("0x%1").arg(partition_signature.data1, 0, HEX_BASE));
+        format = format.arg("MBR", toHex(partition_signature.data1));
         break;
     }
 
@@ -723,7 +723,7 @@ auto Device_path::HD::toString(bool refresh) const -> QString
         break;
     }
 
-    return string = format.arg(partition_start, 0, HEX_BASE).arg(partition_size, 0, HEX_BASE);
+    return string = format.arg(toHex(partition_start), toHex(partition_size));
 }
 
 Device_path::File::File(const EFIBoot::Device_path::File &file)
@@ -926,7 +926,7 @@ auto Device_path::Unknown::toString(bool refresh) const -> QString
     if(string.size() && !refresh)
         return string;
 
-    return string = QString("Unknown(0x%1, 0x%2, [%3B])").arg(type, 0, HEX_BASE).arg(subtype, 0, HEX_BASE).arg(data.size());
+    return string = QString("Unknown(%1, %2, [%3B])").arg(toHex(type), toHex(subtype)).arg(data.size());
 }
 
 #undef try_read_3

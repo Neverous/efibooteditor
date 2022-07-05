@@ -89,6 +89,8 @@ inline tstring to_tstring(const Type &value)
 
 }
 
+const int HEX_BASE = 16;
+
 QT_BEGIN_NAMESPACE
 
 inline std::tstring QStringToStdTString(const QString &string)
@@ -118,9 +120,12 @@ inline QString QStringFromStdTString(const std::tstring &string)
 #endif
 }
 
-QT_END_NAMESPACE
+inline QString toHex(qlonglong number, int min_width = 0, const QString &prefix = "0x")
+{
+    return prefix + QString("%1").arg(number, min_width, HEX_BASE, QChar('0')).toUpper();
+}
 
-const int HEX_BASE = 16;
+QT_END_NAMESPACE
 
 inline bool isxnumber(const std::tstring_view &string)
 {
