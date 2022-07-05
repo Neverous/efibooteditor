@@ -127,7 +127,7 @@ void EFIBootEditor::resetBootConfiguration()
     entries_list_model.clear();
     for(const auto &index: order)
     {
-        auto qname = QString("Boot%1").arg(index, 4, HEX_BASE, QChar('0'));
+        auto qname = toHex(index, 4, "Boot");
         auto name = QStringToStdTString(qname);
         show_progress_bar(step++, total_steps, tr("Processing EFI Boot Manager entries (%1)...").arg(qname));
         auto variable = EFIBoot::get_variable<EFIBoot::Load_option>(name_to_guid[name], name);
@@ -205,7 +205,7 @@ void EFIBootEditor::saveBootConfiguration()
     QSet<quint16> saved;
     for(const auto &entry: entries_list_model.getEntries())
     {
-        auto qname = QString("Boot%1").arg(entry.index, 4, HEX_BASE, QChar('0'));
+        auto qname = toHex(entry.index, 4, "Boot");
         if(saved.contains(entry.index))
             return show_error(tr("Error saving entries!"), tr("Entry %1(%2): Duplicated index!").arg(qname, entry.description));
 
@@ -359,7 +359,7 @@ void EFIBootEditor::importJSONEFIData(const QJsonObject &input)
     entries_list_model.clear();
     for(const auto &index: order)
     {
-        auto name = QString("%1").arg(index, 4, HEX_BASE, QChar('0'));
+        auto name = toHex(index, 4, "");
         show_progress_bar(step++, total_steps, tr("Importing EFI Boot Manager entries (Boot%1)...").arg(name));
         auto entry = BootEntry::fromJSON(boot[name].toObject());
         if(!entry)
@@ -466,7 +466,7 @@ void EFIBootEditor::importRawEFIData(const QJsonObject &input)
     entries_list_model.clear();
     for(const auto &index: order)
     {
-        auto name = QString("%1").arg(index, 4, HEX_BASE, QChar('0'));
+        auto name = toHex(index, 4, "");
         show_progress_bar(step++, total_steps, tr("Importing EFI Boot Manager entries (Boot%1)...").arg(name));
         if(!boot[name].isObject())
             return show_error(tr("Error importing boot configuration!"), tr("Couldn't parse Boot/%1: object expected").arg(name));
@@ -515,7 +515,7 @@ void EFIBootEditor::exportBootConfiguration(const QString &file_name)
     QSet<quint16> saved;
     for(const auto &entry: entries_list_model.getEntries())
     {
-        auto name = QString("%1").arg(entry.index, 4, HEX_BASE, QChar('0'));
+        auto name = toHex(entry.index, 4, "");
         if(saved.contains(entry.index))
             return show_error(tr("Error saving entries!"), tr("Entry %1(%2): Duplicated index!").arg(name, entry.description));
 

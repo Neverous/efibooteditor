@@ -8,6 +8,9 @@ on:
   schedule:
     - cron: '36 10 * * 5'
 
+env:
+  CMAKE_BUILD_PARALLEL_LEVEL: 4
+
 jobs:
   build-linux:
     name: ${{ matrix.os }} Qt ${{ matrix.qt_version }} with ${{ matrix.compiler }}

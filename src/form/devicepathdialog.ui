@@ -207,7 +207,7 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;\0\xhhhhhhhh;_</string>
+          <string>&lt;\0\xHHHHHHHH;_</string>
          </property>
         </widget>
        </item>
@@ -239,7 +239,7 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UID in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;\0\xhhhhhhhh;_</string>
+          <string>&lt;\0\xHHHHHHHH;_</string>
          </property>
         </widget>
        </item>
@@ -446,7 +446,7 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh:hh;_</string>
+          <string>&lt;HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH;_</string>
          </property>
         </widget>
        </item>
@@ -940,7 +940,7 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh</string>
+          <string>&lt;HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH</string>
          </property>
         </widget>
        </item>
@@ -975,7 +975,7 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh</string>
+          <string>&lt;HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH</string>
          </property>
         </widget>
        </item>
@@ -1063,7 +1063,7 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh:hhhh</string>
+          <string>&lt;HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH</string>
          </property>
         </widget>
        </item>
@@ -1464,7 +1464,7 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition start offset in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;\0\xhhhhhhhhhhhhhhhh;_</string>
+          <string>&lt;\0\xHHHHHHHHHHHHHHHH;_</string>
          </property>
          <property name="text">
           <string>0x0000000000000000</string>
@@ -1499,7 +1499,7 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition size in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;\0\xhhhhhhhhhhhhhhhh;_</string>
+          <string>&lt;\0\xHHHHHHHHHHHHHHHH;_</string>
          </property>
         </widget>
        </item>
@@ -1808,14 +1808,14 @@
        <item row="0" column="1">
         <widget class="QLineEdit" name="unknown_type_text">
          <property name="inputMask">
-          <string>&lt;\0\xhh;_</string>
+          <string>&lt;\0\xHH;_</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
         <widget class="QLineEdit" name="unknown_subtype_text">
          <property name="inputMask">
-          <string>&lt;\0\xhh;_</string>
+          <string>&lt;\0\xHH;_</string>
          </property>
         </widget>
        </item>

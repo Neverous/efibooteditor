@@ -29,7 +29,7 @@ void BootEntryForm::setItem(const QModelIndex &index, const BootEntry *item)
 
     setDisabled(true);
 
-    ui->index_text->setText(QString("0x%1").arg(item ? item->index : 0, 4, HEX_BASE, QChar('0')));
+    ui->index_text->setText(toHex(item ? item->index : 0u, 4));
     ui->description_text->setText(item ? item->description : "");
     paths_proxy_list_model.setBootEntryItem(index, item);
     ui->optional_data_text->setPlainText(item ? item->optional_data : "");
