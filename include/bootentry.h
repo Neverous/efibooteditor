@@ -369,8 +369,8 @@ private:
     mutable QString string = "";
 
 public:
-    quint8 type = 0;
-    quint8 subtype = 0;
+    quint8 _type = 0;
+    quint8 _subtype = 0;
     QByteArray data = {};
 
 public:
