@@ -40,14 +40,30 @@ auto DevicePathDialog::toDevicePath() const -> Device_path::ANY
         hid.uid = ui->uid_text->text().toUInt(nullptr, HEX_BASE);
         return hid;
     }
+    case FormIndex::USB:
+    {
+        Device_path::USB usb;
+        usb.parent_port_number = static_cast<quint8>(ui->parent_port_number->value());
+        usb.interface = static_cast<quint8>(ui->interface_number->value());
+        return usb;
+    }
     case FormIndex::Vendor:
     {
         Device_path::Vendor vendor;
-        if(ui->vendor_type_combo->currentIndex() == 0)
+        switch(static_cast<VendorTypeIndex>(ui->vendor_type_combo->currentIndex()))
+        {
+        case VendorTypeIndex::HW:
             vendor._type = EFIBoot::Device_path::HWVendor::TYPE;
+            break;
 
-        else
+        case VendorTypeIndex::MSG:
             vendor._type = EFIBoot::Device_path::MSGVendor::TYPE;
+            break;
+
+        case VendorTypeIndex::MEDIA:
+            vendor._type = EFIBoot::Device_path::MEDIAVendor::TYPE;
+            break;
+        }
 
         vendor.guid = QUuid::fromString(ui->vendor_guid_text->text());
         vendor.data = getVendorData(ui->vendor_data_format_combo->currentIndex());
@@ -119,28 +135,32 @@ auto DevicePathDialog::toDevicePath() const -> Device_path::ANY
         hd.partition_size = ui->size_text->text().toULongLong(nullptr, HEX_BASE);
         return hd;
     }
-
     case FormIndex::File:
     {
         Device_path::File file;
         file.name = ui->filename_text->text();
         return file;
     }
-
     case FormIndex::FirmwareFile:
     {
         Device_path::FirmwareFile firmware_file;
         firmware_file.name = QUuid::fromString(ui->firmware_file_text->text());
         return firmware_file;
     }
-
     case FormIndex::FirmwareVolume:
     {
         Device_path::FirmwareVolume firmware_volume;
         firmware_volume.name = QUuid::fromString(ui->firmware_volume_text->text());
         return firmware_volume;
     }
-
+    case FormIndex::BIOSBootSpecification:
+    {
+        Device_path::BIOSBootSpecification bios_boot_specification;
+        bios_boot_specification.device_type = ui->device_type_text->text().toUShort(nullptr, HEX_BASE);
+        bios_boot_specification.status_flag = ui->status_flag_text->text().toUShort(nullptr, HEX_BASE);
+        bios_boot_specification.description = ui->description_text->text();
+        return bios_boot_specification;
+    }
     case FormIndex::End:
     {
         Device_path::End end;
@@ -152,7 +172,6 @@ auto DevicePathDialog::toDevicePath() const -> Device_path::ANY
 
         return end;
     }
-
     case FormIndex::Unknown_:
     {
         Device_path::Unknown unknown;
@@ -180,6 +199,7 @@ void DevicePathDialog::setDevicePath(const Device_path::ANY *_device_path)
             // clang-format off
             [&](const Device_path::PCI &pci) { setPCIForm(pci); },
             [&](const Device_path::HID &hid) { setHIDForm(hid); },
+            [&](const Device_path::USB &usb) { setUSBForm(usb); },
             [&](const Device_path::Vendor &vendor) { setVendorForm(vendor); },
             [&](const Device_path::MACAddress &mac_address) { setMACAddressForm(mac_address); },
             [&](const Device_path::IPv4 &ipv4) { setIPv4Form(ipv4); },
@@ -189,6 +209,7 @@ void DevicePathDialog::setDevicePath(const Device_path::ANY *_device_path)
             [&](const Device_path::File &file) { setFileForm(file); },
             [&](const Device_path::FirmwareFile &firmware_file) { setFirmwareFileForm(firmware_file); },
             [&](const Device_path::FirmwareVolume &firmware_volume) { setFirmwareVolumeForm(firmware_volume); },
+            [&](const Device_path::BIOSBootSpecification &bios_boot_specification) { setBIOSBootSpecificationForm(bios_boot_specification); },
             [&](const Device_path::End &end) { setEndForm(end._subtype); },
             [&](const Device_path::Unknown &unknown) { setUnknownForm(unknown); },
             // clang-format on
@@ -212,10 +233,33 @@ void DevicePathDialog::setHIDForm(const Device_path::HID &hid)
     ui->uid_text->setText(toHex(hid.uid));
 }
 
+void DevicePathDialog::setUSBForm(const Device_path::USB &usb)
+{
+    ui->options->setCurrentIndex(FormIndex::USB);
+    ui->parent_port_number->setValue(usb.parent_port_number);
+    ui->interface_number->setValue(usb.interface);
+}
+
 void DevicePathDialog::setVendorForm(const Device_path::Vendor &vendor)
 {
     ui->options->setCurrentIndex(FormIndex::Vendor);
-    ui->vendor_type_combo->setCurrentIndex(vendor._type == EFIBoot::Device_path::HWVendor::TYPE ? 0 : 1);
+    VendorTypeIndex index = VendorTypeIndex::HW;
+    switch(vendor._type)
+    {
+    case EFIBoot::Device_path::HWVendor::TYPE:
+        index = VendorTypeIndex::HW;
+        break;
+
+    case EFIBoot::Device_path::MSGVendor::TYPE:
+        index = VendorTypeIndex::MSG;
+        break;
+
+    case EFIBoot::Device_path::MEDIAVendor::TYPE:
+        index = VendorTypeIndex::MEDIA;
+        break;
+    }
+
+    ui->vendor_type_combo->setCurrentIndex(index);
     ui->vendor_guid_text->setText(vendor.guid.toString(QUuid::WithoutBraces));
     ui->vendor_data_format_combo->setCurrentIndex(VendorDataFormat::Base64);
     vendor_data_format_combo_index = 0;
@@ -336,6 +380,14 @@ void DevicePathDialog::setFirmwareVolumeForm(const Device_path::FirmwareVolume &
 {
     ui->options->setCurrentIndex(FormIndex::FirmwareVolume);
     ui->firmware_volume_text->setText(firmware_volume.name.toString());
+}
+
+void DevicePathDialog::setBIOSBootSpecificationForm(const Device_path::BIOSBootSpecification &bios_boot_specification)
+{
+    ui->options->setCurrentIndex(FormIndex::BIOSBootSpecification);
+    ui->device_type_text->setText(toHex(bios_boot_specification.device_type));
+    ui->status_flag_text->setText(toHex(bios_boot_specification.status_flag));
+    ui->description_text->setText(bios_boot_specification.description);
 }
 
 void DevicePathDialog::setEndForm(const EFIBoot::EFIDP_END subtype)

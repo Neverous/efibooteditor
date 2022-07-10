@@ -73,6 +73,31 @@ public:
 };
 REGISTER_JSON_READER(HID);
 
+class USB
+{
+public:
+    static constexpr auto TYPE = "MSG";
+    static constexpr auto SUBTYPE = "USB";
+
+private:
+    mutable QString string = "";
+
+public:
+    quint8 parent_port_number = 0;
+    quint8 interface = 0;
+
+public:
+    USB() = default;
+    USB(const EFIBoot::Device_path::USB &usb);
+    EFIBoot::Device_path::USB toEFIBootDevicePath() const;
+
+    static std::optional<USB> fromJSON(const QJsonObject &obj);
+    QJsonObject toJSON() const;
+
+    QString toString(bool refresh = true) const;
+};
+REGISTER_JSON_READER(USB);
+
 class Vendor
 {
 public:
@@ -91,6 +116,7 @@ public:
     Vendor() = default;
     Vendor(const EFIBoot::Device_path::HWVendor &vendor);
     Vendor(const EFIBoot::Device_path::MSGVendor &vendor);
+    Vendor(const EFIBoot::Device_path::MEDIAVendor &vendor);
     EFIBoot::Device_path::ANY toEFIBootDevicePath() const;
 
     static std::optional<Vendor> fromJSON(const QJsonObject &obj);
@@ -314,6 +340,32 @@ public:
 };
 REGISTER_JSON_READER(FirmwareVolume);
 
+class BIOSBootSpecification
+{
+public:
+    static constexpr auto TYPE = "BIOS";
+    static constexpr auto SUBTYPE = "BIOS_BOOT_SPECIFICATION";
+
+public:
+    quint16 device_type = 0;
+    quint16 status_flag = 0;
+    QString description = "";
+
+private:
+    mutable QString string = "";
+
+public:
+    BIOSBootSpecification() = default;
+    BIOSBootSpecification(const EFIBoot::Device_path::BIOS_boot_specification &bios_boot_specification);
+    EFIBoot::Device_path::BIOS_boot_specification toEFIBootDevicePath() const;
+
+    static std::optional<BIOSBootSpecification> fromJSON(const QJsonObject &obj);
+    QJsonObject toJSON() const;
+
+    QString toString(bool refresh = true) const;
+};
+REGISTER_JSON_READER(BIOSBootSpecification);
+
 class End
 {
 public:
@@ -388,6 +440,7 @@ REGISTER_JSON_READER(Unknown);
 typedef std::variant<
     PCI,
     HID,
+    USB,
     Vendor,
     MACAddress,
     IPv4,
@@ -397,6 +450,7 @@ typedef std::variant<
     File,
     FirmwareFile,
     FirmwareVolume,
+    BIOSBootSpecification,
     End,
     Unknown>
     ANY;

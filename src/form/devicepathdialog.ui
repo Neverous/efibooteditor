@@ -57,13 +57,13 @@
      </property>
      <widget class="QWidget" name="pci_tab">
       <property name="toolTip">
-       <string>PCI</string>
+       <string>PCI tab</string>
       </property>
       <property name="statusTip">
-       <string>PCI</string>
+       <string>PCI tab</string>
       </property>
       <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
        <iconset theme="system"/>
@@ -158,13 +158,13 @@
      </widget>
      <widget class="QWidget" name="hid_tab">
       <property name="toolTip">
-       <string>HID</string>
+       <string>HID tab</string>
       </property>
       <property name="statusTip">
-       <string>HID</string>
+       <string>HID tab</string>
       </property>
       <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
        <iconset theme="system"/>
@@ -245,7 +245,120 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="usb_tab">
+      <property name="toolTip">
+       <string>USB tab</string>
+      </property>
+      <property name="statusTip">
+       <string>USB tab</string>
+      </property>
+      <property name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <attribute name="icon">
+       <iconset theme="drive-removable-media"/>
+      </attribute>
+      <attribute name="title">
+       <string>USB</string>
+      </attribute>
+      <layout class="QFormLayout" name="usb_layout">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
+       <property name="labelAlignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="parent_port_number_label">
+         <property name="toolTip">
+          <string>Parent port number</string>
+         </property>
+         <property name="statusTip">
+          <string>Parent port number</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Parent port number&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Parent port number</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="interface_label">
+         <property name="toolTip">
+          <string>Interface</string>
+         </property>
+         <property name="statusTip">
+          <string>Interface</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Interface</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QSpinBox" name="interface_number">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Interface</string>
+         </property>
+         <property name="statusTip">
+          <string>Interface</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QSpinBox" name="parent_port_number">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Parent port number</string>
+         </property>
+         <property name="statusTip">
+          <string>Parent port number</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Parent port number&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
      <widget class="QWidget" name="vendor_tab">
+      <property name="toolTip">
+       <string>Vendor tab</string>
+      </property>
+      <property name="statusTip">
+       <string>Vendor tab</string>
+      </property>
+      <property name="whatsThis">
+       <string>Vendor tab</string>
+      </property>
+      <property name="accessibleName">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
       <attribute name="icon">
        <iconset theme="document"/>
       </attribute>
@@ -400,11 +513,25 @@
            <string>MSG</string>
           </property>
          </item>
+         <item>
+          <property name="text">
+           <string>MEDIA</string>
+          </property>
+         </item>
         </widget>
        </item>
       </layout>
      </widget>
      <widget class="QWidget" name="mac_tab">
+      <property name="toolTip">
+       <string>MAC tab</string>
+      </property>
+      <property name="statusTip">
+       <string>MAC tab</string>
+      </property>
+      <property name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
       <attribute name="icon">
        <iconset theme="network-wired"/>
       </attribute>
@@ -488,6 +615,15 @@
       </layout>
      </widget>
      <widget class="QWidget" name="ipv4_tab">
+      <property name="toolTip">
+       <string>IPv4 tab</string>
+      </property>
+      <property name="statusTip">
+       <string>IPv4 tab</string>
+      </property>
+      <property name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv4 tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
       <attribute name="icon">
        <iconset theme="network-wired"/>
       </attribute>
@@ -787,6 +923,15 @@
       </layout>
      </widget>
      <widget class="QWidget" name="ipv6_tab">
+      <property name="toolTip">
+       <string>IPv6 tab</string>
+      </property>
+      <property name="statusTip">
+       <string>IPv6 tab</string>
+      </property>
+      <property name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv6 tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
       <attribute name="icon">
        <iconset theme="network-wired"/>
       </attribute>
@@ -1090,13 +1235,13 @@
      </widget>
      <widget class="QWidget" name="sata_tab">
       <property name="toolTip">
-       <string>SATA</string>
+       <string>SATA tab</string>
       </property>
       <property name="statusTip">
-       <string>SATA</string>
+       <string>SATA tab</string>
       </property>
       <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SATA&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SATA tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
        <iconset theme="harddrive"/>
@@ -1229,13 +1374,13 @@
      </widget>
      <widget class="QWidget" name="hd_tab">
       <property name="toolTip">
-       <string>Disk</string>
+       <string>Disk tab</string>
       </property>
       <property name="statusTip">
-       <string>Disk</string>
+       <string>Disk tab</string>
       </property>
       <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disk&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disk tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
        <iconset theme="harddrive"/>
@@ -1673,6 +1818,124 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="bios_boot_specification_tab">
+      <property name="toolTip">
+       <string>BIOS boot specification tab</string>
+      </property>
+      <property name="statusTip">
+       <string>BIOS boot specification tab</string>
+      </property>
+      <property name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;BIOS boot specification tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <attribute name="icon">
+       <iconset theme="computer"/>
+      </attribute>
+      <attribute name="title">
+       <string>BIOS Boot Specification</string>
+      </attribute>
+      <layout class="QFormLayout" name="bios_boot_specification_layout">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
+       <property name="labelAlignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="device_type_label">
+         <property name="toolTip">
+          <string>Device type</string>
+         </property>
+         <property name="statusTip">
+          <string>Device type</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Device type</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="device_type_text">
+         <property name="toolTip">
+          <string>Device type</string>
+         </property>
+         <property name="statusTip">
+          <string>Device type</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="inputMask">
+          <string>&lt;\0\xHH;_</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="status_flag_label">
+         <property name="toolTip">
+          <string>Status flag</string>
+         </property>
+         <property name="statusTip">
+          <string>Status flag</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Status flag&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Status flag</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="status_flag_text">
+         <property name="toolTip">
+          <string>Status flag</string>
+         </property>
+         <property name="statusTip">
+          <string>Status flag</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Status flag&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="inputMask">
+          <string>&lt;\0\xHH;_</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="description_label">
+         <property name="toolTip">
+          <string>Description</string>
+         </property>
+         <property name="statusTip">
+          <string>Description</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Description&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Description</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="description_text">
+         <property name="toolTip">
+          <string>Description</string>
+         </property>
+         <property name="statusTip">
+          <string>Description</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Description&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
      <widget class="QWidget" name="end_tab">
       <property name="toolTip">
        <string>End of hardware tab</string>
@@ -1744,6 +2007,15 @@
       </layout>
      </widget>
      <widget class="QWidget" name="unknown_tab">
+      <property name="toolTip">
+       <string>Unknown device path node tab</string>
+      </property>
+      <property name="statusTip">
+       <string>Unknown device path node tab</string>
+      </property>
+      <property name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown device path node tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
       <attribute name="icon">
        <iconset theme="system-search"/>
       </attribute>

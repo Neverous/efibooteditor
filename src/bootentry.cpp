@@ -297,13 +297,58 @@ auto Device_path::HID::toString(bool refresh) const -> QString
     return string = QString("Acpi(%1, %2)").arg(toHex(hid), toHex(uid));
 }
 
+Device_path::USB::USB(const EFIBoot::Device_path::USB &usb)
+    : parent_port_number{usb.parent_port_number}
+    , interface {
+    usb.interface
+}
+{
+}
+
+auto Device_path::USB::toEFIBootDevicePath() const -> EFIBoot::Device_path::USB
+{
+    EFIBoot::Device_path::USB value = {};
+    value.parent_port_number = parent_port_number;
+    value.interface = interface;
+    return value;
+}
+
+auto Device_path::USB::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::USB>
+{
+    USB value;
+    check_obj();
+    try_read_3(parent_port_number, Double, Int);
+    try_read_3(interface, Double, Int);
+    return {value};
+}
+
+auto Device_path::USB::toJSON() const -> QJsonObject
+{
+    QJsonObject value;
+    value["type"] = TYPE;
+    value["subtype"] = SUBTYPE;
+    value["parent_port_number"] = static_cast<int>(parent_port_number);
+    value["interface"] = static_cast<int>(interface);
+    return value;
+}
+
+auto Device_path::USB::toString(bool refresh) const -> QString
+{
+    if(string.size() && !refresh)
+        return string;
+
+    return string = QString("USB(%1, %2)").arg(parent_port_number).arg(interface);
+}
+
 static_assert(sizeof(Device_path::Vendor::guid) == sizeof(EFIBoot::Device_path::HWVendor::guid));
 static_assert(sizeof(Device_path::Vendor::guid) == sizeof(EFIBoot::Device_path::MSGVendor::guid));
+static_assert(sizeof(Device_path::Vendor::guid) == sizeof(EFIBoot::Device_path::MEDIAVendor::guid));
 
 Device_path::Vendor::Vendor(const EFIBoot::Device_path::HWVendor &vendor)
     : _type{vendor.TYPE}
     , data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
 {
+    data.detach();
     static_assert(sizeof(vendor.guid) == sizeof(guid));
     memcpy(reinterpret_cast<void *>(&guid), &vendor.guid, sizeof(vendor.guid));
 }
@@ -312,6 +357,16 @@ Device_path::Vendor::Vendor(const EFIBoot::Device_path::MSGVendor &vendor)
     : _type{vendor.TYPE}
     , data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
 {
+    data.detach();
+    static_assert(sizeof(vendor.guid) == sizeof(guid));
+    memcpy(reinterpret_cast<void *>(&guid), &vendor.guid, sizeof(vendor.guid));
+}
+
+Device_path::Vendor::Vendor(const EFIBoot::Device_path::MEDIAVendor &vendor)
+    : _type{vendor.TYPE}
+    , data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
+{
+    data.detach();
     static_assert(sizeof(vendor.guid) == sizeof(guid));
     memcpy(reinterpret_cast<void *>(&guid), &vendor.guid, sizeof(vendor.guid));
 }
@@ -333,6 +388,16 @@ auto Device_path::Vendor::toEFIBootDevicePath() const -> EFIBoot::Device_path::A
     case EFIBoot::Device_path::MSGVendor::TYPE:
     {
         EFIBoot::Device_path::MSGVendor value = {};
+        static_assert(sizeof(guid) == sizeof(value.guid));
+        memcpy(value.guid.data(), &guid, sizeof(guid));
+        value.data.resize(static_cast<size_t>(data.size()));
+        std::copy(std::begin(data), std::end(data), std::begin(value.data));
+        return value;
+    }
+
+    case EFIBoot::Device_path::MEDIAVendor::TYPE:
+    {
+        EFIBoot::Device_path::MEDIAVendor value = {};
         static_assert(sizeof(guid) == sizeof(value.guid));
         memcpy(value.guid.data(), &guid, sizeof(guid));
         value.data.resize(static_cast<size_t>(data.size()));
@@ -381,6 +446,10 @@ auto Device_path::Vendor::toString(bool refresh) const -> QString
 
     case EFIBoot::Device_path::MSGVendor::TYPE:
         type_string = "Msg";
+        break;
+
+    case EFIBoot::Device_path::MEDIAVendor::TYPE:
+        type_string = "Media";
         break;
     }
 
@@ -847,6 +916,51 @@ auto Device_path::FirmwareVolume::toString(bool refresh) const -> QString
     return string = QString("Fv(%1)").arg(name.toString(QUuid::WithoutBraces));
 }
 
+Device_path::BIOSBootSpecification::BIOSBootSpecification(const EFIBoot::Device_path::BIOS_boot_specification &bios_boot_specification)
+    : device_type{bios_boot_specification.device_type}
+    , status_flag{bios_boot_specification.status_flag}
+    , description{QString::fromStdString(bios_boot_specification.description)}
+{
+}
+
+auto Device_path::BIOSBootSpecification::toEFIBootDevicePath() const -> EFIBoot::Device_path::BIOS_boot_specification
+{
+    EFIBoot::Device_path::BIOS_boot_specification value = {};
+    value.device_type = device_type;
+    value.status_flag = status_flag;
+    value.description = description.toStdString();
+    return value;
+}
+
+auto Device_path::BIOSBootSpecification::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::BIOSBootSpecification>
+{
+    BIOSBootSpecification value;
+    check_obj();
+    try_read_3(device_type, Double, Int);
+    try_read_3(status_flag, Double, Int);
+    try_read(description, String);
+    return {value};
+}
+
+auto Device_path::BIOSBootSpecification::toJSON() const -> QJsonObject
+{
+    QJsonObject value;
+    value["type"] = TYPE;
+    value["subtype"] = SUBTYPE;
+    value["device_type"] = static_cast<int>(device_type);
+    value["status_flag"] = static_cast<int>(status_flag);
+    value["description"] = description;
+    return value;
+}
+
+auto Device_path::BIOSBootSpecification::toString(bool refresh) const -> QString
+{
+    if(string.size() && !refresh)
+        return string;
+
+    return string = QString("BBS(%1, %2, %3)").arg(toHex(device_type), description, toHex(status_flag));
+}
+
 auto Device_path::End::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::End>
 {
     End value;
@@ -889,6 +1003,7 @@ Device_path::Unknown::Unknown(const EFIBoot::Device_path::Unknown &unknown)
     , _subtype{unknown.SUBTYPE}
     , data{QByteArray::fromRawData(reinterpret_cast<const char *>(unknown.data.data()), static_cast<int>(unknown.data.size()))}
 {
+    data.detach();
 }
 
 auto Device_path::Unknown::toEFIBootDevicePath() const -> EFIBoot::Device_path::Unknown
