@@ -24,6 +24,7 @@ enum EFIDP_TYPE
     EFIDP_TYPE_ACPI = 0x02,
     EFIDP_TYPE_MSG = 0x03,
     EFIDP_TYPE_MEDIA = 0x04,
+    EFIDP_TYPE_BIOS = 0x05,
     EFIDP_TYPE_END = 0x7f,
 };
 
@@ -40,6 +41,7 @@ enum EFIDP_ACPI
 
 enum EFIDP_MSG
 {
+    EFIDP_MSG_USB = 0x05,
     EFIDP_MSG_VENDOR = 0x0a,
     EFIDP_MSG_MAC_ADDRESS = 0x0b,
     EFIDP_MSG_IPV4 = 0x0c,
@@ -50,9 +52,15 @@ enum EFIDP_MSG
 enum EFIDP_MEDIA
 {
     EFIDP_MEDIA_HD = 0x1,
+    EFIDP_MEDIA_VENDOR = 0x3,
     EFIDP_MEDIA_FILE = 0x4,
     EFIDP_MEDIA_FIRMWARE_FILE = 0x6,
     EFIDP_MEDIA_FIRMWARE_VOLUME = 0x7,
+};
+
+enum EFIDP_BIOS
+{
+    EFIDP_BIOS_BOOT_SPECIFICATION = 0x1,
 };
 
 typedef struct
@@ -68,6 +76,13 @@ typedef struct
     uint32_t hid;
     uint32_t uid;
 } efidp_hid;
+
+typedef struct
+{
+    efidp_header header;
+    uint8_t parent_port_number;
+    uint8_t interface;
+} efidp_usb;
 
 typedef struct
 {
@@ -162,6 +177,14 @@ typedef struct
     uint8_t name[16];
 } efidp_firmware_volume;
 
+typedef struct
+{
+    efidp_header header;
+    uint16_t device_type;
+    uint16_t status_flag;
+    uint8_t description[1];
+} efidp_bios_boot_specification;
+
 enum EFIDP_END
 {
     EFIDP_END_ENTIRE = 0xff,
@@ -175,6 +198,7 @@ typedef union
     efidp_type_subtype _type_subtype;
     efidp_pci pci;
     efidp_hid hid;
+    efidp_usb usb;
     efidp_vendor vendor;
     efidp_mac_address mac_address;
     efidp_ipv4 ipv4;
@@ -184,6 +208,7 @@ typedef union
     efidp_file file;
     efidp_firmware_file firmware_file;
     efidp_firmware_volume firmware_volume;
+    efidp_bios_boot_specification bios_boot_specification;
 } efidp_data;
 typedef efidp_data *efidp;
 typedef const efidp_data *const_efidp;

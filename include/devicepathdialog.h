@@ -65,17 +65,19 @@ private:
     {
         PCI = 0,
         HID = 1,
-        Vendor = 2,
-        MACAddress = 3,
-        IPv4 = 4,
-        IPv6 = 5,
-        SATA = 6,
-        HD = 7,
-        File = 8,
-        FirmwareFile = 9,
-        FirmwareVolume = 10,
-        End = 11,
-        Unknown_ = 12,
+        USB = 2,
+        Vendor = 3,
+        MACAddress = 4,
+        IPv4 = 5,
+        IPv6 = 6,
+        SATA = 7,
+        HD = 8,
+        File = 9,
+        FirmwareFile = 10,
+        FirmwareVolume = 11,
+        BIOSBootSpecification = 12,
+        End = 13,
+        Unknown_ = 14,
     };
 
     enum DataFormat
@@ -84,6 +86,13 @@ private:
         Utf16 = 1,
         Utf8 = 2,
         Hex = 3,
+    };
+
+    enum VendorTypeIndex
+    {
+        HW = 0,
+        MSG = 1,
+        MEDIA = 2,
     };
 
     typedef DataFormat VendorDataFormat;
@@ -105,6 +114,7 @@ public:
     void setDevicePath(const Device_path::ANY *_device_path);
     void setPCIForm(const Device_path::PCI &pci);
     void setHIDForm(const Device_path::HID &hid);
+    void setUSBForm(const Device_path::USB &sub);
     void setVendorForm(const Device_path::Vendor &vendor);
     void setMACAddressForm(const Device_path::MACAddress &mac_address);
     void setIPv4Form(const Device_path::IPv4 &ipv4);
@@ -114,6 +124,7 @@ public:
     void setFileForm(const Device_path::File &file);
     void setFirmwareFileForm(const Device_path::FirmwareFile &firmware_file);
     void setFirmwareVolumeForm(const Device_path::FirmwareVolume &firmware_volume);
+    void setBIOSBootSpecificationForm(const Device_path::BIOSBootSpecification &bios_boot_specification);
     void setEndForm(const EFIBoot::EFIDP_END subtype);
     void setUnknownForm(const Device_path::Unknown &unknown);
 
@@ -121,6 +132,7 @@ private:
     void resetForms();
     void resetPCIForm();
     void resetHIDForm();
+    void resetUSBForm();
     QByteArray getVendorData(int index) const;
     QByteArray getUnknownData(int index) const;
     void resetVendorForm();
@@ -132,6 +144,7 @@ private:
     void resetFileForm();
     void resetFirmwareFileForm();
     void resetFirmwareVolumeForm();
+    void resetBIOSBootSpecification();
     void resetEndForm();
     void resetUnknownForm();
     void refreshDiskCombo(bool force);

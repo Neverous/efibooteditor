@@ -62,6 +62,7 @@ enum TYPE
     ACPI = EFIDP_TYPE_ACPI,
     MSG = EFIDP_TYPE_MSG,
     MEDIA = EFIDP_TYPE_MEDIA,
+    BIOS = EFIDP_TYPE_BIOS,
     END = EFIDP_TYPE_END,
 };
 
@@ -94,6 +95,16 @@ struct HID
     uint32_t uid = 0;
 };
 REGISTER_DESERIALIZER(HID);
+
+struct USB
+{
+    static const uint8_t TYPE = MSG;
+    static const uint8_t SUBTYPE = EFIDP_MSG_USB;
+
+    uint8_t parent_port_number = 0;
+    uint8_t interface = 0;
+};
+REGISTER_DESERIALIZER(USB);
 
 struct MSGVendor
 {
@@ -179,6 +190,16 @@ struct HD
 };
 REGISTER_DESERIALIZER(HD);
 
+struct MEDIAVendor
+{
+    static const uint8_t TYPE = MEDIA;
+    static const uint8_t SUBTYPE = EFIDP_MEDIA_VENDOR;
+
+    std::array<uint8_t, 16> guid = {};
+    Raw_data data = {};
+};
+REGISTER_DESERIALIZER(MEDIAVendor);
+
 struct File
 {
     static const uint8_t TYPE = MEDIA;
@@ -206,6 +227,17 @@ struct Firmware_volume
 };
 REGISTER_DESERIALIZER(Firmware_volume);
 
+struct BIOS_boot_specification
+{
+    static const uint8_t TYPE = BIOS;
+    static const uint8_t SUBTYPE = EFIDP_BIOS_BOOT_SPECIFICATION;
+
+    uint16_t device_type = 0;
+    uint16_t status_flag = 0;
+    std::string description = "";
+};
+REGISTER_DESERIALIZER(BIOS_boot_specification);
+
 struct End_instance
 {
     static const uint8_t TYPE = END;
@@ -231,15 +263,18 @@ typedef std::variant<
     PCI,
     HWVendor,
     HID,
+    USB,
     MSGVendor,
     MAC_address,
     IPv4,
     IPv6,
     SATA,
     HD,
+    MEDIAVendor,
     File,
     Firmware_file,
     Firmware_volume,
+    BIOS_boot_specification,
     End_instance,
     End_entire,
     Unknown>
@@ -737,6 +772,43 @@ inline size_t serialize(Raw_data &output, const Device_path::HID &hid)
 }
 
 template <>
+inline std::optional<Device_path::USB> deserialize(const void *data, size_t data_size)
+{
+    const efidp_usb *dp = static_cast<const efidp_usb *>(data);
+    if(dp->header.length != data_size)
+        return std::nullopt;
+
+    if(dp->header.type != Device_path::USB::TYPE)
+        return std::nullopt;
+
+    if(dp->header.subtype != Device_path::USB::SUBTYPE)
+        return std::nullopt;
+
+    Device_path::USB value;
+    value.parent_port_number = dp->parent_port_number;
+    value.interface = dp->interface;
+    return {value};
+}
+
+template <>
+inline size_t serialize(Raw_data &output, const Device_path::USB &usb)
+{
+    size_t bytes = 0;
+    uint8_t type = Device_path::USB::TYPE;
+    bytes += serialize(output, type);
+    uint8_t subtype = Device_path::USB::SUBTYPE;
+    bytes += serialize(output, subtype);
+    size_t pos = output.size();
+    uint16_t length = 0;
+    bytes += serialize(output, length);
+    bytes += serialize(output, usb.parent_port_number);
+    bytes += serialize(output, usb.interface);
+    length = static_cast<uint16_t>(bytes);
+    memcpy(&output[pos], &length, sizeof(length));
+    return bytes;
+}
+
+template <>
 inline std::optional<Device_path::MSGVendor> deserialize(const void *data, size_t data_size)
 {
     const efidp_vendor *dp = static_cast<const efidp_vendor *>(data);
@@ -995,6 +1067,45 @@ inline size_t serialize(Raw_data &output, const Device_path::HD &hd)
 }
 
 template <>
+inline std::optional<Device_path::MEDIAVendor> deserialize(const void *data, size_t data_size)
+{
+    const efidp_vendor *dp = static_cast<const efidp_vendor *>(data);
+    if(dp->header.length != data_size)
+        return std::nullopt;
+
+    if(dp->header.type != Device_path::MEDIAVendor::TYPE)
+        return std::nullopt;
+
+    if(dp->header.subtype != Device_path::MEDIAVendor::SUBTYPE)
+        return std::nullopt;
+
+    Device_path::MEDIAVendor value;
+    std::copy(std::begin(dp->guid), std::end(dp->guid), std::begin(value.guid));
+    size_t data_length = data_size - sizeof(dp->header) - sizeof(dp->guid) / sizeof(dp->guid[0]);
+    value.data.resize(data_length);
+    memcpy(&value.data[0], dp->data, data_length);
+    return {value};
+}
+
+template <>
+inline size_t serialize(Raw_data &output, const Device_path::MEDIAVendor &vendor)
+{
+    size_t bytes = 0;
+    uint8_t type = Device_path::MEDIAVendor::TYPE;
+    bytes += serialize(output, type);
+    uint8_t subtype = Device_path::MEDIAVendor::SUBTYPE;
+    bytes += serialize(output, subtype);
+    size_t pos = output.size();
+    uint16_t length = 0;
+    bytes += serialize(output, length);
+    bytes += serialize(output, vendor.guid);
+    bytes += serialize(output, vendor.data);
+    length = static_cast<uint16_t>(bytes);
+    memcpy(&output[pos], &length, sizeof(length));
+    return bytes;
+}
+
+template <>
 inline std::optional<Device_path::File> deserialize(const void *data, size_t data_size)
 {
     const efidp_file *dp = static_cast<const efidp_file *>(data);
@@ -1008,8 +1119,7 @@ inline std::optional<Device_path::File> deserialize(const void *data, size_t dat
         return std::nullopt;
 
     Device_path::File value;
-    const void *name = dp->name;
-    value.name = static_cast<const std::u16string::value_type *>(name);
+    value.name = reinterpret_cast<const std::u16string::value_type *>(dp->name);
     return {value};
 }
 
@@ -1097,6 +1207,47 @@ inline size_t serialize(Raw_data &output, const Device_path::Firmware_volume &fi
     uint16_t length = 0;
     bytes += serialize(output, length);
     bytes += serialize(output, firmware_volume.name);
+    length = static_cast<uint16_t>(bytes);
+    memcpy(&output[pos], &length, sizeof(length));
+    return bytes;
+}
+
+template <>
+inline std::optional<Device_path::BIOS_boot_specification> deserialize(const void *data, size_t data_size)
+{
+    const efidp_bios_boot_specification *dp = static_cast<const efidp_bios_boot_specification *>(data);
+    if(dp->header.length != data_size)
+        return std::nullopt;
+
+    if(dp->header.type != Device_path::BIOS_boot_specification::TYPE)
+        return std::nullopt;
+
+    if(dp->header.subtype != Device_path::BIOS_boot_specification::SUBTYPE)
+        return std::nullopt;
+
+    Device_path::BIOS_boot_specification value;
+    value.device_type = dp->device_type;
+    value.status_flag = dp->status_flag;
+    value.description = reinterpret_cast<const std::string::value_type *>(dp->description);
+    return {value};
+}
+
+template <>
+inline size_t serialize(Raw_data &output, const Device_path::BIOS_boot_specification &bios_boot_specification)
+{
+    size_t bytes = 0;
+    uint8_t type = Device_path::BIOS_boot_specification::TYPE;
+    bytes += serialize(output, type);
+    uint8_t subtype = Device_path::BIOS_boot_specification::SUBTYPE;
+    bytes += serialize(output, subtype);
+    size_t pos = output.size();
+    uint16_t length = 0;
+    bytes += serialize(output, length);
+    bytes += serialize(output, bios_boot_specification.device_type);
+    bytes += serialize(output, bios_boot_specification.status_flag);
+    bytes += serialize(output, bios_boot_specification.description);
+    std::string::value_type zero = 0;
+    bytes += serialize(output, zero);
     length = static_cast<uint16_t>(bytes);
     memcpy(&output[pos], &length, sizeof(length));
     return bytes;
