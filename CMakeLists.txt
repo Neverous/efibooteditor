@@ -105,6 +105,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
             -Wno-c++98-compat-pedantic
             -Wno-cast-qual
             -Wno-declaration-after-statement
+            -Wno-deprecated-dynamic-exception-spec
             -Wno-exit-time-destructors
             -Wno-extra-semi-stmt
             -Wno-global-constructors

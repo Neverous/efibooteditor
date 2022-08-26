@@ -33,11 +33,11 @@ void BootEntryForm::setItem(const QModelIndex &index, const BootEntry *item)
     ui->description_text->setText(item ? item->description : "");
     paths_proxy_list_model.setBootEntryItem(index, item);
     ui->optional_data_text->setPlainText(item ? item->optional_data : "");
-    ui->optional_data_format_combo->setCurrentIndex(item ? item->optional_data_format : 0);
-    ui->attribute_active->setChecked(item && (item->attributes & EFIBoot::LOAD_OPTION_ACTIVE));
-    ui->attribute_hidden->setChecked(item && (item->attributes & EFIBoot::LOAD_OPTION_HIDDEN));
-    ui->attribute_force_reconnect->setChecked(item && (item->attributes & EFIBoot::LOAD_OPTION_FORCE_RECONNECT));
-    ui->categoty_combo->setCurrentIndex(item && (item->attributes & EFIBoot::LOAD_OPTION_CATEGORY_APP));
+    ui->optional_data_format_combo->setCurrentIndex(item ? static_cast<int>(item->optional_data_format) : 0);
+    ui->attribute_active->setChecked(item && (item->attributes & EFIBoot::Load_option_attribute::ACTIVE) == EFIBoot::Load_option_attribute::ACTIVE);
+    ui->attribute_hidden->setChecked(item && (item->attributes & EFIBoot::Load_option_attribute::HIDDEN) == EFIBoot::Load_option_attribute::HIDDEN);
+    ui->attribute_force_reconnect->setChecked(item && (item->attributes & EFIBoot::Load_option_attribute::FORCE_RECONNECT) == EFIBoot::Load_option_attribute::FORCE_RECONNECT);
+    ui->categoty_combo->setCurrentIndex(item && (item->attributes & EFIBoot::Load_option_attribute::CATEGORY_APP) == EFIBoot::Load_option_attribute::CATEGORY_APP);
 
     setDisabled(!item);
 }
@@ -83,7 +83,7 @@ void BootEntryForm::optionalDataFormatChanged(int format)
     if(!success)
     {
         QMessageBox::critical(this, qApp->applicationName(), tr("Couldn't change Optional data format!"));
-        ui->optional_data_format_combo->setCurrentIndex(current_item->optional_data_format);
+        ui->optional_data_format_combo->setCurrentIndex(static_cast<int>(current_item->optional_data_format));
     }
 }
 
@@ -105,7 +105,7 @@ void BootEntryForm::attributeActiveChanged(int state)
 
     entries_list_model->changeData(current_index, [state](BootEntry &entry)
         {
-        entry.attributes = (entry.attributes & ~EFIBoot::LOAD_OPTION_ACTIVE) | (state ? EFIBoot::LOAD_OPTION_ACTIVE : EFIBoot::LOAD_OPTION_EMPTY);
+        entry.attributes = (entry.attributes & ~EFIBoot::Load_option_attribute::ACTIVE) | (state ? EFIBoot::Load_option_attribute::ACTIVE : EFIBoot::Load_option_attribute::EMPTY);
         return true; });
 }
 
@@ -116,7 +116,7 @@ void BootEntryForm::attributeHiddenChanged(int state)
 
     entries_list_model->changeData(current_index, [state](BootEntry &entry)
         {
-        entry.attributes = (entry.attributes & ~EFIBoot::LOAD_OPTION_HIDDEN) | (state ? EFIBoot::LOAD_OPTION_HIDDEN : EFIBoot::LOAD_OPTION_EMPTY);
+        entry.attributes = (entry.attributes & ~EFIBoot::Load_option_attribute::HIDDEN) | (state ? EFIBoot::Load_option_attribute::HIDDEN : EFIBoot::Load_option_attribute::EMPTY);
         return true; });
 }
 
@@ -127,7 +127,7 @@ void BootEntryForm::attributeForceReconnectChanged(int state)
 
     entries_list_model->changeData(current_index, [state](BootEntry &entry)
         {
-        entry.attributes = (entry.attributes & ~EFIBoot::LOAD_OPTION_FORCE_RECONNECT) | (state ? EFIBoot::LOAD_OPTION_FORCE_RECONNECT : EFIBoot::LOAD_OPTION_EMPTY);
+        entry.attributes = (entry.attributes & ~EFIBoot::Load_option_attribute::FORCE_RECONNECT) | (state ? EFIBoot::Load_option_attribute::FORCE_RECONNECT : EFIBoot::Load_option_attribute::EMPTY);
         return true; });
 }
 
@@ -138,6 +138,6 @@ void BootEntryForm::categoryChanged(int index)
 
     entries_list_model->changeData(current_index, [index](BootEntry &entry)
         {
-        entry.attributes = (entry.attributes & ~EFIBoot::LOAD_OPTION_CATEGORY_MASK) | (index ? EFIBoot::LOAD_OPTION_CATEGORY_APP : EFIBoot::LOAD_OPTION_CATEGORY_BOOT);
+        entry.attributes = (entry.attributes & ~EFIBoot::Load_option_attribute::CATEGORY_MASK) | (index ? EFIBoot::Load_option_attribute::CATEGORY_APP : EFIBoot::Load_option_attribute::CATEGORY_BOOT);
         return true; });
 }

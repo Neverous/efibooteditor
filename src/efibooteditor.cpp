@@ -211,7 +211,7 @@ void EFIBootEditor::saveBootConfiguration()
 
         saved.insert(entry.index);
         show_progress_bar(step++, total_steps, tr("Saving EFI Boot Manager entries (%1)...").arg(qname));
-        if((entry.attributes & EFIBoot::LOAD_OPTION_CATEGORY_MASK) == EFIBoot::LOAD_OPTION_CATEGORY_BOOT)
+        if((entry.attributes & EFIBoot::Load_option_attribute::CATEGORY_MASK) == EFIBoot::Load_option_attribute::CATEGORY_BOOT)
         {
             boot_order.push_back(entry.index);
             if(entry.is_next_boot)
@@ -520,7 +520,7 @@ void EFIBootEditor::exportBootConfiguration(const QString &file_name)
             return show_error(tr("Error saving entries!"), tr("Entry %1(%2): Duplicated index!").arg(name, entry.description));
 
         saved.insert(entry.index);
-        if((entry.attributes & EFIBoot::LOAD_OPTION_CATEGORY_MASK) == EFIBoot::LOAD_OPTION_CATEGORY_BOOT)
+        if((entry.attributes & EFIBoot::Load_option_attribute::CATEGORY_MASK) == EFIBoot::Load_option_attribute::CATEGORY_BOOT)
         {
             boot_order.push_back(entry.index);
             if(entry.is_next_boot)

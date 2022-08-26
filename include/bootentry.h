@@ -485,7 +485,7 @@ Q_DECLARE_METATYPE(const Device_path::ANY *)
 class BootEntry
 {
 public:
-    enum OptionalDataFormat
+    enum class OptionalDataFormat : uint8_t
     {
         Base64 = 0,
         Utf16 = 1,
@@ -497,7 +497,7 @@ public:
     QString description = "New entry";
     QVector<Device_path::ANY> file_path = {};
     QString optional_data = "";
-    quint32 attributes = 0;
+    EFIBoot::Load_option_attribute attributes = EFIBoot::Load_option_attribute::EMPTY;
     quint32 efi_attributes = EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS;
 
     bool is_next_boot = false;

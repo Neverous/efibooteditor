@@ -259,7 +259,7 @@ void DevicePathDialog::setVendorForm(const Device_path::Vendor &vendor)
         break;
     }
 
-    ui->vendor_type_combo->setCurrentIndex(index);
+    ui->vendor_type_combo->setCurrentIndex(static_cast<int>(index));
     ui->vendor_guid_text->setText(vendor.guid.toString(QUuid::WithoutBraces));
     ui->vendor_data_format_combo->setCurrentIndex(VendorDataFormat::Base64);
     vendor_data_format_combo_index = 0;
