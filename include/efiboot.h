@@ -308,30 +308,32 @@ inline bool register_deserializer()
 #undef REGISTER_DESERIALIZER
 } // namespace Device_path
 
+enum class Load_option_attribute : uint32_t
+{
+    EMPTY = 0x00000000,
+
+    ACTIVE = 0x00000001,
+    FORCE_RECONNECT = 0x00000002,
+    HIDDEN = 0x00000008,
+
+    CATEGORY_MASK = 0x00001F00,
+    CATEGORY_BOOT = 0x00000000,
+    CATEGORY_APP = 0x00000100,
+};
+
+DEFINE_ENUM_FLAG_OPERATORS(Load_option_attribute)
+
 struct Load_option
 {
     std::u16string description = u"";
     std::vector<Device_path::ANY> file_path = {};
     Raw_data optional_data = {};
-    uint32_t attributes = 0;
+    Load_option_attribute attributes = Load_option_attribute::EMPTY;
 };
 
 #if defined(_MSC_VER)
 #pragma warning(pop)
 #endif
-
-enum Load_option_attribute : uint32_t
-{
-    LOAD_OPTION_EMPTY = 0x00000000,
-
-    LOAD_OPTION_ACTIVE = 0x00000001,
-    LOAD_OPTION_FORCE_RECONNECT = 0x00000002,
-    LOAD_OPTION_HIDDEN = 0x00000008,
-
-    LOAD_OPTION_CATEGORY_MASK = 0x00001F00,
-    LOAD_OPTION_CATEGORY_BOOT = 0x00000000,
-    LOAD_OPTION_CATEGORY_APP = 0x00000100,
-};
 
 typedef std::function<bool(const efi_guid_t &, const std::tstring_view)> Filter_fn;
 typedef std::function<const void *(const void *, const size_t)> Advance_fn;
@@ -624,7 +626,7 @@ inline std::optional<Load_option> deserialize(const void *data, size_t data_size
         value.optional_data = *opt_data;
     }
 
-    value.attributes = load_option->attributes;
+    value.attributes = static_cast<Load_option_attribute>(load_option->attributes);
     return {value};
 }
 

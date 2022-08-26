@@ -104,7 +104,7 @@ auto BootEntry::toJSON() const -> QJsonObject
 {
     QJsonObject load_option;
     load_option["description"] = description;
-    load_option["optional_data_format"] = optional_data_format;
+    load_option["optional_data_format"] = static_cast<int>(optional_data_format);
     load_option["optional_data"] = optional_data;
     load_option["attributes"] = static_cast<int>(attributes);
     load_option["efi_attributes"] = static_cast<int>(efi_attributes);

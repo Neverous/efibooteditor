@@ -88,7 +88,7 @@ private:
         Hex = 3,
     };
 
-    enum VendorTypeIndex
+    enum class VendorTypeIndex : uint8_t
     {
         HW = 0,
         MSG = 1,
