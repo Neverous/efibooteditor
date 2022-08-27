@@ -170,7 +170,7 @@ jobs:
         uses: github/codeql-action/analyze@v2
 
       - name: Perform MSVC Code Analysis
-        uses: microsoft/msvc-code-analysis-action@v0.1.0
+        uses: microsoft/msvc-code-analysis-action@v0.1.1
         id: msvc-analysis
         with:
           cmakeBuildDirectory: ${{ github.workspace }}/build
