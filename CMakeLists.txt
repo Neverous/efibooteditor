@@ -286,7 +286,7 @@ if(WIN32)
 
     if(("${CMAKE_BUILD_TYPE}" STREQUAL "Debug") OR ("${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo"))
         install(FILES "$<TARGET_PDB_FILE:${PROJECT_NAME}>"
-            DESTINATION bin
+            TYPE BIN
             COMPONENT Debug
         )
     endif()
@@ -300,6 +300,23 @@ elseif(APPLE)
         POST_BUILD
         COMMAND ${MACDEPLOYQT_EXECUTABLE} "$<TARGET_BUNDLE_DIR:${PROJECT_NAME}>" -always-overwrite
     )
+else()
+    if(NOT LINUXDEPLOY_EXECUTABLE)
+        find_program(LINUXDEPLOY_EXECUTABLE NAMES linuxdeploy linuxdeploy-x86_64.AppImage)
+    endif()
+
+    if(LINUXDEPLOY_EXECUTABLE)
+        get_target_property(QMAKE_EXECUTABLE Qt::qmake IMPORTED_LOCATION)
+        add_custom_command(TARGET ${PROJECT_NAME}
+            POST_BUILD
+            COMMAND QMAKE=${QMAKE_EXECUTABLE} ${LINUXDEPLOY_EXECUTABLE} --plugin=qt --appdir=${CMAKE_BINARY_DIR}/appdir/ --executable="$<TARGET_FILE_DIR:${PROJECT_NAME}>/$<TARGET_FILE_NAME:${PROJECT_NAME}>"
+        )
+
+        install(DIRECTORY "${CMAKE_BINARY_DIR}/appdir/usr/"
+            DESTINATION .
+            COMPONENT Runtime
+        )
+    endif()
 endif()
 
 # CPack
@@ -356,10 +373,13 @@ else()
 
     set(CPACK_PACKAGE_TARGET_OS_NAME "linux")
     set(CPACK_GENERATOR DEB TZST)
+    set(CPACK_PROJECT_CONFIG_FILE "${CMAKE_CURRENT_SOURCE_DIR}/cmake/CPackLinux.cmake")
 
     set(CPACK_DEBIAN_COMPRESSION_TYPE "zstd")
     set(CPACK_DEBIAN_PACKAGE_SECTION "admin")
     set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
+    set(CPACK_DEB_COMPONENT_INSTALL ON)
+    set(CPACK_COMPONENTS_GROUPING ALL_COMPONENTS_IN_ONE)
 
     # Built from GitHub actions
     if(NOT ("$ENV{BUILD_OS}" STREQUAL ""))

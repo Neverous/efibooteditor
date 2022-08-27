@@ -55,6 +55,15 @@ jobs:
           version: ${{ matrix.qt_version }}
           modules: 'qt5compat'
 
+      - name: Install libfuse2
+        run: sudo apt-get install libfuse2
+        shell: bash
+
+      - name: Install linuxdeploy
+        uses: miurahr/install-linuxdeploy-action@v1
+        with:
+          plugins: qt
+
       - name: Install efivar
         run: sudo apt-get install libefiboot1 libefiboot-dev libefivar-dev
         shell: bash
