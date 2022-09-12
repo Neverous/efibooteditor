@@ -20,7 +20,7 @@ jobs:
         qt_version:
           - 5.15.2 # OS LTS
           - 6.2.4 # LTS
-          - 6.3.1 # latest
+          - 6.3.2 # latest
         compiler:
           - Clang
           - GCC
@@ -116,7 +116,7 @@ jobs:
         qt_version:
           - 5.15.2 # OS LTS
           - 6.2.4 # LTS
-          - 6.3.1 # latest
+          - 6.3.2 # latest
         compiler:
           - Clang
           - MSVC
@@ -189,7 +189,7 @@ jobs:
         qt_version:
           - 5.15.2 # OS LTS
           - 6.2.4 # LTS
-          - 6.3.1 # latest
+          - 6.3.2 # latest
         compiler:
           - Clang
 
@@ -258,7 +258,7 @@ jobs:
         qt_version:
           - 5.15.2 # OS LTS
           - 6.2.4 # LTS
-          - 6.3.1 # latest
+          - 6.3.2 # latest
         compiler:
           - Clang
           - GCC
@@ -322,7 +322,7 @@ jobs:
         qt_version:
           - 5.15.2 # OS LTS
           - 6.2.4 # LTS
-          - 6.3.1 # latest
+          - 6.3.2 # latest
         compiler:
           - Clang
           - MSVC
@@ -369,7 +369,7 @@ jobs:
         qt_version:
           - 5.15.2 # OS LTS
           - 6.2.4 # LTS
-          - 6.3.1 # latest
+          - 6.3.2 # latest
         compiler:
           - Clang
 
