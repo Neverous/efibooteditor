@@ -137,9 +137,11 @@ endif()
 
 if(WIN32)
     target_compile_options(${PROJECT_NAME} PRIVATE
-        $<$<COMPILE_LANGUAGE:CXX>:/std:c++latest> /Wall /permissive- /WX
+        $<$<COMPILE_LANGUAGE:CXX>:/std:c++latest>
         # Ignore warnings in external includes
-        /external:anglebrackets /external:W0
+        /external:anglebrackets /external:W0 /external:templates-
+        # Enable all warnings in application code
+        /Wall /permissive- /WX
         # Disable some warnings
         # C4710: 'function' : function not inlined
         /wd4710
