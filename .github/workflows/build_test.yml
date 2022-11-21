@@ -56,7 +56,7 @@ jobs:
           key: qt-${{ matrix.os }}-${{ matrix.qt_version }}
 
       - name: Set up Qt environment
-        uses: jurplel/install-qt-action@v2
+        uses: jurplel/install-qt-action@v3
         with:
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
           version: ${{ matrix.qt_version }}
@@ -147,7 +147,7 @@ jobs:
           key: qt-${{ matrix.os }}-${{ matrix.qt_version }}
 
       - name: Set up Qt environment
-        uses: jurplel/install-qt-action@v2
+        uses: jurplel/install-qt-action@v3
         with:
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
           version: ${{ matrix.qt_version }}
@@ -236,7 +236,7 @@ jobs:
           key: qt-${{ matrix.os }}-${{ matrix.qt_version }}
 
       - name: Set up Qt environment
-        uses: jurplel/install-qt-action@v2
+        uses: jurplel/install-qt-action@v3
         with:
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
           version: ${{ matrix.qt_version }}
