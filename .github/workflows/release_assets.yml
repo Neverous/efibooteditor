@@ -41,19 +41,12 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
-      - name: Restore Qt from cache
-        id: cache-qt
-        uses: actions/cache@v3
-        with:
-          path: ~/work/efibooteditor/Qt
-          key: qt-${{ matrix.os }}-${{ matrix.qt_version }}
-
       - name: Set up Qt environment
-        uses: jurplel/install-qt-action@v2
+        uses: jurplel/install-qt-action@v3
         with:
-          cached: ${{ steps.cache-qt.outputs.cache-hit }}
+          cache: true
           version: ${{ matrix.qt_version }}
-          modules: 'qt5compat'
+          modules: ${{ startsWith(matrix.qt_version, '6') && 'qt5compat' || '' }}
 
       - name: Install libfuse2
         run: sudo apt-get install libfuse2
@@ -130,19 +123,12 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
-      - name: Restore Qt from cache
-        id: cache-qt
-        uses: actions/cache@v3
-        with:
-          path: D:\a\efibooteditor\Qt
-          key: qt-${{ matrix.os }}-${{ matrix.qt_version }}
-
       - name: Set up Qt environment
-        uses: jurplel/install-qt-action@v2
+        uses: jurplel/install-qt-action@v3
         with:
-          cached: ${{ steps.cache-qt.outputs.cache-hit }}
+          cache: true
           version: ${{ matrix.qt_version }}
-          modules: 'qt5compat'
+          modules: ${{ startsWith(matrix.qt_version, '6') && 'qt5compat' || '' }}
 
       - name: Create build directory
         run: mkdir -p build/release
@@ -202,19 +188,12 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
-      - name: Restore Qt from cache
-        id: cache-qt
-        uses: actions/cache@v3
-        with:
-          path: ~/work/efibooteditor/Qt
-          key: qt-${{ matrix.os }}-${{ matrix.qt_version }}
-
       - name: Set up Qt environment
-        uses: jurplel/install-qt-action@v2
+        uses: jurplel/install-qt-action@v3
         with:
-          cached: ${{ steps.cache-qt.outputs.cache-hit }}
+          cache: true
           version: ${{ matrix.qt_version }}
-          modules: 'qt5compat'
+          modules: ${{ startsWith(matrix.qt_version, '6') && 'qt5compat' || '' }}
 
       - name: Create build directory
         run: mkdir -p build/release
