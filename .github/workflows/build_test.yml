@@ -60,7 +60,7 @@ jobs:
         with:
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
           version: ${{ matrix.qt_version }}
-          modules: 'qt5compat'
+          modules: ${{ startsWith(matrix.qt_version, '6') && 'qt5compat' || '' }}
 
       - name: Install libfuse2
         run: sudo apt-get install libfuse2
@@ -151,7 +151,7 @@ jobs:
         with:
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
           version: ${{ matrix.qt_version }}
-          modules: 'qt5compat'
+          modules: ${{ startsWith(matrix.qt_version, '6') && 'qt5compat' || '' }}
 
       - name: Create build directory
         run: mkdir -p build/debug
@@ -240,7 +240,7 @@ jobs:
         with:
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
           version: ${{ matrix.qt_version }}
-          modules: 'qt5compat'
+          modules: ${{ startsWith(matrix.qt_version, '6') && 'qt5compat' || '' }}
 
       - name: Create build directory
         run: mkdir -p build/debug
