@@ -66,8 +66,7 @@ jobs:
 
       - name: Get release version
         id: vars
-        run: |
-          echo ::set-output name=version::${GITHUB_REF##*/}
+        run: echo "version=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
         shell: bash
 
       - name: Configure build with ${{ matrix.compiler }}
@@ -135,8 +134,7 @@ jobs:
 
       - name: Get release version
         id: vars
-        run: |
-          echo ::set-output name=version::${GITHUB_REF##*/}
+        run: echo "version=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
         shell: bash
 
       - name: Configure build with ${{ matrix.compiler }}
@@ -200,8 +198,7 @@ jobs:
 
       - name: Get release version
         id: vars
-        run: |
-          echo ::set-output name=version::${GITHUB_REF##*/}
+        run: echo "version=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
         shell: bash
 
       - name: Configure build with Clang
@@ -252,7 +249,7 @@ jobs:
     steps:
       - name: Get release version
         id: vars
-        run: echo ::set-output name=version::${GITHUB_REF##*/}
+        run: echo "version=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
 
       - name: Download artifacts
         uses: actions/download-artifact@v3
@@ -309,7 +306,7 @@ jobs:
     steps:
       - name: Get release version
         id: vars
-        run: echo ::set-output name=version::${GITHUB_REF##*/}
+        run: echo "version=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
 
       - name: Download artifacts
         uses: actions/download-artifact@v3
@@ -355,7 +352,7 @@ jobs:
     steps:
       - name: Get release version
         id: vars
-        run: echo ::set-output name=version::${GITHUB_REF##*/}
+        run: echo "version=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
 
       - name: Download artifacts
         uses: actions/download-artifact@v3
