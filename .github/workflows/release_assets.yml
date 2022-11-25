@@ -169,7 +169,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-10.15, macos-11, macos-12]
+        os: [macos-11, macos-12]
         qt_version:
           - 5.15.2 # OS LTS
           - 6.2.4 # LTS
@@ -341,7 +341,7 @@ jobs:
     needs: build-macos
     strategy:
       matrix:
-        os: [macos-10.15, macos-11, macos-12]
+        os: [macos-11, macos-12]
         qt_version:
           - 5.15.2 # OS LTS
           - 6.2.4 # LTS
