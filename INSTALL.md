@@ -60,6 +60,15 @@ Required development libraries:
     ...
     ```
 
+### Notes
+
+There is also:
+
+  - a [package](//aur.archlinux.org/packages/efibooteditor) in
+the AUR for Arch Linux
+  - and a [SPEC file](misc/efibooteditor.spec) for RPM based
+distributions (thanks [@Justinzobel](https://github.com/Justinzobel)).
+
 ## Pre-built packages
 
 [Releases](//github.com/Neverous/efibooteditor/releases) automatically build
@@ -106,7 +115,7 @@ Assets are delivered in various formats:
   ready to use in-place after decompression (`.zip` is for Windows
   and `.tar.zst` is for macOS and Linux).
 
-## Notes
+### Notes
 
 - Using `.deb` packages on old Ubuntu (< 21.10) or Debian (< bullseye) releases
 might require manual Qt installation as versions in the official repositories
@@ -115,5 +124,3 @@ In the CI [aqtinstall](//github.com/miurahr/aqtinstall) is used for
 installation, but then package install needs to be probably forced. Quick search
 through the internet also reveals PPAs with pre-built packages from
 [Stephan Binner](//launchpad.net/~beineri) that might be useful.
-- There is also a [package](//aur.archlinux.org/packages/efibooteditor) in
-the AUR for Arch Linux.

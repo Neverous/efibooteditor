@@ -10,6 +10,10 @@ GUI for managing EFI Boot Manager configuration.
 * [Qt](//www.qt.io/) (>=5.15.2)
 * [efivar](//github.com/rhboot/efivar) (>=37) on linux
 
+## Installation
+
+See [INSTALL](INSTALL.md) instructions.
+
 ## License
 
 This project is licensed under the LGPLv3 License -
