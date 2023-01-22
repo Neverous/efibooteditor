@@ -19,7 +19,7 @@ jobs:
         os: [ubuntu-20.04, ubuntu-22.04]
         qt_version:
           - 5.15.2 # OS LTS
-          - 6.2.7 # LTS
+          - 6.2.4 # LTS Standard
           - 6.4.2 # latest
         compiler:
           - Clang
@@ -107,7 +107,7 @@ jobs:
         os: [windows-2019, windows-2022]
         qt_version:
           - 5.15.2 # OS LTS
-          - 6.2.7 # LTS
+          - 6.2.4 # LTS Standard
           - 6.4.2 # latest
         compiler:
           - Clang
@@ -172,7 +172,7 @@ jobs:
         os: [macos-11, macos-12]
         qt_version:
           - 5.15.2 # OS LTS
-          - 6.2.7 # LTS
+          - 6.2.4 # LTS Standard
           - 6.4.2 # latest
         compiler:
           - Clang
@@ -233,7 +233,7 @@ jobs:
         os: [ubuntu-20.04, ubuntu-22.04]
         qt_version:
           - 5.15.2 # OS LTS
-          - 6.2.7 # LTS
+          - 6.2.4 # LTS Standard
           - 6.4.2 # latest
         compiler:
           - Clang
@@ -297,7 +297,7 @@ jobs:
         os: [windows-2019, windows-2022]
         qt_version:
           - 5.15.2 # OS LTS
-          - 6.2.7 # LTS
+          - 6.2.4 # LTS Standard
           - 6.4.2 # latest
         compiler:
           - Clang
@@ -344,7 +344,7 @@ jobs:
         os: [macos-11, macos-12]
         qt_version:
           - 5.15.2 # OS LTS
-          - 6.2.7 # LTS
+          - 6.2.4 # LTS Standard
           - 6.4.2 # latest
         compiler:
           - Clang
