@@ -64,9 +64,9 @@ Required development libraries:
 
 There is also:
 
-  - a [package](//aur.archlinux.org/packages/efibooteditor) in
+- a [package](//aur.archlinux.org/packages/efibooteditor) in
 the AUR for Arch Linux
-  - and a [SPEC file](misc/efibooteditor.spec) for RPM based
+- and a [SPEC file](misc/efibooteditor.spec) for RPM based
 distributions (thanks [@Justinzobel](https://github.com/Justinzobel)).
 
 ## Pre-built packages
