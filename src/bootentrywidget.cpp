@@ -15,12 +15,12 @@ BootEntryWidget::~BootEntryWidget()
 {
 }
 
-void BootEntryWidget::set_index(const quint32 index)
+void BootEntryWidget::setIndex(const quint32 index)
 {
     ui->index->setText(toHex(index, 4));
 }
 
-void BootEntryWidget::set_description(const QString &description)
+void BootEntryWidget::setDescription(const QString &description)
 {
     ui->description->setText(description);
     ui->description->setStatusTip(description);
@@ -28,24 +28,24 @@ void BootEntryWidget::set_description(const QString &description)
     setToolTip(description);
 }
 
-void BootEntryWidget::set_file_path(const QString &file_path)
+void BootEntryWidget::setFilePath(const QString &file_path)
 {
     ui->file_path->setText(file_path);
     ui->file_path->setStatusTip(file_path);
 }
 
-void BootEntryWidget::set_data(const QString &_data)
+void BootEntryWidget::setData(const QString &_data)
 {
     ui->data->setText(_data);
     ui->data->setStatusTip(_data);
 }
 
-auto BootEntryWidget::get_next_boot() const -> bool
+auto BootEntryWidget::getNextBoot() const -> bool
 {
     return ui->next_boot->isChecked();
 }
 
-void BootEntryWidget::set_next_boot(bool next_boot)
+void BootEntryWidget::setNextBoot(bool next_boot)
 {
     ui->next_boot->setChecked(next_boot);
 }

@@ -32,7 +32,7 @@ public:
     quint64 size = 0;
 
 public:
-    static QVector<DriveInfo> get_all(bool refresh = false);
+    static QVector<DriveInfo> getAll(bool refresh = false);
 
     bool operator<(const DriveInfo &info) const { return name < info.name; }
 };

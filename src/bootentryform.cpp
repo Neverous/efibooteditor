@@ -74,7 +74,7 @@ void BootEntryForm::optionalDataFormatChanged(int format)
 
     bool success = entries_list_model->changeData(current_index, [&](BootEntry &entry)
         {
-        bool result = entry.change_optional_data_format(static_cast<BootEntry::OptionalDataFormat>(format));
+        bool result = entry.changeOptionalDataFormat(static_cast<BootEntry::OptionalDataFormat>(format));
         if(result)
             ui->optional_data_text->setPlainText(entry.optional_data);
 

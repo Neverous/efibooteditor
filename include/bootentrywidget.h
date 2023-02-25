@@ -25,10 +25,10 @@ public:
     BootEntryWidget &operator=(const BootEntryWidget &) = delete;
     ~BootEntryWidget() override;
 
-    void set_index(const quint32 index);
-    void set_description(const QString &description);
-    void set_file_path(const QString &file_path);
-    void set_data(const QString &data);
-    bool get_next_boot() const;
-    void set_next_boot(bool next_boot);
+    void setIndex(const quint32 index);
+    void setDescription(const QString &description);
+    void setFilePath(const QString &file_path);
+    void setData(const QString &data);
+    bool getNextBoot() const;
+    void setNextBoot(bool next_boot);
 };

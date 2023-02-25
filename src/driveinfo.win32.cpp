@@ -4,7 +4,7 @@
 #include "compat.h"
 #include "driveinfo.h"
 
-QVector<DriveInfo> DriveInfo::get_all(bool refresh)
+QVector<DriveInfo> DriveInfo::getAll(bool refresh)
 {
     if(!refresh && !all.empty())
         return all;

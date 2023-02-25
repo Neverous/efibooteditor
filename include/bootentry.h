@@ -14,8 +14,8 @@ namespace Device_path
 {
 
 template <class Type>
-inline bool register_json_reader();
-#define REGISTER_JSON_READER(type) static const bool is_##type##_json_reader_registered = register_json_reader<type>()
+inline bool registerJSONReader();
+#define REGISTER_JSON_READER(type) static const bool is_##type##_json_reader_registered = registerJSONReader<type>()
 
 #if defined(_MSC_VER)
 #pragma warning(push)
@@ -466,7 +466,7 @@ inline auto &JSON_readers()
 }
 
 template <class Type>
-inline bool register_json_reader()
+inline bool registerJSONReader()
 {
     auto key = QString("%1/%2").arg(Type::TYPE).arg(Type::SUBTYPE);
     if(JSON_readers().find(key) != JSON_readers().end())
@@ -514,12 +514,12 @@ public:
     static std::optional<BootEntry> fromJSON(const QJsonObject &obj);
     QJsonObject toJSON() const;
 
-    QString format_file_path(bool refresh = true) const;
+    QString formatFilePath(bool refresh = true) const;
 
-    bool change_optional_data_format(OptionalDataFormat format);
+    bool changeOptionalDataFormat(OptionalDataFormat format);
 
 private:
-    QByteArray get_raw_optional_data() const;
+    QByteArray getRawOptionalData() const;
 };
 
 #if defined(_MSC_VER)
