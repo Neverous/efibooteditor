@@ -77,7 +77,7 @@ int _efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name)
         size_t enum_index = index / 65536u;
         size_t enum_value = index - enum_index * 65536u;
         *guid = (efi_guid_t *)&efi_guid_global;
-        _sntprintf_s(variable_name_buffer, 32, 31, _T("%s%04zx"), enumerated_variable_names[enum_index], enum_value);
+        _sntprintf_s(variable_name_buffer, 32, 31, _T("%s%04zX"), enumerated_variable_names[enum_index], enum_value);
         *name = (TCHAR *)&variable_name_buffer;
         ++current_variable;
         return 1;
