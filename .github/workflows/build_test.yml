@@ -68,6 +68,10 @@ jobs:
         run: sudo apt-get install libefiboot1 libefiboot-dev libefivar-dev
         shell: bash
 
+      - name: Install libxkbcommon-x11-0
+        run: sudo apt-get install libxkbcommon-x11-0
+        shell: bash
+
       - name: Create build directory
         run: mkdir -p build/debug
 
