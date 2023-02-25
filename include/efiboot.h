@@ -336,7 +336,7 @@ struct Load_option
 #endif
 
 typedef std::function<bool(const efi_guid_t &, const std::tstring_view)> Filter_fn;
-typedef std::function<const void *(const void *, const size_t)> Advance_fn;
+typedef std::function<const void *(const void *, size_t)> Advance_fn;
 typedef std::function<size_t(const void *)> Size_fn;
 typedef std::function<void(size_t, size_t)> Progress_fn;
 
@@ -349,7 +349,7 @@ template <class Type = Raw_data>
 std::optional<std::vector<Type>> deserialize_list(const void *data, size_t data_size);
 
 template <class Type = Raw_data>
-std::optional<std::vector<Type>> deserialize_list(const void *data, size_t data_size, Size_fn get_element_size, Advance_fn get_next_element);
+std::optional<std::vector<Type>> deserialize_list_ex(const void *data, size_t data_size, Size_fn get_element_size, Advance_fn get_next_element);
 
 template <class Type = Raw_data>
 size_t serialize(Raw_data &output, const Type &value);
@@ -471,7 +471,7 @@ inline size_t serialize(Raw_data &output, const std::u16string &value)
 }
 
 template <class Type>
-inline std::optional<std::vector<Type>> deserialize_list(const void *data, size_t data_size, Size_fn get_element_size, Advance_fn get_next_element)
+inline std::optional<std::vector<Type>> deserialize_list_ex(const void *data, size_t data_size, Size_fn get_element_size, Advance_fn get_next_element)
 {
     std::vector<Type> values;
     const void *data_end = static_cast<const void *>(static_cast<const uint8_t *>(data) + data_size);
@@ -497,7 +497,7 @@ inline std::optional<std::vector<Type>> deserialize_list(const void *data, size_
 template <class Type>
 inline std::optional<std::vector<Type>> deserialize_list(const void *data, size_t data_size)
 {
-    return deserialize_list<Type>(
+    return deserialize_list_ex<Type>(
         data, data_size,
         [](const void *) -> size_t
         {
@@ -532,7 +532,7 @@ inline std::optional<Device_path::End_instance> deserialize(const void *data, si
     if(dp->subtype != Device_path::End_instance::SUBTYPE)
         return std::nullopt;
 
-    Device_path::End_instance value;
+    Device_path::End_instance value{};
     return {value};
 }
 
@@ -562,7 +562,7 @@ inline std::optional<Device_path::End_entire> deserialize(const void *data, size
     if(dp->subtype != Device_path::End_entire::SUBTYPE)
         return std::nullopt;
 
-    Device_path::End_entire value;
+    Device_path::End_entire value{};
     return {value};
 }
 
@@ -592,14 +592,14 @@ inline std::optional<Load_option> deserialize(const void *data, size_t data_size
     uint16_t device_path_size = efi_loadopt_pathlen(load_option, ssize);
     efidp device_path = efi_loadopt_path(load_option, ssize);
 
-    auto file_path = deserialize_list<Device_path::ANY>(
+    auto file_path = deserialize_list_ex<Device_path::ANY>(
         device_path, device_path_size,
         [](const void *ptr) -> size_t
         {
             auto size = efidp_node_size(static_cast<const_efidp>(ptr));
             return reinterpret_cast<size_t &>(size);
         },
-        [](const void *ptr, const size_t bytes_left) -> const void *
+        [](const void *ptr, size_t bytes_left) -> const void *
         {
             const_efidp dp = static_cast<const_efidp>(ptr);
             ssize_t size = efidp_node_size(dp);

@@ -409,7 +409,7 @@ void DevicePathDialog::setUnknownForm(const Device_path::Unknown &unknown)
 void DevicePathDialog::refreshDiskCombo(bool force)
 {
     ui->disk_combo->clear();
-    const auto drives = DriveInfo::get_all(force);
+    const auto drives = DriveInfo::getAll(force);
     for(const auto &drive: drives)
     {
         QVariant item;

@@ -55,10 +55,10 @@ private:
     void importJSONEFIData(const QJsonObject &input);
     void importRawEFIData(const QJsonObject &input);
 
-    void show_error(const QString &message, const QString &details = "");
+    void showError(const QString &message, const QString &details);
     template <class Receiver, typename Slot>
-    void show_confirmation(const QString &message, const QMessageBox::StandardButtons &buttons, const QMessageBox::StandardButton &confirmation_button, Receiver confirmation_context, Slot confirmation_slot);
+    void showConfirmation(const QString &message, const QMessageBox::StandardButtons &buttons, const QMessageBox::StandardButton &confirmation_button, Receiver confirmation_context, Slot confirmation_slot);
 
-    void show_progress_bar(size_t step, size_t total, const QString &details = "");
-    void hide_progress_bar();
+    void showProgressBar(size_t step, size_t total, const QString &details);
+    void hideProgressBar();
 };

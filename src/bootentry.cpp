@@ -62,7 +62,7 @@ auto BootEntry::toEFIBootLoadOption() const -> EFIBoot::Load_option
     EFIBoot::Load_option load_option;
     load_option.description = description.toStdU16String();
     {
-        auto bytes = get_raw_optional_data();
+        auto bytes = getRawOptionalData();
         auto begin = reinterpret_cast<const EFIBoot::Raw_data::value_type *>(bytes.constData());
         std::copy(begin, std::next(begin, bytes.size()), std::back_inserter(load_option.optional_data));
     }
@@ -118,7 +118,7 @@ auto BootEntry::toJSON() const -> QJsonObject
     return load_option;
 }
 
-auto BootEntry::format_file_path(bool refresh) const -> QString
+auto BootEntry::formatFilePath(bool refresh) const -> QString
 {
     if(file_path.empty())
         return {};
@@ -140,13 +140,13 @@ auto BootEntry::format_file_path(bool refresh) const -> QString
     return file_path_str;
 }
 
-auto BootEntry::change_optional_data_format(BootEntry::OptionalDataFormat format) -> bool
+auto BootEntry::changeOptionalDataFormat(BootEntry::OptionalDataFormat format) -> bool
 {
     if(format == optional_data_format)
         return true;
 
     QTextCodec *codec = nullptr;
-    auto bytes = get_raw_optional_data();
+    auto bytes = getRawOptionalData();
     QTextCodec::ConverterState state;
     QString temp_optional_data;
     switch(static_cast<OptionalDataFormat>(format))
@@ -187,7 +187,7 @@ auto BootEntry::change_optional_data_format(BootEntry::OptionalDataFormat format
     return true;
 }
 
-auto BootEntry::get_raw_optional_data() const -> QByteArray
+auto BootEntry::getRawOptionalData() const -> QByteArray
 {
     QByteArray bytes;
     std::unique_ptr<QTextEncoder> encoder = nullptr;

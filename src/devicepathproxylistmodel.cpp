@@ -51,7 +51,7 @@ auto DevicePathProxyListModel::setData(const QModelIndex &index, const QVariant 
     boot_entry_list_model->changeData(boot_entry_index, [&index, &value](BootEntry &entry)
         {
         entry.file_path[index.row()] = *value.value<const Device_path::ANY *>();
-        entry.format_file_path();
+        entry.formatFilePath();
         return true; });
 
     emit dataChanged(index, index, {role});
@@ -66,7 +66,7 @@ auto DevicePathProxyListModel::insertRows(int row, int count, const QModelIndex 
         for(int c = 0; c < count; ++c)
             entry.file_path.insert(static_cast<decltype(entry.file_path)::size_type>(row) + c, {});
 
-        entry.format_file_path();
+        entry.formatFilePath();
         return true; });
     endInsertRows();
     return true;
@@ -80,7 +80,7 @@ auto DevicePathProxyListModel::removeRows(int row, int count, const QModelIndex 
         for(int c = 0; c < count; ++c)
             entry.file_path.removeAt(row);
 
-        entry.format_file_path();
+        entry.formatFilePath();
         return true; });
     endRemoveRows();
     return true;
@@ -94,7 +94,7 @@ auto DevicePathProxyListModel::moveRows(const QModelIndex &sourceParent, int sou
         for(int c = 0; c < count; ++c)
             entry.file_path.move(sourceRow, static_cast<decltype(entry.file_path)::size_type>(destinationChild) + (sourceRow < destinationChild ? 0 : c));
 
-        entry.format_file_path();
+        entry.formatFilePath();
         return true; });
     endMoveRows();
     return true;
@@ -106,7 +106,7 @@ void DevicePathProxyListModel::clear()
     boot_entry_list_model->changeData(boot_entry_index, [](BootEntry &entry)
         {
         entry.file_path.clear();
-        entry.format_file_path();
+        entry.formatFilePath();
         return true; });
     endResetModel();
 }

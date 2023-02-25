@@ -129,6 +129,7 @@ bool QWidgetItemDelegate<Widget, Item>::editorEvent(QEvent *event, QAbstractItem
             result = handleWidgetDelegateEventResult(event, model, option, index, event_handler, result);
 
         event_handler.setParent(nullptr);
+        (void)result;
     }
 
     return QStyledItemDelegate::editorEvent(event, model, option, index);
