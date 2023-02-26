@@ -80,6 +80,25 @@ if(${QT_VERSION_MAJOR} GREATER 5)
     target_link_libraries(${PROJECT_NAME} PRIVATE
         Qt::Core5Compat
     )
+else()
+    if(NOT COMMAND qt_add_translations)
+        function(qt_add_translations TARGET)
+            cmake_parse_arguments(arg "" "" "TS_FILES;INCLUDE_DIRECTORIES" ${ARGN})
+            qt5_add_translation(QM_FILES ${arg_TS_FILES})
+
+            get_target_property(BINARY_DIR ${TARGET} BINARY_DIR)
+            set(QRC ${BINARY_DIR}/translations.qrc)
+            file(WRITE ${QRC} "<RCC><qresource prefix=\"/i18n\">\n")
+            foreach (QM_PATH ${QM_FILES})
+                file(RELATIVE_PATH QM_FILE ${BINARY_DIR} ${QM_PATH})
+                file(APPEND ${QRC} "<file>${QM_FILE}</file>\n")
+            endforeach (QM)
+            file(APPEND ${QRC} "</qresource></RCC>")
+
+            qt_add_resources(RESOURCES ${QRC})
+            target_sources(${PROJECT_NAME} PRIVATE ${RESOURCES})
+        endfunction()
+    endif()
 endif()
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE
@@ -260,10 +279,9 @@ target_sources(${PROJECT_NAME} PRIVATE ${RESOURCES})
 
 # Translations
 FILE(GLOB TRANSLATIONS
-    translations/${PROJECT_NAME}_*.ts
+    ${CMAKE_SOURCE_DIR}/translations/${PROJECT_NAME}_*.ts
 )
 
-set_source_files_properties(${TRANSLATIONS} PROPERTIES OUTPUT_LOCATION "${CMAKE_CURRENT_BINARY_DIR}/translations")
 qt_add_translations(${PROJECT_NAME}
     TS_FILES ${TRANSLATIONS}
     INCLUDE_DIRECTORIES "include")
