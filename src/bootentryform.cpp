@@ -82,7 +82,7 @@ void BootEntryForm::optionalDataFormatChanged(int format)
 
     if(!success)
     {
-        QMessageBox::critical(this, qApp->applicationName(), tr("Couldn't change Optional data format!"));
+        QMessageBox::critical(this, qApp->applicationName(), tr("Couldn't change optional data format!"));
         ui->optional_data_format_combo->setCurrentIndex(static_cast<int>(current_item->optional_data_format));
     }
 }

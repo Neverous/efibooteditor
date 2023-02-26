@@ -26,7 +26,8 @@
    <string>EFI Boot Editor</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="preferences-system"></iconset>
+   <iconset theme="preferences-system">
+    <normaloff>.</normaloff>.</iconset>
   </property>
   <widget class="QWidget" name="boot">
    <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,0,2">
@@ -90,7 +91,8 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset theme="add"></iconset>
+         <iconset theme="add">
+          <normaloff>.</normaloff>.</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -121,7 +123,8 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset theme="remove"></iconset>
+         <iconset theme="remove">
+          <normaloff>.</normaloff>.</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -152,7 +155,8 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset theme="up"></iconset>
+         <iconset theme="up">
+          <normaloff>.</normaloff>.</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -183,7 +187,8 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset theme="down"></iconset>
+         <iconset theme="down">
+          <normaloff>.</normaloff>.</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -214,7 +219,8 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset theme="format-justify-left"></iconset>
+         <iconset theme="format-justify-left">
+          <normaloff>.</normaloff>.</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -325,7 +331,7 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Ttimeout</string>
+            <string>Timeout</string>
            </property>
            <property name="statusTip">
             <string>Timeout</string>
@@ -348,7 +354,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>23</height>
     </rect>
    </property>
    <property name="toolTip">
@@ -371,7 +377,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File menu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="title">
-     <string>File</string>
+     <string>&amp;File</string>
     </property>
     <addaction name="save"/>
     <addaction name="export_"/>
@@ -391,7 +397,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Help menu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="title">
-     <string>Help</string>
+     <string>&amp;Help</string>
     </property>
     <addaction name="about"/>
     <addaction name="separator"/>
@@ -413,13 +419,14 @@
   </widget>
   <action name="exit">
    <property name="icon">
-    <iconset theme="exit"></iconset>
+    <iconset theme="exit">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
-    <string>Exit</string>
+    <string>&amp;Quit</string>
    </property>
    <property name="statusTip">
-    <string>Exit</string>
+    <string>Quit</string>
    </property>
    <property name="whatsThis">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Exit the program&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -430,10 +437,11 @@
   </action>
   <action name="save">
    <property name="icon">
-    <iconset theme="document-save"></iconset>
+    <iconset theme="document-save">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
-    <string>Save</string>
+    <string>&amp;Save</string>
    </property>
    <property name="statusTip">
     <string>Save</string>
@@ -447,10 +455,11 @@
   </action>
   <action name="reload">
    <property name="icon">
-    <iconset theme="reload"></iconset>
+    <iconset theme="reload">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
-    <string>Reload</string>
+    <string>&amp;Reload</string>
    </property>
    <property name="statusTip">
     <string>Reload</string>
@@ -464,10 +473,11 @@
   </action>
   <action name="about">
    <property name="icon">
-    <iconset theme="help"></iconset>
+    <iconset theme="help">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
-    <string>About EFI Boot Editor</string>
+    <string>About &amp;EFI Boot Editor</string>
    </property>
    <property name="statusTip">
     <string>About EFI Boot Editor</string>
@@ -478,10 +488,11 @@
   </action>
   <action name="export_">
    <property name="icon">
-    <iconset theme="document-export"></iconset>
+    <iconset theme="document-export">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
-    <string>Export</string>
+    <string>&amp;Export</string>
    </property>
    <property name="statusTip">
     <string>Export</string>
@@ -495,10 +506,11 @@
   </action>
   <action name="import_">
    <property name="icon">
-    <iconset theme="document-import"></iconset>
+    <iconset theme="document-import">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
-    <string>Import</string>
+    <string>&amp;Import</string>
    </property>
    <property name="statusTip">
     <string>Import</string>
@@ -512,10 +524,11 @@
   </action>
   <action name="dump_raw_efi_data">
    <property name="icon">
-    <iconset theme="document-export"></iconset>
+    <iconset theme="document-export">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
-    <string>Dump raw EFI data</string>
+    <string>&amp;Dump raw EFI data</string>
    </property>
    <property name="statusTip">
     <string>Dump raw EFI data</string>
