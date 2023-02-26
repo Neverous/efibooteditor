@@ -1,0 +1,28 @@
+#include <windows.h>
+
+IDI_ICON1               ICON    DISCARDABLE     APPLICATION_ICON
+
+VS_VERSION_INFO VERSIONINFO
+    FILEVERSION    VERSION_MAJOR,VERSION_MINOR,VERSION_PATCH,0
+    PRODUCTVERSION VERSION_MAJOR,VERSION_MINOR,VERSION_PATCH,0
+{
+    BLOCK "StringFileInfo"
+    {
+        // U.S. English - Windows, Multilingual
+        BLOCK "040904E4"
+        {
+            VALUE "ProductName", APPLICATION_NAME
+            VALUE "CompanyName", APPLICATION_NAME
+            VALUE "ProductVersion", VERSION
+            VALUE "FileDescription", PROJECT_DESCRIPTION
+            VALUE "FileVersion", VERSION
+            VALUE "InternalName", PROJECT_NAME
+            VALUE "LegalCopyright", APPLICATION_NAME
+            VALUE "OriginalFilename", PROJECT_NAME
+        }
+    }
+    BLOCK "VarFileInfo"
+    {
+        VALUE "Translation", 0x409, 1252 // 1252 = 0x04E4
+    }
+}

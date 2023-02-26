@@ -5,6 +5,11 @@ if(NOT ("$ENV{BUILD_VERSION}" STREQUAL ""))
     string(REGEX MATCH "[0-9]+\\.[0-9]+\\.[0-9]+" VERSION $ENV{BUILD_VERSION})
 endif()
 
+string(REGEX MATCH "([0-9]+)\\.([0-9]+)\\.([0-9]+)" _version_match ${VERSION})
+set(VERSION_MAJOR ${CMAKE_MATCH_1})
+set(VERSION_MINOR ${CMAKE_MATCH_2})
+set(VERSION_PATCH ${CMAKE_MATCH_3})
+
 project(efibooteditor
     VERSION ${VERSION}
     DESCRIPTION "Boot Editor for (U)EFI based systems."
@@ -14,6 +19,7 @@ project(efibooteditor
 set(PROJECT_NAME_CAPITALIZED "EFIBootEditor")
 set(PROJECT_HOMEPAGE_URL "https://github.com/Neverous/efibooteditor")
 set(APPLICATION_NAME "EFI Boot Editor")
+set(APPLICATION_ICON "${CMAKE_SOURCE_DIR}/icons/Tango/256/categories/preferences-system.ico")
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -79,9 +85,13 @@ endif()
 target_compile_definitions(${PROJECT_NAME} PRIVATE
     APPLICATION_NAME="${APPLICATION_NAME}"
     VERSION="${VERSION}"
+    VERSION_MAJOR=${VERSION_MAJOR}
+    VERSION_MINOR=${VERSION_MINOR}
+    VERSION_PATCH=${VERSION_PATCH}
     PROJECT_NAME="${PROJECT_NAME}"
     PROJECT_DESCRIPTION="${PROJECT_DESCRIPTION}"
     PROJECT_HOMEPAGE_URL="${PROJECT_HOMEPAGE_URL}"
+    APPLICATION_ICON="${APPLICATION_ICON}"
     QT_DEPRECATED_WARNINGS
     QT_DISABLE_DEPRECATED_BEFORE=0xFFFFFF
 )
@@ -200,6 +210,7 @@ if(WIN32)
         src/efivar-lite.c
         src/efivar-lite.common.h
         src/efivar-lite.win32.c
+        windows.rc
     )
 endif()
 
@@ -311,12 +322,20 @@ if(WIN32)
     install(DIRECTORY "${CMAKE_BINARY_DIR}/qt/"
         TYPE BIN
         COMPONENT Runtime
+        PATTERN "*.pdb" EXCLUDE
     )
 
     if(("${CMAKE_BUILD_TYPE}" STREQUAL "Debug") OR ("${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo"))
         install(FILES "$<TARGET_PDB_FILE:${PROJECT_NAME}>"
             TYPE BIN
             COMPONENT Debug
+        )
+
+        install(DIRECTORY "${CMAKE_BINARY_DIR}/qt/"
+            TYPE BIN
+            COMPONENT Debug
+            FILES_MATCHING
+            PATTERN "*.pdb"
         )
     endif()
 
@@ -356,12 +375,12 @@ set(CPACK_PACKAGE_DIRECTORY dist)
 set(CPACK_PACKAGE_EXECUTABLES ${PROJECT_NAME} "${PROJECT_NAME_CAPITALIZED}")
 set(CPACK_PACKAGE_HOMEPAGE_URL ${PROJECT_HOMEPAGE_URL})
 set(CPACK_PACKAGE_INSTALL_DIRECTORY "${PROJECT_NAME_CAPITALIZED}")
-set(CPACK_PACKAGE_NAME "${PROJECT_NAME_CAPITALIZED}")
+set(CPACK_PACKAGE_NAME "${APPLICATION_NAME}")
 set(CPACK_PACKAGE_VENDOR ${PROJECT_NAME_CAPITALIZED})
 set(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/LICENSE.txt")
 set(CPACK_RESOURCE_FILE_README "${CMAKE_SOURCE_DIR}/README.md")
-set(CPACK_PACKAGE_ICON "${CMAKE_SOURCE_DIR}/icons/Tango/scalable/categories/preferences-desktop.svg")
+set(CPACK_PACKAGE_ICON "${APPLICATION_ICON}")
 
 if("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     set(CPACK_STRIP_FILES TRUE)
@@ -373,6 +392,8 @@ if(WIN32)
 
     set(CPACK_WIX_LIGHT_EXTRA_FLAGS "-dcl:high")
     set(CPACK_WIX_PRODUCT_ICON ${CPACK_PACKAGE_ICON})
+    set(CPACK_WIX_UI_BANNER "${CMAKE_SOURCE_DIR}/misc/wix_banner.png")
+    set(CPACK_WIX_UI_DIALOG "${CMAKE_SOURCE_DIR}/misc/wix_dialog.png")
     set(CPACK_WIX_PROPERTY_ARPHELPLINK "${CPACK_PACKAGE_HOMEPAGE_URL}")
     set(CPACK_WIX_PROPERTY_ARPURLINFOABOUT "${CPACK_PACKAGE_HOMEPAGE_URL}")
     set(CPACK_WIX_ROOT_FEATURE_DESCRIPTION "${CPACK_PACKAGE_DESCRIPTION_SUMMARY}")
