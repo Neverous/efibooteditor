@@ -1,6 +1,6 @@
 # EFI Boot Editor
 
-GUI for managing EFI Boot Manager configuration.
+Boot Editor for (U)EFI based systems.
 
 ![EFIBootEditor](doc/efibooteditor.png)
 ![Device path dialog](doc/devicepathdialog.png)

@@ -8,6 +8,7 @@
 auto main(int argc, char *argv[]) -> int
 {
     QApplication a(argc, argv);
+    a.setApplicationName(APPLICATION_NAME);
     QApplication::setApplicationVersion(VERSION);
     QIcon::setFallbackThemeName("Tango");
     if(QIcon::themeName().isEmpty())
