@@ -1,14 +1,16 @@
 cmake_minimum_required(VERSION 3.16)
 
-set(VERSION "0.0.0")
-if(NOT ("$ENV{BUILD_VERSION}" STREQUAL ""))
-    string(REGEX MATCH "[0-9]+\\.[0-9]+\\.[0-9]+" VERSION $ENV{BUILD_VERSION})
+set(FULL_VERSION "$ENV{BUILD_VERSION}")
+if(NOT ("${FULL_VERSION}" MATCHES "[0-9]+\\.[0-9]+\\.[0-9]+"))
+    set(FULL_VERSION "0.0.0-${FULL_VERSION}")
 endif()
 
-string(REGEX MATCH "([0-9]+)\\.([0-9]+)\\.([0-9]+)" _version_match ${VERSION})
+string(REGEX MATCH "([0-9]+)\\.([0-9]+)\\.([0-9]+)" VERSION ${FULL_VERSION})
 set(VERSION_MAJOR ${CMAKE_MATCH_1})
 set(VERSION_MINOR ${CMAKE_MATCH_2})
 set(VERSION_PATCH ${CMAKE_MATCH_3})
+
+message(STATUS "Building version ${VERSION} (${FULL_VERSION})")
 
 project(efibooteditor
     VERSION ${VERSION}
@@ -92,7 +94,7 @@ else()
             foreach (QM_PATH ${QM_FILES})
                 file(RELATIVE_PATH QM_FILE ${BINARY_DIR} ${QM_PATH})
                 file(APPEND ${QRC} "<file>${QM_FILE}</file>\n")
-            endforeach (QM)
+            endforeach ()
             file(APPEND ${QRC} "</qresource></RCC>")
 
             qt_add_resources(RESOURCES ${QRC})
@@ -103,7 +105,7 @@ endif()
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE
     APPLICATION_NAME="${APPLICATION_NAME}"
-    VERSION="${VERSION}"
+    VERSION="${FULL_VERSION}"
     VERSION_MAJOR=${VERSION_MAJOR}
     VERSION_MINOR=${VERSION_MINOR}
     VERSION_PATCH=${VERSION_PATCH}
