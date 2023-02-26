@@ -258,7 +258,7 @@ void EFIBootEditor::saveBootConfiguration()
 
 void EFIBootEditor::import()
 {
-    const auto file_name = QFileDialog::getOpenFileName(this, tr("Open Boot Configuration Dump"), "", tr("JSON Documents (*.json)"));
+    const auto file_name = QFileDialog::getOpenFileName(this, tr("Open boot configuration dump"), "", tr("JSON documents (*.json)"));
     if(!file_name.isEmpty())
         importBootConfiguration(file_name);
 }
@@ -341,7 +341,7 @@ void EFIBootEditor::importJSONEFIData(const QJsonObject &input)
             const auto &name = QString("BootOrder[%1]").arg(i);
             if(!index.isDouble())
             {
-                errors.push_back(tr("%1: number expected").arg(name));
+                errors.push_back(tr("%1: %2 expected").arg(name,tr("number")));
                 continue;
             }
 
@@ -354,7 +354,7 @@ void EFIBootEditor::importJSONEFIData(const QJsonObject &input)
     // clang-format on
 
     if(!input["Boot"].isObject())
-        errors.push_back(tr("%1: object expected").arg("Boot"));
+        errors.push_back(tr("%1: %2 expected").arg("Boot", tr("object")));
 
     else
     {
@@ -367,7 +367,7 @@ void EFIBootEditor::importJSONEFIData(const QJsonObject &input)
             const uint16_t index = static_cast<uint16_t>(name.toULong(&success, HEX_BASE));
             if(!success)
             {
-                errors.push_back(tr("%1: hexadecimal number expected").arg(prefix_ + name));
+                errors.push_back(tr("%1: %2 expected").arg(prefix_ + name, tr("hexadecimal number")));
                 continue;
             }
 
@@ -430,14 +430,14 @@ void EFIBootEditor::importRawEFIData(const QJsonObject &input)
         showProgressBar(step++, total_steps, tr("Importing EFI Boot Manager entries (%1)...").arg(full_name));
         if(!root[name].isObject())
         {
-            errors.push_back(tr("%1: object expected").arg(full_name));
+            errors.push_back(tr("%1: %2 expected").arg(full_name, tr("object")));
             return;
         }
 
         const auto obj = root[name].toObject();
         if(!obj["raw_data"].isString() || !obj["efi_attributes"].isDouble())
         {
-            errors.push_back(tr("%1: object(raw_data: string, efi_attributes: number) expected").arg(full_name));
+            errors.push_back(tr("%1: %2 expected").arg(full_name).arg(tr("object(raw_data: string, efi_attributes: number)")));
             return;
         }
 
@@ -472,7 +472,7 @@ void EFIBootEditor::importRawEFIData(const QJsonObject &input)
     // clang-format on
 
     if(!input["Boot"].isObject())
-        errors.push_back(tr("%1: object expected").arg("Boot"));
+        errors.push_back(tr("%1: %2 expected").arg("Boot", tr("object")));
 
     else
     {
@@ -485,7 +485,7 @@ void EFIBootEditor::importRawEFIData(const QJsonObject &input)
             const uint16_t index = static_cast<uint16_t>(name.toULong(&success, HEX_BASE));
             if(!success)
             {
-                errors.push_back(tr("%1: hexadecimal number expected").arg(prefix_ + name));
+                errors.push_back(tr("%1: %2 expected").arg(prefix_ + name, tr("hexadecimal number")));
                 continue;
             }
 
@@ -522,7 +522,7 @@ void EFIBootEditor::importRawEFIData(const QJsonObject &input)
 
 void EFIBootEditor::export_()
 {
-    QString file_name = QFileDialog::getSaveFileName(this, tr("Save Boot Configuration Dump"), "", tr("JSON documents (*.json)"));
+    QString file_name = QFileDialog::getSaveFileName(this, tr("Save boot configuration dump"), "", tr("JSON documents (*.json)"));
     if(!file_name.isEmpty())
         exportBootConfiguration(file_name);
 }
@@ -577,7 +577,7 @@ void EFIBootEditor::exportBootConfiguration(const QString &file_name)
 
 void EFIBootEditor::dump()
 {
-    const QString file_name = QFileDialog::getSaveFileName(this, tr("Save Raw EFI Dump"), "", tr("JSON documents (*.json)"));
+    const QString file_name = QFileDialog::getSaveFileName(this, tr("Save raw EFI dump"), "", tr("JSON documents (*.json)"));
     if(!file_name.isEmpty())
         dumpRawEFIData(file_name);
 }

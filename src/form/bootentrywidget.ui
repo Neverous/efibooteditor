@@ -74,7 +74,7 @@
      <item>
       <layout class="QHBoxLayout" name="title">
        <property name="spacing">
-        <number>0</number>
+        <number>5</number>
        </property>
        <item>
         <widget class="QLabel" name="index">
@@ -108,6 +108,12 @@
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         </property>
+         <property name="margin">
+          <number>0</number>
+         </property>
+         <property name="indent">
+          <number>-1</number>
          </property>
          <property name="textInteractionFlags">
           <set>Qt::NoTextInteraction</set>
@@ -146,6 +152,9 @@
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
          </property>
+         <property name="indent">
+          <number>-1</number>
+         </property>
          <property name="textInteractionFlags">
           <set>Qt::NoTextInteraction</set>
          </property>
@@ -177,7 +186,7 @@
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot file path&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="text">
-        <string>file path</string>
+        <string>File path</string>
        </property>
        <property name="textFormat">
         <enum>Qt::PlainText</enum>
@@ -217,7 +226,7 @@
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data, arguments passed to boot executable&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="text">
-        <string>data</string>
+        <string>Data</string>
        </property>
        <property name="textFormat">
         <enum>Qt::PlainText</enum>

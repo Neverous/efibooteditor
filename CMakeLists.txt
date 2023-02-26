@@ -53,6 +53,7 @@ find_package(Qt${QT_VERSION_MAJOR}
         Gui
         Network
         Widgets
+        LinguistTools
     REQUIRED)
 
 add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE
@@ -245,6 +246,16 @@ target_sources(${PROJECT_NAME} PRIVATE
 # Resources:
 qt_add_resources(RESOURCES icons.qrc)
 target_sources(${PROJECT_NAME} PRIVATE ${RESOURCES})
+
+# Translations
+FILE(GLOB TRANSLATIONS
+    translations/${PROJECT_NAME}_*.ts
+)
+
+set_source_files_properties(${TRANSLATIONS} PROPERTIES OUTPUT_LOCATION "${CMAKE_CURRENT_BINARY_DIR}/translations")
+qt_add_translations(${PROJECT_NAME}
+    TS_FILES ${TRANSLATIONS}
+    INCLUDE_DIRECTORIES "include")
 
 if(APPLE)
     target_link_libraries(${PROJECT_NAME} PRIVATE

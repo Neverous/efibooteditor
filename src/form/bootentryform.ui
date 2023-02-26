@@ -154,7 +154,8 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset theme="up"></iconset>
+          <iconset theme="up">
+           <normaloff>.</normaloff>.</iconset>
          </property>
          <property name="default">
           <bool>false</bool>
@@ -185,7 +186,8 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset theme="down"></iconset>
+          <iconset theme="down">
+           <normaloff>.</normaloff>.</iconset>
          </property>
          <property name="default">
           <bool>false</bool>
@@ -216,7 +218,8 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset theme="remove"></iconset>
+          <iconset theme="remove">
+           <normaloff>.</normaloff>.</iconset>
          </property>
          <property name="default">
           <bool>false</bool>
@@ -247,7 +250,8 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset theme="edit"></iconset>
+          <iconset theme="edit">
+           <normaloff>.</normaloff>.</iconset>
          </property>
          <property name="default">
           <bool>false</bool>
@@ -278,7 +282,8 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset theme="add"></iconset>
+          <iconset theme="add">
+           <normaloff>.</normaloff>.</iconset>
          </property>
          <property name="default">
           <bool>false</bool>
@@ -530,7 +535,10 @@
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Order&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="inputMask">
-      <string>&gt;\0\xHHHH;_</string>
+      <string notr="true">&gt;\0\xHHHH;_</string>
+     </property>
+     <property name="text">
+      <string notr="true">0x</string>
      </property>
     </widget>
    </item>

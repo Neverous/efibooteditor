@@ -17,7 +17,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Device Path</string>
+   <string>Device path</string>
   </property>
   <property name="toolTip">
    <string>Device path dialog</string>
@@ -47,7 +47,7 @@
       <enum>QTabWidget::West</enum>
      </property>
      <property name="currentIndex">
-      <number>10</number>
+      <number>8</number>
      </property>
      <property name="usesScrollButtons">
       <bool>true</bool>
@@ -66,7 +66,8 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="system"/>
+       <iconset theme="system">
+        <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>PCI</string>
@@ -167,7 +168,8 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="system"/>
+       <iconset theme="system">
+        <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>HID</string>
@@ -207,7 +209,10 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;\0\xHHHHHHHH;_</string>
+          <string notr="true">&lt;\0\xHHHHHHHH;_</string>
+         </property>
+         <property name="text">
+          <string notr="true">0x</string>
          </property>
         </widget>
        </item>
@@ -239,7 +244,10 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UID in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;\0\xHHHHHHHH;_</string>
+          <string notr="true">&lt;\0\xHHHHHHHH;_</string>
+         </property>
+         <property name="text">
+          <string notr="true">0x</string>
          </property>
         </widget>
        </item>
@@ -256,7 +264,8 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="drive-removable-media"/>
+       <iconset theme="drive-removable-media">
+        <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>USB</string>
@@ -360,7 +369,8 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="document"/>
+       <iconset theme="document">
+        <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>Vendor</string>
@@ -400,7 +410,10 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GUID&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_</string>
+          <string notr="true">&lt;HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_</string>
+         </property>
+         <property name="text">
+          <string notr="true">----</string>
          </property>
         </widget>
        </item>
@@ -533,7 +546,8 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="network-wired"/>
+       <iconset theme="network-wired">
+        <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>MAC</string>
@@ -573,7 +587,10 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH;_</string>
+          <string notr="true">&lt;HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH;_</string>
+         </property>
+         <property name="text">
+          <string notr="true">:::::::::::::::</string>
          </property>
         </widget>
        </item>
@@ -625,7 +642,8 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv4 tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="network-wired"/>
+       <iconset theme="network-wired">
+        <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>IPv4</string>
@@ -713,10 +731,10 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>000.000.000.000</string>
+          <string notr="true">000.000.000.000</string>
          </property>
          <property name="text">
-          <string>0.0.0.0</string>
+          <string notr="true">0.0.0.0</string>
          </property>
         </widget>
        </item>
@@ -751,10 +769,10 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>000.000.000.000</string>
+          <string notr="true">000.000.000.000</string>
          </property>
          <property name="text">
-          <string>0.0.0.0</string>
+          <string notr="true">0.0.0.0</string>
          </property>
         </widget>
        </item>
@@ -881,10 +899,10 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>000.000.000.000</string>
+          <string notr="true">000.000.000.000</string>
          </property>
          <property name="text">
-          <string>0.0.0.0</string>
+          <string notr="true">0.0.0.0</string>
          </property>
         </widget>
        </item>
@@ -916,7 +934,10 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnet mask&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>000.000.000.000</string>
+          <string notr="true">000.000.000.000</string>
+         </property>
+         <property name="text">
+          <string notr="true">0.0.0.0</string>
          </property>
         </widget>
        </item>
@@ -933,7 +954,8 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv6 tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="network-wired"/>
+       <iconset theme="network-wired">
+        <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>IPv6</string>
@@ -1085,7 +1107,10 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH</string>
+          <string notr="true">&lt;HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH</string>
+         </property>
+         <property name="text">
+          <string notr="true">:::::::</string>
          </property>
         </widget>
        </item>
@@ -1120,7 +1145,10 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH</string>
+          <string notr="true">&lt;HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH</string>
+         </property>
+         <property name="text">
+          <string notr="true">:::::::</string>
          </property>
         </widget>
        </item>
@@ -1208,7 +1236,10 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH</string>
+          <string notr="true">&lt;HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH</string>
+         </property>
+         <property name="text">
+          <string notr="true">:::::::</string>
          </property>
         </widget>
        </item>
@@ -1244,7 +1275,8 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SATA tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="harddrive"/>
+       <iconset theme="harddrive">
+        <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>SATA</string>
@@ -1383,7 +1415,8 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disk tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="harddrive"/>
+       <iconset theme="harddrive">
+        <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>HD</string>
@@ -1461,7 +1494,8 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset theme="reload"/>
+            <iconset theme="reload">
+             <normaloff>.</normaloff>.</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -1534,7 +1568,10 @@
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition signature.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="inputMask">
-            <string extracomment="UUID">&lt;HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_</string>
+            <string notr="true">&lt;HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_</string>
+           </property>
+           <property name="text">
+            <string notr="true">----</string>
            </property>
           </widget>
          </item>
@@ -1609,10 +1646,10 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition start offset in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;\0\xHHHHHHHHHHHHHHHH;_</string>
+          <string notr="true">&lt;\0\xHHHHHHHHHHHHHHHH;_</string>
          </property>
          <property name="text">
-          <string>0x0000000000000000</string>
+          <string notr="true">0x0000000000000000</string>
          </property>
         </widget>
        </item>
@@ -1644,7 +1681,10 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition size in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;\0\xHHHHHHHHHHHHHHHH;_</string>
+          <string notr="true">&lt;\0\xHHHHHHHHHHHHHHHH;_</string>
+         </property>
+         <property name="text">
+          <string notr="true">0x</string>
          </property>
         </widget>
        </item>
@@ -1661,7 +1701,8 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="document"/>
+       <iconset theme="document">
+        <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>File</string>
@@ -1715,7 +1756,8 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="document"/>
+       <iconset theme="document">
+        <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>Firmware file</string>
@@ -1772,7 +1814,8 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware volume tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="document"/>
+       <iconset theme="document">
+        <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>Firmware volume</string>
@@ -1820,16 +1863,17 @@
      </widget>
      <widget class="QWidget" name="bios_boot_specification_tab">
       <property name="toolTip">
-       <string>BIOS boot specification tab</string>
+       <string>BIOS Boot Specification tab</string>
       </property>
       <property name="statusTip">
-       <string>BIOS boot specification tab</string>
+       <string>BIOS Boot Specification tab</string>
       </property>
       <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;BIOS boot specification tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;BIOS Boot Specification tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="computer"/>
+       <iconset theme="computer">
+        <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>BIOS Boot Specification</string>
@@ -1869,7 +1913,10 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;\0\xHH;_</string>
+          <string notr="true">&lt;\0\xHH;_</string>
+         </property>
+         <property name="text">
+          <string notr="true">0x</string>
          </property>
         </widget>
        </item>
@@ -1901,7 +1948,10 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Status flag&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;\0\xHH;_</string>
+          <string notr="true">&lt;\0\xHH;_</string>
+         </property>
+         <property name="text">
+          <string notr="true">0x</string>
          </property>
         </widget>
        </item>
@@ -1947,7 +1997,8 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;End of hardware tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="stop"/>
+       <iconset theme="stop">
+        <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>End</string>
@@ -2017,7 +2068,8 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown device path node tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <attribute name="icon">
-       <iconset theme="system-search"/>
+       <iconset theme="system-search">
+        <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>Unknown</string>
@@ -2080,14 +2132,20 @@
        <item row="0" column="1">
         <widget class="QLineEdit" name="unknown_type_text">
          <property name="inputMask">
-          <string>&lt;\0\xHH;_</string>
+          <string notr="true">&lt;\0\xHH;_</string>
+         </property>
+         <property name="text">
+          <string notr="true">0x</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
         <widget class="QLineEdit" name="unknown_subtype_text">
          <property name="inputMask">
-          <string>&lt;\0\xHH;_</string>
+          <string notr="true">&lt;\0\xHH;_</string>
+         </property>
+         <property name="text">
+          <string notr="true">0x</string>
          </property>
         </widget>
        </item>
