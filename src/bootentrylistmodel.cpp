@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #include "bootentrylistmodel.h"
 
-BootEntryListModel::BootEntryListModel(QObject *parent)
+BootEntryListModel::BootEntryListModel(QObject *parent, bool readonly_)
     : QAbstractListModel{parent}
+    , readonly{readonly_}
 {
 }
 

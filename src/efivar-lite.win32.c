@@ -12,6 +12,7 @@
 #pragma comment(lib, "advapi32.lib")
 
 const efi_guid_t efi_guid_global = {_T("{8be4df61-93ca-11d2-aa0d-00e098032b8c}")};
+const efi_guid_t efi_guid_apple = {_T("{7c436110-ab2a-4bbb-a880-fe41995c9f82}")};
 static const TCHAR *last_winapi_function = NULL;
 
 int efi_variables_supported(void)

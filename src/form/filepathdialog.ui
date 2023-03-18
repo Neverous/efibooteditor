@@ -1,53 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DevicePathDialog</class>
- <widget class="QDialog" name="DevicePathDialog">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>600</width>
-    <height>350</height>
-   </rect>
-  </property>
+ <class>FilePathDialog</class>
+ <widget class="QDialog" name="FilePathDialog">
   <property name="minimumSize">
    <size>
-    <width>600</width>
+    <width>750</width>
     <height>350</height>
    </size>
   </property>
   <property name="windowTitle">
-   <string>Device path</string>
-  </property>
-  <property name="toolTip">
-   <string>Device path dialog</string>
-  </property>
-  <property name="statusTip">
-   <string>Device path dialog</string>
-  </property>
-  <property name="whatsThis">
-   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device path dialog&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   <string>File path editor</string>
   </property>
   <property name="modal">
    <bool>true</bool>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout">
+  <layout class="QHBoxLayout" name="file_path_dialog_layout" stretch="1,0">
+   <property name="leftMargin">
+    <number>6</number>
+   </property>
+   <property name="topMargin">
+    <number>6</number>
+   </property>
+   <property name="rightMargin">
+    <number>6</number>
+   </property>
+   <property name="bottomMargin">
+    <number>6</number>
+   </property>
    <item>
     <widget class="QTabWidget" name="options">
-     <property name="toolTip">
-      <string>Options</string>
-     </property>
-     <property name="statusTip">
-      <string>Options</string>
-     </property>
-     <property name="whatsThis">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Options&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
      <property name="tabPosition">
       <enum>QTabWidget::West</enum>
-     </property>
-     <property name="currentIndex">
-      <number>8</number>
      </property>
      <property name="usesScrollButtons">
       <bool>true</bool>
@@ -56,15 +39,6 @@
       <bool>true</bool>
      </property>
      <widget class="QWidget" name="pci_tab">
-      <property name="toolTip">
-       <string>PCI tab</string>
-      </property>
-      <property name="statusTip">
-       <string>PCI tab</string>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
       <attribute name="icon">
        <iconset theme="system">
         <normaloff>.</normaloff>.</iconset>
@@ -72,12 +46,30 @@
       <attribute name="title">
        <string>PCI</string>
       </attribute>
+      <attribute name="toolTip">
+       <string>PCI settings</string>
+      </attribute>
+      <attribute name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </attribute>
       <layout class="QFormLayout" name="pci_layout">
        <property name="fieldGrowthPolicy">
         <enum>QFormLayout::ExpandingFieldsGrow</enum>
        </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="function_label">
@@ -88,7 +80,7 @@
           <string>Function</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Function&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Function.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Function</string>
@@ -104,7 +96,7 @@
           <string>Device</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Device</string>
@@ -126,7 +118,7 @@
           <string>Function</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Function&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Function.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="maximum">
           <number>7</number>
@@ -148,7 +140,7 @@
           <string>Device</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="maximum">
           <number>31</number>
@@ -158,15 +150,6 @@
       </layout>
      </widget>
      <widget class="QWidget" name="hid_tab">
-      <property name="toolTip">
-       <string>HID tab</string>
-      </property>
-      <property name="statusTip">
-       <string>HID tab</string>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
       <attribute name="icon">
        <iconset theme="system">
         <normaloff>.</normaloff>.</iconset>
@@ -174,12 +157,27 @@
       <attribute name="title">
        <string>HID</string>
       </attribute>
+      <attribute name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;BIOS Boot Specification settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </attribute>
       <layout class="QFormLayout" name="hid_layout">
        <property name="fieldGrowthPolicy">
         <enum>QFormLayout::ExpandingFieldsGrow</enum>
        </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="hid_label">
@@ -190,7 +188,7 @@
           <string>HID</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>HID</string>
@@ -199,6 +197,11 @@
        </item>
        <item row="0" column="1">
         <widget class="QLineEdit" name="hid_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
          <property name="toolTip">
           <string>HID</string>
          </property>
@@ -225,7 +228,7 @@
           <string>UID</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UID&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>UID</string>
@@ -234,6 +237,11 @@
        </item>
        <item row="1" column="1">
         <widget class="QLineEdit" name="uid_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
          <property name="toolTip">
           <string>UID</string>
          </property>
@@ -254,15 +262,6 @@
       </layout>
      </widget>
      <widget class="QWidget" name="usb_tab">
-      <property name="toolTip">
-       <string>USB tab</string>
-      </property>
-      <property name="statusTip">
-       <string>USB tab</string>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
       <attribute name="icon">
        <iconset theme="drive-removable-media">
         <normaloff>.</normaloff>.</iconset>
@@ -270,12 +269,30 @@
       <attribute name="title">
        <string>USB</string>
       </attribute>
+      <attribute name="toolTip">
+       <string>USB settings</string>
+      </attribute>
+      <attribute name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </attribute>
       <layout class="QFormLayout" name="usb_layout">
        <property name="fieldGrowthPolicy">
         <enum>QFormLayout::ExpandingFieldsGrow</enum>
        </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="parent_port_number_label">
@@ -286,7 +303,7 @@
           <string>Parent port number</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Parent port number&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Parent port number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Parent port number</string>
@@ -302,7 +319,7 @@
           <string>Interface</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Interface</string>
@@ -324,7 +341,7 @@
           <string>Interface</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="maximum">
           <number>255</number>
@@ -346,7 +363,7 @@
           <string>Parent port number</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Parent port number&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Parent port number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="maximum">
           <number>255</number>
@@ -356,24 +373,18 @@
       </layout>
      </widget>
      <widget class="QWidget" name="vendor_tab">
-      <property name="toolTip">
-       <string>Vendor tab</string>
-      </property>
-      <property name="statusTip">
-       <string>Vendor tab</string>
-      </property>
-      <property name="whatsThis">
-       <string>Vendor tab</string>
-      </property>
-      <property name="accessibleName">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
       <attribute name="icon">
        <iconset theme="document">
         <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>Vendor</string>
+      </attribute>
+      <attribute name="toolTip">
+       <string>Vendor settings</string>
+      </attribute>
+      <attribute name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </attribute>
       <layout class="QFormLayout" name="vendor_layout">
        <property name="fieldGrowthPolicy">
@@ -382,16 +393,28 @@
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item row="1" column="0">
         <widget class="QLabel" name="vendor_guid_label">
          <property name="toolTip">
           <string>Vendor GUID</string>
          </property>
          <property name="statusTip">
-          <string>Firmware GUID</string>
+          <string>Vendor GUID</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware GUID&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor GUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>GUID</string>
@@ -400,14 +423,19 @@
        </item>
        <item row="1" column="1">
         <widget class="QLineEdit" name="vendor_guid_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
          <property name="toolTip">
-          <string>GUID</string>
+          <string>Vendor GUID</string>
          </property>
          <property name="statusTip">
-          <string>GUID</string>
+          <string>Vendor GUID</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GUID&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor GUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
           <string notr="true">&lt;HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_</string>
@@ -418,7 +446,10 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <layout class="QVBoxLayout" name="vendor_data_box">
+        <layout class="QVBoxLayout" name="vendor_data_box" stretch="0,1">
+         <property name="spacing">
+          <number>3</number>
+         </property>
          <item>
           <widget class="QComboBox" name="vendor_data_format_combo">
            <property name="toolTip">
@@ -428,7 +459,7 @@
             <string>Data format</string>
            </property>
            <property name="whatsThis">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <item>
             <property name="text">
@@ -454,6 +485,11 @@
          </item>
          <item>
           <widget class="QPlainTextEdit" name="vendor_data_text">
+           <property name="font">
+            <font>
+             <family>Monospace</family>
+            </font>
+           </property>
            <property name="toolTip">
             <string>Data</string>
            </property>
@@ -461,7 +497,7 @@
             <string>Data</string>
            </property>
            <property name="whatsThis">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
@@ -476,7 +512,7 @@
           <string>Vendor data</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Data</string>
@@ -492,7 +528,7 @@
           <string>Type</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Type</string>
@@ -514,7 +550,7 @@
           <string>Type</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <item>
           <property name="text">
@@ -536,15 +572,6 @@
       </layout>
      </widget>
      <widget class="QWidget" name="mac_tab">
-      <property name="toolTip">
-       <string>MAC tab</string>
-      </property>
-      <property name="statusTip">
-       <string>MAC tab</string>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
       <attribute name="icon">
        <iconset theme="network-wired">
         <normaloff>.</normaloff>.</iconset>
@@ -552,12 +579,30 @@
       <attribute name="title">
        <string>MAC</string>
       </attribute>
-      <layout class="QFormLayout" name="formLayout">
+      <attribute name="toolTip">
+       <string>MAC settings</string>
+      </attribute>
+      <attribute name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </attribute>
+      <layout class="QFormLayout" name="mac_layout">
        <property name="fieldGrowthPolicy">
         <enum>QFormLayout::ExpandingFieldsGrow</enum>
        </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="mac_address_label">
@@ -568,15 +613,20 @@
           <string>MAC address</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
-          <string>MAC address</string>
+          <string>MAC</string>
          </property>
         </widget>
        </item>
        <item row="0" column="1">
         <widget class="QLineEdit" name="mac_address_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
          <property name="toolTip">
           <string>MAC address</string>
          </property>
@@ -584,7 +634,7 @@
           <string>MAC address</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
           <string notr="true">&lt;HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH:HH;_</string>
@@ -603,7 +653,7 @@
           <string>Interface type</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Interface type</string>
@@ -625,22 +675,13 @@
           <string>Interface type</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
       </layout>
      </widget>
      <widget class="QWidget" name="ipv4_tab">
-      <property name="toolTip">
-       <string>IPv4 tab</string>
-      </property>
-      <property name="statusTip">
-       <string>IPv4 tab</string>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv4 tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
       <attribute name="icon">
        <iconset theme="network-wired">
         <normaloff>.</normaloff>.</iconset>
@@ -648,12 +689,30 @@
       <attribute name="title">
        <string>IPv4</string>
       </attribute>
-      <layout class="QFormLayout" name="formLayout_2">
+      <attribute name="toolTip">
+       <string>IPv4 settings</string>
+      </attribute>
+      <attribute name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv4 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </attribute>
+      <layout class="QFormLayout" name="ipv4_layout">
        <property name="fieldGrowthPolicy">
         <enum>QFormLayout::ExpandingFieldsGrow</enum>
        </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="ipv4_local_ip_label">
@@ -664,7 +723,7 @@
           <string>Local IP address</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Local IP</string>
@@ -680,7 +739,7 @@
           <string>Local port</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Local port</string>
@@ -696,7 +755,7 @@
           <string>Remote IP address</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Remote IP</string>
@@ -712,7 +771,7 @@
           <string>Remote port</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Remote port</string>
@@ -721,6 +780,11 @@
        </item>
        <item row="0" column="1">
         <widget class="QLineEdit" name="ipv4_local_ip_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Local IP address</string>
          </property>
@@ -728,7 +792,7 @@
           <string>Local IP address</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
           <string notr="true">000.000.000.000</string>
@@ -753,12 +817,17 @@
           <string>Local port</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
        <item row="2" column="1">
         <widget class="QLineEdit" name="ipv4_remote_ip_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Remote IP address</string>
          </property>
@@ -766,7 +835,7 @@
           <string>Remote IP address</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
           <string notr="true">000.000.000.000</string>
@@ -791,7 +860,7 @@
           <string>Remote port</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -804,7 +873,7 @@
           <string>Protocol</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocol&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Protocol</string>
@@ -826,7 +895,7 @@
           <string>Protocol</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocol&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -839,7 +908,7 @@
           <string>Static IP address</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Static IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Static IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Static</string>
@@ -861,7 +930,7 @@
           <string>Static IP address</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Static IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Static IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string/>
@@ -880,7 +949,7 @@
           <string>Gateway IP address</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Gateway IP</string>
@@ -889,6 +958,11 @@
        </item>
        <item row="6" column="1">
         <widget class="QLineEdit" name="ipv4_gateway_ip_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Gateway IP address</string>
          </property>
@@ -896,7 +970,7 @@
           <string>Gateway IP address</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
           <string notr="true">000.000.000.000</string>
@@ -915,7 +989,7 @@
           <string>Subnet mask</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnet mask&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnet mask.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Subnet mask</string>
@@ -924,6 +998,11 @@
        </item>
        <item row="7" column="1">
         <widget class="QLineEdit" name="ipv4_subnet_mask_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Subnet mask</string>
          </property>
@@ -931,7 +1010,7 @@
           <string>Subnet mask</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnet mask&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnet mask.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
           <string notr="true">000.000.000.000</string>
@@ -944,15 +1023,6 @@
       </layout>
      </widget>
      <widget class="QWidget" name="ipv6_tab">
-      <property name="toolTip">
-       <string>IPv6 tab</string>
-      </property>
-      <property name="statusTip">
-       <string>IPv6 tab</string>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv6 tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
       <attribute name="icon">
        <iconset theme="network-wired">
         <normaloff>.</normaloff>.</iconset>
@@ -960,12 +1030,30 @@
       <attribute name="title">
        <string>IPv6</string>
       </attribute>
-      <layout class="QFormLayout" name="formLayout_3">
+      <attribute name="toolTip">
+       <string>IPv6 settings</string>
+      </attribute>
+      <attribute name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv6 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </attribute>
+      <layout class="QFormLayout" name="ipv6_layout">
        <property name="fieldGrowthPolicy">
         <enum>QFormLayout::ExpandingFieldsGrow</enum>
        </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="ipv6_local_ip_label">
@@ -976,7 +1064,7 @@
           <string>Local IP address</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Local IP</string>
@@ -992,7 +1080,7 @@
           <string>Local port</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Local port</string>
@@ -1008,7 +1096,7 @@
           <string>Remote IP address</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Remote IP</string>
@@ -1024,7 +1112,7 @@
           <string>Remote port</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Remote port</string>
@@ -1040,7 +1128,7 @@
           <string>Protocol</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocol&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Protocol</string>
@@ -1056,7 +1144,7 @@
           <string>IP address origin</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IP address origin&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IP address origin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Origin</string>
@@ -1072,7 +1160,7 @@
           <string>Gateway IP address</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Gateway IP</string>
@@ -1088,7 +1176,7 @@
           <string>Prefix length</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Prefix length&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Prefix length.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Prefix length</string>
@@ -1097,6 +1185,11 @@
        </item>
        <item row="0" column="1">
         <widget class="QLineEdit" name="ipv6_local_ip_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Local IP address</string>
          </property>
@@ -1104,7 +1197,7 @@
           <string>Local IP address</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
           <string notr="true">&lt;HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH</string>
@@ -1129,12 +1222,17 @@
           <string>Local port</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
        <item row="2" column="1">
         <widget class="QLineEdit" name="ipv6_remote_ip_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Remote IP address</string>
          </property>
@@ -1142,7 +1240,7 @@
           <string>Remote IP address</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
           <string notr="true">&lt;HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH</string>
@@ -1167,7 +1265,7 @@
           <string>Remote port</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -1186,7 +1284,7 @@
           <string>Protocol</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocol&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -1205,7 +1303,7 @@
           <string>IP address origin</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IP address origin&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IP address origin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <item>
           <property name="text">
@@ -1226,6 +1324,11 @@
        </item>
        <item row="6" column="1">
         <widget class="QLineEdit" name="ipv6_gateway_ip_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Gateway IP address</string>
          </property>
@@ -1233,7 +1336,7 @@
           <string>Gateway IP address</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
           <string notr="true">&lt;HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH:HHHH</string>
@@ -1258,22 +1361,13 @@
           <string>Prefix length</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Prefix length&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Prefix length.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
       </layout>
      </widget>
      <widget class="QWidget" name="sata_tab">
-      <property name="toolTip">
-       <string>SATA tab</string>
-      </property>
-      <property name="statusTip">
-       <string>SATA tab</string>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SATA tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
       <attribute name="icon">
        <iconset theme="harddrive">
         <normaloff>.</normaloff>.</iconset>
@@ -1281,12 +1375,30 @@
       <attribute name="title">
        <string>SATA</string>
       </attribute>
+      <attribute name="toolTip">
+       <string>SATA settings</string>
+      </attribute>
+      <attribute name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SATA settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </attribute>
       <layout class="QFormLayout" name="sata_layout">
        <property name="fieldGrowthPolicy">
         <enum>QFormLayout::ExpandingFieldsGrow</enum>
        </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="hba_port_label">
@@ -1297,7 +1409,7 @@
           <string>HBA port</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HBA port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HBA port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>HBA port</string>
@@ -1313,7 +1425,7 @@
           <string>Port multiplier port</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Port multiplier port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Port multiplier port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Port multiplier port</string>
@@ -1329,7 +1441,7 @@
           <string>LUN</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;LUN&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;LUN.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>LUN</string>
@@ -1351,7 +1463,7 @@
           <string>HBA port</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HBA port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HBA port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="maximum">
           <number>65534</number>
@@ -1373,7 +1485,7 @@
           <string>Port multiplier port</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Port multiplier port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Port multiplier port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="maximum">
           <number>65535</number>
@@ -1395,7 +1507,7 @@
           <string>LUN</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;LUN&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;LUN.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="maximum">
           <number>65535</number>
@@ -1405,15 +1517,6 @@
       </layout>
      </widget>
      <widget class="QWidget" name="hd_tab">
-      <property name="toolTip">
-       <string>Disk tab</string>
-      </property>
-      <property name="statusTip">
-       <string>Disk tab</string>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disk tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
       <attribute name="icon">
        <iconset theme="harddrive">
         <normaloff>.</normaloff>.</iconset>
@@ -1421,12 +1524,30 @@
       <attribute name="title">
        <string>HD</string>
       </attribute>
+      <attribute name="toolTip">
+       <string>HID settings</string>
+      </attribute>
+      <attribute name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </attribute>
       <layout class="QFormLayout" name="hd_layout">
        <property name="fieldGrowthPolicy">
         <enum>QFormLayout::ExpandingFieldsGrow</enum>
        </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="disk_label">
@@ -1437,7 +1558,7 @@
           <string>Disk</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disk&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Disk</string>
@@ -1516,7 +1637,7 @@
           <string>Partition signature</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition signature&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition signature.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Signature</string>
@@ -1558,6 +1679,11 @@
          </item>
          <item>
           <widget class="QLineEdit" name="signature_text">
+           <property name="font">
+            <font>
+             <family>Monospace</family>
+            </font>
+           </property>
            <property name="toolTip">
             <string>Partition signature</string>
            </property>
@@ -1586,7 +1712,7 @@
           <string>Partition number</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition number&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Partition</string>
@@ -1608,7 +1734,7 @@
           <string>Partition number</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition number&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="minimum">
           <number>1</number>
@@ -1627,7 +1753,7 @@
           <string>Partition start offset</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition start offset&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition start offset.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Start</string>
@@ -1636,6 +1762,11 @@
        </item>
        <item row="3" column="1">
         <widget class="QLineEdit" name="start_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Partition start offset</string>
          </property>
@@ -1662,7 +1793,7 @@
           <string>Partition size</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition size&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition size.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Size</string>
@@ -1671,6 +1802,11 @@
        </item>
        <item row="4" column="1">
         <widget class="QLineEdit" name="size_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Partition size</string>
          </property>
@@ -1691,15 +1827,6 @@
       </layout>
      </widget>
      <widget class="QWidget" name="file_tab">
-      <property name="toolTip">
-       <string>File tab</string>
-      </property>
-      <property name="statusTip">
-       <string>File tab</string>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
       <attribute name="icon">
        <iconset theme="document">
         <normaloff>.</normaloff>.</iconset>
@@ -1707,12 +1834,30 @@
       <attribute name="title">
        <string>File</string>
       </attribute>
+      <attribute name="toolTip">
+       <string>File settings</string>
+      </attribute>
+      <attribute name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </attribute>
       <layout class="QFormLayout" name="file_layout">
        <property name="fieldGrowthPolicy">
         <enum>QFormLayout::ExpandingFieldsGrow</enum>
        </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="filename_label">
@@ -1723,7 +1868,7 @@
           <string>File path</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File path&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>File name</string>
@@ -1739,28 +1884,25 @@
           <string>File path</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File path to boot executable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
       </layout>
      </widget>
      <widget class="QWidget" name="firmware_file_tab">
-      <property name="toolTip">
-       <string>Firmware file tab</string>
-      </property>
-      <property name="statusTip">
-       <string>Firmware file tab</string>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
       <attribute name="icon">
        <iconset theme="document">
         <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>Firmware file</string>
+      </attribute>
+      <attribute name="toolTip">
+       <string>Firmware file settings</string>
+      </attribute>
+      <attribute name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </attribute>
       <layout class="QFormLayout" name="firmware_file_layout">
        <property name="fieldGrowthPolicy">
@@ -1769,16 +1911,28 @@
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item row="0" column="0">
         <widget class="QLabel" name="firmware_file_label">
          <property name="toolTip">
-          <string>Firmware file name</string>
+          <string>Firmware file UUID</string>
          </property>
          <property name="statusTip">
-          <string>Firmware file name</string>
+          <string>Firmware file UUID</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file name&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file UUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Name</string>
@@ -1787,14 +1941,19 @@
        </item>
        <item row="0" column="1">
         <widget class="QLineEdit" name="firmware_file_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
          <property name="toolTip">
-          <string>Name</string>
+          <string>Firmware file UUID</string>
          </property>
          <property name="statusTip">
-          <string>Name</string>
+          <string>Firmware file UUID</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file UUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
           <string>&lt;HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_</string>
@@ -1804,21 +1963,18 @@
       </layout>
      </widget>
      <widget class="QWidget" name="firmware_volume_tab">
-      <property name="toolTip">
-       <string>Firmware volume tab</string>
-      </property>
-      <property name="statusTip">
-       <string>Firmware volume tab</string>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware volume tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
       <attribute name="icon">
        <iconset theme="document">
         <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>Firmware volume</string>
+      </attribute>
+      <attribute name="toolTip">
+       <string>Firmware volume settings</string>
+      </attribute>
+      <attribute name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware volume settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </attribute>
       <layout class="QFormLayout" name="firmware_volume_layout">
        <property name="fieldGrowthPolicy">
@@ -1827,16 +1983,28 @@
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item row="0" column="0">
         <widget class="QLabel" name="firmware_volume_label">
          <property name="toolTip">
-          <string>Firmware volume name</string>
+          <string>Firmware volume UUID</string>
          </property>
          <property name="statusTip">
-          <string>Firmware volume name</string>
+          <string>Firmware volume UUID</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware volume name&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware volume UUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Name</string>
@@ -1845,14 +2013,19 @@
        </item>
        <item row="0" column="1">
         <widget class="QLineEdit" name="firmware_volume_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
          <property name="toolTip">
-          <string>Name</string>
+          <string>Firmware volume UUID</string>
          </property>
          <property name="statusTip">
-          <string>Name</string>
+          <string>Firmware volume UUID</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware volume name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware volume UUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
           <string>&lt;HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_</string>
@@ -1862,15 +2035,6 @@
       </layout>
      </widget>
      <widget class="QWidget" name="bios_boot_specification_tab">
-      <property name="toolTip">
-       <string>BIOS Boot Specification tab</string>
-      </property>
-      <property name="statusTip">
-       <string>BIOS Boot Specification tab</string>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;BIOS Boot Specification tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
       <attribute name="icon">
        <iconset theme="computer">
         <normaloff>.</normaloff>.</iconset>
@@ -1878,12 +2042,30 @@
       <attribute name="title">
        <string>BIOS Boot Specification</string>
       </attribute>
+      <attribute name="toolTip">
+       <string>BIOS Boot Specification settings</string>
+      </attribute>
+      <attribute name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;BIOS Boot Specification settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </attribute>
       <layout class="QFormLayout" name="bios_boot_specification_layout">
        <property name="fieldGrowthPolicy">
         <enum>QFormLayout::ExpandingFieldsGrow</enum>
        </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="device_type_label">
@@ -1894,7 +2076,7 @@
           <string>Device type</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Device type</string>
@@ -1903,6 +2085,11 @@
        </item>
        <item row="0" column="1">
         <widget class="QLineEdit" name="device_type_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Device type</string>
          </property>
@@ -1910,7 +2097,7 @@
           <string>Device type</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
           <string notr="true">&lt;\0\xHH;_</string>
@@ -1929,7 +2116,7 @@
           <string>Status flag</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Status flag&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Status flag.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Status flag</string>
@@ -1938,6 +2125,11 @@
        </item>
        <item row="1" column="1">
         <widget class="QLineEdit" name="status_flag_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Status flag</string>
          </property>
@@ -1945,7 +2137,7 @@
           <string>Status flag</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Status flag&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Status flag.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
           <string notr="true">&lt;\0\xHH;_</string>
@@ -1964,7 +2156,7 @@
           <string>Description</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Description&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Description</string>
@@ -1980,22 +2172,13 @@
           <string>Description</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Description&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
       </layout>
      </widget>
      <widget class="QWidget" name="end_tab">
-      <property name="toolTip">
-       <string>End of hardware tab</string>
-      </property>
-      <property name="statusTip">
-       <string>End of hardware tab</string>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;End of hardware tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
       <attribute name="icon">
        <iconset theme="stop">
         <normaloff>.</normaloff>.</iconset>
@@ -2003,12 +2186,30 @@
       <attribute name="title">
        <string>End</string>
       </attribute>
+      <attribute name="toolTip">
+       <string>End of device path marker</string>
+      </attribute>
+      <attribute name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;End of device path marker.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </attribute>
       <layout class="QFormLayout" name="end_layout">
        <property name="fieldGrowthPolicy">
         <enum>QFormLayout::ExpandingFieldsGrow</enum>
        </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="end_subtype_label">
@@ -2019,7 +2220,7 @@
           <string>Sub-Type</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sub-Type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sub-Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Sub-Type</string>
@@ -2041,7 +2242,7 @@
           <string>Sub-Type</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sub-Type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sub-Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <item>
           <property name="text">
@@ -2058,15 +2259,6 @@
       </layout>
      </widget>
      <widget class="QWidget" name="unknown_tab">
-      <property name="toolTip">
-       <string>Unknown device path node tab</string>
-      </property>
-      <property name="statusTip">
-       <string>Unknown device path node tab</string>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown device path node tab&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
       <attribute name="icon">
        <iconset theme="system-search">
         <normaloff>.</normaloff>.</iconset>
@@ -2074,12 +2266,30 @@
       <attribute name="title">
        <string>Unknown</string>
       </attribute>
+      <attribute name="toolTip">
+       <string>Unknown file path specifier settings</string>
+      </attribute>
+      <attribute name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown file path specifier settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </attribute>
       <layout class="QFormLayout" name="unknown_layout">
        <property name="fieldGrowthPolicy">
         <enum>QFormLayout::ExpandingFieldsGrow</enum>
        </property>
        <property name="labelAlignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="unknown_type_label">
@@ -2090,7 +2300,7 @@
           <string>Unknown Type</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown Type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Type</string>
@@ -2106,7 +2316,7 @@
           <string>Unknown Sub-Type</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown Sub-Type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown Sub-Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Sub-Type</string>
@@ -2122,7 +2332,7 @@
           <string>Unknown data</string>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Data</string>
@@ -2131,6 +2341,20 @@
        </item>
        <item row="0" column="1">
         <widget class="QLineEdit" name="unknown_type_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Unknown Type</string>
+         </property>
+         <property name="statusTip">
+          <string>Unknown Type</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
          <property name="inputMask">
           <string notr="true">&lt;\0\xHH;_</string>
          </property>
@@ -2141,6 +2365,20 @@
        </item>
        <item row="1" column="1">
         <widget class="QLineEdit" name="unknown_subtype_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Unknown Sub-Type</string>
+         </property>
+         <property name="statusTip">
+          <string>Unknown Sub-Type</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown Sub-Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
          <property name="inputMask">
           <string notr="true">&lt;\0\xHH;_</string>
          </property>
@@ -2150,7 +2388,10 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <layout class="QVBoxLayout" name="unknown_data_layout">
+        <layout class="QVBoxLayout" name="unknown_data_layout" stretch="0,1">
+         <property name="spacing">
+          <number>3</number>
+         </property>
          <item>
           <widget class="QComboBox" name="unknown_data_format_combo">
            <property name="toolTip">
@@ -2160,7 +2401,7 @@
             <string>Data format</string>
            </property>
            <property name="whatsThis">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <item>
             <property name="text">
@@ -2186,6 +2427,11 @@
          </item>
          <item>
           <widget class="QPlainTextEdit" name="unknown_data_text">
+           <property name="font">
+            <font>
+             <family>Monospace</family>
+            </font>
+           </property>
            <property name="toolTip">
             <string>Data</string>
            </property>
@@ -2193,7 +2439,7 @@
             <string>Data</string>
            </property>
            <property name="whatsThis">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
@@ -2205,23 +2451,11 @@
    </item>
    <item>
     <widget class="QDialogButtonBox" name="button_box">
-     <property name="toolTip">
-      <string>Action buttons</string>
-     </property>
-     <property name="statusTip">
-      <string>Action buttons</string>
-     </property>
-     <property name="whatsThis">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Action buttons&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
      <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-     </property>
-     <property name="centerButtons">
-      <bool>false</bool>
      </property>
     </widget>
    </item>
@@ -2232,7 +2466,7 @@
   <connection>
    <sender>button_box</sender>
    <signal>accepted()</signal>
-   <receiver>DevicePathDialog</receiver>
+   <receiver>FilePathDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -2248,7 +2482,7 @@
   <connection>
    <sender>button_box</sender>
    <signal>rejected()</signal>
-   <receiver>DevicePathDialog</receiver>
+   <receiver>FilePathDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -2264,7 +2498,7 @@
   <connection>
    <sender>disk_refresh</sender>
    <signal>clicked()</signal>
-   <receiver>DevicePathDialog</receiver>
+   <receiver>FilePathDialog</receiver>
    <slot>resetDiskCombo()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -2280,7 +2514,7 @@
   <connection>
    <sender>disk_combo</sender>
    <signal>currentIndexChanged(int)</signal>
-   <receiver>DevicePathDialog</receiver>
+   <receiver>FilePathDialog</receiver>
    <slot>diskChoiceChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -2296,7 +2530,7 @@
   <connection>
    <sender>signature_type_combo</sender>
    <signal>currentIndexChanged(int)</signal>
-   <receiver>DevicePathDialog</receiver>
+   <receiver>FilePathDialog</receiver>
    <slot>signatureTypeChoiceChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -2312,7 +2546,7 @@
   <connection>
    <sender>vendor_data_format_combo</sender>
    <signal>currentIndexChanged(int)</signal>
-   <receiver>DevicePathDialog</receiver>
+   <receiver>FilePathDialog</receiver>
    <slot>vendorDataFormatChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -2328,7 +2562,7 @@
   <connection>
    <sender>unknown_data_format_combo</sender>
    <signal>currentIndexChanged(int)</signal>
-   <receiver>DevicePathDialog</receiver>
+   <receiver>FilePathDialog</receiver>
    <slot>unknownDataFormatChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">

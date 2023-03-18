@@ -6,8 +6,8 @@
 #include <QJsonObject>
 #include <QTextCodec>
 
-std::unique_ptr<std::unordered_map<QString, std::function<std::optional<Device_path::ANY>(const QJsonObject &)>>> Device_path::JSON_readers__instance;
-std::unique_ptr<std::unordered_map<uint16_t, std::function<std::optional<EFIBoot::Device_path::ANY>(const void *, size_t)>>> EFIBoot::Device_path::deserializers__instance;
+std::unique_ptr<std::unordered_map<QString, std::function<std::optional<File_path::ANY>(const QJsonObject &)>>> File_path::JSON_readers__instance;
+std::unique_ptr<std::unordered_map<uint16_t, std::function<std::optional<EFIBoot::File_path::ANY>(const void *, size_t)>>> EFIBoot::File_path::deserializers__instance;
 
 #define check_obj()                                      \
     if(obj["type"] != TYPE || obj["subtype"] != SUBTYPE) \
@@ -49,10 +49,10 @@ auto BootEntry::fromEFIBootLoadOption(
 
     value.attributes = load_option.attributes;
 
-    for(const auto &device_path: load_option.file_path)
-        value.file_path.push_back(std::visit([](const auto &path) -> Device_path::ANY
+    for(const auto &file_path: load_option.device_path)
+        value.device_path.push_back(std::visit([](const auto &path) -> File_path::ANY
             { return path; },
-            device_path));
+            file_path));
 
     return value;
 }
@@ -68,10 +68,10 @@ auto BootEntry::toEFIBootLoadOption() const -> EFIBoot::Load_option
     }
 
     load_option.attributes = attributes;
-    for(const auto &device_path: file_path)
-        load_option.file_path.push_back(std::visit([](const auto &obj) -> EFIBoot::Device_path::ANY
-            { return obj.toEFIBootDevicePath(); },
-            device_path));
+    for(const auto &file_path: device_path)
+        load_option.device_path.push_back(std::visit([](const auto &obj) -> EFIBoot::File_path::ANY
+            { return obj.toEFIBootFilePath(); },
+            file_path));
 
     return load_option;
 }
@@ -85,16 +85,16 @@ auto BootEntry::fromJSON(const QJsonObject &obj) -> std::optional<BootEntry>
     try_read_3(attributes, Double, Int);
     try_read_3(efi_attributes, Double, Int);
     check_type(file_path, Array);
-    const auto file_path = obj["file_path"].toArray();
-    for(const auto device_path: file_path)
+    const auto device_path = obj["file_path"].toArray();
+    for(const auto file_path: device_path)
     {
-        auto dp = device_path.toObject();
-        auto path = get_default(Device_path::JSON_readers(), QString("%1/%2").arg(dp["type"].toString(), dp["subtype"].toString()), [](const auto &)
+        auto dp = file_path.toObject();
+        auto path = get_default(File_path::JSON_readers(), QString("%1/%2").arg(dp["type"].toString(), dp["subtype"].toString()), [](const auto &)
             { return std::nullopt; })(dp);
         if(!path)
             return std::nullopt;
 
-        value.file_path.push_back(*path);
+        value.device_path.push_back(*path);
     }
 
     return {value};
@@ -109,35 +109,35 @@ auto BootEntry::toJSON() const -> QJsonObject
     load_option["attributes"] = static_cast<int>(attributes);
     load_option["efi_attributes"] = static_cast<int>(efi_attributes);
     QJsonArray file_path_json;
-    for(const auto &device_path: file_path)
+    for(const auto &file_path: device_path)
         file_path_json.push_back(std::visit([](const auto &obj) -> QJsonObject
             { return obj.toJSON(); },
-            device_path));
+            file_path));
 
     load_option["file_path"] = file_path_json;
     return load_option;
 }
 
-auto BootEntry::formatFilePath(bool refresh) const -> QString
+auto BootEntry::formatDevicePath(bool refresh) const -> QString
 {
-    if(file_path.empty())
+    if(device_path.empty())
         return {};
 
-    if(file_path_str.size() && !refresh)
-        return file_path_str;
+    if(device_path_str.size() && !refresh)
+        return device_path_str;
 
-    file_path_str.clear();
-    for(const auto &device_path: file_path)
+    device_path_str.clear();
+    for(const auto &file_path: device_path)
     {
-        if(!file_path_str.isEmpty())
-            file_path_str += "/";
+        if(!device_path_str.isEmpty())
+            device_path_str += "/";
 
-        file_path_str += std::visit([refresh](const auto &obj)
+        device_path_str += std::visit([refresh](const auto &obj)
             { return obj.toString(refresh); },
-            device_path);
+            file_path);
     }
 
-    return file_path_str;
+    return device_path_str;
 }
 
 auto BootEntry::changeOptionalDataFormat(BootEntry::OptionalDataFormat format) -> bool
@@ -215,21 +215,21 @@ auto BootEntry::getRawOptionalData() const -> QByteArray
     return bytes;
 }
 
-Device_path::PCI::PCI(const EFIBoot::Device_path::PCI &pci)
+File_path::PCI::PCI(const EFIBoot::File_path::PCI &pci)
     : function{pci.function}
     , device{pci.device}
 {
 }
 
-auto Device_path::PCI::toEFIBootDevicePath() const -> EFIBoot::Device_path::PCI
+auto File_path::PCI::toEFIBootFilePath() const -> EFIBoot::File_path::PCI
 {
-    EFIBoot::Device_path::PCI value = {};
+    EFIBoot::File_path::PCI value = {};
     value.function = function;
     value.device = device;
     return value;
 }
 
-auto Device_path::PCI::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::PCI>
+auto File_path::PCI::fromJSON(const QJsonObject &obj) -> std::optional<File_path::PCI>
 {
     PCI value;
     check_obj();
@@ -238,7 +238,7 @@ auto Device_path::PCI::fromJSON(const QJsonObject &obj) -> std::optional<Device_
     return {value};
 }
 
-auto Device_path::PCI::toJSON() const -> QJsonObject
+auto File_path::PCI::toJSON() const -> QJsonObject
 {
     QJsonObject value;
     value["type"] = TYPE;
@@ -248,29 +248,29 @@ auto Device_path::PCI::toJSON() const -> QJsonObject
     return value;
 }
 
-auto Device_path::PCI::toString(bool refresh) const -> QString
+auto File_path::PCI::toString(bool refresh) const -> QString
 {
     if(string.size() && !refresh)
         return string;
 
-    return string = QString("Pci(%1, %2)").arg(device).arg(function);
+    return string = QString("Pci(%1,%2)").arg(device).arg(function);
 }
 
-Device_path::HID::HID(const EFIBoot::Device_path::HID &_hid)
+File_path::HID::HID(const EFIBoot::File_path::HID &_hid)
     : hid{_hid.hid}
     , uid{_hid.uid}
 {
 }
 
-auto Device_path::HID::toEFIBootDevicePath() const -> EFIBoot::Device_path::HID
+auto File_path::HID::toEFIBootFilePath() const -> EFIBoot::File_path::HID
 {
-    EFIBoot::Device_path::HID value = {};
+    EFIBoot::File_path::HID value = {};
     value.hid = hid;
     value.uid = uid;
     return value;
 }
 
-auto Device_path::HID::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::HID>
+auto File_path::HID::fromJSON(const QJsonObject &obj) -> std::optional<File_path::HID>
 {
     HID value;
     check_obj();
@@ -279,7 +279,7 @@ auto Device_path::HID::fromJSON(const QJsonObject &obj) -> std::optional<Device_
     return {value};
 }
 
-auto Device_path::HID::toJSON() const -> QJsonObject
+auto File_path::HID::toJSON() const -> QJsonObject
 {
     QJsonObject value;
     value["type"] = TYPE;
@@ -289,15 +289,15 @@ auto Device_path::HID::toJSON() const -> QJsonObject
     return value;
 }
 
-auto Device_path::HID::toString(bool refresh) const -> QString
+auto File_path::HID::toString(bool refresh) const -> QString
 {
     if(string.size() && !refresh)
         return string;
 
-    return string = QString("Acpi(%1, %2)").arg(toHex(hid), toHex(uid));
+    return string = QString("Acpi(%1,%2)").arg(toHex(hid), toHex(uid));
 }
 
-Device_path::USB::USB(const EFIBoot::Device_path::USB &usb)
+File_path::USB::USB(const EFIBoot::File_path::USB &usb)
     : parent_port_number{usb.parent_port_number}
     , interface {
     usb.interface
@@ -305,15 +305,15 @@ Device_path::USB::USB(const EFIBoot::Device_path::USB &usb)
 {
 }
 
-auto Device_path::USB::toEFIBootDevicePath() const -> EFIBoot::Device_path::USB
+auto File_path::USB::toEFIBootFilePath() const -> EFIBoot::File_path::USB
 {
-    EFIBoot::Device_path::USB value = {};
+    EFIBoot::File_path::USB value = {};
     value.parent_port_number = parent_port_number;
     value.interface = interface;
     return value;
 }
 
-auto Device_path::USB::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::USB>
+auto File_path::USB::fromJSON(const QJsonObject &obj) -> std::optional<File_path::USB>
 {
     USB value;
     check_obj();
@@ -322,7 +322,7 @@ auto Device_path::USB::fromJSON(const QJsonObject &obj) -> std::optional<Device_
     return {value};
 }
 
-auto Device_path::USB::toJSON() const -> QJsonObject
+auto File_path::USB::toJSON() const -> QJsonObject
 {
     QJsonObject value;
     value["type"] = TYPE;
@@ -332,19 +332,19 @@ auto Device_path::USB::toJSON() const -> QJsonObject
     return value;
 }
 
-auto Device_path::USB::toString(bool refresh) const -> QString
+auto File_path::USB::toString(bool refresh) const -> QString
 {
     if(string.size() && !refresh)
         return string;
 
-    return string = QString("USB(%1, %2)").arg(parent_port_number).arg(interface);
+    return string = QString("USB(%1,%2)").arg(parent_port_number).arg(interface);
 }
 
-static_assert(sizeof(Device_path::Vendor::guid) == sizeof(EFIBoot::Device_path::HWVendor::guid));
-static_assert(sizeof(Device_path::Vendor::guid) == sizeof(EFIBoot::Device_path::MSGVendor::guid));
-static_assert(sizeof(Device_path::Vendor::guid) == sizeof(EFIBoot::Device_path::MEDIAVendor::guid));
+static_assert(sizeof(File_path::Vendor::guid) == sizeof(EFIBoot::File_path::HWVendor::guid));
+static_assert(sizeof(File_path::Vendor::guid) == sizeof(EFIBoot::File_path::MSGVendor::guid));
+static_assert(sizeof(File_path::Vendor::guid) == sizeof(EFIBoot::File_path::MEDIAVendor::guid));
 
-Device_path::Vendor::Vendor(const EFIBoot::Device_path::HWVendor &vendor)
+File_path::Vendor::Vendor(const EFIBoot::File_path::HWVendor &vendor)
     : _type{vendor.TYPE}
     , data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
 {
@@ -353,7 +353,7 @@ Device_path::Vendor::Vendor(const EFIBoot::Device_path::HWVendor &vendor)
     memcpy(reinterpret_cast<void *>(&guid), &vendor.guid, sizeof(vendor.guid));
 }
 
-Device_path::Vendor::Vendor(const EFIBoot::Device_path::MSGVendor &vendor)
+File_path::Vendor::Vendor(const EFIBoot::File_path::MSGVendor &vendor)
     : _type{vendor.TYPE}
     , data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
 {
@@ -362,7 +362,7 @@ Device_path::Vendor::Vendor(const EFIBoot::Device_path::MSGVendor &vendor)
     memcpy(reinterpret_cast<void *>(&guid), &vendor.guid, sizeof(vendor.guid));
 }
 
-Device_path::Vendor::Vendor(const EFIBoot::Device_path::MEDIAVendor &vendor)
+File_path::Vendor::Vendor(const EFIBoot::File_path::MEDIAVendor &vendor)
     : _type{vendor.TYPE}
     , data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
 {
@@ -371,13 +371,13 @@ Device_path::Vendor::Vendor(const EFIBoot::Device_path::MEDIAVendor &vendor)
     memcpy(reinterpret_cast<void *>(&guid), &vendor.guid, sizeof(vendor.guid));
 }
 
-auto Device_path::Vendor::toEFIBootDevicePath() const -> EFIBoot::Device_path::ANY
+auto File_path::Vendor::toEFIBootFilePath() const -> EFIBoot::File_path::ANY
 {
     switch(_type)
     {
-    case EFIBoot::Device_path::HWVendor::TYPE:
+    case EFIBoot::File_path::HWVendor::TYPE:
     {
-        EFIBoot::Device_path::HWVendor value = {};
+        EFIBoot::File_path::HWVendor value = {};
         static_assert(sizeof(guid) == sizeof(value.guid));
         memcpy(value.guid.data(), &guid, sizeof(guid));
         value.data.resize(static_cast<size_t>(data.size()));
@@ -385,9 +385,9 @@ auto Device_path::Vendor::toEFIBootDevicePath() const -> EFIBoot::Device_path::A
         return value;
     }
 
-    case EFIBoot::Device_path::MSGVendor::TYPE:
+    case EFIBoot::File_path::MSGVendor::TYPE:
     {
-        EFIBoot::Device_path::MSGVendor value = {};
+        EFIBoot::File_path::MSGVendor value = {};
         static_assert(sizeof(guid) == sizeof(value.guid));
         memcpy(value.guid.data(), &guid, sizeof(guid));
         value.data.resize(static_cast<size_t>(data.size()));
@@ -395,9 +395,9 @@ auto Device_path::Vendor::toEFIBootDevicePath() const -> EFIBoot::Device_path::A
         return value;
     }
 
-    case EFIBoot::Device_path::MEDIAVendor::TYPE:
+    case EFIBoot::File_path::MEDIAVendor::TYPE:
     {
-        EFIBoot::Device_path::MEDIAVendor value = {};
+        EFIBoot::File_path::MEDIAVendor value = {};
         static_assert(sizeof(guid) == sizeof(value.guid));
         memcpy(value.guid.data(), &guid, sizeof(guid));
         value.data.resize(static_cast<size_t>(data.size()));
@@ -409,7 +409,7 @@ auto Device_path::Vendor::toEFIBootDevicePath() const -> EFIBoot::Device_path::A
     return {};
 }
 
-auto Device_path::Vendor::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::Vendor>
+auto File_path::Vendor::fromJSON(const QJsonObject &obj) -> std::optional<File_path::Vendor>
 {
     Vendor value;
     check_obj();
@@ -421,7 +421,7 @@ auto Device_path::Vendor::fromJSON(const QJsonObject &obj) -> std::optional<Devi
     return {value};
 }
 
-auto Device_path::Vendor::toJSON() const -> QJsonObject
+auto File_path::Vendor::toJSON() const -> QJsonObject
 {
     QJsonObject value;
     value["type"] = TYPE;
@@ -432,7 +432,7 @@ auto Device_path::Vendor::toJSON() const -> QJsonObject
     return value;
 }
 
-auto Device_path::Vendor::toString(bool refresh) const -> QString
+auto File_path::Vendor::toString(bool refresh) const -> QString
 {
     if(string.size() && !refresh)
         return string;
@@ -440,38 +440,38 @@ auto Device_path::Vendor::toString(bool refresh) const -> QString
     const char *type_string = "Unk";
     switch(_type)
     {
-    case EFIBoot::Device_path::HWVendor::TYPE:
+    case EFIBoot::File_path::HWVendor::TYPE:
         type_string = "Hw";
         break;
 
-    case EFIBoot::Device_path::MSGVendor::TYPE:
+    case EFIBoot::File_path::MSGVendor::TYPE:
         type_string = "Msg";
         break;
 
-    case EFIBoot::Device_path::MEDIAVendor::TYPE:
+    case EFIBoot::File_path::MEDIAVendor::TYPE:
         type_string = "Media";
         break;
     }
 
-    return string = QString("Ven%1(%2, [%3B])").arg(type_string, guid.toString(QUuid::WithoutBraces)).arg(data.size());
+    return string = QString("Ven%1(%2,[%3B])").arg(type_string, guid.toString(QUuid::WithoutBraces)).arg(data.size());
 }
 
-Device_path::MACAddress::MACAddress(const EFIBoot::Device_path::MAC_address &mac_address)
+File_path::MACAddress::MACAddress(const EFIBoot::File_path::MAC_address &mac_address)
     : address{QByteArray::fromRawData(reinterpret_cast<const char *>(mac_address.address.data()), static_cast<int>(mac_address.address.size())).toHex()}
     , if_type{mac_address.if_type}
 {
 }
 
-auto Device_path::MACAddress::toEFIBootDevicePath() const -> EFIBoot::Device_path::MAC_address
+auto File_path::MACAddress::toEFIBootFilePath() const -> EFIBoot::File_path::MAC_address
 {
-    EFIBoot::Device_path::MAC_address value = {};
+    EFIBoot::File_path::MAC_address value = {};
     auto address_bytes = QByteArray::fromHex(address.toUtf8());
     memcpy(value.address.data(), address_bytes.data(), value.address.size());
     value.if_type = if_type;
     return value;
 }
 
-auto Device_path::MACAddress::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::MACAddress>
+auto File_path::MACAddress::fromJSON(const QJsonObject &obj) -> std::optional<File_path::MACAddress>
 {
     MACAddress value;
     check_obj();
@@ -480,7 +480,7 @@ auto Device_path::MACAddress::fromJSON(const QJsonObject &obj) -> std::optional<
     return {value};
 }
 
-auto Device_path::MACAddress::toJSON() const -> QJsonObject
+auto File_path::MACAddress::toJSON() const -> QJsonObject
 {
     QJsonObject value;
     value["type"] = TYPE;
@@ -490,34 +490,34 @@ auto Device_path::MACAddress::toJSON() const -> QJsonObject
     return value;
 }
 
-auto Device_path::MACAddress::toString(bool refresh) const -> QString
+auto File_path::MACAddress::toString(bool refresh) const -> QString
 {
     if(string.size() && !refresh)
         return string;
 
-    return string = QString("MAC(%1, %2)").arg(address.left(12)).arg(if_type);
+    return string = QString("MAC(%1,%2)").arg(address.left(12)).arg(if_type);
 }
 
-static_assert(sizeof(Device_path::IPv4::local_ip_address.toIPv4Address()) == sizeof(EFIBoot::Device_path::IPv4::local_ip_address));
-static_assert(sizeof(Device_path::IPv4::remote_ip_address.toIPv4Address()) == sizeof(EFIBoot::Device_path::IPv4::remote_ip_address));
-static_assert(sizeof(Device_path::IPv4::gateway_ip_address.toIPv4Address()) == sizeof(EFIBoot::Device_path::IPv4::gateway_ip_address));
-static_assert(sizeof(Device_path::IPv4::subnet_mask.toIPv4Address()) == sizeof(EFIBoot::Device_path::IPv4::subnet_mask));
+static_assert(sizeof(File_path::IPv4::local_ip_address.toIPv4Address()) == sizeof(EFIBoot::File_path::IPv4::local_ip_address));
+static_assert(sizeof(File_path::IPv4::remote_ip_address.toIPv4Address()) == sizeof(EFIBoot::File_path::IPv4::remote_ip_address));
+static_assert(sizeof(File_path::IPv4::gateway_ip_address.toIPv4Address()) == sizeof(EFIBoot::File_path::IPv4::gateway_ip_address));
+static_assert(sizeof(File_path::IPv4::subnet_mask.toIPv4Address()) == sizeof(EFIBoot::File_path::IPv4::subnet_mask));
 
-Device_path::IPv4::IPv4(const EFIBoot::Device_path::IPv4 &ipv4)
-    : local_ip_address{*reinterpret_cast<const quint32 *>(ipv4.local_ip_address.data())}
-    , remote_ip_address{*reinterpret_cast<const quint32 *>(ipv4.remote_ip_address.data())}
+File_path::IPv4::IPv4(const EFIBoot::File_path::IPv4 &ipv4)
+    : local_ip_address{*reinterpret_cast<const uint32_t *>(ipv4.local_ip_address.data())}
+    , remote_ip_address{*reinterpret_cast<const uint32_t *>(ipv4.remote_ip_address.data())}
     , local_port{ipv4.local_port}
     , remote_port{ipv4.remote_port}
     , protocol{ipv4.protocol}
     , static_ip_address{ipv4.static_ip_address}
-    , gateway_ip_address{*reinterpret_cast<const quint32 *>(ipv4.gateway_ip_address.data())}
-    , subnet_mask{*reinterpret_cast<const quint32 *>(ipv4.subnet_mask.data())}
+    , gateway_ip_address{*reinterpret_cast<const uint32_t *>(ipv4.gateway_ip_address.data())}
+    , subnet_mask{*reinterpret_cast<const uint32_t *>(ipv4.subnet_mask.data())}
 {
 }
 
-auto Device_path::IPv4::toEFIBootDevicePath() const -> EFIBoot::Device_path::IPv4
+auto File_path::IPv4::toEFIBootFilePath() const -> EFIBoot::File_path::IPv4
 {
-    EFIBoot::Device_path::IPv4 value = {};
+    EFIBoot::File_path::IPv4 value = {};
     auto ip_address = local_ip_address.toIPv4Address();
     static_assert(sizeof(ip_address) == sizeof(value.local_ip_address));
     memcpy(value.local_ip_address.data(), &ip_address, sizeof(ip_address));
@@ -537,7 +537,7 @@ auto Device_path::IPv4::toEFIBootDevicePath() const -> EFIBoot::Device_path::IPv
     return value;
 }
 
-auto Device_path::IPv4::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::IPv4>
+auto File_path::IPv4::fromJSON(const QJsonObject &obj) -> std::optional<File_path::IPv4>
 {
     IPv4 value;
     check_obj();
@@ -552,7 +552,7 @@ auto Device_path::IPv4::fromJSON(const QJsonObject &obj) -> std::optional<Device
     return {value};
 }
 
-auto Device_path::IPv4::toJSON() const -> QJsonObject
+auto File_path::IPv4::toJSON() const -> QJsonObject
 {
     QJsonObject value;
     value["type"] = TYPE;
@@ -568,19 +568,19 @@ auto Device_path::IPv4::toJSON() const -> QJsonObject
     return value;
 }
 
-auto Device_path::IPv4::toString(bool refresh) const -> QString
+auto File_path::IPv4::toString(bool refresh) const -> QString
 {
     if(string.size() && !refresh)
         return string;
 
-    return string = QString("IPv4(%1:%2, %3, %4, %5:%6, %7, %8)").arg(remote_ip_address.toString()).arg(remote_port).arg(protocol).arg(static_ip_address ? "Static" : "DHCP", local_ip_address.toString()).arg(local_port).arg(gateway_ip_address.toString(), subnet_mask.toString());
+    return string = QString("IPv4(%1:%2,%3,%4,%5:%6,%7,%8)").arg(remote_ip_address.toString()).arg(remote_port).arg(protocol).arg(static_ip_address ? "Static" : "DHCP", local_ip_address.toString()).arg(local_port).arg(gateway_ip_address.toString(), subnet_mask.toString());
 }
 
-static_assert(sizeof(Device_path::IPv6::local_ip_address.toIPv6Address()) == sizeof(EFIBoot::Device_path::IPv6::local_ip_address));
-static_assert(sizeof(Device_path::IPv6::remote_ip_address.toIPv6Address()) == sizeof(EFIBoot::Device_path::IPv6::remote_ip_address));
-static_assert(sizeof(Device_path::IPv6::gateway_ip_address.toIPv6Address()) == sizeof(EFIBoot::Device_path::IPv6::gateway_ip_address));
+static_assert(sizeof(File_path::IPv6::local_ip_address.toIPv6Address()) == sizeof(EFIBoot::File_path::IPv6::local_ip_address));
+static_assert(sizeof(File_path::IPv6::remote_ip_address.toIPv6Address()) == sizeof(EFIBoot::File_path::IPv6::remote_ip_address));
+static_assert(sizeof(File_path::IPv6::gateway_ip_address.toIPv6Address()) == sizeof(EFIBoot::File_path::IPv6::gateway_ip_address));
 
-Device_path::IPv6::IPv6(const EFIBoot::Device_path::IPv6 &ipv6)
+File_path::IPv6::IPv6(const EFIBoot::File_path::IPv6 &ipv6)
     : local_ip_address{ipv6.local_ip_address.data()}
     , remote_ip_address{ipv6.remote_ip_address.data()}
     , local_port{ipv6.local_port}
@@ -592,9 +592,9 @@ Device_path::IPv6::IPv6(const EFIBoot::Device_path::IPv6 &ipv6)
 {
 }
 
-auto Device_path::IPv6::toEFIBootDevicePath() const -> EFIBoot::Device_path::IPv6
+auto File_path::IPv6::toEFIBootFilePath() const -> EFIBoot::File_path::IPv6
 {
-    EFIBoot::Device_path::IPv6 value = {};
+    EFIBoot::File_path::IPv6 value = {};
     auto ip_address = local_ip_address.toIPv6Address();
     static_assert(sizeof(ip_address) == sizeof(value.local_ip_address));
     memcpy(value.local_ip_address.data(), &ip_address, sizeof(ip_address));
@@ -612,7 +612,7 @@ auto Device_path::IPv6::toEFIBootDevicePath() const -> EFIBoot::Device_path::IPv
     return value;
 }
 
-auto Device_path::IPv6::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::IPv6>
+auto File_path::IPv6::fromJSON(const QJsonObject &obj) -> std::optional<File_path::IPv6>
 {
     IPv6 value;
     check_obj();
@@ -627,7 +627,7 @@ auto Device_path::IPv6::fromJSON(const QJsonObject &obj) -> std::optional<Device
     return {value};
 }
 
-auto Device_path::IPv6::toJSON() const -> QJsonObject
+auto File_path::IPv6::toJSON() const -> QJsonObject
 {
     QJsonObject value;
     value["type"] = TYPE;
@@ -643,7 +643,7 @@ auto Device_path::IPv6::toJSON() const -> QJsonObject
     return value;
 }
 
-auto Device_path::IPv6::toString(bool refresh) const -> QString
+auto File_path::IPv6::toString(bool refresh) const -> QString
 {
     if(string.size() && !refresh)
         return string;
@@ -665,26 +665,26 @@ auto Device_path::IPv6::toString(bool refresh) const -> QString
         break;
     }
 
-    return string = QString("IPv6(%1:%2, %3, %4, %5:%6, %7, %8)").arg(remote_ip_address.toString()).arg(remote_port).arg(protocol).arg(origin, local_ip_address.toString()).arg(local_port).arg(gateway_ip_address.toString()).arg(prefix_length);
+    return string = QString("IPv6(%1:%2,%3,%4,%5:%6,%7,%8)").arg(remote_ip_address.toString()).arg(remote_port).arg(protocol).arg(origin, local_ip_address.toString()).arg(local_port).arg(gateway_ip_address.toString()).arg(prefix_length);
 }
 
-Device_path::SATA::SATA(const EFIBoot::Device_path::SATA &sata)
+File_path::SATA::SATA(const EFIBoot::File_path::SATA &sata)
     : hba_port{sata.hba_port}
     , port_multiplier_port{sata.port_multiplier_port}
     , lun{sata.lun}
 {
 }
 
-auto Device_path::SATA::toEFIBootDevicePath() const -> EFIBoot::Device_path::SATA
+auto File_path::SATA::toEFIBootFilePath() const -> EFIBoot::File_path::SATA
 {
-    EFIBoot::Device_path::SATA value = {};
+    EFIBoot::File_path::SATA value = {};
     value.hba_port = hba_port;
     value.port_multiplier_port = port_multiplier_port;
     value.lun = lun;
     return value;
 }
 
-auto Device_path::SATA::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::SATA>
+auto File_path::SATA::fromJSON(const QJsonObject &obj) -> std::optional<File_path::SATA>
 {
     SATA value;
     check_obj();
@@ -694,7 +694,7 @@ auto Device_path::SATA::fromJSON(const QJsonObject &obj) -> std::optional<Device
     return {value};
 }
 
-auto Device_path::SATA::toJSON() const -> QJsonObject
+auto File_path::SATA::toJSON() const -> QJsonObject
 {
     QJsonObject value;
     value["type"] = TYPE;
@@ -705,17 +705,17 @@ auto Device_path::SATA::toJSON() const -> QJsonObject
     return value;
 }
 
-auto Device_path::SATA::toString(bool refresh) const -> QString
+auto File_path::SATA::toString(bool refresh) const -> QString
 {
     if(string.size() && !refresh)
         return string;
 
-    return string = QString("Sata(%1, %2, %3)").arg(hba_port).arg(port_multiplier_port).arg(lun);
+    return string = QString("Sata(%1,%2,%3)").arg(hba_port).arg(port_multiplier_port).arg(lun);
 }
 
-static_assert(sizeof(Device_path::HD::partition_signature) == sizeof(EFIBoot::Device_path::HD::partition_signature));
+static_assert(sizeof(File_path::HD::partition_signature) == sizeof(EFIBoot::File_path::HD::partition_signature));
 
-Device_path::HD::HD(const EFIBoot::Device_path::HD &hd)
+File_path::HD::HD(const EFIBoot::File_path::HD &hd)
     : partition_start{hd.partition_start}
     , partition_size{hd.partition_size}
     , partition_number{hd.partition_number}
@@ -726,9 +726,9 @@ Device_path::HD::HD(const EFIBoot::Device_path::HD &hd)
     memcpy(reinterpret_cast<void *>(&partition_signature), &hd.partition_signature, sizeof(hd.partition_signature));
 }
 
-auto Device_path::HD::toEFIBootDevicePath() const -> EFIBoot::Device_path::HD
+auto File_path::HD::toEFIBootFilePath() const -> EFIBoot::File_path::HD
 {
-    EFIBoot::Device_path::HD hd;
+    EFIBoot::File_path::HD hd;
     hd.partition_start = partition_start;
     hd.partition_size = partition_size;
     hd.partition_number = partition_number;
@@ -739,7 +739,7 @@ auto Device_path::HD::toEFIBootDevicePath() const -> EFIBoot::Device_path::HD
     return hd;
 }
 
-auto Device_path::HD::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::HD>
+auto File_path::HD::fromJSON(const QJsonObject &obj) -> std::optional<File_path::HD>
 {
     HD value;
     check_obj();
@@ -755,7 +755,7 @@ auto Device_path::HD::fromJSON(const QJsonObject &obj) -> std::optional<Device_p
     return {value};
 }
 
-auto Device_path::HD::toJSON() const -> QJsonObject
+auto File_path::HD::toJSON() const -> QJsonObject
 {
     QJsonObject hd;
     hd["type"] = TYPE;
@@ -769,21 +769,21 @@ auto Device_path::HD::toJSON() const -> QJsonObject
     return hd;
 }
 
-auto Device_path::HD::toString(bool refresh) const -> QString
+auto File_path::HD::toString(bool refresh) const -> QString
 {
     if(string.size() && !refresh)
         return string;
 
-    QString format = QString("HD(%1, %2, %3. %4, %5)").arg(partition_number);
+    QString format = QString("HD(%1,%2,%3,%4,%5)").arg(partition_number);
     switch(signature_type)
     {
-    case EFIBoot::Device_path::SIGNATURE::MBR:
+    case EFIBoot::File_path::SIGNATURE::MBR:
     {
         format = format.arg("MBR", toHex(partition_signature.data1));
         break;
     }
 
-    case EFIBoot::Device_path::SIGNATURE::GUID:
+    case EFIBoot::File_path::SIGNATURE::GUID:
         format = format.arg("GPT", partition_signature.toString(QUuid::WithoutBraces));
         break;
 
@@ -795,19 +795,19 @@ auto Device_path::HD::toString(bool refresh) const -> QString
     return string = format.arg(toHex(partition_start), toHex(partition_size));
 }
 
-Device_path::File::File(const EFIBoot::Device_path::File &file)
+File_path::File::File(const EFIBoot::File_path::File &file)
     : name{QString::fromStdU16String(file.name)}
 {
 }
 
-auto Device_path::File::toEFIBootDevicePath() const -> EFIBoot::Device_path::File
+auto File_path::File::toEFIBootFilePath() const -> EFIBoot::File_path::File
 {
-    EFIBoot::Device_path::File file;
+    EFIBoot::File_path::File file;
     file.name = name.toStdU16String();
     return file;
 }
 
-auto Device_path::File::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::File>
+auto File_path::File::fromJSON(const QJsonObject &obj) -> std::optional<File_path::File>
 {
     File value;
     check_obj();
@@ -815,7 +815,7 @@ auto Device_path::File::fromJSON(const QJsonObject &obj) -> std::optional<Device
     return {value};
 }
 
-auto Device_path::File::toJSON() const -> QJsonObject
+auto File_path::File::toJSON() const -> QJsonObject
 {
     QJsonObject file;
     file["type"] = TYPE;
@@ -824,7 +824,7 @@ auto Device_path::File::toJSON() const -> QJsonObject
     return file;
 }
 
-auto Device_path::File::toString(bool refresh) const -> QString
+auto File_path::File::toString(bool refresh) const -> QString
 {
     if(string.size() && !refresh)
         return string;
@@ -832,23 +832,23 @@ auto Device_path::File::toString(bool refresh) const -> QString
     return string = QString("File(%1)").arg(name);
 }
 
-static_assert(sizeof(Device_path::FirmwareFile::name) == sizeof(EFIBoot::Device_path::Firmware_file::name));
+static_assert(sizeof(File_path::FirmwareFile::name) == sizeof(EFIBoot::File_path::Firmware_file::name));
 
-Device_path::FirmwareFile::FirmwareFile(const EFIBoot::Device_path::Firmware_file &firmware_file)
+File_path::FirmwareFile::FirmwareFile(const EFIBoot::File_path::Firmware_file &firmware_file)
 {
     static_assert(sizeof(firmware_file.name) == sizeof(name));
     memcpy(reinterpret_cast<void *>(&name), &firmware_file.name, sizeof(firmware_file.name));
 }
 
-auto Device_path::FirmwareFile::toEFIBootDevicePath() const -> EFIBoot::Device_path::Firmware_file
+auto File_path::FirmwareFile::toEFIBootFilePath() const -> EFIBoot::File_path::Firmware_file
 {
-    EFIBoot::Device_path::Firmware_file firmware_file;
+    EFIBoot::File_path::Firmware_file firmware_file;
     static_assert(sizeof(name) == sizeof(firmware_file.name));
     memcpy(firmware_file.name.data(), &name, sizeof(name));
     return firmware_file;
 }
 
-auto Device_path::FirmwareFile::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::FirmwareFile>
+auto File_path::FirmwareFile::fromJSON(const QJsonObject &obj) -> std::optional<File_path::FirmwareFile>
 {
     FirmwareFile value;
     check_obj();
@@ -857,7 +857,7 @@ auto Device_path::FirmwareFile::fromJSON(const QJsonObject &obj) -> std::optiona
     return {value};
 }
 
-auto Device_path::FirmwareFile::toJSON() const -> QJsonObject
+auto File_path::FirmwareFile::toJSON() const -> QJsonObject
 {
     QJsonObject firmware_file;
     firmware_file["type"] = TYPE;
@@ -866,7 +866,7 @@ auto Device_path::FirmwareFile::toJSON() const -> QJsonObject
     return firmware_file;
 }
 
-auto Device_path::FirmwareFile::toString(bool refresh) const -> QString
+auto File_path::FirmwareFile::toString(bool refresh) const -> QString
 {
     if(string.size() && !refresh)
         return string;
@@ -874,23 +874,23 @@ auto Device_path::FirmwareFile::toString(bool refresh) const -> QString
     return string = QString("FvFile(%1)").arg(name.toString(QUuid::WithoutBraces));
 }
 
-static_assert(sizeof(Device_path::FirmwareVolume::name) == sizeof(EFIBoot::Device_path::Firmware_volume::name));
+static_assert(sizeof(File_path::FirmwareVolume::name) == sizeof(EFIBoot::File_path::Firmware_volume::name));
 
-Device_path::FirmwareVolume::FirmwareVolume(const EFIBoot::Device_path::Firmware_volume &firmware_volume)
+File_path::FirmwareVolume::FirmwareVolume(const EFIBoot::File_path::Firmware_volume &firmware_volume)
 {
     static_assert(sizeof(firmware_volume.name) == sizeof(name));
     memcpy(reinterpret_cast<void *>(&name), &firmware_volume.name, sizeof(firmware_volume.name));
 }
 
-auto Device_path::FirmwareVolume::toEFIBootDevicePath() const -> EFIBoot::Device_path::Firmware_volume
+auto File_path::FirmwareVolume::toEFIBootFilePath() const -> EFIBoot::File_path::Firmware_volume
 {
-    EFIBoot::Device_path::Firmware_volume firmware_volume;
+    EFIBoot::File_path::Firmware_volume firmware_volume;
     static_assert(sizeof(name) == sizeof(firmware_volume.name));
     memcpy(firmware_volume.name.data(), &name, sizeof(name));
     return firmware_volume;
 }
 
-auto Device_path::FirmwareVolume::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::FirmwareVolume>
+auto File_path::FirmwareVolume::fromJSON(const QJsonObject &obj) -> std::optional<File_path::FirmwareVolume>
 {
     FirmwareVolume value;
     check_obj();
@@ -899,7 +899,7 @@ auto Device_path::FirmwareVolume::fromJSON(const QJsonObject &obj) -> std::optio
     return {value};
 }
 
-auto Device_path::FirmwareVolume::toJSON() const -> QJsonObject
+auto File_path::FirmwareVolume::toJSON() const -> QJsonObject
 {
     QJsonObject firmware_volume;
     firmware_volume["type"] = TYPE;
@@ -908,7 +908,7 @@ auto Device_path::FirmwareVolume::toJSON() const -> QJsonObject
     return firmware_volume;
 }
 
-auto Device_path::FirmwareVolume::toString(bool refresh) const -> QString
+auto File_path::FirmwareVolume::toString(bool refresh) const -> QString
 {
     if(string.size() && !refresh)
         return string;
@@ -916,23 +916,23 @@ auto Device_path::FirmwareVolume::toString(bool refresh) const -> QString
     return string = QString("Fv(%1)").arg(name.toString(QUuid::WithoutBraces));
 }
 
-Device_path::BIOSBootSpecification::BIOSBootSpecification(const EFIBoot::Device_path::BIOS_boot_specification &bios_boot_specification)
+File_path::BIOSBootSpecification::BIOSBootSpecification(const EFIBoot::File_path::BIOS_boot_specification &bios_boot_specification)
     : device_type{bios_boot_specification.device_type}
     , status_flag{bios_boot_specification.status_flag}
     , description{QString::fromStdString(bios_boot_specification.description)}
 {
 }
 
-auto Device_path::BIOSBootSpecification::toEFIBootDevicePath() const -> EFIBoot::Device_path::BIOS_boot_specification
+auto File_path::BIOSBootSpecification::toEFIBootFilePath() const -> EFIBoot::File_path::BIOS_boot_specification
 {
-    EFIBoot::Device_path::BIOS_boot_specification value = {};
+    EFIBoot::File_path::BIOS_boot_specification value = {};
     value.device_type = device_type;
     value.status_flag = status_flag;
     value.description = description.toStdString();
     return value;
 }
 
-auto Device_path::BIOSBootSpecification::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::BIOSBootSpecification>
+auto File_path::BIOSBootSpecification::fromJSON(const QJsonObject &obj) -> std::optional<File_path::BIOSBootSpecification>
 {
     BIOSBootSpecification value;
     check_obj();
@@ -942,7 +942,7 @@ auto Device_path::BIOSBootSpecification::fromJSON(const QJsonObject &obj) -> std
     return {value};
 }
 
-auto Device_path::BIOSBootSpecification::toJSON() const -> QJsonObject
+auto File_path::BIOSBootSpecification::toJSON() const -> QJsonObject
 {
     QJsonObject value;
     value["type"] = TYPE;
@@ -953,15 +953,15 @@ auto Device_path::BIOSBootSpecification::toJSON() const -> QJsonObject
     return value;
 }
 
-auto Device_path::BIOSBootSpecification::toString(bool refresh) const -> QString
+auto File_path::BIOSBootSpecification::toString(bool refresh) const -> QString
 {
     if(string.size() && !refresh)
         return string;
 
-    return string = QString("BBS(%1, %2, %3)").arg(toHex(device_type), description, toHex(status_flag));
+    return string = QString("BBS(%1,%2,%3)").arg(toHex(device_type), description, toHex(status_flag));
 }
 
-auto Device_path::End::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::End>
+auto File_path::End::fromJSON(const QJsonObject &obj) -> std::optional<File_path::End>
 {
     End value;
     check_obj();
@@ -969,7 +969,7 @@ auto Device_path::End::fromJSON(const QJsonObject &obj) -> std::optional<Device_
     return {value};
 }
 
-auto Device_path::End::toJSON() const -> QJsonObject
+auto File_path::End::toJSON() const -> QJsonObject
 {
     QJsonObject end_instance;
     end_instance["type"] = TYPE;
@@ -978,7 +978,7 @@ auto Device_path::End::toJSON() const -> QJsonObject
     return end_instance;
 }
 
-auto Device_path::End::toString(bool refresh) const -> QString
+auto File_path::End::toString(bool refresh) const -> QString
 {
     if(string.size() && !refresh)
         return string;
@@ -998,7 +998,7 @@ auto Device_path::End::toString(bool refresh) const -> QString
     return string = QString("End(%1)").arg(subtype_string);
 }
 
-Device_path::Unknown::Unknown(const EFIBoot::Device_path::Unknown &unknown)
+File_path::Unknown::Unknown(const EFIBoot::File_path::Unknown &unknown)
     : _type{unknown.TYPE}
     , _subtype{unknown.SUBTYPE}
     , data{QByteArray::fromRawData(reinterpret_cast<const char *>(unknown.data.data()), static_cast<int>(unknown.data.size()))}
@@ -1006,9 +1006,9 @@ Device_path::Unknown::Unknown(const EFIBoot::Device_path::Unknown &unknown)
     data.detach();
 }
 
-auto Device_path::Unknown::toEFIBootDevicePath() const -> EFIBoot::Device_path::Unknown
+auto File_path::Unknown::toEFIBootFilePath() const -> EFIBoot::File_path::Unknown
 {
-    EFIBoot::Device_path::Unknown value = {};
+    EFIBoot::File_path::Unknown value = {};
     value.TYPE = _type;
     value.SUBTYPE = _subtype;
     value.data.resize(static_cast<size_t>(data.size()));
@@ -1016,7 +1016,7 @@ auto Device_path::Unknown::toEFIBootDevicePath() const -> EFIBoot::Device_path::
     return value;
 }
 
-auto Device_path::Unknown::fromJSON(const QJsonObject &obj) -> std::optional<Device_path::Unknown>
+auto File_path::Unknown::fromJSON(const QJsonObject &obj) -> std::optional<File_path::Unknown>
 {
     Unknown value;
     check_obj();
@@ -1027,7 +1027,7 @@ auto Device_path::Unknown::fromJSON(const QJsonObject &obj) -> std::optional<Dev
     return {value};
 }
 
-auto Device_path::Unknown::toJSON() const -> QJsonObject
+auto File_path::Unknown::toJSON() const -> QJsonObject
 {
     QJsonObject value;
     value["type"] = TYPE;
@@ -1038,12 +1038,12 @@ auto Device_path::Unknown::toJSON() const -> QJsonObject
     return value;
 }
 
-auto Device_path::Unknown::toString(bool refresh) const -> QString
+auto File_path::Unknown::toString(bool refresh) const -> QString
 {
     if(string.size() && !refresh)
         return string;
 
-    return string = QString("Unknown(%1, %2, [%3B])").arg(toHex(_type), toHex(_subtype)).arg(data.size());
+    return string = QString("Unknown(%1,%2,[%3B])").arg(toHex(_type), toHex(_subtype)).arg(data.size());
 }
 
 #undef try_read_3

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
-#include "devicepathdelegate.h"
+#include "filepathdelegate.h"
 
-void DevicePathDelegate::setupWidgetFromItem(Widget &widget, const Item &item) const
+void FilePathDelegate::setupWidgetFromItem(Widget &widget, const Item &item) const
 {
     widget.setText(std::visit([](const auto &obj)
         { return obj.toString(); },

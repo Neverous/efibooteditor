@@ -10,7 +10,7 @@
 
 #include "efiboot.h"
 
-namespace Device_path
+namespace File_path
 {
 
 template <class Type>
@@ -33,13 +33,13 @@ private:
     mutable QString string = "";
 
 public:
-    quint8 function = 0;
-    quint8 device = 0;
+    uint8_t function = 0;
+    uint8_t device = 0;
 
 public:
     PCI() = default;
-    PCI(const EFIBoot::Device_path::PCI &pci);
-    EFIBoot::Device_path::PCI toEFIBootDevicePath() const;
+    PCI(const EFIBoot::File_path::PCI &pci);
+    EFIBoot::File_path::PCI toEFIBootFilePath() const;
 
     static std::optional<PCI> fromJSON(const QJsonObject &obj);
     QJsonObject toJSON() const;
@@ -58,13 +58,13 @@ private:
     mutable QString string = "";
 
 public:
-    quint32 hid = 0;
-    quint32 uid = 0;
+    uint32_t hid = 0;
+    uint32_t uid = 0;
 
 public:
     HID() = default;
-    HID(const EFIBoot::Device_path::HID &hid);
-    EFIBoot::Device_path::HID toEFIBootDevicePath() const;
+    HID(const EFIBoot::File_path::HID &hid);
+    EFIBoot::File_path::HID toEFIBootFilePath() const;
 
     static std::optional<HID> fromJSON(const QJsonObject &obj);
     QJsonObject toJSON() const;
@@ -83,13 +83,13 @@ private:
     mutable QString string = "";
 
 public:
-    quint8 parent_port_number = 0;
-    quint8 interface = 0;
+    uint8_t parent_port_number = 0;
+    uint8_t interface = 0;
 
 public:
     USB() = default;
-    USB(const EFIBoot::Device_path::USB &usb);
-    EFIBoot::Device_path::USB toEFIBootDevicePath() const;
+    USB(const EFIBoot::File_path::USB &usb);
+    EFIBoot::File_path::USB toEFIBootFilePath() const;
 
     static std::optional<USB> fromJSON(const QJsonObject &obj);
     QJsonObject toJSON() const;
@@ -108,16 +108,16 @@ private:
     mutable QString string = "";
 
 public:
-    quint8 _type = 0;
+    uint8_t _type = 0;
     QUuid guid = {};
     QByteArray data = {};
 
 public:
     Vendor() = default;
-    Vendor(const EFIBoot::Device_path::HWVendor &vendor);
-    Vendor(const EFIBoot::Device_path::MSGVendor &vendor);
-    Vendor(const EFIBoot::Device_path::MEDIAVendor &vendor);
-    EFIBoot::Device_path::ANY toEFIBootDevicePath() const;
+    Vendor(const EFIBoot::File_path::HWVendor &vendor);
+    Vendor(const EFIBoot::File_path::MSGVendor &vendor);
+    Vendor(const EFIBoot::File_path::MEDIAVendor &vendor);
+    EFIBoot::File_path::ANY toEFIBootFilePath() const;
 
     static std::optional<Vendor> fromJSON(const QJsonObject &obj);
     QJsonObject toJSON() const;
@@ -137,12 +137,12 @@ private:
 
 public:
     QString address = "";
-    quint8 if_type = 0;
+    uint8_t if_type = 0;
 
 public:
     MACAddress() = default;
-    MACAddress(const EFIBoot::Device_path::MAC_address &mac_address);
-    EFIBoot::Device_path::MAC_address toEFIBootDevicePath() const;
+    MACAddress(const EFIBoot::File_path::MAC_address &mac_address);
+    EFIBoot::File_path::MAC_address toEFIBootFilePath() const;
 
     static std::optional<MACAddress> fromJSON(const QJsonObject &obj);
     QJsonObject toJSON() const;
@@ -163,17 +163,17 @@ private:
 public:
     QHostAddress local_ip_address = {};
     QHostAddress remote_ip_address = {};
-    quint16 local_port = 0;
-    quint16 remote_port = 0;
-    quint16 protocol = 0;
+    uint16_t local_port = 0;
+    uint16_t remote_port = 0;
+    uint16_t protocol = 0;
     bool static_ip_address = false;
     QHostAddress gateway_ip_address = {};
     QHostAddress subnet_mask = {};
 
 public:
     IPv4() = default;
-    IPv4(const EFIBoot::Device_path::IPv4 &ipv4);
-    EFIBoot::Device_path::IPv4 toEFIBootDevicePath() const;
+    IPv4(const EFIBoot::File_path::IPv4 &ipv4);
+    EFIBoot::File_path::IPv4 toEFIBootFilePath() const;
 
     static std::optional<IPv4> fromJSON(const QJsonObject &obj);
     QJsonObject toJSON() const;
@@ -194,17 +194,17 @@ private:
 public:
     QHostAddress local_ip_address = {};
     QHostAddress remote_ip_address = {};
-    quint16 local_port = 0;
-    quint16 remote_port = 0;
-    quint16 protocol = 0;
-    quint8 ip_address_origin = 0;
-    quint8 prefix_length = 0;
+    uint16_t local_port = 0;
+    uint16_t remote_port = 0;
+    uint16_t protocol = 0;
+    uint8_t ip_address_origin = 0;
+    uint8_t prefix_length = 0;
     QHostAddress gateway_ip_address = {};
 
 public:
     IPv6() = default;
-    IPv6(const EFIBoot::Device_path::IPv6 &ipv6);
-    EFIBoot::Device_path::IPv6 toEFIBootDevicePath() const;
+    IPv6(const EFIBoot::File_path::IPv6 &ipv6);
+    EFIBoot::File_path::IPv6 toEFIBootFilePath() const;
 
     static std::optional<IPv6> fromJSON(const QJsonObject &obj);
     QJsonObject toJSON() const;
@@ -223,14 +223,14 @@ private:
     mutable QString string = "";
 
 public:
-    quint16 hba_port = 0;
-    quint16 port_multiplier_port = 0;
-    quint16 lun = 0;
+    uint16_t hba_port = 0;
+    uint16_t port_multiplier_port = 0;
+    uint16_t lun = 0;
 
 public:
     SATA() = default;
-    SATA(const EFIBoot::Device_path::SATA &sata);
-    EFIBoot::Device_path::SATA toEFIBootDevicePath() const;
+    SATA(const EFIBoot::File_path::SATA &sata);
+    EFIBoot::File_path::SATA toEFIBootFilePath() const;
 
     static std::optional<SATA> fromJSON(const QJsonObject &obj);
     QJsonObject toJSON() const;
@@ -250,16 +250,16 @@ private:
 
 public:
     QUuid partition_signature = {};
-    quint64 partition_start = 0;
-    quint64 partition_size = 0;
-    quint32 partition_number = 0;
-    quint8 partition_format = 0;
-    quint8 signature_type = 9;
+    uint64_t partition_start = 0;
+    uint64_t partition_size = 0;
+    uint32_t partition_number = 0;
+    uint8_t partition_format = 0;
+    uint8_t signature_type = 9;
 
 public:
     HD() = default;
-    HD(const EFIBoot::Device_path::HD &hd);
-    EFIBoot::Device_path::HD toEFIBootDevicePath() const;
+    HD(const EFIBoot::File_path::HD &hd);
+    EFIBoot::File_path::HD toEFIBootFilePath() const;
 
     static std::optional<HD> fromJSON(const QJsonObject &obj);
     QJsonObject toJSON() const;
@@ -282,8 +282,8 @@ private:
 
 public:
     File() = default;
-    File(const EFIBoot::Device_path::File &file);
-    EFIBoot::Device_path::File toEFIBootDevicePath() const;
+    File(const EFIBoot::File_path::File &file);
+    EFIBoot::File_path::File toEFIBootFilePath() const;
 
     static std::optional<File> fromJSON(const QJsonObject &obj);
     QJsonObject toJSON() const;
@@ -306,8 +306,8 @@ private:
 
 public:
     FirmwareFile() = default;
-    FirmwareFile(const EFIBoot::Device_path::Firmware_file &firmware_file);
-    EFIBoot::Device_path::Firmware_file toEFIBootDevicePath() const;
+    FirmwareFile(const EFIBoot::File_path::Firmware_file &firmware_file);
+    EFIBoot::File_path::Firmware_file toEFIBootFilePath() const;
 
     static std::optional<FirmwareFile> fromJSON(const QJsonObject &obj);
     QJsonObject toJSON() const;
@@ -330,8 +330,8 @@ private:
 
 public:
     FirmwareVolume() = default;
-    FirmwareVolume(const EFIBoot::Device_path::Firmware_volume &firmware_volume);
-    EFIBoot::Device_path::Firmware_volume toEFIBootDevicePath() const;
+    FirmwareVolume(const EFIBoot::File_path::Firmware_volume &firmware_volume);
+    EFIBoot::File_path::Firmware_volume toEFIBootFilePath() const;
 
     static std::optional<FirmwareVolume> fromJSON(const QJsonObject &obj);
     QJsonObject toJSON() const;
@@ -347,8 +347,8 @@ public:
     static constexpr auto SUBTYPE = "BIOS_BOOT_SPECIFICATION";
 
 public:
-    quint16 device_type = 0;
-    quint16 status_flag = 0;
+    uint16_t device_type = 0;
+    uint16_t status_flag = 0;
     QString description = "";
 
 private:
@@ -356,8 +356,8 @@ private:
 
 public:
     BIOSBootSpecification() = default;
-    BIOSBootSpecification(const EFIBoot::Device_path::BIOS_boot_specification &bios_boot_specification);
-    EFIBoot::Device_path::BIOS_boot_specification toEFIBootDevicePath() const;
+    BIOSBootSpecification(const EFIBoot::File_path::BIOS_boot_specification &bios_boot_specification);
+    EFIBoot::File_path::BIOS_boot_specification toEFIBootFilePath() const;
 
     static std::optional<BIOSBootSpecification> fromJSON(const QJsonObject &obj);
     QJsonObject toJSON() const;
@@ -380,24 +380,24 @@ public:
 
 public:
     End() = default;
-    End(const EFIBoot::Device_path::End_instance &)
+    End(const EFIBoot::File_path::End_instance &)
         : _subtype{EFIBoot::EFIDP_END_INSTANCE}
     {
     }
-    End(const EFIBoot::Device_path::End_entire &)
+    End(const EFIBoot::File_path::End_entire &)
         : _subtype{EFIBoot::EFIDP_END_ENTIRE}
     {
     }
-    EFIBoot::Device_path::ANY toEFIBootDevicePath() const
+    EFIBoot::File_path::ANY toEFIBootFilePath() const
     {
         switch(_subtype)
         {
         case EFIBoot::EFIDP_END_INSTANCE:
-            return EFIBoot::Device_path::End_instance{};
+            return EFIBoot::File_path::End_instance{};
             break;
 
         case EFIBoot::EFIDP_END_ENTIRE:
-            return EFIBoot::Device_path::End_entire{};
+            return EFIBoot::File_path::End_entire{};
             break;
         }
 
@@ -421,14 +421,14 @@ private:
     mutable QString string = "";
 
 public:
-    quint8 _type = 0;
-    quint8 _subtype = 0;
+    uint8_t _type = 0;
+    uint8_t _subtype = 0;
     QByteArray data = {};
 
 public:
     Unknown() = default;
-    Unknown(const EFIBoot::Device_path::Unknown &unknown);
-    EFIBoot::Device_path::Unknown toEFIBootDevicePath() const;
+    Unknown(const EFIBoot::File_path::Unknown &unknown);
+    EFIBoot::File_path::Unknown toEFIBootFilePath() const;
 
     static std::optional<Unknown> fromJSON(const QJsonObject &obj);
     QJsonObject toJSON() const;
@@ -478,9 +478,9 @@ inline bool registerJSONReader()
 }
 
 #undef REGISTER_JSON_READER
-} // namespace Device_path
+} // namespace File_path
 
-Q_DECLARE_METATYPE(const Device_path::ANY *)
+Q_DECLARE_METATYPE(const File_path::ANY *)
 
 class BootEntry
 {
@@ -493,19 +493,20 @@ public:
         Hex = 3,
     };
 
-    quint16 index = 0;
+    uint16_t index = 0;
     QString description = "New entry";
-    QVector<Device_path::ANY> file_path = {};
+    QVector<File_path::ANY> device_path = {};
     QString optional_data = "";
     EFIBoot::Load_option_attribute attributes = EFIBoot::Load_option_attribute::EMPTY;
-    quint32 efi_attributes = EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS;
+    uint32_t efi_attributes = EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS;
 
+    bool is_current_boot = false;
     bool is_next_boot = false;
 
     OptionalDataFormat optional_data_format = OptionalDataFormat::Base64;
 
 private:
-    mutable QString file_path_str = "";
+    mutable QString device_path_str = "";
 
 public:
     static BootEntry fromEFIBootLoadOption(const EFIBoot::Load_option &load_option);
@@ -514,7 +515,7 @@ public:
     static std::optional<BootEntry> fromJSON(const QJsonObject &obj);
     QJsonObject toJSON() const;
 
-    QString formatFilePath(bool refresh = true) const;
+    QString formatDevicePath(bool refresh = true) const;
 
     bool changeOptionalDataFormat(OptionalDataFormat format);
 

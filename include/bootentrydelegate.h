@@ -7,10 +7,15 @@
 
 class BootEntryDelegate: public QWidgetItemDelegate<BootEntryWidget, const BootEntry *>
 {
+private:
+    bool readonly = false;
+
 public:
-    inline BootEntryDelegate() { }
+    BootEntryDelegate();
     BootEntryDelegate(const BootEntryDelegate &) = delete;
     BootEntryDelegate &operator=(const BootEntryDelegate &) = delete;
+
+    void setReadOnly(bool readonly);
 
 protected:
     void setupWidgetFromItem(Widget &widget, const Item &item) const override;

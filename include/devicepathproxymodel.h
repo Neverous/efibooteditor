@@ -5,14 +5,14 @@
 #include "bootentrylistmodel.h"
 #include <QAbstractListModel>
 
-class DevicePathProxyListModel: public QAbstractListModel
+class DevicePathProxyModel: public QAbstractListModel
 {
     Q_OBJECT
 
 public:
-    explicit DevicePathProxyListModel(QObject *parent = nullptr);
-    DevicePathProxyListModel(const DevicePathProxyListModel &) = delete;
-    DevicePathProxyListModel &operator=(const DevicePathProxyListModel &) = delete;
+    explicit DevicePathProxyModel(QObject *parent = nullptr);
+    DevicePathProxyModel(const DevicePathProxyModel &) = delete;
+    DevicePathProxyModel &operator=(const DevicePathProxyModel &) = delete;
 
     void setBootEntryListModel(BootEntryListModel &model);
     void setBootEntryItem(const QModelIndex &index, const BootEntry *item);
@@ -35,5 +35,5 @@ public:
 private:
     BootEntryListModel *boot_entry_list_model = nullptr;
     QModelIndex boot_entry_index = {};
-    const QVector<Device_path::ANY> *boot_entry_file_path = nullptr;
+    const QVector<File_path::ANY> *boot_entry_device_path = nullptr;
 };

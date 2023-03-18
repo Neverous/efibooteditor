@@ -3,12 +3,23 @@
 #include "bootentry.h"
 #include "bootentrylistmodel.h"
 
+BootEntryDelegate::BootEntryDelegate()
+{
+}
+
+void BootEntryDelegate::setReadOnly(bool readonly_)
+{
+    readonly = readonly_;
+}
+
 void BootEntryDelegate::setupWidgetFromItem(Widget &widget, const Item &item) const
 {
+    widget.setReadOnly(readonly);
     widget.setIndex(item->index);
     widget.setDescription(item->description);
     widget.setData(item->optional_data);
-    widget.setFilePath(item->formatFilePath(false));
+    widget.setDevicePath(item->formatDevicePath(false));
+    widget.setCurrentBoot(item->is_current_boot);
     widget.setNextBoot(item->is_next_boot);
 }
 
