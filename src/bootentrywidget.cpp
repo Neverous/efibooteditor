@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #include "bootentrywidget.h"
-#include "bootentry.h"
+#include "compat.h"
 #include "form/ui_bootentrywidget.h"
 #include <QMouseEvent>
 
@@ -9,13 +9,19 @@ BootEntryWidget::BootEntryWidget(QWidget *parent)
     , ui(std::make_unique<Ui::BootEntryWidget>())
 {
     ui->setupUi(this);
+    ui->current_boot->setMaximumSize(6, 6);
 }
 
 BootEntryWidget::~BootEntryWidget()
 {
 }
 
-void BootEntryWidget::setIndex(const quint32 index)
+void BootEntryWidget::setReadOnly(bool readonly)
+{
+    ui->next_boot->setDisabled(readonly);
+}
+
+void BootEntryWidget::setIndex(const uint32_t index)
 {
     ui->index->setText(toHex(index, 4));
 }
@@ -28,16 +34,17 @@ void BootEntryWidget::setDescription(const QString &description)
     setToolTip(description);
 }
 
-void BootEntryWidget::setFilePath(const QString &file_path)
+void BootEntryWidget::setDevicePath(const QString &device_path)
 {
-    ui->file_path->setText(file_path);
-    ui->file_path->setStatusTip(file_path);
+    ui->device_path->setText(device_path);
+    ui->device_path->setStatusTip(device_path);
 }
 
 void BootEntryWidget::setData(const QString &_data)
 {
     ui->data->setText(_data);
     ui->data->setStatusTip(_data);
+    ui->data->setHidden(_data.isEmpty());
 }
 
 auto BootEntryWidget::getNextBoot() const -> bool
@@ -48,4 +55,15 @@ auto BootEntryWidget::getNextBoot() const -> bool
 void BootEntryWidget::setNextBoot(bool next_boot)
 {
     ui->next_boot->setChecked(next_boot);
+}
+
+auto BootEntryWidget::getCurrentBoot() const -> bool
+{
+    return ui->current_boot->isChecked();
+}
+
+void BootEntryWidget::setCurrentBoot(bool current_boot)
+{
+    ui->current_boot->setChecked(current_boot);
+    ui->current_boot->setHidden(!current_boot);
 }

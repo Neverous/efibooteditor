@@ -129,7 +129,7 @@ inline QString QStringFromStdTString(const std::tstring &string)
 #endif
 }
 
-inline QString toHex(qulonglong number, int min_width = 0, const QString &prefix = "0x")
+inline QString toHex(unsigned long long number, int min_width = 0, const QString &prefix = "0x")
 {
     return prefix + QString("%1").arg(number, min_width, HEX_BASE, QChar('0')).toUpper();
 }

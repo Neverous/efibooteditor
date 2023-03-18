@@ -3,13 +3,22 @@
 
 BootEntryListView::BootEntryListView(QWidget *parent)
     : QListView{parent}
-    , delegate{}
 {
     setItemDelegate(&delegate);
 }
 
+void BootEntryListView::setModel(BootEntryListModel *model)
+{
+    readonly = model->readonly;
+    delegate.setReadOnly(readonly);
+    QListView::setModel(model);
+}
+
 void BootEntryListView::insertRow()
 {
+    if(readonly)
+        return;
+
     auto row = currentIndex().row();
     model()->insertRow(row + 1);
     setCurrentIndex(model()->index(row + 1, 0));
@@ -17,6 +26,9 @@ void BootEntryListView::insertRow()
 
 void BootEntryListView::removeCurrentRow()
 {
+    if(readonly)
+        return;
+
     auto index = currentIndex();
     if(!index.isValid() || !model()->checkIndex(index))
         return;
@@ -32,6 +44,9 @@ void BootEntryListView::removeCurrentRow()
 
 void BootEntryListView::moveCurrentRowUp()
 {
+    if(readonly)
+        return;
+
     auto index = currentIndex();
     if(!index.isValid() || !model()->checkIndex(index) || index.row() == 0)
         return;
@@ -43,6 +58,9 @@ void BootEntryListView::moveCurrentRowUp()
 
 void BootEntryListView::moveCurrentRowDown()
 {
+    if(readonly)
+        return;
+
     auto index = currentIndex();
     if(!index.isValid() || !model()->checkIndex(index) || index.row() >= model()->rowCount() - 1)
         return;

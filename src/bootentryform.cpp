@@ -9,17 +9,39 @@ BootEntryForm::BootEntryForm(QWidget *parent)
     , ui{std::make_unique<Ui::BootEntryForm>()}
 {
     ui->setupUi(this);
-    ui->paths_list->setModel(&paths_proxy_list_model);
+    ui->device_path->setModel(&device_path_proxy_model);
 }
 
 BootEntryForm::~BootEntryForm()
 {
 }
 
+void BootEntryForm::setReadOnly(bool readonly)
+{
+    for(auto &widget: findChildren<QLineEdit *>())
+        widget->setReadOnly(readonly);
+
+    for(auto &widget: findChildren<QPlainTextEdit *>())
+        widget->setReadOnly(readonly);
+
+    for(auto &widget: findChildren<QComboBox *>())
+        widget->setDisabled(readonly);
+
+    for(auto &widget: findChildren<QCheckBox *>())
+        widget->setDisabled(readonly);
+
+    for(auto &widget: findChildren<QLabel *>())
+        widget->setDisabled(readonly);
+
+    ui->device_path->setReadOnly(readonly);
+    ui->device_path_actions->setDisabled(readonly);
+    ui->optional_data_format_combo->setDisabled(false);
+}
+
 void BootEntryForm::setBootEntryListModel(BootEntryListModel &model)
 {
     entries_list_model = &model;
-    paths_proxy_list_model.setBootEntryListModel(model);
+    device_path_proxy_model.setBootEntryListModel(model);
 }
 
 void BootEntryForm::setItem(const QModelIndex &index, const BootEntry *item)
@@ -31,13 +53,13 @@ void BootEntryForm::setItem(const QModelIndex &index, const BootEntry *item)
 
     ui->index_text->setText(toHex(item ? item->index : 0u, 4));
     ui->description_text->setText(item ? item->description : "");
-    paths_proxy_list_model.setBootEntryItem(index, item);
+    device_path_proxy_model.setBootEntryItem(index, item);
     ui->optional_data_text->setPlainText(item ? item->optional_data : "");
     ui->optional_data_format_combo->setCurrentIndex(item ? static_cast<int>(item->optional_data_format) : 0);
     ui->attribute_active->setChecked(item && (item->attributes & EFIBoot::Load_option_attribute::ACTIVE) == EFIBoot::Load_option_attribute::ACTIVE);
     ui->attribute_hidden->setChecked(item && (item->attributes & EFIBoot::Load_option_attribute::HIDDEN) == EFIBoot::Load_option_attribute::HIDDEN);
     ui->attribute_force_reconnect->setChecked(item && (item->attributes & EFIBoot::Load_option_attribute::FORCE_RECONNECT) == EFIBoot::Load_option_attribute::FORCE_RECONNECT);
-    ui->categoty_combo->setCurrentIndex(item && (item->attributes & EFIBoot::Load_option_attribute::CATEGORY_APP) == EFIBoot::Load_option_attribute::CATEGORY_APP);
+    ui->category_combo->setCurrentIndex(item && (item->attributes & EFIBoot::Load_option_attribute::CATEGORY_APP) == EFIBoot::Load_option_attribute::CATEGORY_APP);
 
     setDisabled(!item);
 }
@@ -50,7 +72,7 @@ void BootEntryForm::indexEdited(const QString &text)
     entries_list_model->changeData(current_index, [&text](BootEntry &entry)
         {
         bool success = false;
-        quint16 index = text.right(text.size()-2).toUShort(&success, HEX_BASE);
+        uint16_t index = text.right(text.size()-2).toUShort(&success, HEX_BASE);
         if(success)
             entry.index = index;
         return success; });

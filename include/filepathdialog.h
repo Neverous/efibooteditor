@@ -10,7 +10,7 @@
 
 namespace Ui
 {
-class DevicePathDialog;
+class FilePathDialog;
 }
 
 class HorizontalTabStyle: public QProxyStyle
@@ -56,7 +56,7 @@ public:
 #pragma warning(disable : 4820)
 #endif
 
-class DevicePathDialog: public QDialog
+class FilePathDialog: public QDialog
 {
     Q_OBJECT
 
@@ -99,34 +99,36 @@ private:
     typedef DataFormat UnknownDataFormat;
 
     HorizontalTabStyle horizontal_tab_style;
-    std::unique_ptr<Ui::DevicePathDialog> ui;
+    std::unique_ptr<Ui::FilePathDialog> ui;
     int vendor_data_format_combo_index;
     int unknown_data_format_combo_index;
 
 public:
-    explicit DevicePathDialog(QWidget *parent = nullptr);
-    DevicePathDialog(const DevicePathDialog &) = delete;
-    DevicePathDialog &operator=(const DevicePathDialog &) = delete;
-    ~DevicePathDialog() override;
+    explicit FilePathDialog(QWidget *parent = nullptr);
+    FilePathDialog(const FilePathDialog &) = delete;
+    FilePathDialog &operator=(const FilePathDialog &) = delete;
+    ~FilePathDialog() override;
 
-    Device_path::ANY toDevicePath() const;
+    void setReadOnly(bool readonly);
 
-    void setDevicePath(const Device_path::ANY *_device_path);
-    void setPCIForm(const Device_path::PCI &pci);
-    void setHIDForm(const Device_path::HID &hid);
-    void setUSBForm(const Device_path::USB &sub);
-    void setVendorForm(const Device_path::Vendor &vendor);
-    void setMACAddressForm(const Device_path::MACAddress &mac_address);
-    void setIPv4Form(const Device_path::IPv4 &ipv4);
-    void setIPv6Form(const Device_path::IPv6 &ipv6);
-    void setSATAForm(const Device_path::SATA &sata);
-    void setHDForm(const Device_path::HD &hd);
-    void setFileForm(const Device_path::File &file);
-    void setFirmwareFileForm(const Device_path::FirmwareFile &firmware_file);
-    void setFirmwareVolumeForm(const Device_path::FirmwareVolume &firmware_volume);
-    void setBIOSBootSpecificationForm(const Device_path::BIOSBootSpecification &bios_boot_specification);
+    File_path::ANY toFilePath() const;
+
+    void setFilePath(const File_path::ANY *_file_path);
+    void setPCIForm(const File_path::PCI &pci);
+    void setHIDForm(const File_path::HID &hid);
+    void setUSBForm(const File_path::USB &sub);
+    void setVendorForm(const File_path::Vendor &vendor);
+    void setMACAddressForm(const File_path::MACAddress &mac_address);
+    void setIPv4Form(const File_path::IPv4 &ipv4);
+    void setIPv6Form(const File_path::IPv6 &ipv6);
+    void setSATAForm(const File_path::SATA &sata);
+    void setHDForm(const File_path::HD &hd);
+    void setFileForm(const File_path::File &file);
+    void setFirmwareFileForm(const File_path::FirmwareFile &firmware_file);
+    void setFirmwareVolumeForm(const File_path::FirmwareVolume &firmware_volume);
+    void setBIOSBootSpecificationForm(const File_path::BIOSBootSpecification &bios_boot_specification);
     void setEndForm(const EFIBoot::EFIDP_END subtype);
-    void setUnknownForm(const Device_path::Unknown &unknown);
+    void setUnknownForm(const File_path::Unknown &unknown);
 
 private:
     void resetForms();

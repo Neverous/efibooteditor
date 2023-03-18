@@ -6,7 +6,7 @@
 
 #include "bootentry.h"
 #include "bootentrylistmodel.h"
-#include "devicepathproxylistmodel.h"
+#include "devicepathproxymodel.h"
 
 namespace Ui
 {
@@ -23,13 +23,15 @@ public:
     BootEntryForm &operator=(const BootEntryForm &) = delete;
     ~BootEntryForm() override;
 
+    void setReadOnly(bool readonly);
+
     void setBootEntryListModel(BootEntryListModel &model);
     void setItem(const QModelIndex &index, const BootEntry *item);
 
 private:
     std::unique_ptr<Ui::BootEntryForm> ui;
     BootEntryListModel *entries_list_model = nullptr;
-    DevicePathProxyListModel paths_proxy_list_model{};
+    DevicePathProxyModel device_path_proxy_model{};
     QModelIndex current_index = {};
     const BootEntry *current_item = nullptr;
 

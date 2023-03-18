@@ -7,6 +7,7 @@
 #include <memory>
 
 #include "bootentrylistmodel.h"
+#include "bootentrylistview.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -20,11 +21,29 @@ class EFIBootEditor: public QMainWindow
     Q_OBJECT
 
 private:
+    enum BootEntryType
+    {
+        BOOT = 0,
+        DRIVER = 1,
+        SYSPREP = 2,
+        PLATFORM_RECOVERY = 3,
+    };
+
     std::unique_ptr<Ui::EFIBootEditor> ui;
-    BootEntryListModel entries_list_model{};
+    BootEntryListModel boot_entries_list_model{this};
+    BootEntryListModel driver_entries_list_model{this};
+    BootEntryListModel sysprep_entries_list_model{this};
+    BootEntryListModel platform_recovery_entries_list_model{this, true};
     std::unique_ptr<QMessageBox> confirmation = nullptr;
     std::unique_ptr<QMessageBox> error = nullptr;
     std::unique_ptr<QProgressDialog> progress = nullptr;
+
+    const std::vector<std::tuple<QString, BootEntryListModel &>> BOOT_ENTRIES{
+        {"Boot", boot_entries_list_model},
+        {"Driver", driver_entries_list_model},
+        {"SysPrep", sysprep_entries_list_model},
+        {"PlatformRecovery", platform_recovery_entries_list_model},
+    };
 
 public:
     explicit EFIBootEditor(QWidget *parent = nullptr);
@@ -42,6 +61,8 @@ public slots:
     void resetBootConfiguration();
     void enableBootEntryEditor(const QModelIndex &index);
     void disableBootEntryEditor();
+    void clearBootSettings();
+    void switchBootEntryEditor(int index);
     void saveBootConfiguration();
     void importBootConfiguration(const QString &file_name);
     void exportBootConfiguration(const QString &file_name);
@@ -49,7 +70,18 @@ public slots:
     void showAboutBox();
     void reorderBootEntries();
 
+    void removeCurrentBootEntry();
+    void moveCurrentBootEntryUp();
+    void moveCurrentBootEntryDown();
+    void insertBootEntry();
+
 private:
+    std::tuple<BootEntryListView &, BootEntryListModel &> getBootEntryList(int index);
+    std::tuple<BootEntryListView &, BootEntryListModel &> currentBootEntryList();
+    void setupOsIndications(uint64_t value);
+    uint64_t getOsIndications() const;
+    void setupOsIndicationsSupport(uint64_t value);
+
     void closeEvent(QCloseEvent *event) override;
 
     void importJSONEFIData(const QJsonObject &input);

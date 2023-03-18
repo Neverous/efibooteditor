@@ -10,13 +10,15 @@ typedef std::function<bool(BootEntry &)> Change_fn;
 class BootEntryListModel: public QAbstractListModel
 {
     Q_OBJECT
+public:
+    const bool readonly;
 
 private:
     QVector<BootEntry> entries = {};
     QModelIndex next_boot = {};
 
 public:
-    explicit BootEntryListModel(QObject *parent = nullptr);
+    explicit BootEntryListModel(QObject *parent = nullptr, bool readonly_ = false);
     BootEntryListModel(const BootEntryListModel &) = delete;
     BootEntryListModel &operator=(const BootEntryListModel &) = delete;
 

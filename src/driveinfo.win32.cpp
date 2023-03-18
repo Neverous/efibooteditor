@@ -70,8 +70,8 @@ QVector<DriveInfo> DriveInfo::getAll(bool refresh)
         }
 
         driveinfo.partition = partition_information.PartitionNumber;
-        driveinfo.start = static_cast<quint64>(partition_information.StartingOffset.QuadPart);
-        driveinfo.size = static_cast<quint64>(partition_information.PartitionLength.QuadPart);
+        driveinfo.start = static_cast<uint64_t>(partition_information.StartingOffset.QuadPart);
+        driveinfo.size = static_cast<uint64_t>(partition_information.PartitionLength.QuadPart);
         all.append(driveinfo);
     }
 

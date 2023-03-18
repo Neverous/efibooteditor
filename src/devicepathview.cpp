@@ -1,54 +1,68 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
-#include "devicepathlistview.h"
-#include "devicepathdialog.h"
+#include "devicepathview.h"
+#include "filepathdialog.h"
 
-DevicePathListView::DevicePathListView(QWidget *parent)
+DevicePathView::DevicePathView(QWidget *parent)
     : QListView(parent)
     , delegate{}
-    , dialog{std::make_unique<DevicePathDialog>(this)}
+    , dialog{std::make_unique<FilePathDialog>(this)}
 {
     setItemDelegate(&delegate);
 }
 
-void DevicePathListView::insertRow()
+void DevicePathView::setReadOnly(bool readonly_)
 {
+    readonly = readonly_;
+}
+
+void DevicePathView::insertRow()
+{
+    if(readonly)
+        return;
+
     auto index = currentIndex();
-    dialog->setDevicePath(nullptr);
+    dialog->setReadOnly(readonly);
+    dialog->setFilePath(nullptr);
     if(dialog->exec() == QDialog::Accepted)
     {
         auto row = index.row();
-        const auto device_path = dialog->toDevicePath();
+        const auto file_path = dialog->toFilePath();
         model()->insertRow(row + 1);
         QVariant _data;
-        _data.setValue(&device_path);
+        _data.setValue(&file_path);
         index = model()->index(row + 1, 0);
         model()->setData(index, _data);
         setCurrentIndex(index);
     }
 }
 
-void DevicePathListView::editCurrentRow()
+void DevicePathView::editCurrentRow()
 {
     auto index = currentIndex();
     if(!index.isValid() || !model()->checkIndex(index))
         return;
 
-    dialog->setDevicePath(model()->data(index).value<const Device_path::ANY *>());
-    if(dialog->exec() == QDialog::Accepted)
+    dialog->setReadOnly(readonly);
+    dialog->setFilePath(model()->data(index).value<const File_path::ANY *>());
+    const auto status = dialog->exec();
+    if(!readonly && status == QDialog::Accepted)
     {
         auto row = index.row();
-        const auto device_path = dialog->toDevicePath();
+        const auto file_path = dialog->toFilePath();
         model()->insertRow(row + 1);
         QVariant _data;
-        _data.setValue(&device_path);
+        _data.setValue(&file_path);
         model()->setData(index.siblingAtRow(row + 1), _data);
         model()->removeRow(row);
         setCurrentIndex(index);
     }
 }
 
-void DevicePathListView::removeCurrentRow()
+void DevicePathView::removeCurrentRow()
 {
+    if(readonly)
+        return;
+
     auto index = currentIndex();
     if(!index.isValid() || !model()->checkIndex(index))
         return;
@@ -62,8 +76,11 @@ void DevicePathListView::removeCurrentRow()
     setCurrentIndex(index);
 }
 
-void DevicePathListView::moveCurrentRowUp()
+void DevicePathView::moveCurrentRowUp()
 {
+    if(readonly)
+        return;
+
     auto index = currentIndex();
     if(!index.isValid() || !model()->checkIndex(index) || index.row() == 0)
         return;
@@ -73,8 +90,11 @@ void DevicePathListView::moveCurrentRowUp()
     setCurrentIndex(previous_index);
 }
 
-void DevicePathListView::moveCurrentRowDown()
+void DevicePathView::moveCurrentRowDown()
 {
+    if(readonly)
+        return;
+
     auto index = currentIndex();
     if(!index.isValid() || !model()->checkIndex(index) || index.row() >= model()->rowCount() - 1)
         return;

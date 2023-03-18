@@ -16,7 +16,7 @@ class DriveInfo
     static QVector<DriveInfo> all;
 
 public:
-    enum class SIGNATURE : quint8
+    enum class SIGNATURE : uint8_t
     {
         NONE = 0x00,
         MBR = 0x01,
@@ -25,11 +25,11 @@ public:
 
 public:
     QString name = "";
-    quint32 partition = 0;
+    uint32_t partition = 0;
     SIGNATURE signature_type = SIGNATURE::NONE;
     QUuid signature = {};
-    quint64 start = 0;
-    quint64 size = 0;
+    uint64_t start = 0;
+    uint64_t size = 0;
 
 public:
     static QVector<DriveInfo> getAll(bool refresh = false);

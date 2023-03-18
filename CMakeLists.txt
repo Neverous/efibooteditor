@@ -210,10 +210,10 @@ target_sources(${PROJECT_NAME} PRIVATE
     src/bootentrylistmodel.cpp
     src/bootentrylistview.cpp
     src/bootentrywidget.cpp
-    src/devicepathdelegate.cpp
-    src/devicepathdialog.cpp
-    src/devicepathlistview.cpp
-    src/devicepathproxylistmodel.cpp
+    src/filepathdelegate.cpp
+    src/filepathdialog.cpp
+    src/devicepathview.cpp
+    src/devicepathproxymodel.cpp
     src/driveinfo.cpp
     src/efibooteditor.cpp
 )
@@ -253,10 +253,10 @@ target_sources(${PROJECT_NAME} PRIVATE
     include/bootentrylistview.h
     include/bootentrywidget.h
     include/compat.h
-    include/devicepathdelegate.h
-    include/devicepathdialog.h
-    include/devicepathlistview.h
-    include/devicepathproxylistmodel.h
+    include/filepathdelegate.h
+    include/filepathdialog.h
+    include/devicepathview.h
+    include/devicepathproxymodel.h
     include/driveinfo.h
     include/efiboot.h
     include/efibooteditor.h
@@ -264,6 +264,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     include/efivar-lite/efivar-dp.h
     include/efivar-lite/efivar.h
     include/qlabelwrapped.h
+    include/qindicatorwidget.h
+    include/qresizabletabwidget.h
     include/qwidgetitemdelegate.h
 )
 
@@ -271,7 +273,7 @@ target_sources(${PROJECT_NAME} PRIVATE
 target_sources(${PROJECT_NAME} PRIVATE
     src/form/bootentryform.ui
     src/form/bootentrywidget.ui
-    src/form/devicepathdialog.ui
+    src/form/filepathdialog.ui
     src/form/efibooteditor.ui
 )
 
