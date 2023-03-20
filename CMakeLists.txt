@@ -181,6 +181,8 @@ if(WIN32)
         # Enable all warnings in application code
         /Wall /permissive- /WX
         # Disable some warnings
+        # C4371: 'classname': layout of class may have changed from a previous version of the compiler due to better packing of member 'member'
+        /wd4371
         # C4464: relative include path contains '..
         /wd4464
         # C4702: unreachable code
@@ -215,6 +217,7 @@ target_sources(${PROJECT_NAME} PRIVATE
     src/devicepathview.cpp
     src/devicepathproxymodel.cpp
     src/driveinfo.cpp
+    src/efibootdata.cpp
     src/efibooteditor.cpp
 )
 
@@ -252,13 +255,16 @@ target_sources(${PROJECT_NAME} PRIVATE
     include/bootentrylistmodel.h
     include/bootentrylistview.h
     include/bootentrywidget.h
+    include/commands.h
     include/compat.h
+    include/disableundoredo.h
     include/filepathdelegate.h
     include/filepathdialog.h
     include/devicepathview.h
     include/devicepathproxymodel.h
     include/driveinfo.h
     include/efiboot.h
+    include/efibootdata.h
     include/efibooteditor.h
     include/efivar-lite/efiboot-loadopt.h
     include/efivar-lite/efivar-dp.h

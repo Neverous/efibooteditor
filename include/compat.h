@@ -89,15 +89,6 @@ inline tstring to_tstring(const Type &value)
 
 }
 
-// clang-format off
-#ifndef DEFINE_ENUM_FLAG_OPERATORS
-#define DEFINE_ENUM_FLAG_OPERATORS(T)                                                                                                                      \
-    inline T operator~(T a) { return static_cast<T>(~static_cast<std::underlying_type<T>::type>(a)); }                                                     \
-    inline T operator|(T a, T b) { return static_cast<T>(static_cast<std::underlying_type<T>::type>(a) | static_cast<std::underlying_type<T>::type>(b)); } \
-    inline T operator&(T a, T b) { return static_cast<T>(static_cast<std::underlying_type<T>::type>(a) & static_cast<std::underlying_type<T>::type>(b)); }
-#endif
-// clang-format on
-
 const int HEX_BASE = 16;
 
 QT_BEGIN_NAMESPACE

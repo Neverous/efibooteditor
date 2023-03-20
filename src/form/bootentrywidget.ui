@@ -16,13 +16,13 @@
     <number>2</number>
    </property>
    <property name="topMargin">
-    <number>0</number>
+    <number>2</number>
    </property>
    <property name="rightMargin">
     <number>0</number>
    </property>
    <property name="bottomMargin">
-    <number>0</number>
+    <number>2</number>
    </property>
    <property name="horizontalSpacing">
     <number>2</number>
@@ -237,14 +237,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>QLabelWrapped</class>
-   <extends>QLabel</extends>
-   <header>qlabelwrapped.h</header>
-  </customwidget>
-  <customwidget>
    <class>QIndicatorWidget</class>
    <extends>QRadioButton</extends>
    <header>qindicatorwidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QLabelWrapped</class>
+   <extends>QLabel</extends>
+   <header>qlabelwrapped.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

@@ -17,6 +17,14 @@ class BootEntryForm: public QWidget
 {
     Q_OBJECT
 
+private:
+    std::unique_ptr<Ui::BootEntryForm> ui;
+    BootEntryListModel *entries_list_model{nullptr};
+    DevicePathProxyModel device_path_proxy_model{};
+    QModelIndex current_index{};
+    const BootEntry *current_item{nullptr};
+    bool changing_optional_data_format{false};
+
 public:
     explicit BootEntryForm(QWidget *parent = nullptr);
     BootEntryForm(const BootEntryForm &) = delete;
@@ -28,20 +36,13 @@ public:
     void setBootEntryListModel(BootEntryListModel &model);
     void setItem(const QModelIndex &index, const BootEntry *item);
 
-private:
-    std::unique_ptr<Ui::BootEntryForm> ui;
-    BootEntryListModel *entries_list_model = nullptr;
-    DevicePathProxyModel device_path_proxy_model{};
-    QModelIndex current_index = {};
-    const BootEntry *current_item = nullptr;
-
 private slots:
-    void indexEdited(const QString &text);
-    void descriptionEdited(const QString &text);
-    void optionalDataFormatChanged(int format);
+    void setIndex(const QString &text);
+    void setDescription(const QString &text);
+    void setOptionalDataFormat(int format);
     void optionalDataEdited();
-    void attributeActiveChanged(int state);
-    void attributeHiddenChanged(int state);
-    void attributeForceReconnectChanged(int state);
-    void categoryChanged(int index);
+    void setAttribute(int state);
+
+private:
+    uint32_t getAttributes() const;
 };

@@ -64,102 +64,84 @@ void BootEntryForm::setItem(const QModelIndex &index, const BootEntry *item)
     setDisabled(!item);
 }
 
-void BootEntryForm::indexEdited(const QString &text)
+void BootEntryForm::setIndex(const QString &text)
 {
     if(!isEnabled())
         return;
 
-    entries_list_model->changeData(current_index, [&text](BootEntry &entry)
-        {
-        bool success = false;
-        uint16_t index = text.right(text.size()-2).toUShort(&success, HEX_BASE);
-        if(success)
-            entry.index = index;
-        return success; });
+    bool success = false;
+    uint16_t index = text.right(text.size() - 2).toUShort(&success, HEX_BASE);
+    if(!success)
+        return;
+
+    entries_list_model->setEntryIndex(current_index, index);
 }
 
-void BootEntryForm::descriptionEdited(const QString &text)
+void BootEntryForm::setDescription(const QString &text)
 {
     if(!isEnabled())
         return;
 
-    entries_list_model->changeData(current_index, [&text](BootEntry &entry)
-        {
-        entry.description = text;
-        return true; });
+    entries_list_model->setEntryDescription(current_index, text);
 }
 
-void BootEntryForm::optionalDataFormatChanged(int format)
+void BootEntryForm::setOptionalDataFormat(int format)
 {
-    if(!isEnabled())
+    if(!isEnabled() || changing_optional_data_format)
         return;
 
-    bool success = entries_list_model->changeData(current_index, [&](BootEntry &entry)
-        {
-        bool result = entry.changeOptionalDataFormat(static_cast<BootEntry::OptionalDataFormat>(format));
-        if(result)
-            ui->optional_data_text->setPlainText(entry.optional_data);
-
-        return result; });
-
+    changing_optional_data_format = true;
+    bool success = entries_list_model->changeEntryOptionalDataFormat(current_index, format);
     if(!success)
     {
         QMessageBox::critical(this, qApp->applicationName(), tr("Couldn't change optional data format!"));
         ui->optional_data_format_combo->setCurrentIndex(static_cast<int>(current_item->optional_data_format));
+        changing_optional_data_format = false;
+        return;
     }
+
+    ui->optional_data_text->setPlainText(current_item->optional_data);
+    changing_optional_data_format = false;
 }
 
 void BootEntryForm::optionalDataEdited()
 {
-    if(!isEnabled())
+    if(!isEnabled() || changing_optional_data_format)
         return;
 
-    entries_list_model->changeData(current_index, [&](BootEntry &entry)
-        {
-        entry.optional_data = ui->optional_data_text->toPlainText();
-        return true; });
+    entries_list_model->setEntryOptionalData(current_index, ui->optional_data_text->toPlainText());
 }
 
-void BootEntryForm::attributeActiveChanged(int state)
+void BootEntryForm::setAttribute(int)
 {
     if(!isEnabled())
         return;
 
-    entries_list_model->changeData(current_index, [state](BootEntry &entry)
-        {
-        entry.attributes = (entry.attributes & ~EFIBoot::Load_option_attribute::ACTIVE) | (state ? EFIBoot::Load_option_attribute::ACTIVE : EFIBoot::Load_option_attribute::EMPTY);
-        return true; });
+    entries_list_model->setEntryAttributes(current_index, getAttributes());
 }
 
-void BootEntryForm::attributeHiddenChanged(int state)
+uint32_t BootEntryForm::getAttributes() const
 {
-    if(!isEnabled())
-        return;
+    uint32_t attr = EFIBoot::Load_option_attribute::EMPTY;
+    if(ui->attribute_active->isChecked())
+        attr |= EFIBoot::Load_option_attribute::ACTIVE;
 
-    entries_list_model->changeData(current_index, [state](BootEntry &entry)
-        {
-        entry.attributes = (entry.attributes & ~EFIBoot::Load_option_attribute::HIDDEN) | (state ? EFIBoot::Load_option_attribute::HIDDEN : EFIBoot::Load_option_attribute::EMPTY);
-        return true; });
-}
+    if(ui->attribute_hidden->isChecked())
+        attr |= EFIBoot::Load_option_attribute::HIDDEN;
 
-void BootEntryForm::attributeForceReconnectChanged(int state)
-{
-    if(!isEnabled())
-        return;
+    if(ui->attribute_force_reconnect->isChecked())
+        attr |= EFIBoot::Load_option_attribute::FORCE_RECONNECT;
 
-    entries_list_model->changeData(current_index, [state](BootEntry &entry)
-        {
-        entry.attributes = (entry.attributes & ~EFIBoot::Load_option_attribute::FORCE_RECONNECT) | (state ? EFIBoot::Load_option_attribute::FORCE_RECONNECT : EFIBoot::Load_option_attribute::EMPTY);
-        return true; });
-}
+    switch(ui->category_combo->currentIndex())
+    {
+    case 0:
+        attr |= EFIBoot::Load_option_attribute::CATEGORY_BOOT;
+        break;
 
-void BootEntryForm::categoryChanged(int index)
-{
-    if(!isEnabled())
-        return;
+    case 1:
+        attr |= EFIBoot::Load_option_attribute::CATEGORY_APP;
+        break;
+    }
 
-    entries_list_model->changeData(current_index, [index](BootEntry &entry)
-        {
-        entry.attributes = (entry.attributes & ~EFIBoot::Load_option_attribute::CATEGORY_MASK) | (index ? EFIBoot::Load_option_attribute::CATEGORY_APP : EFIBoot::Load_option_attribute::CATEGORY_BOOT);
-        return true; });
+    return attr;
 }

@@ -497,7 +497,7 @@ public:
     QString description = "New entry";
     QVector<File_path::ANY> device_path = {};
     QString optional_data = "";
-    EFIBoot::Load_option_attribute attributes = EFIBoot::Load_option_attribute::EMPTY;
+    uint32_t attributes = EFIBoot::Load_option_attribute::EMPTY;
     uint32_t efi_attributes = EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS;
 
     bool is_current_boot = false;
@@ -516,8 +516,9 @@ public:
     QJsonObject toJSON() const;
 
     QString formatDevicePath(bool refresh = true) const;
+    QString getTitle() const;
 
-    bool changeOptionalDataFormat(OptionalDataFormat format);
+    bool changeOptionalDataFormat(OptionalDataFormat format, bool test = false);
 
 private:
     QByteArray getRawOptionalData() const;
