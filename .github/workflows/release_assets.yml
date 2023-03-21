@@ -70,7 +70,7 @@ jobs:
 
       - name: Get release version
         id: vars
-        run: echo "version=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
+        run: echo "version=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
         shell: bash
 
       - name: Configure build with ${{ matrix.compiler }}
@@ -138,7 +138,7 @@ jobs:
 
       - name: Get release version
         id: vars
-        run: echo "version=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
+        run: echo "version=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
         shell: bash
 
       - name: Configure build with ${{ matrix.compiler }}
@@ -202,7 +202,7 @@ jobs:
 
       - name: Get release version
         id: vars
-        run: echo "version=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
+        run: echo "version=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
         shell: bash
 
       - name: Configure build with Clang
@@ -253,7 +253,7 @@ jobs:
     steps:
       - name: Get release version
         id: vars
-        run: echo "version=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
+        run: echo "version=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
 
       - name: Download artifacts
         uses: actions/download-artifact@v3
@@ -267,8 +267,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.tar.zst
-          asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-${{ matrix.compiler }}.tar.zst
+          asset_path: EFIBootEditor-v${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.tar.zst
+          asset_name: EFIBootEditor-v${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-${{ matrix.compiler }}.tar.zst
           asset_content_type: application/tar+gzip
 
       - name: Upload DEB
@@ -277,8 +277,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.deb
-          asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-${{ matrix.compiler }}.deb
+          asset_path: EFIBootEditor-v${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.deb
+          asset_name: EFIBootEditor-v${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-${{ matrix.compiler }}.deb
           asset_content_type: application/vnd.debian.binary-package
 
       - name: Upload DDEB
@@ -287,8 +287,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-dbgsym.ddeb
-          asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-${{ matrix.compiler }}-dbgsym.ddeb
+          asset_path: EFIBootEditor-v${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-dbgsym.ddeb
+          asset_name: EFIBootEditor-v${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-${{ matrix.compiler }}-dbgsym.ddeb
           asset_content_type: application/vnd.debian.binary-package
 
   upload-windows-asset:
@@ -310,7 +310,7 @@ jobs:
     steps:
       - name: Get release version
         id: vars
-        run: echo "version=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
+        run: echo "version=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
 
       - name: Download artifacts
         uses: actions/download-artifact@v3
@@ -324,8 +324,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.zip
-          asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-${{ matrix.compiler }}.zip
+          asset_path: EFIBootEditor-v${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.zip
+          asset_name: EFIBootEditor-v${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-${{ matrix.compiler }}.zip
           asset_content_type: application/zip
 
       - name: Upload MSI
@@ -334,8 +334,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.msi
-          asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-${{ matrix.compiler }}.msi
+          asset_path: EFIBootEditor-v${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.msi
+          asset_name: EFIBootEditor-v${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-${{ matrix.compiler }}.msi
           asset_content_type: application/x-ole-storage
 
   upload-macos-asset:
@@ -356,7 +356,7 @@ jobs:
     steps:
       - name: Get release version
         id: vars
-        run: echo "version=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
+        run: echo "version=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
 
       - name: Download artifacts
         uses: actions/download-artifact@v3
@@ -370,8 +370,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.tar.zst
-          asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-${{ matrix.compiler }}.tar.zst
+          asset_path: EFIBootEditor-v${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.tar.zst
+          asset_name: EFIBootEditor-v${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-${{ matrix.compiler }}.tar.zst
           asset_content_type: application/tar+gzip
 
       - name: Upload DMG
@@ -380,6 +380,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.dmg
-          asset_name: EFIBootEditor-${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-${{ matrix.compiler }}.dmg
+          asset_path: EFIBootEditor-v${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}.dmg
+          asset_name: EFIBootEditor-v${{ steps.vars.outputs.version }}-${{ matrix.os }}-qt-${{ matrix.qt_version }}-${{ matrix.compiler }}.dmg
           asset_content_type: application/octet-stream
