@@ -47,13 +47,10 @@ void DevicePathView::editCurrentRow()
     const auto status = dialog->exec();
     if(!readonly && status == QDialog::Accepted)
     {
-        auto row = index.row();
         const auto file_path = dialog->toFilePath();
-        model()->insertRow(row + 1);
         QVariant _data;
         _data.setValue(&file_path);
-        model()->setData(index.siblingAtRow(row + 1), _data);
-        model()->removeRow(row);
+        model()->setData(index, _data);
         setCurrentIndex(index);
     }
 }

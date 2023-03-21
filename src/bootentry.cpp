@@ -140,7 +140,12 @@ auto BootEntry::formatDevicePath(bool refresh) const -> QString
     return device_path_str;
 }
 
-auto BootEntry::changeOptionalDataFormat(BootEntry::OptionalDataFormat format) -> bool
+QString BootEntry::getTitle() const
+{
+    return QString("%1 (%2)").arg(description, toHex(index, 4));
+}
+
+auto BootEntry::changeOptionalDataFormat(BootEntry::OptionalDataFormat format, bool test) -> bool
 {
     if(format == optional_data_format)
         return true;
@@ -182,8 +187,11 @@ auto BootEntry::changeOptionalDataFormat(BootEntry::OptionalDataFormat format) -
     if(temp_optional_data.contains(QChar(0)))
         return false;
 
-    optional_data_format = format;
-    optional_data = temp_optional_data;
+    if(!test)
+    {
+        optional_data_format = format;
+        optional_data = temp_optional_data;
+    }
     return true;
 }
 

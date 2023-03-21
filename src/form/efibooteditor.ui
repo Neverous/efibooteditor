@@ -28,7 +28,7 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <layout class="QVBoxLayout" name="main_layout">
+   <layout class="QVBoxLayout" name="main_layout" stretch="1,0">
     <item>
      <widget class="QWidget" name="boot" native="true">
       <property name="sizePolicy">
@@ -500,6 +500,12 @@
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
            </spacer>
           </item>
          </layout>
@@ -781,6 +787,12 @@
                   <property name="orientation">
                    <enum>Qt::Horizontal</enum>
                   </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
                  </spacer>
                 </item>
                </layout>
@@ -872,6 +884,12 @@
                   <property name="orientation">
                    <enum>Qt::Horizontal</enum>
                   </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
                  </spacer>
                 </item>
                </layout>
@@ -920,6 +938,12 @@
                <spacer name="secure_boot_hspacer">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
                 </property>
                </spacer>
               </item>
@@ -1097,6 +1121,40 @@
       </layout>
      </widget>
     </item>
+    <item>
+     <widget class="QUndoView" name="undo_view">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="toolTip">
+       <string>Undo stack</string>
+      </property>
+      <property name="statusTip">
+       <string>Undo stack</string>
+      </property>
+      <property name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo stack&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="showDropIndicator" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::NoSelection</enum>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menu">
@@ -1137,7 +1195,15 @@
     <addaction name="separator"/>
     <addaction name="dump_raw_efi_data"/>
    </widget>
+   <widget class="QMenu" name="edit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="undo"/>
+    <addaction name="redo"/>
+   </widget>
    <addaction name="file"/>
+   <addaction name="edit"/>
    <addaction name="help"/>
   </widget>
   <widget class="QStatusBar" name="status">
@@ -1266,6 +1332,42 @@
    </property>
    <property name="whatsThis">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dumps raw EFI data for debugging purposes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </action>
+  <action name="undo">
+   <property name="icon">
+    <iconset theme="edit-undo">
+     <normaloff>.</normaloff>.</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Undo</string>
+   </property>
+   <property name="statusTip">
+    <string>Undo</string>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="redo">
+   <property name="icon">
+    <iconset theme="edit-redo">
+     <normaloff>.</normaloff>.</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Redo</string>
+   </property>
+   <property name="statusTip">
+    <string>Redo</string>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Redo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Z</string>
    </property>
   </action>
  </widget>
@@ -1574,6 +1676,118 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>boot_to_firmware_ui</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>EFIBootEditor</receiver>
+   <slot>setOsIndication(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>489</x>
+     <y>286</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>collect_current_config</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>EFIBootEditor</receiver>
+   <slot>setOsIndication(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>489</x>
+     <y>316</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>start_os_recovery</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>EFIBootEditor</receiver>
+   <slot>setOsIndication(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>657</x>
+     <y>286</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>start_platform_recovery</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>EFIBootEditor</receiver>
+   <slot>setOsIndication(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>657</x>
+     <y>316</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>undo</sender>
+   <signal>triggered()</signal>
+   <receiver>EFIBootEditor</receiver>
+   <slot>undo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>redo</sender>
+   <signal>triggered()</signal>
+   <receiver>EFIBootEditor</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>undo_view</sender>
+   <signal>pressed(QModelIndex)</signal>
+   <receiver>EFIBootEditor</receiver>
+   <slot>undoViewChanged(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>399</x>
+     <y>471</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>enableBootEntryEditor(QModelIndex)</slot>
@@ -1594,5 +1808,9 @@
   <slot>editConsoleIn()</slot>
   <slot>editConsoleOut()</slot>
   <slot>editErrorOut()</slot>
+  <slot>setOsIndication(bool)</slot>
+  <slot>undo()</slot>
+  <slot>redo()</slot>
+  <slot>undoViewChanged(QModelIndex)</slot>
  </slots>
 </ui>

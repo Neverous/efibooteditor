@@ -308,7 +308,7 @@ inline bool register_deserializer()
 #undef REGISTER_DESERIALIZER
 } // namespace File_path
 
-enum class Load_option_attribute : uint32_t
+enum Load_option_attribute
 {
     EMPTY = 0x00000000,
 
@@ -321,14 +321,12 @@ enum class Load_option_attribute : uint32_t
     CATEGORY_APP = 0x00000100,
 };
 
-DEFINE_ENUM_FLAG_OPERATORS(Load_option_attribute)
-
 struct Load_option
 {
     std::u16string description = u"";
     std::vector<File_path::ANY> device_path = {};
     Raw_data optional_data = {};
-    Load_option_attribute attributes = Load_option_attribute::EMPTY;
+    uint32_t attributes = Load_option_attribute::EMPTY;
 };
 
 #if defined(_MSC_VER)

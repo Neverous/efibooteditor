@@ -52,6 +52,6 @@ auto main(int argc, char *argv[]) -> int
     w.show();
 
     QApplication::processEvents();
-    w.resetBootConfiguration();
+    w.reloadBootConfiguration();
     return QApplication::exec();
 }

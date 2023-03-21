@@ -370,6 +370,9 @@
        <property name="sizeAdjustPolicy">
         <enum>QAbstractScrollArea::AdjustToContents</enum>
        </property>
+       <property name="undoRedoEnabled">
+        <bool>false</bool>
+       </property>
       </widget>
      </item>
     </layout>
@@ -559,6 +562,12 @@
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
     </spacer>
    </item>
   </layout>
@@ -581,9 +590,9 @@
  <connections>
   <connection>
    <sender>description_text</sender>
-   <signal>textChanged(QString)</signal>
+   <signal>textEdited(QString)</signal>
    <receiver>BootEntryForm</receiver>
-   <slot>descriptionEdited(QString)</slot>
+   <slot>setDescription(QString)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>239</x>
@@ -679,7 +688,7 @@
    <sender>attribute_active</sender>
    <signal>stateChanged(int)</signal>
    <receiver>BootEntryForm</receiver>
-   <slot>attributeActiveChanged(int)</slot>
+   <slot>setAttribute(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>133</x>
@@ -695,7 +704,7 @@
    <sender>attribute_hidden</sender>
    <signal>stateChanged(int)</signal>
    <receiver>BootEntryForm</receiver>
-   <slot>attributeHiddenChanged(int)</slot>
+   <slot>setAttribute(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>233</x>
@@ -711,7 +720,7 @@
    <sender>attribute_force_reconnect</sender>
    <signal>stateChanged(int)</signal>
    <receiver>BootEntryForm</receiver>
-   <slot>attributeForceReconnectChanged(int)</slot>
+   <slot>setAttribute(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>133</x>
@@ -727,7 +736,7 @@
    <sender>category_combo</sender>
    <signal>currentIndexChanged(int)</signal>
    <receiver>BootEntryForm</receiver>
-   <slot>categoryChanged(int)</slot>
+   <slot>setAttribute(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>243</x>
@@ -759,7 +768,7 @@
    <sender>optional_data_format_combo</sender>
    <signal>currentIndexChanged(int)</signal>
    <receiver>BootEntryForm</receiver>
-   <slot>optionalDataFormatChanged(int)</slot>
+   <slot>setOptionalDataFormat(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>247</x>
@@ -791,7 +800,7 @@
    <sender>index_text</sender>
    <signal>textEdited(QString)</signal>
    <receiver>BootEntryForm</receiver>
-   <slot>indexEdited(QString)</slot>
+   <slot>setIndex(QString)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>247</x>
@@ -805,13 +814,10 @@
   </connection>
  </connections>
  <slots>
-  <slot>descriptionEdited(QString)</slot>
-  <slot>optionalDataFormatChanged(int)</slot>
+  <slot>setOptionalDataFormat(int)</slot>
   <slot>optionalDataEdited()</slot>
-  <slot>attributeActiveChanged(int)</slot>
-  <slot>attributeHiddenChanged(int)</slot>
-  <slot>attributeForceReconnectChanged(int)</slot>
-  <slot>categoryChanged(int)</slot>
-  <slot>indexEdited(QString)</slot>
+  <slot>setDescription(QString)</slot>
+  <slot>setAttribute(int)</slot>
+  <slot>setIndex(QString)</slot>
  </slots>
 </ui>

@@ -4,10 +4,12 @@
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QProgressDialog>
+#include <QUndoStack>
 #include <memory>
 
-#include "bootentrylistmodel.h"
 #include "bootentrylistview.h"
+#include "disableundoredo.h"
+#include "efibootdata.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -30,26 +32,22 @@ private:
     };
 
     std::unique_ptr<Ui::EFIBootEditor> ui;
-    BootEntryListModel boot_entries_list_model{this};
-    BootEntryListModel driver_entries_list_model{this};
-    BootEntryListModel sysprep_entries_list_model{this};
-    BootEntryListModel platform_recovery_entries_list_model{this, true};
-    std::unique_ptr<QMessageBox> confirmation = nullptr;
-    std::unique_ptr<QMessageBox> error = nullptr;
-    std::unique_ptr<QProgressDialog> progress = nullptr;
+    EFIBootData data{this};
 
-    const std::vector<std::tuple<QString, BootEntryListModel &>> BOOT_ENTRIES{
-        {"Boot", boot_entries_list_model},
-        {"Driver", driver_entries_list_model},
-        {"SysPrep", sysprep_entries_list_model},
-        {"PlatformRecovery", platform_recovery_entries_list_model},
-    };
+    std::unique_ptr<QMessageBox> confirmation;
+    std::unique_ptr<QMessageBox> error;
+    std::unique_ptr<QProgressDialog> progress;
+    std::unique_ptr<DisableUndoRedo> disableUndoRedo;
+
+    QUndoStack undo_stack{this};
 
 public:
     explicit EFIBootEditor(QWidget *parent = nullptr);
     EFIBootEditor(const EFIBootEditor &) = delete;
     EFIBootEditor &operator=(const EFIBootEditor &) = delete;
     ~EFIBootEditor() override;
+
+    void reloadBootConfiguration();
 
 public slots:
     void reload();
@@ -58,39 +56,45 @@ public slots:
     void export_();
     void dump();
     void reorder();
-    void resetBootConfiguration();
-    void enableBootEntryEditor(const QModelIndex &index);
-    void disableBootEntryEditor();
-    void clearBootSettings();
-    void switchBootEntryEditor(int index);
-    void saveBootConfiguration();
-    void importBootConfiguration(const QString &file_name);
-    void exportBootConfiguration(const QString &file_name);
-    void dumpRawEFIData(const QString &file_name);
-    void showAboutBox();
-    void reorderBootEntries();
+
+    void undo();
+    void redo();
 
     void removeCurrentBootEntry();
     void moveCurrentBootEntryUp();
     void moveCurrentBootEntryDown();
     void insertBootEntry();
 
+    void enableBootEntryEditor(const QModelIndex &index);
+    void switchBootEntryEditor(int index);
+    void showAboutBox();
+
+    void setOsIndicationsSupported(uint64_t value);
+    void setOsIndications(uint64_t value);
+
+    void setOsIndication(bool checked);
+
+    void undoViewChanged(const QModelIndex &index);
+
+signals:
+    void osIndicationsChanged(uint64_t value);
+
 private:
-    std::tuple<BootEntryListView &, BootEntryListModel &> getBootEntryList(int index);
-    std::tuple<BootEntryListView &, BootEntryListModel &> currentBootEntryList();
-    void setupOsIndications(uint64_t value);
+    void disableBootEntryEditor();
+    void refreshBootEntryEditor();
+    void reorderBootEntries();
+
+    std::tuple<QString, BootEntryListView &, BootEntryListModel &> getBootEntryList(int index);
+    std::tuple<QString, BootEntryListView &, BootEntryListModel &> currentBootEntryList();
+
     uint64_t getOsIndications() const;
-    void setupOsIndicationsSupport(uint64_t value);
 
     void closeEvent(QCloseEvent *event) override;
 
-    void importJSONEFIData(const QJsonObject &input);
-    void importRawEFIData(const QJsonObject &input);
-
-    void showError(const QString &message, const QString &details);
     template <class Receiver, typename Slot>
     void showConfirmation(const QString &message, const QMessageBox::StandardButtons &buttons, const QMessageBox::StandardButton &confirmation_button, Receiver confirmation_context, Slot confirmation_slot);
 
+    void showError(const QString &message, const QString &details);
     void showProgressBar(size_t step, size_t total, const QString &details);
     void hideProgressBar();
 };

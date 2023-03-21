@@ -33,4 +33,7 @@ public slots:
     void removeCurrentRow();
     void moveCurrentRowUp();
     void moveCurrentRowDown();
+
+    void rowsMoved(const QModelIndex &sourceParent, int sourceStart, int sourceEnd, const QModelIndex &destinationParent, int destinationRow);
+    void rowsChanged(const QModelIndex &parent, int first, int last);
 };
