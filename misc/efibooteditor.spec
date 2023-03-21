@@ -1,7 +1,7 @@
 Name:           efibooteditor
-Version:        1.1.5
+Version:        1.2.0-beta.1
 Release:        1%{?dist}
-Summary:        GUI for managing EFI Boot Manager configuration.
+Summary:        Boot Editor for (U)EFI based systems
 
 License:        GPLv3-or-later
 URL:            https://github.com/Neverous/efibooteditor
@@ -40,5 +40,7 @@ Requires:       efivar
 
 
 %changelog
+* Tue Mar 21 2023 - 1.2.0-beta.1-1
+- Updated version
 * Sun Jan 22 2023 Justin Zobel <justin@1707.io> - 1.1.5-1
 - Initial Version

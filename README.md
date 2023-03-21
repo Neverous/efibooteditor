@@ -3,7 +3,7 @@
 Boot Editor for (U)EFI based systems.
 
 ![EFIBootEditor](doc/efibooteditor.png)
-![Device path dialog](doc/devicepathdialog.png)
+![File path dialog](doc/filepathdialog.png)
 
 ## Requirements
 

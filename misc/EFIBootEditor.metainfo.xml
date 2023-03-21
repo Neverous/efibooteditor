@@ -2,7 +2,7 @@
 <component type="desktop-application">
     <id>EFIBootEditor</id>
     <name>EFIBootEditor</name>
-    <summary>GUI for editing EFI Boot Manager entries</summary>
+    <summary>Boot Editor for (U)EFI based systems</summary>
     <developer_name>Maciej Szeptuch</developer_name>
     <metadata_license>CC-BY-4.0</metadata_license>
     <project_license>LGPL-3.0</project_license>

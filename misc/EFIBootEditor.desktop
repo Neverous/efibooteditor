@@ -2,7 +2,7 @@
 Type=Application
 Version=1.0
 Name=EFI Boot Editor
-Comment=GUI for editing EFI Boot Manager entries
+Comment=Boot Editor for (U)EFI based systems
 Exec=pkexec efibooteditor
 Icon=preferences-system
 StartupNotify=true
