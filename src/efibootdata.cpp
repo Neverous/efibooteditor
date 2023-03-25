@@ -987,7 +987,7 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
                         full_prefix);
                 }
             },
-            "", true);
+            "", order.empty());
     }
 
     process_entry(
@@ -1108,8 +1108,8 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
         // References to local bindings don't work in lambdas
         auto &model = model_;
         auto &prefix = prefix_;
-        const QString order_name = QString("%1Order").arg(prefix);
 
+        const QString order_name = QString("%1Order").arg(prefix);
         std::vector<uint16_t> order;
         std::unordered_set<uint16_t> ordered_entry;
 
@@ -1122,6 +1122,14 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
                     ordered_entry.insert(index);
             },
             "", true);
+
+        if(!input.contains(prefix))
+        {
+            if(!order.empty())
+                errors.push_back(tr("%1: not found").arg(prefix));
+
+            continue;
+        }
 
         if(!input[prefix].isObject())
         {

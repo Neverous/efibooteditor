@@ -368,6 +368,7 @@
         <location filename="../src/efibootdata.cpp" line="583"/>
         <location filename="../src/efibootdata.cpp" line="772"/>
         <location filename="../src/efibootdata.cpp" line="1026"/>
+        <location filename="../src/efibootdata.cpp" line="1129"/>
         <source>%1: not found</source>
         <translation type="unfinished"></translation>
     </message>
@@ -466,7 +467,7 @@
         <location filename="../src/efibootdata.cpp" line="383"/>
         <location filename="../src/efibootdata.cpp" line="399"/>
         <location filename="../src/efibootdata.cpp" line="1006"/>
-        <location filename="../src/efibootdata.cpp" line="1191"/>
+        <location filename="../src/efibootdata.cpp" line="1199"/>
         <source>Error importing boot configuration</source>
         <translation type="unfinished"></translation>
     </message>
@@ -553,9 +554,9 @@
         <location filename="../src/efibootdata.cpp" line="953"/>
         <location filename="../src/efibootdata.cpp" line="1034"/>
         <location filename="../src/efibootdata.cpp" line="1041"/>
-        <location filename="../src/efibootdata.cpp" line="1128"/>
-        <location filename="../src/efibootdata.cpp" line="1141"/>
-        <location filename="../src/efibootdata.cpp" line="1178"/>
+        <location filename="../src/efibootdata.cpp" line="1136"/>
+        <location filename="../src/efibootdata.cpp" line="1149"/>
+        <location filename="../src/efibootdata.cpp" line="1186"/>
         <source>%1: %2 expected</source>
         <translation type="unfinished"></translation>
     </message>
@@ -601,14 +602,14 @@
         <location filename="../src/efibootdata.cpp" line="969"/>
         <location filename="../src/efibootdata.cpp" line="994"/>
         <location filename="../src/efibootdata.cpp" line="1034"/>
-        <location filename="../src/efibootdata.cpp" line="1128"/>
-        <location filename="../src/efibootdata.cpp" line="1178"/>
+        <location filename="../src/efibootdata.cpp" line="1136"/>
+        <location filename="../src/efibootdata.cpp" line="1186"/>
         <source>object</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="953"/>
-        <location filename="../src/efibootdata.cpp" line="1141"/>
+        <location filename="../src/efibootdata.cpp" line="1149"/>
         <source>hexadecimal number</source>
         <translation type="unfinished"></translation>
     </message>
@@ -619,7 +620,7 @@
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1006"/>
-        <location filename="../src/efibootdata.cpp" line="1191"/>
+        <location filename="../src/efibootdata.cpp" line="1199"/>
         <source>Failed to import some EFI Boot Manager entries:
 
   - %1</source>
