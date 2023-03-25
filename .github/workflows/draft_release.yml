@@ -1,4 +1,4 @@
-name: Update changeset
+name: Draft release
 
 on:
   push:

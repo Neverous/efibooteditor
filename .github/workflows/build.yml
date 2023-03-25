@@ -1,0 +1,137 @@
+name: Build EFIBootEditor
+
+on:
+  workflow_call:
+    inputs:
+      os:
+        required: true
+        type: string
+      qt-version:
+        required: true
+        type: string
+      compiler:
+        required: true
+        type: string
+      build-config:
+        required: true
+        type: string
+      version:
+        required: true
+        type: string
+
+env:
+  CMAKE_BUILD_PARALLEL_LEVEL: 4
+
+jobs:
+  build:
+    name: ${{ inputs.os }} Qt ${{ inputs.qt-version }} with ${{ inputs.compiler }}
+    runs-on: ${{ inputs.os }}
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: 'cpp'
+        if: inputs.build-config == 'Debug'
+
+      - name: Set up Qt environment
+        uses: jurplel/install-qt-action@v3
+        with:
+          cache: true
+          version: ${{ inputs.qt-version }}
+          modules: ${{ startsWith(inputs.qt-version, '6') && 'qt5compat' || '' }}
+
+      - name: Install libfuse2
+        run: sudo apt-get install libfuse2
+        shell: bash
+        if: startsWith(inputs.os, 'ubuntu')
+
+      - name: Install linuxdeploy
+        uses: miurahr/install-linuxdeploy-action@v1
+        with:
+          plugins: qt
+        if: startsWith(inputs.os, 'ubuntu')
+
+      - name: Install efivar
+        run: sudo apt-get install libefiboot1 libefiboot-dev libefivar-dev
+        shell: bash
+        if: startsWith(inputs.os, 'ubuntu')
+
+      - name: Install libxkbcommon-x11-0
+        run: sudo apt-get install libxkbcommon-x11-0
+        shell: bash
+        if: startsWith(inputs.os, 'ubuntu')
+
+      - name: Create build directory
+        run: mkdir -p build
+        shell: bash
+
+      - name: Configure build with ${{ inputs.compiler }}
+        run: |
+          if [ "${{ inputs.compiler }}" = "Clang" ]; then
+            export CC=clang
+            export CXX=clang++
+          elif [ "${{ inputs.compiler }}" = "GCC" ]; then
+            export CC=gcc
+            export CXX=g++
+          fi;
+          cmake -DCMAKE_BUILD_TYPE=${{ inputs.build-config }} ..
+        shell: bash
+        env:
+          BUILD_VERSION: ${{ inputs.version }}
+          BUILD_OS: ${{ inputs.os }}
+        working-directory: build
+        if: ${{ !startsWith(inputs.os, 'windows') }}
+
+      - name: Configure build with ${{ inputs.compiler }}
+        run: |
+          if "${{ endsWith(inputs.os, '2019') }}"=="true" set VCVARSALL=%programfiles(x86)%\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat
+          if "${{ endsWith(inputs.os, '2022') }}"=="true" set VCVARSALL=%programfiles%\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat
+          call "%VCVARSALL%" x64 || exit /b
+          if "${{ inputs.compiler }}"=="Clang" set COMPILER="-T ClangCL"
+          cmake -DCMAKE_BUILD_TYPE=${{ inputs.build-config }} -DCMAKE_SYSTEM_VERSION=10.0.19041.0 %COMPILER% .. || exit /b
+        shell: cmd
+        env:
+          BUILD_VERSION: ${{ inputs.version }}
+          BUILD_OS: ${{ inputs.os }}
+        working-directory: build
+        if: startsWith(inputs.os, 'windows')
+
+      - name: Build
+        run: cmake --build . --config ${{ inputs.build-config }} --target package
+        shell: bash
+        working-directory: build
+        if: ${{ !startsWith(inputs.os, 'windows') }}
+
+      - name: Build
+        run: cmake --build . --config ${{ inputs.build-config }} --target package || exit /b
+        shell: cmd
+        working-directory: build
+        if: startsWith(inputs.os, 'windows')
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
+
+      - name: Perform MSVC Code Analysis
+        uses: microsoft/msvc-code-analysis-action@v0.1.1
+        id: msvc-analysis
+        with:
+          cmakeBuildDirectory: ${{ github.workspace }}/build
+          buildConfiguration: ${{ inputs.build-config }}
+          ruleset: NativeRecommendedRules.ruleset
+        if: inputs.compiler == 'MSVC'
+
+      - name: Upload MSVC Code Analysis results to GitHub
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: ${{ steps.msvc-analysis.outputs.sarif }}
+        if: inputs.compiler == 'MSVC'
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: EFIBootEditor-${{ github.sha }}-${{ inputs.os }}-qt-${{ inputs.qt-version }}-${{ inputs.compiler }}
+          if-no-files-found: error
+          path: build/dist/EFIBootEditor-*
