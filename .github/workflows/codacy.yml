@@ -1,4 +1,4 @@
-name: Codacy Code Analysis
+name: Codacy code analysis
 
 on:
   push:

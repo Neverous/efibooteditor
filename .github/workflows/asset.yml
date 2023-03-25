@@ -1,0 +1,41 @@
+name: Upload release asset
+
+on:
+  workflow_call:
+    inputs:
+      os:
+        required: true
+        type: string
+      qt-version:
+        required: true
+        type: string
+      compiler:
+        required: true
+        type: string
+      version:
+        required: true
+        type: string
+      extension:
+        required: true
+        type: string
+
+jobs:
+  upload-asset:
+    name: Upload release asset ${{ inputs.os }} Qt ${{ inputs.qt-version }} with ${{ inputs.compiler }} ${{ inputs.extension }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: EFIBootEditor-${{ github.sha }}-${{ inputs.os }}-qt-${{ inputs.qt-version }}-${{ inputs.compiler }}
+          path: .
+
+      - name: Upload ${{ inputs.extension }}
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: EFIBootEditor-${{ inputs.version }}-${{ inputs.os }}-qt-${{ inputs.qt-version }}${{ inputs.extension }}
+          asset_name: EFIBootEditor-${{ inputs.version }}-${{ inputs.os }}-qt-${{ inputs.qt-version }}-${{ inputs.compiler }}${{ inputs.extension }}
+          asset_content_type: application/octet-stream

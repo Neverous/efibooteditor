@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-set(FULL_VERSION "$ENV{BUILD_VERSION}")
+string(REGEX REPLACE "^v" "" FULL_VERSION "$ENV{BUILD_VERSION}")
 if(NOT ("${FULL_VERSION}" MATCHES "[0-9]+\\.[0-9]+\\.[0-9]+"))
     set(FULL_VERSION "0.0.0-${FULL_VERSION}")
 endif()
