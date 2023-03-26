@@ -196,3 +196,22 @@ jobs:
       compiler: ${{ matrix.compiler }}
       version: ${{ github.ref_name }}
       extension: ${{ matrix.extension }}
+
+  winget-update:
+    name: Update version in winget
+    if: github.ref_type == 'tag'
+    needs: upload-windows-asset
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        os: [windows-2022]
+        qt-version:
+          - 6.4.3 # latest
+        compiler:
+          - MSVC
+    steps:
+      - name: Create PR in winget-pkgs repository
+        run: |
+          iwr https://aka.ms/wingetcreate/latest -OutFile wingetcreate.exe
+          version="${{ github.ref_name }}"
+          .\wingetcreate.exe update EFIBootEditor.EFIBootEditor -u https://github.com/Neverous/efibooteditor/releases/download/${{ github.ref_name }}/EFIBootEditor-${{ github.ref_name }}-${{ matrix.os }}-qt-${{ matrix.qt-version }}-${{ matrix.compiler }}.msi -v ${version:1} -t ${{ secrets.BOT_ACCESS_TOKEN }} --submit
