@@ -1,5 +1,5 @@
 Name:           efibooteditor
-Version:        1.2.0-beta.1
+Version:        1.2.0-beta.2
 Release:        1%{?dist}
 Summary:        Boot Editor for (U)EFI based systems
 
@@ -40,7 +40,7 @@ Requires:       efivar
 
 
 %changelog
-* Tue Mar 21 2023 - 1.2.0-beta.1-1
+* Tue Mar 28 2023 - 1.2.0-beta.2-1
 - Updated version
 * Sun Jan 22 2023 Justin Zobel <justin@1707.io> - 1.1.5-1
 - Initial Version

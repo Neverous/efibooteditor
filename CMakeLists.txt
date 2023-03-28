@@ -487,7 +487,7 @@ set(CPACK_PACKAGE_FILE_NAME "${PROJECT_NAME_CAPITALIZED}-v${FULL_VERSION}-${CPAC
 
 include(CPackComponent)
 cpack_add_component(Program
-    DISPLAY_NAME EFIBootEditor
+    DISPLAY_NAME "EFI Boot Editor"
     DESCRIPTION "Main executable"
     REQUIRED
 )

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
     <id>EFIBootEditor</id>
-    <name>EFIBootEditor</name>
+    <name>EFI Boot Editor</name>
     <summary>Boot Editor for (U)EFI based systems</summary>
     <developer_name>Maciej Szeptuch</developer_name>
     <metadata_license>CC-BY-4.0</metadata_license>
     <project_license>LGPL-3.0</project_license>
     <description>
         <p>
-            GUI for managing EFI Boot Manager configuration.
+            Boot Editor for (U)EFI based systems.
         </p>
     </description>
 
@@ -19,7 +19,7 @@
     <screenshots>
         <screenshot type="default">
             <image>https://github.com/Neverous/efibooteditor/raw/master/doc/efibooteditor.png</image>
-            <caption>EFIBootEditor</caption>
+            <caption>EFI Boot Editor</caption>
         </screenshot>
     </screenshots>
 </component>
