@@ -99,6 +99,7 @@ jobs:
     if: github.ref_type == 'tag'
     needs: build-linux
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-20.04, ubuntu-22.04]
         qt-version:
@@ -151,6 +152,7 @@ jobs:
     if: github.ref_type == 'tag'
     needs: build-windows
     strategy:
+      fail-fast: false
       matrix:
         os: [windows-2019, windows-2022]
         qt-version:
@@ -177,6 +179,7 @@ jobs:
     if: github.ref_type == 'tag'
     needs: build-macos
     strategy:
+      fail-fast: false
       matrix:
         os: [macos-11, macos-12]
         qt-version:
@@ -203,6 +206,7 @@ jobs:
     needs: upload-windows-asset
     runs-on: windows-latest
     strategy:
+      fail-fast: false
       matrix:
         os: [windows-2022]
         qt-version:
