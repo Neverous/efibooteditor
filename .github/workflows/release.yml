@@ -120,7 +120,7 @@ jobs:
           - os: ubuntu-18.04
             qt-version: 5.15.2
             compiler: Clang
-            extension: .dev
+            extension: .deb
           - os: ubuntu-18.04
             qt-version: 5.15.2
             compiler: Clang
@@ -213,5 +213,4 @@ jobs:
       - name: Create PR in winget-pkgs repository
         run: |
           iwr https://aka.ms/wingetcreate/latest -OutFile wingetcreate.exe
-          version="${{ github.ref_name }}"
-          .\wingetcreate.exe update EFIBootEditor.EFIBootEditor -u https://github.com/Neverous/efibooteditor/releases/download/${{ github.ref_name }}/EFIBootEditor-${{ github.ref_name }}-${{ matrix.os }}-qt-${{ matrix.qt-version }}-${{ matrix.compiler }}.msi -v ${version:1} -t ${{ secrets.BOT_ACCESS_TOKEN }} --submit
+          .\wingetcreate.exe update EFIBootEditor.EFIBootEditor -u https://github.com/Neverous/efibooteditor/releases/download/${{ github.ref_name }}/EFIBootEditor-${{ github.ref_name }}-${{ matrix.os }}-qt-${{ matrix.qt-version }}-${{ matrix.compiler }}.msi -v $Env:GITHUB_REF_NAME.Substring(1) -t ${{ secrets.BOT_ACCESS_TOKEN }} --submit
