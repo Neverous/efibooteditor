@@ -10,25 +10,14 @@ on:
 
 jobs:
   build-linux:
-    name: ${{ matrix.os }} Qt ${{ matrix.qt-version }} with ${{ matrix.compiler }}
+    name: ${{ matrix.os }} with ${{ matrix.compiler }}
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-20.04, ubuntu-22.04]
-        qt-version:
-          - 5.15.2 # OS LTS
-          - 6.2.4 # LTS Standard
-          - 6.4.3 # latest
         compiler:
           - Clang
           - GCC
-        include:
-          - os: ubuntu-18.04
-            qt-version: 5.15.2
-            compiler: Clang
-          - os: ubuntu-18.04
-            qt-version: 5.15.2
-            compiler: GCC
 
     permissions:
       actions: read
@@ -38,21 +27,16 @@ jobs:
     uses: ./.github/workflows/build.yml
     with:
       os: ${{ matrix.os }}
-      qt-version: ${{ matrix.qt-version }}
       compiler: ${{ matrix.compiler }}
       build-config: Debug
       version: 0.0.0-${{ github.sha }}
 
   build-windows:
-    name: ${{ matrix.os }} Qt ${{ matrix.qt-version }} with ${{ matrix.compiler }}
+    name: ${{ matrix.os }} with ${{ matrix.compiler }}
     strategy:
       fail-fast: false
       matrix:
         os: [windows-2019, windows-2022]
-        qt-version:
-          - 5.15.2 # OS LTS
-          - 6.2.4 # LTS Standard
-          - 6.4.3 # latest
         compiler:
           - Clang
           - MSVC
@@ -65,21 +49,16 @@ jobs:
     uses: ./.github/workflows/build.yml
     with:
       os: ${{ matrix.os }}
-      qt-version: ${{ matrix.qt-version }}
       compiler: ${{ matrix.compiler }}
       build-config: Debug
       version: 0.0.0-${{ github.sha }}
 
   build-macos:
-    name: ${{ matrix.os }} Qt ${{ matrix.qt-version }} with ${{ matrix.compiler }}
+    name: ${{ matrix.os }} with ${{ matrix.compiler }}
     strategy:
       fail-fast: false
       matrix:
         os: [macos-11, macos-12]
-        qt-version:
-          - 5.15.2 # OS LTS
-          - 6.2.4 # LTS Standard
-          - 6.4.3 # latest
         compiler:
           - Clang
 
@@ -91,7 +70,6 @@ jobs:
     uses: ./.github/workflows/build.yml
     with:
       os: ${{ matrix.os }}
-      qt-version: ${{ matrix.qt-version }}
       compiler: ${{ matrix.compiler }}
       build-config: Debug
       version: 0.0.0-${{ github.sha }}

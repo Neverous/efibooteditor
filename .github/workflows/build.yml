@@ -6,9 +6,6 @@ on:
       os:
         required: true
         type: string
-      qt-version:
-        required: true
-        type: string
       compiler:
         required: true
         type: string
@@ -24,8 +21,16 @@ env:
 
 jobs:
   build:
-    name: ${{ inputs.os }} Qt ${{ inputs.qt-version }} with ${{ inputs.compiler }}
+    name: ${{ inputs.os }} Qt ${{ matrix.qt-version }} with ${{ inputs.compiler }}
     runs-on: ${{ inputs.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        qt-version:
+          - 5.15.2 # OS LTS
+          - 6.2.4 # LTS Standard
+          - 6.4.3 # latest
+
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
@@ -40,8 +45,8 @@ jobs:
         uses: jurplel/install-qt-action@v3
         with:
           cache: true
-          version: ${{ inputs.qt-version }}
-          modules: ${{ startsWith(inputs.qt-version, '6') && 'qt5compat' || '' }}
+          version: ${{ matrix.qt-version }}
+          modules: ${{ startsWith(matrix.qt-version, '6') && 'qt5compat' || '' }}
 
       - name: Install libfuse2
         run: sudo apt-get install libfuse2
@@ -133,6 +138,6 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: EFIBootEditor-${{ github.sha }}-${{ inputs.os }}-qt-${{ inputs.qt-version }}-${{ inputs.compiler }}
+          name: EFIBootEditor-${{ github.sha }}-${{ inputs.os }}-qt-${{ matrix.qt-version }}-${{ inputs.compiler }}
           if-no-files-found: error
           path: build/dist/EFIBootEditor-*
