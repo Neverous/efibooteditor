@@ -13,17 +13,6 @@
 
 #include "compat.h"
 
-template <class... Ts>
-struct overloaded: Ts...
-{
-    using Ts::operator()...;
-    overloaded(const overloaded &) = delete;
-    overloaded &operator=(const overloaded &) = delete;
-};
-
-template <class... Ts>
-overloaded(Ts...) -> overloaded<Ts...>;
-
 namespace EFIBoot
 {
 

@@ -220,27 +220,32 @@ void FilePathDialog::setFilePath(const File_path::ANY *_file_path)
         return;
     }
 
-    std::visit(
-        overloaded{
-            // clang-format off
-            [&](const File_path::PCI &pci) { setPCIForm(pci); },
-            [&](const File_path::HID &hid) { setHIDForm(hid); },
-            [&](const File_path::USB &usb) { setUSBForm(usb); },
-            [&](const File_path::Vendor &vendor) { setVendorForm(vendor); },
-            [&](const File_path::MACAddress &mac_address) { setMACAddressForm(mac_address); },
-            [&](const File_path::IPv4 &ipv4) { setIPv4Form(ipv4); },
-            [&](const File_path::IPv6 &ipv6) { setIPv6Form(ipv6); },
-            [&](const File_path::SATA &sata) { setSATAForm(sata); },
-            [&](const File_path::HD &hd) { setHDForm(hd); },
-            [&](const File_path::File &file) { setFileForm(file); },
-            [&](const File_path::FirmwareFile &firmware_file) { setFirmwareFileForm(firmware_file); },
-            [&](const File_path::FirmwareVolume &firmware_volume) { setFirmwareVolumeForm(firmware_volume); },
-            [&](const File_path::BIOSBootSpecification &bios_boot_specification) { setBIOSBootSpecificationForm(bios_boot_specification); },
-            [&](const File_path::End &end) { setEndForm(end._subtype); },
-            [&](const File_path::Unknown &unknown) { setUnknownForm(unknown); },
-            // clang-format on
-        },
-        *_file_path);
+    struct Visitor
+    {
+        FilePathDialog *parent;
+        Visitor(FilePathDialog *parent_)
+            : parent{parent_}
+        {
+        }
+
+        void operator()(const File_path::PCI &pci) { parent->setPCIForm(pci); }
+        void operator()(const File_path::HID &hid) { parent->setHIDForm(hid); }
+        void operator()(const File_path::USB &usb) { parent->setUSBForm(usb); }
+        void operator()(const File_path::Vendor &vendor) { parent->setVendorForm(vendor); }
+        void operator()(const File_path::MACAddress &mac_address) { parent->setMACAddressForm(mac_address); }
+        void operator()(const File_path::IPv4 &ipv4) { parent->setIPv4Form(ipv4); }
+        void operator()(const File_path::IPv6 &ipv6) { parent->setIPv6Form(ipv6); }
+        void operator()(const File_path::SATA &sata) { parent->setSATAForm(sata); }
+        void operator()(const File_path::HD &hd) { parent->setHDForm(hd); }
+        void operator()(const File_path::File &file) { parent->setFileForm(file); }
+        void operator()(const File_path::FirmwareFile &firmware_file) { parent->setFirmwareFileForm(firmware_file); }
+        void operator()(const File_path::FirmwareVolume &firmware_volume) { parent->setFirmwareVolumeForm(firmware_volume); }
+        void operator()(const File_path::BIOSBootSpecification &bios_boot_specification) { parent->setBIOSBootSpecificationForm(bios_boot_specification); }
+        void operator()(const File_path::End &end) { parent->setEndForm(end._subtype); }
+        void operator()(const File_path::Unknown &unknown) { parent->setUnknownForm(unknown); }
+    };
+
+    std::visit(Visitor(this), *_file_path);
 
     update();
 }
