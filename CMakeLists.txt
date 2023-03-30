@@ -455,7 +455,7 @@ else()
     set(CPACK_PROJECT_CONFIG_FILE "${CMAKE_CURRENT_SOURCE_DIR}/cmake/CPackLinux.cmake")
 
     set(CPACK_DEBIAN_PACKAGE_NAME "${PROJECT_NAME_CAPITALIZED}")
-    set(CPACK_DEBIAN_COMPRESSION_TYPE "zstd")
+    #set(CPACK_DEBIAN_COMPRESSION_TYPE "zstd") Not supported on current Debian Bullseye
     set(CPACK_DEBIAN_PACKAGE_SECTION "admin")
     set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
     set(CPACK_DEB_COMPONENT_INSTALL ON)
@@ -464,7 +464,7 @@ else()
     # Built from GitHub actions
     if(NOT ("$ENV{BUILD_OS}" STREQUAL ""))
         # Because installed with aqt Qt needs to be specified manually in dependencies
-        set(CPACK_DEBIAN_PACKAGE_DEPENDS "libqt${QT_VERSION_MAJOR}gui${QT_VERSION_MAJOR} (>= ${Qt${QT_VERSION_MAJOR}_VERSION}), libqt${QT_VERSION_MAJOR}widgets${QT_VERSION_MAJOR} (>= ${Qt${QT_VERSION_MAJOR}_VERSION})")
+        set(CPACK_DEBIAN_PACKAGE_DEPENDS "libqt${QT_VERSION_MAJOR}gui${QT_VERSION_MAJOR} (>= ${Qt${QT_VERSION_MAJOR}_VERSION}), libqt${QT_VERSION_MAJOR}widgets${QT_VERSION_MAJOR} (>= ${Qt${QT_VERSION_MAJOR}_VERSION}), libqt${QT_VERSION_MAJOR}network${QT_VERSION_MAJOR} (>= ${Qt${QT_VERSION_MAJOR}_VERSION})")
 
         if(${QT_VERSION_MAJOR} GREATER 5)
             set(CPACK_DEBIAN_PACKAGE_DEPENDS "libqt${QT_VERSION_MAJOR}core${QT_VERSION_MAJOR} (>= ${Qt${QT_VERSION_MAJOR}_VERSION}), libqt${QT_VERSION_MAJOR}core5compat${QT_VERSION_MAJOR} (>= ${Qt${QT_VERSION_MAJOR}_VERSION}), ${CPACK_DEBIAN_PACKAGE_DEPENDS}")
