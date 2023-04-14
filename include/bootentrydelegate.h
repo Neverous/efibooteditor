@@ -2,20 +2,21 @@
 #pragma once
 
 #include "bootentry.h"
+#include "bootentrylistmodel.h"
 #include "bootentrywidget.h"
 #include "qwidgetitemdelegate.h"
 
 class BootEntryDelegate: public QWidgetItemDelegate<BootEntryWidget, const BootEntry *>
 {
 private:
-    bool readonly = false;
+    BootEntryListModel::Options options{};
 
 public:
     BootEntryDelegate();
     BootEntryDelegate(const BootEntryDelegate &) = delete;
     BootEntryDelegate &operator=(const BootEntryDelegate &) = delete;
 
-    void setReadOnly(bool readonly);
+    void setOptions(const BootEntryListModel::Options &options_);
 
 protected:
     void setupWidgetFromItem(Widget &widget, const Item &item) const override;

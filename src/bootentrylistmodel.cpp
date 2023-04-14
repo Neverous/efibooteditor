@@ -2,10 +2,10 @@
 #include "bootentrylistmodel.h"
 #include "commands.h"
 
-BootEntryListModel::BootEntryListModel(const QString &name_, bool readonly_, QObject *parent)
+BootEntryListModel::BootEntryListModel(const QString &name_, const Options &options_, QObject *parent)
     : QAbstractListModel{parent}
     , name{name_}
-    , readonly{readonly_}
+    , options{options_}
 {
 }
 

@@ -21,6 +21,12 @@ void BootEntryWidget::setReadOnly(bool readonly)
     ui->next_boot->setDisabled(readonly);
 }
 
+void BootEntryWidget::showBootOptions(bool is_boot)
+{
+    ui->current_boot->setVisible(is_boot);
+    ui->next_boot->setVisible(is_boot);
+}
+
 void BootEntryWidget::setIndex(const uint32_t index)
 {
     ui->index->setText(toHex(index, 4));

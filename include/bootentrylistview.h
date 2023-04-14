@@ -12,7 +12,7 @@ class BootEntryListView: public QListView
 
 private:
     BootEntryDelegate delegate{};
-    bool readonly = false;
+    BootEntryListModel::Options options{};
 
 public:
     explicit BootEntryListView(QWidget *parent = nullptr);

@@ -9,8 +9,8 @@ BootEntryListView::BootEntryListView(QWidget *parent)
 
 void BootEntryListView::setModel(BootEntryListModel *model)
 {
-    readonly = model->readonly;
-    delegate.setReadOnly(readonly);
+    options = model->options;
+    delegate.setOptions(options);
     disconnect(this->model(), &BootEntryListModel::rowsMoved, this, &BootEntryListView::rowsMoved);
     disconnect(this->model(), &BootEntryListModel::rowsRemoved, this, &BootEntryListView::rowsChanged);
     disconnect(this->model(), &BootEntryListModel::rowsInserted, this, &BootEntryListView::rowsChanged);
@@ -22,7 +22,7 @@ void BootEntryListView::setModel(BootEntryListModel *model)
 
 void BootEntryListView::insertRow()
 {
-    if(readonly)
+    if(options & BootEntryListModel::ReadOnly)
         return;
 
     auto row = currentIndex().row();
@@ -32,7 +32,7 @@ void BootEntryListView::insertRow()
 
 void BootEntryListView::removeCurrentRow()
 {
-    if(readonly)
+    if(options & BootEntryListModel::ReadOnly)
         return;
 
     auto index = currentIndex();
@@ -50,7 +50,7 @@ void BootEntryListView::removeCurrentRow()
 
 void BootEntryListView::moveCurrentRowUp()
 {
-    if(readonly)
+    if(options & BootEntryListModel::ReadOnly)
         return;
 
     auto index = currentIndex();
@@ -64,7 +64,7 @@ void BootEntryListView::moveCurrentRowUp()
 
 void BootEntryListView::moveCurrentRowDown()
 {
-    if(readonly)
+    if(options & BootEntryListModel::ReadOnly)
         return;
 
     auto index = currentIndex();

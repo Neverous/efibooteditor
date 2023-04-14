@@ -7,18 +7,19 @@ BootEntryDelegate::BootEntryDelegate()
 {
 }
 
-void BootEntryDelegate::setReadOnly(bool readonly_)
+void BootEntryDelegate::setOptions(const BootEntryListModel::Options &options_)
 {
-    readonly = readonly_;
+    options = options_;
 }
 
 void BootEntryDelegate::setupWidgetFromItem(Widget &widget, const Item &item) const
 {
-    widget.setReadOnly(readonly);
+    widget.setReadOnly(options & BootEntryListModel::ReadOnly);
     widget.setIndex(item->index);
     widget.setDescription(item->description);
     widget.setData(item->optional_data);
     widget.setDevicePath(item->formatDevicePath(false));
+    widget.showBootOptions(options & BootEntryListModel::IsBoot);
     widget.setCurrentBoot(item->is_current_boot);
     widget.setNextBoot(item->is_next_boot);
 }

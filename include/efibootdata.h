@@ -11,10 +11,10 @@ class EFIBootData: public QObject
     Q_OBJECT
 
 public:
-    BootEntryListModel boot_entries_list_model{tr("Boot"), false, this};
-    BootEntryListModel driver_entries_list_model{tr("Driver"), false, this};
-    BootEntryListModel sysprep_entries_list_model{tr("System Preparation"), false, this};
-    BootEntryListModel platform_recovery_entries_list_model{tr("Platform Recovery"), true, this};
+    BootEntryListModel boot_entries_list_model{tr("Boot"), BootEntryListModel::IsBoot, this};
+    BootEntryListModel driver_entries_list_model{tr("Driver"), {}, this};
+    BootEntryListModel sysprep_entries_list_model{tr("System Preparation"), {}, this};
+    BootEntryListModel platform_recovery_entries_list_model{tr("Platform Recovery"), BootEntryListModel::ReadOnly, this};
     QUndoStack *undo_stack{nullptr};
 
     uint16_t timeout{0};

@@ -3,6 +3,7 @@
 
 #include "bootentry.h"
 #include <QAbstractListModel>
+#include <QFlags>
 #include <QList>
 #include <QUndoStack>
 
@@ -28,8 +29,15 @@ class BootEntryListModel: public QAbstractListModel
     friend class MoveBootEntryFilePathCommand;
 
 public:
+    enum Option
+    {
+        ReadOnly = 0x1,
+        IsBoot = 0x2,
+    };
+    Q_DECLARE_FLAGS(Options, Option)
+
     const QString name;
-    const bool readonly;
+    const Options options;
 
 private:
     QVector<BootEntry> entries{};
@@ -37,7 +45,7 @@ private:
     QUndoStack *undo_stack{nullptr};
 
 public:
-    explicit BootEntryListModel(const QString &name_, bool readonly_ = false, QObject *parent = nullptr);
+    explicit BootEntryListModel(const QString &name_, const Options &options_ = {}, QObject *parent = nullptr);
     BootEntryListModel(const BootEntryListModel &) = delete;
     BootEntryListModel &operator=(const BootEntryListModel &) = delete;
 
