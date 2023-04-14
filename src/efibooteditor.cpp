@@ -173,8 +173,8 @@ void EFIBootEditor::switchBootEntryEditor(int index)
     ui->entry_form->setBootEntryListModel(model);
     list.setCurrentIndex(list.currentIndex());
     enableBootEntryEditor(list.currentIndex());
-    ui->entry_form->setReadOnly(model.readonly);
-    ui->entries_actions->setDisabled(model.readonly);
+    ui->entry_form->setReadOnly(model.options & BootEntryListModel::ReadOnly);
+    ui->entries_actions->setDisabled(model.options & BootEntryListModel::ReadOnly);
 }
 
 void EFIBootEditor::save()
@@ -287,7 +287,7 @@ void EFIBootEditor::undoViewChanged(const QModelIndex &)
 void EFIBootEditor::reorderBootEntries()
 {
     auto [name, list, model] = currentBootEntryList();
-    if(model.readonly)
+    if(model.options & BootEntryListModel::ReadOnly)
         return;
 
     disableBootEntryEditor();
@@ -305,7 +305,7 @@ void EFIBootEditor::removeCurrentBootEntry()
 {
     auto [name, list, model] = currentBootEntryList();
     (void)name;
-    if(model.readonly)
+    if(model.options & BootEntryListModel::ReadOnly)
         return;
 
     list.removeCurrentRow();
@@ -315,7 +315,7 @@ void EFIBootEditor::moveCurrentBootEntryUp()
 {
     auto [name, list, model] = currentBootEntryList();
     (void)name;
-    if(model.readonly)
+    if(model.options & BootEntryListModel::ReadOnly)
         return;
 
     list.moveCurrentRowUp();
@@ -325,7 +325,7 @@ void EFIBootEditor::moveCurrentBootEntryDown()
 {
     auto [name, list, model] = currentBootEntryList();
     (void)name;
-    if(model.readonly)
+    if(model.options & BootEntryListModel::ReadOnly)
         return;
 
     list.moveCurrentRowDown();
@@ -335,7 +335,7 @@ void EFIBootEditor::insertBootEntry()
 {
     auto [name, list, model] = currentBootEntryList();
     (void)name;
-    if(model.readonly)
+    if(model.options & BootEntryListModel::ReadOnly)
         return;
 
     list.insertRow();

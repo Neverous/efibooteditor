@@ -2487,8 +2487,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/filepathdialog.cpp" line="566"/>
-        <location filename="../src/filepathdialog.cpp" line="615"/>
+        <location filename="../src/filepathdialog.cpp" line="571"/>
+        <location filename="../src/filepathdialog.cpp" line="620"/>
         <source>Couldn&apos;t change Vendor data format!</source>
         <translation type="unfinished"></translation>
     </message>

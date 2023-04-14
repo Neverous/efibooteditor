@@ -26,6 +26,7 @@ public:
     ~BootEntryWidget() override;
 
     void setReadOnly(bool readonly);
+    void showBootOptions(bool is_boot);
 
     void setIndex(const uint32_t index);
     void setDescription(const QString &description);

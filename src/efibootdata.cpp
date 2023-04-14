@@ -204,7 +204,7 @@ void EFIBootData::reload()
                     auto entry = BootEntry::fromEFIBootLoadOption(value);
                     entry.index = index;
                     entry.efi_attributes = attributes;
-                    if(prefix == "Boot")
+                    if(model.options & BootEntryListModel::IsBoot)
                     {
                         entry.is_current_boot = current_boot == static_cast<int>(index);
                         entry.is_next_boot = next_boot == static_cast<int>(index);
@@ -255,7 +255,7 @@ void EFIBootData::save()
     // Save entries
     for(const auto &[prefix, model]: BOOT_ENTRIES)
     {
-        if(model.readonly)
+        if(model.options & BootEntryListModel::ReadOnly)
             continue;
 
         const QString order_name = QString("%1Order").arg(prefix);
@@ -444,7 +444,7 @@ void EFIBootData::export_(const QString &file_name)
             if((entry.attributes & EFIBoot::Load_option_attribute::CATEGORY_MASK) == EFIBoot::Load_option_attribute::CATEGORY_BOOT)
             {
                 order.push_back(entry.index);
-                if(prefix == "Boot")
+                if(model.options & BootEntryListModel::IsBoot)
                 {
                     if(entry.is_current_boot)
                         current_boot = entry.index;
@@ -977,7 +977,7 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
                             }
 
                             entry->index = index;
-                            if(prefix == "Boot")
+                            if(model.options & BootEntryListModel::IsBoot)
                             {
                                 entry->is_current_boot = current_boot == static_cast<int>(index);
                                 entry->is_next_boot = next_boot == static_cast<int>(index);
@@ -1169,7 +1169,7 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
                     auto entry = BootEntry::fromEFIBootLoadOption(value);
                     entry.index = index;
                     entry.efi_attributes = static_cast<uint32_t>(efi_attributes);
-                    if(prefix == "Boot")
+                    if(model.options & BootEntryListModel::IsBoot)
                     {
                         entry.is_current_boot = current_boot == static_cast<int>(index);
                         entry.is_next_boot = next_boot == static_cast<int>(index);
