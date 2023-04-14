@@ -25,8 +25,8 @@ jobs:
       matrix:
         qt-version:
           - 5.15.2 # OS LTS
-          - 6.2.4 # LTS Standard
-          - 6.4.3 # latest
+          - 6.2.4 # LTS
+          - 6.5.0 # latest
 
     steps:
       - name: Download artifacts

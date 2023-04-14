@@ -131,11 +131,6 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
         set(CMAKE_INCLUDE_SYSTEM_FLAG_CXX /imsvc)
         set(CMAKE_INCLUDE_SYSTEM_FLAG_C /imsvc)
 
-        # Clang-cl for some reason ignores all normal methods...
-        foreach(INCLUDE_DIR ${Qt${QT_VERSION_MAJOR}Core_INCLUDE_DIRS} ${Qt${QT_VERSION_MAJOR}Gui_INCLUDE_DIRS} ${Qt${QT_VERSION_MAJOR}Network_INCLUDE_DIRS} ${Qt${QT_VERSION_MAJOR}Widgets_INCLUDE_DIRS})
-            target_compile_options(${PROJECT_NAME} PRIVATE "SHELL:/imsvc ${INCLUDE_DIR}")
-        endforeach()
-
         # Disable compatibility warnings
         target_compile_options(${PROJECT_NAME} PRIVATE
             -Wno-c++20-compat
@@ -321,16 +316,46 @@ if(("${CMAKE_BUILD_TYPE}" STREQUAL "Release") AND UNIX)
     set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_RELEASE -s)
 endif()
 
-install(TARGETS ${PROJECT_NAME}
-    RUNTIME
-        DESTINATION bin
-    LIBRARY
-        DESTINATION lib
-    ARCHIVE
-        DESTINATION lib
-    BUNDLE
-        DESTINATION dist
-)
+if(WIN32)
+    install(TARGETS ${PROJECT_NAME}
+        RUNTIME
+            DESTINATION .
+        LIBRARY
+            DESTINATION .
+        ARCHIVE
+            DESTINATION .
+        BUNDLE
+            DESTINATION dist
+    )
+else()
+    include(GNUInstallDirs)
+
+    install(TARGETS ${PROJECT_NAME}
+        RUNTIME
+            DESTINATION ${CMAKE_INSTALL_BINDIR}
+        LIBRARY
+            DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        ARCHIVE
+            DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        BUNDLE
+            DESTINATION dist
+    )
+
+    if(UNIX AND NOT APPLE)
+        install(FILES misc/EFIBootEditor.desktop
+            DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications
+            COMPONENT Desktop
+        )
+        install(FILES misc/org.x.efibooteditor.policy
+            DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/polkit-1/actions/
+            COMPONENT Desktop
+        )
+        install(FILES misc/EFIBootEditor.metainfo.xml
+            DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/metainfo
+            COMPONENT Desktop
+        )
+    endif()
+endif()
 
 set(CMAKE_INSTALL_UCRT_LIBRARIES TRUE)
 set(CMAKE_INSTALL_SYSTEM_RUNTIME_COMPONENT Runtime)
@@ -342,9 +367,14 @@ if(WIN32)
         find_program(WINDEPLOYQT_EXECUTABLE NAMES windeployqt HINTS ${QT${QT_VERSION_MAJOR}_INSTALL_PREFIX}/bin REQUIRED)
     endif()
 
+    # windeployqt in 6.5.0 has broken translations support https://codereview.qt-project.org/c/qt/qtbase/+/468903
+    if(${QT_VERSION} VERSION_EQUAL 6.5.0)
+        set(SKIP_TRANSLATIONS "--no-translations")
+    endif()
+
     add_custom_command(TARGET ${PROJECT_NAME}
         POST_BUILD
-        COMMAND ${WINDEPLOYQT_EXECUTABLE} --dir ${CMAKE_BINARY_DIR}/qt --no-compiler-runtime --pdb "$<TARGET_FILE_DIR:${PROJECT_NAME}>/$<TARGET_FILE_NAME:${PROJECT_NAME}>"
+        COMMAND ${WINDEPLOYQT_EXECUTABLE} --dir ${CMAKE_BINARY_DIR}/qt --no-compiler-runtime --pdb "$<TARGET_FILE_DIR:${PROJECT_NAME}>/$<TARGET_FILE_NAME:${PROJECT_NAME}>" ${SKIP_TRANSLATIONS}
     )
 
     install(DIRECTORY "${CMAKE_BINARY_DIR}/qt/"
@@ -436,20 +466,6 @@ elseif(APPLE)
     set(CPACK_INCLUDE_TOPLEVEL_DIRECTORY NO)
 
 else()
-    include(GNUInstallDirs)
-    install(FILES misc/EFIBootEditor.desktop
-        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications
-        COMPONENT Desktop
-    )
-    install(FILES misc/org.x.efibooteditor.policy
-        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/polkit-1/actions/
-        COMPONENT Desktop
-    )
-    install(FILES misc/EFIBootEditor.metainfo.xml
-        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/metainfo
-        COMPONENT Desktop
-    )
-
     set(CPACK_PACKAGE_TARGET_OS_NAME "linux")
     set(CPACK_GENERATOR DEB TZST)
     set(CPACK_PROJECT_CONFIG_FILE "${CMAKE_CURRENT_SOURCE_DIR}/cmake/CPackLinux.cmake")
