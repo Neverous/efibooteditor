@@ -327,6 +327,8 @@ if(WIN32)
         BUNDLE
             DESTINATION dist
     )
+
+    set(CMAKE_INSTALL_SYSTEM_RUNTIME_DESTINATION .)
 else()
     include(GNUInstallDirs)
 
@@ -378,19 +380,19 @@ if(WIN32)
     )
 
     install(DIRECTORY "${CMAKE_BINARY_DIR}/qt/"
-        TYPE BIN
+        DESTINATION .
         COMPONENT Runtime
         PATTERN "*.pdb" EXCLUDE
     )
 
     if(("${CMAKE_BUILD_TYPE}" STREQUAL "Debug") OR ("${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo"))
         install(FILES "$<TARGET_PDB_FILE:${PROJECT_NAME}>"
-            TYPE BIN
+            DESTINATION .
             COMPONENT Debug
         )
 
         install(DIRECTORY "${CMAKE_BINARY_DIR}/qt/"
-            TYPE BIN
+            DESTINATION .
             COMPONENT Debug
             FILES_MATCHING
             PATTERN "*.pdb"
