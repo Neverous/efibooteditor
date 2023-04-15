@@ -28,8 +28,8 @@ jobs:
       matrix:
         qt-version:
           - 5.15.2 # OS LTS
-          - 6.2.4 # LTS Standard
-          - 6.4.3 # latest
+          - 6.2.4 # LTS
+          - 6.5.0 # latest
 
     steps:
       - name: Checkout source code
@@ -64,8 +64,8 @@ jobs:
         shell: bash
         if: startsWith(inputs.os, 'ubuntu')
 
-      - name: Install libxkbcommon-x11-0
-        run: sudo apt-get install libxkbcommon-x11-0
+      - name: Install libxkbcommon-x11-0 and libxcb-cursor0
+        run: sudo apt-get install libxkbcommon-x11-0 libxcb-cursor0
         shell: bash
         if: startsWith(inputs.os, 'ubuntu')
 
@@ -75,14 +75,17 @@ jobs:
 
       - name: Configure build with ${{ inputs.compiler }}
         run: |
-          if [ "${{ inputs.compiler }}" = "Clang" ]; then
-            export CC=clang
-            export CXX=clang++
-          elif [ "${{ inputs.compiler }}" = "GCC" ]; then
-            export CC=gcc
-            export CXX=g++
-          fi;
-          cmake -DCMAKE_BUILD_TYPE=${{ inputs.build-config }} ..
+          case "${{ inputs.compiler }}" in
+            "Clang")
+              export CC=clang;
+              export CXX=clang++;
+            ;;
+            "GCC")
+              export CC=gcc
+              export CXX=g++
+            ;;
+          esac;
+          cmake -DCMAKE_BUILD_TYPE=${{ inputs.build-config }} -DCMAKE_VERBOSE_MAKEFILE=ON ..
         shell: bash
         env:
           BUILD_VERSION: ${{ inputs.version }}
@@ -92,11 +95,8 @@ jobs:
 
       - name: Configure build with ${{ inputs.compiler }}
         run: |
-          if "${{ endsWith(inputs.os, '2019') }}"=="true" set VCVARSALL=%programfiles(x86)%\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat
-          if "${{ endsWith(inputs.os, '2022') }}"=="true" set VCVARSALL=%programfiles%\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat
-          call "%VCVARSALL%" x64 || exit /b
-          if "${{ inputs.compiler }}"=="Clang" set COMPILER="-T ClangCL"
-          cmake -DCMAKE_BUILD_TYPE=${{ inputs.build-config }} -DCMAKE_SYSTEM_VERSION=10.0.19041.0 %COMPILER% .. || exit /b
+          call "${{ endsWith(inputs.os, '2019') && '%programfiles(x86)%\Microsoft Visual Studio\2019' || '%programfiles%\Microsoft Visual Studio\2022' }}\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64 || exit /b
+          cmake -DCMAKE_BUILD_TYPE=${{ inputs.build-config }} ${{ endsWith(inputs.os, '2019') && '-DCMAKE_SYSTEM_VERSION=10.0.18362.0' || ''}} -DCMAKE_VERBOSE_MAKEFILE=ON ${{ inputs.compiler == 'Clang' && '-T ClangCL' || '' }} .. || exit /b
         shell: cmd
         env:
           BUILD_VERSION: ${{ inputs.version }}
