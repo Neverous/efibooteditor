@@ -21,7 +21,7 @@ EFIBootEditor::EFIBootEditor(QWidget *parent)
     , ui{std::make_unique<Ui::EFIBootEditor>()}
     , confirmation{std::make_unique<QMessageBox>(QMessageBox::Question, qApp->applicationName(), "", QMessageBox::NoButton, this)}
     , error{std::make_unique<QMessageBox>(QMessageBox::Critical, qApp->applicationName(), "", QMessageBox::NoButton, this)}
-    , progress{std::make_unique<QProgressDialog>(tr("Working..."), nullptr, 0, 0, this)}
+    , progress{std::make_unique<QProgressDialog>(tr("Working…"), nullptr, 0, 0, this)}
     , disableUndoRedo{std::make_unique<DisableUndoRedo>()}
 {
     data.setUndoStack(&undo_stack);
