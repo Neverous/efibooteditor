@@ -14,6 +14,10 @@ Boot Editor for (U)EFI based systems.
 
 See [INSTALL](INSTALL.md) instructions.
 
+## Localization
+
+You can help localize this project on [Weblate](https://hosted.weblate.org/engage/efibooteditor/).
+
 ## License
 
 This project is licensed under the LGPLv3 License -
