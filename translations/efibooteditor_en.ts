@@ -355,13 +355,13 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="69"/>
         <source>Loading EFI Boot Manager entries...</source>
-        <translation>Loading EFI Boot Manager entries...</translation>
+        <translation>Loading EFI Boot Manager entries…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="81"/>
         <location filename="../src/efibootdata.cpp" line="568"/>
         <source>Searching EFI Boot Manager entries...</source>
-        <translation>Searching EFI Boot Manager entries...</translation>
+        <translation>Searching EFI Boot Manager entries…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="93"/>
@@ -375,7 +375,7 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="98"/>
         <source>Processing EFI Boot Manager entries (%1)...</source>
-        <translation>Processing EFI Boot Manager entries (%1)...</translation>
+        <translation>Processing EFI Boot Manager entries (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="102"/>
@@ -401,12 +401,12 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="234"/>
         <source>Saving EFI Boot Manager entries...</source>
-        <translation>Saving EFI Boot Manager entries...</translation>
+        <translation>Saving EFI Boot Manager entries…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="244"/>
         <source>Searching old EFI Boot Manager entries...</source>
-        <translation>Searching old EFI Boot Manager entries...</translation>
+        <translation>Searching old EFI Boot Manager entries…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="269"/>
@@ -428,7 +428,7 @@
         <location filename="../src/efibootdata.cpp" line="344"/>
         <location filename="../src/efibootdata.cpp" line="363"/>
         <source>Saving EFI Boot Manager entries (%1)...</source>
-        <translation>Saving EFI Boot Manager entries (%1)...</translation>
+        <translation>Saving EFI Boot Manager entries (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="289"/>
@@ -443,7 +443,7 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="299"/>
         <source>Removing old EFI Boot Manager entries (%1)...</source>
-        <translation>Removing old EFI Boot Manager entries (%1)...</translation>
+        <translation>Removing old EFI Boot Manager entries (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="302"/>
@@ -456,14 +456,14 @@
         <location filename="../src/efibootdata.cpp" line="310"/>
         <location filename="../src/efibootdata.cpp" line="354"/>
         <source>Removing EFI Boot Manager entries (%1)...</source>
-        <translation>Removing EFI Boot Manager entries (%1)...</translation>
+        <translation>Removing EFI Boot Manager entries (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="379"/>
         <location filename="../src/efibootdata.cpp" line="759"/>
         <location filename="../src/efibootdata.cpp" line="1013"/>
         <source>Importing boot configuration...</source>
-        <translation>Importing boot configuration...</translation>
+        <translation>Importing boot configuration…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="383"/>
@@ -488,7 +488,7 @@
         <location filename="../src/efibootdata.cpp" line="408"/>
         <location filename="../src/efibootdata.cpp" line="551"/>
         <source>Exporting boot configuration...</source>
-        <translation>Exporting boot configuration...</translation>
+        <translation>Exporting boot configuration…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="412"/>
@@ -505,7 +505,7 @@
         <location filename="../src/efibootdata.cpp" line="457"/>
         <location filename="../src/efibootdata.cpp" line="588"/>
         <source>Exporting EFI Boot Manager entries (%1)...</source>
-        <translation>Exporting EFI Boot Manager entries (%1)...</translation>
+        <translation>Exporting EFI Boot Manager entries (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="540"/>
@@ -548,7 +548,7 @@
         <location filename="../src/efibootdata.cpp" line="777"/>
         <location filename="../src/efibootdata.cpp" line="1031"/>
         <source>Importing EFI Boot Manager entries (%1)...</source>
-        <translation>Importing EFI Boot Manager entries (%1)...</translation>
+        <translation>Importing EFI Boot Manager entries (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="780"/>
@@ -1373,7 +1373,7 @@
     <message>
         <location filename="../src/efibooteditor.cpp" line="24"/>
         <source>Working...</source>
-        <translation>Working...</translation>
+        <translation>Working…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="69"/>
