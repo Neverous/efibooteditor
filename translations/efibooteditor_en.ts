@@ -122,22 +122,22 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="347"/>
         <source>BASE64</source>
-        <translation type="unfinished">BASE64</translation>
+        <translation>BASE64</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="352"/>
         <source>UTF-16</source>
-        <translation type="unfinished">UTF-16</translation>
+        <translation>UTF-16</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="357"/>
         <source>UTF-8</source>
-        <translation type="unfinished">UTF-8</translation>
+        <translation>UTF-8</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="362"/>
         <source>HEX</source>
-        <translation type="unfinished">HEX</translation>
+        <translation>HEX</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="387"/>
@@ -1247,7 +1247,7 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1097"/>
         <source>Boot args</source>
-        <translation type="unfinished"></translation>
+        <translation>Boot args</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1163"/>
@@ -1428,7 +1428,7 @@
         <location filename="../src/efibooteditor.cpp" line="237"/>
         <source>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</source>
         <extracomment>About dialog</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="245"/>
