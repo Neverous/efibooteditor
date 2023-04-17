@@ -1247,7 +1247,7 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1097"/>
         <source>Boot args</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Boot args</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1163"/>
@@ -1428,7 +1428,7 @@
         <location filename="../src/efibooteditor.cpp" line="237"/>
         <source>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</source>
         <extracomment>About dialog</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="245"/>
