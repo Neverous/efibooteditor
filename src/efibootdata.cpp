@@ -1038,7 +1038,10 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
         const auto obj = root[name].toObject();
         if(!obj["raw_data"].isString() || !obj["efi_attributes"].isDouble())
         {
-            errors.push_back(tr("%1: %2 expected").arg(full_name).arg(tr("object(raw_data: string, efi_attributes: number)")));
+            errors.push_back(tr("%1: %2 expected").arg(full_name).arg(
+                //: Expected JSON structure, thrown as error description.
+                //: raw_data and efi_attributes are field names in JSON file
+                tr("object(raw_data: string, efi_attributes: number)")));
             return;
         }
 

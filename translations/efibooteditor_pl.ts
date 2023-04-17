@@ -353,30 +353,18 @@
 <context>
     <name>EFIBootData</name>
     <message>
-        <source>Loading EFI Boot Manager entries...</source>
-        <translation type="obsolete">Loading EFI Boot Manager entries…</translation>
-    </message>
-    <message>
-        <source>Searching EFI Boot Manager entries...</source>
-        <translation type="obsolete">Searching EFI Boot Manager entries…</translation>
-    </message>
-    <message>
         <location filename="../src/efibootdata.cpp" line="93"/>
         <location filename="../src/efibootdata.cpp" line="583"/>
         <location filename="../src/efibootdata.cpp" line="772"/>
         <location filename="../src/efibootdata.cpp" line="1026"/>
-        <location filename="../src/efibootdata.cpp" line="1129"/>
+        <location filename="../src/efibootdata.cpp" line="1132"/>
         <source>%1: not found</source>
         <translation type="unfinished">%1: not found</translation>
     </message>
     <message>
-        <source>Processing EFI Boot Manager entries (%1)...</source>
-        <translation type="obsolete">Processing EFI Boot Manager entries (%1)…</translation>
-    </message>
-    <message>
         <location filename="../src/efibootdata.cpp" line="102"/>
         <location filename="../src/efibootdata.cpp" line="592"/>
-        <location filename="../src/efibootdata.cpp" line="1049"/>
+        <location filename="../src/efibootdata.cpp" line="1052"/>
         <source>%1: failed deserialization</source>
         <translation type="unfinished">%1: failed deserialization</translation>
     </message>
@@ -395,14 +383,6 @@
   - %1</translation>
     </message>
     <message>
-        <source>Saving EFI Boot Manager entries...</source>
-        <translation type="obsolete">Saving EFI Boot Manager entries…</translation>
-    </message>
-    <message>
-        <source>Searching old EFI Boot Manager entries...</source>
-        <translation type="obsolete">Searching old EFI Boot Manager entries…</translation>
-    </message>
-    <message>
         <location filename="../src/efibootdata.cpp" line="269"/>
         <location filename="../src/efibootdata.cpp" line="439"/>
         <source>Error saving entries</source>
@@ -415,10 +395,6 @@
         <translation type="unfinished">Entry %1(%2): duplicated index!</translation>
     </message>
     <message>
-        <source>Saving EFI Boot Manager entries (%1)...</source>
-        <translation type="obsolete">Saving EFI Boot Manager entries (%1)…</translation>
-    </message>
-    <message>
         <location filename="../src/efibootdata.cpp" line="289"/>
         <location filename="../src/efibootdata.cpp" line="322"/>
         <location filename="../src/efibootdata.cpp" line="332"/>
@@ -429,10 +405,6 @@
         <translation type="unfinished">Error saving %1</translation>
     </message>
     <message>
-        <source>Removing old EFI Boot Manager entries (%1)...</source>
-        <translation type="obsolete">Removing old EFI Boot Manager entries (%1)…</translation>
-    </message>
-    <message>
         <location filename="../src/efibootdata.cpp" line="302"/>
         <location filename="../src/efibootdata.cpp" line="313"/>
         <location filename="../src/efibootdata.cpp" line="357"/>
@@ -440,18 +412,10 @@
         <translation type="unfinished">Error removing %1</translation>
     </message>
     <message>
-        <source>Removing EFI Boot Manager entries (%1)...</source>
-        <translation type="obsolete">Removing EFI Boot Manager entries (%1)…</translation>
-    </message>
-    <message>
-        <source>Importing boot configuration...</source>
-        <translation type="obsolete">Importing boot configuration…</translation>
-    </message>
-    <message>
         <location filename="../src/efibootdata.cpp" line="383"/>
         <location filename="../src/efibootdata.cpp" line="399"/>
         <location filename="../src/efibootdata.cpp" line="1006"/>
-        <location filename="../src/efibootdata.cpp" line="1199"/>
+        <location filename="../src/efibootdata.cpp" line="1202"/>
         <source>Error importing boot configuration</source>
         <translation type="unfinished">Error importing boot configuration</translation>
     </message>
@@ -467,10 +431,6 @@
         <translation type="unfinished">Invalid _Type: %1</translation>
     </message>
     <message>
-        <source>Exporting boot configuration...</source>
-        <translation type="obsolete">Exporting boot configuration…</translation>
-    </message>
-    <message>
         <location filename="../src/efibootdata.cpp" line="412"/>
         <location filename="../src/efibootdata.cpp" line="540"/>
         <source>Error exporting boot configuration</source>
@@ -480,10 +440,6 @@
         <location filename="../src/efibootdata.cpp" line="412"/>
         <source>Couldn&apos;t open selected file (%1): %2.</source>
         <translation type="unfinished">Couldn&apos;t open selected file (%1): %2.</translation>
-    </message>
-    <message>
-        <source>Exporting EFI Boot Manager entries (%1)...</source>
-        <translation type="obsolete">Exporting EFI Boot Manager entries (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="540"/>
@@ -521,10 +477,6 @@
         <location filename="../src/efibootdata.cpp" line="692"/>
         <source>Firmware actions</source>
         <translation type="unfinished">Firmware actions</translation>
-    </message>
-    <message>
-        <source>Importing EFI Boot Manager entries (%1)...</source>
-        <translation type="obsolete">Importing EFI Boot Manager entries (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="69"/>
@@ -606,9 +558,9 @@
         <location filename="../src/efibootdata.cpp" line="953"/>
         <location filename="../src/efibootdata.cpp" line="1034"/>
         <location filename="../src/efibootdata.cpp" line="1041"/>
-        <location filename="../src/efibootdata.cpp" line="1136"/>
-        <location filename="../src/efibootdata.cpp" line="1149"/>
-        <location filename="../src/efibootdata.cpp" line="1186"/>
+        <location filename="../src/efibootdata.cpp" line="1139"/>
+        <location filename="../src/efibootdata.cpp" line="1152"/>
+        <location filename="../src/efibootdata.cpp" line="1189"/>
         <source>%1: %2 expected</source>
         <translation type="unfinished">%1: %2 expected</translation>
     </message>
@@ -654,14 +606,14 @@
         <location filename="../src/efibootdata.cpp" line="969"/>
         <location filename="../src/efibootdata.cpp" line="994"/>
         <location filename="../src/efibootdata.cpp" line="1034"/>
-        <location filename="../src/efibootdata.cpp" line="1136"/>
-        <location filename="../src/efibootdata.cpp" line="1186"/>
+        <location filename="../src/efibootdata.cpp" line="1139"/>
+        <location filename="../src/efibootdata.cpp" line="1189"/>
         <source>object</source>
         <translation type="unfinished">object</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="953"/>
-        <location filename="../src/efibootdata.cpp" line="1149"/>
+        <location filename="../src/efibootdata.cpp" line="1152"/>
         <source>hexadecimal number</source>
         <translation type="unfinished">hexadecimal number</translation>
     </message>
@@ -672,7 +624,7 @@
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1006"/>
-        <location filename="../src/efibootdata.cpp" line="1199"/>
+        <location filename="../src/efibootdata.cpp" line="1202"/>
         <source>Failed to import some EFI Boot Manager entries:
 
   - %1</source>
@@ -681,8 +633,9 @@
   - %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1041"/>
+        <location filename="../src/efibootdata.cpp" line="1044"/>
         <source>object(raw_data: string, efi_attributes: number)</source>
+        <extracomment>Expected JSON structure, thrown as error description. raw_data and efi_attributes are field names in JSON file</extracomment>
         <translation type="unfinished">object(raw_data: string, efi_attributes: number)</translation>
     </message>
     <message>
@@ -715,8 +668,8 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="72"/>
-        <location filename="../src/efibooteditor.cpp" line="349"/>
-        <location filename="../src/efibooteditor.cpp" line="362"/>
+        <location filename="../src/efibooteditor.cpp" line="351"/>
+        <location filename="../src/efibooteditor.cpp" line="364"/>
         <source>Boot</source>
         <translation type="unfinished">Boot</translation>
     </message>
@@ -735,7 +688,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="134"/>
-        <location filename="../src/efibooteditor.cpp" line="352"/>
+        <location filename="../src/efibooteditor.cpp" line="354"/>
         <source>Driver</source>
         <translation type="unfinished">Driver</translation>
     </message>
@@ -754,7 +707,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="196"/>
-        <location filename="../src/efibooteditor.cpp" line="355"/>
+        <location filename="../src/efibooteditor.cpp" line="357"/>
         <source>System Preparation</source>
         <translation type="unfinished">System Preparation</translation>
     </message>
@@ -773,7 +726,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="258"/>
-        <location filename="../src/efibooteditor.cpp" line="358"/>
+        <location filename="../src/efibooteditor.cpp" line="360"/>
         <source>Platform Recovery</source>
         <translation type="unfinished">Platform Recovery</translation>
     </message>
@@ -1184,11 +1137,6 @@
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;macOS boot arguments.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1097"/>
-        <source>boot-args</source>
-        <translation type="unfinished">boot-args</translation>
-    </message>
-    <message>
         <location filename="../src/form/efibooteditor.ui" line="1136"/>
         <location filename="../src/form/efibooteditor.ui" line="1139"/>
         <source>Undo stack</source>
@@ -1297,6 +1245,11 @@
         <translation type="unfinished">Timeout</translation>
     </message>
     <message>
+        <location filename="../src/form/efibooteditor.ui" line="1097"/>
+        <source>Boot args</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/form/efibooteditor.ui" line="1163"/>
         <location filename="../src/form/efibooteditor.ui" line="1166"/>
         <source>File</source>
@@ -1375,6 +1328,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1280"/>
+        <location filename="../src/efibooteditor.cpp" line="235"/>
         <source>About EFI Boot Editor</source>
         <translation type="unfinished">About EFI Boot Editor</translation>
     </message>
@@ -1417,10 +1371,6 @@
         <location filename="../src/form/efibooteditor.ui" line="1331"/>
         <source>Dump raw EFI data</source>
         <translation type="unfinished">Dump raw EFI data</translation>
-    </message>
-    <message>
-        <source>Working...</source>
-        <translation type="obsolete">Working…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="24"/>
@@ -1475,22 +1425,24 @@
         <translation type="unfinished">Save raw EFI dump</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="235"/>
-        <source>About %1</source>
-        <translation type="unfinished">About %1</translation>
+        <location filename="../src/efibooteditor.cpp" line="237"/>
+        <source>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</source>
+        <extracomment>About dialog</extracomment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="243"/>
+        <location filename="../src/efibooteditor.cpp" line="245"/>
         <source>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; for EFI variables access.&lt;/p&gt;&lt;p&gt;Uses Tango Icons as fallback icons.&lt;/p&gt;</source>
+        <extracomment>About dialog details</extracomment>
         <translation type="unfinished">&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; for EFI variables access.&lt;/p&gt;&lt;p&gt;Uses Tango Icons as fallback icons.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="295"/>
+        <location filename="../src/efibooteditor.cpp" line="297"/>
         <source>Reorder %1 entries</source>
         <translation type="unfinished">Reorder %1 entries</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="391"/>
+        <location filename="../src/efibooteditor.cpp" line="393"/>
         <source>Are you sure you want to quit?</source>
         <translation type="unfinished">Are you sure you want to quit?</translation>
     </message>
@@ -2358,12 +2310,6 @@
         <location filename="../src/form/filepathdialog.ui" line="2010"/>
         <source>Name</source>
         <translation type="unfinished">Name</translation>
-    </message>
-    <message>
-        <location filename="../src/form/filepathdialog.ui" line="1959"/>
-        <location filename="../src/form/filepathdialog.ui" line="2031"/>
-        <source>&lt;HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_</source>
-        <translation type="unfinished">&lt;HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1971"/>

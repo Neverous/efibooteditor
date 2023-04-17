@@ -1094,7 +1094,7 @@
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;macOS boot arguments.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="text">
-                 <string>boot-args</string>
+                 <string>Boot args</string>
                 </property>
                </widget>
               </item>

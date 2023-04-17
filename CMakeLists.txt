@@ -289,7 +289,8 @@ FILE(GLOB TRANSLATIONS
 
 qt_add_translations(${PROJECT_NAME}
     TS_FILES ${TRANSLATIONS}
-    INCLUDE_DIRECTORIES "include")
+    INCLUDE_DIRECTORIES "include"
+    LUPDATE_OPTIONS "-no-obsolete")
 
 if(APPLE)
     target_link_libraries(${PROJECT_NAME} PRIVATE

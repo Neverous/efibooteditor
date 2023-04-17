@@ -232,14 +232,16 @@ void EFIBootEditor::dump()
 void EFIBootEditor::showAboutBox()
 {
     auto *about = new QMessageBox(QMessageBox::Information,
-        tr("About %1").arg(qApp->applicationName()),
-        QString("<h1>%1</h1>"
-                "<p><b>%2</b></p>"
-                "<p>%3</p>")
-            .arg(qApp->applicationName(), QCoreApplication::applicationVersion(), PROJECT_DESCRIPTION),
+        tr("About EFI Boot Editor"),
+        //: About dialog
+        tr("<h1>EFI Boot Editor</h1>"
+           "<p>Version <b>%1</b></p>"
+           "<p>Boot Editor for (U)EFI based systems.</p>")
+            .arg(QCoreApplication::applicationVersion()),
         QMessageBox::Close,
         this);
     about->setIconPixmap(QIcon::fromTheme("preferences-system").pixmap(128, 128));
+    //: About dialog details
     about->setInformativeText(tr("<p><a href='%1'>Website</a></p>"
                                  "<p>The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</p>"
                                  "<p>License: <a href='https://www.gnu.org/licenses/lgpl.html'>GNU LGPL Version 3</a></p>"

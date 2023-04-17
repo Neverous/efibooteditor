@@ -1956,7 +1956,7 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file UUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_</string>
+          <string notr="true">&lt;HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_</string>
          </property>
         </widget>
        </item>
@@ -2028,7 +2028,7 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware volume UUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="inputMask">
-          <string>&lt;HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_</string>
+          <string notr="true">&lt;HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_</string>
          </property>
         </widget>
        </item>
