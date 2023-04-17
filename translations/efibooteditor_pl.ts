@@ -4,37 +4,37 @@
 <context>
     <name>BootEntryForm</name>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="30"/>
-        <location filename="../src/form/bootentryform.ui" line="33"/>
-        <location filename="../src/form/bootentryform.ui" line="36"/>
-        <location filename="../src/form/bootentryform.ui" line="43"/>
-        <location filename="../src/form/bootentryform.ui" line="46"/>
+        <location filename="../src/form/bootentryform.ui" line="67"/>
+        <location filename="../src/form/bootentryform.ui" line="70"/>
+        <location filename="../src/form/bootentryform.ui" line="73"/>
+        <location filename="../src/form/bootentryform.ui" line="80"/>
+        <location filename="../src/form/bootentryform.ui" line="83"/>
         <source>Description</source>
         <translation>Opis</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="59"/>
-        <location filename="../src/form/bootentryform.ui" line="62"/>
-        <location filename="../src/form/bootentryform.ui" line="65"/>
+        <location filename="../src/form/bootentryform.ui" line="96"/>
+        <location filename="../src/form/bootentryform.ui" line="99"/>
+        <location filename="../src/form/bootentryform.ui" line="102"/>
         <source>Path</source>
         <translation type="unfinished">Ścieżka</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="300"/>
-        <location filename="../src/form/bootentryform.ui" line="303"/>
-        <location filename="../src/form/bootentryform.ui" line="362"/>
-        <location filename="../src/form/bootentryform.ui" line="365"/>
+        <location filename="../src/form/bootentryform.ui" line="318"/>
+        <location filename="../src/form/bootentryform.ui" line="321"/>
+        <location filename="../src/form/bootentryform.ui" line="381"/>
+        <location filename="../src/form/bootentryform.ui" line="384"/>
         <source>Optional data</source>
         <translation type="unfinished">Optional data</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="306"/>
+        <location filename="../src/form/bootentryform.ui" line="324"/>
         <source>Optional</source>
         <translation type="unfinished">Optional</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="318"/>
-        <location filename="../src/form/bootentryform.ui" line="321"/>
+        <location filename="../src/form/bootentryform.ui" line="337"/>
+        <location filename="../src/form/bootentryform.ui" line="340"/>
         <source>Optional data format</source>
         <translation type="unfinished">Optional data format</translation>
     </message>
@@ -44,184 +44,184 @@
         <translation type="unfinished">Boot entry form</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="49"/>
+        <location filename="../src/form/bootentryform.ui" line="86"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="100"/>
-        <location filename="../src/form/bootentryform.ui" line="103"/>
+        <location filename="../src/form/bootentryform.ui" line="120"/>
+        <location filename="../src/form/bootentryform.ui" line="123"/>
         <source>Device path</source>
         <translation type="unfinished">Device path</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="106"/>
+        <location filename="../src/form/bootentryform.ui" line="126"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="158"/>
-        <location filename="../src/form/bootentryform.ui" line="161"/>
+        <location filename="../src/form/bootentryform.ui" line="178"/>
+        <location filename="../src/form/bootentryform.ui" line="181"/>
         <source>Move file path up</source>
         <translation type="unfinished">Move file path up</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="164"/>
+        <location filename="../src/form/bootentryform.ui" line="184"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="184"/>
-        <location filename="../src/form/bootentryform.ui" line="187"/>
+        <location filename="../src/form/bootentryform.ui" line="204"/>
+        <location filename="../src/form/bootentryform.ui" line="207"/>
         <source>Move file path down</source>
         <translation type="unfinished">Move file path down</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="190"/>
+        <location filename="../src/form/bootentryform.ui" line="210"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="210"/>
-        <location filename="../src/form/bootentryform.ui" line="213"/>
+        <location filename="../src/form/bootentryform.ui" line="230"/>
+        <location filename="../src/form/bootentryform.ui" line="233"/>
         <source>Remove file path</source>
         <translation type="unfinished">Remove file path</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="216"/>
+        <location filename="../src/form/bootentryform.ui" line="236"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="236"/>
-        <location filename="../src/form/bootentryform.ui" line="239"/>
+        <location filename="../src/form/bootentryform.ui" line="256"/>
+        <location filename="../src/form/bootentryform.ui" line="259"/>
         <source>Edit file path</source>
         <translation type="unfinished">Edit file path</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="242"/>
+        <location filename="../src/form/bootentryform.ui" line="262"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Edit file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Edit file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="262"/>
-        <location filename="../src/form/bootentryform.ui" line="265"/>
+        <location filename="../src/form/bootentryform.ui" line="282"/>
+        <location filename="../src/form/bootentryform.ui" line="285"/>
         <source>Add file path</source>
         <translation type="unfinished">Add file path</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="268"/>
+        <location filename="../src/form/bootentryform.ui" line="288"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="324"/>
+        <location filename="../src/form/bootentryform.ui" line="343"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="328"/>
+        <location filename="../src/form/bootentryform.ui" line="347"/>
         <source>BASE64</source>
         <translation type="unfinished">BASE64</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="333"/>
+        <location filename="../src/form/bootentryform.ui" line="352"/>
         <source>UTF-16</source>
         <translation type="unfinished">UTF-16</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="338"/>
+        <location filename="../src/form/bootentryform.ui" line="357"/>
         <source>UTF-8</source>
         <translation type="unfinished">UTF-8</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="343"/>
+        <location filename="../src/form/bootentryform.ui" line="362"/>
         <source>HEX</source>
         <translation type="unfinished">HEX</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="368"/>
+        <location filename="../src/form/bootentryform.ui" line="387"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="383"/>
-        <location filename="../src/form/bootentryform.ui" line="386"/>
-        <location filename="../src/form/bootentryform.ui" line="389"/>
+        <location filename="../src/form/bootentryform.ui" line="400"/>
+        <location filename="../src/form/bootentryform.ui" line="403"/>
+        <location filename="../src/form/bootentryform.ui" line="406"/>
         <source>Attributes</source>
         <translation type="unfinished">Attributes</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="408"/>
+        <location filename="../src/form/bootentryform.ui" line="526"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="462"/>
+        <location filename="../src/form/bootentryform.ui" line="54"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="505"/>
+        <location filename="../src/form/bootentryform.ui" line="443"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Is entry considered for automatic boot?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Is entry considered for automatic boot?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="534"/>
+        <location filename="../src/form/bootentryform.ui" line="472"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hidden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hidden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="550"/>
+        <location filename="../src/form/bootentryform.ui" line="488"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Force reconnect.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Force reconnect.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="499"/>
-        <location filename="../src/form/bootentryform.ui" line="502"/>
-        <location filename="../src/form/bootentryform.ui" line="508"/>
+        <location filename="../src/form/bootentryform.ui" line="437"/>
+        <location filename="../src/form/bootentryform.ui" line="440"/>
+        <location filename="../src/form/bootentryform.ui" line="446"/>
         <source>Active</source>
         <translation type="unfinished">Active</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="544"/>
-        <location filename="../src/form/bootentryform.ui" line="547"/>
-        <location filename="../src/form/bootentryform.ui" line="553"/>
+        <location filename="../src/form/bootentryform.ui" line="482"/>
+        <location filename="../src/form/bootentryform.ui" line="485"/>
+        <location filename="../src/form/bootentryform.ui" line="491"/>
         <source>Force reconnect</source>
         <translation type="unfinished">Force reconnect</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="528"/>
-        <location filename="../src/form/bootentryform.ui" line="531"/>
-        <location filename="../src/form/bootentryform.ui" line="537"/>
+        <location filename="../src/form/bootentryform.ui" line="466"/>
+        <location filename="../src/form/bootentryform.ui" line="469"/>
+        <location filename="../src/form/bootentryform.ui" line="475"/>
         <source>Hidden</source>
         <translation type="unfinished">Hidden</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="402"/>
-        <location filename="../src/form/bootentryform.ui" line="405"/>
-        <location filename="../src/form/bootentryform.ui" line="425"/>
-        <location filename="../src/form/bootentryform.ui" line="428"/>
-        <location filename="../src/form/bootentryform.ui" line="431"/>
+        <location filename="../src/form/bootentryform.ui" line="501"/>
+        <location filename="../src/form/bootentryform.ui" line="504"/>
+        <location filename="../src/form/bootentryform.ui" line="507"/>
+        <location filename="../src/form/bootentryform.ui" line="520"/>
+        <location filename="../src/form/bootentryform.ui" line="523"/>
         <source>Category</source>
         <translation type="unfinished">Category</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="412"/>
+        <location filename="../src/form/bootentryform.ui" line="530"/>
         <source>Boot</source>
         <translation type="unfinished">Boot</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="417"/>
+        <location filename="../src/form/bootentryform.ui" line="535"/>
         <source>App</source>
         <translation type="unfinished">App</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="438"/>
-        <location filename="../src/form/bootentryform.ui" line="441"/>
-        <location filename="../src/form/bootentryform.ui" line="444"/>
-        <location filename="../src/form/bootentryform.ui" line="456"/>
-        <location filename="../src/form/bootentryform.ui" line="459"/>
+        <location filename="../src/form/bootentryform.ui" line="30"/>
+        <location filename="../src/form/bootentryform.ui" line="33"/>
+        <location filename="../src/form/bootentryform.ui" line="36"/>
+        <location filename="../src/form/bootentryform.ui" line="48"/>
+        <location filename="../src/form/bootentryform.ui" line="51"/>
         <source>Index</source>
         <translation type="unfinished">Index</translation>
     </message>
@@ -1516,7 +1516,7 @@
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="161"/>
-        <location filename="../src/form/filepathdialog.ui" line="2049"/>
+        <location filename="../src/form/filepathdialog.ui" line="2048"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;BIOS Boot Specification settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;BIOS Boot Specification settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -1610,883 +1610,883 @@
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="411"/>
-        <location filename="../src/form/filepathdialog.ui" line="414"/>
-        <location filename="../src/form/filepathdialog.ui" line="432"/>
-        <location filename="../src/form/filepathdialog.ui" line="435"/>
+        <location filename="../src/form/filepathdialog.ui" line="461"/>
+        <location filename="../src/form/filepathdialog.ui" line="464"/>
+        <location filename="../src/form/filepathdialog.ui" line="482"/>
+        <location filename="../src/form/filepathdialog.ui" line="485"/>
         <source>Vendor GUID</source>
         <translation type="unfinished">Vendor GUID</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="417"/>
-        <location filename="../src/form/filepathdialog.ui" line="438"/>
+        <location filename="../src/form/filepathdialog.ui" line="467"/>
+        <location filename="../src/form/filepathdialog.ui" line="488"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor GUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor GUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="420"/>
-        <location filename="../src/form/filepathdialog.ui" line="1675"/>
+        <location filename="../src/form/filepathdialog.ui" line="470"/>
+        <location filename="../src/form/filepathdialog.ui" line="1674"/>
         <source>GUID</source>
         <translation type="unfinished">GUID</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="456"/>
-        <location filename="../src/form/filepathdialog.ui" line="459"/>
+        <location filename="../src/form/filepathdialog.ui" line="523"/>
+        <location filename="../src/form/filepathdialog.ui" line="526"/>
         <location filename="../src/form/filepathdialog.ui" line="2398"/>
         <location filename="../src/form/filepathdialog.ui" line="2401"/>
         <source>Data format</source>
         <translation type="unfinished">Data format</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="462"/>
+        <location filename="../src/form/filepathdialog.ui" line="529"/>
         <location filename="../src/form/filepathdialog.ui" line="2404"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="466"/>
+        <location filename="../src/form/filepathdialog.ui" line="533"/>
         <location filename="../src/form/filepathdialog.ui" line="2408"/>
         <source>BASE64</source>
         <translation type="unfinished">BASE64</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="471"/>
+        <location filename="../src/form/filepathdialog.ui" line="538"/>
         <location filename="../src/form/filepathdialog.ui" line="2413"/>
         <source>UTF-16</source>
         <translation type="unfinished">UTF-16</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="476"/>
+        <location filename="../src/form/filepathdialog.ui" line="543"/>
         <location filename="../src/form/filepathdialog.ui" line="2418"/>
         <source>UTF-8</source>
         <translation type="unfinished">UTF-8</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="481"/>
+        <location filename="../src/form/filepathdialog.ui" line="548"/>
         <location filename="../src/form/filepathdialog.ui" line="2423"/>
         <source>HEX</source>
         <translation type="unfinished">HEX</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="494"/>
-        <location filename="../src/form/filepathdialog.ui" line="497"/>
-        <location filename="../src/form/filepathdialog.ui" line="518"/>
-        <location filename="../src/form/filepathdialog.ui" line="2338"/>
+        <location filename="../src/form/filepathdialog.ui" line="510"/>
+        <location filename="../src/form/filepathdialog.ui" line="561"/>
+        <location filename="../src/form/filepathdialog.ui" line="564"/>
+        <location filename="../src/form/filepathdialog.ui" line="2385"/>
         <location filename="../src/form/filepathdialog.ui" line="2436"/>
         <location filename="../src/form/filepathdialog.ui" line="2439"/>
         <source>Data</source>
         <translation type="unfinished">Data</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="500"/>
+        <location filename="../src/form/filepathdialog.ui" line="567"/>
         <location filename="../src/form/filepathdialog.ui" line="2442"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="509"/>
-        <location filename="../src/form/filepathdialog.ui" line="512"/>
+        <location filename="../src/form/filepathdialog.ui" line="501"/>
+        <location filename="../src/form/filepathdialog.ui" line="504"/>
         <source>Vendor data</source>
         <translation type="unfinished">Vendor data</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="515"/>
+        <location filename="../src/form/filepathdialog.ui" line="507"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="525"/>
-        <location filename="../src/form/filepathdialog.ui" line="528"/>
-        <location filename="../src/form/filepathdialog.ui" line="534"/>
-        <location filename="../src/form/filepathdialog.ui" line="547"/>
-        <location filename="../src/form/filepathdialog.ui" line="550"/>
-        <location filename="../src/form/filepathdialog.ui" line="2306"/>
+        <location filename="../src/form/filepathdialog.ui" line="411"/>
+        <location filename="../src/form/filepathdialog.ui" line="414"/>
+        <location filename="../src/form/filepathdialog.ui" line="420"/>
+        <location filename="../src/form/filepathdialog.ui" line="433"/>
+        <location filename="../src/form/filepathdialog.ui" line="436"/>
+        <location filename="../src/form/filepathdialog.ui" line="2305"/>
         <source>Type</source>
         <translation type="unfinished">Type</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="531"/>
-        <location filename="../src/form/filepathdialog.ui" line="553"/>
+        <location filename="../src/form/filepathdialog.ui" line="417"/>
+        <location filename="../src/form/filepathdialog.ui" line="439"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="557"/>
+        <location filename="../src/form/filepathdialog.ui" line="443"/>
         <source>HW</source>
         <translation type="unfinished">HW</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="562"/>
+        <location filename="../src/form/filepathdialog.ui" line="448"/>
         <source>MSG</source>
         <translation type="unfinished">MSG</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="567"/>
+        <location filename="../src/form/filepathdialog.ui" line="453"/>
         <source>MEDIA</source>
         <translation type="unfinished">MEDIA</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="580"/>
-        <location filename="../src/form/filepathdialog.ui" line="619"/>
+        <location filename="../src/form/filepathdialog.ui" line="579"/>
+        <location filename="../src/form/filepathdialog.ui" line="618"/>
         <source>MAC</source>
         <translation type="unfinished">MAC</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="583"/>
+        <location filename="../src/form/filepathdialog.ui" line="582"/>
         <source>MAC settings</source>
         <translation type="unfinished">MAC settings</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="586"/>
+        <location filename="../src/form/filepathdialog.ui" line="585"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="610"/>
-        <location filename="../src/form/filepathdialog.ui" line="613"/>
-        <location filename="../src/form/filepathdialog.ui" line="631"/>
-        <location filename="../src/form/filepathdialog.ui" line="634"/>
+        <location filename="../src/form/filepathdialog.ui" line="609"/>
+        <location filename="../src/form/filepathdialog.ui" line="612"/>
+        <location filename="../src/form/filepathdialog.ui" line="630"/>
+        <location filename="../src/form/filepathdialog.ui" line="633"/>
         <source>MAC address</source>
         <translation type="unfinished">MAC address</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="616"/>
-        <location filename="../src/form/filepathdialog.ui" line="637"/>
+        <location filename="../src/form/filepathdialog.ui" line="615"/>
+        <location filename="../src/form/filepathdialog.ui" line="636"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="650"/>
-        <location filename="../src/form/filepathdialog.ui" line="653"/>
-        <location filename="../src/form/filepathdialog.ui" line="659"/>
-        <location filename="../src/form/filepathdialog.ui" line="672"/>
-        <location filename="../src/form/filepathdialog.ui" line="675"/>
+        <location filename="../src/form/filepathdialog.ui" line="649"/>
+        <location filename="../src/form/filepathdialog.ui" line="652"/>
+        <location filename="../src/form/filepathdialog.ui" line="658"/>
+        <location filename="../src/form/filepathdialog.ui" line="671"/>
+        <location filename="../src/form/filepathdialog.ui" line="674"/>
         <source>Interface type</source>
         <translation type="unfinished">Interface type</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="656"/>
-        <location filename="../src/form/filepathdialog.ui" line="678"/>
+        <location filename="../src/form/filepathdialog.ui" line="655"/>
+        <location filename="../src/form/filepathdialog.ui" line="677"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="690"/>
+        <location filename="../src/form/filepathdialog.ui" line="689"/>
         <source>IPv4</source>
         <translation type="unfinished">IPv4</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="693"/>
+        <location filename="../src/form/filepathdialog.ui" line="692"/>
         <source>IPv4 settings</source>
         <translation type="unfinished">IPv4 settings</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="696"/>
+        <location filename="../src/form/filepathdialog.ui" line="695"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv4 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv4 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="720"/>
-        <location filename="../src/form/filepathdialog.ui" line="723"/>
-        <location filename="../src/form/filepathdialog.ui" line="789"/>
-        <location filename="../src/form/filepathdialog.ui" line="792"/>
-        <location filename="../src/form/filepathdialog.ui" line="1061"/>
-        <location filename="../src/form/filepathdialog.ui" line="1064"/>
-        <location filename="../src/form/filepathdialog.ui" line="1194"/>
-        <location filename="../src/form/filepathdialog.ui" line="1197"/>
+        <location filename="../src/form/filepathdialog.ui" line="719"/>
+        <location filename="../src/form/filepathdialog.ui" line="722"/>
+        <location filename="../src/form/filepathdialog.ui" line="788"/>
+        <location filename="../src/form/filepathdialog.ui" line="791"/>
+        <location filename="../src/form/filepathdialog.ui" line="1060"/>
+        <location filename="../src/form/filepathdialog.ui" line="1063"/>
+        <location filename="../src/form/filepathdialog.ui" line="1193"/>
+        <location filename="../src/form/filepathdialog.ui" line="1196"/>
         <source>Local IP address</source>
         <translation type="unfinished">Local IP address</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="726"/>
-        <location filename="../src/form/filepathdialog.ui" line="795"/>
-        <location filename="../src/form/filepathdialog.ui" line="1067"/>
-        <location filename="../src/form/filepathdialog.ui" line="1200"/>
+        <location filename="../src/form/filepathdialog.ui" line="725"/>
+        <location filename="../src/form/filepathdialog.ui" line="794"/>
+        <location filename="../src/form/filepathdialog.ui" line="1066"/>
+        <location filename="../src/form/filepathdialog.ui" line="1199"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="729"/>
-        <location filename="../src/form/filepathdialog.ui" line="1070"/>
+        <location filename="../src/form/filepathdialog.ui" line="728"/>
+        <location filename="../src/form/filepathdialog.ui" line="1069"/>
         <source>Local IP</source>
         <translation type="unfinished">Local IP</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="736"/>
-        <location filename="../src/form/filepathdialog.ui" line="739"/>
-        <location filename="../src/form/filepathdialog.ui" line="745"/>
-        <location filename="../src/form/filepathdialog.ui" line="814"/>
-        <location filename="../src/form/filepathdialog.ui" line="817"/>
-        <location filename="../src/form/filepathdialog.ui" line="1077"/>
-        <location filename="../src/form/filepathdialog.ui" line="1080"/>
-        <location filename="../src/form/filepathdialog.ui" line="1086"/>
-        <location filename="../src/form/filepathdialog.ui" line="1219"/>
-        <location filename="../src/form/filepathdialog.ui" line="1222"/>
+        <location filename="../src/form/filepathdialog.ui" line="735"/>
+        <location filename="../src/form/filepathdialog.ui" line="738"/>
+        <location filename="../src/form/filepathdialog.ui" line="744"/>
+        <location filename="../src/form/filepathdialog.ui" line="813"/>
+        <location filename="../src/form/filepathdialog.ui" line="816"/>
+        <location filename="../src/form/filepathdialog.ui" line="1076"/>
+        <location filename="../src/form/filepathdialog.ui" line="1079"/>
+        <location filename="../src/form/filepathdialog.ui" line="1085"/>
+        <location filename="../src/form/filepathdialog.ui" line="1218"/>
+        <location filename="../src/form/filepathdialog.ui" line="1221"/>
         <source>Local port</source>
         <translation type="unfinished">Local port</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="742"/>
-        <location filename="../src/form/filepathdialog.ui" line="820"/>
-        <location filename="../src/form/filepathdialog.ui" line="1083"/>
-        <location filename="../src/form/filepathdialog.ui" line="1225"/>
+        <location filename="../src/form/filepathdialog.ui" line="741"/>
+        <location filename="../src/form/filepathdialog.ui" line="819"/>
+        <location filename="../src/form/filepathdialog.ui" line="1082"/>
+        <location filename="../src/form/filepathdialog.ui" line="1224"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="752"/>
-        <location filename="../src/form/filepathdialog.ui" line="755"/>
-        <location filename="../src/form/filepathdialog.ui" line="832"/>
-        <location filename="../src/form/filepathdialog.ui" line="835"/>
-        <location filename="../src/form/filepathdialog.ui" line="1093"/>
-        <location filename="../src/form/filepathdialog.ui" line="1096"/>
-        <location filename="../src/form/filepathdialog.ui" line="1237"/>
-        <location filename="../src/form/filepathdialog.ui" line="1240"/>
+        <location filename="../src/form/filepathdialog.ui" line="751"/>
+        <location filename="../src/form/filepathdialog.ui" line="754"/>
+        <location filename="../src/form/filepathdialog.ui" line="831"/>
+        <location filename="../src/form/filepathdialog.ui" line="834"/>
+        <location filename="../src/form/filepathdialog.ui" line="1092"/>
+        <location filename="../src/form/filepathdialog.ui" line="1095"/>
+        <location filename="../src/form/filepathdialog.ui" line="1236"/>
+        <location filename="../src/form/filepathdialog.ui" line="1239"/>
         <source>Remote IP address</source>
         <translation type="unfinished">Remote IP address</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="758"/>
-        <location filename="../src/form/filepathdialog.ui" line="838"/>
-        <location filename="../src/form/filepathdialog.ui" line="1099"/>
-        <location filename="../src/form/filepathdialog.ui" line="1243"/>
+        <location filename="../src/form/filepathdialog.ui" line="757"/>
+        <location filename="../src/form/filepathdialog.ui" line="837"/>
+        <location filename="../src/form/filepathdialog.ui" line="1098"/>
+        <location filename="../src/form/filepathdialog.ui" line="1242"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="761"/>
-        <location filename="../src/form/filepathdialog.ui" line="1102"/>
+        <location filename="../src/form/filepathdialog.ui" line="760"/>
+        <location filename="../src/form/filepathdialog.ui" line="1101"/>
         <source>Remote IP</source>
         <translation type="unfinished">Remote IP</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="768"/>
-        <location filename="../src/form/filepathdialog.ui" line="771"/>
-        <location filename="../src/form/filepathdialog.ui" line="777"/>
-        <location filename="../src/form/filepathdialog.ui" line="857"/>
-        <location filename="../src/form/filepathdialog.ui" line="860"/>
-        <location filename="../src/form/filepathdialog.ui" line="1109"/>
-        <location filename="../src/form/filepathdialog.ui" line="1112"/>
-        <location filename="../src/form/filepathdialog.ui" line="1118"/>
-        <location filename="../src/form/filepathdialog.ui" line="1262"/>
-        <location filename="../src/form/filepathdialog.ui" line="1265"/>
+        <location filename="../src/form/filepathdialog.ui" line="767"/>
+        <location filename="../src/form/filepathdialog.ui" line="770"/>
+        <location filename="../src/form/filepathdialog.ui" line="776"/>
+        <location filename="../src/form/filepathdialog.ui" line="856"/>
+        <location filename="../src/form/filepathdialog.ui" line="859"/>
+        <location filename="../src/form/filepathdialog.ui" line="1108"/>
+        <location filename="../src/form/filepathdialog.ui" line="1111"/>
+        <location filename="../src/form/filepathdialog.ui" line="1117"/>
+        <location filename="../src/form/filepathdialog.ui" line="1261"/>
+        <location filename="../src/form/filepathdialog.ui" line="1264"/>
         <source>Remote port</source>
         <translation type="unfinished">Remote port</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="774"/>
-        <location filename="../src/form/filepathdialog.ui" line="863"/>
-        <location filename="../src/form/filepathdialog.ui" line="1115"/>
-        <location filename="../src/form/filepathdialog.ui" line="1268"/>
+        <location filename="../src/form/filepathdialog.ui" line="773"/>
+        <location filename="../src/form/filepathdialog.ui" line="862"/>
+        <location filename="../src/form/filepathdialog.ui" line="1114"/>
+        <location filename="../src/form/filepathdialog.ui" line="1267"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="870"/>
-        <location filename="../src/form/filepathdialog.ui" line="873"/>
-        <location filename="../src/form/filepathdialog.ui" line="879"/>
-        <location filename="../src/form/filepathdialog.ui" line="892"/>
-        <location filename="../src/form/filepathdialog.ui" line="895"/>
-        <location filename="../src/form/filepathdialog.ui" line="1125"/>
-        <location filename="../src/form/filepathdialog.ui" line="1128"/>
-        <location filename="../src/form/filepathdialog.ui" line="1134"/>
-        <location filename="../src/form/filepathdialog.ui" line="1281"/>
-        <location filename="../src/form/filepathdialog.ui" line="1284"/>
+        <location filename="../src/form/filepathdialog.ui" line="869"/>
+        <location filename="../src/form/filepathdialog.ui" line="872"/>
+        <location filename="../src/form/filepathdialog.ui" line="878"/>
+        <location filename="../src/form/filepathdialog.ui" line="891"/>
+        <location filename="../src/form/filepathdialog.ui" line="894"/>
+        <location filename="../src/form/filepathdialog.ui" line="1124"/>
+        <location filename="../src/form/filepathdialog.ui" line="1127"/>
+        <location filename="../src/form/filepathdialog.ui" line="1133"/>
+        <location filename="../src/form/filepathdialog.ui" line="1280"/>
+        <location filename="../src/form/filepathdialog.ui" line="1283"/>
         <source>Protocol</source>
         <translation type="unfinished">Protocol</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="876"/>
-        <location filename="../src/form/filepathdialog.ui" line="898"/>
-        <location filename="../src/form/filepathdialog.ui" line="1131"/>
-        <location filename="../src/form/filepathdialog.ui" line="1287"/>
+        <location filename="../src/form/filepathdialog.ui" line="875"/>
+        <location filename="../src/form/filepathdialog.ui" line="897"/>
+        <location filename="../src/form/filepathdialog.ui" line="1130"/>
+        <location filename="../src/form/filepathdialog.ui" line="1286"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="905"/>
-        <location filename="../src/form/filepathdialog.ui" line="908"/>
-        <location filename="../src/form/filepathdialog.ui" line="927"/>
-        <location filename="../src/form/filepathdialog.ui" line="930"/>
+        <location filename="../src/form/filepathdialog.ui" line="904"/>
+        <location filename="../src/form/filepathdialog.ui" line="907"/>
+        <location filename="../src/form/filepathdialog.ui" line="926"/>
+        <location filename="../src/form/filepathdialog.ui" line="929"/>
         <source>Static IP address</source>
         <translation type="unfinished">Static IP address</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="911"/>
-        <location filename="../src/form/filepathdialog.ui" line="933"/>
+        <location filename="../src/form/filepathdialog.ui" line="910"/>
+        <location filename="../src/form/filepathdialog.ui" line="932"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Static IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Static IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="914"/>
-        <location filename="../src/form/filepathdialog.ui" line="1310"/>
+        <location filename="../src/form/filepathdialog.ui" line="913"/>
+        <location filename="../src/form/filepathdialog.ui" line="1309"/>
         <source>Static</source>
         <translation type="unfinished">Static</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="946"/>
-        <location filename="../src/form/filepathdialog.ui" line="949"/>
-        <location filename="../src/form/filepathdialog.ui" line="967"/>
-        <location filename="../src/form/filepathdialog.ui" line="970"/>
-        <location filename="../src/form/filepathdialog.ui" line="1157"/>
-        <location filename="../src/form/filepathdialog.ui" line="1160"/>
-        <location filename="../src/form/filepathdialog.ui" line="1333"/>
-        <location filename="../src/form/filepathdialog.ui" line="1336"/>
+        <location filename="../src/form/filepathdialog.ui" line="945"/>
+        <location filename="../src/form/filepathdialog.ui" line="948"/>
+        <location filename="../src/form/filepathdialog.ui" line="966"/>
+        <location filename="../src/form/filepathdialog.ui" line="969"/>
+        <location filename="../src/form/filepathdialog.ui" line="1156"/>
+        <location filename="../src/form/filepathdialog.ui" line="1159"/>
+        <location filename="../src/form/filepathdialog.ui" line="1332"/>
+        <location filename="../src/form/filepathdialog.ui" line="1335"/>
         <source>Gateway IP address</source>
         <translation type="unfinished">Gateway IP address</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="952"/>
-        <location filename="../src/form/filepathdialog.ui" line="973"/>
-        <location filename="../src/form/filepathdialog.ui" line="1163"/>
-        <location filename="../src/form/filepathdialog.ui" line="1339"/>
+        <location filename="../src/form/filepathdialog.ui" line="951"/>
+        <location filename="../src/form/filepathdialog.ui" line="972"/>
+        <location filename="../src/form/filepathdialog.ui" line="1162"/>
+        <location filename="../src/form/filepathdialog.ui" line="1338"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="955"/>
-        <location filename="../src/form/filepathdialog.ui" line="1166"/>
+        <location filename="../src/form/filepathdialog.ui" line="954"/>
+        <location filename="../src/form/filepathdialog.ui" line="1165"/>
         <source>Gateway IP</source>
         <translation type="unfinished">Gateway IP</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="986"/>
-        <location filename="../src/form/filepathdialog.ui" line="989"/>
-        <location filename="../src/form/filepathdialog.ui" line="995"/>
-        <location filename="../src/form/filepathdialog.ui" line="1007"/>
-        <location filename="../src/form/filepathdialog.ui" line="1010"/>
+        <location filename="../src/form/filepathdialog.ui" line="985"/>
+        <location filename="../src/form/filepathdialog.ui" line="988"/>
+        <location filename="../src/form/filepathdialog.ui" line="994"/>
+        <location filename="../src/form/filepathdialog.ui" line="1006"/>
+        <location filename="../src/form/filepathdialog.ui" line="1009"/>
         <source>Subnet mask</source>
         <translation type="unfinished">Subnet mask</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="992"/>
-        <location filename="../src/form/filepathdialog.ui" line="1013"/>
+        <location filename="../src/form/filepathdialog.ui" line="991"/>
+        <location filename="../src/form/filepathdialog.ui" line="1012"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnet mask.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnet mask.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1031"/>
+        <location filename="../src/form/filepathdialog.ui" line="1030"/>
         <source>IPv6</source>
         <translation type="unfinished">IPv6</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1034"/>
+        <location filename="../src/form/filepathdialog.ui" line="1033"/>
         <source>IPv6 settings</source>
         <translation type="unfinished">IPv6 settings</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1037"/>
+        <location filename="../src/form/filepathdialog.ui" line="1036"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv6 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv6 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1141"/>
-        <location filename="../src/form/filepathdialog.ui" line="1144"/>
-        <location filename="../src/form/filepathdialog.ui" line="1300"/>
-        <location filename="../src/form/filepathdialog.ui" line="1303"/>
+        <location filename="../src/form/filepathdialog.ui" line="1140"/>
+        <location filename="../src/form/filepathdialog.ui" line="1143"/>
+        <location filename="../src/form/filepathdialog.ui" line="1299"/>
+        <location filename="../src/form/filepathdialog.ui" line="1302"/>
         <source>IP address origin</source>
         <translation type="unfinished">IP address origin</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1147"/>
-        <location filename="../src/form/filepathdialog.ui" line="1306"/>
+        <location filename="../src/form/filepathdialog.ui" line="1146"/>
+        <location filename="../src/form/filepathdialog.ui" line="1305"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IP address origin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IP address origin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1150"/>
+        <location filename="../src/form/filepathdialog.ui" line="1149"/>
         <source>Origin</source>
         <translation type="unfinished">Origin</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1173"/>
-        <location filename="../src/form/filepathdialog.ui" line="1176"/>
-        <location filename="../src/form/filepathdialog.ui" line="1182"/>
-        <location filename="../src/form/filepathdialog.ui" line="1358"/>
-        <location filename="../src/form/filepathdialog.ui" line="1361"/>
+        <location filename="../src/form/filepathdialog.ui" line="1172"/>
+        <location filename="../src/form/filepathdialog.ui" line="1175"/>
+        <location filename="../src/form/filepathdialog.ui" line="1181"/>
+        <location filename="../src/form/filepathdialog.ui" line="1357"/>
+        <location filename="../src/form/filepathdialog.ui" line="1360"/>
         <source>Prefix length</source>
         <translation type="unfinished">Prefix length</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1179"/>
-        <location filename="../src/form/filepathdialog.ui" line="1364"/>
+        <location filename="../src/form/filepathdialog.ui" line="1178"/>
+        <location filename="../src/form/filepathdialog.ui" line="1363"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Prefix length.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Prefix length.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1315"/>
+        <location filename="../src/form/filepathdialog.ui" line="1314"/>
         <source>Stateless auto-configuration</source>
         <translation type="unfinished">Stateless auto-configuration</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1320"/>
+        <location filename="../src/form/filepathdialog.ui" line="1319"/>
         <source>Stateful auto-configuration</source>
         <translation type="unfinished">Stateful auto-configuration</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1376"/>
+        <location filename="../src/form/filepathdialog.ui" line="1375"/>
         <source>SATA</source>
         <translation type="unfinished">SATA</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1379"/>
+        <location filename="../src/form/filepathdialog.ui" line="1378"/>
         <source>SATA settings</source>
         <translation type="unfinished">SATA settings</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1382"/>
+        <location filename="../src/form/filepathdialog.ui" line="1381"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SATA settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SATA settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1406"/>
-        <location filename="../src/form/filepathdialog.ui" line="1409"/>
-        <location filename="../src/form/filepathdialog.ui" line="1415"/>
-        <location filename="../src/form/filepathdialog.ui" line="1460"/>
-        <location filename="../src/form/filepathdialog.ui" line="1463"/>
+        <location filename="../src/form/filepathdialog.ui" line="1405"/>
+        <location filename="../src/form/filepathdialog.ui" line="1408"/>
+        <location filename="../src/form/filepathdialog.ui" line="1414"/>
+        <location filename="../src/form/filepathdialog.ui" line="1459"/>
+        <location filename="../src/form/filepathdialog.ui" line="1462"/>
         <source>HBA port</source>
         <translation type="unfinished">HBA port</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1412"/>
-        <location filename="../src/form/filepathdialog.ui" line="1466"/>
+        <location filename="../src/form/filepathdialog.ui" line="1411"/>
+        <location filename="../src/form/filepathdialog.ui" line="1465"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HBA port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HBA port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1422"/>
-        <location filename="../src/form/filepathdialog.ui" line="1425"/>
-        <location filename="../src/form/filepathdialog.ui" line="1431"/>
-        <location filename="../src/form/filepathdialog.ui" line="1482"/>
-        <location filename="../src/form/filepathdialog.ui" line="1485"/>
+        <location filename="../src/form/filepathdialog.ui" line="1421"/>
+        <location filename="../src/form/filepathdialog.ui" line="1424"/>
+        <location filename="../src/form/filepathdialog.ui" line="1430"/>
+        <location filename="../src/form/filepathdialog.ui" line="1481"/>
+        <location filename="../src/form/filepathdialog.ui" line="1484"/>
         <source>Port multiplier port</source>
         <translation type="unfinished">Port multiplier port</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1428"/>
-        <location filename="../src/form/filepathdialog.ui" line="1488"/>
+        <location filename="../src/form/filepathdialog.ui" line="1427"/>
+        <location filename="../src/form/filepathdialog.ui" line="1487"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Port multiplier port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Port multiplier port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1438"/>
-        <location filename="../src/form/filepathdialog.ui" line="1441"/>
-        <location filename="../src/form/filepathdialog.ui" line="1447"/>
-        <location filename="../src/form/filepathdialog.ui" line="1504"/>
-        <location filename="../src/form/filepathdialog.ui" line="1507"/>
+        <location filename="../src/form/filepathdialog.ui" line="1437"/>
+        <location filename="../src/form/filepathdialog.ui" line="1440"/>
+        <location filename="../src/form/filepathdialog.ui" line="1446"/>
+        <location filename="../src/form/filepathdialog.ui" line="1503"/>
+        <location filename="../src/form/filepathdialog.ui" line="1506"/>
         <source>LUN</source>
         <translation type="unfinished">LUN</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1444"/>
-        <location filename="../src/form/filepathdialog.ui" line="1510"/>
+        <location filename="../src/form/filepathdialog.ui" line="1443"/>
+        <location filename="../src/form/filepathdialog.ui" line="1509"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;LUN.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;LUN.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1525"/>
+        <location filename="../src/form/filepathdialog.ui" line="1524"/>
         <source>HD</source>
         <translation type="unfinished">HD</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1528"/>
+        <location filename="../src/form/filepathdialog.ui" line="1527"/>
         <source>HID settings</source>
         <translation type="unfinished">HID settings</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1531"/>
+        <location filename="../src/form/filepathdialog.ui" line="1530"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1555"/>
-        <location filename="../src/form/filepathdialog.ui" line="1558"/>
-        <location filename="../src/form/filepathdialog.ui" line="1564"/>
+        <location filename="../src/form/filepathdialog.ui" line="1554"/>
+        <location filename="../src/form/filepathdialog.ui" line="1557"/>
+        <location filename="../src/form/filepathdialog.ui" line="1563"/>
         <source>Disk</source>
         <translation type="unfinished">Disk</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1561"/>
+        <location filename="../src/form/filepathdialog.ui" line="1560"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1582"/>
-        <location filename="../src/form/filepathdialog.ui" line="1585"/>
+        <location filename="../src/form/filepathdialog.ui" line="1581"/>
+        <location filename="../src/form/filepathdialog.ui" line="1584"/>
         <source>Choose disk</source>
         <translation type="unfinished">Choose disk</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1588"/>
+        <location filename="../src/form/filepathdialog.ui" line="1587"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Choose disk from discovered in the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Choose disk from discovered in the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1592"/>
+        <location filename="../src/form/filepathdialog.ui" line="1591"/>
         <source>Custom</source>
         <translation type="unfinished">Custom</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1606"/>
-        <location filename="../src/form/filepathdialog.ui" line="1609"/>
+        <location filename="../src/form/filepathdialog.ui" line="1605"/>
+        <location filename="../src/form/filepathdialog.ui" line="1608"/>
         <source>Reload drives</source>
         <translation type="unfinished">Reload drives</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1612"/>
+        <location filename="../src/form/filepathdialog.ui" line="1611"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reload system drives list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reload system drives list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1634"/>
-        <location filename="../src/form/filepathdialog.ui" line="1637"/>
-        <location filename="../src/form/filepathdialog.ui" line="1688"/>
-        <location filename="../src/form/filepathdialog.ui" line="1691"/>
+        <location filename="../src/form/filepathdialog.ui" line="1633"/>
+        <location filename="../src/form/filepathdialog.ui" line="1636"/>
+        <location filename="../src/form/filepathdialog.ui" line="1687"/>
+        <location filename="../src/form/filepathdialog.ui" line="1690"/>
         <source>Partition signature</source>
         <translation type="unfinished">Partition signature</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1640"/>
-        <location filename="../src/form/filepathdialog.ui" line="1694"/>
+        <location filename="../src/form/filepathdialog.ui" line="1639"/>
+        <location filename="../src/form/filepathdialog.ui" line="1693"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition signature.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition signature.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1643"/>
+        <location filename="../src/form/filepathdialog.ui" line="1642"/>
         <source>Signature</source>
         <translation type="unfinished">Signature</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1655"/>
-        <location filename="../src/form/filepathdialog.ui" line="1658"/>
+        <location filename="../src/form/filepathdialog.ui" line="1654"/>
+        <location filename="../src/form/filepathdialog.ui" line="1657"/>
         <source>Partition signature type</source>
         <translation type="unfinished">Partition signature type</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1661"/>
+        <location filename="../src/form/filepathdialog.ui" line="1660"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Choose partition signature type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Choose partition signature type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1665"/>
+        <location filename="../src/form/filepathdialog.ui" line="1664"/>
         <source>NONE</source>
         <translation type="unfinished">NONE</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1670"/>
+        <location filename="../src/form/filepathdialog.ui" line="1669"/>
         <source>MBR</source>
         <translation type="unfinished">MBR</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1709"/>
-        <location filename="../src/form/filepathdialog.ui" line="1712"/>
-        <location filename="../src/form/filepathdialog.ui" line="1731"/>
-        <location filename="../src/form/filepathdialog.ui" line="1734"/>
+        <location filename="../src/form/filepathdialog.ui" line="1708"/>
+        <location filename="../src/form/filepathdialog.ui" line="1711"/>
+        <location filename="../src/form/filepathdialog.ui" line="1730"/>
+        <location filename="../src/form/filepathdialog.ui" line="1733"/>
         <source>Partition number</source>
         <translation type="unfinished">Partition number</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1715"/>
-        <location filename="../src/form/filepathdialog.ui" line="1737"/>
+        <location filename="../src/form/filepathdialog.ui" line="1714"/>
+        <location filename="../src/form/filepathdialog.ui" line="1736"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1718"/>
+        <location filename="../src/form/filepathdialog.ui" line="1717"/>
         <source>Partition</source>
         <translation type="unfinished">Partition</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1750"/>
-        <location filename="../src/form/filepathdialog.ui" line="1753"/>
-        <location filename="../src/form/filepathdialog.ui" line="1771"/>
-        <location filename="../src/form/filepathdialog.ui" line="1774"/>
+        <location filename="../src/form/filepathdialog.ui" line="1749"/>
+        <location filename="../src/form/filepathdialog.ui" line="1752"/>
+        <location filename="../src/form/filepathdialog.ui" line="1770"/>
+        <location filename="../src/form/filepathdialog.ui" line="1773"/>
         <source>Partition start offset</source>
         <translation type="unfinished">Partition start offset</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1756"/>
+        <location filename="../src/form/filepathdialog.ui" line="1755"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition start offset.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition start offset.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1759"/>
+        <location filename="../src/form/filepathdialog.ui" line="1758"/>
         <source>Start</source>
         <translation type="unfinished">Start</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1777"/>
+        <location filename="../src/form/filepathdialog.ui" line="1776"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition start offset in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition start offset in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1790"/>
-        <location filename="../src/form/filepathdialog.ui" line="1793"/>
-        <location filename="../src/form/filepathdialog.ui" line="1811"/>
-        <location filename="../src/form/filepathdialog.ui" line="1814"/>
+        <location filename="../src/form/filepathdialog.ui" line="1789"/>
+        <location filename="../src/form/filepathdialog.ui" line="1792"/>
+        <location filename="../src/form/filepathdialog.ui" line="1810"/>
+        <location filename="../src/form/filepathdialog.ui" line="1813"/>
         <source>Partition size</source>
         <translation type="unfinished">Partition size</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1796"/>
+        <location filename="../src/form/filepathdialog.ui" line="1795"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition size.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition size.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1799"/>
+        <location filename="../src/form/filepathdialog.ui" line="1798"/>
         <source>Size</source>
         <translation type="unfinished">Size</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1817"/>
+        <location filename="../src/form/filepathdialog.ui" line="1816"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition size in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition size in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1835"/>
+        <location filename="../src/form/filepathdialog.ui" line="1834"/>
         <source>File</source>
         <translation type="unfinished">File</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1838"/>
+        <location filename="../src/form/filepathdialog.ui" line="1837"/>
         <source>File settings</source>
         <translation type="unfinished">File settings</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1841"/>
+        <location filename="../src/form/filepathdialog.ui" line="1840"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1865"/>
-        <location filename="../src/form/filepathdialog.ui" line="1868"/>
-        <location filename="../src/form/filepathdialog.ui" line="1881"/>
-        <location filename="../src/form/filepathdialog.ui" line="1884"/>
+        <location filename="../src/form/filepathdialog.ui" line="1864"/>
+        <location filename="../src/form/filepathdialog.ui" line="1867"/>
+        <location filename="../src/form/filepathdialog.ui" line="1880"/>
+        <location filename="../src/form/filepathdialog.ui" line="1883"/>
         <source>File path</source>
         <translation type="unfinished">File path</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1871"/>
-        <location filename="../src/form/filepathdialog.ui" line="1887"/>
+        <location filename="../src/form/filepathdialog.ui" line="1870"/>
+        <location filename="../src/form/filepathdialog.ui" line="1886"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1874"/>
+        <location filename="../src/form/filepathdialog.ui" line="1873"/>
         <source>File name</source>
         <translation type="unfinished">File name</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1899"/>
+        <location filename="../src/form/filepathdialog.ui" line="1898"/>
         <source>Firmware file</source>
         <translation type="unfinished">Firmware file</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1902"/>
+        <location filename="../src/form/filepathdialog.ui" line="1901"/>
         <source>Firmware file settings</source>
         <translation type="unfinished">Firmware file settings</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1905"/>
+        <location filename="../src/form/filepathdialog.ui" line="1904"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1929"/>
-        <location filename="../src/form/filepathdialog.ui" line="1932"/>
-        <location filename="../src/form/filepathdialog.ui" line="1950"/>
-        <location filename="../src/form/filepathdialog.ui" line="1953"/>
+        <location filename="../src/form/filepathdialog.ui" line="1928"/>
+        <location filename="../src/form/filepathdialog.ui" line="1931"/>
+        <location filename="../src/form/filepathdialog.ui" line="1949"/>
+        <location filename="../src/form/filepathdialog.ui" line="1952"/>
         <source>Firmware file UUID</source>
         <translation type="unfinished">Firmware file UUID</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1935"/>
-        <location filename="../src/form/filepathdialog.ui" line="1956"/>
+        <location filename="../src/form/filepathdialog.ui" line="1934"/>
+        <location filename="../src/form/filepathdialog.ui" line="1955"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file UUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file UUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1938"/>
-        <location filename="../src/form/filepathdialog.ui" line="2010"/>
+        <location filename="../src/form/filepathdialog.ui" line="1937"/>
+        <location filename="../src/form/filepathdialog.ui" line="2009"/>
         <source>Name</source>
         <translation type="unfinished">Name</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1971"/>
+        <location filename="../src/form/filepathdialog.ui" line="1970"/>
         <source>Firmware volume</source>
         <translation type="unfinished">Firmware volume</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1974"/>
+        <location filename="../src/form/filepathdialog.ui" line="1973"/>
         <source>Firmware volume settings</source>
         <translation type="unfinished">Firmware volume settings</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1977"/>
+        <location filename="../src/form/filepathdialog.ui" line="1976"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware volume settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware volume settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2001"/>
-        <location filename="../src/form/filepathdialog.ui" line="2004"/>
-        <location filename="../src/form/filepathdialog.ui" line="2022"/>
-        <location filename="../src/form/filepathdialog.ui" line="2025"/>
+        <location filename="../src/form/filepathdialog.ui" line="2000"/>
+        <location filename="../src/form/filepathdialog.ui" line="2003"/>
+        <location filename="../src/form/filepathdialog.ui" line="2021"/>
+        <location filename="../src/form/filepathdialog.ui" line="2024"/>
         <source>Firmware volume UUID</source>
         <translation type="unfinished">Firmware volume UUID</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2007"/>
-        <location filename="../src/form/filepathdialog.ui" line="2028"/>
+        <location filename="../src/form/filepathdialog.ui" line="2006"/>
+        <location filename="../src/form/filepathdialog.ui" line="2027"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware volume UUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware volume UUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2043"/>
+        <location filename="../src/form/filepathdialog.ui" line="2042"/>
         <source>BIOS Boot Specification</source>
         <translation type="unfinished">BIOS Boot Specification</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2046"/>
+        <location filename="../src/form/filepathdialog.ui" line="2045"/>
         <source>BIOS Boot Specification settings</source>
         <translation type="unfinished">BIOS Boot Specification settings</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2073"/>
-        <location filename="../src/form/filepathdialog.ui" line="2076"/>
-        <location filename="../src/form/filepathdialog.ui" line="2082"/>
-        <location filename="../src/form/filepathdialog.ui" line="2094"/>
-        <location filename="../src/form/filepathdialog.ui" line="2097"/>
+        <location filename="../src/form/filepathdialog.ui" line="2072"/>
+        <location filename="../src/form/filepathdialog.ui" line="2075"/>
+        <location filename="../src/form/filepathdialog.ui" line="2081"/>
+        <location filename="../src/form/filepathdialog.ui" line="2093"/>
+        <location filename="../src/form/filepathdialog.ui" line="2096"/>
         <source>Device type</source>
         <translation type="unfinished">Device type</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2079"/>
-        <location filename="../src/form/filepathdialog.ui" line="2100"/>
+        <location filename="../src/form/filepathdialog.ui" line="2078"/>
+        <location filename="../src/form/filepathdialog.ui" line="2099"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2113"/>
-        <location filename="../src/form/filepathdialog.ui" line="2116"/>
-        <location filename="../src/form/filepathdialog.ui" line="2122"/>
-        <location filename="../src/form/filepathdialog.ui" line="2134"/>
-        <location filename="../src/form/filepathdialog.ui" line="2137"/>
+        <location filename="../src/form/filepathdialog.ui" line="2112"/>
+        <location filename="../src/form/filepathdialog.ui" line="2115"/>
+        <location filename="../src/form/filepathdialog.ui" line="2121"/>
+        <location filename="../src/form/filepathdialog.ui" line="2133"/>
+        <location filename="../src/form/filepathdialog.ui" line="2136"/>
         <source>Status flag</source>
         <translation type="unfinished">Status flag</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2119"/>
-        <location filename="../src/form/filepathdialog.ui" line="2140"/>
+        <location filename="../src/form/filepathdialog.ui" line="2118"/>
+        <location filename="../src/form/filepathdialog.ui" line="2139"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Status flag.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Status flag.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2153"/>
-        <location filename="../src/form/filepathdialog.ui" line="2156"/>
-        <location filename="../src/form/filepathdialog.ui" line="2162"/>
-        <location filename="../src/form/filepathdialog.ui" line="2169"/>
-        <location filename="../src/form/filepathdialog.ui" line="2172"/>
+        <location filename="../src/form/filepathdialog.ui" line="2152"/>
+        <location filename="../src/form/filepathdialog.ui" line="2155"/>
+        <location filename="../src/form/filepathdialog.ui" line="2161"/>
+        <location filename="../src/form/filepathdialog.ui" line="2168"/>
+        <location filename="../src/form/filepathdialog.ui" line="2171"/>
         <source>Description</source>
         <translation type="unfinished">Description</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2159"/>
-        <location filename="../src/form/filepathdialog.ui" line="2175"/>
+        <location filename="../src/form/filepathdialog.ui" line="2158"/>
+        <location filename="../src/form/filepathdialog.ui" line="2174"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2187"/>
+        <location filename="../src/form/filepathdialog.ui" line="2186"/>
         <source>End</source>
         <translation type="unfinished">End</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2190"/>
+        <location filename="../src/form/filepathdialog.ui" line="2189"/>
         <source>End of device path marker</source>
         <translation type="unfinished">End of device path marker</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2193"/>
+        <location filename="../src/form/filepathdialog.ui" line="2192"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;End of device path marker.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;End of device path marker.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2217"/>
-        <location filename="../src/form/filepathdialog.ui" line="2220"/>
-        <location filename="../src/form/filepathdialog.ui" line="2226"/>
-        <location filename="../src/form/filepathdialog.ui" line="2239"/>
-        <location filename="../src/form/filepathdialog.ui" line="2242"/>
-        <location filename="../src/form/filepathdialog.ui" line="2322"/>
+        <location filename="../src/form/filepathdialog.ui" line="2216"/>
+        <location filename="../src/form/filepathdialog.ui" line="2219"/>
+        <location filename="../src/form/filepathdialog.ui" line="2225"/>
+        <location filename="../src/form/filepathdialog.ui" line="2238"/>
+        <location filename="../src/form/filepathdialog.ui" line="2241"/>
+        <location filename="../src/form/filepathdialog.ui" line="2345"/>
         <source>Sub-Type</source>
         <translation type="unfinished">Sub-Type</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2223"/>
-        <location filename="../src/form/filepathdialog.ui" line="2245"/>
+        <location filename="../src/form/filepathdialog.ui" line="2222"/>
+        <location filename="../src/form/filepathdialog.ui" line="2244"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sub-Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sub-Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2249"/>
+        <location filename="../src/form/filepathdialog.ui" line="2248"/>
         <source>End This Instance</source>
         <translation type="unfinished">End This Instance</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2254"/>
+        <location filename="../src/form/filepathdialog.ui" line="2253"/>
         <source>End Entire</source>
         <translation type="unfinished">End Entire</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2267"/>
+        <location filename="../src/form/filepathdialog.ui" line="2266"/>
         <source>Unknown</source>
         <translation type="unfinished">Unknown</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2270"/>
+        <location filename="../src/form/filepathdialog.ui" line="2269"/>
         <source>Unknown file path specifier settings</source>
         <translation type="unfinished">Unknown file path specifier settings</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2273"/>
+        <location filename="../src/form/filepathdialog.ui" line="2272"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown file path specifier settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown file path specifier settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2297"/>
-        <location filename="../src/form/filepathdialog.ui" line="2300"/>
-        <location filename="../src/form/filepathdialog.ui" line="2350"/>
-        <location filename="../src/form/filepathdialog.ui" line="2353"/>
+        <location filename="../src/form/filepathdialog.ui" line="2296"/>
+        <location filename="../src/form/filepathdialog.ui" line="2299"/>
+        <location filename="../src/form/filepathdialog.ui" line="2317"/>
+        <location filename="../src/form/filepathdialog.ui" line="2320"/>
         <source>Unknown Type</source>
         <translation type="unfinished">Unknown Type</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2303"/>
-        <location filename="../src/form/filepathdialog.ui" line="2356"/>
+        <location filename="../src/form/filepathdialog.ui" line="2302"/>
+        <location filename="../src/form/filepathdialog.ui" line="2323"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2313"/>
-        <location filename="../src/form/filepathdialog.ui" line="2316"/>
-        <location filename="../src/form/filepathdialog.ui" line="2374"/>
-        <location filename="../src/form/filepathdialog.ui" line="2377"/>
+        <location filename="../src/form/filepathdialog.ui" line="2336"/>
+        <location filename="../src/form/filepathdialog.ui" line="2339"/>
+        <location filename="../src/form/filepathdialog.ui" line="2357"/>
+        <location filename="../src/form/filepathdialog.ui" line="2360"/>
         <source>Unknown Sub-Type</source>
         <translation type="unfinished">Unknown Sub-Type</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2319"/>
-        <location filename="../src/form/filepathdialog.ui" line="2380"/>
+        <location filename="../src/form/filepathdialog.ui" line="2342"/>
+        <location filename="../src/form/filepathdialog.ui" line="2363"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown Sub-Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown Sub-Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2329"/>
-        <location filename="../src/form/filepathdialog.ui" line="2332"/>
+        <location filename="../src/form/filepathdialog.ui" line="2376"/>
+        <location filename="../src/form/filepathdialog.ui" line="2379"/>
         <source>Unknown data</source>
         <translation type="unfinished">Unknown data</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2335"/>
+        <location filename="../src/form/filepathdialog.ui" line="2382"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>

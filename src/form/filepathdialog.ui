@@ -405,120 +405,6 @@
        <property name="bottomMargin">
         <number>0</number>
        </property>
-       <item row="1" column="0">
-        <widget class="QLabel" name="vendor_guid_label">
-         <property name="toolTip">
-          <string>Vendor GUID</string>
-         </property>
-         <property name="statusTip">
-          <string>Vendor GUID</string>
-         </property>
-         <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor GUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="text">
-          <string>GUID</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="vendor_guid_text">
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-          </font>
-         </property>
-         <property name="toolTip">
-          <string>Vendor GUID</string>
-         </property>
-         <property name="statusTip">
-          <string>Vendor GUID</string>
-         </property>
-         <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor GUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="inputMask">
-          <string notr="true">&lt;HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_</string>
-         </property>
-         <property name="text">
-          <string notr="true">----</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <layout class="QVBoxLayout" name="vendor_data_box" stretch="0,1">
-         <property name="spacing">
-          <number>3</number>
-         </property>
-         <item>
-          <widget class="QComboBox" name="vendor_data_format_combo">
-           <property name="toolTip">
-            <string>Data format</string>
-           </property>
-           <property name="statusTip">
-            <string>Data format</string>
-           </property>
-           <property name="whatsThis">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <item>
-            <property name="text">
-             <string>BASE64</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>UTF-16</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>UTF-8</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>HEX</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPlainTextEdit" name="vendor_data_text">
-           <property name="font">
-            <font>
-             <family>Monospace</family>
-            </font>
-           </property>
-           <property name="toolTip">
-            <string>Data</string>
-           </property>
-           <property name="statusTip">
-            <string>Data</string>
-           </property>
-           <property name="whatsThis">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="vendor_data_label">
-         <property name="toolTip">
-          <string>Vendor data</string>
-         </property>
-         <property name="statusTip">
-          <string>Vendor data</string>
-         </property>
-         <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="text">
-          <string>Data</string>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="0">
         <widget class="QLabel" name="vendor_type_label">
          <property name="toolTip">
@@ -567,6 +453,119 @@
            <string>MEDIA</string>
           </property>
          </item>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="vendor_guid_label">
+         <property name="toolTip">
+          <string>Vendor GUID</string>
+         </property>
+         <property name="statusTip">
+          <string>Vendor GUID</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor GUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>GUID</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="vendor_guid_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Vendor GUID</string>
+         </property>
+         <property name="statusTip">
+          <string>Vendor GUID</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor GUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="inputMask">
+          <string notr="true">&lt;HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_</string>
+         </property>
+         <property name="text">
+          <string notr="true">----</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="vendor_data_label">
+         <property name="toolTip">
+          <string>Vendor data</string>
+         </property>
+         <property name="statusTip">
+          <string>Vendor data</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Data</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QComboBox" name="vendor_data_format_combo">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Data format</string>
+         </property>
+         <property name="statusTip">
+          <string>Data format</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>BASE64</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>UTF-16</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>UTF-8</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>HEX</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPlainTextEdit" name="vendor_data_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Data</string>
+         </property>
+         <property name="statusTip">
+          <string>Data</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
         </widget>
        </item>
       </layout>
@@ -2307,38 +2306,6 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="unknown_subtype_label">
-         <property name="toolTip">
-          <string>Unknown Sub-Type</string>
-         </property>
-         <property name="statusTip">
-          <string>Unknown Sub-Type</string>
-         </property>
-         <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown Sub-Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="text">
-          <string>Sub-Type</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="unknown_data_label">
-         <property name="toolTip">
-          <string>Unknown data</string>
-         </property>
-         <property name="statusTip">
-          <string>Unknown data</string>
-         </property>
-         <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="text">
-          <string>Data</string>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="1">
         <widget class="QLineEdit" name="unknown_type_text">
          <property name="font">
@@ -2360,6 +2327,22 @@
          </property>
          <property name="text">
           <string notr="true">0x</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="unknown_subtype_label">
+         <property name="toolTip">
+          <string>Unknown Sub-Type</string>
+         </property>
+         <property name="statusTip">
+          <string>Unknown Sub-Type</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown Sub-Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Sub-Type</string>
          </property>
         </widget>
        </item>
@@ -2387,63 +2370,78 @@
          </property>
         </widget>
        </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="unknown_data_label">
+         <property name="toolTip">
+          <string>Unknown data</string>
+         </property>
+         <property name="statusTip">
+          <string>Unknown data</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Data</string>
+         </property>
+        </widget>
+       </item>
        <item row="2" column="1">
-        <layout class="QVBoxLayout" name="unknown_data_layout" stretch="0,1">
-         <property name="spacing">
-          <number>3</number>
+        <widget class="QComboBox" name="unknown_data_format_combo">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Data format</string>
+         </property>
+         <property name="statusTip">
+          <string>Data format</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <item>
-          <widget class="QComboBox" name="unknown_data_format_combo">
-           <property name="toolTip">
-            <string>Data format</string>
-           </property>
-           <property name="statusTip">
-            <string>Data format</string>
-           </property>
-           <property name="whatsThis">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <item>
-            <property name="text">
-             <string>BASE64</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>UTF-16</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>UTF-8</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>HEX</string>
-            </property>
-           </item>
-          </widget>
+          <property name="text">
+           <string>BASE64</string>
+          </property>
          </item>
          <item>
-          <widget class="QPlainTextEdit" name="unknown_data_text">
-           <property name="font">
-            <font>
-             <family>Monospace</family>
-            </font>
-           </property>
-           <property name="toolTip">
-            <string>Data</string>
-           </property>
-           <property name="statusTip">
-            <string>Data</string>
-           </property>
-           <property name="whatsThis">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
+          <property name="text">
+           <string>UTF-16</string>
+          </property>
          </item>
-        </layout>
+         <item>
+          <property name="text">
+           <string>UTF-8</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>HEX</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPlainTextEdit" name="unknown_data_text">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Data</string>
+         </property>
+         <property name="statusTip">
+          <string>Data</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
