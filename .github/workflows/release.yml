@@ -6,6 +6,10 @@ on:
   release:
     types: [published]
 
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-linux:
     name: ${{ matrix.os }} with ${{ matrix.compiler }}
