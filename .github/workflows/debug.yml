@@ -9,7 +9,7 @@ on:
     - cron: '36 10 * * 5'
 
 concurrency:
-  group: ${{ github.ref }}
+  group: debug-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
