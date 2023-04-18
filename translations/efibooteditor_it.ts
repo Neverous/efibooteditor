@@ -1493,12 +1493,12 @@
         <location filename="../src/efibooteditor.cpp" line="237"/>
         <source>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</source>
         <extracomment>About dialog</extracomment>
-        <translation type="unfinished">&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</translation>
+        <translation>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Versione &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor per sistemi basati su (U)EFI.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1097"/>
         <source>Boot args</source>
-        <translation type="unfinished">Boot args</translation>
+        <translation>Boot args</translation>
     </message>
 </context>
 <context>

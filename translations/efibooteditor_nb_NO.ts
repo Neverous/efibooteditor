@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="pl" sourcelanguage="en_US">
+<TS version="2.1" language="nb_NO" sourcelanguage="en_US">
 <context>
     <name>BootEntryForm</name>
     <message>
@@ -10,14 +10,14 @@
         <location filename="../src/form/bootentryform.ui" line="80"/>
         <location filename="../src/form/bootentryform.ui" line="83"/>
         <source>Description</source>
-        <translation>Opis</translation>
+        <translation type="unfinished">Description</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="96"/>
         <location filename="../src/form/bootentryform.ui" line="99"/>
         <location filename="../src/form/bootentryform.ui" line="102"/>
         <source>Path</source>
-        <translation>Ścieżka</translation>
+        <translation type="unfinished">Path</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="318"/>
@@ -25,177 +25,177 @@
         <location filename="../src/form/bootentryform.ui" line="381"/>
         <location filename="../src/form/bootentryform.ui" line="384"/>
         <source>Optional data</source>
-        <translation>Dodatkowe dane</translation>
+        <translation type="unfinished">Optional data</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="324"/>
         <source>Optional</source>
-        <translation>Dodatkowe</translation>
+        <translation type="unfinished">Optional</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="337"/>
         <location filename="../src/form/bootentryform.ui" line="340"/>
         <source>Optional data format</source>
-        <translation>Format danych dodatkowych</translation>
+        <translation type="unfinished">Optional data format</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="6"/>
         <source>Boot entry form</source>
-        <translation>Formularz wpisu rozruchu</translation>
+        <translation type="unfinished">Boot entry form</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="86"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opis wpisu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="120"/>
         <location filename="../src/form/bootentryform.ui" line="123"/>
         <source>Device path</source>
-        <translation>Ścieżka urządzenia</translation>
+        <translation type="unfinished">Device path</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="126"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ścieżka urządzenia.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="178"/>
         <location filename="../src/form/bootentryform.ui" line="181"/>
         <source>Move file path up</source>
-        <translation>Przenieś ścieżkę w górę</translation>
+        <translation type="unfinished">Move file path up</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="184"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Przenieś ścieżkę w górę.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="204"/>
         <location filename="../src/form/bootentryform.ui" line="207"/>
         <source>Move file path down</source>
-        <translation>Przenieś ścieżkę w dół</translation>
+        <translation type="unfinished">Move file path down</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="210"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Przenieś ścieżkę w dół.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="230"/>
         <location filename="../src/form/bootentryform.ui" line="233"/>
         <source>Remove file path</source>
-        <translation>Usuń ścieżkę</translation>
+        <translation type="unfinished">Remove file path</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="236"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Usuń ścieżkę.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="256"/>
         <location filename="../src/form/bootentryform.ui" line="259"/>
         <source>Edit file path</source>
-        <translation>Edytuj ścieżkę</translation>
+        <translation type="unfinished">Edit file path</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="262"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Edit file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Edytuj ścieżkę.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Edit file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="282"/>
         <location filename="../src/form/bootentryform.ui" line="285"/>
         <source>Add file path</source>
-        <translation>Dodaj ścieżkę</translation>
+        <translation type="unfinished">Add file path</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="288"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dodaj ścieżkę.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="343"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format danych dodatkowych.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="347"/>
         <source>BASE64</source>
-        <translation>BASE64</translation>
+        <translation type="unfinished">BASE64</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="352"/>
         <source>UTF-16</source>
-        <translation>UTF-16</translation>
+        <translation type="unfinished">UTF-16</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="357"/>
         <source>UTF-8</source>
-        <translation>UTF-8</translation>
+        <translation type="unfinished">UTF-8</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="362"/>
         <source>HEX</source>
-        <translation>HEX</translation>
+        <translation type="unfinished">HEX</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="387"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dodatkowe dane wpisu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="400"/>
         <location filename="../src/form/bootentryform.ui" line="403"/>
         <location filename="../src/form/bootentryform.ui" line="406"/>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation type="unfinished">Attributes</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="526"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kategoria wpisu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="54"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indeks wpisu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="443"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Is entry considered for automatic boot?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Czy wpis jest brany pod uwagę przy automatycznym uruchamianiu?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Is entry considered for automatic boot?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="472"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hidden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukryty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hidden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="488"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Force reconnect.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wymuś ponowne połączenie.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Force reconnect.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="437"/>
         <location filename="../src/form/bootentryform.ui" line="440"/>
         <location filename="../src/form/bootentryform.ui" line="446"/>
         <source>Active</source>
-        <translation>Aktywny</translation>
+        <translation type="unfinished">Active</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="482"/>
         <location filename="../src/form/bootentryform.ui" line="485"/>
         <location filename="../src/form/bootentryform.ui" line="491"/>
         <source>Force reconnect</source>
-        <translation>Wymuś ponowne połączenie</translation>
+        <translation type="unfinished">Force reconnect</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="466"/>
         <location filename="../src/form/bootentryform.ui" line="469"/>
         <location filename="../src/form/bootentryform.ui" line="475"/>
         <source>Hidden</source>
-        <translation>Ukryty</translation>
+        <translation type="unfinished">Hidden</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="501"/>
@@ -204,17 +204,17 @@
         <location filename="../src/form/bootentryform.ui" line="520"/>
         <location filename="../src/form/bootentryform.ui" line="523"/>
         <source>Category</source>
-        <translation>Kategoria</translation>
+        <translation type="unfinished">Category</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="530"/>
         <source>Boot</source>
-        <translation>Rozruch</translation>
+        <translation type="unfinished">Boot</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="535"/>
         <source>App</source>
-        <translation>Aplikacja</translation>
+        <translation type="unfinished">App</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="30"/>
@@ -223,12 +223,12 @@
         <location filename="../src/form/bootentryform.ui" line="48"/>
         <location filename="../src/form/bootentryform.ui" line="51"/>
         <source>Index</source>
-        <translation>Indeks</translation>
+        <translation type="unfinished">Index</translation>
     </message>
     <message>
         <location filename="../src/bootentryform.cpp" line="97"/>
         <source>Couldn&apos;t change optional data format!</source>
-        <translation>Nie można zmienić formatu danych dodatkowych!</translation>
+        <translation type="unfinished">Couldn&apos;t change optional data format!</translation>
     </message>
 </context>
 <context>
@@ -236,32 +236,32 @@
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="50"/>
         <source>Set Next boot to &quot;%1&quot;</source>
-        <translation>Ustaw następny rozruch na „% 1”</translation>
+        <translation type="unfinished">Set Next boot to &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="146"/>
         <source>Index</source>
-        <translation>Indeks</translation>
+        <translation type="unfinished">Index</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="162"/>
         <source>Description</source>
-        <translation>Opis</translation>
+        <translation type="unfinished">Description</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="199"/>
         <source>Optional data</source>
-        <translation>Dodatkowe dane</translation>
+        <translation type="unfinished">Optional data</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="215"/>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation type="unfinished">Attributes</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="231"/>
         <source>Next boot</source>
-        <translation>Następny rozruch</translation>
+        <translation type="unfinished">Next boot</translation>
     </message>
 </context>
 <context>
@@ -270,12 +270,12 @@
         <location filename="../src/form/bootentrywidget.ui" line="12"/>
         <location filename="../src/form/bootentrywidget.ui" line="221"/>
         <source>Boot entry</source>
-        <translation>Wpis rozruchu</translation>
+        <translation type="unfinished">Boot entry</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="36"/>
         <source>Next boot</source>
-        <translation>Następny rozruch</translation>
+        <translation type="unfinished">Next boot</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="39"/>
@@ -291,29 +291,29 @@
         <location filename="../src/form/bootentrywidget.ui" line="140"/>
         <location filename="../src/form/bootentrywidget.ui" line="143"/>
         <source>Current boot</source>
-        <translation>Bieżący rozruch</translation>
+        <translation type="unfinished">Current boot</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="146"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This entry is currently booted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ten wpis został użyty do aktualnego uruchomienia.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This entry is currently booted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="181"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indeks wpisu rozruchu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="218"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry description, human readable name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opis wpisu rozruchu, nazwa czytelna dla człowieka.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry description, human readable name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="67"/>
         <location filename="../src/form/bootentrywidget.ui" line="70"/>
         <location filename="../src/form/bootentrywidget.ui" line="76"/>
         <source>Device path</source>
-        <translation>Ścieżka urządzenia</translation>
+        <translation type="unfinished">Device path</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="73"/>
@@ -323,31 +323,31 @@
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="113"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data, arguments passed to boot executable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dodatkowe dane, argumenty przekazywane do pliku wykonywalnego rozruchu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data, arguments passed to boot executable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="175"/>
         <location filename="../src/form/bootentrywidget.ui" line="178"/>
         <source>Boot entry index</source>
-        <translation>Indeks wpisu rozruchu</translation>
+        <translation type="unfinished">Boot entry index</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="184"/>
         <source>Index</source>
-        <translation>Indeks</translation>
+        <translation type="unfinished">Index</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="212"/>
         <location filename="../src/form/bootentrywidget.ui" line="215"/>
         <source>Boot entry description</source>
-        <translation>Opis wpisu rozruchu</translation>
+        <translation type="unfinished">Boot entry description</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="107"/>
         <location filename="../src/form/bootentrywidget.ui" line="110"/>
         <location filename="../src/form/bootentrywidget.ui" line="116"/>
         <source>Optional data</source>
-        <translation>Dodatkowe dane</translation>
+        <translation type="unfinished">Optional data</translation>
     </message>
 </context>
 <context>
@@ -359,26 +359,26 @@
         <location filename="../src/efibootdata.cpp" line="1026"/>
         <location filename="../src/efibootdata.cpp" line="1132"/>
         <source>%1: not found</source>
-        <translation>%1: nie znaleziono</translation>
+        <translation type="unfinished">%1: not found</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="102"/>
         <location filename="../src/efibootdata.cpp" line="592"/>
         <location filename="../src/efibootdata.cpp" line="1052"/>
         <source>%1: failed deserialization</source>
-        <translation>%1: deserializacja nie powiodła się</translation>
+        <translation type="unfinished">%1: failed deserialization</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="227"/>
         <source>Error loading entries</source>
-        <translation>Błąd ładowania wpisów</translation>
+        <translation type="unfinished">Error loading entries</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="227"/>
         <source>Failed to load some EFI Boot Manager entries:
 
   - %1</source>
-        <translation>Nie udało się załadować niektórych wpisów Menedżera rozruchu EFI:
+        <translation type="unfinished">Failed to load some EFI Boot Manager entries:
 
   - %1</translation>
     </message>
@@ -386,13 +386,13 @@
         <location filename="../src/efibootdata.cpp" line="269"/>
         <location filename="../src/efibootdata.cpp" line="439"/>
         <source>Error saving entries</source>
-        <translation>Błąd podczas zapisywania wpisów</translation>
+        <translation type="unfinished">Error saving entries</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="269"/>
         <location filename="../src/efibootdata.cpp" line="439"/>
         <source>Entry %1(%2): duplicated index!</source>
-        <translation>Wpis %1(%2): zduplikowany indeks!</translation>
+        <translation type="unfinished">Entry %1(%2): duplicated index!</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="289"/>
@@ -402,14 +402,14 @@
         <location filename="../src/efibootdata.cpp" line="347"/>
         <location filename="../src/efibootdata.cpp" line="366"/>
         <source>Error saving %1</source>
-        <translation>Błąd podczas zapisywania %1</translation>
+        <translation type="unfinished">Error saving %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="302"/>
         <location filename="../src/efibootdata.cpp" line="313"/>
         <location filename="../src/efibootdata.cpp" line="357"/>
         <source>Error removing %1</source>
-        <translation>Błąd podczas usuwania %1</translation>
+        <translation type="unfinished">Error removing %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="383"/>
@@ -417,18 +417,18 @@
         <location filename="../src/efibootdata.cpp" line="1006"/>
         <location filename="../src/efibootdata.cpp" line="1202"/>
         <source>Error importing boot configuration</source>
-        <translation>Błąd podczas importowania konfiguracji rozruchu</translation>
+        <translation type="unfinished">Error importing boot configuration</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="383"/>
         <location filename="../src/efibootdata.cpp" line="555"/>
         <source>Couldn&apos;t open selected file (%1).</source>
-        <translation>Nie można otworzyć wybranego pliku (%1).</translation>
+        <translation type="unfinished">Couldn&apos;t open selected file (%1).</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="399"/>
         <source>Invalid _Type: %1</source>
-        <translation type="unfinished">Niepoprawny _Typ: %1</translation>
+        <translation type="unfinished">Invalid _Type: %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="412"/>
@@ -641,12 +641,12 @@
     <message>
         <location filename="../include/efibootdata.h" line="14"/>
         <source>Boot</source>
-        <translation>Rozruch</translation>
+        <translation type="unfinished">Boot</translation>
     </message>
     <message>
         <location filename="../include/efibootdata.h" line="15"/>
         <source>Driver</source>
-        <translation>Sterownik</translation>
+        <translation type="unfinished">Driver</translation>
     </message>
     <message>
         <location filename="../include/efibootdata.h" line="16"/>
@@ -664,21 +664,21 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="18"/>
         <source>EFI Boot Editor</source>
-        <translation>EFI Boot Editor</translation>
+        <translation type="unfinished">EFI Boot Editor</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="72"/>
         <location filename="../src/efibooteditor.cpp" line="351"/>
         <location filename="../src/efibooteditor.cpp" line="364"/>
         <source>Boot</source>
-        <translation>Rozruch</translation>
+        <translation type="unfinished">Boot</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="75"/>
         <location filename="../src/form/efibooteditor.ui" line="99"/>
         <location filename="../src/form/efibooteditor.ui" line="102"/>
         <source>Boot entries</source>
-        <translation>Wpisy rozruchu</translation>
+        <translation type="unfinished">Boot entries</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="78"/>
@@ -690,14 +690,14 @@
         <location filename="../src/form/efibooteditor.ui" line="134"/>
         <location filename="../src/efibooteditor.cpp" line="354"/>
         <source>Driver</source>
-        <translation>Sterownik</translation>
+        <translation type="unfinished">Driver</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="137"/>
         <location filename="../src/form/efibooteditor.ui" line="161"/>
         <location filename="../src/form/efibooteditor.ui" line="164"/>
         <source>Driver entries</source>
-        <translation>Wpisy sterowników</translation>
+        <translation type="unfinished">Driver entries</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="140"/>
@@ -751,7 +751,7 @@
         <location filename="../src/form/efibooteditor.ui" line="347"/>
         <location filename="../src/form/efibooteditor.ui" line="350"/>
         <source>Add new entry</source>
-        <translation>Dodaj nowy wpis</translation>
+        <translation type="unfinished">Add new entry</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="353"/>
@@ -762,7 +762,7 @@
         <location filename="../src/form/efibooteditor.ui" line="379"/>
         <location filename="../src/form/efibooteditor.ui" line="382"/>
         <source>Remove entry</source>
-        <translation>Usuń wpis</translation>
+        <translation type="unfinished">Remove entry</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="385"/>
@@ -811,7 +811,7 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="577"/>
         <source>Global</source>
-        <translation>Globalne</translation>
+        <translation type="unfinished">Global</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="607"/>
@@ -830,7 +830,7 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="638"/>
         <source>s</source>
-        <translation>s</translation>
+        <translation type="unfinished">s</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="649"/>
@@ -944,7 +944,7 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="812"/>
         <source>Actions</source>
-        <translation>Akcje</translation>
+        <translation type="unfinished">Actions</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="821"/>
@@ -1109,7 +1109,7 @@
         <location filename="../src/form/efibooteditor.ui" line="1052"/>
         <location filename="../src/form/efibooteditor.ui" line="1061"/>
         <source>Apple settings</source>
-        <translation>Ustawienia Apple</translation>
+        <translation type="unfinished">Apple settings</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1055"/>
@@ -1120,7 +1120,7 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1058"/>
         <source>Apple</source>
-        <translation>Apple</translation>
+        <translation type="unfinished">Apple</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1088"/>
@@ -1195,12 +1195,12 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1343"/>
         <source>&amp;Undo</source>
-        <translation>&amp;Cofnij</translation>
+        <translation type="unfinished">&amp;Undo</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1346"/>
         <source>Undo</source>
-        <translation>Cofnij</translation>
+        <translation type="unfinished">Undo</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1349"/>
@@ -1210,17 +1210,17 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1352"/>
         <source>Ctrl+Z</source>
-        <translation>Ctrl+Z</translation>
+        <translation type="unfinished">Ctrl+Z</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1361"/>
         <source>&amp;Redo</source>
-        <translation>&amp;Przywróć</translation>
+        <translation type="unfinished">&amp;Redo</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1364"/>
         <source>Redo</source>
-        <translation>Przywróć</translation>
+        <translation type="unfinished">Redo</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1367"/>
@@ -1230,14 +1230,14 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1370"/>
         <source>Ctrl+Shift+Z</source>
-        <translation>Ctrl+Shift+Z</translation>
+        <translation type="unfinished">Ctrl+Shift+Z</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="568"/>
         <location filename="../src/form/efibooteditor.ui" line="571"/>
         <location filename="../src/form/efibooteditor.ui" line="580"/>
         <source>Global settings</source>
-        <translation>Globalne ustawienia</translation>
+        <translation type="unfinished">Global settings</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="616"/>
@@ -1253,114 +1253,114 @@
         <location filename="../src/form/efibooteditor.ui" line="1163"/>
         <location filename="../src/form/efibooteditor.ui" line="1166"/>
         <source>File</source>
-        <translation>Plik</translation>
+        <translation type="unfinished">File</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1172"/>
         <source>&amp;File</source>
-        <translation>&amp;Plik</translation>
+        <translation type="unfinished">&amp;File</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1183"/>
         <location filename="../src/form/efibooteditor.ui" line="1186"/>
         <source>Help</source>
-        <translation>Pomoc</translation>
+        <translation type="unfinished">Help</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1192"/>
         <source>&amp;Help</source>
-        <translation>&amp;Pomoc</translation>
+        <translation type="unfinished">&amp;Help</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1200"/>
         <source>&amp;Edit</source>
-        <translation>&amp;Edycja</translation>
+        <translation type="unfinished">&amp;Edit</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1223"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Zakończ</translation>
+        <translation type="unfinished">&amp;Quit</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1226"/>
         <source>Quit</source>
-        <translation>Zakończ</translation>
+        <translation type="unfinished">Quit</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1232"/>
         <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1241"/>
         <source>&amp;Save</source>
-        <translation>Zapi&amp;sz</translation>
+        <translation type="unfinished">&amp;Save</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1244"/>
         <source>Save</source>
-        <translation>Zapisz</translation>
+        <translation type="unfinished">Save</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1250"/>
         <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
+        <translation type="unfinished">Ctrl+S</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1259"/>
         <source>&amp;Reload</source>
-        <translation>P&amp;rzeładuj</translation>
+        <translation type="unfinished">&amp;Reload</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1262"/>
         <source>Reload</source>
-        <translation>Przeładuj</translation>
+        <translation type="unfinished">Reload</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1268"/>
         <source>Ctrl+R</source>
-        <translation>Ctrl+R</translation>
+        <translation type="unfinished">Ctrl+R</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1277"/>
         <source>About &amp;EFI Boot Editor</source>
-        <translation>Informacje o &amp;EFI Boot Editor</translation>
+        <translation type="unfinished">About &amp;EFI Boot Editor</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1280"/>
         <location filename="../src/efibooteditor.cpp" line="235"/>
         <source>About EFI Boot Editor</source>
-        <translation>Informajce o EFI Boot Editor</translation>
+        <translation type="unfinished">About EFI Boot Editor</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1292"/>
         <source>&amp;Export</source>
-        <translation>&amp;Eksportuj</translation>
+        <translation type="unfinished">&amp;Export</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1295"/>
         <source>Export</source>
-        <translation>Eksportuj</translation>
+        <translation type="unfinished">Export</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1301"/>
         <source>Ctrl+E</source>
-        <translation>Ctrl+E</translation>
+        <translation type="unfinished">Ctrl+E</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1310"/>
         <source>&amp;Import</source>
-        <translation>&amp;Importuj</translation>
+        <translation type="unfinished">&amp;Import</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1313"/>
         <source>Import</source>
-        <translation>Importuj</translation>
+        <translation type="unfinished">Import</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1319"/>
         <source>Ctrl+I</source>
-        <translation>Ctrl+I</translation>
+        <translation type="unfinished">Ctrl+I</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1328"/>
@@ -1375,17 +1375,17 @@
     <message>
         <location filename="../src/efibooteditor.cpp" line="24"/>
         <source>Working…</source>
-        <translation>Pracuję…</translation>
+        <translation type="unfinished">Working…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="69"/>
         <source>Undo %1</source>
-        <translation>Cofnij %1</translation>
+        <translation type="unfinished">Undo %1</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="72"/>
         <source>Redo %1</source>
-        <translation>Przywróć %1</translation>
+        <translation type="unfinished">Redo %1</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="104"/>
@@ -1449,7 +1449,7 @@
     <message>
         <location filename="../src/main.cpp" line="40"/>
         <source>EFI support required</source>
-        <translation>Wymagane wsparcie EFI</translation>
+        <translation type="unfinished">EFI support required</translation>
     </message>
 </context>
 <context>
@@ -1462,7 +1462,7 @@
     <message>
         <location filename="../src/form/filepathdialog.ui" line="47"/>
         <source>PCI</source>
-        <translation>PCI</translation>
+        <translation type="unfinished">PCI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="50"/>
@@ -1496,13 +1496,13 @@
         <location filename="../src/form/filepathdialog.ui" line="137"/>
         <location filename="../src/form/filepathdialog.ui" line="140"/>
         <source>Device</source>
-        <translation>Urządzenie</translation>
+        <translation type="unfinished">Device</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="99"/>
         <location filename="../src/form/filepathdialog.ui" line="143"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Urządzenie.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="158"/>
@@ -1512,7 +1512,7 @@
         <location filename="../src/form/filepathdialog.ui" line="206"/>
         <location filename="../src/form/filepathdialog.ui" line="209"/>
         <source>HID</source>
-        <translation>HID</translation>
+        <translation type="unfinished">HID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="161"/>
@@ -1523,7 +1523,7 @@
     <message>
         <location filename="../src/form/filepathdialog.ui" line="191"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="212"/>
@@ -1537,12 +1537,12 @@
         <location filename="../src/form/filepathdialog.ui" line="246"/>
         <location filename="../src/form/filepathdialog.ui" line="249"/>
         <source>UID</source>
-        <translation>UID</translation>
+        <translation type="unfinished">UID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="231"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="252"/>
@@ -1552,17 +1552,17 @@
     <message>
         <location filename="../src/form/filepathdialog.ui" line="270"/>
         <source>USB</source>
-        <translation>USB</translation>
+        <translation type="unfinished">USB</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="273"/>
         <source>USB settings</source>
-        <translation>Ustawienia USB</translation>
+        <translation type="unfinished">USB settings</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="276"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ustawienia USB.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="300"/>
@@ -1586,7 +1586,7 @@
         <location filename="../src/form/filepathdialog.ui" line="338"/>
         <location filename="../src/form/filepathdialog.ui" line="341"/>
         <source>Interface</source>
-        <translation>Interfejs</translation>
+        <translation type="unfinished">Interface</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="322"/>
@@ -1635,37 +1635,37 @@
         <location filename="../src/form/filepathdialog.ui" line="2398"/>
         <location filename="../src/form/filepathdialog.ui" line="2401"/>
         <source>Data format</source>
-        <translation>Format danych</translation>
+        <translation type="unfinished">Data format</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="529"/>
         <location filename="../src/form/filepathdialog.ui" line="2404"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format danych.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="533"/>
         <location filename="../src/form/filepathdialog.ui" line="2408"/>
         <source>BASE64</source>
-        <translation>BASE64</translation>
+        <translation type="unfinished">BASE64</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="538"/>
         <location filename="../src/form/filepathdialog.ui" line="2413"/>
         <source>UTF-16</source>
-        <translation>UTF-16</translation>
+        <translation type="unfinished">UTF-16</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="543"/>
         <location filename="../src/form/filepathdialog.ui" line="2418"/>
         <source>UTF-8</source>
-        <translation>UTF-8</translation>
+        <translation type="unfinished">UTF-8</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="548"/>
         <location filename="../src/form/filepathdialog.ui" line="2423"/>
         <source>HEX</source>
-        <translation>HEX</translation>
+        <translation type="unfinished">HEX</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="510"/>
@@ -1675,13 +1675,13 @@
         <location filename="../src/form/filepathdialog.ui" line="2436"/>
         <location filename="../src/form/filepathdialog.ui" line="2439"/>
         <source>Data</source>
-        <translation>Dane</translation>
+        <translation type="unfinished">Data</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="567"/>
         <location filename="../src/form/filepathdialog.ui" line="2442"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dane.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="501"/>
@@ -1702,28 +1702,28 @@
         <location filename="../src/form/filepathdialog.ui" line="436"/>
         <location filename="../src/form/filepathdialog.ui" line="2305"/>
         <source>Type</source>
-        <translation>Typ</translation>
+        <translation type="unfinished">Type</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="417"/>
         <location filename="../src/form/filepathdialog.ui" line="439"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Typ.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="443"/>
         <source>HW</source>
-        <translation>HW</translation>
+        <translation type="unfinished">HW</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="448"/>
         <source>MSG</source>
-        <translation>MSG</translation>
+        <translation type="unfinished">MSG</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="453"/>
         <source>MEDIA</source>
-        <translation>MEDIA</translation>
+        <translation type="unfinished">MEDIA</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="579"/>
@@ -1762,28 +1762,28 @@
         <location filename="../src/form/filepathdialog.ui" line="671"/>
         <location filename="../src/form/filepathdialog.ui" line="674"/>
         <source>Interface type</source>
-        <translation>Typ interfejsu</translation>
+        <translation type="unfinished">Interface type</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="655"/>
         <location filename="../src/form/filepathdialog.ui" line="677"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Typ interfejsu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="689"/>
         <source>IPv4</source>
-        <translation>IPv4</translation>
+        <translation type="unfinished">IPv4</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="692"/>
         <source>IPv4 settings</source>
-        <translation>Ustawienia IPv4</translation>
+        <translation type="unfinished">IPv4 settings</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="695"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv4 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ustawienia IPv4.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv4 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="719"/>
@@ -1893,7 +1893,7 @@
         <location filename="../src/form/filepathdialog.ui" line="1280"/>
         <location filename="../src/form/filepathdialog.ui" line="1283"/>
         <source>Protocol</source>
-        <translation>Protokół</translation>
+        <translation type="unfinished">Protocol</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="875"/>
@@ -1901,7 +1901,7 @@
         <location filename="../src/form/filepathdialog.ui" line="1130"/>
         <location filename="../src/form/filepathdialog.ui" line="1286"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protokół.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="904"/>
@@ -1956,28 +1956,28 @@
         <location filename="../src/form/filepathdialog.ui" line="1006"/>
         <location filename="../src/form/filepathdialog.ui" line="1009"/>
         <source>Subnet mask</source>
-        <translation>Maska podsieci</translation>
+        <translation type="unfinished">Subnet mask</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="991"/>
         <location filename="../src/form/filepathdialog.ui" line="1012"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnet mask.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Maska podsieci.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnet mask.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1030"/>
         <source>IPv6</source>
-        <translation>IPv6</translation>
+        <translation type="unfinished">IPv6</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1033"/>
         <source>IPv6 settings</source>
-        <translation>Ustawienia IPv6</translation>
+        <translation type="unfinished">IPv6 settings</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1036"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv6 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ustawienia IPv6.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv6 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1140"/>
@@ -2005,13 +2005,13 @@
         <location filename="../src/form/filepathdialog.ui" line="1357"/>
         <location filename="../src/form/filepathdialog.ui" line="1360"/>
         <source>Prefix length</source>
-        <translation>Długość prefiksu</translation>
+        <translation type="unfinished">Prefix length</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1178"/>
         <location filename="../src/form/filepathdialog.ui" line="1363"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Prefix length.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Długość prefiksu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Prefix length.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1314"/>
@@ -2026,7 +2026,7 @@
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1375"/>
         <source>SATA</source>
-        <translation>SATA</translation>
+        <translation type="unfinished">SATA</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1378"/>
@@ -2075,7 +2075,7 @@
         <location filename="../src/form/filepathdialog.ui" line="1503"/>
         <location filename="../src/form/filepathdialog.ui" line="1506"/>
         <source>LUN</source>
-        <translation>LUN</translation>
+        <translation type="unfinished">LUN</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1443"/>
@@ -2086,7 +2086,7 @@
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1524"/>
         <source>HD</source>
-        <translation>HD</translation>
+        <translation type="unfinished">HD</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1527"/>
@@ -2103,23 +2103,23 @@
         <location filename="../src/form/filepathdialog.ui" line="1557"/>
         <location filename="../src/form/filepathdialog.ui" line="1563"/>
         <source>Disk</source>
-        <translation>Dysk</translation>
+        <translation type="unfinished">Disk</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1560"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dysk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1581"/>
         <location filename="../src/form/filepathdialog.ui" line="1584"/>
         <source>Choose disk</source>
-        <translation>Wybierz dysk</translation>
+        <translation type="unfinished">Choose disk</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1587"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Choose disk from discovered in the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wybierz dysk spośród znalezionych w systemie.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Choose disk from discovered in the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1591"/>
@@ -2130,12 +2130,12 @@
         <location filename="../src/form/filepathdialog.ui" line="1605"/>
         <location filename="../src/form/filepathdialog.ui" line="1608"/>
         <source>Reload drives</source>
-        <translation>Przeładuj dyski</translation>
+        <translation type="unfinished">Reload drives</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1611"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reload system drives list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Przeładuj listę dysków systemowych.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reload system drives list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1633"/>
@@ -2154,7 +2154,7 @@
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1642"/>
         <source>Signature</source>
-        <translation>Sygnatura</translation>
+        <translation type="unfinished">Signature</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1654"/>
@@ -2170,12 +2170,12 @@
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1664"/>
         <source>NONE</source>
-        <translation>ŻADNA</translation>
+        <translation type="unfinished">NONE</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1669"/>
         <source>MBR</source>
-        <translation>MBR</translation>
+        <translation type="unfinished">MBR</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1708"/>
@@ -2183,18 +2183,18 @@
         <location filename="../src/form/filepathdialog.ui" line="1730"/>
         <location filename="../src/form/filepathdialog.ui" line="1733"/>
         <source>Partition number</source>
-        <translation>Numer partycji</translation>
+        <translation type="unfinished">Partition number</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1714"/>
         <location filename="../src/form/filepathdialog.ui" line="1736"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Numer partycji.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1717"/>
         <source>Partition</source>
-        <translation>Partycja</translation>
+        <translation type="unfinished">Partition</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1749"/>
@@ -2212,7 +2212,7 @@
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1758"/>
         <source>Start</source>
-        <translation>Początek</translation>
+        <translation type="unfinished">Start</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1776"/>
@@ -2235,7 +2235,7 @@
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1798"/>
         <source>Size</source>
-        <translation>Rozmiar</translation>
+        <translation type="unfinished">Size</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1816"/>
@@ -2245,7 +2245,7 @@
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1834"/>
         <source>File</source>
-        <translation>Plik</translation>
+        <translation type="unfinished">File</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1837"/>
@@ -2274,7 +2274,7 @@
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1873"/>
         <source>File name</source>
-        <translation>Nazwa pliku</translation>
+        <translation type="unfinished">File name</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1898"/>
@@ -2309,7 +2309,7 @@
         <location filename="../src/form/filepathdialog.ui" line="1937"/>
         <location filename="../src/form/filepathdialog.ui" line="2009"/>
         <source>Name</source>
-        <translation>Nazwa</translation>
+        <translation type="unfinished">Name</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1970"/>
@@ -2357,7 +2357,7 @@
         <location filename="../src/form/filepathdialog.ui" line="2093"/>
         <location filename="../src/form/filepathdialog.ui" line="2096"/>
         <source>Device type</source>
-        <translation>Typ urządzenia</translation>
+        <translation type="unfinished">Device type</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2078"/>
@@ -2372,7 +2372,7 @@
         <location filename="../src/form/filepathdialog.ui" line="2133"/>
         <location filename="../src/form/filepathdialog.ui" line="2136"/>
         <source>Status flag</source>
-        <translation>Flaga stanu</translation>
+        <translation type="unfinished">Status flag</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2118"/>
@@ -2387,7 +2387,7 @@
         <location filename="../src/form/filepathdialog.ui" line="2168"/>
         <location filename="../src/form/filepathdialog.ui" line="2171"/>
         <source>Description</source>
-        <translation>Opis</translation>
+        <translation type="unfinished">Description</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2158"/>
@@ -2398,7 +2398,7 @@
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2186"/>
         <source>End</source>
-        <translation>Koniec</translation>
+        <translation type="unfinished">End</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2189"/>
@@ -2439,7 +2439,7 @@
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2266"/>
         <source>Unknown</source>
-        <translation>Nieznana</translation>
+        <translation type="unfinished">Unknown</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2269"/>
@@ -2457,7 +2457,7 @@
         <location filename="../src/form/filepathdialog.ui" line="2317"/>
         <location filename="../src/form/filepathdialog.ui" line="2320"/>
         <source>Unknown Type</source>
-        <translation>Typ nieznanej ścieżki</translation>
+        <translation type="unfinished">Unknown Type</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2302"/>
@@ -2483,7 +2483,7 @@
         <location filename="../src/form/filepathdialog.ui" line="2376"/>
         <location filename="../src/form/filepathdialog.ui" line="2379"/>
         <source>Unknown data</source>
-        <translation>Dane nieznanej ścieżki</translation>
+        <translation type="unfinished">Unknown data</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2382"/>
@@ -2503,35 +2503,35 @@
         <location filename="../include/commands.h" line="21"/>
         <location filename="../include/commands.h" line="66"/>
         <source>Change %1 to &quot;%2&quot;</source>
-        <translation>Zmień %1 na &quot;%2&quot;</translation>
+        <translation type="unfinished">Change %1 to &quot;%2&quot;</translation>
     </message>
     <message>
         <location filename="../include/commands.h" line="112"/>
         <source>Insert %1 entry &quot;%2&quot; at position %3</source>
-        <translation>Wstaw %1 wpis &quot;%2&quot; na pozycji %3</translation>
+        <translation type="unfinished">Insert %1 entry &quot;%2&quot; at position %3</translation>
     </message>
     <message>
         <location filename="../include/commands.h" line="134"/>
         <source>Removing %1 entry &quot;%2&quot; from position %3</source>
-        <translation>Usuń %1 wpisu &quot;%2&quot; z pozycji %3</translation>
+        <translation type="unfinished">Removing %1 entry &quot;%2&quot; from position %3</translation>
     </message>
     <message>
         <location filename="../include/commands.h" line="171"/>
         <location filename="../include/commands.h" line="213"/>
         <source>Move %1 entry &quot;%2&quot; from position %3 to %4</source>
-        <translation>Przestaw %1 wpis &quot;%2&quot; z pozycji %3 na %4</translation>
+        <translation type="unfinished">Move %1 entry &quot;%2&quot; from position %3 to %4</translation>
     </message>
     <message>
         <location filename="../include/commands.h" line="243"/>
         <location filename="../include/commands.h" line="284"/>
         <location filename="../include/commands.h" line="368"/>
         <source>Change %1 entry &quot;%2&quot; %3 to &quot;%4&quot;</source>
-        <translation>Zmień %1 wpis &quot;%2&quot; %3 na &quot;%4&quot;</translation>
+        <translation type="unfinished">Change %1 entry &quot;%2&quot; %3 to &quot;%4&quot;</translation>
     </message>
     <message>
         <location filename="../include/commands.h" line="368"/>
         <source>Optional data</source>
-        <translation>Dane dodatkowe</translation>
+        <translation type="unfinished">Optional data</translation>
     </message>
     <message>
         <location filename="../include/commands.h" line="415"/>
