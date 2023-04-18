@@ -10,14 +10,14 @@
         <location filename="../src/form/bootentryform.ui" line="80"/>
         <location filename="../src/form/bootentryform.ui" line="83"/>
         <source>Description</source>
-        <translation type="unfinished">Description</translation>
+        <translation>Beskrivelse</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="96"/>
         <location filename="../src/form/bootentryform.ui" line="99"/>
         <location filename="../src/form/bootentryform.ui" line="102"/>
         <source>Path</source>
-        <translation type="unfinished">Path</translation>
+        <translation>Sti</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="318"/>
@@ -25,99 +25,99 @@
         <location filename="../src/form/bootentryform.ui" line="381"/>
         <location filename="../src/form/bootentryform.ui" line="384"/>
         <source>Optional data</source>
-        <translation type="unfinished">Optional data</translation>
+        <translation>Valgfri data</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="324"/>
         <source>Optional</source>
-        <translation type="unfinished">Optional</translation>
+        <translation>Valgfritt</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="337"/>
         <location filename="../src/form/bootentryform.ui" line="340"/>
         <source>Optional data format</source>
-        <translation type="unfinished">Optional data format</translation>
+        <translation>Valgfritt datoformat</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="6"/>
         <source>Boot entry form</source>
-        <translation type="unfinished">Boot entry form</translation>
+        <translation>Oppstartsoppføringsskjema</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="86"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Oppføringsbeskrivelse.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="120"/>
         <location filename="../src/form/bootentryform.ui" line="123"/>
         <source>Device path</source>
-        <translation type="unfinished">Device path</translation>
+        <translation>Enhetssti</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="126"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enhetssti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="178"/>
         <location filename="../src/form/bootentryform.ui" line="181"/>
         <source>Move file path up</source>
-        <translation type="unfinished">Move file path up</translation>
+        <translation>Flytt filsti oppover</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="184"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Flytt filsti oppover.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="204"/>
         <location filename="../src/form/bootentryform.ui" line="207"/>
         <source>Move file path down</source>
-        <translation type="unfinished">Move file path down</translation>
+        <translation>Flytt filsti nedover</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="210"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Flytt filsti nedover.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="230"/>
         <location filename="../src/form/bootentryform.ui" line="233"/>
         <source>Remove file path</source>
-        <translation type="unfinished">Remove file path</translation>
+        <translation>Fjern filsti</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="236"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fjern filsti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="256"/>
         <location filename="../src/form/bootentryform.ui" line="259"/>
         <source>Edit file path</source>
-        <translation type="unfinished">Edit file path</translation>
+        <translation>Rediger filsti</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="262"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Edit file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Edit file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Rediger filsti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="282"/>
         <location filename="../src/form/bootentryform.ui" line="285"/>
         <source>Add file path</source>
-        <translation type="unfinished">Add file path</translation>
+        <translation>Legg til filsti</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="288"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Legg til filsti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="343"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Valgfritt datoformat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="347"/>
