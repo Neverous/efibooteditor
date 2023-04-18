@@ -3,6 +3,7 @@
 #include <QCommandLineParser>
 #include <QLibraryInfo>
 #include <QMessageBox>
+#include <QStyleFactory>
 #include <QTranslator>
 
 #include "efibooteditor.h"
@@ -11,7 +12,8 @@ auto main(int argc, char *argv[]) -> int
 {
     QApplication a(argc, argv);
     a.setApplicationName(APPLICATION_NAME);
-    QApplication::setApplicationVersion(VERSION);
+    a.setApplicationVersion(VERSION);
+    a.setStyle(QStyleFactory::create("Fusion"));
     QIcon::setFallbackThemeName("Tango");
     if(QIcon::themeName().isEmpty())
         QIcon::setThemeName("Tango");

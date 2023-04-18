@@ -1447,7 +1447,7 @@
         <translation>Are you sure you want to quit?</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="40"/>
+        <location filename="../src/main.cpp" line="42"/>
         <source>EFI support required</source>
         <translation>EFI support required</translation>
     </message>
