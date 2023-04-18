@@ -74,7 +74,6 @@ jobs:
 
   upload-linux-asset:
     name: Upload Linux release asset ${{ matrix.os }} with ${{ matrix.compiler }} ${{ matrix.extension }}
-    if: github.ref_type == 'tag'
     needs: build-linux
     strategy:
       fail-fast: false
@@ -88,6 +87,9 @@ jobs:
           - .deb
           - -dbgsym.ddeb
 
+    permissions:
+      contents: write
+
     uses: ./.github/workflows/asset.yml
     with:
       os: ${{ matrix.os }}
@@ -97,7 +99,6 @@ jobs:
 
   upload-windows-asset:
     name: Upload Windows release asset ${{ matrix.os }} with ${{ matrix.compiler }} ${{ matrix.extension }}
-    if: github.ref_type == 'tag'
     needs: build-windows
     strategy:
       fail-fast: false
@@ -110,6 +111,9 @@ jobs:
           - .zip
           - .msi
 
+    permissions:
+      contents: write
+
     uses: ./.github/workflows/asset.yml
     with:
       os: ${{ matrix.os }}
@@ -119,7 +123,6 @@ jobs:
 
   upload-macos-asset:
     name: Upload MacOS release asset ${{ matrix.os }} with ${{ matrix.compiler }} ${{ matrix.extension }}
-    if: github.ref_type == 'tag'
     needs: build-macos
     strategy:
       fail-fast: false
@@ -130,6 +133,9 @@ jobs:
         extension:
           - .tar.zst
           - .dmg
+
+    permissions:
+      contents: write
 
     uses: ./.github/workflows/asset.yml
     with:
