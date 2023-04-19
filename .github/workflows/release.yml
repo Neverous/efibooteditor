@@ -98,7 +98,7 @@ jobs:
     with:
       os: ${{ matrix.os }}
       compiler: ${{ matrix.compiler }}
-      version: ${{ github.ref_type == 'tag' && github.ref_name || github.sha }}
+      version: ${{ github.ref_name }}
       extension: ${{ matrix.extension }}
 
   upload-windows-asset:
@@ -122,7 +122,7 @@ jobs:
     with:
       os: ${{ matrix.os }}
       compiler: ${{ matrix.compiler }}
-      version: ${{ github.ref_type == 'tag' && github.ref_name || github.sha }}
+      version: ${{ github.ref_name }}
       extension: ${{ matrix.extension }}
 
   upload-macos-asset:
@@ -145,7 +145,7 @@ jobs:
     with:
       os: ${{ matrix.os }}
       compiler: ${{ matrix.compiler }}
-      version: ${{ github.ref_type == 'tag' && github.ref_name || github.sha }}
+      version: ${{ github.ref_name }}
       extension: ${{ matrix.extension }}
 
   winget-update:
