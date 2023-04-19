@@ -33,7 +33,7 @@ jobs:
       os: ${{ matrix.os }}
       compiler: ${{ matrix.compiler }}
       build-config: Debug
-      version: 0.0.0-${{ github.sha }}
+      version: ${{ github.sha }}
 
   build-windows:
     name: ${{ matrix.os }} with ${{ matrix.compiler }}
@@ -55,7 +55,7 @@ jobs:
       os: ${{ matrix.os }}
       compiler: ${{ matrix.compiler }}
       build-config: Debug
-      version: 0.0.0-${{ github.sha }}
+      version: ${{ github.sha }}
 
   build-macos:
     name: ${{ matrix.os }} with ${{ matrix.compiler }}
@@ -76,4 +76,4 @@ jobs:
       os: ${{ matrix.os }}
       compiler: ${{ matrix.compiler }}
       build-config: Debug
-      version: 0.0.0-${{ github.sha }}
+      version: ${{ github.sha }}
