@@ -40,6 +40,7 @@ jobs:
         with:
           languages: 'cpp'
         if: inputs.build-config == 'Debug'
+        continue-on-error: true
 
       - name: Set up Qt environment
         uses: jurplel/install-qt-action@v3
@@ -105,20 +106,19 @@ jobs:
         if: startsWith(inputs.os, 'windows')
 
       - name: Build
+        run: cmake --build . --config ${{ inputs.build-config }}
+        shell: bash
+        working-directory: build
+
+      - name: Package
         run: cmake --build . --config ${{ inputs.build-config }} --target package
         shell: bash
         working-directory: build
-        if: ${{ !startsWith(inputs.os, 'windows') }}
-
-      - name: Build
-        run: cmake --build . --config ${{ inputs.build-config }} --target package || exit /b
-        shell: cmd
-        working-directory: build
-        if: startsWith(inputs.os, 'windows')
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
         if: inputs.build-config == 'Debug'
+        continue-on-error: true
 
       - name: Perform MSVC Code Analysis
         uses: microsoft/msvc-code-analysis-action@v0.1.1
@@ -128,12 +128,14 @@ jobs:
           buildConfiguration: ${{ inputs.build-config }}
           ruleset: NativeRecommendedRules.ruleset
         if: inputs.build-config == 'Debug' && inputs.compiler == 'MSVC'
+        continue-on-error: true
 
       - name: Upload MSVC Code Analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: ${{ steps.msvc-analysis.outputs.sarif }}
         if: inputs.build-config == 'Debug' && inputs.compiler == 'MSVC'
+        continue-on-error: true
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3

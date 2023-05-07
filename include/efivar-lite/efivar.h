@@ -37,7 +37,7 @@ static const uint32_t EFI_VARIABLE_ATTRIBUTE_TIME_BASED_AUTHENTICATED_WRITE_ACCE
 static const uint32_t EFI_VARIABLE_ATTRIBUTE_APPEND_WRITE = 0x00000040;
 static const uint32_t EFI_VARIABLE_ATTRIBUTE_DEFAULTS =
 #ifdef __APPLE__
-    // MacOS doesn't support attributes for variables
+    // macOS doesn't support attributes for variables
     0
 #else
     0x00000007 // EFI_VARIABLE_ATTRIBUTE_NON_VOLATILE | EFI_VARIABLE_ATTRIBUTE_BOOTSERVICE_ACCESS | EFI_VARIABLE_ATTRIBUTE_RUNTIME_ACCESS
