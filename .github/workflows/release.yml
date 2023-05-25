@@ -158,7 +158,7 @@ jobs:
       matrix:
         os: [windows-2022]
         qt-version:
-          - 6.5.0 # latest
+          - 6.5.1 # latest
         compiler:
           - MSVC
     steps:
