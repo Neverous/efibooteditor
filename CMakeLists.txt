@@ -469,6 +469,9 @@ elseif(APPLE)
 
     set(CPACK_BUNDLE_ICON ${CPACK_PACKAGE_ICON})
     set(CPACK_INCLUDE_TOPLEVEL_DIRECTORY NO)
+    # Seems like since macOS 13 hdiutil needs elevated access to work properly
+    # at least in GitHub Actions https://github.com/actions/runner-images/issues/7522#issuecomment-1564467252
+    set(CPACK_COMMAND_HDIUTIL "/usr/bin/sudo /usr/bin/hdiutil")
 
 else()
     set(CPACK_PACKAGE_TARGET_OS_NAME "linux")
