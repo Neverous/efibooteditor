@@ -35,6 +35,13 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
+      - name: Set up ccache
+        uses: hendrikmuhs/ccache-action@v1.2
+        with:
+          key: ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}-${{ matrix.qt-version }}
+          restore-keys: |
+            ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}-
+
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
         with:
@@ -86,7 +93,7 @@ jobs:
               export CXX=g++
             ;;
           esac;
-          cmake -DCMAKE_BUILD_TYPE=${{ inputs.build-config }} -DCMAKE_VERBOSE_MAKEFILE=ON ..
+          cmake -DCMAKE_BUILD_TYPE=${{ inputs.build-config }} -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache ..
         shell: bash
         env:
           BUILD_VERSION: ${{ inputs.version }}
@@ -97,7 +104,7 @@ jobs:
       - name: Configure build with ${{ inputs.compiler }}
         run: |
           call "${{ endsWith(inputs.os, '2019') && '%programfiles(x86)%\Microsoft Visual Studio\2019' || '%programfiles%\Microsoft Visual Studio\2022' }}\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64 || exit /b
-          cmake -DCMAKE_BUILD_TYPE=${{ inputs.build-config }} ${{ endsWith(inputs.os, '2019') && '-DCMAKE_SYSTEM_VERSION=10.0.18362.0' || ''}} -DCMAKE_VERBOSE_MAKEFILE=ON ${{ inputs.compiler == 'Clang' && '-T ClangCL' || '' }} .. || exit /b
+          cmake -DCMAKE_BUILD_TYPE=${{ inputs.build-config }} ${{ endsWith(inputs.os, '2019') && '-DCMAKE_SYSTEM_VERSION=10.0.18362.0' || ''}} -DCMAKE_VERBOSE_MAKEFILE=ON ${{ inputs.compiler == 'Clang' && '-T ClangCL' || '' }} -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache .. || exit /b
         shell: cmd
         env:
           BUILD_VERSION: ${{ inputs.version }}
