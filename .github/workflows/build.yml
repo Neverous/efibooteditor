@@ -118,7 +118,12 @@ jobs:
         working-directory: build
 
       - name: Package
-        run: cmake --build . --config ${{ inputs.build-config }} --target package
+        run: |
+          for t in $(seq 1 20); do # FIXME: macOS has random hdiutil errors because of some protection mechanisms, just retry few times https://github.com/actions/runner-images/issues/7522#issuecomment-1556766641
+            cmake --build . --config ${{ inputs.build-config }} --target package && exit 0
+            rm -rf dist/
+          done
+          exit 255
         shell: bash
         working-directory: build
 
