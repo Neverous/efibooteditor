@@ -45,5 +45,4 @@ jobs:
           prerelease: ${{ github.ref_type != 'tag' }}
           files: |
             EFIBootEditor-${{ inputs.version }}-${{ inputs.os }}-qt-${{ matrix.qt-version }}-${{ inputs.compiler }}${{ inputs.extension }}
-          name: ${{ github.ref_type == 'tag' && github.ref || 'latest' }}
-          tag_name: ${{ github.ref_type == 'tag' && github.ref || 'latest' }}
+          tag_name: ${{ github.ref_type == 'tag' && github.ref_name || 'latest' }}
