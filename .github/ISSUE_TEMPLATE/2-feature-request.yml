@@ -1,0 +1,21 @@
+name: 🚀 Feature request
+description: Suggest an idea for this project
+labels: [enhancement]
+body:
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for similar feature.
+      options:
+        - label: I have searched the existing issues
+          required: true
+  - type: textarea
+    attributes:
+      label: Description
+      description: Provide a short description of the feature.
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: Feel free to write here any additional information.
+    validations:
+      required: false
