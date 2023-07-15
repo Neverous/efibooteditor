@@ -12,7 +12,10 @@ Necessary tools:
   or [Clang](//clang.llvm.org/) (>= 9.0.0),
   or [MSVC](//learn.microsoft.com/en-us/cpp/) (>= 19.29.30146.0) on Windows
 
-Required development libraries:
+Required libraries[^1]:
+
+[^1]: Remember to install **development** files as well. For example
+  `qt6-base-dev`, `libefivar-dev`, `libefiboot-dev` on Ubuntu.
 
 - [Qt5](//doc.qt.io/qt-5/gettingstarted.html) (>= 5.15)
   or [Qt6](//doc.qt.io/qt-6/get-and-install-qt.html) (>= 6.2)
@@ -36,9 +39,10 @@ Required development libraries:
     Available parameters:
 
     - `CMAKE_BUILD_TYPE=Debug,Release,RelWithDebInfo,MinSizeRel` - specifies
-      the build type, can be used to overwrite custom/default C/C++ compiler flags
-      with recommended values
-    - `QT_VERSION_MAJOR=5,6` - force Qt5 or Qt6 build, useful if both are installed
+      the build type, can be used to overwrite custom/default C/C++ compiler
+      flags with recommended values
+    - `QT_VERSION_MAJOR=5,6` - force Qt5 or Qt6 build,
+      useful if both are installed
 
 2. Build
 
@@ -60,7 +64,7 @@ Required development libraries:
     ...
     ```
 
-### Notes
+### Other
 
 There is also:
 
@@ -108,19 +112,17 @@ Assets are delivered in various formats:
 
 - `.dmg` - macOS App Bundle.
 - `.deb` - Debian package - should also work on any Debian derivative as long
-  as dependencies are met.
+  as dependencies are met.[^2]
 - `.ddeb` - Debian debug symbol package - primarily useful during troubleshooting.
 - `.msi` - Windows installer.
 - `.zip`, `.tar.zst` - simple archive files, should contain all necessary files,
   ready to use in-place after decompression (`.zip` is for Windows
   and `.tar.zst` is for macOS and Linux).
 
-### Notes
-
-- Using `.deb` packages on old Ubuntu (< 21.10) or Debian (< bullseye) releases
-might require manual Qt installation as versions in the official repositories
-are older than the minimum requirements.
-In the CI [aqtinstall](//github.com/miurahr/aqtinstall) is used for
-installation, but then package install needs to be probably forced. Quick search
-through the internet also reveals PPAs with pre-built packages from
-[Stephan Binner](//launchpad.net/~beineri) that might be useful.
+[^2]: Using `.deb` packages on old Ubuntu (< 21.10) or Debian (< bullseye)
+  releases might require manual Qt installation as versions in the official
+  repositories are older than the minimum requirements.
+  In the CI [aqtinstall](//github.com/miurahr/aqtinstall) is used for
+  installation, but then package install needs to be probably forced.
+  Quick search through the internet also reveals PPAs with pre-built packages
+  from [Stephan Binner](//launchpad.net/~beineri) that might be useful.
