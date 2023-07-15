@@ -13,6 +13,8 @@ body:
     attributes:
       label: Description
       description: Provide a short description of the feature.
+    validations:
+      required: true
   - type: textarea
     attributes:
       label: Additional information

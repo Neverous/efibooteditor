@@ -13,6 +13,8 @@ body:
     attributes:
       label: Description
       description: Provide a short description of the problem. What's expected and what actually happens, etc.
+    validations:
+      required: true
   - type: textarea
     attributes:
       label: Environment
@@ -26,6 +28,8 @@ body:
         - Operating system:
         - EFI/BIOS/Motherboard vendor:
         - EFI/BIOS version:
+    validations:
+      required: true
   - type: textarea
     attributes:
       label: Raw EFI data
