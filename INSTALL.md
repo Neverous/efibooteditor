@@ -7,6 +7,7 @@
 Necessary tools:
 
 - [CMake](//cmake.org) (>= 3.16)
+- [pkg-config](//www.freedesktop.org/wiki/Software/pkg-config/)
 - recent C/C++ compiler with C++17 support,
   recommended [GCC](//gcc.gnu.org/) (>= 7.5.0)
   or [Clang](//clang.llvm.org/) (>= 9.0.0),

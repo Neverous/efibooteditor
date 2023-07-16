@@ -297,11 +297,10 @@ if(APPLE)
     )
 
 elseif(UNIX)
-    target_link_libraries(${PROJECT_NAME} PRIVATE
-        efiboot
-        efivar
-    )
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(EFIVAR REQUIRED efivar efiboot)
 
+    target_link_libraries(${PROJECT_NAME} PRIVATE ${EFIVAR_LIBRARIES})
 endif()
 
 if(WIN32)
