@@ -8,7 +8,7 @@
 #include <QJsonObject>
 #include <unordered_set>
 
-static bool is_bootentry(const std::tstring &name, const std::tstring &prefix)
+static bool is_bootentry(const std::tstring_view &name, const std::tstring_view &prefix)
 {
     if(name.length() != prefix.length() + 4 || name.substr(0, prefix.length()) != prefix)
         return false;
@@ -70,6 +70,10 @@ void EFIBootData::reload()
     int32_t current_boot = -1;
     int32_t next_boot = -1;
     QStringList errors;
+    auto save_error = [&](const QString &error)
+    {
+        errors.push_back(error);
+    };
 
     const auto name_to_guid = EFIBoot::get_variables(
         [](const EFIBoot::efi_guid_t &guid, const std::tstring_view)
@@ -84,13 +88,13 @@ void EFIBootData::reload()
     size_t step = 0;
     const size_t total_steps = name_to_guid.size() + 1u;
 
-    auto process_entry = [&](const auto &name, const auto &read_fn, const auto &process_fn, bool optional = false)
+    auto process_entry = [&](const auto &name, const auto &read_fn, const auto &process_fn, const auto &error_fn, bool optional = false)
     {
         const auto tname = QStringToStdTString(name);
         if(!name_to_guid.count(tname))
         {
             if(!optional)
-                errors.push_back(tr("%1: not found").arg(name));
+                error_fn(tr("%1: not found").arg(name));
 
             return;
         }
@@ -99,7 +103,7 @@ void EFIBootData::reload()
         const auto variable = read_fn(name_to_guid.at(tname), tname);
         if(!variable)
         {
-            errors.push_back(tr("%1: failed deserialization").arg(name));
+            error_fn(tr("%1: failed deserialization").arg(name));
             return;
         }
 
@@ -110,51 +114,61 @@ void EFIBootData::reload()
     process_entry(
         "Timeout", EFIBoot::get_variable<uint16_t>, [&](const uint16_t &value, const auto &)
         { setTimeout(value); },
+        save_error,
         true);
 
     process_entry(
         "BootCurrent", EFIBoot::get_variable<uint16_t>, [&](const uint16_t &value, const auto &)
         { current_boot = value; },
+        save_error,
         true);
 
     process_entry(
         "BootNext", EFIBoot::get_variable<uint16_t>, [&](const uint16_t &value, const auto &)
         { next_boot = value; },
+        save_error,
         true);
 
     process_entry(
         "SecureBoot", EFIBoot::get_variable<uint8_t>, [&](const uint8_t &value, const auto &)
         { setSecureBoot(value); },
+        save_error,
         true);
 
     process_entry(
         "VendorKeys", EFIBoot::get_variable<uint8_t>, [&](const uint8_t &value, const auto &)
         { setVendorKeys(value); },
+        save_error,
         true);
 
     process_entry(
         "SetupMode", EFIBoot::get_variable<uint8_t>, [&](const uint8_t &value, const auto &)
         { setSetupMode(value); },
+        save_error,
         true);
 
     process_entry(
         "AuditMode", EFIBoot::get_variable<uint8_t>, [&](const uint8_t &value, const auto &)
         { setAuditMode(value); },
+        save_error,
         true);
 
     process_entry(
         "DeployedMode", EFIBoot::get_variable<uint8_t>, [&](const uint8_t &value, const auto &)
         { setDeployedMode(value); },
+        save_error,
         true);
 
     process_entry(
         "OsIndicationsSupported", EFIBoot::get_variable<uint64_t>, [&](const uint64_t &value, const auto &)
         { setOsIndicationsSupported(value); },
+        save_error,
         true);
 
     process_entry(
         "OsIndications", EFIBoot::get_variable<uint64_t>, [&](const uint64_t &value, const auto &)
         { setOsIndications(value); },
+        save_error,
         true);
 
     for(const auto &[prefix_, model_]: BOOT_ENTRIES)
@@ -175,6 +189,7 @@ void EFIBootData::reload()
                 for(const auto &index: order)
                     ordered_entry.insert(index);
             },
+            save_error,
             true);
 
         // Add entries not in BootOrder at the end
@@ -197,13 +212,26 @@ void EFIBootData::reload()
         {
             const auto qname = toHex(index, 4, prefix);
 
-            process_entry(qname, EFIBoot::get_variable<EFIBoot::Load_option>,
+            process_entry(
+                qname, EFIBoot::get_variable<EFIBoot::Load_option>,
                 [&](const EFIBoot::Load_option &value, const uint32_t &attributes)
                 {
                     // Translate STL to QTL
                     auto entry = BootEntry::fromEFIBootLoadOption(value);
                     entry.index = index;
                     entry.efi_attributes = attributes;
+                    if(model.options & BootEntryListModel::IsBoot)
+                    {
+                        entry.is_current_boot = current_boot == static_cast<int>(index);
+                        entry.is_next_boot = next_boot == static_cast<int>(index);
+                    }
+                    model.appendRow(entry);
+                },
+                [&](const QString &error)
+                {
+                    errors.push_back(error);
+                    auto entry = BootEntry::fromError(error);
+                    entry.index = index;
                     if(model.options & BootEntryListModel::IsBoot)
                     {
                         entry.is_current_boot = current_boot == static_cast<int>(index);
@@ -235,9 +263,19 @@ void EFIBootData::save()
     int32_t next_boot = -1;
 
     auto old_entries = EFIBoot::get_variables(
-        [](const EFIBoot::efi_guid_t &guid, const std::tstring_view)
+        [&](const EFIBoot::efi_guid_t &guid, const std::tstring_view tname)
         {
-            return guid == EFIBoot::efi_guid_global;
+            if(guid != EFIBoot::efi_guid_global)
+                return false;
+
+            for(const auto &[prefix, model]: BOOT_ENTRIES)
+            {
+                (void)model;
+                if(is_bootentry(tname, QStringToStdTString(prefix)))
+                    return true;
+            }
+
+            return false;
         },
         [&](size_t step, size_t total)
         {
@@ -283,6 +321,9 @@ void EFIBootData::save()
             if(auto _entry = old_entries.find(tname); _entry != old_entries.end())
                 old_entries.erase(_entry);
 
+            if(entry.is_error)
+                continue;
+
             const auto load_option = entry.toEFIBootLoadOption();
             if(!EFIBoot::set_variable(EFIBoot::efi_guid_global, tname, EFIBoot::Variable<EFIBoot::Load_option>{load_option, entry.efi_attributes}, EFIBoot::EFI_VARIABLE_MODE_DEFAULTS))
             {
@@ -293,9 +334,6 @@ void EFIBootData::save()
 
         for(const auto &[tname, guid]: old_entries)
         {
-            if(!is_bootentry(tname, QStringToStdTString(prefix)))
-                continue;
-
             emit progress(step++, total_steps, tr("Removing old EFI Boot Manager entries (%1)…").arg(QStringFromStdTString(tname)));
             if(!EFIBoot::del_variable(guid, tname))
             {
@@ -455,7 +493,8 @@ void EFIBootData::export_(const QString &file_name)
             }
 
             emit progress(step++, total_steps, tr("Exporting EFI Boot Manager entries (%1)…").arg(full_name));
-            entries[name] = entry.toJSON();
+            if(!entry.is_error)
+                entries[name] = entry.toJSON();
         }
 
         if(!entries.isEmpty())
@@ -760,6 +799,7 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
     int32_t current_boot = -1;
     int32_t next_boot = -1;
     QStringList errors;
+
     size_t step = 0;
     const size_t total_steps = static_cast<size_t>(input.size()) + 1u;
 
@@ -1014,6 +1054,7 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
     int32_t current_boot = -1;
     int32_t next_boot = -1;
     QStringList errors;
+
     size_t step = 0;
     const size_t total_steps = static_cast<size_t>(input.size()) + 1u;
 

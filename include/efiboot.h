@@ -26,6 +26,11 @@ inline bool operator==(const efi_guid_t &first, const efi_guid_t &second)
     return efi_guid_cmp(&first, &second) == 0;
 }
 
+inline bool operator!=(const efi_guid_t &first, const efi_guid_t &second)
+{
+    return efi_guid_cmp(&first, &second) != 0;
+}
+
 typedef std::vector<uint8_t> Raw_data;
 
 template <class Type = Raw_data>

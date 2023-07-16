@@ -28,6 +28,11 @@ void BootEntryWidget::showBootOptions(bool is_boot)
     ui->next_boot->setVisible(is_boot);
 }
 
+void BootEntryWidget::showDevicePath(bool not_error)
+{
+    ui->device_path->setVisible(not_error);
+}
+
 void BootEntryWidget::setIndex(const uint32_t index)
 {
     ui->index->setText(toHex(index, 4));

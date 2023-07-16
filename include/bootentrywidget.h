@@ -27,6 +27,7 @@ public:
 
     void setReadOnly(bool readonly);
     void showBootOptions(bool is_boot);
+    void showDevicePath(bool not_error);
 
     void setIndex(const uint32_t index);
     void setDescription(const QString &description);

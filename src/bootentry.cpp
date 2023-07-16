@@ -51,8 +51,20 @@ auto BootEntry::fromEFIBootLoadOption(
     return value;
 }
 
+auto BootEntry::fromError(const QString &error) -> BootEntry
+{
+    BootEntry value;
+    value.is_error = true;
+    value.description = "Error";
+    value.error = error;
+    return value;
+}
+
 auto BootEntry::toEFIBootLoadOption() const -> EFIBoot::Load_option
 {
+    if(is_error)
+        return {};
+
     EFIBoot::Load_option load_option;
     load_option.description = description.toStdU16String();
     {
@@ -96,6 +108,9 @@ auto BootEntry::fromJSON(const QJsonObject &obj) -> std::optional<BootEntry>
 
 auto BootEntry::toJSON() const -> QJsonObject
 {
+    if(is_error)
+        return {};
+
     QJsonObject load_option;
     load_option["description"] = description;
     load_option["optional_data_format"] = static_cast<int>(optional_data_format);
