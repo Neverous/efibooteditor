@@ -58,8 +58,15 @@ inline int _tcserror_s(TCHAR *buffer, size_t size, int errnum)
 #include <QString>
 #include <cctype>
 #include <fstream>
+#include <memory>
 #include <sstream>
 #include <string>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 2, 0)
+#include <QStringConverter>
+#else
+#include <QTextCodec>
+#endif
 
 namespace std
 {
@@ -146,4 +153,31 @@ auto get_default(const Container &data, const typename Container::key_type &key,
 
     return default_value;
 }
+
+template <class Container>
+inline bool toUnicode(QString &output, const Container &input, const char *codec_name = "UTF-8")
+{
+#if QT_VERSION >= QT_VERSION_CHECK(6, 2, 0)
+    QStringDecoder decoder{codec_name};
+    output = decoder.decode(input);
+    return !decoder.hasError();
+#else
+    QTextCodec *codec = QTextCodec::codecForName(codec_name);
+    QTextCodec::ConverterState state;
+    output = codec->toUnicode(reinterpret_cast<const char *>(input.data()), static_cast<int>(input.size()), &state);
+    return state.invalidChars == 0;
+#endif
+}
+
+inline QByteArray fromUnicode(const QString &input, const char *codec_name = "UTF-8")
+{
+#if QT_VERSION >= QT_VERSION_CHECK(6, 2, 0)
+    QStringEncoder encoder(codec_name);
+    return encoder.encode(input);
+#else
+    std::unique_ptr<QTextEncoder> encoder{QTextCodec::codecForName(codec_name)->makeEncoder(QTextCodec::IgnoreHeader)};
+    return encoder->fromUnicode(input);
+#endif
+}
+
 #endif

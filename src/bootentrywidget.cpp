@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #include "bootentrywidget.h"
+
 #include "compat.h"
 #include "form/ui_bootentrywidget.h"
 #include <QMouseEvent>

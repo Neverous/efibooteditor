@@ -1,10 +1,11 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #include "filepathdialog.h"
+
+#include "compat.h"
 #include "driveinfo.h"
 #include "form/ui_filepathdialog.h"
 
 #include <QMessageBox>
-#include <QTextCodec>
 
 FilePathDialog::FilePathDialog(QWidget *parent)
     : QDialog(parent)
@@ -530,8 +531,6 @@ void FilePathDialog::signatureTypeChoiceChanged(int index)
 
 void FilePathDialog::vendorDataFormatChanged(int index)
 {
-    QTextCodec *codec = nullptr;
-    QTextCodec::ConverterState state;
     bool success = false;
     QByteArray input = getVendorData(vendor_data_format_combo_index);
     QString output;
@@ -544,17 +543,12 @@ void FilePathDialog::vendorDataFormatChanged(int index)
 
     case VendorDataFormat::Utf16:
         if(static_cast<uint>(input.size()) % sizeof(char16_t) == 0)
-        {
-            codec = QTextCodec::codecForName("UTF-16");
-            output = codec->toUnicode(input.constData(), static_cast<int>(input.size()), &state);
-            success = state.invalidChars == 0;
-        }
+            success = toUnicode(output, input, "UTF-16");
+
         break;
 
     case VendorDataFormat::Utf8:
-        codec = QTextCodec::codecForName("UTF-8");
-        output = codec->toUnicode(input.constData(), static_cast<int>(input.size()), &state);
-        success = state.invalidChars == 0;
+        success = toUnicode(output, input, "UTF-8");
         break;
 
     case VendorDataFormat::Hex:
@@ -579,8 +573,6 @@ void FilePathDialog::vendorDataFormatChanged(int index)
 
 void FilePathDialog::unknownDataFormatChanged(int index)
 {
-    QTextCodec *codec = nullptr;
-    QTextCodec::ConverterState state;
     bool success = false;
     QByteArray input = getUnknownData(unknown_data_format_combo_index);
     QString output;
@@ -593,17 +585,12 @@ void FilePathDialog::unknownDataFormatChanged(int index)
 
     case UnknownDataFormat::Utf16:
         if(static_cast<uint>(input.size()) % sizeof(char16_t) == 0)
-        {
-            codec = QTextCodec::codecForName("UTF-16");
-            output = codec->toUnicode(input.constData(), static_cast<int>(input.size()), &state);
-            success = state.invalidChars == 0;
-        }
+            success = toUnicode(output, input, "UTF-16");
+
         break;
 
     case UnknownDataFormat::Utf8:
-        codec = QTextCodec::codecForName("UTF-8");
-        output = codec->toUnicode(input.constData(), static_cast<int>(input.size()), &state);
-        success = state.invalidChars == 0;
+        success = toUnicode(output, input, "UTF-8");
         break;
 
     case UnknownDataFormat::Hex:
@@ -657,19 +644,16 @@ void FilePathDialog::resetHIDForm()
 
 QByteArray FilePathDialog::getVendorData(int index) const
 {
-    std::unique_ptr<QTextEncoder> encoder = nullptr;
     switch(static_cast<VendorDataFormat>(index))
     {
     case VendorDataFormat::Base64:
         return QByteArray::fromBase64(ui->vendor_data_text->toPlainText().toUtf8());
 
     case VendorDataFormat::Utf16:
-        encoder.reset(QTextCodec::codecForName("UTF-16")->makeEncoder(QTextCodec::IgnoreHeader));
-        return encoder->fromUnicode(ui->vendor_data_text->toPlainText());
+        return fromUnicode(ui->vendor_data_text->toPlainText(), "UTF-16");
 
     case VendorDataFormat::Utf8:
-        encoder.reset(QTextCodec::codecForName("UTF-8")->makeEncoder(QTextCodec::IgnoreHeader));
-        return encoder->fromUnicode(ui->vendor_data_text->toPlainText());
+        return fromUnicode(ui->vendor_data_text->toPlainText(), "UTF-8");
 
     case VendorDataFormat::Hex:
         return QByteArray::fromHex(ui->vendor_data_text->toPlainText().toUtf8());
@@ -680,19 +664,16 @@ QByteArray FilePathDialog::getVendorData(int index) const
 
 QByteArray FilePathDialog::getUnknownData(int index) const
 {
-    std::unique_ptr<QTextEncoder> encoder = nullptr;
     switch(static_cast<UnknownDataFormat>(index))
     {
     case UnknownDataFormat::Base64:
         return QByteArray::fromBase64(ui->unknown_data_text->toPlainText().toUtf8());
 
     case UnknownDataFormat::Utf16:
-        encoder.reset(QTextCodec::codecForName("UTF-16")->makeEncoder(QTextCodec::IgnoreHeader));
-        return encoder->fromUnicode(ui->unknown_data_text->toPlainText());
+        return fromUnicode(ui->unknown_data_text->toPlainText(), "UTF-16");
 
     case UnknownDataFormat::Utf8:
-        encoder.reset(QTextCodec::codecForName("UTF-8")->makeEncoder(QTextCodec::IgnoreHeader));
-        return encoder->fromUnicode(ui->unknown_data_text->toPlainText());
+        return fromUnicode(ui->unknown_data_text->toPlainText(), "UTF-8");
 
     case UnknownDataFormat::Hex:
         return QByteArray::fromHex(ui->unknown_data_text->toPlainText().toUtf8());

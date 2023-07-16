@@ -78,12 +78,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt::Widgets
 )
 
-if(${QT_VERSION_MAJOR} GREATER 5)
-    find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core5Compat REQUIRED)
-    target_link_libraries(${PROJECT_NAME} PRIVATE
-        Qt::Core5Compat
-    )
-else()
+if(${QT_VERSION_MAJOR} LESS_EQUAL 5)
     if(NOT COMMAND qt_add_translations)
         function(qt_add_translations TARGET)
             cmake_parse_arguments(arg "" "" "TS_FILES;INCLUDE_DIRECTORIES" ${ARGN})
@@ -491,7 +486,7 @@ else()
         set(CPACK_DEBIAN_PACKAGE_DEPENDS "libqt${QT_VERSION_MAJOR}gui${QT_VERSION_MAJOR} (>= ${Qt${QT_VERSION_MAJOR}_VERSION}), libqt${QT_VERSION_MAJOR}widgets${QT_VERSION_MAJOR} (>= ${Qt${QT_VERSION_MAJOR}_VERSION}), libqt${QT_VERSION_MAJOR}network${QT_VERSION_MAJOR} (>= ${Qt${QT_VERSION_MAJOR}_VERSION})")
 
         if(${QT_VERSION_MAJOR} GREATER 5)
-            set(CPACK_DEBIAN_PACKAGE_DEPENDS "libqt${QT_VERSION_MAJOR}core${QT_VERSION_MAJOR} (>= ${Qt${QT_VERSION_MAJOR}_VERSION}), libqt${QT_VERSION_MAJOR}core5compat${QT_VERSION_MAJOR} (>= ${Qt${QT_VERSION_MAJOR}_VERSION}), ${CPACK_DEBIAN_PACKAGE_DEPENDS}")
+            set(CPACK_DEBIAN_PACKAGE_DEPENDS "libqt${QT_VERSION_MAJOR}core${QT_VERSION_MAJOR} (>= ${Qt${QT_VERSION_MAJOR}_VERSION}), ${CPACK_DEBIAN_PACKAGE_DEPENDS}")
         else()
             set(CPACK_DEBIAN_PACKAGE_DEPENDS "libqt${QT_VERSION_MAJOR}core${QT_VERSION_MAJOR}a (>= ${Qt${QT_VERSION_MAJOR}_VERSION}), ${CPACK_DEBIAN_PACKAGE_DEPENDS}")
         endif()

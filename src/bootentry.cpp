@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #include "bootentry.h"
 
+#include "compat.h"
 #include "efiboot.h"
 #include <QJsonArray>
 #include <QJsonObject>
-#include <QTextCodec>
 
 std::unique_ptr<std::unordered_map<QString, std::function<std::optional<File_path::ANY>(const QJsonObject &)>>> File_path::JSON_readers__instance;
 std::unique_ptr<std::unordered_map<uint16_t, std::function<std::optional<EFIBoot::File_path::ANY>(const void *, size_t)>>> EFIBoot::File_path::deserializers__instance;
@@ -25,22 +25,16 @@ auto BootEntry::fromEFIBootLoadOption(
 {
     BootEntry value;
     value.description = QString::fromStdU16String(load_option.description);
-    QTextCodec *codec = QTextCodec::codecForName("UTF-8");
 
     value.optional_data_format = OptionalDataFormat::Base64;
     {
-        QTextCodec::ConverterState state;
-        value.optional_data = codec->toUnicode(reinterpret_cast<const char *>(load_option.optional_data.data()), static_cast<int>(load_option.optional_data.size()), &state);
-        if(state.invalidChars == 0 && !value.optional_data.contains(QChar(0)))
+        if(toUnicode(value.optional_data, load_option.optional_data, "UTF-8") && !value.optional_data.contains(QChar(0)))
             value.optional_data_format = OptionalDataFormat::Utf8;
     }
 
     if(value.optional_data_format == OptionalDataFormat::Base64 && load_option.optional_data.size() % sizeof(char16_t) == 0)
     {
-        codec = QTextCodec::codecForName("UTF-16");
-        QTextCodec::ConverterState state;
-        value.optional_data = codec->toUnicode(reinterpret_cast<const char *>(load_option.optional_data.data()), static_cast<int>(load_option.optional_data.size()), &state);
-        if(state.invalidChars == 0 && !value.optional_data.contains(QChar(0)))
+        if(toUnicode(value.optional_data, load_option.optional_data, "UTF-16") && !value.optional_data.contains(QChar(0)))
             value.optional_data_format = OptionalDataFormat::Utf16;
     }
 
@@ -150,9 +144,7 @@ auto BootEntry::changeOptionalDataFormat(BootEntry::OptionalDataFormat format, b
     if(format == optional_data_format)
         return true;
 
-    QTextCodec *codec = nullptr;
     auto bytes = getRawOptionalData();
-    QTextCodec::ConverterState state;
     QString temp_optional_data;
     switch(static_cast<OptionalDataFormat>(format))
     {
@@ -164,17 +156,13 @@ auto BootEntry::changeOptionalDataFormat(BootEntry::OptionalDataFormat format, b
         if(static_cast<uint>(bytes.size()) % sizeof(char16_t) != 0)
             return false;
 
-        codec = QTextCodec::codecForName("UTF-16");
-        temp_optional_data = codec->toUnicode(bytes.constData(), static_cast<int>(bytes.size()), &state);
-        if(state.invalidChars != 0)
+        if(!toUnicode(temp_optional_data, bytes, "UTF-16"))
             return false;
 
         break;
 
     case OptionalDataFormat::Utf8:
-        codec = QTextCodec::codecForName("UTF-8");
-        temp_optional_data = codec->toUnicode(bytes.constData(), static_cast<int>(bytes.size()), &state);
-        if(state.invalidChars != 0)
+        if(!toUnicode(temp_optional_data, bytes, "UTF-8"))
             return false;
 
         break;
@@ -198,7 +186,6 @@ auto BootEntry::changeOptionalDataFormat(BootEntry::OptionalDataFormat format, b
 auto BootEntry::getRawOptionalData() const -> QByteArray
 {
     QByteArray bytes;
-    std::unique_ptr<QTextEncoder> encoder = nullptr;
     switch(static_cast<OptionalDataFormat>(optional_data_format))
     {
     case OptionalDataFormat::Base64:
@@ -206,13 +193,11 @@ auto BootEntry::getRawOptionalData() const -> QByteArray
         break;
 
     case OptionalDataFormat::Utf16:
-        encoder.reset(QTextCodec::codecForName("UTF-16")->makeEncoder(QTextCodec::IgnoreHeader));
-        bytes = encoder->fromUnicode(optional_data);
+        bytes = fromUnicode(optional_data, "UTF-16");
         break;
 
     case OptionalDataFormat::Utf8:
-        encoder.reset(QTextCodec::codecForName("UTF-8")->makeEncoder(QTextCodec::IgnoreHeader));
-        bytes = encoder->fromUnicode(optional_data);
+        bytes = fromUnicode(optional_data, "UTF-8");
         break;
 
     case OptionalDataFormat::Hex:
