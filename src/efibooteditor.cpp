@@ -151,6 +151,10 @@ void EFIBootEditor::enableBootEntryEditor(const QModelIndex &index)
 
     const auto item = index.data().value<const BootEntry *>();
     ui->entry_form->setItem(index, item);
+    auto [name, list, model] = currentBootEntryList();
+    (void)name;
+    (void)list;
+    ui->entry_form->setReadOnly((model.options & BootEntryListModel::ReadOnly) || item->is_error);
 }
 
 void EFIBootEditor::disableBootEntryEditor()
@@ -173,7 +177,6 @@ void EFIBootEditor::switchBootEntryEditor(int index)
     ui->entry_form->setBootEntryListModel(model);
     list.setCurrentIndex(list.currentIndex());
     enableBootEntryEditor(list.currentIndex());
-    ui->entry_form->setReadOnly(model.options & BootEntryListModel::ReadOnly);
     ui->entries_actions->setDisabled(model.options & BootEntryListModel::ReadOnly);
 }
 
@@ -295,9 +298,27 @@ void EFIBootEditor::reorderBootEntries()
     disableBootEntryEditor();
 
     undo_stack.beginMacro(tr("Reorder %1 entries").arg(name));
+    // Skip indexes with errors to not overwrite them accidentally
+    QSet<uint16_t> errors;
+    for(int r = 0; r < model.rowCount(); ++r)
+    {
+        auto entry = model.index(r).data().value<const BootEntry *>();
+        if(entry->is_error)
+            errors.insert(entry->index);
+    }
+
     uint16_t index = 0;
     for(int r = 0; r < model.rowCount(); ++r)
-        model.setEntryIndex(model.index(r), index++);
+    {
+        auto idx = model.index(r);
+        if(idx.data().value<const BootEntry *>()->is_error)
+            continue;
+
+        while(errors.contains(index))
+            index++;
+
+        model.setEntryIndex(idx, index++);
+    }
 
     undo_stack.endMacro();
     enableBootEntryEditor(list.currentIndex());

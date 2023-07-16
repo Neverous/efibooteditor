@@ -502,6 +502,8 @@ public:
 
     bool is_current_boot = false;
     bool is_next_boot = false;
+    bool is_error = false;
+    QString error = "";
 
     OptionalDataFormat optional_data_format = OptionalDataFormat::Base64;
 
@@ -510,6 +512,7 @@ private:
 
 public:
     static BootEntry fromEFIBootLoadOption(const EFIBoot::Load_option &load_option);
+    static BootEntry fromError(const QString &error);
     EFIBoot::Load_option toEFIBootLoadOption() const;
 
     static std::optional<BootEntry> fromJSON(const QJsonObject &obj);

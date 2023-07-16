@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #include "bootentrydelegate.h"
+
 #include "bootentry.h"
 #include "bootentrylistmodel.h"
 
@@ -17,7 +18,8 @@ void BootEntryDelegate::setupWidgetFromItem(Widget &widget, const Item &item) co
     widget.setReadOnly(options & BootEntryListModel::ReadOnly);
     widget.setIndex(item->index);
     widget.setDescription(item->description);
-    widget.setData(item->optional_data);
+    widget.setData(!item->is_error ? item->optional_data : item->error);
+    widget.showDevicePath(!item->is_error);
     widget.setDevicePath(item->formatDevicePath(false));
     widget.showBootOptions(options & BootEntryListModel::IsBoot);
     widget.setCurrentBoot(item->is_current_boot);

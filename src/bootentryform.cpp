@@ -36,6 +36,7 @@ void BootEntryForm::setReadOnly(bool readonly)
     ui->device_path->setReadOnly(readonly);
     ui->device_path_actions->setDisabled(readonly);
     ui->optional_data_format_combo->setDisabled(false);
+    ui->error_text->setDisabled(readonly);
 }
 
 void BootEntryForm::setBootEntryListModel(BootEntryListModel &model)
@@ -60,6 +61,11 @@ void BootEntryForm::setItem(const QModelIndex &index, const BootEntry *item)
     ui->attribute_hidden->setChecked(item && (item->attributes & EFIBoot::Load_option_attribute::HIDDEN) == EFIBoot::Load_option_attribute::HIDDEN);
     ui->attribute_force_reconnect->setChecked(item && (item->attributes & EFIBoot::Load_option_attribute::FORCE_RECONNECT) == EFIBoot::Load_option_attribute::FORCE_RECONNECT);
     ui->category_combo->setCurrentIndex(item && (item->attributes & EFIBoot::Load_option_attribute::CATEGORY_APP) == EFIBoot::Load_option_attribute::CATEGORY_APP);
+    ui->error_text->setText(item ? item->error : "");
+
+    ui->form_fields->setVisible(item ? !item->is_error : true);
+    ui->error_text->setVisible(item ? item->is_error : false);
+    ui->error_note->setVisible(item ? item->is_error : false);
 
     setDisabled(!item);
 }
