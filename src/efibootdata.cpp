@@ -1018,7 +1018,7 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
             {
                 const QString full_prefix = QString("%1/").arg(prefix);
                 const auto entries = root.toObject();
-                total_steps += std::max(static_cast<size_t>(entries.size()), static_cast<size_t>(order.size()));
+                total_steps += qMax(static_cast<size_t>(entries.size()), static_cast<size_t>(order.size()));
                 const auto keys = entries.keys();
                 for(const auto &name: keys)
                 {
@@ -1220,7 +1220,7 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
 
         const QString full_prefix = QString("%1/").arg(prefix);
         const auto entries = input[prefix].toObject();
-        total_steps += std::max(static_cast<size_t>(entries.size()), static_cast<size_t>(order.size()));
+        total_steps += qMax(static_cast<size_t>(entries.size()), static_cast<size_t>(order.size()));
         const auto keys = entries.keys();
         for(const auto &name: keys)
         {
