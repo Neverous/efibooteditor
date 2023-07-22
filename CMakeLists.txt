@@ -204,13 +204,14 @@ target_sources(${PROJECT_NAME} PRIVATE
     src/bootentrylistmodel.cpp
     src/bootentrylistview.cpp
     src/bootentrywidget.cpp
-    src/filepathdelegate.cpp
-    src/filepathdialog.cpp
-    src/devicepathview.cpp
     src/devicepathproxymodel.cpp
+    src/devicepathview.cpp
     src/driveinfo.cpp
     src/efibootdata.cpp
     src/efibooteditor.cpp
+    src/efibooteditorcli.cpp
+    src/filepathdelegate.cpp
+    src/filepathdialog.cpp
 )
 
 if(UNIX AND NOT APPLE)
@@ -249,20 +250,21 @@ target_sources(${PROJECT_NAME} PRIVATE
     include/bootentrywidget.h
     include/commands.h
     include/compat.h
-    include/disableundoredo.h
-    include/filepathdelegate.h
-    include/filepathdialog.h
-    include/devicepathview.h
     include/devicepathproxymodel.h
+    include/devicepathview.h
+    include/disableundoredo.h
     include/driveinfo.h
     include/efiboot.h
     include/efibootdata.h
     include/efibooteditor.h
+    include/efibooteditorcli.h
     include/efivar-lite/efiboot-loadopt.h
     include/efivar-lite/efivar-dp.h
     include/efivar-lite/efivar.h
-    include/qlabelwrapped.h
+    include/filepathdelegate.h
+    include/filepathdialog.h
     include/qindicatorwidget.h
+    include/qlabelwrapped.h
     include/qresizabletabwidget.h
     include/qwidgetitemdelegate.h
 )
@@ -271,8 +273,8 @@ target_sources(${PROJECT_NAME} PRIVATE
 target_sources(${PROJECT_NAME} PRIVATE
     src/form/bootentryform.ui
     src/form/bootentrywidget.ui
-    src/form/filepathdialog.ui
     src/form/efibooteditor.ui
+    src/form/filepathdialog.ui
 )
 
 # Resources:

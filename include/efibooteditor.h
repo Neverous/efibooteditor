@@ -37,12 +37,12 @@ private:
     std::unique_ptr<QMessageBox> confirmation;
     std::unique_ptr<QMessageBox> error;
     std::unique_ptr<QProgressDialog> progress;
-    std::unique_ptr<DisableUndoRedo> disableUndoRedo;
+    std::unique_ptr<DisableUndoRedo> disable_undo_redo;
 
     QUndoStack undo_stack{this};
 
 public:
-    explicit EFIBootEditor(QWidget *parent = nullptr);
+    explicit EFIBootEditor(const std::optional<std::tstring> &efi_error_message, QWidget *parent = nullptr);
     EFIBootEditor(const EFIBootEditor &) = delete;
     EFIBootEditor &operator=(const EFIBootEditor &) = delete;
     ~EFIBootEditor() override;
