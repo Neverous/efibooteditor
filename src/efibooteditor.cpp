@@ -93,7 +93,7 @@ EFIBootEditor::EFIBootEditor(const std::optional<std::tstring> &efi_error_messag
 
     ui->entries->setCurrentIndex(0);
     ui->settings->setCurrentIndex(0);
-  
+
     updateBootOptionSupport(0);
 
     if(efi_error_message)
