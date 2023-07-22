@@ -56,6 +56,7 @@ void EFIBootData::clear()
     setSetupMode(false);
     setAuditMode(false);
     setDeployedMode(false);
+    setBootOptionSupport(0);
     setOsIndicationsSupported(0);
     setOsIndications(0);
     setAppleBootArgs("");
@@ -156,6 +157,12 @@ void EFIBootData::reload()
     process_entry(
         "DeployedMode", EFIBoot::get_variable<uint8_t>, [&](const uint8_t &value, const auto &)
         { setDeployedMode(value); },
+        save_error,
+        true);
+
+    process_entry(
+        "BootOptionSupport", EFIBoot::get_variable<uint32_t>, [&](const uint32_t &value, const auto &)
+        { setBootOptionSupport(value); },
         save_error,
         true);
 
@@ -495,6 +502,25 @@ void EFIBootData::export_(const QString &file_name)
     progress_fn("DeployedMode");
     output["DeployedMode"] = deployed_mode != 0;
 
+    if(boot_option_support)
+    {
+        QJsonObject obj;
+        QJsonArray caps;
+
+        if(boot_option_support & EFIBoot::EFI_BOOT_OPTION_SUPPORT_KEY)
+            caps.push_back("KEY");
+
+        if(boot_option_support & EFIBoot::EFI_BOOT_OPTION_SUPPORT_APP)
+            caps.push_back("APP");
+
+        if(boot_option_support & EFIBoot::EFI_BOOT_OPTION_SUPPORT_SYSPREP)
+            caps.push_back("SYSPREP");
+
+        obj["capabilities"] = caps;
+        obj["key_count"] = static_cast<int>((boot_option_support & EFIBoot::EFI_BOOT_OPTION_SUPPORT_COUNT) >> 8);
+        output["BootOptionSupport"] = obj;
+    }
+
     {
         QJsonArray arr;
         if(supported_indications & EFIBoot::EFI_OS_INDICATIONS_BOOT_TO_FW_UI)
@@ -673,7 +699,7 @@ void EFIBootData::dump(const QString &file_name)
         root[key] = obj;
     };
 
-    for(const auto &key: std::vector<const char *>{"Timeout", "BootCurrent", "BootNext", "SecureBoot", "VendorKeys", "SetupMode", "AuditMode", "DeployedMode", "OsIndicationsSupported", "OsIndications"})
+    for(const auto &key: std::vector<const char *>{"Timeout", "BootCurrent", "BootNext", "SecureBoot", "VendorKeys", "SetupMode", "AuditMode", "DeployedMode", "BootOptionSupport", "OsIndicationsSupported", "OsIndications"})
         process_entry(output, key, _T(""), true);
 
     for(const auto &[prefix, model]: BOOT_ENTRIES)
@@ -819,6 +845,15 @@ void EFIBootData::setDeployedMode(bool enabled)
     emit deployedModeChanged(deployed_mode);
 }
 
+void EFIBootData::setBootOptionSupport(uint32_t flags)
+{
+    if(boot_option_support == flags)
+        return;
+
+    boot_option_support = flags;
+    emit bootOptionSupportChanged(boot_option_support);
+}
+
 void EFIBootData::setOsIndicationsSupported(uint64_t value)
 {
     if(supported_indications == value)
@@ -897,6 +932,45 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
     process_entry(
         input, "DeployedMode", &QJsonValue::isBool, tr("bool"), [&](const QJsonValue &value)
         { setDeployedMode(value.toBool()); },
+        "", true);
+
+    process_entry(
+        input, "BootOptionSupport", &QJsonValue::isObject, tr("object"), [&](const QJsonValue &value)
+        {
+            uint32_t val = 0;
+            const auto obj = value.toObject();
+            if(obj["capabilities"].isArray())
+            {
+                const auto caps = obj["capabilities"].toArray();
+                int i = -1;
+                for(const auto cap: caps)
+                {
+                    ++i;
+                    const auto qname = QString("BootOptionSupport/capabilities[%1]").arg(i);
+                    if(!cap.isString())
+                    {
+                        errors.push_back(tr("%1: %2 expected").arg(qname, tr("string")));
+                        continue;
+                    }
+
+                    if(cap == "KEY")
+                        val |= EFIBoot::EFI_BOOT_OPTION_SUPPORT_KEY;
+                    else if(cap == "APP")
+                        val |= EFIBoot::EFI_BOOT_OPTION_SUPPORT_APP;
+                    else if(cap == "SYSPREP")
+                        val |= EFIBoot::EFI_BOOT_OPTION_SUPPORT_SYSPREP;
+                    else
+                    {
+                        errors.push_back(tr("%1: unknown boot manager capability").arg(qname));
+                        continue;
+                    }
+                }
+            }
+
+            if(obj["key_count"].isDouble())
+                val |= (static_cast<uint32_t>(obj["key_count"].toInt()) << 8) & EFIBoot::EFI_BOOT_OPTION_SUPPORT_COUNT;
+
+            setBootOptionSupport(val); },
         "", true);
 
     process_entry(
@@ -1171,6 +1245,11 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
     process_entry(
         input, "DeployedMode", EFIBoot::deserialize<uint8_t>, [&](const uint8_t &value, const auto &)
         { setDeployedMode(value); },
+        "", true);
+
+    process_entry(
+        input, "BootOptionSupport", EFIBoot::deserialize<uint32_t>, [&](const uint32_t &value, const auto &)
+        { setBootOptionSupport(value); },
         "", true);
 
     process_entry(

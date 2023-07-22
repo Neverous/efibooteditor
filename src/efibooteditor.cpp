@@ -50,6 +50,7 @@ EFIBootEditor::EFIBootEditor(const std::optional<std::tstring> &efi_error_messag
     QObject::connect(&data, &EFIBootData::setupModeChanged, ui->setup_mode, &QRadioButton::setChecked);
     QObject::connect(&data, &EFIBootData::auditModeChanged, ui->audit_mode, &QRadioButton::setChecked);
     QObject::connect(&data, &EFIBootData::deployedModeChanged, ui->deployed_mode, &QRadioButton::setChecked);
+    QObject::connect(&data, &EFIBootData::bootOptionSupportChanged, this, &EFIBootEditor::updateBootOptionSupport);
 
     QObject::connect(&data, &EFIBootData::appleBootArgsChanged, ui->boot_args_text, &QLineEdit::setText);
     QObject::connect(ui->boot_args_text, &QLineEdit::textEdited, &data, &EFIBootData::setAppleBootArgs);
@@ -92,6 +93,8 @@ EFIBootEditor::EFIBootEditor(const std::optional<std::tstring> &efi_error_messag
 
     ui->entries->setCurrentIndex(0);
     ui->settings->setCurrentIndex(0);
+  
+    updateBootOptionSupport(0);
 
     if(efi_error_message)
     {
@@ -290,6 +293,13 @@ void EFIBootEditor::setOsIndications(uint64_t value)
 void EFIBootEditor::setOsIndication(bool)
 {
     emit osIndicationsChanged(getOsIndications());
+}
+
+void EFIBootEditor::updateBootOptionSupport(uint32_t flags)
+{
+    // TODO: (flags & EFIBoot::EFI_BOOT_OPTION_SUPPORT_KEY)
+    ui->entry_form->showCategory(flags & EFIBoot::EFI_BOOT_OPTION_SUPPORT_APP);
+    ui->entries->setTabVisible(ui->entries->indexOf(ui->sysprep_tab), flags & EFIBoot::EFI_BOOT_OPTION_SUPPORT_SYSPREP);
 }
 
 void EFIBootEditor::undoViewChanged(const QModelIndex &)
