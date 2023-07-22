@@ -16,13 +16,13 @@
 #include <QRadioButton>
 #include <cctype>
 
-EFIBootEditor::EFIBootEditor(QWidget *parent)
+EFIBootEditor::EFIBootEditor(const std::optional<std::tstring> &efi_error_message, QWidget *parent)
     : QMainWindow{parent}
     , ui{std::make_unique<Ui::EFIBootEditor>()}
     , confirmation{std::make_unique<QMessageBox>(QMessageBox::Question, qApp->applicationName(), "", QMessageBox::NoButton, this)}
     , error{std::make_unique<QMessageBox>(QMessageBox::Critical, qApp->applicationName(), "", QMessageBox::NoButton, this)}
     , progress{std::make_unique<QProgressDialog>(tr("Working…"), nullptr, 0, 0, this)}
-    , disableUndoRedo{std::make_unique<DisableUndoRedo>()}
+    , disable_undo_redo{std::make_unique<DisableUndoRedo>()}
 {
     data.setUndoStack(&undo_stack);
     ui->setupUi(this);
@@ -74,27 +74,35 @@ EFIBootEditor::EFIBootEditor(QWidget *parent)
 
     // Disable builtin undo/redo support in some widgets
     for(auto &widget: ui->settings->findChildren<QLineEdit *>())
-        widget->installEventFilter(disableUndoRedo.get());
+        widget->installEventFilter(disable_undo_redo.get());
 
     for(auto &widget: ui->entry_form->findChildren<QLineEdit *>())
-        widget->installEventFilter(disableUndoRedo.get());
+        widget->installEventFilter(disable_undo_redo.get());
 
     for(auto &widget: ui->settings->findChildren<QPlainTextEdit *>())
-        widget->installEventFilter(disableUndoRedo.get());
+        widget->installEventFilter(disable_undo_redo.get());
 
     for(auto &widget: ui->entry_form->findChildren<QPlainTextEdit *>())
-        widget->installEventFilter(disableUndoRedo.get());
+        widget->installEventFilter(disable_undo_redo.get());
 
     for(auto &widget: ui->settings->findChildren<QSpinBox *>())
-        widget->installEventFilter(disableUndoRedo.get());
+        widget->installEventFilter(disable_undo_redo.get());
 
     for(auto &widget: ui->entry_form->findChildren<QSpinBox *>())
-        widget->installEventFilter(disableUndoRedo.get());
+        widget->installEventFilter(disable_undo_redo.get());
 
     ui->entries->setCurrentIndex(0);
     ui->settings->setCurrentIndex(0);
-
+  
     updateBootOptionSupport(0);
+
+    if(efi_error_message)
+    {
+        emit showError(tr("EFI support required"), QStringFromStdTString(*efi_error_message));
+        ui->save->setDisabled(true);
+        ui->reload->setDisabled(true);
+        ui->dump_raw_efi_data->setDisabled(true);
+    }
 }
 
 EFIBootEditor::~EFIBootEditor()
@@ -447,6 +455,9 @@ void EFIBootEditor::showConfirmation(const QString &message, const QMessageBox::
 
 void EFIBootEditor::showProgressBar(size_t step, size_t total, const QString &details)
 {
+    if(step >= total)
+        total = step + 1;
+
     progress->setMaximum(static_cast<int>(total));
     progress->setLabelText(details);
     progress->setValue(static_cast<int>(step));

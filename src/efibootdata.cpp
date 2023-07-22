@@ -86,12 +86,13 @@ void EFIBootData::reload()
             emit progress(step, total + 1u, tr("Searching EFI Boot Manager entries…"));
         });
 
-    size_t step = 0;
+    size_t step = 1;
     const size_t total_steps = name_to_guid.size() + 1u;
 
     auto process_entry = [&](const auto &name, const auto &read_fn, const auto &process_fn, const auto &error_fn, bool optional = false)
     {
         const auto tname = QStringToStdTString(name);
+        emit progress(step++, total_steps, tr("Processing EFI Boot Manager entries (%1)…").arg(name));
         if(!name_to_guid.count(tname))
         {
             if(!optional)
@@ -100,7 +101,6 @@ void EFIBootData::reload()
             return;
         }
 
-        emit progress(step++, total_steps, tr("Processing EFI Boot Manager entries (%1)…").arg(name));
         const auto variable = read_fn(name_to_guid.at(tname), tname);
         if(!variable)
         {
@@ -250,6 +250,7 @@ void EFIBootData::reload()
     }
 
     // Apple
+    emit progress(step++, total_steps, tr("Processing EFI Boot Manager entries (%1)…").arg("Apple/boot-args"));
     const auto boot_args = EFIBoot::get_variable<std::string>(EFIBoot::efi_guid_apple, _T("boot-args"));
     if(boot_args)
     {
@@ -289,13 +290,14 @@ void EFIBootData::save()
             emit progress(step, total + 1u, tr("Searching old EFI Boot Manager entries…"));
         });
 
-    size_t step = 0;
-    size_t total_steps = 6u
+    size_t step = 1;
+    size_t total_steps = 4u // remember to update when adding static vars
         + static_cast<size_t>(boot_entries_list_model.getEntries().size())
         + static_cast<size_t>(driver_entries_list_model.getEntries().size())
         + static_cast<size_t>(sysprep_entries_list_model.getEntries().size())
-        + static_cast<size_t>(platform_recovery_entries_list_model.getEntries().size())
-        + old_entries.size();
+        + 3u
+        + old_entries.size()
+        + 1u;
 
     // Save entries
     for(const auto &[prefix, model]: BOOT_ENTRIES)
@@ -339,16 +341,6 @@ void EFIBootData::save()
             }
         }
 
-        for(const auto &[tname, guid]: old_entries)
-        {
-            emit progress(step++, total_steps, tr("Removing old EFI Boot Manager entries (%1)…").arg(QStringFromStdTString(tname)));
-            if(!EFIBoot::del_variable(guid, tname))
-            {
-                emit error(tr("Error removing %1").arg(QStringFromStdTString(tname)), QStringFromStdTString(EFIBoot::get_error_trace()));
-                return;
-            }
-        }
-
         // Save order
         if(order.empty())
         {
@@ -367,6 +359,17 @@ void EFIBootData::save()
                 emit error(tr("Error saving %1").arg(order_name), QStringFromStdTString(EFIBoot::get_error_trace()));
                 return;
             }
+        }
+    }
+
+    // Remove old entries
+    for(const auto &[tname, guid]: old_entries)
+    {
+        emit progress(step++, total_steps, tr("Removing old EFI Boot Manager entries (%1)…").arg(QStringFromStdTString(tname)));
+        if(!EFIBoot::del_variable(guid, tname))
+        {
+            emit error(tr("Error removing %1").arg(QStringFromStdTString(tname)), QStringFromStdTString(EFIBoot::get_error_trace()));
+            return;
         }
     }
 
@@ -429,8 +432,15 @@ void EFIBootData::import(const QString &file_name)
         return;
     }
 
-    QJsonDocument json_document = QJsonDocument::fromJson(import_file.readAll());
+    QJsonParseError json_error;
+    QJsonDocument json_document = QJsonDocument::fromJson(import_file.readAll(), &json_error);
     import_file.close();
+    if(json_document.isNull())
+    {
+        emit error(tr("Error importing boot configuration"), tr("Parser failed: %1").arg(json_error.errorString()));
+        return;
+    }
+
     const auto input = json_document.object();
     if(input.contains("_Type"))
     {
@@ -461,67 +471,35 @@ void EFIBootData::export_(const QString &file_name)
     int current_boot = -1;
     int next_boot = -1;
     QJsonObject output;
-    size_t step = 0;
-    size_t total_steps = 6u
+    size_t step = 1;
+    size_t total_steps = 11u // remember to update when adding static vars
         + static_cast<size_t>(boot_entries_list_model.getEntries().size())
         + static_cast<size_t>(driver_entries_list_model.getEntries().size())
         + static_cast<size_t>(sysprep_entries_list_model.getEntries().size())
-        + static_cast<size_t>(platform_recovery_entries_list_model.getEntries().size());
+        + static_cast<size_t>(platform_recovery_entries_list_model.getEntries().size())
+        + 8u + 1u;
 
-    for(const auto &[prefix, model]: BOOT_ENTRIES)
+    auto progress_fn = [&](const QString &name)
     {
-        const QString order_name = QString("%1Order").arg(prefix);
+        emit progress(step++, total_steps, tr("Exporting EFI Boot Manager entries (%1)…").arg(name));
+    };
 
-        QJsonArray order;
-        QJsonObject entries;
-        QSet<uint16_t> saved;
-        for(const auto &entry: model.getEntries())
-        {
-            const auto name = toHex(entry.index, 4, "");
-            const auto full_name = QString("%1%2").arg(prefix, name);
-            if(saved.contains(entry.index))
-            {
-                emit error(tr("Error saving entries"), tr("Entry %1(%2): duplicated index!").arg(full_name, entry.description));
-                return;
-            }
-
-            saved.insert(entry.index);
-            if((entry.attributes & EFIBoot::Load_option_attribute::CATEGORY_MASK) == EFIBoot::Load_option_attribute::CATEGORY_BOOT)
-            {
-                order.push_back(entry.index);
-                if(model.options & BootEntryListModel::IsBoot)
-                {
-                    if(entry.is_current_boot)
-                        current_boot = entry.index;
-
-                    if(entry.is_next_boot)
-                        next_boot = entry.index;
-                }
-            }
-
-            emit progress(step++, total_steps, tr("Exporting EFI Boot Manager entries (%1)…").arg(full_name));
-            if(!entry.is_error)
-                entries[name] = entry.toJSON();
-        }
-
-        if(!entries.isEmpty())
-            output[prefix] = entries;
-
-        if(!order.isEmpty())
-            output[order_name] = order;
-    }
-
-    if(current_boot != -1)
-        output["BootCurrent"] = current_boot;
-
-    if(next_boot != -1)
-        output["BootNext"] = next_boot;
-
+    progress_fn("Timeout");
     output["Timeout"] = timeout;
+
+    progress_fn("SecureBoot");
     output["SecureBoot"] = secure_boot != 0;
+
+    progress_fn("VendorKeys");
     output["VendorKeys"] = vendor_keys != 0;
+
+    progress_fn("SetupMode");
     output["SetupMode"] = setup_mode != 0;
+
+    progress_fn("AuditMode");
     output["AuditMode"] = audit_mode != 0;
+
+    progress_fn("DeployedMode");
     output["DeployedMode"] = deployed_mode != 0;
 
     if(boot_option_support)
@@ -569,6 +547,7 @@ void EFIBootData::export_(const QString &file_name)
         if(supported_indications & EFIBoot::EFI_OS_INDICATIONS_JSON_CONFIG_DATA_REFRESH)
             arr.push_back("JSON_CONFIG_DATA_REFRESH");
 
+        progress_fn("OsIndicationsSupported");
         if(!arr.isEmpty())
             output["OsIndicationsSupported"] = arr;
     }
@@ -587,11 +566,66 @@ void EFIBootData::export_(const QString &file_name)
         if(indications & EFIBoot::EFI_OS_INDICATIONS_JSON_CONFIG_DATA_REFRESH)
             arr.push_back("JSON_CONFIG_DATA_REFRESH");
 
+        progress_fn("OsIndications");
         if(!arr.isEmpty())
             output["OsIndications"] = arr;
     }
 
+    for(const auto &[prefix, model]: BOOT_ENTRIES)
+    {
+        const QString order_name = QString("%1Order").arg(prefix);
+
+        QJsonArray order;
+        QJsonObject entries;
+        QSet<uint16_t> saved;
+        for(const auto &entry: model.getEntries())
+        {
+            const auto name = toHex(entry.index, 4, "");
+            const auto full_name = QString("%1%2").arg(prefix, name);
+            if(saved.contains(entry.index))
+            {
+                emit error(tr("Error saving entries"), tr("Entry %1(%2): duplicated index!").arg(full_name, entry.description));
+                return;
+            }
+
+            progress_fn(full_name);
+            saved.insert(entry.index);
+            if((entry.attributes & EFIBoot::Load_option_attribute::CATEGORY_MASK) == EFIBoot::Load_option_attribute::CATEGORY_BOOT)
+            {
+                order.push_back(entry.index);
+                if(model.options & BootEntryListModel::IsBoot)
+                {
+                    if(entry.is_current_boot)
+                        current_boot = entry.index;
+
+                    if(entry.is_next_boot)
+                        next_boot = entry.index;
+                }
+            }
+
+            if(!entry.is_error)
+                entries[name] = entry.toJSON();
+        }
+
+        progress_fn(order_name);
+        if(!order.isEmpty())
+            output[order_name] = order;
+
+        progress_fn(prefix);
+        if(!entries.isEmpty())
+            output[prefix] = entries;
+    }
+
+    progress_fn("BootCurrent");
+    if(current_boot != -1)
+        output["BootCurrent"] = current_boot;
+
+    progress_fn("BootNext");
+    if(next_boot != -1)
+        output["BootNext"] = next_boot;
+
     // Apple
+    progress_fn("Apple/boot-args");
     if(!apple_boot_args.isEmpty())
     {
         QJsonObject apple;
@@ -634,7 +668,7 @@ void EFIBootData::dump(const QString &file_name)
         });
 
     QStringList errors;
-    size_t step = 0;
+    size_t step = 1;
     const size_t total_steps = name_to_guid.size() + 1u;
     auto process_entry = [&](QJsonObject &root, const QString &key, std::tstring tname = _T(""), bool optional = false)
     {
@@ -642,6 +676,7 @@ void EFIBootData::dump(const QString &file_name)
             tname = QStringToStdTString(key);
 
         const auto qname = QStringFromStdTString(tname);
+        emit progress(step++, total_steps, tr("Exporting EFI Boot Manager entries (%1)…").arg(qname));
         if(!name_to_guid.count(tname))
         {
             if(!optional)
@@ -650,7 +685,6 @@ void EFIBootData::dump(const QString &file_name)
             return;
         }
 
-        emit progress(step++, total_steps, tr("Exporting EFI Boot Manager entries (%1)…").arg(qname));
         const auto variable = EFIBoot::get_variable<EFIBoot::Raw_data>(name_to_guid.at(tname), tname);
         if(!variable)
         {
@@ -664,6 +698,9 @@ void EFIBootData::dump(const QString &file_name)
         obj["efi_attributes"] = static_cast<int>(attributes);
         root[key] = obj;
     };
+
+    for(const auto &key: std::vector<const char *>{"Timeout", "BootCurrent", "BootNext", "SecureBoot", "VendorKeys", "SetupMode", "AuditMode", "DeployedMode", "BootOptionSupport", "OsIndicationsSupported", "OsIndications"})
+        process_entry(output, key, _T(""), true);
 
     for(const auto &[prefix, model]: BOOT_ENTRIES)
     {
@@ -687,10 +724,8 @@ void EFIBootData::dump(const QString &file_name)
             output[prefix] = entries;
     }
 
-    for(const auto &key: std::vector<const char *>{"Timeout", "BootCurrent", "BootNext", "SecureBoot", "VendorKeys", "SetupMode", "AuditMode", "DeployedMode", "BootOptionSupport", "OsIndicationsSupported", "OsIndications"})
-        process_entry(output, key, _T(""), true);
-
     // Apple
+    emit progress(step++, total_steps, tr("Exporting EFI Boot Manager entries (%1)…").arg("Apple/boot-args"));
     const auto boot_args = EFIBoot::get_variable<EFIBoot::Raw_data>(EFIBoot::efi_guid_apple, _T("boot-args"));
     if(boot_args)
     {
@@ -830,13 +865,13 @@ void EFIBootData::setOsIndicationsSupported(uint64_t value)
 
 void EFIBootData::importJSONEFIData(const QJsonObject &input)
 {
-    emit progress(1, 2, tr("Importing boot configuration…"));
+    emit progress(0, 1, tr("Importing boot configuration from JSON…"));
     int32_t current_boot = -1;
     int32_t next_boot = -1;
     QStringList errors;
 
-    size_t step = 0;
-    const size_t total_steps = static_cast<size_t>(input.size()) + 1u;
+    size_t step = 1;
+    size_t total_steps = static_cast<size_t>(input.size()) + 1u;
 
     auto process_entry = [&](const QJsonObject &root, const auto &name, const auto &type_fn, const QString &type_name, const auto &process_fn, const QString &name_prefix = "", bool optional = false)
     {
@@ -1057,6 +1092,7 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
             {
                 const QString full_prefix = QString("%1/").arg(prefix);
                 const auto entries = root.toObject();
+                total_steps += qMax(static_cast<size_t>(entries.size()), static_cast<size_t>(order.size()));
                 const auto keys = entries.keys();
                 for(const auto &name: keys)
                 {
@@ -1124,13 +1160,13 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
 
 void EFIBootData::importRawEFIData(const QJsonObject &input)
 {
-    emit progress(1, 2, tr("Importing boot configuration…"));
+    emit progress(0, 1, tr("Importing boot configuration from raw dump…"));
     int32_t current_boot = -1;
     int32_t next_boot = -1;
     QStringList errors;
 
-    size_t step = 0;
-    const size_t total_steps = static_cast<size_t>(input.size()) + 1u;
+    size_t step = 1;
+    size_t total_steps = static_cast<size_t>(input.size()) + 1u;
 
     auto process_entry = [&](const QJsonObject &root, const auto &name, const auto &deserialize_fn, const auto &process_fn, const QString &name_prefix = "", bool optional = false)
     {
@@ -1254,6 +1290,7 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
             continue;
         }
 
+        emit progress(step++, total_steps, tr("Importing EFI Boot Manager entries (%1)…").arg(prefix));
         if(!input[prefix].isObject())
         {
             errors.push_back(tr("%1: %2 expected").arg(prefix, tr("object")));
@@ -1262,6 +1299,7 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
 
         const QString full_prefix = QString("%1/").arg(prefix);
         const auto entries = input[prefix].toObject();
+        total_steps += qMax(static_cast<size_t>(entries.size()), static_cast<size_t>(order.size()));
         const auto keys = entries.keys();
         for(const auto &name: keys)
         {

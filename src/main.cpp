@@ -1,59 +1,78 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #include <QApplication>
-#include <QCommandLineParser>
 #include <QLibraryInfo>
 #include <QMessageBox>
 #include <QStyleFactory>
 #include <QTranslator>
 
 #include "efibooteditor.h"
+#include "efibooteditorcli.h"
 
 auto main(int argc, char *argv[]) -> int
 {
-    QApplication a(argc, argv);
-    a.setApplicationName(APPLICATION_NAME);
-    a.setApplicationVersion(VERSION);
-    a.setStyle(QStyleFactory::create("Fusion"));
-    QIcon::setFallbackThemeName("Tango");
-    if(QIcon::themeName().isEmpty())
-        QIcon::setThemeName("Tango");
+    // Check EFI support
+    auto efi_error_message = EFIBoot::init();
 
+    // Set CLI application first
+    auto app = std::make_unique<QCoreApplication>(argc, argv);
+    QCoreApplication::setApplicationName(APPLICATION_NAME);
+    QCoreApplication::setApplicationVersion(VERSION);
+    QCoreApplication::setOrganizationName(APPLICATION_NAME);
+
+    // Load translation
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     const auto translations_path = QLibraryInfo::path(QLibraryInfo::TranslationsPath);
 #else
     const auto translations_path = QLibraryInfo::location(QLibraryInfo::TranslationsPath);
 #endif
 
-    // Enable translation
+    std::list<QTranslator> translators;
     for(const char *module: {"qt", "qtbase", PROJECT_NAME})
     {
-        std::unique_ptr<QTranslator> translator{std::make_unique<QTranslator>()};
-        if(!translator->load(QLocale::system(), module, "_", ":/i18n") && !translator->load(QLocale::system(), module, "_", translations_path))
+        auto &translator = translators.emplace_back();
+        if(!translator.load(QLocale::system(), module, "_", ":/i18n") && !translator.load(QLocale::system(), module, "_", translations_path))
+        {
+            translators.pop_back();
             continue;
+        }
 
-        a.installTranslator(translator.release());
+        QCoreApplication::installTranslator(&translator);
     }
 
-    // Check for EFI support
-    if(auto error_message = EFIBoot::init(); error_message)
+    // Run CLI if arguments were provided
     {
-        return QMessageBox::critical(
-            nullptr,
-            EFIBootEditor::tr("EFI support required"),
-            QStringFromStdTString(*error_message));
+        EFIBootEditorCLI cli{efi_error_message};
+        if(cli.process(*app))
+        {
+            QCoreApplication::processEvents();
+            return 0;
+        }
     }
 
-    // Command line support
-    QCommandLineParser parser;
-    parser.addHelpOption();
-    parser.addVersionOption();
-    parser.process(a);
+    // Switch to GUI
+    app.reset(); // need to destroy QCoreApplication first
+    app = std::make_unique<QApplication>(argc, argv);
+    // Need to reset the application configuration
+    QCoreApplication::setApplicationName(APPLICATION_NAME);
+    QCoreApplication::setApplicationVersion(VERSION);
+    QCoreApplication::setOrganizationName(APPLICATION_NAME);
+    for(auto &translator: translators)
+        QCoreApplication::installTranslator(&translator);
 
-    // Show window
-    EFIBootEditor w;
-    w.show();
+    // Setup GUI style
+    QApplication::setStyle(QStyleFactory::create("Fusion"));
+    QIcon::setFallbackThemeName("Tango");
+    if(QIcon::themeName().isEmpty())
+        QIcon::setThemeName("Tango");
 
-    QApplication::processEvents();
-    w.reloadBootConfiguration();
-    return QApplication::exec();
+    // Show window and then force reload boot entries
+    EFIBootEditor gui{efi_error_message};
+    gui.show();
+    if(!efi_error_message)
+    {
+        QApplication::processEvents();
+        gui.reloadBootConfiguration();
+    }
+
+    return QCoreApplication::exec();
 }
