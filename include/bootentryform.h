@@ -32,6 +32,7 @@ public:
     ~BootEntryForm() override;
 
     void setReadOnly(bool readonly);
+    void showCategory(bool visible);
 
     void setBootEntryListModel(BootEntryListModel &model);
     void setItem(const QModelIndex &index, const BootEntry *item);

@@ -23,6 +23,7 @@ public:
     bool setup_mode{false};
     bool audit_mode{false};
     bool deployed_mode{false};
+    uint32_t boot_option_support{0};
 
     uint64_t supported_indications{0};
     uint64_t indications{0};
@@ -67,6 +68,7 @@ signals:
     void setupModeChanged(bool enabled);
     void auditModeChanged(bool enabled);
     void deployedModeChanged(bool enabled);
+    void bootOptionSupportChanged(uint32_t flags);
     void appleBootArgsChanged(const QString &text);
     void osIndicationsSupportedChanged(uint64_t value);
     void osIndicationsChanged(const uint64_t &value);
@@ -77,6 +79,7 @@ private:
     void setSetupMode(bool enabled);
     void setAuditMode(bool enabled);
     void setDeployedMode(bool enabled);
+    void setBootOptionSupport(uint32_t flags);
     void setOsIndicationsSupported(uint64_t value);
     void importJSONEFIData(const QJsonObject &input);
     void importRawEFIData(const QJsonObject &input);
