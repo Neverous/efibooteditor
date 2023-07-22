@@ -74,6 +74,8 @@ public slots:
 
     void setOsIndication(bool checked);
 
+    void updateBootOptionSupport(uint32_t flags);
+
     void undoViewChanged(const QModelIndex &index);
 
 signals:

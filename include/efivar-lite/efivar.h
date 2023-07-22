@@ -62,6 +62,11 @@ static const uint64_t EFI_OS_INDICATIONS_START_OS_RECOVERY = 0x0000000000000020;
 static const uint64_t EFI_OS_INDICATIONS_START_PLATFORM_RECOVERY = 0x0000000000000040;
 static const uint64_t EFI_OS_INDICATIONS_JSON_CONFIG_DATA_REFRESH = 0x0000000000000080;
 
+static const uint32_t EFI_BOOT_OPTION_SUPPORT_KEY = 0x00000001;
+static const uint32_t EFI_BOOT_OPTION_SUPPORT_APP = 0x00000002;
+static const uint32_t EFI_BOOT_OPTION_SUPPORT_SYSPREP = 0x00000010;
+static const uint32_t EFI_BOOT_OPTION_SUPPORT_COUNT = 0x00000300;
+
 extern const efi_guid_t efi_guid_global;
 extern const efi_guid_t efi_guid_apple;
 

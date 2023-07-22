@@ -39,6 +39,12 @@ void BootEntryForm::setReadOnly(bool readonly)
     ui->error_text->setDisabled(readonly);
 }
 
+void BootEntryForm::showCategory(bool visible)
+{
+    ui->category_label->setVisible(visible);
+    ui->category_combo->setVisible(visible);
+}
+
 void BootEntryForm::setBootEntryListModel(BootEntryListModel &model)
 {
     entries_list_model = &model;
