@@ -446,7 +446,7 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="440"/>
         <source>Parser failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Analisi fallita: %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="454"/>
@@ -570,7 +570,7 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="868"/>
         <source>Importing boot configuration from JSON…</source>
-        <translation type="unfinished"></translation>
+        <translation>Importazione configurazione boot da JSON…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="887"/>
@@ -614,7 +614,7 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="964"/>
         <source>%1: unknown boot manager capability</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: funzionalità gestione boot sconosciuta</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="977"/>
@@ -672,7 +672,7 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="1163"/>
         <source>Importing boot configuration from raw dump…</source>
-        <translation type="unfinished"></translation>
+        <translation>Importazione configurazione boot dal dump non elaborato…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1195"/>
@@ -1499,98 +1499,99 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="11"/>
         <source>Boot Editor for (U)EFI based systems.</source>
-        <translation type="unfinished"></translation>
+        <translation>Boot editor per sistemi basati su (U)EFI.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="14"/>
         <source>Export configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esporta configurazione.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="14"/>
         <location filename="../src/efibooteditorcli.cpp" line="15"/>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <source>FILE</source>
-        <translation type="unfinished"></translation>
+        <translation>FILE</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="15"/>
         <source>Dump raw EFI data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dump dati EFI non elaborati.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <source>Import configuration from JSON (either from export or raw dump).</source>
-        <translation type="unfinished"></translation>
+        <translation>Importa configurazione da JSON (da esportazione o dal dump non elaborato).</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <source>Force import, don&apos;t ask for confirmation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Forza importazione, non chiedere conferma.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="24"/>
         <source>EFI support required</source>
-        <translation type="unfinished">È richiesto il supporto EFI</translation>
+        <translation>È richiesto il supporto EFI</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="43"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation type="unfinished">Caricamento voci EFI Boot Manager…</translation>
+        <translation>Caricamento voci gestione boot EFI…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="45"/>
         <location filename="../src/efibooteditorcli.cpp" line="55"/>
         <source>Exporting boot configuration…</source>
-        <translation type="unfinished">Esportazione configurazione di boot…</translation>
+        <translation>Esportazione configurazione boot…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="65"/>
         <source>Importing boot configuration…</source>
-        <translation type="unfinished">Importazione configurazione di boot…</translation>
+        <translation>Importazione configurazione boot…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="67"/>
         <location filename="../src/efibooteditorcli.cpp" line="68"/>
         <location filename="../src/efibooteditorcli.cpp" line="69"/>
         <source>Loaded %0 %1 entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Caricate %0 %1 voci</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="67"/>
         <source>Boot</source>
-        <translation type="unfinished">Boot</translation>
+        <translation>Boot</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="68"/>
         <source>Driver</source>
-        <translation type="unfinished">Driver</translation>
+        <translation>Driver</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="69"/>
         <source>System Preparation</source>
-        <translation type="unfinished">Preparazione sistema</translation>
+        <translation>Preparazione sistema</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="72"/>
         <source>Are you sure you want to save?
 Your EFI configuration will be overwritten!</source>
-        <translation type="unfinished"></translation>
+        <translation>Sei sicuro di voler salvare?
+La configurazione EFI attuale verrà sovrascritta!</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="79"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation type="unfinished">Salvataggio voci EFI Boot Manager…</translation>
+        <translation>Salvataggio voci gestione boot EFI…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="89"/>
         <source>ERROR: %0! %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ERRORE: %0! %1</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="104"/>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Completato</translation>
     </message>
 </context>
 <context>
