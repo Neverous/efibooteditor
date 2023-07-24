@@ -46,6 +46,7 @@ jobs:
         uses: github/codeql-action/init@v2
         with:
           languages: 'cpp'
+          queries: security-and-quality
         if: inputs.build-config == 'Debug'
         continue-on-error: true
 
