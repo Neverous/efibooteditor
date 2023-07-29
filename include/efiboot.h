@@ -610,8 +610,7 @@ inline std::optional<Load_option> deserialize(const void *data, size_t data_size
 
     uint8_t *optional_data = nullptr;
     size_t optional_data_size = 0;
-    int ret = efi_loadopt_optional_data(load_option, data_size, &optional_data, &optional_data_size);
-    if(ret >= 0)
+    if(int ret = efi_loadopt_optional_data(load_option, data_size, &optional_data, &optional_data_size); ret >= 0)
     {
         auto opt_data = deserialize<Raw_data>(optional_data, optional_data_size);
         if(!opt_data)

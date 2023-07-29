@@ -15,9 +15,9 @@
 typedef struct ATTR_ALIGN(1)
 {
 #if defined(_WIN32)
-    TCHAR data[39];
+    const TCHAR *data;
 #elif defined(__APPLE__)
-    char data[37];
+    const char *data;
 #else
     uint32_t a;
     uint16_t b;
