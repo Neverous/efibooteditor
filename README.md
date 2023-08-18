@@ -10,7 +10,7 @@ Boot Editor for (U)EFI based systems.
 
 There is also a command-line interface for quick backup/restore functionality:
 
-```
+```shell
 Usage: efibooteditor [options]
 Boot Editor for (U)EFI based systems.
 

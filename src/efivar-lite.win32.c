@@ -95,8 +95,10 @@ int efi_get_variable(efi_guid_t guid, const TCHAR *name, uint8_t **data, size_t 
 int efi_del_variable(efi_guid_t guid, const TCHAR *name)
 {
     // setting nSize (data_size) = 0 => deletes variable
-    // https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setfirmwareenvironmentvariableexa#parameters
-    return efi_set_variable(guid, name, NULL, 0, 0, 0);
+    // https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setfirmwareenvironmentvariablea#parameters
+    BOOL ret = SetFirmwareEnvironmentVariable(name, guid.data, NULL, 0);
+    last_winapi_function = _T("SetFirmwareEnvironmentVariable");
+    return ret == 0 ? -1 : 0;
 }
 
 int efi_set_variable(efi_guid_t guid, const TCHAR *name, uint8_t *data, size_t data_size, uint32_t attributes, mode_t mode)
