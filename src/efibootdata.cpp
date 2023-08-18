@@ -278,7 +278,9 @@ void EFIBootData::save()
 
             for(const auto &[prefix, model]: BOOT_ENTRIES)
             {
-                (void)model;
+                if(model.options & BootEntryListModel::ReadOnly)
+                    continue;
+
                 if(is_bootentry(tname, QStringToStdTString(prefix)))
                     return true;
             }
