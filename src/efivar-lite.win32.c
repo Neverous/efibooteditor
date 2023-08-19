@@ -121,8 +121,9 @@ int efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name)
 {
     while(1)
     {
-        if(efi_get_next_variable_name_progress_cb)
-            efi_get_next_variable_name_progress_cb(current_variable++, EFI_MAX_VARIABLES);
+        ++current_variable;
+        if(efi_get_next_variable_name_progress_cb && current_variable % (EFI_MAX_VARIABLES / 100u) == 0u)
+            efi_get_next_variable_name_progress_cb(current_variable, EFI_MAX_VARIABLES);
 
         int ret = _efi_get_next_variable_name(guid, name);
         if(ret <= 0)
