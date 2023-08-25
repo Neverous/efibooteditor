@@ -14,8 +14,6 @@ typedef struct
     uint16_t length;
 } efidp_header;
 
-typedef uint16_t efidp_type_subtype;
-
 typedef uint8_t efidp_boolean;
 
 enum EFIDP_TYPE
@@ -141,7 +139,7 @@ typedef struct
     uint8_t partition_signature[16];
     uint8_t partition_format;
     uint8_t signature_type;
-#ifdef __ia64
+#if defined(__ia64)
     uint8_t _padding[6]; /* Empirically needed */
 #endif
 } efidp_hd;
@@ -195,7 +193,6 @@ enum EFIDP_END
 typedef union
 {
     efidp_header header;
-    efidp_type_subtype _type_subtype;
     efidp_pci pci;
     efidp_hid hid;
     efidp_usb usb;
@@ -242,7 +239,7 @@ static inline int16_t
 }
 
 static inline ssize_t
-    ATTR_ARTIFICIAL ATTR_NONNULL(1) ATTR_UNUSED ATTR_WARN_UNUSED_RESULT
+    ATTR_ARTIFICIAL ATTR_NONNULL(1) ATTR_WARN_UNUSED_RESULT
     efidp_node_size(const_efidp dn)
 {
     if(ATTR_NONNULL_IS_NULL(dn) || dn->header.length < 4)
@@ -265,7 +262,7 @@ static inline int
     if(sz < 0)
         return -1;
 
-    *out = (const_efidp)((const uint8_t *)in + sz);
+    *out = STATIC_CAST(const_efidp)(advance_bytes(in, STATIC_CAST(size_t)(sz)));
     if(*out < in)
     {
         errno = EINVAL;
@@ -289,7 +286,7 @@ static inline int
     if(sz < 0)
         return -1;
 
-    *out = (const_efidp)((const uint8_t *)in + sz);
+    *out = STATIC_CAST(const_efidp)(advance_bytes(in, STATIC_CAST(size_t)(sz)));
     if(*out < in)
     {
         errno = EINVAL;
@@ -342,7 +339,7 @@ static inline int
         if(sz < 0)
             break;
 
-        const_efidp next = (const_efidp)((const uint8_t *)in + sz);
+        const_efidp next = STATIC_CAST(const_efidp)(advance_bytes(in, STATIC_CAST(size_t)(sz)));
         if(next < in)
         {
             errno = EINVAL;

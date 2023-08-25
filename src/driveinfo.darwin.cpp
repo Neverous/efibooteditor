@@ -50,7 +50,7 @@ auto DriveInfo::getAll(bool refresh) -> QVector<DriveInfo>
         CFRelease(disk_cf);
         CFTypeRef value_cf = CFDictionaryGetValue(disk_info_cf, kDADiskDescriptionVolumeNameKey);
         if(value_cf != nullptr)
-            driveinfo.name = QString::fromCFString((CFStringRef)value_cf);
+            driveinfo.name = QString::fromCFString(static_cast<CFStringRef>(value_cf));
 
         value_cf = CFDictionaryGetValue(disk_info_cf, kDADiskDescriptionVolumeUUIDKey);
         if(value_cf == nullptr)
@@ -60,13 +60,13 @@ auto DriveInfo::getAll(bool refresh) -> QVector<DriveInfo>
         {
             // Assume GPT
             driveinfo.signature_type = DriveInfo::SIGNATURE::GUID;
-            driveinfo.signature = QUuid::fromCFUUID((CFUUIDRef)value_cf);
+            driveinfo.signature = QUuid::fromCFUUID(static_cast<CFUUIDRef>(value_cf));
         }
 
         value_cf = IORegistryEntryCreateCFProperty(disk_service_io, CFSTR(kIOMediaPartitionIDKey), kCFAllocatorDefault, 0);
         if(value_cf != nullptr)
         {
-            CFNumberGetValue((CFNumberRef)value_cf, CFNumberGetType((CFNumberRef)value_cf), static_cast<void *>(&driveinfo.partition));
+            CFNumberGetValue(static_cast<CFNumberRef>(value_cf), CFNumberGetType(static_cast<CFNumberRef>(value_cf)), static_cast<void *>(&driveinfo.partition));
             CFRelease(value_cf);
         }
 
@@ -74,14 +74,14 @@ auto DriveInfo::getAll(bool refresh) -> QVector<DriveInfo>
         value_cf = IORegistryEntryCreateCFProperty(disk_service_io, CFSTR(kIOMediaPreferredBlockSizeKey), kCFAllocatorDefault, 0);
         if(value_cf != nullptr)
         {
-            CFNumberGetValue((CFNumberRef)value_cf, CFNumberGetType((CFNumberRef)value_cf), static_cast<void *>(&block_size));
+            CFNumberGetValue(static_cast<CFNumberRef>(value_cf), CFNumberGetType(static_cast<CFNumberRef>(value_cf)), static_cast<void *>(&block_size));
             CFRelease(value_cf);
         }
 
         value_cf = IORegistryEntryCreateCFProperty(disk_service_io, CFSTR(kIOMediaBaseKey), kCFAllocatorDefault, 0);
         if(value_cf != nullptr)
         {
-            CFNumberGetValue((CFNumberRef)value_cf, CFNumberGetType((CFNumberRef)value_cf), static_cast<void *>(&driveinfo.start));
+            CFNumberGetValue(static_cast<CFNumberRef>(value_cf), CFNumberGetType(static_cast<CFNumberRef>(value_cf)), static_cast<void *>(&driveinfo.start));
             CFRelease(value_cf);
         }
 
@@ -90,7 +90,7 @@ auto DriveInfo::getAll(bool refresh) -> QVector<DriveInfo>
 
         value_cf = CFDictionaryGetValue(disk_info_cf, kDADiskDescriptionMediaSizeKey);
         if(value_cf != nullptr)
-            CFNumberGetValue((CFNumberRef)value_cf, kCFNumberIntType, &driveinfo.size);
+            CFNumberGetValue(static_cast<CFNumberRef>(value_cf), kCFNumberIntType, &driveinfo.size);
 
         IOObjectRelease(disk_service_io);
         CFRelease(disk_info_cf);

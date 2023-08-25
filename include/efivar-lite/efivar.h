@@ -6,7 +6,6 @@
 #pragma once
 
 #include <stdarg.h>
-#include <stdint.h>
 #include <string.h>
 
 #include "compat.h"
@@ -36,7 +35,7 @@ static const uint32_t EFI_VARIABLE_ATTRIBUTE_AUTHENTICATED_WRITE_ACCESS = 0x0000
 static const uint32_t EFI_VARIABLE_ATTRIBUTE_TIME_BASED_AUTHENTICATED_WRITE_ACCESS = 0x00000020;
 static const uint32_t EFI_VARIABLE_ATTRIBUTE_APPEND_WRITE = 0x00000040;
 static const uint32_t EFI_VARIABLE_ATTRIBUTE_DEFAULTS =
-#ifdef __APPLE__
+#if defined(__APPLE__)
     // macOS doesn't support attributes for variables
     0
 #else
@@ -45,9 +44,9 @@ static const uint32_t EFI_VARIABLE_ATTRIBUTE_DEFAULTS =
     ;
 
 static const mode_t EFI_VARIABLE_MODE_DEFAULTS =
-#ifdef _WIN32
+#if defined(_WIN32)
     // Windows doesn't support file mode setting for variables
-    (mode_t)0
+    STATIC_CAST(mode_t)(0)
 #else
     S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH
 #endif

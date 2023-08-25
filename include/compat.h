@@ -2,6 +2,19 @@
 #pragma once
 
 #include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+
+/* casts */
+#if defined(__cplusplus)
+#define STATIC_CAST(type) static_cast<type>
+#if defined(NULL)
+#undef NULL
+#endif
+#define NULL nullptr
+#else
+#define STATIC_CAST(type) (type)
+#endif
 
 /* attributes */
 #if defined(__GNUC__) && !defined(__clang__)
@@ -10,6 +23,7 @@
 #define ATTR_ARTIFICIAL
 #endif
 
+/* MSVC compatibility */
 #if defined(_MSC_VER)
 #include <basetsd.h>
 #define ATTR_ALIGN(X) __declspec(align(X))
@@ -28,9 +42,9 @@ typedef SSIZE_T ssize_t;
 #define ATTR_WARN_UNUSED_RESULT __attribute__((__warn_unused_result__))
 #endif
 
-#ifdef _WIN32
+/* Windows compatibility */
+#if defined(_WIN32)
 #include <Windows.h>
-#include <stdint.h>
 #include <stdio.h>
 #include <tchar.h>
 #undef interface
@@ -41,20 +55,29 @@ typedef uint32_t mode_t;
 #include <sys/stat.h>
 #include <sys/types.h>
 typedef char TCHAR;
+#if defined(__clang__)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wreserved-id-macro"
+#pragma clang diagnostic ignored "-Wreserved-identifier"
+#pragma clang diagnostic ignored "-Wreserved-macro-identifier"
+#endif
 #define _T
 inline int _tcserror_s(TCHAR *buffer, size_t size, int errnum)
 {
-#if defined(__APPLE__) || ((_POSIX_C_SOURCE >= 200112L) && !_GNU_SOURCE)
+#if defined(__APPLE__) || ((_POSIX_C_SOURCE >= 200112L) && !defined(_GNU_SOURCE))
     return strerror_r(errnum, buffer, size);
 #else
     return strerror_r(errnum, buffer, size) == NULL;
 #endif
 }
 
+#if defined(__clang__)
+#pragma clang diagnostic pop
+#endif
 #define _sntprintf_s(buffer, buffer_size, count, format, ...) snprintf(buffer, buffer_size, format, __VA_ARGS__)
 #endif
 
-#ifdef __cplusplus
+#if defined(__cplusplus)
 #include <QString>
 #include <cctype>
 #include <fstream>
@@ -68,6 +91,7 @@ inline int _tcserror_s(TCHAR *buffer, size_t size, int errnum)
 #include <QTextCodec>
 #endif
 
+/* string types */
 namespace std
 {
 typedef basic_string<TCHAR> tstring;
@@ -127,6 +151,7 @@ inline QString QStringFromStdTString(const std::tstring &string)
 #endif
 }
 
+/* additional helpers */
 inline QString toHex(unsigned long long number, int min_width = 0, const QString &prefix = "0x")
 {
     return prefix + QString("%1").arg(number, min_width, HEX_BASE, QChar('0')).toUpper();
@@ -179,5 +204,16 @@ inline QByteArray fromUnicode(const QString &input, const char *codec_name = "UT
     return encoder->fromUnicode(input);
 #endif
 }
+#endif
 
+#if defined(__clang__)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#endif
+inline const void *advance_bytes(const void *ptr, size_t bytes)
+{
+    return STATIC_CAST(const void *)(STATIC_CAST(const uint8_t *)(ptr) + bytes);
+}
+#if defined(__clang__)
+#pragma clang diagnostic pop
 #endif

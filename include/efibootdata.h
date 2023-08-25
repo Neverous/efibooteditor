@@ -15,20 +15,6 @@ public:
     BootEntryListModel driver_entries_list_model{tr("Driver"), {}, this};
     BootEntryListModel sysprep_entries_list_model{tr("System Preparation"), {}, this};
     BootEntryListModel platform_recovery_entries_list_model{tr("Platform Recovery"), BootEntryListModel::ReadOnly, this};
-    QUndoStack *undo_stack{nullptr};
-
-    uint16_t timeout{0};
-    bool secure_boot{false};
-    bool vendor_keys{false};
-    bool setup_mode{false};
-    bool audit_mode{false};
-    bool deployed_mode{false};
-    uint32_t boot_option_support{0};
-
-    uint64_t supported_indications{0};
-    uint64_t indications{0};
-
-    QString apple_boot_args{};
 
     const std::vector<std::tuple<QString, BootEntryListModel &>> BOOT_ENTRIES{
         {"Boot", boot_entries_list_model},
@@ -36,6 +22,21 @@ public:
         {"SysPrep", sysprep_entries_list_model},
         {"PlatformRecovery", platform_recovery_entries_list_model},
     };
+
+    QString apple_boot_args{};
+    QUndoStack *undo_stack{nullptr};
+
+    uint64_t supported_indications{0};
+    uint64_t indications{0};
+
+    uint32_t boot_option_support{0};
+
+    uint16_t timeout{0};
+    bool secure_boot{false};
+    bool vendor_keys{false};
+    bool setup_mode{false};
+    bool audit_mode{false};
+    bool deployed_mode{false};
 
 public:
     explicit EFIBootData(QObject *parent = nullptr);

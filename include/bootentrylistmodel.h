@@ -37,12 +37,14 @@ public:
     Q_DECLARE_FLAGS(Options, Option)
 
     const QString name;
-    const Options options;
 
 private:
     QVector<BootEntry> entries{};
     QModelIndex next_boot{};
     QUndoStack *undo_stack{nullptr};
+
+public:
+    const Options options;
 
 public:
     explicit BootEntryListModel(const QString &name_, const Options &options_ = {}, QObject *parent = nullptr);

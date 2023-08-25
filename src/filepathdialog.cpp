@@ -7,6 +7,35 @@
 
 #include <QMessageBox>
 
+QSize HorizontalTabStyle::sizeFromContents(ContentsType type, const QStyleOption *option, const QSize &size, const QWidget *widget) const
+{
+    QSize s = QProxyStyle::sizeFromContents(type, option, size, widget);
+    if(type == QStyle::CT_TabBarTab)
+        s.transpose();
+
+    return s;
+}
+
+void HorizontalTabStyle::drawControl(ControlElement element, const QStyleOption *option, QPainter *painter, const QWidget *widget) const
+{
+    if(element != CE_TabBarTabLabel)
+    {
+        QProxyStyle::drawControl(element, option, painter, widget);
+        return;
+    }
+
+    const QStyleOptionTab *tab = qstyleoption_cast<const QStyleOptionTab *>(option);
+    if(!tab)
+    {
+        QProxyStyle::drawControl(element, option, painter, widget);
+        return;
+    }
+
+    QStyleOptionTab opt(*tab);
+    opt.shape = QTabBar::RoundedNorth;
+    QProxyStyle::drawControl(element, &opt, painter, widget);
+}
+
 FilePathDialog::FilePathDialog(QWidget *parent)
     : QDialog(parent)
     , horizontal_tab_style{}
