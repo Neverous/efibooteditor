@@ -13,16 +13,6 @@
 namespace File_path
 {
 
-template <class Type>
-inline bool registerJSONReader();
-#define REGISTER_JSON_READER(type) static const bool is_##type##_json_reader_registered = registerJSONReader<type>()
-
-#if defined(_MSC_VER)
-#pragma warning(push)
-// C4820: 'bytes' bytes padding added after construct 'member_name'
-#pragma warning(disable : 4820)
-#endif
-
 class PCI
 {
 public:
@@ -46,7 +36,6 @@ public:
 
     QString toString(bool refresh = true) const;
 };
-REGISTER_JSON_READER(PCI);
 
 class HID
 {
@@ -71,7 +60,6 @@ public:
 
     QString toString(bool refresh = true) const;
 };
-REGISTER_JSON_READER(HID);
 
 class USB
 {
@@ -96,7 +84,6 @@ public:
 
     QString toString(bool refresh = true) const;
 };
-REGISTER_JSON_READER(USB);
 
 class Vendor
 {
@@ -108,9 +95,9 @@ private:
     mutable QString string = "";
 
 public:
-    uint8_t _type = 0;
-    QUuid guid = {};
     QByteArray data = {};
+    QUuid guid = {};
+    uint8_t _type = 0;
 
 public:
     Vendor() = default;
@@ -124,7 +111,6 @@ public:
 
     QString toString(bool refresh = true) const;
 };
-REGISTER_JSON_READER(Vendor);
 
 class MACAddress
 {
@@ -149,7 +135,6 @@ public:
 
     QString toString(bool refresh = true) const;
 };
-REGISTER_JSON_READER(MACAddress);
 
 class IPv4
 {
@@ -163,12 +148,12 @@ private:
 public:
     QHostAddress local_ip_address = {};
     QHostAddress remote_ip_address = {};
+    QHostAddress gateway_ip_address = {};
+    QHostAddress subnet_mask = {};
     uint16_t local_port = 0;
     uint16_t remote_port = 0;
     uint16_t protocol = 0;
     bool static_ip_address = false;
-    QHostAddress gateway_ip_address = {};
-    QHostAddress subnet_mask = {};
 
 public:
     IPv4() = default;
@@ -180,7 +165,6 @@ public:
 
     QString toString(bool refresh = true) const;
 };
-REGISTER_JSON_READER(IPv4);
 
 class IPv6
 {
@@ -211,7 +195,6 @@ public:
 
     QString toString(bool refresh = true) const;
 };
-REGISTER_JSON_READER(IPv6);
 
 class SATA
 {
@@ -237,7 +220,6 @@ public:
 
     QString toString(bool refresh = true) const;
 };
-REGISTER_JSON_READER(SATA);
 
 class HD
 {
@@ -266,7 +248,6 @@ public:
 
     QString toString(bool refresh = true) const;
 };
-REGISTER_JSON_READER(HD);
 
 class File
 {
@@ -290,7 +271,6 @@ public:
 
     QString toString(bool refresh = true) const;
 };
-REGISTER_JSON_READER(File);
 
 class FirmwareFile
 {
@@ -314,7 +294,6 @@ public:
 
     QString toString(bool refresh = true) const;
 };
-REGISTER_JSON_READER(FirmwareFile);
 
 class FirmwareVolume
 {
@@ -338,7 +317,6 @@ public:
 
     QString toString(bool refresh = true) const;
 };
-REGISTER_JSON_READER(FirmwareVolume);
 
 class BIOSBootSpecification
 {
@@ -346,13 +324,13 @@ public:
     static constexpr auto TYPE = "BIOS";
     static constexpr auto SUBTYPE = "BIOS_BOOT_SPECIFICATION";
 
-public:
-    uint16_t device_type = 0;
-    uint16_t status_flag = 0;
-    QString description = "";
-
 private:
     mutable QString string = "";
+
+public:
+    QString description = "";
+    uint16_t device_type = 0;
+    uint16_t status_flag = 0;
 
 public:
     BIOSBootSpecification() = default;
@@ -364,7 +342,6 @@ public:
 
     QString toString(bool refresh = true) const;
 };
-REGISTER_JSON_READER(BIOSBootSpecification);
 
 class End
 {
@@ -409,7 +386,6 @@ public:
 
     QString toString(bool refresh = true) const;
 };
-REGISTER_JSON_READER(End);
 
 class Unknown
 {
@@ -421,9 +397,9 @@ private:
     mutable QString string = "";
 
 public:
+    QByteArray data = {};
     uint8_t _type = 0;
     uint8_t _subtype = 0;
-    QByteArray data = {};
 
 public:
     Unknown() = default;
@@ -435,7 +411,6 @@ public:
 
     QString toString(bool refresh = true) const;
 };
-REGISTER_JSON_READER(Unknown);
 
 typedef std::variant<
     PCI,
@@ -455,35 +430,42 @@ typedef std::variant<
     Unknown>
     ANY;
 
-extern std::unique_ptr<std::unordered_map<QString, std::function<std::optional<ANY>(const QJsonObject &)>>> JSON_readers__instance;
-
-inline auto &JSON_readers()
+inline std::unordered_map<QString, std::function<std::optional<ANY>(const QJsonObject &)>> JSON_readers()
 {
-    if(!JSON_readers__instance)
-        JSON_readers__instance = std::make_unique<decltype(JSON_readers__instance)::element_type>();
-
-    return *JSON_readers__instance;
+#define reader(Type)                                                                  \
+    {                                                                                 \
+        QString("%1/%2").arg(Type::TYPE).arg(Type::SUBTYPE),                          \
+            [](const auto &obj) -> std::optional<ANY> { return Type::fromJSON(obj); } \
+    }
+    return {
+        reader(PCI),
+        reader(HID),
+        reader(USB),
+        reader(Vendor),
+        reader(MACAddress),
+        reader(IPv4),
+        reader(IPv6),
+        reader(SATA),
+        reader(HD),
+        reader(File),
+        reader(FirmwareFile),
+        reader(FirmwareVolume),
+        reader(BIOSBootSpecification),
+        reader(End),
+        reader(Unknown),
+    };
+#undef reader
 }
 
-template <class Type>
-inline bool registerJSONReader()
-{
-    auto key = QString("%1/%2").arg(Type::TYPE).arg(Type::SUBTYPE);
-    if(JSON_readers().find(key) != JSON_readers().end())
-        return true;
-
-    JSON_readers()[key] = [](const auto &obj) -> std::optional<ANY>
-    { return Type::fromJSON(obj); };
-    return true;
-}
-
-#undef REGISTER_JSON_READER
 } // namespace File_path
 
 Q_DECLARE_METATYPE(const File_path::ANY *)
 
 class BootEntry
 {
+private:
+    mutable QString device_path_str = "";
+
 public:
     enum class OptionalDataFormat : uint8_t
     {
@@ -493,22 +475,18 @@ public:
         Hex = 3,
     };
 
-    uint16_t index = 0;
-    QString description = "New entry";
     QVector<File_path::ANY> device_path = {};
+    QString description = "New entry";
+    QString error = "";
     QString optional_data = "";
     uint32_t attributes = EFIBoot::Load_option_attribute::EMPTY;
     uint32_t efi_attributes = EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS;
+    uint16_t index = 0;
+    OptionalDataFormat optional_data_format = OptionalDataFormat::Base64;
 
     bool is_current_boot = false;
     bool is_next_boot = false;
     bool is_error = false;
-    QString error = "";
-
-    OptionalDataFormat optional_data_format = OptionalDataFormat::Base64;
-
-private:
-    mutable QString device_path_str = "";
 
 public:
     static BootEntry fromEFIBootLoadOption(const EFIBoot::Load_option &load_option);
@@ -526,9 +504,5 @@ public:
 private:
     QByteArray getRawOptionalData() const;
 };
-
-#if defined(_MSC_VER)
-#pragma warning(pop)
-#endif
 
 Q_DECLARE_METATYPE(const BootEntry *)

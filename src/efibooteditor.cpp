@@ -400,7 +400,6 @@ std::tuple<QString, BootEntryListView &, BootEntryListModel &> EFIBootEditor::ge
     }
 
     Q_UNREACHABLE();
-    return {tr("Boot"), *ui->boot_entries_list, data.boot_entries_list_model};
 }
 
 std::tuple<QString, BootEntryListView &, BootEntryListModel &> EFIBootEditor::currentBootEntryList()

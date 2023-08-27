@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #include <Windows.h>
+#include <array>
 
 #include "compat.h"
 #include "driveinfo.h"
@@ -11,22 +12,22 @@ QVector<DriveInfo> DriveInfo::getAll(bool refresh)
 
     all.clear();
 
-    TCHAR volume_name[MAX_PATH];
-    HANDLE volume_handle = FindFirstVolume(volume_name, ARRAYSIZE(volume_name));
+    std::array<TCHAR, MAX_PATH> volume_name;
+    HANDLE volume_handle = FindFirstVolume(volume_name.data(), static_cast<DWORD>(volume_name.size()));
 
     if(volume_handle == INVALID_HANDLE_VALUE)
         return all;
 
-    for(BOOL volume_found = true; volume_found; volume_found = FindNextVolume(volume_handle, volume_name, ARRAYSIZE(volume_name)))
+    for(BOOL volume_found = true; volume_found; volume_found = FindNextVolume(volume_handle, volume_name.data(), static_cast<DWORD>(volume_name.size())))
     {
         DriveInfo driveinfo{};
-        TCHAR device_name[MAX_PATH];
-        size_t length = _tcslen(volume_name);
+        std::array<TCHAR, MAX_PATH> device_name;
+        size_t length = _tcsnccnt(volume_name.data(), volume_name.size());
         if(length != 49u)
             continue;
 
         volume_name[length - 1u] = _T('\0');
-        if(!QueryDosDevice(&volume_name[4], device_name, ARRAYSIZE(device_name)))
+        if(!QueryDosDevice(&volume_name[4], device_name.data(), static_cast<DWORD>(device_name.size())))
             continue;
 
         volume_name[length - 1u] = _T('\\');
@@ -36,21 +37,21 @@ QVector<DriveInfo> DriveInfo::getAll(bool refresh)
         device_name[4] = _T('\\');
         device_name[5] = _T('\\');
         device_name[6] = _T('.');
-        HANDLE device_handle = CreateFile(device_name + 4, 0, FILE_SHARE_READ | FILE_SHARE_WRITE, nullptr, OPEN_EXISTING, 0, nullptr);
+        HANDLE device_handle = CreateFile(&device_name[4], 0, FILE_SHARE_READ | FILE_SHARE_WRITE, nullptr, OPEN_EXISTING, 0, nullptr);
         device_name[4] = _T('i');
         device_name[5] = _T('c');
         device_name[6] = _T('e');
         if(device_handle == INVALID_HANDLE_VALUE)
             continue;
 
-        if(!DeviceIoControl(device_handle, IOCTL_DISK_GET_PARTITION_INFO_EX, nullptr, 0, &partition_information, sizeof(partition_information), nullptr, 0))
+        if(!DeviceIoControl(device_handle, IOCTL_DISK_GET_PARTITION_INFO_EX, nullptr, 0, &partition_information, sizeof(partition_information), nullptr, nullptr))
         {
             CloseHandle(device_handle);
             continue;
         }
 
         CloseHandle(device_handle);
-        driveinfo.name = QStringFromTCharArray(device_name + 8);
+        driveinfo.name = QStringFromTCharArray(&device_name[8]);
         switch(partition_information.PartitionStyle)
         {
         case PARTITION_STYLE_GPT:

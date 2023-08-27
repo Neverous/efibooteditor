@@ -1,6 +1,4 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
-#include <stddef.h>
-
 #include "compat.h"
 #include "efivar-lite.common.h"
 #include "efivar-lite/efiboot-loadopt.h"
@@ -99,12 +97,12 @@ efidp efi_loadopt_path(efi_load_option *opt, ssize_t limit)
     if((size_t)limit <= offsetof(efi_load_option, description))
         return NULL;
 
-    limit -= offsetof(efi_load_option, description);
+    limit -= (ssize_t)offsetof(efi_load_option, description);
     ptr += offsetof(efi_load_option, description);
-    for(size_t d = 0; limit > 0 && opt->description[d]; ++d, limit -= sizeof(opt->description[0]), ptr += sizeof(opt->description[0]))
+    for(size_t d = 0; limit > 0 && opt->description[d]; ++d, limit -= (ssize_t)sizeof(opt->description[0]), ptr += sizeof(opt->description[0]))
         ;
     // \0
-    limit -= sizeof(opt->description[0]);
+    limit -= (ssize_t)sizeof(opt->description[0]);
     ptr += sizeof(opt->description[0]);
     if(limit == 0)
         return NULL;

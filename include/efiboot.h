@@ -39,16 +39,6 @@ std::optional<Type> deserialize(const void *data, size_t data_size);
 namespace File_path
 {
 
-template <class Type>
-inline bool register_deserializer();
-#define REGISTER_DESERIALIZER(type) static const bool is_##type##_deserializer_registered = register_deserializer<type>()
-
-#if defined(_MSC_VER)
-#pragma warning(push)
-// C4820: 'bytes' bytes padding added after construct 'member_name'
-#pragma warning(disable : 4820)
-#endif
-
 enum TYPE
 {
     HW = EFIDP_TYPE_HW,
@@ -67,7 +57,6 @@ struct PCI
     uint8_t function = 0;
     uint8_t device = 0;
 };
-REGISTER_DESERIALIZER(PCI);
 
 struct HWVendor
 {
@@ -77,7 +66,6 @@ struct HWVendor
     std::array<uint8_t, 16> guid = {};
     Raw_data data = {};
 };
-REGISTER_DESERIALIZER(HWVendor);
 
 struct HID
 {
@@ -87,7 +75,6 @@ struct HID
     uint32_t hid = 0;
     uint32_t uid = 0;
 };
-REGISTER_DESERIALIZER(HID);
 
 struct USB
 {
@@ -97,7 +84,6 @@ struct USB
     uint8_t parent_port_number = 0;
     uint8_t interface = 0;
 };
-REGISTER_DESERIALIZER(USB);
 
 struct MSGVendor
 {
@@ -107,7 +93,6 @@ struct MSGVendor
     std::array<uint8_t, 16> guid = {};
     Raw_data data = {};
 };
-REGISTER_DESERIALIZER(MSGVendor);
 
 struct MAC_address
 {
@@ -117,7 +102,6 @@ struct MAC_address
     std::array<uint8_t, 32> address = {};
     uint8_t if_type = 0;
 };
-REGISTER_DESERIALIZER(MAC_address);
 
 struct IPv4
 {
@@ -133,7 +117,6 @@ struct IPv4
     std::array<uint8_t, 4> gateway_ip_address = {};
     std::array<uint8_t, 4> subnet_mask = {};
 };
-REGISTER_DESERIALIZER(IPv4);
 
 struct IPv6
 {
@@ -149,7 +132,6 @@ struct IPv6
     uint8_t prefix_length = 0;
     std::array<uint8_t, 16> gateway_ip_address = {};
 };
-REGISTER_DESERIALIZER(IPv6);
 
 struct SATA
 {
@@ -160,7 +142,6 @@ struct SATA
     uint16_t port_multiplier_port = 0;
     uint16_t lun = 0;
 };
-REGISTER_DESERIALIZER(SATA);
 
 enum SIGNATURE
 {
@@ -181,7 +162,6 @@ struct HD
     std::array<uint8_t, 16> partition_signature = {};
     uint8_t signature_type = 0;
 };
-REGISTER_DESERIALIZER(HD);
 
 struct MEDIAVendor
 {
@@ -191,7 +171,6 @@ struct MEDIAVendor
     std::array<uint8_t, 16> guid = {};
     Raw_data data = {};
 };
-REGISTER_DESERIALIZER(MEDIAVendor);
 
 struct File
 {
@@ -200,7 +179,6 @@ struct File
 
     std::u16string name = u"";
 };
-REGISTER_DESERIALIZER(File);
 
 struct Firmware_file
 {
@@ -209,7 +187,6 @@ struct Firmware_file
 
     std::array<uint8_t, 16> name = {};
 };
-REGISTER_DESERIALIZER(Firmware_file);
 
 struct Firmware_volume
 {
@@ -218,38 +195,34 @@ struct Firmware_volume
 
     std::array<uint8_t, 16> name = {};
 };
-REGISTER_DESERIALIZER(Firmware_volume);
 
 struct BIOS_boot_specification
 {
     static const uint8_t TYPE = BIOS;
     static const uint8_t SUBTYPE = EFIDP_BIOS_BOOT_SPECIFICATION;
 
+    std::string description = "";
     uint16_t device_type = 0;
     uint16_t status_flag = 0;
-    std::string description = "";
 };
-REGISTER_DESERIALIZER(BIOS_boot_specification);
 
 struct End_instance
 {
     static const uint8_t TYPE = END;
     static const uint8_t SUBTYPE = EFIDP_END_INSTANCE;
 };
-REGISTER_DESERIALIZER(End_instance);
 
 struct End_entire
 {
     static const uint8_t TYPE = END;
     static const uint8_t SUBTYPE = EFIDP_END_ENTIRE;
 };
-REGISTER_DESERIALIZER(End_entire);
 
 struct Unknown
 {
+    Raw_data data = {};
     uint8_t TYPE = 0;
     uint8_t SUBTYPE = 0;
-    Raw_data data = {};
 };
 
 typedef std::variant<
@@ -273,32 +246,6 @@ typedef std::variant<
     Unknown>
     ANY;
 
-extern std::unique_ptr<std::unordered_map<uint16_t, std::function<std::optional<ANY>(const void *, size_t)>>> deserializers__instance;
-
-inline auto &deserializers()
-{
-    if(!deserializers__instance)
-        deserializers__instance = std::make_unique<decltype(deserializers__instance)::element_type>();
-
-    return *deserializers__instance;
-}
-
-template <class Type>
-inline bool register_deserializer()
-{
-    efidp_data dp;
-    dp.header.type = Type::TYPE;
-    dp.header.subtype = Type::SUBTYPE;
-
-    if(deserializers().find(dp._type_subtype) != deserializers().end())
-        return true;
-
-    deserializers()[dp._type_subtype] = [](const void *data, size_t data_size) -> std::optional<ANY>
-    { return deserialize<Type>(data, data_size); };
-    return true;
-}
-
-#undef REGISTER_DESERIALIZER
 } // namespace File_path
 
 enum Load_option_attribute
@@ -321,10 +268,6 @@ struct Load_option
     Raw_data optional_data = {};
     uint32_t attributes = Load_option_attribute::EMPTY;
 };
-
-#if defined(_MSC_VER)
-#pragma warning(pop)
-#endif
 
 typedef std::function<bool(const efi_guid_t &, const std::tstring_view)> Filter_fn;
 typedef std::function<const void *(const void *, size_t)> Advance_fn;
@@ -396,8 +339,7 @@ inline size_t serialize(Raw_data &output, const Type &value)
 template <>
 inline std::optional<Raw_data> deserialize<Raw_data>(const void *data, size_t data_size)
 {
-    const uint8_t *ptr = static_cast<const uint8_t *>(data);
-    return {Raw_data{ptr, ptr + data_size}};
+    return {Raw_data{static_cast<const uint8_t *>(data), static_cast<const uint8_t *>(advance_bytes(data, data_size))}};
 }
 
 template <>
@@ -468,7 +410,7 @@ template <class Type>
 inline std::optional<std::vector<Type>> deserialize_list_ex(const void *data, size_t data_size, Size_fn get_element_size, Advance_fn get_next_element)
 {
     std::vector<Type> values;
-    const void *data_end = static_cast<const void *>(static_cast<const uint8_t *>(data) + data_size);
+    const void *data_end = advance_bytes(data, data_size);
     while(data && data < data_end)
     {
         auto element_size = get_element_size(data);
@@ -479,7 +421,7 @@ inline std::optional<std::vector<Type>> deserialize_list_ex(const void *data, si
         values.push_back(*value);
         data = get_next_element(data, data_size);
         auto bytes_left = static_cast<const uint8_t *>(data_end) - static_cast<const uint8_t *>(data);
-        data_size = reinterpret_cast<size_t &>(bytes_left);
+        data_size = static_cast<size_t>(bytes_left);
     }
 
     if(data != data_end)
@@ -499,7 +441,7 @@ inline std::optional<std::vector<Type>> deserialize_list(const void *data, size_
         },
         [](const void *ptr, size_t) -> const void *
         {
-            return static_cast<const void *>(static_cast<const Type *>(ptr) + 1);
+            return advance_bytes(ptr, sizeof(const Type));
         });
 }
 
@@ -577,11 +519,18 @@ template <>
 inline std::optional<Load_option> deserialize(const void *data, size_t data_size)
 {
     Load_option value;
-    ssize_t ssize = reinterpret_cast<ssize_t &>(data_size);
+    ssize_t ssize = static_cast<ssize_t>(data_size);
     efi_load_option *load_option = const_cast<efi_load_option *>(static_cast<const efi_load_option *>(data));
 
+#if defined(__clang__)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#endif
     for(size_t d = 0; load_option->description[d]; ++d)
         value.description.push_back(load_option->description[d]);
+#if defined(__clang__)
+#pragma clang diagnostic pop
+#endif
 
     uint16_t device_path_size = efi_loadopt_pathlen(load_option, ssize);
     efidp device_path = efi_loadopt_path(load_option, ssize);
@@ -591,16 +540,16 @@ inline std::optional<Load_option> deserialize(const void *data, size_t data_size
         [](const void *ptr) -> size_t
         {
             auto size = efidp_node_size(static_cast<const_efidp>(ptr));
-            return reinterpret_cast<size_t &>(size);
+            return static_cast<size_t>(size);
         },
         [](const void *ptr, size_t bytes_left) -> const void *
         {
             const_efidp dp = static_cast<const_efidp>(ptr);
             ssize_t size = efidp_node_size(dp);
-            if(reinterpret_cast<size_t &>(size) > bytes_left)
+            if(size < 0 || static_cast<size_t>(size) > bytes_left)
                 return nullptr;
 
-            return static_cast<const uint8_t *>(ptr) + size;
+            return advance_bytes(ptr, static_cast<size_t>(size));
         });
 
     if(!file_paths || file_paths->empty())
@@ -1261,7 +1210,7 @@ inline std::optional<File_path::Unknown> deserialize(const void *data, size_t da
 
     size_t data_length = data_size - sizeof(*dp);
     value.data.resize(data_length);
-    memcpy(&value.data[0], dp + 1, data_length);
+    memcpy(&value.data[0], static_cast<const uint8_t *>(advance_bytes(data, sizeof(const efidp_header))), data_length);
     return {value};
 }
 
@@ -1287,7 +1236,37 @@ inline std::optional<File_path::ANY> deserialize(const void *data, size_t data_s
     if(dp->header.length != data_size)
         return std::nullopt;
 
-    return get_default(File_path::deserializers(), dp->_type_subtype, deserialize<File_path::Unknown>)(dp, data_size);
+#define TYPE_SUBTYPE(type, subtype) (((type) << 8) | (subtype))
+#define casefp(Type)                                                    \
+    case TYPE_SUBTYPE(File_path::Type::TYPE, File_path::Type::SUBTYPE): \
+        return deserialize<File_path::Type>(dp, data_size)
+
+    switch(TYPE_SUBTYPE(dp->header.type, dp->header.subtype))
+    {
+        casefp(PCI);
+        casefp(HWVendor);
+        casefp(HID);
+        casefp(USB);
+        casefp(MSGVendor);
+        casefp(MAC_address);
+        casefp(IPv4);
+        casefp(IPv6);
+        casefp(SATA);
+        casefp(HD);
+        casefp(MEDIAVendor);
+        casefp(File);
+        casefp(Firmware_file);
+        casefp(Firmware_volume);
+        casefp(BIOS_boot_specification);
+        casefp(End_instance);
+        casefp(End_entire);
+
+    default:
+        return deserialize<File_path::Unknown>(dp, data_size);
+    }
+
+#undef casefp
+#undef TYPE_SUBTYPE
 }
 
 template <>
@@ -1298,7 +1277,7 @@ inline size_t serialize(Raw_data &output, const File_path::ANY &file_path)
         file_path);
 }
 
-inline Progress_fn _get_variables_progress_fn = nullptr;
+extern Progress_fn _get_variables_progress_fn;
 
 inline std::unordered_map<std::tstring, efi_guid_t> get_variables(Filter_fn filter_fn, Progress_fn progress_fn)
 {

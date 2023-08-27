@@ -133,7 +133,7 @@ jobs:
         continue-on-error: true
 
       - name: Perform MSVC Code Analysis
-        uses: microsoft/msvc-code-analysis-action@v0.1.1
+        uses: microsoft/msvc-code-analysis-action@96315324a485db21449515180214ecb78c16a1c5
         id: msvc-analysis
         with:
           cmakeBuildDirectory: ${{ github.workspace }}/build

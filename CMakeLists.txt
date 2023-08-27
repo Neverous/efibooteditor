@@ -114,88 +114,6 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
     QT_DISABLE_DEPRECATED_BEFORE=0xFFFFFF
 )
 
-# GCC
-if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-    target_compile_options(${PROJECT_NAME} PRIVATE
-        -Wall -Wpedantic -Werror -pedantic -Wshadow -Wextra -Wconversion $<$<COMPILE_LANGUAGE:CXX>:-Weffc++>
-    )
-endif()
-
-# Clang
-if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-    if(CMAKE_CXX_COMPILER_FRONTEND_VARIANT STREQUAL "MSVC") # MSVC compatibility mode
-        # Fix ignoring warnings in system includes
-        set(CMAKE_INCLUDE_SYSTEM_FLAG_CXX /imsvc)
-        set(CMAKE_INCLUDE_SYSTEM_FLAG_C /imsvc)
-
-        # Disable compatibility warnings
-        target_compile_options(${PROJECT_NAME} PRIVATE
-            -Wno-c++20-compat
-            -Wno-c++98-compat
-            -Wno-c++98-compat-pedantic
-            -Wno-cast-qual
-            -Wno-declaration-after-statement
-            -Wno-deprecated-dynamic-exception-spec
-            -Wno-exit-time-destructors
-            -Wno-extra-semi-stmt
-            -Wno-global-constructors
-            -Wno-old-style-cast
-            -Wno-redundant-parens
-            -Wno-reserved-identifier
-            -Wno-return-std-move-in-c++11
-            -Wno-unknown-warning-option
-            -Wno-zero-as-null-pointer-constant
-        )
-    else() # Standard
-        target_compile_options(${PROJECT_NAME} PRIVATE
-            -Wall -Wpedantic -Werror -pedantic -Wshadow -Wextra -Wconversion $<$<COMPILE_LANGUAGE:CXX>:-Weffc++>
-        )
-    endif()
-endif()
-
-# MSVC
-if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-    # Fix ignoring warnings in system includes
-    set(CMAKE_INCLUDE_SYSTEM_FLAG_CXX /external:I)
-    set(CMAKE_INCLUDE_SYSTEM_FLAG_C /external:I)
-
-    target_compile_options(${PROJECT_NAME} PRIVATE
-        # Ignore warnings in external includes
-        /experimental:external
-    )
-endif()
-
-if(WIN32)
-    target_compile_options(${PROJECT_NAME} PRIVATE
-        $<$<COMPILE_LANGUAGE:CXX>:/std:c++latest>
-        # Ignore warnings in external includes
-        /external:anglebrackets /external:W0
-        # Enable all warnings in application code
-        /Wall /permissive- /WX
-        # Disable some warnings
-        # C4371: 'classname': layout of class may have changed from a previous version of the compiler due to better packing of member 'member'
-        /wd4371
-        # C4464: relative include path contains '..
-        /wd4464
-        # C4702: unreachable code
-        /wd4702
-        # C4710: 'function' : function not inlined
-        /wd4710
-        # C4711: function 'function' selected for inline expansion
-        /wd4711
-        # C4820: 'bytes' bytes padding added after construct 'member_name'
-        /wd4820
-        # C4866: compiler may not enforce left-to-right evaluation order for call to 'C++17 operator'
-        /wd4866
-        # C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
-        /wd5045
-        # C5262: implicit fall-through occurs here; are you missing a break statement? Use [[fallthrough]] when a break statement is intentionally omitted between cases // supposedly fixed in VS 2022 17.5 Preview 2 - https://developercommunity.visualstudio.com/t/10163250#T-N10180326
-        /wd5262
-        # C5264: 'variable-name': 'const' variable is not used
-        /wd5264
-    )
-endif()
-
 # Sources:
 target_sources(${PROJECT_NAME} PRIVATE
     src/bootentry.cpp
@@ -204,6 +122,7 @@ target_sources(${PROJECT_NAME} PRIVATE
     src/bootentrylistmodel.cpp
     src/bootentrylistview.cpp
     src/bootentrywidget.cpp
+    src/commands.cpp
     src/devicepathproxymodel.cpp
     src/devicepathview.cpp
     src/driveinfo.cpp
@@ -227,7 +146,6 @@ if(WIN32)
         src/efivar-lite.c
         src/efivar-lite.common.h
         src/efivar-lite.win32.c
-        windows.rc
     )
 endif()
 
@@ -269,6 +187,79 @@ target_sources(${PROJECT_NAME} PRIVATE
     include/qwidgetitemdelegate.h
 )
 
+# Compile options
+get_target_property(SOURCES ${PROJECT_NAME} SOURCES)
+
+## GCC
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    # Enable all warnings only in application code
+    set_source_files_properties(${SOURCES} PROPERTIES COMPILE_OPTIONS "-Wall;-Wpedantic;-Werror;-pedantic;-Wshadow;-Wextra;-Wconversion;$<$<COMPILE_LANGUAGE:CXX>:-Weffc++>")
+endif()
+
+## Clang
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    if(CMAKE_CXX_COMPILER_FRONTEND_VARIANT STREQUAL "MSVC") # MSVC compatibility mode
+        # Fix ignoring warnings in system includes
+        set(CMAKE_INCLUDE_SYSTEM_FLAG_CXX /imsvc)
+        set(CMAKE_INCLUDE_SYSTEM_FLAG_C /imsvc)
+    else() # Standard
+        # Enable all warnings only in application code
+        set_source_files_properties(${SOURCES} PROPERTIES COMPILE_OPTIONS "-Weverything;-pedantic;-Werror")
+    endif()
+
+    # Disable some compatibility warnings
+    target_compile_options(${PROJECT_NAME} PRIVATE
+        -Wno-c++20-compat
+        -Wno-c++98-compat
+        -Wno-c++98-compat-pedantic
+        -Wno-cast-qual
+        -Wno-declaration-after-statement
+        -Wno-exit-time-destructors
+        -Wno-global-constructors
+        -Wno-padded
+        -Wno-return-std-move-in-c++11
+        -Wno-unknown-warning-option
+        -Wno-unsafe-buffer-usage
+    )
+endif()
+
+## MSVC
+if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    # Fix ignoring warnings in system includes
+    set(CMAKE_INCLUDE_SYSTEM_FLAG_CXX /external:I)
+    set(CMAKE_INCLUDE_SYSTEM_FLAG_C /external:I)
+
+    target_compile_options(${PROJECT_NAME} PRIVATE
+        # Ignore warnings in external includes
+        /experimental:external
+    )
+endif()
+
+if(WIN32)
+    target_compile_options(${PROJECT_NAME} PRIVATE
+        $<$<COMPILE_LANGUAGE:CXX>:/std:c++latest>
+        # Ignore warnings in external includes
+        /external:anglebrackets /external:W0
+    )
+
+    # Enable all warnings only in application code
+    set_source_files_properties(${SOURCES} PROPERTIES COMPILE_OPTIONS "/Wall;/permissive-;/WX")
+
+    # Disable some warnings
+    target_compile_options(${PROJECT_NAME} PRIVATE
+        # C4371: 'classname': layout of class may have changed from a previous version of the compiler due to better packing of member 'member'
+        /wd4371
+        # C4820: 'bytes' bytes padding added after construct 'member_name'
+        /wd4820
+        # C4866: compiler may not enforce left-to-right evaluation order for call to 'C++17 operator'
+        /wd4866
+        # C4868: compiler may not enforce left-to-right evaluation order in braced initializer list
+        /wd4868
+        # C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+        /wd5045
+    )
+endif()
+
 # Forms:
 target_sources(${PROJECT_NAME} PRIVATE
     src/form/bootentryform.ui
@@ -281,6 +272,12 @@ target_sources(${PROJECT_NAME} PRIVATE
 qt_add_resources(RESOURCES icons.qrc)
 target_sources(${PROJECT_NAME} PRIVATE ${RESOURCES})
 
+if(WIN32)
+    target_sources(${PROJECT_NAME} PRIVATE
+        windows.rc
+    )
+endif()
+
 # Translations
 FILE(GLOB TRANSLATIONS
     ${CMAKE_SOURCE_DIR}/translations/${PROJECT_NAME}_*.ts
@@ -291,6 +288,7 @@ qt_add_translations(${PROJECT_NAME}
     INCLUDE_DIRECTORIES "include"
     LUPDATE_OPTIONS "-no-obsolete")
 
+# Libraries
 if(APPLE)
     target_link_libraries(${PROJECT_NAME} PRIVATE
         "-framework CoreFoundation"
@@ -315,6 +313,7 @@ if(("${CMAKE_BUILD_TYPE}" STREQUAL "Release") AND UNIX)
     set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_RELEASE -s)
 endif()
 
+# Packaging
 if(WIN32)
     install(TARGETS ${PROJECT_NAME}
         RUNTIME

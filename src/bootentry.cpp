@@ -6,8 +6,7 @@
 #include <QJsonArray>
 #include <QJsonObject>
 
-std::unique_ptr<std::unordered_map<QString, std::function<std::optional<File_path::ANY>(const QJsonObject &)>>> File_path::JSON_readers__instance;
-std::unique_ptr<std::unordered_map<uint16_t, std::function<std::optional<EFIBoot::File_path::ANY>(const void *, size_t)>>> EFIBoot::File_path::deserializers__instance;
+EFIBoot::Progress_fn EFIBoot::_get_variables_progress_fn = nullptr;
 
 #define check_obj()                                      \
     if(obj["type"] != TYPE || obj["subtype"] != SUBTYPE) \
@@ -353,8 +352,8 @@ static_assert(sizeof(File_path::Vendor::guid) == sizeof(EFIBoot::File_path::MSGV
 static_assert(sizeof(File_path::Vendor::guid) == sizeof(EFIBoot::File_path::MEDIAVendor::guid));
 
 File_path::Vendor::Vendor(const EFIBoot::File_path::HWVendor &vendor)
-    : _type{vendor.TYPE}
-    , data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
+    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
+    , _type{vendor.TYPE}
 {
     data.detach();
     static_assert(sizeof(vendor.guid) == sizeof(guid));
@@ -362,8 +361,8 @@ File_path::Vendor::Vendor(const EFIBoot::File_path::HWVendor &vendor)
 }
 
 File_path::Vendor::Vendor(const EFIBoot::File_path::MSGVendor &vendor)
-    : _type{vendor.TYPE}
-    , data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
+    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
+    , _type{vendor.TYPE}
 {
     data.detach();
     static_assert(sizeof(vendor.guid) == sizeof(guid));
@@ -371,8 +370,8 @@ File_path::Vendor::Vendor(const EFIBoot::File_path::MSGVendor &vendor)
 }
 
 File_path::Vendor::Vendor(const EFIBoot::File_path::MEDIAVendor &vendor)
-    : _type{vendor.TYPE}
-    , data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
+    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
+    , _type{vendor.TYPE}
 {
     data.detach();
     static_assert(sizeof(vendor.guid) == sizeof(guid));
@@ -514,12 +513,12 @@ static_assert(sizeof(File_path::IPv4::subnet_mask.toIPv4Address()) == sizeof(EFI
 File_path::IPv4::IPv4(const EFIBoot::File_path::IPv4 &ipv4)
     : local_ip_address{*reinterpret_cast<const uint32_t *>(ipv4.local_ip_address.data())}
     , remote_ip_address{*reinterpret_cast<const uint32_t *>(ipv4.remote_ip_address.data())}
+    , gateway_ip_address{*reinterpret_cast<const uint32_t *>(ipv4.gateway_ip_address.data())}
+    , subnet_mask{*reinterpret_cast<const uint32_t *>(ipv4.subnet_mask.data())}
     , local_port{ipv4.local_port}
     , remote_port{ipv4.remote_port}
     , protocol{ipv4.protocol}
     , static_ip_address{ipv4.static_ip_address}
-    , gateway_ip_address{*reinterpret_cast<const uint32_t *>(ipv4.gateway_ip_address.data())}
-    , subnet_mask{*reinterpret_cast<const uint32_t *>(ipv4.subnet_mask.data())}
 {
 }
 
@@ -925,9 +924,9 @@ auto File_path::FirmwareVolume::toString(bool refresh) const -> QString
 }
 
 File_path::BIOSBootSpecification::BIOSBootSpecification(const EFIBoot::File_path::BIOS_boot_specification &bios_boot_specification)
-    : device_type{bios_boot_specification.device_type}
+    : description{QString::fromStdString(bios_boot_specification.description)}
+    , device_type{bios_boot_specification.device_type}
     , status_flag{bios_boot_specification.status_flag}
-    , description{QString::fromStdString(bios_boot_specification.description)}
 {
 }
 
@@ -1007,9 +1006,9 @@ auto File_path::End::toString(bool refresh) const -> QString
 }
 
 File_path::Unknown::Unknown(const EFIBoot::File_path::Unknown &unknown)
-    : _type{unknown.TYPE}
+    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(unknown.data.data()), static_cast<int>(unknown.data.size()))}
+    , _type{unknown.TYPE}
     , _subtype{unknown.SUBTYPE}
-    , data{QByteArray::fromRawData(reinterpret_cast<const char *>(unknown.data.data()), static_cast<int>(unknown.data.size()))}
 {
     data.detach();
 }

@@ -50,7 +50,7 @@ Thumbs.db
 *.sln
 *.suo
 *.vcproj
-*.user
+*.user*
 *.ncb
 *.sdf
 *.opensdf

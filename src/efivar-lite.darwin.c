@@ -15,7 +15,7 @@ const efi_guid_t efi_guid_apple = {"7C436110-AB2A-4BBB-A880-FE41995C9F82"};
 
 static io_registry_entry_t options_entry;
 static kern_return_t err;
-static const char *last_iokit_function = NULL;
+static char *last_iokit_function = NULL;
 
 int efi_variables_supported(void)
 {
