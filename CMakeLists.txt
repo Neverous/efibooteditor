@@ -249,6 +249,10 @@ if(WIN32)
     target_compile_options(${PROJECT_NAME} PRIVATE
         # C4371: 'classname': layout of class may have changed from a previous version of the compiler due to better packing of member 'member'
         /wd4371
+        # C4710: 'function' : function not inlined
+        /wd4710 # Needed for RELEASE builds
+        # C4711: function 'function' selected for inline expansion
+        /wd4711 # Needed for RELEASE builds
         # C4820: 'bytes' bytes padding added after construct 'member_name'
         /wd4820
         # C4866: compiler may not enforce left-to-right evaluation order for call to 'C++17 operator'
