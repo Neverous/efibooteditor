@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Run Codacy Code Analysis
         uses: codacy/codacy-analysis-cli-action@v4.3.0
