@@ -20,7 +20,7 @@ auto DriveInfo::getAll(bool refresh) -> QVector<DriveInfo>
 
     disks.setFilter(QDir::Files | QDir::System);
     disks.setNameFilters({"disk*s*"});
-    auto session_cf = DASessionCreate(kCFAllocatorDefault);
+    DASessionRef session_cf = DASessionCreate(kCFAllocatorDefault);
     if(session_cf == nullptr)
         return all;
 
@@ -28,18 +28,18 @@ auto DriveInfo::getAll(bool refresh) -> QVector<DriveInfo>
     {
         DriveInfo driveinfo{};
         driveinfo.name = disk.fileName();
-        auto disk_cf = DADiskCreateFromBSDName(kCFAllocatorDefault, session_cf, disk.filePath().toStdString().c_str());
+        DADiskRef disk_cf = DADiskCreateFromBSDName(kCFAllocatorDefault, session_cf, disk.filePath().toStdString().c_str());
         if(disk_cf == nullptr)
             continue;
 
-        auto disk_info_cf = DADiskCopyDescription(disk_cf);
+        CFDictionaryRef disk_info_cf = DADiskCopyDescription(disk_cf);
         if(disk_info_cf == nullptr)
         {
             CFRelease(disk_cf);
             continue;
         }
 
-        auto disk_service_io = DADiskCopyIOMedia(disk_cf);
+        io_service_t disk_service_io = DADiskCopyIOMedia(disk_cf);
         if(disk_service_io == 0)
         {
             CFRelease(disk_info_cf);
