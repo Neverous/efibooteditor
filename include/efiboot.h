@@ -533,7 +533,7 @@ inline std::optional<Load_option> deserialize(const void *data, size_t data_size
 #endif
 
     uint16_t device_path_size = efi_loadopt_pathlen(load_option, ssize);
-    efidp device_path = efi_loadopt_path(load_option, ssize);
+    const_efidp device_path = efi_loadopt_path(load_option, ssize);
 
     auto file_paths = deserialize_list_ex<File_path::ANY>(
         device_path, device_path_size,

@@ -70,7 +70,7 @@ int efi_get_variable(efi_guid_t guid, const char *name, uint8_t **data, size_t *
         return -1;
     }
 
-    void *ret = memcpy(variable_data_buffer, CFDataGetBytePtr(value_cf), *data_size);
+    const void *ret = memcpy(variable_data_buffer, CFDataGetBytePtr(value_cf), *data_size);
     CFRelease(value_cf);
     if(ret == NULL)
     {
