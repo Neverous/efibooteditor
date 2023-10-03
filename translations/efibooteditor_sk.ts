@@ -47,7 +47,7 @@
         <location filename="../src/form/bootentryform.ui" line="24"/>
         <location filename="../src/form/bootentryform.ui" line="27"/>
         <source>Error</source>
-        <translation type="unfinished">Error</translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="40"/>
@@ -91,12 +91,12 @@
         <location filename="../src/form/bootentryform.ui" line="242"/>
         <location filename="../src/form/bootentryform.ui" line="245"/>
         <source>Move file path down</source>
-        <translation>Presunúť cestu k súboru dole</translation>
+        <translation>Presunúť cestu k súboru nadol</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="248"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Presunúť cestu k súboru dole.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Presunúť cestu k súboru nadol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="268"/>
@@ -446,7 +446,7 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="440"/>
         <source>Parser failed: %1</source>
-        <translation type="unfinished">Parser failed: %1</translation>
+        <translation>Analyzátor zlyhal: %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="454"/>
@@ -570,7 +570,7 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="868"/>
         <source>Importing boot configuration from JSON…</source>
-        <translation type="unfinished">Importing boot configuration from JSON…</translation>
+        <translation>Importovať konfiguráciu spúšťania z JSON…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="887"/>
@@ -614,7 +614,7 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="964"/>
         <source>%1: unknown boot manager capability</source>
-        <translation type="unfinished">%1: unknown boot manager capability</translation>
+        <translation>%1: neznáma funkcia správcu spúšťania</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="977"/>
@@ -672,7 +672,7 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="1163"/>
         <source>Importing boot configuration from raw dump…</source>
-        <translation type="unfinished">Importing boot configuration from raw dump…</translation>
+        <translation>Importovať konfiguráciu spúšťania zo surového výpisu…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1195"/>
@@ -1326,7 +1326,7 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1226"/>
         <source>Quit</source>
-        <translation>Koniec</translation>
+        <translation>Ukončiť</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1232"/>
@@ -1499,34 +1499,34 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="11"/>
         <source>Boot Editor for (U)EFI based systems.</source>
-        <translation type="unfinished">Boot Editor for (U)EFI based systems.</translation>
+        <translation>Editor spúšťania pre systémy založené na (U)EFI.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="14"/>
         <source>Export configuration.</source>
-        <translation type="unfinished">Export configuration.</translation>
+        <translation>Export konfigurácie.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="14"/>
         <location filename="../src/efibooteditorcli.cpp" line="15"/>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <source>FILE</source>
-        <translation type="unfinished">FILE</translation>
+        <translation>SÚBOR</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="15"/>
         <source>Dump raw EFI data.</source>
-        <translation type="unfinished">Dump raw EFI data.</translation>
+        <translation>Výpis nespracovaných údajov EFI.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <source>Import configuration from JSON (either from export or raw dump).</source>
-        <translation type="unfinished">Import configuration from JSON (either from export or raw dump).</translation>
+        <translation>Importovať konfiguráciu z JSON (buď z exportu, alebo zo surového výpisu).</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <source>Force import, don&apos;t ask for confirmation.</source>
-        <translation type="unfinished">Force import, don&apos;t ask for confirmation.</translation>
+        <translation>Vynútiť import, nepýtať sa na potvrdenie.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="24"/>
@@ -1554,12 +1554,12 @@
         <location filename="../src/efibooteditorcli.cpp" line="68"/>
         <location filename="../src/efibooteditorcli.cpp" line="69"/>
         <source>Loaded %0 %1 entries</source>
-        <translation type="unfinished">Loaded %0 %1 entries</translation>
+        <translation>Načítaných %0 %1 záznamov</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="67"/>
         <source>Boot</source>
-        <translation type="unfinished">Boot</translation>
+        <translation>Zavádzanie</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="68"/>
@@ -1575,8 +1575,8 @@
         <location filename="../src/efibooteditorcli.cpp" line="72"/>
         <source>Are you sure you want to save?
 Your EFI configuration will be overwritten!</source>
-        <translation type="unfinished">Are you sure you want to save?
-Your EFI configuration will be overwritten!</translation>
+        <translation>Naozaj to chcete uložiť?
+Vaša konfigurácia EFI bude prepísaná!</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="79"/>
@@ -1586,12 +1586,12 @@ Your EFI configuration will be overwritten!</translation>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="89"/>
         <source>ERROR: %0! %1</source>
-        <translation type="unfinished">ERROR: %0! %1</translation>
+        <translation>CHYBA: %0! %1</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="104"/>
         <source>Finished</source>
-        <translation type="unfinished">Finished</translation>
+        <translation>Dokončené</translation>
     </message>
 </context>
 <context>
