@@ -504,29 +504,29 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="70"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation>EFI 부팅 관리자 항목 로드 중...</translation>
+        <translation>EFI 부팅 관리자 항목 로드 중…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="86"/>
         <location filename="../src/efibootdata.cpp" line="667"/>
         <source>Searching EFI Boot Manager entries…</source>
-        <translation>EFI 부팅 관리자 항목 검색 중...</translation>
+        <translation>EFI 부팅 관리자 항목 검색 중…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="95"/>
         <location filename="../src/efibootdata.cpp" line="253"/>
         <source>Processing EFI Boot Manager entries (%1)…</source>
-        <translation>EFI 부팅 관리자 항목(%1)을(를) 처리하는 중...</translation>
+        <translation>EFI 부팅 관리자 항목(%1)을(를) 처리하는 중…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="270"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation>EFI 부팅 관리자 항목 저장 중...</translation>
+        <translation>EFI 부팅 관리자 항목 저장 중…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="290"/>
         <source>Searching old EFI Boot Manager entries…</source>
-        <translation>이전 EFI 부팅 관리자 항목 검색 중...</translation>
+        <translation>이전 EFI 부팅 관리자 항목 검색 중…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="321"/>
@@ -536,48 +536,48 @@
         <location filename="../src/efibootdata.cpp" line="392"/>
         <location filename="../src/efibootdata.cpp" line="411"/>
         <source>Saving EFI Boot Manager entries (%1)…</source>
-        <translation>EFI 부팅 관리자 항목 저장 중(%1)...</translation>
+        <translation>EFI 부팅 관리자 항목 저장 중(%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="368"/>
         <source>Removing old EFI Boot Manager entries (%1)…</source>
-        <translation>이전 EFI 부팅 관리자 항목(%1)을(를) 제거하는 중...</translation>
+        <translation>이전 EFI 부팅 관리자 항목(%1)을(를) 제거하는 중…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="347"/>
         <location filename="../src/efibootdata.cpp" line="402"/>
         <source>Removing EFI Boot Manager entries (%1)…</source>
-        <translation>EFI 부팅 관리자 항목(%1)을(를) 제거하는 중...</translation>
+        <translation>EFI 부팅 관리자 항목(%1)을(를) 제거하는 중…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="427"/>
         <source>Importing boot configuration…</source>
-        <translation>부팅 구성 가져오는 중...</translation>
+        <translation>부팅 구성 가져오는 중…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="463"/>
         <location filename="../src/efibootdata.cpp" line="650"/>
         <source>Exporting boot configuration…</source>
-        <translation>부팅 구성 내보내는 중...</translation>
+        <translation>부팅 구성 내보내는 중…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="484"/>
         <location filename="../src/efibootdata.cpp" line="679"/>
         <location filename="../src/efibootdata.cpp" line="728"/>
         <source>Exporting EFI Boot Manager entries (%1)…</source>
-        <translation>EFI 부팅 관리자 항목 내보내기 (%1)...</translation>
+        <translation>EFI 부팅 관리자 항목 내보내기 (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="868"/>
         <source>Importing boot configuration from JSON…</source>
-        <translation>JSON에서 부팅 구성 가져오는 중...</translation>
+        <translation>JSON에서 부팅 구성 가져오는 중…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="887"/>
         <location filename="../src/efibootdata.cpp" line="1182"/>
         <location filename="../src/efibootdata.cpp" line="1293"/>
         <source>Importing EFI Boot Manager entries (%1)…</source>
-        <translation>EFI 부팅 관리자 항목 가져오는 중 (%1)...</translation>
+        <translation>EFI 부팅 관리자 항목 가져오는 중 (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="890"/>
@@ -672,7 +672,7 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="1163"/>
         <source>Importing boot configuration from raw dump…</source>
-        <translation>원시 덤프에서 부팅 구성 가져오기 중...</translation>
+        <translation>원시 덤프에서 부팅 구성 가져오기 중…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1195"/>
@@ -1476,7 +1476,7 @@
         <location filename="../src/efibooteditor.cpp" line="259"/>
         <source>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; for EFI variables access.&lt;/p&gt;&lt;p&gt;Uses Tango Icons as fallback icons.&lt;/p&gt;</source>
         <extracomment>About dialog details</extracomment>
-        <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;웹사이트&lt;/a&gt;&lt;/p&gt;&lt;p&gt;이 프로그램은 디자인, 상품성 및 특정 목적에 대한 적합성에 대한 보증을 포함하여 어떤 종류의 보증도 없이 그대로 제공됩니다.&lt;/p&gt;&lt;p&gt;라이선스: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL 버전 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Linux에서는  EFI 변수 액세스를 위해 &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt;를 사용합니다.&lt;/p&gt;&lt;p&gt;아이콘을 폴백 아이콘으로 사용합니다.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;웹사이트&lt;/a&gt;&lt;/p&gt;&lt;p&gt;이 프로그램은 디자인, 상품성 및 특정 목적에 대한 적합성에 대한 보증을 포함하여 어떤 종류의 보증도 없이 그대로 제공됩니다.&lt;/p&gt;&lt;p&gt;라이선스: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL 버전 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Linux에서는 EFI 변수 액세스를 위해 &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt;를 사용합니다.&lt;/p&gt;&lt;p&gt;아이콘을 폴백 아이콘으로 사용합니다.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="318"/>
@@ -1536,18 +1536,18 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="43"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation>EFI 부팅 관리자 항목 로드 중...</translation>
+        <translation>EFI 부팅 관리자 항목 로드 중…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="45"/>
         <location filename="../src/efibooteditorcli.cpp" line="55"/>
         <source>Exporting boot configuration…</source>
-        <translation>부팅 구성 내보내는 중...</translation>
+        <translation>부팅 구성 내보내는 중…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="65"/>
         <source>Importing boot configuration…</source>
-        <translation>부팅 구성 가져오는 중...</translation>
+        <translation>부팅 구성 가져오는 중…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="67"/>
@@ -1581,7 +1581,7 @@ EFI 구성을 덮어씁니다!</translation>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="79"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation>EFI 부팅 관리자 항목 저장 중...</translation>
+        <translation>EFI 부팅 관리자 항목 저장 중…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="89"/>
