@@ -2,3 +2,9 @@
 engines:
   cppcheck:
     language: c++
+
+exclude_paths:
+  - "doc/**"
+  - "icons/**"
+  - "misc/**"
+  - "translations/**"

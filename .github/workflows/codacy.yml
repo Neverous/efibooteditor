@@ -28,7 +28,6 @@ jobs:
           output: codacy.sarif
           format: sarif
           gh-code-scanning-compat: true
-          max-allowed-issues: 2147483647
 
       - name: Upload Codacy Code Analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v2
