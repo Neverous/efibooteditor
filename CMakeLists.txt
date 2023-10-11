@@ -52,6 +52,8 @@ message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 
 if("${QT_VERSION_MAJOR}" STREQUAL "")
     find_package(QT NAMES Qt6 Qt5 COMPONENTS Core REQUIRED)
+else()
+    find_package(QT NAMES Qt${QT_VERSION_MAJOR} COMPONENTS Core REQUIRED)
 endif()
 
 message(STATUS "Qt: ${QT_VERSION_MAJOR}")
@@ -72,10 +74,10 @@ add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE
 target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_SOURCE_DIR}/include")
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
-    Qt::Core
-    Qt::Gui
-    Qt::Network
-    Qt::Widgets
+    Qt${QT_VERSION_MAJOR}::Core
+    Qt${QT_VERSION_MAJOR}::Gui
+    Qt${QT_VERSION_MAJOR}::Network
+    Qt${QT_VERSION_MAJOR}::Widgets
 )
 
 if(${QT_VERSION_MAJOR} LESS_EQUAL 5)
@@ -93,7 +95,11 @@ if(${QT_VERSION_MAJOR} LESS_EQUAL 5)
             endforeach ()
             file(APPEND ${QRC} "</qresource></RCC>")
 
-            qt_add_resources(RESOURCES ${QRC})
+            if(${QT_VERSION_MINOR} LESS 15)
+                qt5_add_resources(RESOURCES ${QRC})
+            else()
+                qt_add_resources(RESOURCES ${QRC})
+            endif()
             target_sources(${PROJECT_NAME} PRIVATE ${RESOURCES})
         endfunction()
     endif()
@@ -273,7 +279,11 @@ target_sources(${PROJECT_NAME} PRIVATE
 )
 
 # Resources:
-qt_add_resources(RESOURCES icons.qrc)
+if(${QT_VERSION} VERSION_GREATER_EQUAL 5.15)
+    qt_add_resources(RESOURCES icons.qrc)
+else()
+    qt5_add_resources(RESOURCES icons.qrc)
+endif()
 target_sources(${PROJECT_NAME} PRIVATE ${RESOURCES})
 
 if(WIN32)
@@ -416,7 +426,7 @@ else()
     endif()
 
     if(LINUXDEPLOY_EXECUTABLE)
-        get_target_property(QMAKE_EXECUTABLE Qt::qmake IMPORTED_LOCATION)
+        get_target_property(QMAKE_EXECUTABLE Qt${QT_VERSION_MAJOR}::qmake IMPORTED_LOCATION)
         add_custom_command(TARGET ${PROJECT_NAME}
             POST_BUILD
             COMMAND QMAKE=${QMAKE_EXECUTABLE} ${LINUXDEPLOY_EXECUTABLE} --plugin=qt --appdir=${CMAKE_BINARY_DIR}/appdir/ --executable="$<TARGET_FILE_DIR:${PROJECT_NAME}>/$<TARGET_FILE_NAME:${PROJECT_NAME}>"

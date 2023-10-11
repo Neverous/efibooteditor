@@ -122,8 +122,21 @@ inline tstring to_tstring(const Type &value)
 
 const int HEX_BASE = 16;
 
-QT_BEGIN_NAMESPACE
+/* Qt compatibility */
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+namespace std
+{
 
+template <>
+struct hash<QString>
+{
+    size_t operator()(const QString &s) const noexcept { return static_cast<size_t>(qHash(s)); }
+};
+
+}
+#endif
+
+/* QString helpers */
 inline std::tstring QStringToStdTString(const QString &string)
 {
 #if defined(UNICODE) || defined(_UNICODE)
@@ -156,8 +169,6 @@ inline QString toHex(unsigned long long number, int min_width = 0, const QString
 {
     return prefix + QString("%1").arg(number, min_width, HEX_BASE, QChar('0')).toUpper();
 }
-
-QT_END_NAMESPACE
 
 inline bool isxnumber(const std::tstring_view &string)
 {
