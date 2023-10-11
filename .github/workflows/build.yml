@@ -27,10 +27,9 @@ jobs:
       fail-fast: false
       matrix:
         qt-version:
-          - 5.15.2 # OS LTS
-          - 6.2.4 # LTS
-          - 6.5.3 # latest
-
+          - 5.15.2 # Supported in Ubuntu Jammy Jellyfish until 2027-04-01
+          - 6.2.4 # Supported in Ubuntu Jammy Jellyfish until 2027-04-01
+          - 6.5.3 # Supported until 2024-03-31
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
@@ -45,7 +44,7 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
         with:
-          languages: 'cpp'
+          languages: cpp
           queries: security-and-quality
         if: inputs.build-config == 'Debug'
         continue-on-error: true

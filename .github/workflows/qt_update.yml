@@ -1,0 +1,62 @@
+name: Check for Qt updates
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 8 * * 5
+
+concurrency:
+  group: qt-update-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check-qt-updates:
+    name: Check Qt updates
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.BOT_ACCESS_TOKEN }}
+
+      - name: Install python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: python3 -m pip install -c requirements.txt .
+        working-directory: misc/qt-updater
+
+      - name: Run the updater
+        id: diff
+        run: |
+          python3 -m main ../../.github/workflows/*.yml
+          if git diff --exit-code; then
+            echo "changed=false" >> "${GITHUB_OUTPUT}"
+          else
+            echo "changed=true" >> "${GITHUB_OUTPUT}"
+          fi
+        working-directory: misc/qt-updater
+
+      - name: Create pull request
+        run: |
+          # Configure git user
+          git config user.email "EFIBootEditorBot@users.noreply.github.com"
+          git config user.name "EFIBootEditor (Bot)"
+
+          # Create branch with changes
+          git checkout -b qt-update
+          git commit -am "ci: update Qt versions in CI"
+          git push --force --set-upstream origin qt-update
+
+          gh pr create \
+            --title 'ci: update Qt versions in CI' \
+            --body 'Updates Qt versions in CI to newest ones.' \
+            --base master \
+            --head qt-update
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
+        if: steps.diff.outputs.changed == 'true'

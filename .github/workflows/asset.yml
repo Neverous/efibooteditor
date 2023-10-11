@@ -24,10 +24,9 @@ jobs:
       fail-fast: false
       matrix:
         qt-version:
-          - 5.15.2 # OS LTS
-          - 6.2.4 # LTS
-          - 6.5.3 # latest
-
+          - 5.15.2 # Supported in Ubuntu Jammy Jellyfish until 2027-04-01
+          - 6.2.4 # Supported in Ubuntu Jammy Jellyfish until 2027-04-01
+          - 6.5.3 # Supported until 2024-03-31
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v3
