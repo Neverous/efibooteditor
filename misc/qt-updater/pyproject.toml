@@ -1,0 +1,50 @@
+[project]
+name = "qt-updater"
+version = "1.0.0"
+description = ""
+
+requires-python = ">=3.11"
+
+dependencies = [
+    "requests",
+    "ruamel.yaml",
+]
+
+[project.optional-dependencies]
+
+dev = [
+    "black",
+    "mypy",
+    "pip-tools",
+    "ruff",
+    "types-requests",
+]
+
+[tool.ruff]
+select = [
+    "B",
+    "C",
+    "E",
+    "F",
+    "I",
+    "W",
+]
+
+line-length = 120
+
+[tool.black]
+line-length = 120
+
+[tool.mypy]
+strict = true
+check_untyped_defs = true
+disallow_any_generics = true
+strict_optional = true
+warn_no_return = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unreachable = true
+warn_unused_configs = true
+warn_unused_ignores = true
+
+plugins = []

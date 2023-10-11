@@ -158,7 +158,7 @@ jobs:
       matrix:
         os: [windows-2022]
         qt-version:
-          - 6.5.3 # latest
+          - 6.5.3  # Supported until 2024-03-31
         compiler:
           - MSVC
     steps:
