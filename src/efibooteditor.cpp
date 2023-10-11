@@ -43,7 +43,7 @@ EFIBootEditor::EFIBootEditor(const std::optional<std::tstring> &efi_error_messag
     QObject::connect(&data, &EFIBootData::done, this, &EFIBootEditor::hideProgressBar);
 
     QObject::connect(&data, &EFIBootData::timeoutChanged, ui->timeout_number, &QSpinBox::setValue);
-    QObject::connect(ui->timeout_number, &QSpinBox::valueChanged, &data, &EFIBootData::setTimeout);
+    QObject::connect(ui->timeout_number, QOverload<int>::of(&QSpinBox::valueChanged), &data, &EFIBootData::setTimeout);
 
     QObject::connect(&data, &EFIBootData::secureBootChanged, ui->secure_boot, &QRadioButton::setChecked);
     QObject::connect(&data, &EFIBootData::vendorKeysChanged, ui->vendor_keys, &QRadioButton::setChecked);
@@ -299,7 +299,11 @@ void EFIBootEditor::updateBootOptionSupport(uint32_t flags)
 {
     // TODO: (flags & EFIBoot::EFI_BOOT_OPTION_SUPPORT_KEY)
     ui->entry_form->showCategory(flags & EFIBoot::EFI_BOOT_OPTION_SUPPORT_APP);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+    ui->entries->setTabEnabled(ui->entries->indexOf(ui->sysprep_tab), flags & EFIBoot::EFI_BOOT_OPTION_SUPPORT_SYSPREP);
+#else
     ui->entries->setTabVisible(ui->entries->indexOf(ui->sysprep_tab), flags & EFIBoot::EFI_BOOT_OPTION_SUPPORT_SYSPREP);
+#endif
 }
 
 void EFIBootEditor::undoViewChanged(const QModelIndex &)

@@ -2,11 +2,11 @@ name: Debug build
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
   schedule:
-    - cron: '0 8 * * 5'
+    - cron: 0 8 * * 5
 
 concurrency:
   group: debug-${{ github.ref }}

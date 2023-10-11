@@ -27,7 +27,7 @@ Options:
 
 ## Requirements
 
-* [Qt](//www.qt.io/) (>=5.15.2)
+* [Qt](//www.qt.io/) (>=5.12)
 * [efivar](//github.com/rhboot/efivar) (>=37) on linux
 
 ## Installation

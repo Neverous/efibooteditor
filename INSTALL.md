@@ -18,7 +18,7 @@ Required libraries[^1]:
 [^1]: Remember to install **development** files as well. For example
   `qt6-base-dev`, `libefivar-dev`, `libefiboot-dev` on Ubuntu.
 
-- [Qt5](//doc.qt.io/qt-5/gettingstarted.html) (>= 5.15)
+- [Qt5](//doc.qt.io/qt-5/gettingstarted.html) (>= 5.12)
   or [Qt6](//doc.qt.io/qt-6/get-and-install-qt.html) (>= 6.2)
 - [efivar](//github.com/rhboot/efivar) (>= 37) on Linux
 

@@ -2,11 +2,11 @@ name: Codacy code analysis
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
   schedule:
-    - cron: '0 8 * * 5'
+    - cron: 0 8 * * 5
 
 jobs:
   codacy-analysis:
@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Codacy Code Analysis
-        uses: codacy/codacy-analysis-cli-action@v4.3.0
+        uses: codacy/codacy-analysis-cli-action@master
         with:
           output: codacy.sarif
           format: sarif
