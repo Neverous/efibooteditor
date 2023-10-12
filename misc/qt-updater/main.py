@@ -24,7 +24,7 @@ class Version:
         return hash((self.major, self.minor, self.patch))
 
     def __str__(self) -> str:
-        return f"{self.major}.{self.minor}" + (f".{self.patch}" if self.patch else "")
+        return f"{self.major}.{self.minor}" + (f".{self.patch}" if self.patch is not None else "")
 
     def __repr__(self) -> str:
         return str(self)
