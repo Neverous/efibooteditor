@@ -47,7 +47,7 @@
         <location filename="../src/form/bootentryform.ui" line="24"/>
         <location filename="../src/form/bootentryform.ui" line="27"/>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation>Error</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="40"/>
@@ -74,18 +74,18 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="164"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cesta k zariadeniu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cesta zariadenia.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="216"/>
         <location filename="../src/form/bootentryform.ui" line="219"/>
         <source>Move file path up</source>
-        <translation>Presunúť cestu k súboru hore</translation>
+        <translation>Presuňte cestu k súboru nahor</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="222"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Presunúť cestu k súboru hore.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Presuňte cestu k súboru nahor.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="242"/>
@@ -113,7 +113,7 @@
         <location filename="../src/form/bootentryform.ui" line="294"/>
         <location filename="../src/form/bootentryform.ui" line="297"/>
         <source>Edit file path</source>
-        <translation>Upraviť cestu k súboru</translation>
+        <translation>Upravte cestu k súboru</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="300"/>
@@ -124,7 +124,7 @@
         <location filename="../src/form/bootentryform.ui" line="320"/>
         <location filename="../src/form/bootentryform.ui" line="323"/>
         <source>Add file path</source>
-        <translation>Pridať cestu k súboru</translation>
+        <translation>Pridajte cestu k súboru</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="326"/>
@@ -139,7 +139,7 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="385"/>
         <source>BASE64</source>
-        <translation>BASE64</translation>
+        <translation>ZÁKLAD64</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="390"/>
@@ -159,7 +159,7 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="425"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zadať nepovinné údaje.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zadanie voliteľných údajov.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="438"/>
@@ -171,17 +171,17 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="564"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zadať kategóriu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vstupná kategória.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="92"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zadať index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Index záznamu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="481"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Is entry considered for automatic boot?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zvažuje sa automatické spustenie?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zvažuje sa položka pre automatické spustenie?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="510"/>
@@ -212,7 +212,7 @@
         <location filename="../src/form/bootentryform.ui" line="507"/>
         <location filename="../src/form/bootentryform.ui" line="513"/>
         <source>Hidden</source>
-        <translation>Skryté</translation>
+        <translation>Skrytý</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="539"/>
@@ -226,12 +226,12 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="568"/>
         <source>Boot</source>
-        <translation>Spúšťacie</translation>
+        <translation>Boot</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="573"/>
         <source>App</source>
-        <translation>Aplikácia</translation>
+        <translation>App</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="68"/>
@@ -240,7 +240,7 @@
         <location filename="../src/form/bootentryform.ui" line="86"/>
         <location filename="../src/form/bootentryform.ui" line="89"/>
         <source>Index</source>
-        <translation>Index</translation>
+        <translation>Register</translation>
     </message>
     <message>
         <location filename="../src/bootentryform.cpp" line="109"/>
@@ -253,12 +253,12 @@
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="50"/>
         <source>Set Next boot to &quot;%1&quot;</source>
-        <translation>Nastaviť ďalšie spustenie na &quot;%1&quot;</translation>
+        <translation>Nastavte Next boot na &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="146"/>
         <source>Index</source>
-        <translation>Index</translation>
+        <translation>Register</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="162"/>
@@ -268,7 +268,7 @@
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="199"/>
         <source>Optional data</source>
-        <translation>Voliteľné údaje</translation>
+        <translation>Nepovinné údaje</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="215"/>
@@ -287,7 +287,7 @@
         <location filename="../src/form/bootentrywidget.ui" line="12"/>
         <location filename="../src/form/bootentrywidget.ui" line="221"/>
         <source>Boot entry</source>
-        <translation>Spúšťací záznam</translation>
+        <translation>Bootovací vstup</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="36"/>
@@ -1531,23 +1531,23 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="24"/>
         <source>EFI support required</source>
-        <translation type="unfinished">Vyžaduje sa podpora EFI</translation>
+        <translation>Vyžaduje sa podpora EFI</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="43"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation type="unfinished">Načítanie položiek EFI Boot Manager…</translation>
+        <translation>Načítanie EFI Vstupy Boot Manager…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="45"/>
         <location filename="../src/efibooteditorcli.cpp" line="55"/>
         <source>Exporting boot configuration…</source>
-        <translation type="unfinished">Exportovanie spúšťacej konfigurácie…</translation>
+        <translation>Exportovanie spúšťacej konfigurácie…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="65"/>
         <source>Importing boot configuration…</source>
-        <translation type="unfinished">Importovanie spúšťacej konfigurácie…</translation>
+        <translation>Importovanie spúšťacej konfigurácie…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="67"/>
@@ -1564,12 +1564,12 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="68"/>
         <source>Driver</source>
-        <translation type="unfinished">Ovládač</translation>
+        <translation>Ovládač</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="69"/>
         <source>System Preparation</source>
-        <translation type="unfinished">Príprava systému</translation>
+        <translation>Príprava systému</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="72"/>
@@ -1581,7 +1581,7 @@ Vaša konfigurácia EFI bude prepísaná!</translation>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="79"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation type="unfinished">Ukladanie položiek EFI Boot Manager…</translation>
+        <translation>Ukladanie položiek EFI Boot Manager…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="89"/>
