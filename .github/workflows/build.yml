@@ -52,7 +52,7 @@ jobs:
         continue-on-error: true
 
       - name: Set up Qt environment
-        uses: jurplel/install-qt-action@v3
+        uses: jurplel/install-qt-action@v4
         with:
           cache: true
           version: ${{ matrix.qt-version }}
