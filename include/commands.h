@@ -130,6 +130,18 @@ public:
 };
 
 template <class Type>
+struct type_identity
+{
+    using type = Type;
+};
+
+template <class Type>
+struct underlying_type
+{
+    using type = typename std::conditional<std::is_enum<Type>::value, std::underlying_type<Type>, type_identity<Type>>::type::type;
+};
+
+template <class Type>
 class SetBootEntryValueCommand: public QUndoCommand
 {
     using PropertyPtr = Type BootEntry::*;
@@ -151,7 +163,7 @@ public:
         , property{property_}
         , value{value_}
     {
-        setText(QObject::tr("Change %1 entry \"%2\" %3 to \"%4\"").arg(model.name, title, name).arg(value));
+        setText(QObject::tr("Change %1 entry \"%2\" %3 to \"%4\"").arg(model.name, title, name).arg(static_cast<typename underlying_type<Type>::type>(value)));
     }
 
     SetBootEntryValueCommand(const SetBootEntryValueCommand &) = delete;
@@ -192,7 +204,7 @@ public:
         if(value == entry.*property)
             setObsolete(true);
 
-        setText(QObject::tr("Change %1 entry \"%2\" %3 to \"%4\"").arg(model.name, title, name).arg(entry.*property));
+        setText(QObject::tr("Change %1 entry \"%2\" %3 to \"%4\"").arg(model.name, title, name).arg(static_cast<typename underlying_type<Type>::type>(entry.*property)));
         return true;
     }
 };

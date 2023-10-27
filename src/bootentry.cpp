@@ -782,20 +782,20 @@ auto File_path::HD::toString(bool refresh) const -> QString
         return string;
 
     QString format = QString("HD(%1,%2,%3,%4,%5)").arg(partition_number);
-    switch(signature_type)
+    switch(static_cast<EFIBoot::File_path::HD::SIGNATURE>(signature_type))
     {
-    case EFIBoot::File_path::SIGNATURE::MBR:
+    case EFIBoot::File_path::HD::SIGNATURE::MBR:
     {
         format = format.arg("MBR", toHex(partition_signature.data1));
         break;
     }
 
-    case EFIBoot::File_path::SIGNATURE::GUID:
+    case EFIBoot::File_path::HD::SIGNATURE::GUID:
         format = format.arg("GPT", partition_signature.toString(QUuid::WithoutBraces));
         break;
 
     default:
-        format = format.arg(signature_type).arg("N/A");
+        format = format.arg(static_cast<std::underlying_type<decltype(signature_type)>::type>(signature_type)).arg("N/A");
         break;
     }
 
@@ -993,11 +993,11 @@ auto File_path::End::toString(bool refresh) const -> QString
     const char *subtype_string = "Unknown";
     switch(_subtype)
     {
-    case EFIBoot::EFIDP_END_INSTANCE:
+    case EFIBoot::File_path::End_instance::SUBTYPE:
         subtype_string = "Instance";
         break;
 
-    case EFIBoot::EFIDP_END_ENTIRE:
+    case EFIBoot::File_path::End_entire::SUBTYPE:
         subtype_string = "Entire";
         break;
     }

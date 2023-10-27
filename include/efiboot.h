@@ -39,19 +39,9 @@ std::optional<Type> deserialize(const void *data, size_t data_size);
 namespace File_path
 {
 
-enum TYPE
-{
-    HW = EFIDP_TYPE_HW,
-    ACPI = EFIDP_TYPE_ACPI,
-    MSG = EFIDP_TYPE_MSG,
-    MEDIA = EFIDP_TYPE_MEDIA,
-    BIOS = EFIDP_TYPE_BIOS,
-    END = EFIDP_TYPE_END,
-};
-
 struct PCI
 {
-    static const uint8_t TYPE = HW;
+    static const uint8_t TYPE = EFIDP_TYPE_HW;
     static const uint8_t SUBTYPE = EFIDP_HW_PCI;
 
     uint8_t function = 0;
@@ -60,7 +50,7 @@ struct PCI
 
 struct HWVendor
 {
-    static const uint8_t TYPE = HW;
+    static const uint8_t TYPE = EFIDP_TYPE_HW;
     static const uint8_t SUBTYPE = EFIDP_HW_VENDOR;
 
     std::array<uint8_t, 16> guid = {};
@@ -69,7 +59,7 @@ struct HWVendor
 
 struct HID
 {
-    static const uint8_t TYPE = ACPI;
+    static const uint8_t TYPE = EFIDP_TYPE_ACPI;
     static const uint8_t SUBTYPE = EFIDP_ACPI_HID;
 
     uint32_t hid = 0;
@@ -78,7 +68,7 @@ struct HID
 
 struct USB
 {
-    static const uint8_t TYPE = MSG;
+    static const uint8_t TYPE = EFIDP_TYPE_MSG;
     static const uint8_t SUBTYPE = EFIDP_MSG_USB;
 
     uint8_t parent_port_number = 0;
@@ -87,7 +77,7 @@ struct USB
 
 struct MSGVendor
 {
-    static const uint8_t TYPE = MSG;
+    static const uint8_t TYPE = EFIDP_TYPE_MSG;
     static const uint8_t SUBTYPE = EFIDP_MSG_VENDOR;
 
     std::array<uint8_t, 16> guid = {};
@@ -96,7 +86,7 @@ struct MSGVendor
 
 struct MAC_address
 {
-    static const uint8_t TYPE = MSG;
+    static const uint8_t TYPE = EFIDP_TYPE_MSG;
     static const uint8_t SUBTYPE = EFIDP_MSG_MAC_ADDRESS;
 
     std::array<uint8_t, 32> address = {};
@@ -105,7 +95,7 @@ struct MAC_address
 
 struct IPv4
 {
-    static const uint8_t TYPE = MSG;
+    static const uint8_t TYPE = EFIDP_TYPE_MSG;
     static const uint8_t SUBTYPE = EFIDP_MSG_IPV4;
 
     std::array<uint8_t, 4> local_ip_address = {};
@@ -120,7 +110,7 @@ struct IPv4
 
 struct IPv6
 {
-    static const uint8_t TYPE = MSG;
+    static const uint8_t TYPE = EFIDP_TYPE_MSG;
     static const uint8_t SUBTYPE = EFIDP_MSG_IPV6;
 
     std::array<uint8_t, 16> local_ip_address = {};
@@ -135,7 +125,7 @@ struct IPv6
 
 struct SATA
 {
-    static const uint8_t TYPE = MSG;
+    static const uint8_t TYPE = EFIDP_TYPE_MSG;
     static const uint8_t SUBTYPE = EFIDP_MSG_SATA;
 
     uint16_t hba_port = 0;
@@ -143,16 +133,16 @@ struct SATA
     uint16_t lun = 0;
 };
 
-enum SIGNATURE
-{
-    NONE = 0x00,
-    MBR = 0x01,
-    GUID = 0x02,
-};
-
 struct HD
 {
-    static const uint8_t TYPE = MEDIA;
+    enum class SIGNATURE : uint8_t
+    {
+        NONE = 0x00,
+        MBR = 0x01,
+        GUID = 0x02,
+    };
+
+    static const uint8_t TYPE = EFIDP_TYPE_MEDIA;
     static const uint8_t SUBTYPE = EFIDP_MEDIA_HD;
 
     uint64_t partition_start = 0;
@@ -160,12 +150,12 @@ struct HD
     uint32_t partition_number = 0;
     uint8_t partition_format = 0;
     std::array<uint8_t, 16> partition_signature = {};
-    uint8_t signature_type = 0;
+    SIGNATURE signature_type = SIGNATURE::NONE;
 };
 
 struct MEDIAVendor
 {
-    static const uint8_t TYPE = MEDIA;
+    static const uint8_t TYPE = EFIDP_TYPE_MEDIA;
     static const uint8_t SUBTYPE = EFIDP_MEDIA_VENDOR;
 
     std::array<uint8_t, 16> guid = {};
@@ -174,7 +164,7 @@ struct MEDIAVendor
 
 struct File
 {
-    static const uint8_t TYPE = MEDIA;
+    static const uint8_t TYPE = EFIDP_TYPE_MEDIA;
     static const uint8_t SUBTYPE = EFIDP_MEDIA_FILE;
 
     std::u16string name = u"";
@@ -182,7 +172,7 @@ struct File
 
 struct Firmware_file
 {
-    static const uint8_t TYPE = MEDIA;
+    static const uint8_t TYPE = EFIDP_TYPE_MEDIA;
     static const uint8_t SUBTYPE = EFIDP_MEDIA_FIRMWARE_FILE;
 
     std::array<uint8_t, 16> name = {};
@@ -190,7 +180,7 @@ struct Firmware_file
 
 struct Firmware_volume
 {
-    static const uint8_t TYPE = MEDIA;
+    static const uint8_t TYPE = EFIDP_TYPE_MEDIA;
     static const uint8_t SUBTYPE = EFIDP_MEDIA_FIRMWARE_VOLUME;
 
     std::array<uint8_t, 16> name = {};
@@ -198,7 +188,7 @@ struct Firmware_volume
 
 struct BIOS_boot_specification
 {
-    static const uint8_t TYPE = BIOS;
+    static const uint8_t TYPE = EFIDP_TYPE_BIOS;
     static const uint8_t SUBTYPE = EFIDP_BIOS_BOOT_SPECIFICATION;
 
     std::string description = "";
@@ -208,13 +198,13 @@ struct BIOS_boot_specification
 
 struct End_instance
 {
-    static const uint8_t TYPE = END;
+    static const uint8_t TYPE = EFIDP_TYPE_END;
     static const uint8_t SUBTYPE = EFIDP_END_INSTANCE;
 };
 
 struct End_entire
 {
-    static const uint8_t TYPE = END;
+    static const uint8_t TYPE = EFIDP_TYPE_END;
     static const uint8_t SUBTYPE = EFIDP_END_ENTIRE;
 };
 
@@ -247,7 +237,7 @@ using ANY = std::variant<
 
 } // namespace File_path
 
-enum Load_option_attribute
+enum class Load_option_attribute : uint32_t
 {
     EMPTY = 0x00000000,
 
@@ -260,12 +250,22 @@ enum Load_option_attribute
     CATEGORY_APP = 0x00000100,
 };
 
+inline Load_option_attribute operator|(Load_option_attribute a, Load_option_attribute b)
+{
+    return static_cast<Load_option_attribute>(static_cast<std::underlying_type<Load_option_attribute>::type>(a) | static_cast<std::underlying_type<Load_option_attribute>::type>(b));
+}
+
+inline Load_option_attribute operator&(Load_option_attribute a, Load_option_attribute b)
+{
+    return static_cast<Load_option_attribute>(static_cast<std::underlying_type<Load_option_attribute>::type>(a) & static_cast<std::underlying_type<Load_option_attribute>::type>(b));
+}
+
 struct Load_option
 {
     std::u16string description = u"";
     std::vector<File_path::ANY> device_path = {};
     Raw_data optional_data = {};
-    uint32_t attributes = Load_option_attribute::EMPTY;
+    Load_option_attribute attributes = Load_option_attribute::EMPTY;
 };
 
 using Filter_fn = std::function<bool(const efi_guid_t &, const tstring_view)>;
@@ -982,7 +982,7 @@ inline std::optional<File_path::HD> deserialize(const void *data, size_t data_si
     value.partition_start = dp->partition_start;
     value.partition_format = dp->partition_format;
     std::copy(std::begin(dp->partition_signature), std::end(dp->partition_signature), std::begin(value.partition_signature));
-    value.signature_type = dp->signature_type;
+    value.signature_type = static_cast<File_path::HD::SIGNATURE>(dp->signature_type);
     value.partition_number = dp->partition_number;
     return {value};
 }

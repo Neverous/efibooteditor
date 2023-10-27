@@ -207,12 +207,12 @@ void BootEntryListModel::setEntryOptionalData(const QModelIndex &index, const QS
     undo_stack->push(command);
 }
 
-void BootEntryListModel::setEntryAttributes(const QModelIndex &index, uint32_t value)
+void BootEntryListModel::setEntryAttributes(const QModelIndex &index, EFIBoot::Load_option_attribute value)
 {
     if(!index.isValid() || !checkIndex(index))
         return;
 
-    auto command = new SetBootEntryValueCommand<uint32_t>{*this, index, tr("Attributes"), &BootEntry::attributes, value};
+    auto command = new SetBootEntryValueCommand<EFIBoot::Load_option_attribute>{*this, index, tr("Attributes"), &BootEntry::attributes, value};
     if(!undo_stack)
     {
         command->redo();

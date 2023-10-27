@@ -72,7 +72,7 @@ public:
     void setEntryDescription(const QModelIndex &index, const QString &text);
     bool changeEntryOptionalDataFormat(const QModelIndex &index, int format);
     void setEntryOptionalData(const QModelIndex &index, const QString &text);
-    void setEntryAttributes(const QModelIndex &index, uint32_t value);
+    void setEntryAttributes(const QModelIndex &index, EFIBoot::Load_option_attribute value);
     void setEntryNextBoot(const QModelIndex &index, bool value);
 
     Qt::ItemFlags flags(const QModelIndex &index) const override;
