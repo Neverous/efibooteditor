@@ -12,7 +12,7 @@ private:
     BootEntryListModel::Options options{};
 
 public:
-    BootEntryDelegate();
+    BootEntryDelegate() = default;
     BootEntryDelegate(const BootEntryDelegate &) = delete;
     BootEntryDelegate &operator=(const BootEntryDelegate &) = delete;
 

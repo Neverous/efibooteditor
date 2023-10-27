@@ -8,7 +8,7 @@
 class FilePathDelegate: public QWidgetItemDelegate<QLabel, const File_path::ANY *>
 {
 public:
-    inline FilePathDelegate() { }
+    FilePathDelegate() = default;
     FilePathDelegate(const FilePathDelegate &) = delete;
     FilePathDelegate &operator=(const FilePathDelegate &) = delete;
 
