@@ -7,8 +7,8 @@
 template <class Type>
 class SetEFIBootDataValueCommand: public QUndoCommand
 {
-    typedef Type EFIBootData::*PropertyPtr;
-    typedef void (EFIBootData::*SignalPtr)(const Type &);
+    using PropertyPtr = Type EFIBootData::*;
+    using SignalPtr = void (EFIBootData::*)(const Type &);
 
     EFIBootData &data;
     const QString name;
@@ -132,7 +132,7 @@ public:
 template <class Type>
 class SetBootEntryValueCommand: public QUndoCommand
 {
-    typedef Type BootEntry::*PropertyPtr;
+    using PropertyPtr = Type BootEntry::*;
 
     BootEntryListModel &model;
     const QString title;

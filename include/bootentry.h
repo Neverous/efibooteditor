@@ -412,7 +412,7 @@ public:
     QString toString(bool refresh = true) const;
 };
 
-typedef std::variant<
+using ANY = std::variant<
     PCI,
     HID,
     USB,
@@ -427,8 +427,7 @@ typedef std::variant<
     FirmwareVolume,
     BIOSBootSpecification,
     End,
-    Unknown>
-    ANY;
+    Unknown>;
 
 inline std::unordered_map<QString, std::function<std::optional<ANY>(const QJsonObject &)>> JSON_readers()
 {

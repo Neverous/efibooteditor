@@ -31,7 +31,7 @@ inline bool operator!=(const efi_guid_t &first, const efi_guid_t &second)
     return efi_guid_cmp(&first, &second) != 0;
 }
 
-typedef std::vector<uint8_t> Raw_data;
+using Raw_data = std::vector<uint8_t>;
 
 template <class Type = Raw_data>
 std::optional<Type> deserialize(const void *data, size_t data_size);
@@ -225,7 +225,7 @@ struct Unknown
     uint8_t SUBTYPE = 0;
 };
 
-typedef std::variant<
+using ANY = std::variant<
     PCI,
     HWVendor,
     HID,
@@ -243,8 +243,7 @@ typedef std::variant<
     BIOS_boot_specification,
     End_instance,
     End_entire,
-    Unknown>
-    ANY;
+    Unknown>;
 
 } // namespace File_path
 
@@ -269,10 +268,10 @@ struct Load_option
     uint32_t attributes = Load_option_attribute::EMPTY;
 };
 
-typedef std::function<bool(const efi_guid_t &, const tstring_view)> Filter_fn;
-typedef std::function<const void *(const void *, size_t)> Advance_fn;
-typedef std::function<size_t(const void *)> Size_fn;
-typedef std::function<void(size_t, size_t)> Progress_fn;
+using Filter_fn = std::function<bool(const efi_guid_t &, const tstring_view)>;
+using Advance_fn = std::function<const void *(const void *, size_t)>;
+using Size_fn = std::function<size_t(const void *)>;
+using Progress_fn = std::function<void(size_t, size_t)>;
 
 template <class Type = Raw_data>
 using Variable = std::tuple<Type, uint32_t>;

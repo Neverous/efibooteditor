@@ -7,7 +7,7 @@
 #include <QList>
 #include <QUndoStack>
 
-typedef std::function<bool(BootEntry &)> Change_fn;
+using Change_fn = std::function<bool(BootEntry &)>;
 
 class BootEntryListModel: public QAbstractListModel
 {

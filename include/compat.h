@@ -92,19 +92,19 @@ inline int _tcserror_s(TCHAR *buffer, size_t size, int errnum)
 #endif
 
 /* string types */
-typedef std::basic_string<TCHAR> tstring;
+using tstring = std::basic_string<TCHAR>;
 
-typedef std::basic_string_view<TCHAR> tstring_view;
+using tstring_view = std::basic_string_view<TCHAR>;
 
-typedef std::basic_ostream<TCHAR> tostream;
-typedef std::basic_istream<TCHAR> tistream;
-typedef std::basic_iostream<TCHAR> tiostream;
+using tostream = std::basic_ostream<TCHAR>;
+using tistream = std::basic_istream<TCHAR>;
+using tiostream = std::basic_iostream<TCHAR>;
 
-typedef std::basic_ifstream<TCHAR> tifstream;
-typedef std::basic_ofstream<TCHAR> tofstream;
-typedef std::basic_fstream<TCHAR> tfstream;
+using tifstream = std::basic_ifstream<TCHAR>;
+using tofstream = std::basic_ofstream<TCHAR>;
+using tfstream = std::basic_fstream<TCHAR>;
 
-typedef std::basic_stringstream<TCHAR> tstringstream;
+using tstringstream = std::basic_stringstream<TCHAR>;
 
 template <class Type>
 inline tstring to_tstring(const Type &value)

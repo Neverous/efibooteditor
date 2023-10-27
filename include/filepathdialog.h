@@ -63,8 +63,8 @@ private:
         MEDIA = 2,
     };
 
-    typedef DataFormat VendorDataFormat;
-    typedef DataFormat UnknownDataFormat;
+    using VendorDataFormat = DataFormat;
+    using UnknownDataFormat = DataFormat;
 
     HorizontalTabStyle horizontal_tab_style;
     std::unique_ptr<Ui::FilePathDialog> ui;
