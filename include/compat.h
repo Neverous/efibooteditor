@@ -92,32 +92,28 @@ inline int _tcserror_s(TCHAR *buffer, size_t size, int errnum)
 #endif
 
 /* string types */
-namespace std
-{
-typedef basic_string<TCHAR> tstring;
+typedef std::basic_string<TCHAR> tstring;
 
-typedef basic_string_view<TCHAR> tstring_view;
+typedef std::basic_string_view<TCHAR> tstring_view;
 
-typedef basic_ostream<TCHAR> tostream;
-typedef basic_istream<TCHAR> tistream;
-typedef basic_iostream<TCHAR> tiostream;
+typedef std::basic_ostream<TCHAR> tostream;
+typedef std::basic_istream<TCHAR> tistream;
+typedef std::basic_iostream<TCHAR> tiostream;
 
-typedef basic_ifstream<TCHAR> tifstream;
-typedef basic_ofstream<TCHAR> tofstream;
-typedef basic_fstream<TCHAR> tfstream;
+typedef std::basic_ifstream<TCHAR> tifstream;
+typedef std::basic_ofstream<TCHAR> tofstream;
+typedef std::basic_fstream<TCHAR> tfstream;
 
-typedef basic_stringstream<TCHAR> tstringstream;
+typedef std::basic_stringstream<TCHAR> tstringstream;
 
 template <class Type>
 inline tstring to_tstring(const Type &value)
 {
 #if defined(UNICODE) || defined(_UNICODE)
-    return to_wstring(value);
+    return std::to_wstring(value);
 #else
-    return to_string(value);
+    return std::to_string(value);
 #endif
-}
-
 }
 
 const int HEX_BASE = 16;
@@ -137,7 +133,7 @@ struct hash<QString>
 #endif
 
 /* QString helpers */
-inline std::tstring QStringToStdTString(const QString &string)
+inline tstring QStringToStdTString(const QString &string)
 {
 #if defined(UNICODE) || defined(_UNICODE)
     return string.toStdWString();
@@ -155,7 +151,7 @@ inline QString QStringFromTCharArray(const TCHAR *string)
 #endif
 }
 
-inline QString QStringFromStdTString(const std::tstring &string)
+inline QString QStringFromStdTString(const tstring &string)
 {
 #if defined(UNICODE) || defined(_UNICODE)
     return QString::fromStdWString(string);
@@ -170,7 +166,7 @@ inline QString toHex(unsigned long long number, int min_width = 0, const QString
     return prefix + QString("%1").arg(number, min_width, HEX_BASE, QChar('0')).toUpper();
 }
 
-inline bool isxnumber(const std::tstring_view &string)
+inline bool isxnumber(const tstring_view &string)
 {
 #if defined(UNICODE) || defined(_UNICODE)
     return std::all_of(std::begin(string), std::end(string), [](char16_t chr)

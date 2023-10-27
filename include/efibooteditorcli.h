@@ -24,7 +24,7 @@ class EFIBootEditorCLI: public QObject
     bool efi_supported;
 
 public:
-    explicit EFIBootEditorCLI(const std::optional<std::tstring> &efi_error_message, QObject *parent = nullptr);
+    explicit EFIBootEditorCLI(const std::optional<tstring> &efi_error_message, QObject *parent = nullptr);
     EFIBootEditorCLI(const EFIBootEditorCLI &) = delete;
     EFIBootEditorCLI &operator=(const EFIBootEditorCLI &) = delete;
     ~EFIBootEditorCLI() override;

@@ -269,7 +269,7 @@ struct Load_option
     uint32_t attributes = Load_option_attribute::EMPTY;
 };
 
-typedef std::function<bool(const efi_guid_t &, const std::tstring_view)> Filter_fn;
+typedef std::function<bool(const efi_guid_t &, const tstring_view)> Filter_fn;
 typedef std::function<const void *(const void *, size_t)> Advance_fn;
 typedef std::function<size_t(const void *)> Size_fn;
 typedef std::function<void(size_t, size_t)> Progress_fn;
@@ -277,7 +277,7 @@ typedef std::function<void(size_t, size_t)> Progress_fn;
 template <class Type = Raw_data>
 using Variable = std::tuple<Type, uint32_t>;
 
-std::optional<std::tstring> init();
+std::optional<tstring> init();
 
 template <class Type = Raw_data>
 std::optional<std::vector<Type>> deserialize_list(const void *data, size_t data_size);
@@ -291,26 +291,26 @@ size_t serialize(Raw_data &output, const Type &value);
 template <class Type = Raw_data>
 size_t serialize_list(Raw_data &output, const std::vector<Type> &value);
 
-std::unordered_map<std::tstring, efi_guid_t> get_variables(Filter_fn filter, Progress_fn progress);
-std::unordered_map<std::tstring, efi_guid_t> get_variables(Filter_fn filter);
-std::unordered_map<std::tstring, efi_guid_t> get_variables();
+std::unordered_map<tstring, efi_guid_t> get_variables(Filter_fn filter, Progress_fn progress);
+std::unordered_map<tstring, efi_guid_t> get_variables(Filter_fn filter);
+std::unordered_map<tstring, efi_guid_t> get_variables();
 
 template <class Type = Raw_data>
-std::optional<Variable<Type>> get_variable(const efi_guid_t &guid, const std::tstring &name);
+std::optional<Variable<Type>> get_variable(const efi_guid_t &guid, const tstring &name);
 
 template <class Type = Raw_data>
-std::optional<Variable<std::vector<Type>>> get_list_variable(const efi_guid_t &guid, const std::tstring &name);
+std::optional<Variable<std::vector<Type>>> get_list_variable(const efi_guid_t &guid, const tstring &name);
 
 template <class Type = Raw_data>
-std::optional<Variable<std::vector<Type>>> get_list_variable_ex(const efi_guid_t &guid, const std::tstring &name, Size_fn get_element_size, Advance_fn get_next_element);
+std::optional<Variable<std::vector<Type>>> get_list_variable_ex(const efi_guid_t &guid, const tstring &name, Size_fn get_element_size, Advance_fn get_next_element);
 
 template <class Type = Raw_data>
-bool set_variable(const efi_guid_t &guid, const std::tstring &name, const Variable<Type> &variable, mode_t mode);
+bool set_variable(const efi_guid_t &guid, const tstring &name, const Variable<Type> &variable, mode_t mode);
 
 template <class Type = Raw_data>
-bool set_list_variable(const efi_guid_t &guid, const std::tstring &name, const Variable<std::vector<Type>> &variable, mode_t mode);
+bool set_list_variable(const efi_guid_t &guid, const tstring &name, const Variable<std::vector<Type>> &variable, mode_t mode);
 
-inline std::optional<std::tstring> init()
+inline std::optional<tstring> init()
 {
     if(!efi_variables_supported())
         return {_T("UEFI variables not supported on this machine.")};
@@ -1279,9 +1279,9 @@ inline size_t serialize(Raw_data &output, const File_path::ANY &file_path)
 
 extern Progress_fn _get_variables_progress_fn;
 
-inline std::unordered_map<std::tstring, efi_guid_t> get_variables(Filter_fn filter_fn, Progress_fn progress_fn)
+inline std::unordered_map<tstring, efi_guid_t> get_variables(Filter_fn filter_fn, Progress_fn progress_fn)
 {
-    std::unordered_map<std::tstring, efi_guid_t> variables;
+    std::unordered_map<tstring, efi_guid_t> variables;
     efi_guid_t *guid = nullptr;
     TCHAR *name = nullptr;
     _get_variables_progress_fn = progress_fn;
@@ -1301,21 +1301,21 @@ inline std::unordered_map<std::tstring, efi_guid_t> get_variables(Filter_fn filt
     return variables;
 }
 
-inline std::unordered_map<std::tstring, efi_guid_t> get_variables(Filter_fn filter_fn)
+inline std::unordered_map<tstring, efi_guid_t> get_variables(Filter_fn filter_fn)
 {
     return get_variables(filter_fn, [](size_t, size_t) {});
 }
 
-inline std::unordered_map<std::tstring, efi_guid_t> get_variables()
+inline std::unordered_map<tstring, efi_guid_t> get_variables()
 {
     return get_variables(
-        [](const efi_guid_t &, const std::tstring_view)
+        [](const efi_guid_t &, const tstring_view)
         { return true; },
         [](size_t, size_t) {});
 }
 
 template <class Type>
-inline std::optional<Variable<Type>> get_variable(const efi_guid_t &guid, const std::tstring &name)
+inline std::optional<Variable<Type>> get_variable(const efi_guid_t &guid, const tstring &name)
 {
     uint8_t *data = nullptr;
     size_t data_size = 0;
@@ -1332,7 +1332,7 @@ inline std::optional<Variable<Type>> get_variable(const efi_guid_t &guid, const 
 }
 
 template <class Type>
-inline std::optional<Variable<std::vector<Type>>> get_list_variable(const efi_guid_t &guid, const std::tstring &name)
+inline std::optional<Variable<std::vector<Type>>> get_list_variable(const efi_guid_t &guid, const tstring &name)
 {
     uint8_t *data = nullptr;
     size_t data_size = 0;
@@ -1349,7 +1349,7 @@ inline std::optional<Variable<std::vector<Type>>> get_list_variable(const efi_gu
 }
 
 template <class Type>
-inline std::optional<Variable<std::vector<Type>>> get_list_variable_ex(const efi_guid_t &guid, const std::tstring &name, Size_fn get_element_size, Advance_fn get_next_element)
+inline std::optional<Variable<std::vector<Type>>> get_list_variable_ex(const efi_guid_t &guid, const tstring &name, Size_fn get_element_size, Advance_fn get_next_element)
 {
     uint8_t *data = nullptr;
     size_t data_size = 0;
@@ -1366,7 +1366,7 @@ inline std::optional<Variable<std::vector<Type>>> get_list_variable_ex(const efi
 }
 
 template <class Type>
-inline bool set_variable(const efi_guid_t &guid, const std::tstring &name, const Variable<Type> &variable, mode_t mode)
+inline bool set_variable(const efi_guid_t &guid, const tstring &name, const Variable<Type> &variable, mode_t mode)
 {
     auto [value, attributes] = variable;
     Raw_data bytes;
@@ -1375,7 +1375,7 @@ inline bool set_variable(const efi_guid_t &guid, const std::tstring &name, const
 }
 
 template <class Type>
-inline bool set_list_variable(const efi_guid_t &guid, const std::tstring &name, const Variable<std::vector<Type>> &variable, mode_t mode)
+inline bool set_list_variable(const efi_guid_t &guid, const tstring &name, const Variable<std::vector<Type>> &variable, mode_t mode)
 {
     auto [value, attributes] = variable;
     Raw_data bytes;
@@ -1383,14 +1383,14 @@ inline bool set_list_variable(const efi_guid_t &guid, const std::tstring &name, 
     return efi_set_variable(guid, name.c_str(), bytes.data(), size, attributes, mode) == 0;
 }
 
-inline bool del_variable(const efi_guid_t &guid, const std::tstring &name)
+inline bool del_variable(const efi_guid_t &guid, const tstring &name)
 {
     return efi_del_variable(guid, name.c_str()) == 0;
 }
 
-inline std::tstring get_error_trace()
+inline tstring get_error_trace()
 {
-    std::tstring output = _T("Error trace:\n");
+    tstring output = _T("Error trace:\n");
     int rc = 1;
     for(unsigned int i = 0; rc > 0; i++)
     {
@@ -1415,7 +1415,7 @@ inline std::tstring get_error_trace()
 
         output += filename;
         output += _T(":");
-        output += std::to_tstring(line);
+        output += to_tstring(line);
         output += _T(" ");
         output += function;
         output += _T("(): ");

@@ -8,7 +8,7 @@
 #include <QJsonObject>
 #include <unordered_set>
 
-static bool is_bootentry(const std::tstring_view &name, const std::tstring_view &prefix)
+static bool is_bootentry(const tstring_view &name, const tstring_view &prefix)
 {
     if(name.length() != prefix.length() + 4 || name.substr(0, prefix.length()) != prefix)
         return false;
@@ -77,7 +77,7 @@ void EFIBootData::reload()
     };
 
     const auto name_to_guid = EFIBoot::get_variables(
-        [](const EFIBoot::efi_guid_t &guid, const std::tstring_view)
+        [](const EFIBoot::efi_guid_t &guid, const tstring_view)
         {
             return guid == EFIBoot::efi_guid_global;
         },
@@ -271,7 +271,7 @@ void EFIBootData::save()
     int32_t next_boot = -1;
 
     auto old_entries = EFIBoot::get_variables(
-        [&](const EFIBoot::efi_guid_t &guid, const std::tstring_view tname)
+        [&](const EFIBoot::efi_guid_t &guid, const tstring_view tname)
         {
             if(guid != EFIBoot::efi_guid_global)
                 return false;
@@ -328,7 +328,7 @@ void EFIBootData::save()
                     next_boot = entry.index;
             }
 
-            const std::tstring tname = QStringToStdTString(qname);
+            const tstring tname = QStringToStdTString(qname);
             if(auto _entry = old_entries.find(tname); _entry != old_entries.end())
                 old_entries.erase(_entry);
 
@@ -660,7 +660,7 @@ void EFIBootData::dump(const QString &file_name)
     QJsonObject output;
     output["_Type"] = "raw";
     const auto name_to_guid = EFIBoot::get_variables(
-        [](const EFIBoot::efi_guid_t &guid, const std::tstring_view)
+        [](const EFIBoot::efi_guid_t &guid, const tstring_view)
         {
             return guid == EFIBoot::efi_guid_global;
         },
@@ -672,7 +672,7 @@ void EFIBootData::dump(const QString &file_name)
     QStringList errors;
     size_t step = 1;
     const size_t total_steps = name_to_guid.size() + 1u;
-    auto process_entry = [&](QJsonObject &root, const QString &key, std::tstring tname = _T(""), bool optional = false)
+    auto process_entry = [&](QJsonObject &root, const QString &key, tstring tname = _T(""), bool optional = false)
     {
         if(tname.empty())
             tname = QStringToStdTString(key);

@@ -16,7 +16,7 @@
 #include <QRadioButton>
 #include <cctype>
 
-EFIBootEditor::EFIBootEditor(const std::optional<std::tstring> &efi_error_message, QWidget *parent)
+EFIBootEditor::EFIBootEditor(const std::optional<tstring> &efi_error_message, QWidget *parent)
     : QMainWindow{parent}
     , ui{std::make_unique<Ui::EFIBootEditor>()}
     , confirmation{std::make_unique<QMessageBox>(QMessageBox::Question, qApp->applicationName(), "", QMessageBox::NoButton, this)}

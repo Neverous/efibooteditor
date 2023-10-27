@@ -4,7 +4,7 @@
 #include <QTextStream>
 #include <iostream>
 
-EFIBootEditorCLI::EFIBootEditorCLI(const std::optional<std::tstring> &efi_error_message, QObject *parent)
+EFIBootEditorCLI::EFIBootEditorCLI(const std::optional<tstring> &efi_error_message, QObject *parent)
     : QObject{parent}
     , efi_supported{!efi_error_message}
 {
