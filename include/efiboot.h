@@ -268,7 +268,6 @@ struct Load_option
     Load_option_attribute attributes = Load_option_attribute::EMPTY;
 };
 
-using Filter_fn = std::function<bool(const efi_guid_t &, const tstring_view)>;
 using Advance_fn = std::function<const void *(const void *, size_t)>;
 using Size_fn = std::function<size_t(const void *)>;
 using Progress_fn = std::function<void(size_t, size_t)>;
@@ -290,8 +289,11 @@ size_t serialize(Raw_data &output, const Type &value);
 template <class Type = Raw_data>
 size_t serialize_list(Raw_data &output, const std::vector<Type> &value);
 
-std::unordered_map<tstring, efi_guid_t> get_variables(Filter_fn filter, Progress_fn progress);
-std::unordered_map<tstring, efi_guid_t> get_variables(Filter_fn filter);
+template <class Filter_fn>
+std::unordered_map<tstring, efi_guid_t> get_variables(const Filter_fn &filter, const Progress_fn &progress);
+
+template <class Filter_fn>
+std::unordered_map<tstring, efi_guid_t> get_variables(const Filter_fn &filter);
 std::unordered_map<tstring, efi_guid_t> get_variables();
 
 template <class Type = Raw_data>
@@ -1278,7 +1280,8 @@ inline size_t serialize(Raw_data &output, const File_path::ANY &file_path)
 
 extern Progress_fn _get_variables_progress_fn;
 
-inline std::unordered_map<tstring, efi_guid_t> get_variables(Filter_fn filter_fn, Progress_fn progress_fn)
+template <class Filter_fn>
+inline std::unordered_map<tstring, efi_guid_t> get_variables(const Filter_fn &filter_fn, const Progress_fn &progress_fn)
 {
     std::unordered_map<tstring, efi_guid_t> variables;
     efi_guid_t *guid = nullptr;
@@ -1300,6 +1303,7 @@ inline std::unordered_map<tstring, efi_guid_t> get_variables(Filter_fn filter_fn
     return variables;
 }
 
+template <class Filter_fn>
 inline std::unordered_map<tstring, efi_guid_t> get_variables(Filter_fn filter_fn)
 {
     return get_variables(filter_fn, [](size_t, size_t) {});
