@@ -424,7 +424,7 @@ void EFIBootData::save()
     emit done();
 }
 
-void EFIBootData::import(const QString &file_name)
+void EFIBootData::import_(const QString &file_name)
 {
     emit progress(0, 1, tr("Importing boot configuration…"));
     QFile import_file(file_name);

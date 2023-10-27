@@ -52,7 +52,7 @@ public:
 public slots:
     void reload();
     void save();
-    void import();
+    void import_();
     void export_();
     void dump();
     void reorder();

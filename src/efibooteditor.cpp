@@ -201,7 +201,7 @@ void EFIBootEditor::save()
         &EFIBootData::save);
 }
 
-void EFIBootEditor::import()
+void EFIBootEditor::import_()
 {
     const QString file_name = QFileDialog::getOpenFileName(this, tr("Open boot configuration dump"), "", tr("JSON documents (*.json)"));
     if(file_name.isEmpty())
@@ -215,7 +215,7 @@ void EFIBootEditor::import()
     ui->redo->setEnabled(false);
     data.clear();
     data.setUndoStack(nullptr);
-    data.import(file_name);
+    data.import_(file_name);
     data.setUndoStack(&undo_stack);
 }
 

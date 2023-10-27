@@ -63,7 +63,7 @@ bool EFIBootEditorCLI::process(const QCoreApplication &app)
 
         processed = true;
         ts << tr("Importing boot configuration…") << Qt::endl;
-        data.import(parser.value("import"));
+        data.import_(parser.value("import"));
         ts << tr("Loaded %0 %1 entries").arg(data.boot_entries_list_model.rowCount()).arg(tr("Boot")) << Qt::endl;
         ts << tr("Loaded %0 %1 entries").arg(data.driver_entries_list_model.rowCount()).arg(tr("Driver")) << Qt::endl;
         ts << tr("Loaded %0 %1 entries").arg(data.sysprep_entries_list_model.rowCount()).arg(tr("System Preparation")) << Qt::endl;

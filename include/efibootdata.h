@@ -50,7 +50,7 @@ public slots:
     void clear();
     void reload();
     void save();
-    void import(const QString &file_name);
+    void import_(const QString &file_name);
     void export_(const QString &file_name);
     void dump(const QString &file_name);
 
