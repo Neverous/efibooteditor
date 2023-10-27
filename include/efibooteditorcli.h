@@ -29,7 +29,7 @@ public:
     EFIBootEditorCLI &operator=(const EFIBootEditorCLI &) = delete;
     ~EFIBootEditorCLI() override;
 
-    bool process(QCoreApplication &app);
+    bool process(const QCoreApplication &app);
 
 public slots:
     void showError(const QString &message, const QString &details);

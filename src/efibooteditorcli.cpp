@@ -28,7 +28,7 @@ EFIBootEditorCLI::~EFIBootEditorCLI()
 {
 }
 
-bool EFIBootEditorCLI::process(QCoreApplication &app)
+bool EFIBootEditorCLI::process(const QCoreApplication &app)
 {
     bool processed = false;
     parser.process(app);
