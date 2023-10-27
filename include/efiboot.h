@@ -517,7 +517,7 @@ inline size_t serialize(Raw_data &output, const File_path::End_entire &)
 template <>
 inline std::optional<Load_option> deserialize(const void *data, size_t data_size)
 {
-    Load_option value;
+    Load_option value{};
     ssize_t ssize = static_cast<ssize_t>(data_size);
     efi_load_option *load_option = const_cast<efi_load_option *>(static_cast<const efi_load_option *>(data));
 
@@ -614,7 +614,7 @@ inline std::optional<File_path::PCI> deserialize(const void *data, size_t data_s
     if(dp->header.subtype != File_path::PCI::SUBTYPE)
         return std::nullopt;
 
-    File_path::PCI value;
+    File_path::PCI value{};
     value.function = dp->function;
     value.device = dp->device;
     return {value};
@@ -651,7 +651,7 @@ inline std::optional<File_path::HWVendor> deserialize(const void *data, size_t d
     if(dp->header.subtype != File_path::HWVendor::SUBTYPE)
         return std::nullopt;
 
-    File_path::HWVendor value;
+    File_path::HWVendor value{};
     std::copy(std::begin(dp->guid), std::end(dp->guid), std::begin(value.guid));
     size_t data_length = data_size - sizeof(dp->header) - sizeof(dp->guid) / sizeof(dp->guid[0]);
     value.data.resize(data_length);
@@ -690,7 +690,7 @@ inline std::optional<File_path::HID> deserialize(const void *data, size_t data_s
     if(dp->header.subtype != File_path::HID::SUBTYPE)
         return std::nullopt;
 
-    File_path::HID value;
+    File_path::HID value{};
     value.hid = dp->hid;
     value.uid = dp->uid;
     return {value};
@@ -727,7 +727,7 @@ inline std::optional<File_path::USB> deserialize(const void *data, size_t data_s
     if(dp->header.subtype != File_path::USB::SUBTYPE)
         return std::nullopt;
 
-    File_path::USB value;
+    File_path::USB value{};
     value.parent_port_number = dp->parent_port_number;
     value.interface = dp->interface;
     return {value};
@@ -764,7 +764,7 @@ inline std::optional<File_path::MSGVendor> deserialize(const void *data, size_t 
     if(dp->header.subtype != File_path::MSGVendor::SUBTYPE)
         return std::nullopt;
 
-    File_path::MSGVendor value;
+    File_path::MSGVendor value{};
     std::copy(std::begin(dp->guid), std::end(dp->guid), std::begin(value.guid));
     size_t data_length = data_size - sizeof(dp->header) - sizeof(dp->guid) / sizeof(dp->guid[0]);
     value.data.resize(data_length);
@@ -803,7 +803,7 @@ inline std::optional<File_path::MAC_address> deserialize(const void *data, size_
     if(dp->header.subtype != File_path::MAC_address::SUBTYPE)
         return std::nullopt;
 
-    File_path::MAC_address value;
+    File_path::MAC_address value{};
     std::copy(std::begin(dp->address), std::end(dp->address), std::begin(value.address));
     value.if_type = dp->if_type;
     return {value};
@@ -840,7 +840,7 @@ inline std::optional<File_path::IPv4> deserialize(const void *data, size_t data_
     if(dp->header.subtype != File_path::IPv4::SUBTYPE)
         return std::nullopt;
 
-    File_path::IPv4 value;
+    File_path::IPv4 value{};
     std::copy(std::begin(dp->local_ip_address), std::end(dp->local_ip_address), std::begin(value.local_ip_address));
     std::copy(std::begin(dp->remote_ip_address), std::end(dp->remote_ip_address), std::begin(value.remote_ip_address));
     value.local_port = dp->local_port;
@@ -889,7 +889,7 @@ inline std::optional<File_path::IPv6> deserialize(const void *data, size_t data_
     if(dp->header.subtype != File_path::IPv6::SUBTYPE)
         return std::nullopt;
 
-    File_path::IPv6 value;
+    File_path::IPv6 value{};
     std::copy(std::begin(dp->local_ip_address), std::end(dp->local_ip_address), std::begin(value.local_ip_address));
     std::copy(std::begin(dp->remote_ip_address), std::end(dp->remote_ip_address), std::begin(value.remote_ip_address));
     value.local_port = dp->local_port;
@@ -938,7 +938,7 @@ inline std::optional<File_path::SATA> deserialize(const void *data, size_t data_
     if(dp->header.subtype != File_path::SATA::SUBTYPE)
         return std::nullopt;
 
-    File_path::SATA value;
+    File_path::SATA value{};
     value.hba_port = dp->hba_port;
     value.port_multiplier_port = dp->port_multiplier_port;
     value.lun = dp->lun;
@@ -977,7 +977,7 @@ inline std::optional<File_path::HD> deserialize(const void *data, size_t data_si
     if(dp->header.subtype != File_path::HD::SUBTYPE)
         return std::nullopt;
 
-    File_path::HD value;
+    File_path::HD value{};
     value.partition_size = dp->partition_size;
     value.partition_start = dp->partition_start;
     value.partition_format = dp->partition_format;
@@ -1022,7 +1022,7 @@ inline std::optional<File_path::MEDIAVendor> deserialize(const void *data, size_
     if(dp->header.subtype != File_path::MEDIAVendor::SUBTYPE)
         return std::nullopt;
 
-    File_path::MEDIAVendor value;
+    File_path::MEDIAVendor value{};
     std::copy(std::begin(dp->guid), std::end(dp->guid), std::begin(value.guid));
     size_t data_length = data_size - sizeof(dp->header) - sizeof(dp->guid) / sizeof(dp->guid[0]);
     value.data.resize(data_length);
@@ -1061,7 +1061,7 @@ inline std::optional<File_path::File> deserialize(const void *data, size_t data_
     if(dp->header.subtype != File_path::File::SUBTYPE)
         return std::nullopt;
 
-    File_path::File value;
+    File_path::File value{};
     value.name = reinterpret_cast<const std::u16string::value_type *>(dp->name);
     return {value};
 }
@@ -1098,7 +1098,7 @@ inline std::optional<File_path::Firmware_file> deserialize(const void *data, siz
     if(dp->header.subtype != File_path::Firmware_file::SUBTYPE)
         return std::nullopt;
 
-    File_path::Firmware_file value;
+    File_path::Firmware_file value{};
     std::copy(std::begin(dp->name), std::end(dp->name), std::begin(value.name));
     return {value};
 }
@@ -1133,7 +1133,7 @@ inline std::optional<File_path::Firmware_volume> deserialize(const void *data, s
     if(dp->header.subtype != File_path::Firmware_volume::SUBTYPE)
         return std::nullopt;
 
-    File_path::Firmware_volume value;
+    File_path::Firmware_volume value{};
     std::copy(std::begin(dp->name), std::end(dp->name), std::begin(value.name));
     return {value};
 }
@@ -1168,7 +1168,7 @@ inline std::optional<File_path::BIOS_boot_specification> deserialize(const void 
     if(dp->header.subtype != File_path::BIOS_boot_specification::SUBTYPE)
         return std::nullopt;
 
-    File_path::BIOS_boot_specification value;
+    File_path::BIOS_boot_specification value{};
     value.device_type = dp->device_type;
     value.status_flag = dp->status_flag;
     value.description = reinterpret_cast<const std::string::value_type *>(dp->description);
@@ -1203,7 +1203,7 @@ inline std::optional<File_path::Unknown> deserialize(const void *data, size_t da
     if(dp->length != data_size)
         return std::nullopt;
 
-    File_path::Unknown value;
+    File_path::Unknown value{};
     value.TYPE = dp->type;
     value.SUBTYPE = dp->subtype;
 

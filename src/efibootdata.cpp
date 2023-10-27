@@ -434,7 +434,7 @@ void EFIBootData::import_(const QString &file_name)
         return;
     }
 
-    QJsonParseError json_error;
+    QJsonParseError json_error{};
     QJsonDocument json_document = QJsonDocument::fromJson(import_file.readAll(), &json_error);
     import_file.close();
     if(json_document.isNull())
