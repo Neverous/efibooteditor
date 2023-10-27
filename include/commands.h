@@ -138,7 +138,7 @@ struct type_identity
 template <class Type>
 struct underlying_type
 {
-    using type = typename std::conditional<std::is_enum<Type>::value, std::underlying_type<Type>, type_identity<Type>>::type::type;
+    using type = typename std::conditional<std::is_enum_v<Type>, std::underlying_type<Type>, type_identity<Type>>::type::type;
 };
 
 template <class Type>

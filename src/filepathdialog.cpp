@@ -172,7 +172,7 @@ auto FilePathDialog::toFilePath() const -> File_path::ANY
         hd.signature_type = static_cast<decltype(hd.signature_type)>(ui->signature_type_combo->currentIndex());
         hd.partition_format = static_cast<decltype(hd.partition_format)>(hd.signature_type != EFIBoot::File_path::HD::SIGNATURE::NONE ? hd.signature_type : EFIBoot::File_path::HD::SIGNATURE::MBR);
         hd.partition_number = static_cast<uint32_t>(ui->partition_number->value());
-        switch(static_cast<EFIBoot::File_path::HD::SIGNATURE>(hd.signature_type))
+        switch(hd.signature_type)
         {
         case EFIBoot::File_path::HD::SIGNATURE::GUID:
             hd.partition_signature = QUuid::fromString(ui->signature_text->text());
@@ -374,7 +374,7 @@ void FilePathDialog::setHDForm(const File_path::HD &hd)
     for(int index = 0; index < ui->disk_combo->count() - 2; ++index)
     {
         const auto &drive_info = ui->disk_combo->itemData(index).value<DriveInfo>();
-        if(static_cast<std::underlying_type<DriveInfo::SIGNATURE>::type>(drive_info.signature_type) == static_cast<std::underlying_type<EFIBoot::File_path::HD::SIGNATURE>::type>(hd.signature_type) && drive_info.partition == hd.partition_number)
+        if(static_cast<std::underlying_type_t<DriveInfo::SIGNATURE>>(drive_info.signature_type) == static_cast<std::underlying_type_t<EFIBoot::File_path::HD::SIGNATURE>>(hd.signature_type) && drive_info.partition == hd.partition_number)
         {
             bool found = false;
             switch(static_cast<DriveInfo::SIGNATURE>(drive_info.signature_type))
@@ -401,7 +401,7 @@ void FilePathDialog::setHDForm(const File_path::HD &hd)
     ui->disk_combo->setCurrentIndex(ui->disk_combo->count() - 1);
     diskChoiceChanged(ui->disk_combo->currentIndex());
 
-    switch(static_cast<EFIBoot::File_path::HD::SIGNATURE>(hd.signature_type))
+    switch(hd.signature_type)
     {
     case EFIBoot::File_path::HD::SIGNATURE::NONE:
         ui->signature_type_combo->setCurrentIndex(0);

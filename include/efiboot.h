@@ -252,12 +252,12 @@ enum class Load_option_attribute : uint32_t
 
 inline Load_option_attribute operator|(Load_option_attribute a, Load_option_attribute b)
 {
-    return static_cast<Load_option_attribute>(static_cast<std::underlying_type<Load_option_attribute>::type>(a) | static_cast<std::underlying_type<Load_option_attribute>::type>(b));
+    return static_cast<Load_option_attribute>(static_cast<std::underlying_type_t<Load_option_attribute>>(a) | static_cast<std::underlying_type_t<Load_option_attribute>>(b));
 }
 
 inline Load_option_attribute operator&(Load_option_attribute a, Load_option_attribute b)
 {
-    return static_cast<Load_option_attribute>(static_cast<std::underlying_type<Load_option_attribute>::type>(a) & static_cast<std::underlying_type<Load_option_attribute>::type>(b));
+    return static_cast<Load_option_attribute>(static_cast<std::underlying_type_t<Load_option_attribute>>(a) & static_cast<std::underlying_type_t<Load_option_attribute>>(b));
 }
 
 struct Load_option
@@ -592,7 +592,7 @@ inline size_t serialize(Raw_data &output, const Load_option &load_option)
                                                   load_option.device_path.back())
                 != File_path::End_entire::SUBTYPE)
         {
-            File_path::End_entire end;
+            File_path::End_entire end{};
             file_path_list_size = static_cast<uint16_t>(file_path_list_size + static_cast<uint16_t>(serialize(output, end))); // Older GCC complains about conversion when using += `conversion from ‘int’ to ‘uint16_t’ {aka ‘short unsigned int’} may change value`
         }
         size += file_path_list_size;

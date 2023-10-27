@@ -22,7 +22,7 @@ EFIBoot::Progress_fn EFIBoot::_get_variables_progress_fn = nullptr;
 auto BootEntry::fromEFIBootLoadOption(
     const EFIBoot::Load_option &load_option) -> BootEntry
 {
-    BootEntry value;
+    BootEntry value{};
     value.description = QString::fromStdU16String(load_option.description);
 
     value.optional_data_format = OptionalDataFormat::Base64;
@@ -52,7 +52,7 @@ auto BootEntry::fromEFIBootLoadOption(
 
 auto BootEntry::fromError(const QString &error) -> BootEntry
 {
-    BootEntry value;
+    BootEntry value{};
     value.is_error = true;
     value.description = "Error";
     value.error = error;
@@ -83,7 +83,7 @@ auto BootEntry::toEFIBootLoadOption() const -> EFIBoot::Load_option
 
 auto BootEntry::fromJSON(const QJsonObject &obj) -> std::optional<BootEntry>
 {
-    BootEntry value;
+    BootEntry value{};
     try_read(description, String);
     try_read_3(optional_data_format, Double, Int);
     try_read(optional_data, String);
@@ -238,7 +238,7 @@ auto File_path::PCI::toEFIBootFilePath() const -> EFIBoot::File_path::PCI
 
 auto File_path::PCI::fromJSON(const QJsonObject &obj) -> std::optional<File_path::PCI>
 {
-    PCI value;
+    PCI value{};
     check_obj();
     try_read_3(function, Double, Int);
     try_read_3(device, Double, Int);
@@ -247,7 +247,7 @@ auto File_path::PCI::fromJSON(const QJsonObject &obj) -> std::optional<File_path
 
 auto File_path::PCI::toJSON() const -> QJsonObject
 {
-    QJsonObject value;
+    QJsonObject value{};
     value["type"] = TYPE;
     value["subtype"] = SUBTYPE;
     value["function"] = static_cast<int>(function);
@@ -279,7 +279,7 @@ auto File_path::HID::toEFIBootFilePath() const -> EFIBoot::File_path::HID
 
 auto File_path::HID::fromJSON(const QJsonObject &obj) -> std::optional<File_path::HID>
 {
-    HID value;
+    HID value{};
     check_obj();
     try_read_3(hid, Double, Int);
     try_read_3(uid, Double, Int);
@@ -288,7 +288,7 @@ auto File_path::HID::fromJSON(const QJsonObject &obj) -> std::optional<File_path
 
 auto File_path::HID::toJSON() const -> QJsonObject
 {
-    QJsonObject value;
+    QJsonObject value{};
     value["type"] = TYPE;
     value["subtype"] = SUBTYPE;
     value["hid"] = static_cast<int>(hid);
@@ -322,7 +322,7 @@ auto File_path::USB::toEFIBootFilePath() const -> EFIBoot::File_path::USB
 
 auto File_path::USB::fromJSON(const QJsonObject &obj) -> std::optional<File_path::USB>
 {
-    USB value;
+    USB value{};
     check_obj();
     try_read_3(parent_port_number, Double, Int);
     try_read_3(interface, Double, Int);
@@ -331,7 +331,7 @@ auto File_path::USB::fromJSON(const QJsonObject &obj) -> std::optional<File_path
 
 auto File_path::USB::toJSON() const -> QJsonObject
 {
-    QJsonObject value;
+    QJsonObject value{};
     value["type"] = TYPE;
     value["subtype"] = SUBTYPE;
     value["parent_port_number"] = static_cast<int>(parent_port_number);
@@ -418,7 +418,7 @@ auto File_path::Vendor::toEFIBootFilePath() const -> EFIBoot::File_path::ANY
 
 auto File_path::Vendor::fromJSON(const QJsonObject &obj) -> std::optional<File_path::Vendor>
 {
-    Vendor value;
+    Vendor value{};
     check_obj();
     try_read_3(_type, Double, Int);
     check_type(guid, String);
@@ -430,7 +430,7 @@ auto File_path::Vendor::fromJSON(const QJsonObject &obj) -> std::optional<File_p
 
 auto File_path::Vendor::toJSON() const -> QJsonObject
 {
-    QJsonObject value;
+    QJsonObject value{};
     value["type"] = TYPE;
     value["subtype"] = SUBTYPE;
     value["_type"] = _type;
@@ -480,7 +480,7 @@ auto File_path::MACAddress::toEFIBootFilePath() const -> EFIBoot::File_path::MAC
 
 auto File_path::MACAddress::fromJSON(const QJsonObject &obj) -> std::optional<File_path::MACAddress>
 {
-    MACAddress value;
+    MACAddress value{};
     check_obj();
     try_read(address, String);
     try_read_3(if_type, Double, Int);
@@ -489,7 +489,7 @@ auto File_path::MACAddress::fromJSON(const QJsonObject &obj) -> std::optional<Fi
 
 auto File_path::MACAddress::toJSON() const -> QJsonObject
 {
-    QJsonObject value;
+    QJsonObject value{};
     value["type"] = TYPE;
     value["subtype"] = SUBTYPE;
     value["address"] = address;
@@ -546,7 +546,7 @@ auto File_path::IPv4::toEFIBootFilePath() const -> EFIBoot::File_path::IPv4
 
 auto File_path::IPv4::fromJSON(const QJsonObject &obj) -> std::optional<File_path::IPv4>
 {
-    IPv4 value;
+    IPv4 value{};
     check_obj();
     try_read(local_ip_address, String);
     try_read(remote_ip_address, String);
@@ -561,7 +561,7 @@ auto File_path::IPv4::fromJSON(const QJsonObject &obj) -> std::optional<File_pat
 
 auto File_path::IPv4::toJSON() const -> QJsonObject
 {
-    QJsonObject value;
+    QJsonObject value{};
     value["type"] = TYPE;
     value["subtype"] = SUBTYPE;
     value["local_ip_address"] = local_ip_address.toString();
@@ -621,7 +621,7 @@ auto File_path::IPv6::toEFIBootFilePath() const -> EFIBoot::File_path::IPv6
 
 auto File_path::IPv6::fromJSON(const QJsonObject &obj) -> std::optional<File_path::IPv6>
 {
-    IPv6 value;
+    IPv6 value{};
     check_obj();
     try_read(local_ip_address, String);
     try_read(remote_ip_address, String);
@@ -636,7 +636,7 @@ auto File_path::IPv6::fromJSON(const QJsonObject &obj) -> std::optional<File_pat
 
 auto File_path::IPv6::toJSON() const -> QJsonObject
 {
-    QJsonObject value;
+    QJsonObject value{};
     value["type"] = TYPE;
     value["subtype"] = SUBTYPE;
     value["local_ip_address"] = local_ip_address.toString();
@@ -693,7 +693,7 @@ auto File_path::SATA::toEFIBootFilePath() const -> EFIBoot::File_path::SATA
 
 auto File_path::SATA::fromJSON(const QJsonObject &obj) -> std::optional<File_path::SATA>
 {
-    SATA value;
+    SATA value{};
     check_obj();
     try_read_3(hba_port, Double, Int);
     try_read_3(port_multiplier_port, Double, Int);
@@ -703,7 +703,7 @@ auto File_path::SATA::fromJSON(const QJsonObject &obj) -> std::optional<File_pat
 
 auto File_path::SATA::toJSON() const -> QJsonObject
 {
-    QJsonObject value;
+    QJsonObject value{};
     value["type"] = TYPE;
     value["subtype"] = SUBTYPE;
     value["hba_port"] = static_cast<int>(hba_port);
@@ -748,7 +748,7 @@ auto File_path::HD::toEFIBootFilePath() const -> EFIBoot::File_path::HD
 
 auto File_path::HD::fromJSON(const QJsonObject &obj) -> std::optional<File_path::HD>
 {
-    HD value;
+    HD value{};
     check_obj();
     check_type(partition_start, String);
     value.partition_start = obj["partition_start"].toString().toULongLong(nullptr, HEX_BASE);
@@ -782,7 +782,7 @@ auto File_path::HD::toString(bool refresh) const -> QString
         return string;
 
     QString format = QString("HD(%1,%2,%3,%4,%5)").arg(partition_number);
-    switch(static_cast<EFIBoot::File_path::HD::SIGNATURE>(signature_type))
+    switch(signature_type)
     {
     case EFIBoot::File_path::HD::SIGNATURE::MBR:
     {
@@ -795,7 +795,7 @@ auto File_path::HD::toString(bool refresh) const -> QString
         break;
 
     default:
-        format = format.arg(static_cast<std::underlying_type<decltype(signature_type)>::type>(signature_type)).arg("N/A");
+        format = format.arg(static_cast<std::underlying_type_t<decltype(signature_type)>>(signature_type)).arg("N/A");
         break;
     }
 
@@ -816,7 +816,7 @@ auto File_path::File::toEFIBootFilePath() const -> EFIBoot::File_path::File
 
 auto File_path::File::fromJSON(const QJsonObject &obj) -> std::optional<File_path::File>
 {
-    File value;
+    File value{};
     check_obj();
     try_read(name, String);
     return {value};
@@ -857,7 +857,7 @@ auto File_path::FirmwareFile::toEFIBootFilePath() const -> EFIBoot::File_path::F
 
 auto File_path::FirmwareFile::fromJSON(const QJsonObject &obj) -> std::optional<File_path::FirmwareFile>
 {
-    FirmwareFile value;
+    FirmwareFile value{};
     check_obj();
     check_type(name, String);
     value.name = QUuid::fromString(obj["name"].toString());
@@ -899,7 +899,7 @@ auto File_path::FirmwareVolume::toEFIBootFilePath() const -> EFIBoot::File_path:
 
 auto File_path::FirmwareVolume::fromJSON(const QJsonObject &obj) -> std::optional<File_path::FirmwareVolume>
 {
-    FirmwareVolume value;
+    FirmwareVolume value{};
     check_obj();
     check_type(name, String);
     value.name = QUuid::fromString(obj["name"].toString());
@@ -941,7 +941,7 @@ auto File_path::BIOSBootSpecification::toEFIBootFilePath() const -> EFIBoot::Fil
 
 auto File_path::BIOSBootSpecification::fromJSON(const QJsonObject &obj) -> std::optional<File_path::BIOSBootSpecification>
 {
-    BIOSBootSpecification value;
+    BIOSBootSpecification value{};
     check_obj();
     try_read_3(device_type, Double, Int);
     try_read_3(status_flag, Double, Int);
@@ -951,7 +951,7 @@ auto File_path::BIOSBootSpecification::fromJSON(const QJsonObject &obj) -> std::
 
 auto File_path::BIOSBootSpecification::toJSON() const -> QJsonObject
 {
-    QJsonObject value;
+    QJsonObject value{};
     value["type"] = TYPE;
     value["subtype"] = SUBTYPE;
     value["device_type"] = static_cast<int>(device_type);
@@ -970,7 +970,7 @@ auto File_path::BIOSBootSpecification::toString(bool refresh) const -> QString
 
 auto File_path::End::fromJSON(const QJsonObject &obj) -> std::optional<File_path::End>
 {
-    End value;
+    End value{};
     check_obj();
     try_read_3(_subtype, Double, Int);
     return {value};
@@ -1025,7 +1025,7 @@ auto File_path::Unknown::toEFIBootFilePath() const -> EFIBoot::File_path::Unknow
 
 auto File_path::Unknown::fromJSON(const QJsonObject &obj) -> std::optional<File_path::Unknown>
 {
-    Unknown value;
+    Unknown value{};
     check_obj();
     try_read_3(_type, Double, Int);
     try_read_3(_subtype, Double, Int);
@@ -1036,7 +1036,7 @@ auto File_path::Unknown::fromJSON(const QJsonObject &obj) -> std::optional<File_
 
 auto File_path::Unknown::toJSON() const -> QJsonObject
 {
-    QJsonObject value;
+    QJsonObject value{};
     value["type"] = TYPE;
     value["subtype"] = SUBTYPE;
     value["_type"] = _type;

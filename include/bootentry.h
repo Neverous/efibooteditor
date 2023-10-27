@@ -357,12 +357,12 @@ public:
 
 public:
     End() = default;
-    End(const EFIBoot::File_path::End_instance &end)
-        : _subtype{end.SUBTYPE}
+    End(const EFIBoot::File_path::End_instance &)
+        : _subtype{EFIBoot::File_path::End_instance::SUBTYPE}
     {
     }
-    End(const EFIBoot::File_path::End_entire &end)
-        : _subtype{end.SUBTYPE}
+    End(const EFIBoot::File_path::End_entire &)
+        : _subtype{EFIBoot::File_path::End_entire::SUBTYPE}
     {
     }
     EFIBoot::File_path::ANY toEFIBootFilePath() const
