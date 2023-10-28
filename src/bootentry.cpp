@@ -794,7 +794,7 @@ auto File_path::HD::toString(bool refresh) const -> QString
         format = format.arg("GPT", partition_signature.toString(QUuid::WithoutBraces));
         break;
 
-    default:
+    case EFIBoot::File_path::HD::SIGNATURE::NONE:
         format = format.arg(static_cast<std::underlying_type_t<decltype(signature_type)>>(signature_type)).arg("N/A");
         break;
     }
