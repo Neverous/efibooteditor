@@ -64,7 +64,7 @@ auto BootEntry::toEFIBootLoadOption() const -> EFIBoot::Load_option
     if(is_error)
         return {};
 
-    EFIBoot::Load_option load_option;
+    EFIBoot::Load_option load_option{};
     load_option.description = description.toStdU16String();
     {
         auto bytes = getRawOptionalData();
@@ -735,7 +735,7 @@ File_path::HD::HD(const EFIBoot::File_path::HD &hd)
 
 auto File_path::HD::toEFIBootFilePath() const -> EFIBoot::File_path::HD
 {
-    EFIBoot::File_path::HD hd;
+    EFIBoot::File_path::HD hd{};
     hd.partition_start = partition_start;
     hd.partition_size = partition_size;
     hd.partition_number = partition_number;
@@ -764,7 +764,7 @@ auto File_path::HD::fromJSON(const QJsonObject &obj) -> std::optional<File_path:
 
 auto File_path::HD::toJSON() const -> QJsonObject
 {
-    QJsonObject hd;
+    QJsonObject hd{};
     hd["type"] = TYPE;
     hd["subtype"] = SUBTYPE;
     hd["partition_start"] = toHex(partition_start);
@@ -809,7 +809,7 @@ File_path::File::File(const EFIBoot::File_path::File &file)
 
 auto File_path::File::toEFIBootFilePath() const -> EFIBoot::File_path::File
 {
-    EFIBoot::File_path::File file;
+    EFIBoot::File_path::File file{};
     file.name = name.toStdU16String();
     return file;
 }
@@ -824,7 +824,7 @@ auto File_path::File::fromJSON(const QJsonObject &obj) -> std::optional<File_pat
 
 auto File_path::File::toJSON() const -> QJsonObject
 {
-    QJsonObject file;
+    QJsonObject file{};
     file["type"] = TYPE;
     file["subtype"] = SUBTYPE;
     file["name"] = name;
@@ -849,7 +849,7 @@ File_path::FirmwareFile::FirmwareFile(const EFIBoot::File_path::Firmware_file &f
 
 auto File_path::FirmwareFile::toEFIBootFilePath() const -> EFIBoot::File_path::Firmware_file
 {
-    EFIBoot::File_path::Firmware_file firmware_file;
+    EFIBoot::File_path::Firmware_file firmware_file{};
     static_assert(sizeof(name) == sizeof(firmware_file.name));
     memcpy(firmware_file.name.data(), &name, sizeof(name));
     return firmware_file;
@@ -866,7 +866,7 @@ auto File_path::FirmwareFile::fromJSON(const QJsonObject &obj) -> std::optional<
 
 auto File_path::FirmwareFile::toJSON() const -> QJsonObject
 {
-    QJsonObject firmware_file;
+    QJsonObject firmware_file{};
     firmware_file["type"] = TYPE;
     firmware_file["subtype"] = SUBTYPE;
     firmware_file["name"] = name.toString();
@@ -891,7 +891,7 @@ File_path::FirmwareVolume::FirmwareVolume(const EFIBoot::File_path::Firmware_vol
 
 auto File_path::FirmwareVolume::toEFIBootFilePath() const -> EFIBoot::File_path::Firmware_volume
 {
-    EFIBoot::File_path::Firmware_volume firmware_volume;
+    EFIBoot::File_path::Firmware_volume firmware_volume{};
     static_assert(sizeof(name) == sizeof(firmware_volume.name));
     memcpy(firmware_volume.name.data(), &name, sizeof(name));
     return firmware_volume;
@@ -908,7 +908,7 @@ auto File_path::FirmwareVolume::fromJSON(const QJsonObject &obj) -> std::optiona
 
 auto File_path::FirmwareVolume::toJSON() const -> QJsonObject
 {
-    QJsonObject firmware_volume;
+    QJsonObject firmware_volume{};
     firmware_volume["type"] = TYPE;
     firmware_volume["subtype"] = SUBTYPE;
     firmware_volume["name"] = name.toString();
