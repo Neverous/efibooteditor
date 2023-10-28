@@ -32,7 +32,7 @@ public:
     bool process(const QCoreApplication &app);
 
 public slots:
-    void showError(const QString &message, const QString &details);
-    void showProgress(size_t step, size_t total, const QString &details);
-    void hideProgress();
+    void showError(const QString &message, const QString &details) const;
+    void showProgress(size_t step, size_t total, const QString &details) const;
+    void hideProgress() const;
 };

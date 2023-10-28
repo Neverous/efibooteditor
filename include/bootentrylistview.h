@@ -19,7 +19,7 @@ public:
     BootEntryListView(const BootEntryListView &) = delete;
     BootEntryListView &operator=(const BootEntryListView &) = delete;
 
-    virtual void setModel(QAbstractItemModel *model) override { QListView::setModel(model); }
+    void setModel(QAbstractItemModel *model) override { QListView::setModel(model); }
     void setModel(BootEntryListModel *model);
 
 protected:

@@ -4,11 +4,10 @@
 #include "efibootdata.h"
 #include <QUndoCommand>
 
-template <class Type>
+template <class Type, class SignalPtr>
 class SetEFIBootDataValueCommand: public QUndoCommand
 {
     using PropertyPtr = Type EFIBootData::*;
-    using SignalPtr = void (EFIBootData::*)(const Type &);
 
     EFIBootData &data;
     const QString name;
@@ -50,7 +49,7 @@ public:
 
     bool mergeWith(const QUndoCommand *command) override
     {
-        auto cmd = static_cast<const SetEFIBootDataValueCommand<Type> *>(command);
+        const auto cmd = static_cast<add_const_t<decltype(this)>>(command);
         if(&cmd->data != &data)
             return false;
 
@@ -67,6 +66,9 @@ public:
         return true;
     }
 };
+
+template <class Type, class SignalPtr>
+SetEFIBootDataValueCommand(EFIBootData &data_, const QString &name_, typename SetEFIBootDataValueCommand<Type, SignalPtr>::PropertyPtr property_, SignalPtr signal_, const Type &value_, QUndoCommand *parent) -> SetEFIBootDataValueCommand<Type, SignalPtr>;
 
 class InsertRemoveBootEntryCommand: public QUndoCommand
 {
@@ -130,18 +132,6 @@ public:
 };
 
 template <class Type>
-struct type_identity
-{
-    using type = Type;
-};
-
-template <class Type>
-struct underlying_type
-{
-    using type = typename std::conditional_t<std::is_enum_v<Type>, std::underlying_type<Type>, type_identity<Type>>::type;
-};
-
-template <class Type>
 class SetBootEntryValueCommand: public QUndoCommand
 {
     using PropertyPtr = Type BootEntry::*;
@@ -163,7 +153,7 @@ public:
         , property{property_}
         , value{value_}
     {
-        setText(QObject::tr("Change %1 entry \"%2\" %3 to \"%4\"").arg(model.name, title, name).arg(static_cast<typename underlying_type<Type>::type>(value)));
+        setText(QObject::tr("Change %1 entry \"%2\" %3 to \"%4\"").arg(model.name, title, name).arg(static_cast<underlying_type_t<Type>>(value)));
     }
 
     SetBootEntryValueCommand(const SetBootEntryValueCommand &) = delete;
@@ -204,7 +194,7 @@ public:
         if(value == entry.*property)
             setObsolete(true);
 
-        setText(QObject::tr("Change %1 entry \"%2\" %3 to \"%4\"").arg(model.name, title, name).arg(static_cast<typename underlying_type<Type>::type>(entry.*property)));
+        setText(QObject::tr("Change %1 entry \"%2\" %3 to \"%4\"").arg(model.name, title, name).arg(static_cast<underlying_type_t<Type>>(entry.*property)));
         return true;
     }
 };

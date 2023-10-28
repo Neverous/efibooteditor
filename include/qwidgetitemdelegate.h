@@ -18,9 +18,9 @@ public:
 private:
     friend class Guard;
 
-    mutable Widget renderer;
-    mutable Widget painter;
-    Widget event_handler;
+    mutable Widget renderer{};
+    mutable Widget painter{};
+    Widget event_handler{};
 
 public:
     explicit QWidgetItemDelegate(QObject *parent = nullptr);
@@ -30,7 +30,7 @@ public:
     void paint(QPainter *_painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
-    virtual void setupWidgetFromItem(Widget &, const Item &) const { }
+    virtual void setupWidgetFromItem(Widget &, const Item &) const { return; }
     virtual bool handleWidgetDelegateEventResult(const QEvent *, QAbstractItemModel *, const QStyleOptionViewItem &, const QModelIndex &, const Widget &, bool result) const { return result; }
 
 protected:
@@ -40,9 +40,6 @@ protected:
 template <class Widget, class Item>
 QWidgetItemDelegate<Widget, Item>::QWidgetItemDelegate(QObject *parent)
     : QStyledItemDelegate(parent)
-    , renderer()
-    , painter()
-    , event_handler()
 {
 }
 
@@ -94,10 +91,9 @@ bool QWidgetItemDelegate<Widget, Item>::editorEvent(QEvent *event, QAbstractItem
         event_handler.setGeometry(option.rect);
         event_handler.grab(); // force layout
 
-        const auto passthrough_events = {QEvent::MouseButtonPress, QEvent::MouseButtonRelease, QEvent::MouseButtonDblClick, QEvent::MouseMove};
-        if(std::find(std::begin(passthrough_events), std::end(passthrough_events), event->type()) != std::end(passthrough_events))
+        if(const auto passthrough_events = {QEvent::MouseButtonPress, QEvent::MouseButtonRelease, QEvent::MouseButtonDblClick, QEvent::MouseMove}; std::find(std::begin(passthrough_events), std::end(passthrough_events), event->type()) != std::end(passthrough_events))
         {
-            QMouseEvent *mouse_event = static_cast<QMouseEvent *>(event);
+            auto mouse_event = static_cast<QMouseEvent *>(event);
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
             auto position = event_handler.mapFromParent(mouse_event->position());
             QWidget *child = event_handler.childAt(position.toPoint());

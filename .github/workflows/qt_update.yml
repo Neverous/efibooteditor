@@ -13,6 +13,11 @@ jobs:
   check-qt-updates:
     name: Check Qt updates
     runs-on: ubuntu-latest
+
+    permissions:
+      actions: read
+      contents: read
+
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4

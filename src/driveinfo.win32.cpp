@@ -12,7 +12,7 @@ QVector<DriveInfo> DriveInfo::getAll(bool refresh)
 
     all.clear();
 
-    std::array<TCHAR, MAX_PATH> volume_name;
+    std::array<TCHAR, MAX_PATH> volume_name{};
     HANDLE volume_handle = FindFirstVolume(volume_name.data(), static_cast<DWORD>(volume_name.size()));
 
     if(volume_handle == INVALID_HANDLE_VALUE)
@@ -21,7 +21,7 @@ QVector<DriveInfo> DriveInfo::getAll(bool refresh)
     for(BOOL volume_found = true; volume_found; volume_found = FindNextVolume(volume_handle, volume_name.data(), static_cast<DWORD>(volume_name.size())))
     {
         DriveInfo driveinfo{};
-        std::array<TCHAR, MAX_PATH> device_name;
+        std::array<TCHAR, MAX_PATH> device_name{};
         size_t length = _tcsnccnt(volume_name.data(), volume_name.size());
         if(length != 49u)
             continue;
@@ -32,7 +32,7 @@ QVector<DriveInfo> DriveInfo::getAll(bool refresh)
 
         volume_name[length - 1u] = _T('\\');
 
-        PARTITION_INFORMATION_EX partition_information;
+        PARTITION_INFORMATION_EX partition_information{};
 
         device_name[4] = _T('\\');
         device_name[5] = _T('\\');

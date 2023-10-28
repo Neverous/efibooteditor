@@ -38,10 +38,7 @@ void HorizontalTabStyle::drawControl(ControlElement element, const QStyleOption 
 
 FilePathDialog::FilePathDialog(QWidget *parent)
     : QDialog(parent)
-    , horizontal_tab_style{}
     , ui{std::make_unique<Ui::FilePathDialog>()}
-    , vendor_data_format_combo_index{}
-    , unknown_data_format_combo_index{}
 {
     ui->setupUi(this);
     setFilePath(nullptr);
@@ -253,7 +250,7 @@ void FilePathDialog::setFilePath(const File_path::ANY *_file_path)
     struct Visitor
     {
         FilePathDialog *parent;
-        Visitor(FilePathDialog *parent_)
+        explicit Visitor(FilePathDialog *parent_)
             : parent{parent_}
         {
         }
@@ -304,7 +301,7 @@ void FilePathDialog::setUSBForm(const File_path::USB &usb)
 void FilePathDialog::setVendorForm(const File_path::Vendor &vendor)
 {
     ui->options->setCurrentIndex(FormIndex::Vendor);
-    VendorTypeIndex index = VendorTypeIndex::HW;
+    VendorTypeIndex index{};
     switch(vendor._type)
     {
     case EFIBoot::File_path::HWVendor::TYPE:
@@ -317,6 +314,10 @@ void FilePathDialog::setVendorForm(const File_path::Vendor &vendor)
 
     case EFIBoot::File_path::MEDIAVendor::TYPE:
         index = VendorTypeIndex::MEDIA;
+        break;
+
+    default:
+        index = VendorTypeIndex::HW;
         break;
     }
 

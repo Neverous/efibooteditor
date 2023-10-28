@@ -353,7 +353,7 @@ private:
     mutable QString string = "";
 
 public:
-    uint8_t _subtype = EFIBoot::File_path::End_entire::SUBTYPE;
+    uint8_t _subtype = 0;
 
 public:
     End() = default;

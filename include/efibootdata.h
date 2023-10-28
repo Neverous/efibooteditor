@@ -11,10 +11,10 @@ class EFIBootData: public QObject
     Q_OBJECT
 
 public:
-    BootEntryListModel boot_entries_list_model{tr("Boot"), BootEntryListModel::IsBoot, this};
+    BootEntryListModel boot_entries_list_model{tr("Boot"), BootEntryListModel::Option::IsBoot, this};
     BootEntryListModel driver_entries_list_model{tr("Driver"), {}, this};
     BootEntryListModel sysprep_entries_list_model{tr("System Preparation"), {}, this};
-    BootEntryListModel platform_recovery_entries_list_model{tr("Platform Recovery"), BootEntryListModel::ReadOnly, this};
+    BootEntryListModel platform_recovery_entries_list_model{tr("Platform Recovery"), BootEntryListModel::Option::ReadOnly, this};
 
     const std::vector<std::tuple<QString, BootEntryListModel &>> BOOT_ENTRIES{
         {"Boot", boot_entries_list_model},

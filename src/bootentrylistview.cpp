@@ -22,7 +22,7 @@ void BootEntryListView::setModel(BootEntryListModel *model)
 
 void BootEntryListView::insertRow()
 {
-    if(options & BootEntryListModel::ReadOnly)
+    if(options & BootEntryListModel::Option::ReadOnly)
         return;
 
     auto row = currentIndex().row();
@@ -32,7 +32,7 @@ void BootEntryListView::insertRow()
 
 void BootEntryListView::removeCurrentRow()
 {
-    if(options & BootEntryListModel::ReadOnly)
+    if(options & BootEntryListModel::Option::ReadOnly)
         return;
 
     auto index = currentIndex();
@@ -50,7 +50,7 @@ void BootEntryListView::removeCurrentRow()
 
 void BootEntryListView::moveCurrentRowUp()
 {
-    if(options & BootEntryListModel::ReadOnly)
+    if(options & BootEntryListModel::Option::ReadOnly)
         return;
 
     auto index = currentIndex();
@@ -64,7 +64,7 @@ void BootEntryListView::moveCurrentRowUp()
 
 void BootEntryListView::moveCurrentRowDown()
 {
-    if(options & BootEntryListModel::ReadOnly)
+    if(options & BootEntryListModel::Option::ReadOnly)
         return;
 
     auto index = currentIndex();

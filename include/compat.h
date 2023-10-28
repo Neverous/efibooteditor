@@ -194,9 +194,9 @@ inline bool toUnicode(QString &output, const Container &input, const char *codec
     output = decoder.decode(input);
     return !decoder.hasError();
 #else
-    QTextCodec *codec = QTextCodec::codecForName(codec_name);
+    auto codec = QTextCodec::codecForName(codec_name);
     QTextCodec::ConverterState state;
-    output = codec->toUnicode(reinterpret_cast<const char *>(input.data()), static_cast<int>(input.size()), &state);
+    output = codec->toUnicode(reinterpret_cast<const char *>(std::data(input)), static_cast<int>(std::size(input)), &state);
     return state.invalidChars == 0;
 #endif
 }
@@ -211,6 +211,20 @@ inline QByteArray fromUnicode(const QString &input, const char *codec_name = "UT
     return encoder->fromUnicode(input);
 #endif
 }
+
+template <class Type>
+struct type_identity
+{
+    using type = Type;
+};
+
+// Like std::underlying_type but also works for non enums
+template <class Type>
+using underlying_type_t = typename std::conditional_t<std::is_enum_v<Type>, std::underlying_type<Type>, type_identity<Type>>::type;
+
+// like std::add_const but forces const also for pointer types
+template <class Type>
+using add_const_t = typename std::conditional_t<std::is_pointer_v<Type>, std::add_pointer_t<std::add_const_t<std::remove_pointer_t<Type>>>, std::add_const_t<Type>>;
 #endif
 
 #if defined(__clang__)

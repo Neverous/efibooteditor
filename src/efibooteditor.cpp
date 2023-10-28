@@ -19,10 +19,9 @@
 EFIBootEditor::EFIBootEditor(const std::optional<tstring> &efi_error_message, QWidget *parent)
     : QMainWindow{parent}
     , ui{std::make_unique<Ui::EFIBootEditor>()}
-    , confirmation{std::make_unique<QMessageBox>(QMessageBox::Question, qApp->applicationName(), "", QMessageBox::NoButton, this)}
-    , error{std::make_unique<QMessageBox>(QMessageBox::Critical, qApp->applicationName(), "", QMessageBox::NoButton, this)}
+    , confirmation{std::make_unique<QMessageBox>(QMessageBox::Question, QApplication::applicationName(), "", QMessageBox::NoButton, this)}
+    , error{std::make_unique<QMessageBox>(QMessageBox::Critical, QApplication::applicationName(), "", QMessageBox::NoButton, this)}
     , progress{std::make_unique<QProgressDialog>(tr("Working…"), nullptr, 0, 0, this)}
-    , disable_undo_redo{std::make_unique<DisableUndoRedo>()}
 {
     data.setUndoStack(&undo_stack);
     ui->setupUi(this);
@@ -165,7 +164,7 @@ void EFIBootEditor::enableBootEntryEditor(const QModelIndex &index)
     auto [name, list, model] = currentBootEntryList();
     (void)name;
     (void)list;
-    ui->entry_form->setReadOnly((model.options & BootEntryListModel::ReadOnly) || item->is_error);
+    ui->entry_form->setReadOnly((model.options & BootEntryListModel::Option::ReadOnly) || item->is_error);
 }
 
 void EFIBootEditor::disableBootEntryEditor()
@@ -188,7 +187,7 @@ void EFIBootEditor::switchBootEntryEditor(int index)
     ui->entry_form->setBootEntryListModel(model);
     list.setCurrentIndex(list.currentIndex());
     enableBootEntryEditor(list.currentIndex());
-    ui->entries_actions->setDisabled(model.options & BootEntryListModel::ReadOnly);
+    ui->entries_actions->setDisabled(model.options & BootEntryListModel::Option::ReadOnly);
 }
 
 void EFIBootEditor::save()
@@ -314,7 +313,7 @@ void EFIBootEditor::undoViewChanged(const QModelIndex &)
 void EFIBootEditor::reorderBootEntries()
 {
     auto [name, list, model] = currentBootEntryList();
-    if(model.options & BootEntryListModel::ReadOnly)
+    if(model.options & BootEntryListModel::Option::ReadOnly)
         return;
 
     disableBootEntryEditor();
@@ -350,7 +349,7 @@ void EFIBootEditor::removeCurrentBootEntry()
 {
     auto [name, list, model] = currentBootEntryList();
     (void)name;
-    if(model.options & BootEntryListModel::ReadOnly)
+    if(model.options & BootEntryListModel::Option::ReadOnly)
         return;
 
     list.removeCurrentRow();
@@ -360,7 +359,7 @@ void EFIBootEditor::moveCurrentBootEntryUp()
 {
     auto [name, list, model] = currentBootEntryList();
     (void)name;
-    if(model.options & BootEntryListModel::ReadOnly)
+    if(model.options & BootEntryListModel::Option::ReadOnly)
         return;
 
     list.moveCurrentRowUp();
@@ -370,7 +369,7 @@ void EFIBootEditor::moveCurrentBootEntryDown()
 {
     auto [name, list, model] = currentBootEntryList();
     (void)name;
-    if(model.options & BootEntryListModel::ReadOnly)
+    if(model.options & BootEntryListModel::Option::ReadOnly)
         return;
 
     list.moveCurrentRowDown();
@@ -380,7 +379,7 @@ void EFIBootEditor::insertBootEntry()
 {
     auto [name, list, model] = currentBootEntryList();
     (void)name;
-    if(model.options & BootEntryListModel::ReadOnly)
+    if(model.options & BootEntryListModel::Option::ReadOnly)
         return;
 
     list.insertRow();

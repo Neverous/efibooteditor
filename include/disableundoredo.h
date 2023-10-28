@@ -9,12 +9,9 @@ class DisableUndoRedo: public QObject
 {
     Q_OBJECT
 
-public:
-    explicit DisableUndoRedo(QObject *parent = nullptr)
-        : QObject{parent}
-    {
-    }
+    using QObject::QObject;
 
+public:
     DisableUndoRedo(const DisableUndoRedo &) = delete;
     DisableUndoRedo &operator=(const DisableUndoRedo &) = delete;
 

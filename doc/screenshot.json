@@ -1,4 +1,5 @@
 {
+    "AuditMode": false,
     "Boot": {
         "0000": {
             "attributes": 1,
@@ -10,7 +11,7 @@
                     "partition_number": 1,
                     "partition_signature": "{721c8b66-426c-4e86-8e99-3457c46ab0b9}",
                     "partition_size": "0x32",
-                    "partition_start": "0x1cd6",
+                    "partition_start": "0x1CD6",
                     "signature_type": 2,
                     "subtype": "HD",
                     "type": "MEDIA"
@@ -185,5 +186,9 @@
         0,
         1
     ],
-    "Timeout": 10
+    "DeployedMode": false,
+    "SecureBoot": true,
+    "SetupMode": false,
+    "Timeout": 10,
+    "VendorKeys": false
 }
