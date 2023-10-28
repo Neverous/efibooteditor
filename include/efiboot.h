@@ -268,8 +268,6 @@ struct Load_option
     Load_option_attribute attributes = Load_option_attribute::EMPTY;
 };
 
-using Advance_fn = std::function<const void *(const void *, size_t)>;
-using Size_fn = std::function<size_t(const void *)>;
 using Progress_fn = std::function<void(size_t, size_t)>;
 
 template <class Type = Raw_data>
@@ -280,8 +278,8 @@ std::optional<tstring> init();
 template <class Type = Raw_data>
 std::optional<std::vector<Type>> deserialize_list(const void *data, size_t data_size);
 
-template <class Type = Raw_data>
-std::optional<std::vector<Type>> deserialize_list_ex(const void *data, size_t data_size, Size_fn get_element_size, Advance_fn get_next_element);
+template <class Type = Raw_data, class Size_fn, class Advance_fn>
+std::optional<std::vector<Type>> deserialize_list_ex(const void *data, size_t data_size, const Size_fn &get_element_size, const Advance_fn &get_next_element);
 
 template <class Type = Raw_data>
 size_t serialize(Raw_data &output, const Type &value);
@@ -302,8 +300,8 @@ std::optional<Variable<Type>> get_variable(const efi_guid_t &guid, const tstring
 template <class Type = Raw_data>
 std::optional<Variable<std::vector<Type>>> get_list_variable(const efi_guid_t &guid, const tstring &name);
 
-template <class Type = Raw_data>
-std::optional<Variable<std::vector<Type>>> get_list_variable_ex(const efi_guid_t &guid, const tstring &name, Size_fn get_element_size, Advance_fn get_next_element);
+template <class Type = Raw_data, class Size_fn, class Advance_fn>
+std::optional<Variable<std::vector<Type>>> get_list_variable_ex(const efi_guid_t &guid, const tstring &name, const Size_fn &get_element_size, const Advance_fn &get_next_element);
 
 template <class Type = Raw_data>
 bool set_variable(const efi_guid_t &guid, const tstring &name, const Variable<Type> &variable, mode_t mode);
@@ -407,8 +405,8 @@ inline size_t serialize(Raw_data &output, const std::u16string &value)
     return bytes;
 }
 
-template <class Type>
-inline std::optional<std::vector<Type>> deserialize_list_ex(const void *data, size_t data_size, Size_fn get_element_size, Advance_fn get_next_element)
+template <class Type, class Size_fn, class Advance_fn>
+inline std::optional<std::vector<Type>> deserialize_list_ex(const void *data, size_t data_size, const Size_fn &get_element_size, const Advance_fn &get_next_element)
 {
     std::vector<Type> values;
     const void *data_end = advance_bytes(data, data_size);
@@ -436,11 +434,11 @@ inline std::optional<std::vector<Type>> deserialize_list(const void *data, size_
 {
     return deserialize_list_ex<Type>(
         data, data_size,
-        [](const void *) -> size_t
+        [](const void *)
         {
             return sizeof(Type);
         },
-        [](const void *ptr, size_t) -> const void *
+        [](const void *ptr, size_t)
         {
             return advance_bytes(ptr, sizeof(const Type));
         });
@@ -459,7 +457,7 @@ size_t serialize_list(Raw_data &output, const std::vector<Type> &value)
 template <>
 inline std::optional<File_path::End_instance> deserialize(const void *data, size_t data_size)
 {
-    const efidp_header *dp = static_cast<const efidp_header *>(data);
+    auto dp = static_cast<const efidp_header *>(data);
     if(dp->length != data_size)
         return std::nullopt;
 
@@ -481,7 +479,7 @@ inline size_t serialize(Raw_data &output, const File_path::End_instance &)
     bytes += serialize(output, type);
     uint8_t subtype = File_path::End_instance::SUBTYPE;
     bytes += serialize(output, subtype);
-    uint16_t length = static_cast<uint16_t>(bytes + sizeof(uint16_t));
+    auto length = static_cast<uint16_t>(bytes + sizeof(uint16_t));
     bytes += serialize(output, length);
     return bytes;
 }
@@ -489,7 +487,7 @@ inline size_t serialize(Raw_data &output, const File_path::End_instance &)
 template <>
 inline std::optional<File_path::End_entire> deserialize(const void *data, size_t data_size)
 {
-    const efidp_header *dp = static_cast<const efidp_header *>(data);
+    auto dp = static_cast<const efidp_header *>(data);
     if(dp->length != data_size)
         return std::nullopt;
 
@@ -511,7 +509,7 @@ inline size_t serialize(Raw_data &output, const File_path::End_entire &)
     bytes += serialize(output, type);
     uint8_t subtype = File_path::End_entire::SUBTYPE;
     bytes += serialize(output, subtype);
-    uint16_t length = static_cast<uint16_t>(bytes + sizeof(uint16_t));
+    auto length = static_cast<uint16_t>(bytes + sizeof(uint16_t));
     bytes += serialize(output, length);
     return bytes;
 }
@@ -520,8 +518,8 @@ template <>
 inline std::optional<Load_option> deserialize(const void *data, size_t data_size)
 {
     Load_option value{};
-    ssize_t ssize = static_cast<ssize_t>(data_size);
-    efi_load_option *load_option = const_cast<efi_load_option *>(static_cast<const efi_load_option *>(data));
+    auto ssize = static_cast<ssize_t>(data_size);
+    auto load_option = const_cast<efi_load_option *>(static_cast<const efi_load_option *>(data));
 
 #if defined(__clang__)
 #pragma clang diagnostic push
@@ -538,14 +536,14 @@ inline std::optional<Load_option> deserialize(const void *data, size_t data_size
 
     auto file_paths = deserialize_list_ex<File_path::ANY>(
         device_path, device_path_size,
-        [](const void *ptr) -> size_t
+        [](const void *ptr)
         {
             auto size = efidp_node_size(static_cast<const_efidp>(ptr));
             return static_cast<size_t>(size);
         },
         [](const void *ptr, size_t bytes_left) -> const void *
         {
-            const_efidp dp = static_cast<const_efidp>(ptr);
+            auto dp = static_cast<const_efidp>(ptr);
             ssize_t size = efidp_node_size(dp);
             if(size < 0 || static_cast<size_t>(size) > bytes_left)
                 return nullptr;
@@ -584,20 +582,19 @@ inline size_t serialize(Raw_data &output, const Load_option &load_option)
     size += serialize(output, load_option.description);
     std::u16string::value_type zero = 0;
     size += serialize(output, zero);
+
+    file_path_list_size = static_cast<uint16_t>(serialize_list(output, load_option.device_path));
+    // Always set END_ENTIRE tag at the end of device path
+    if(!load_option.device_path.size() || std::visit([](const auto &file_path)
+                                              { return file_path.SUBTYPE; },
+                                              load_option.device_path.back())
+            != File_path::End_entire::SUBTYPE)
     {
-        file_path_list_size = static_cast<uint16_t>(serialize_list(output, load_option.device_path));
-        // Always set END_ENTIRE tag at the end of device path
-        if(!load_option.device_path.size() || std::visit([](const auto &file_path)
-                                                  { return file_path.SUBTYPE; },
-                                                  load_option.device_path.back())
-                != File_path::End_entire::SUBTYPE)
-        {
-            File_path::End_entire end{};
-            file_path_list_size = static_cast<uint16_t>(file_path_list_size + static_cast<uint16_t>(serialize(output, end))); // Older GCC complains about conversion when using += `conversion from ‘int’ to ‘uint16_t’ {aka ‘short unsigned int’} may change value`
-        }
-        size += file_path_list_size;
-        memcpy(&output[file_path_list_length_pos], &file_path_list_size, sizeof(file_path_list_size));
+        File_path::End_entire end{};
+        file_path_list_size = static_cast<uint16_t>(file_path_list_size + static_cast<uint16_t>(serialize(output, end))); // Older GCC complains about conversion when using += `conversion from ‘int’ to ‘uint16_t’ {aka ‘short unsigned int’} may change value`
     }
+    size += file_path_list_size;
+    memcpy(&output[file_path_list_length_pos], &file_path_list_size, sizeof(file_path_list_size));
 
     size += serialize(output, load_option.optional_data);
     return size;
@@ -606,7 +603,7 @@ inline size_t serialize(Raw_data &output, const Load_option &load_option)
 template <>
 inline std::optional<File_path::PCI> deserialize(const void *data, size_t data_size)
 {
-    const efidp_pci *dp = static_cast<const efidp_pci *>(data);
+    auto dp = static_cast<const efidp_pci *>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
@@ -643,7 +640,7 @@ inline size_t serialize(Raw_data &output, const File_path::PCI &pci)
 template <>
 inline std::optional<File_path::HWVendor> deserialize(const void *data, size_t data_size)
 {
-    const efidp_vendor *dp = static_cast<const efidp_vendor *>(data);
+    auto dp = static_cast<const efidp_vendor *>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
@@ -682,7 +679,7 @@ inline size_t serialize(Raw_data &output, const File_path::HWVendor &vendor)
 template <>
 inline std::optional<File_path::HID> deserialize(const void *data, size_t data_size)
 {
-    const efidp_hid *dp = static_cast<const efidp_hid *>(data);
+    auto dp = static_cast<const efidp_hid *>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
@@ -719,7 +716,7 @@ inline size_t serialize(Raw_data &output, const File_path::HID &hid)
 template <>
 inline std::optional<File_path::USB> deserialize(const void *data, size_t data_size)
 {
-    const efidp_usb *dp = static_cast<const efidp_usb *>(data);
+    auto dp = static_cast<const efidp_usb *>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
@@ -756,7 +753,7 @@ inline size_t serialize(Raw_data &output, const File_path::USB &usb)
 template <>
 inline std::optional<File_path::MSGVendor> deserialize(const void *data, size_t data_size)
 {
-    const efidp_vendor *dp = static_cast<const efidp_vendor *>(data);
+    auto dp = static_cast<const efidp_vendor *>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
@@ -795,7 +792,7 @@ inline size_t serialize(Raw_data &output, const File_path::MSGVendor &vendor)
 template <>
 inline std::optional<File_path::MAC_address> deserialize(const void *data, size_t data_size)
 {
-    const efidp_mac_address *dp = static_cast<const efidp_mac_address *>(data);
+    auto dp = static_cast<const efidp_mac_address *>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
@@ -832,7 +829,7 @@ inline size_t serialize(Raw_data &output, const File_path::MAC_address &mac_addr
 template <>
 inline std::optional<File_path::IPv4> deserialize(const void *data, size_t data_size)
 {
-    const efidp_ipv4 *dp = static_cast<const efidp_ipv4 *>(data);
+    auto dp = static_cast<const efidp_ipv4 *>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
@@ -881,7 +878,7 @@ inline size_t serialize(Raw_data &output, const File_path::IPv4 &ipv4)
 template <>
 inline std::optional<File_path::IPv6> deserialize(const void *data, size_t data_size)
 {
-    const efidp_ipv6 *dp = static_cast<const efidp_ipv6 *>(data);
+    auto dp = static_cast<const efidp_ipv6 *>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
@@ -930,7 +927,7 @@ inline size_t serialize(Raw_data &output, const File_path::IPv6 &ipv6)
 template <>
 inline std::optional<File_path::SATA> deserialize(const void *data, size_t data_size)
 {
-    const efidp_sata *dp = static_cast<const efidp_sata *>(data);
+    auto dp = static_cast<const efidp_sata *>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
@@ -969,7 +966,7 @@ inline size_t serialize(Raw_data &output, const File_path::SATA &sata)
 template <>
 inline std::optional<File_path::HD> deserialize(const void *data, size_t data_size)
 {
-    const efidp_hd *dp = static_cast<const efidp_hd *>(data);
+    auto dp = static_cast<const efidp_hd *>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
@@ -1014,7 +1011,7 @@ inline size_t serialize(Raw_data &output, const File_path::HD &hd)
 template <>
 inline std::optional<File_path::MEDIAVendor> deserialize(const void *data, size_t data_size)
 {
-    const efidp_vendor *dp = static_cast<const efidp_vendor *>(data);
+    auto dp = static_cast<const efidp_vendor *>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
@@ -1053,7 +1050,7 @@ inline size_t serialize(Raw_data &output, const File_path::MEDIAVendor &vendor)
 template <>
 inline std::optional<File_path::File> deserialize(const void *data, size_t data_size)
 {
-    const efidp_file *dp = static_cast<const efidp_file *>(data);
+    auto dp = static_cast<const efidp_file *>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
@@ -1090,7 +1087,7 @@ inline size_t serialize(Raw_data &output, const File_path::File &file)
 template <>
 inline std::optional<File_path::Firmware_file> deserialize(const void *data, size_t data_size)
 {
-    const efidp_firmware_file *dp = static_cast<const efidp_firmware_file *>(data);
+    auto dp = static_cast<const efidp_firmware_file *>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
@@ -1125,7 +1122,7 @@ inline size_t serialize(Raw_data &output, const File_path::Firmware_file &firmwa
 template <>
 inline std::optional<File_path::Firmware_volume> deserialize(const void *data, size_t data_size)
 {
-    const efidp_firmware_volume *dp = static_cast<const efidp_firmware_volume *>(data);
+    auto dp = static_cast<const efidp_firmware_volume *>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
@@ -1160,7 +1157,7 @@ inline size_t serialize(Raw_data &output, const File_path::Firmware_volume &firm
 template <>
 inline std::optional<File_path::BIOS_boot_specification> deserialize(const void *data, size_t data_size)
 {
-    const efidp_bios_boot_specification *dp = static_cast<const efidp_bios_boot_specification *>(data);
+    auto dp = static_cast<const efidp_bios_boot_specification *>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
@@ -1201,7 +1198,7 @@ inline size_t serialize(Raw_data &output, const File_path::BIOS_boot_specificati
 template <>
 inline std::optional<File_path::Unknown> deserialize(const void *data, size_t data_size)
 {
-    const efidp_header *dp = static_cast<const efidp_header *>(data);
+    auto dp = static_cast<const efidp_header *>(data);
     if(dp->length != data_size)
         return std::nullopt;
 
@@ -1233,7 +1230,7 @@ inline size_t serialize(Raw_data &output, const File_path::Unknown &unknown)
 template <>
 inline std::optional<File_path::ANY> deserialize(const void *data, size_t data_size)
 {
-    const_efidp dp = static_cast<const_efidp>(data);
+    auto dp = static_cast<const_efidp>(data);
     if(dp->header.length != data_size)
         return std::nullopt;
 
@@ -1288,7 +1285,7 @@ inline std::unordered_map<tstring, efi_guid_t> get_variables(const Filter_fn &fi
     TCHAR *name = nullptr;
     _get_variables_progress_fn = progress_fn;
     efi_set_get_next_variable_name_progress_cb([](size_t step, size_t total) noexcept
-        { try { if(_get_variables_progress_fn)_get_variables_progress_fn(step, total); } catch (...) {} });
+        { try { if(_get_variables_progress_fn)_get_variables_progress_fn(step, total); } catch (...) {/* ignore */} });
 
     while(efi_get_next_variable_name(&guid, &name) > 0)
     {
@@ -1323,8 +1320,7 @@ inline std::optional<Variable<Type>> get_variable(const efi_guid_t &guid, const 
     uint8_t *data = nullptr;
     size_t data_size = 0;
     uint32_t attributes = 0;
-    int ret = efi_get_variable(guid, name.c_str(), &data, &data_size, &attributes);
-    if(ret < 0)
+    if(int ret = efi_get_variable(guid, name.c_str(), &data, &data_size, &attributes); ret < 0)
         return std::nullopt;
 
     auto value = deserialize<Type>(data, data_size);
@@ -1340,8 +1336,7 @@ inline std::optional<Variable<std::vector<Type>>> get_list_variable(const efi_gu
     uint8_t *data = nullptr;
     size_t data_size = 0;
     uint32_t attributes = 0;
-    int ret = efi_get_variable(guid, name.c_str(), &data, &data_size, &attributes);
-    if(ret < 0)
+    if(int ret = efi_get_variable(guid, name.c_str(), &data, &data_size, &attributes); ret < 0)
         return std::nullopt;
 
     auto value = deserialize_list<Type>(data, data_size);
@@ -1351,14 +1346,13 @@ inline std::optional<Variable<std::vector<Type>>> get_list_variable(const efi_gu
     return {{*value, attributes}};
 }
 
-template <class Type>
-inline std::optional<Variable<std::vector<Type>>> get_list_variable_ex(const efi_guid_t &guid, const tstring &name, Size_fn get_element_size, Advance_fn get_next_element)
+template <class Type, class Size_fn, class Advance_fn>
+inline std::optional<Variable<std::vector<Type>>> get_list_variable_ex(const efi_guid_t &guid, const tstring &name, const Size_fn &get_element_size, const Advance_fn &get_next_element)
 {
     uint8_t *data = nullptr;
     size_t data_size = 0;
     uint32_t attributes = 0;
-    int ret = efi_get_variable(guid, name.c_str(), &data, &data_size, &attributes);
-    if(ret < 0)
+    if(int ret = efi_get_variable(guid, name.c_str(), &data, &data_size, &attributes); ret < 0)
         return std::nullopt;
 
     auto value = deserialize_list_ex<Type>(data, data_size, get_element_size, get_next_element);

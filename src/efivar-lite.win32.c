@@ -163,7 +163,7 @@ int efi_error_get(unsigned int n, TCHAR **const filename, TCHAR **const function
     *line = -1;
     DWORD err = GetLastError();
     *error = (int)err;
-    *function = (TCHAR *)last_winapi_function;
+    *function = last_winapi_function;
     if(!FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS, NULL, err, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), error_buffer, 1024, NULL))
         return -1;
 

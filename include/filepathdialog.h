@@ -66,10 +66,10 @@ private:
     using VendorDataFormat = DataFormat;
     using UnknownDataFormat = DataFormat;
 
-    HorizontalTabStyle horizontal_tab_style;
+    HorizontalTabStyle horizontal_tab_style{};
     std::unique_ptr<Ui::FilePathDialog> ui;
-    int vendor_data_format_combo_index;
-    int unknown_data_format_combo_index;
+    int vendor_data_format_combo_index = 0;
+    int unknown_data_format_combo_index = 0;
 
 public:
     explicit FilePathDialog(QWidget *parent = nullptr);

@@ -14,10 +14,7 @@ static bool is_bootentry(const tstring_view &name, const tstring_view &prefix)
         return false;
 
     auto suffix = name.substr(prefix.length());
-    if(!isxnumber(suffix))
-        return false;
-
-    return true;
+    return isxnumber(suffix);
 }
 
 EFIBootData::EFIBootData(QObject *parent)
@@ -206,7 +203,7 @@ void EFIBootData::reload()
             if(!is_bootentry(tname, QStringToStdTString(prefix)))
                 continue;
 
-            const uint16_t index = static_cast<uint16_t>(std::stoul(tname.substr(static_cast<size_t>(prefix.size())), nullptr, HEX_BASE));
+            const auto index = static_cast<uint16_t>(std::stoul(tname.substr(static_cast<size_t>(prefix.size())), nullptr, HEX_BASE));
             if(ordered_entry.count(index))
                 continue;
 
@@ -227,7 +224,7 @@ void EFIBootData::reload()
                     auto entry = BootEntry::fromEFIBootLoadOption(value);
                     entry.index = index;
                     entry.efi_attributes = attributes;
-                    if(model.options & BootEntryListModel::IsBoot)
+                    if(model.options & BootEntryListModel::Option::IsBoot)
                     {
                         entry.is_current_boot = current_boot == static_cast<int>(index);
                         entry.is_next_boot = next_boot == static_cast<int>(index);
@@ -239,7 +236,7 @@ void EFIBootData::reload()
                     errors.push_back(error);
                     auto entry = BootEntry::fromError(error);
                     entry.index = index;
-                    if(model.options & BootEntryListModel::IsBoot)
+                    if(model.options & BootEntryListModel::Option::IsBoot)
                     {
                         entry.is_current_boot = current_boot == static_cast<int>(index);
                         entry.is_next_boot = next_boot == static_cast<int>(index);
@@ -251,8 +248,7 @@ void EFIBootData::reload()
 
     // Apple
     emit progress(step++, total_steps, tr("Processing EFI Boot Manager entries (%1)…").arg("Apple/boot-args"));
-    const auto boot_args = EFIBoot::get_variable<std::string>(EFIBoot::efi_guid_apple, _T("boot-args"));
-    if(boot_args)
+    if(const auto boot_args = EFIBoot::get_variable<std::string>(EFIBoot::efi_guid_apple, _T("boot-args")); boot_args)
     {
         const auto &[value, attributes] = *boot_args;
         (void)attributes;
@@ -278,7 +274,7 @@ void EFIBootData::save()
 
             for(const auto &[prefix, model]: BOOT_ENTRIES)
             {
-                if(model.options & BootEntryListModel::ReadOnly)
+                if(model.options & BootEntryListModel::Option::ReadOnly)
                     continue;
 
                 if(is_bootentry(tname, QStringToStdTString(prefix)))
@@ -304,7 +300,7 @@ void EFIBootData::save()
     // Save entries
     for(const auto &[prefix, model]: BOOT_ENTRIES)
     {
-        if(model.options & BootEntryListModel::ReadOnly)
+        if(model.options & BootEntryListModel::Option::ReadOnly)
             continue;
 
         const QString order_name = QString("%1Order").arg(prefix);
@@ -595,7 +591,7 @@ void EFIBootData::export_(const QString &file_name)
             if((entry.attributes & EFIBoot::Load_option_attribute::CATEGORY_MASK) == EFIBoot::Load_option_attribute::CATEGORY_BOOT)
             {
                 order.push_back(entry.index);
-                if(model.options & BootEntryListModel::IsBoot)
+                if(model.options & BootEntryListModel::Option::IsBoot)
                 {
                     if(entry.is_current_boot)
                         current_boot = entry.index;
@@ -635,8 +631,7 @@ void EFIBootData::export_(const QString &file_name)
         output["Apple"] = apple;
     }
 
-    QJsonDocument json_document(output);
-    if(!export_file.write(json_document.toJson()))
+    if(QJsonDocument json_document(output); !export_file.write(json_document.toJson()))
     {
         emit error(tr("Error exporting boot configuration"), tr("Couldn't write into file (%1): %2.").arg(file_name, export_file.errorString()));
         return;
@@ -728,8 +723,7 @@ void EFIBootData::dump(const QString &file_name)
 
     // Apple
     emit progress(step++, total_steps, tr("Exporting EFI Boot Manager entries (%1)…").arg("Apple/boot-args"));
-    const auto boot_args = EFIBoot::get_variable<EFIBoot::Raw_data>(EFIBoot::efi_guid_apple, _T("boot-args"));
-    if(boot_args)
+    if(const auto boot_args = EFIBoot::get_variable<EFIBoot::Raw_data>(EFIBoot::efi_guid_apple, _T("boot-args")); boot_args)
     {
         QJsonObject apple;
         const auto &[value, attributes] = *boot_args;
@@ -740,8 +734,7 @@ void EFIBootData::dump(const QString &file_name)
         output["Apple"] = apple;
     }
 
-    QJsonDocument json_document(output);
-    if(!dump_file.write(json_document.toJson()))
+    if(QJsonDocument json_document(output); !dump_file.write(json_document.toJson()))
     {
         emit error(tr("Error dumping raw EFI data"), tr("Couldn't write into file (%1): %2.").arg(file_name, dump_file.errorString()));
         return;
@@ -759,7 +752,7 @@ void EFIBootData::setTimeout(uint16_t value)
     if(timeout == value)
         return;
 
-    auto command = new SetEFIBootDataValueCommand<uint16_t>{*this, tr("Timeout"), &EFIBootData::timeout, &EFIBootData::timeoutChanged, static_cast<uint16_t>(value)};
+    auto command = new SetEFIBootDataValueCommand{*this, tr("Timeout"), &EFIBootData::timeout, &EFIBootData::timeoutChanged, value};
     if(!undo_stack)
     {
         command->redo();
@@ -775,7 +768,7 @@ void EFIBootData::setAppleBootArgs(const QString &text)
     if(apple_boot_args == text)
         return;
 
-    auto command = new SetEFIBootDataValueCommand<QString>{*this, tr("Apple boot-args"), &EFIBootData::apple_boot_args, &EFIBootData::appleBootArgsChanged, text};
+    auto command = new SetEFIBootDataValueCommand{*this, tr("Apple boot-args"), &EFIBootData::apple_boot_args, &EFIBootData::appleBootArgsChanged, text};
     if(!undo_stack)
     {
         command->redo();
@@ -791,7 +784,7 @@ void EFIBootData::setOsIndications(uint64_t value)
     if(indications == value)
         return;
 
-    auto command = new SetEFIBootDataValueCommand<uint64_t>{*this, tr("Firmware actions"), &EFIBootData::indications, &EFIBootData::osIndicationsChanged, value};
+    auto command = new SetEFIBootDataValueCommand{*this, tr("Firmware actions"), &EFIBootData::indications, &EFIBootData::osIndicationsChanged, value};
     if(!undo_stack)
     {
         command->redo();
@@ -873,7 +866,7 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
     QStringList errors;
 
     size_t step = 1;
-    size_t total_steps = static_cast<size_t>(input.size()) + 1u;
+    auto total_steps = static_cast<size_t>(input.size()) + 1u;
 
     auto process_entry = [&](const QJsonObject &root, const auto &name, const auto &type_fn, const QString &type_name, const auto &process_fn, const QString &name_prefix = "", bool optional = false)
     {
@@ -1081,7 +1074,7 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
                         continue;
                     }
 
-                    const uint16_t idx = static_cast<uint16_t>(index.toInt());
+                    const auto idx = static_cast<uint16_t>(index.toInt());
                     order.push_back(idx);
                     ordered_entry.insert(idx);
                 }
@@ -1099,7 +1092,7 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
                 for(const auto &name: keys)
                 {
                     bool success = false;
-                    const uint16_t index = static_cast<uint16_t>(name.toULong(&success, HEX_BASE));
+                    const auto index = static_cast<uint16_t>(name.toULong(&success, HEX_BASE));
                     if(!success)
                     {
                         errors.push_back(tr("%1: %2 expected").arg(full_prefix + name, tr("hexadecimal number")));
@@ -1129,7 +1122,7 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
                             }
 
                             entry->index = index;
-                            if(model.options & BootEntryListModel::IsBoot)
+                            if(model.options & BootEntryListModel::Option::IsBoot)
                             {
                                 entry->is_current_boot = current_boot == static_cast<int>(index);
                                 entry->is_next_boot = next_boot == static_cast<int>(index);
@@ -1168,7 +1161,7 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
     QStringList errors;
 
     size_t step = 1;
-    size_t total_steps = static_cast<size_t>(input.size()) + 1u;
+    auto total_steps = static_cast<size_t>(input.size()) + 1u;
 
     auto process_entry = [&](const QJsonObject &root, const auto &name, const auto &deserialize_fn, const auto &process_fn, const QString &name_prefix = "", bool optional = false)
     {
@@ -1306,7 +1299,7 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
         for(const auto &name: keys)
         {
             bool success = false;
-            const uint16_t index = static_cast<uint16_t>(name.toULong(&success, HEX_BASE));
+            const auto index = static_cast<uint16_t>(name.toULong(&success, HEX_BASE));
             if(!success)
             {
                 errors.push_back(tr("%1: %2 expected").arg(full_prefix + name, tr("hexadecimal number")));
@@ -1331,8 +1324,8 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
                     // Translate STL to QTL
                     auto entry = BootEntry::fromEFIBootLoadOption(value);
                     entry.index = index;
-                    entry.efi_attributes = static_cast<uint32_t>(efi_attributes);
-                    if(model.options & BootEntryListModel::IsBoot)
+                    entry.efi_attributes = efi_attributes;
+                    if(model.options & BootEntryListModel::Option::IsBoot)
                     {
                         entry.is_current_boot = current_boot == static_cast<int>(index);
                         entry.is_next_boot = next_boot == static_cast<int>(index);

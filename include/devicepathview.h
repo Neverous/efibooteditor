@@ -10,7 +10,7 @@ class DevicePathView: public QListView
     Q_OBJECT
 
 private:
-    FilePathDelegate delegate;
+    FilePathDelegate delegate{};
     std::unique_ptr<FilePathDialog> dialog = nullptr;
     bool readonly = false;
 

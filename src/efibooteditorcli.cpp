@@ -83,13 +83,13 @@ bool EFIBootEditorCLI::process(const QCoreApplication &app)
     return processed;
 }
 
-void EFIBootEditorCLI::showError(const QString &message, const QString &details)
+void EFIBootEditorCLI::showError(const QString &message, const QString &details) const
 {
     QTextStream ts{stderr};
     ts << tr("ERROR: %0! %1").arg(message, details) << Qt::endl;
 }
 
-void EFIBootEditorCLI::showProgress(size_t step, size_t total, const QString &details)
+void EFIBootEditorCLI::showProgress(size_t step, size_t total, const QString &details) const
 {
     if(step >= total)
         total = step + 1;
@@ -98,7 +98,7 @@ void EFIBootEditorCLI::showProgress(size_t step, size_t total, const QString &de
     ts << QString("\r[%0%]\t(%1/%2)\t%3").arg(100 * step / total).arg(step).arg(total).arg(details);
 }
 
-void EFIBootEditorCLI::hideProgress()
+void EFIBootEditorCLI::hideProgress() const
 {
     QTextStream ts{stdout};
     ts << "\33[2K\r[100%]\t" << tr("Finished") << Qt::endl;

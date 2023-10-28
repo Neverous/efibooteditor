@@ -4,7 +4,6 @@
 
 DevicePathView::DevicePathView(QWidget *parent)
     : QListView(parent)
-    , delegate{}
     , dialog{std::make_unique<FilePathDialog>(this)}
 {
     setItemDelegate(&delegate);

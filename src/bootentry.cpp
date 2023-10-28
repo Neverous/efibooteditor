@@ -26,16 +26,11 @@ auto BootEntry::fromEFIBootLoadOption(
     value.description = QString::fromStdU16String(load_option.description);
 
     value.optional_data_format = OptionalDataFormat::Base64;
-    {
-        if(toUnicode(value.optional_data, load_option.optional_data, "UTF-8") && !value.optional_data.contains(QChar(0)))
-            value.optional_data_format = OptionalDataFormat::Utf8;
-    }
+    if(toUnicode(value.optional_data, load_option.optional_data, "UTF-8") && !value.optional_data.contains(QChar(0)))
+        value.optional_data_format = OptionalDataFormat::Utf8;
 
-    if(value.optional_data_format == OptionalDataFormat::Base64 && load_option.optional_data.size() % sizeof(char16_t) == 0)
-    {
-        if(toUnicode(value.optional_data, load_option.optional_data, "UTF-16") && !value.optional_data.contains(QChar(0)))
-            value.optional_data_format = OptionalDataFormat::Utf16;
-    }
+    if(value.optional_data_format == OptionalDataFormat::Base64 && load_option.optional_data.size() % sizeof(char16_t) == 0 && toUnicode(value.optional_data, load_option.optional_data, "UTF-16") && !value.optional_data.contains(QChar(0)))
+        value.optional_data_format = OptionalDataFormat::Utf16;
 
     if(value.optional_data_format == OptionalDataFormat::Base64)
         value.optional_data = QByteArray::fromRawData(reinterpret_cast<const char *>(load_option.optional_data.data()), static_cast<int>(load_option.optional_data.size())).toBase64();
@@ -160,7 +155,7 @@ auto BootEntry::changeOptionalDataFormat(BootEntry::OptionalDataFormat format, b
 
     auto bytes = getRawOptionalData();
     QString temp_optional_data;
-    switch(static_cast<OptionalDataFormat>(format))
+    switch(format)
     {
     case OptionalDataFormat::Base64:
         temp_optional_data = bytes.toBase64();
@@ -200,7 +195,7 @@ auto BootEntry::changeOptionalDataFormat(BootEntry::OptionalDataFormat format, b
 auto BootEntry::getRawOptionalData() const -> QByteArray
 {
     QByteArray bytes;
-    switch(static_cast<OptionalDataFormat>(optional_data_format))
+    switch(optional_data_format)
     {
     case OptionalDataFormat::Base64:
         bytes = QByteArray::fromBase64(optional_data.toUtf8());
@@ -353,7 +348,7 @@ static_assert(sizeof(File_path::Vendor::guid) == sizeof(EFIBoot::File_path::MEDI
 
 File_path::Vendor::Vendor(const EFIBoot::File_path::HWVendor &vendor)
     : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
-    , _type{vendor.TYPE}
+    , _type{EFIBoot::File_path::HWVendor::TYPE}
 {
     data.detach();
     static_assert(sizeof(vendor.guid) == sizeof(guid));
@@ -362,7 +357,7 @@ File_path::Vendor::Vendor(const EFIBoot::File_path::HWVendor &vendor)
 
 File_path::Vendor::Vendor(const EFIBoot::File_path::MSGVendor &vendor)
     : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
-    , _type{vendor.TYPE}
+    , _type{EFIBoot::File_path::MSGVendor::TYPE}
 {
     data.detach();
     static_assert(sizeof(vendor.guid) == sizeof(guid));
@@ -371,7 +366,7 @@ File_path::Vendor::Vendor(const EFIBoot::File_path::MSGVendor &vendor)
 
 File_path::Vendor::Vendor(const EFIBoot::File_path::MEDIAVendor &vendor)
     : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size()))}
-    , _type{vendor.TYPE}
+    , _type{EFIBoot::File_path::MEDIAVendor::TYPE}
 {
     data.detach();
     static_assert(sizeof(vendor.guid) == sizeof(guid));
@@ -411,9 +406,10 @@ auto File_path::Vendor::toEFIBootFilePath() const -> EFIBoot::File_path::ANY
         std::copy(std::begin(data), std::end(data), std::begin(value.data));
         return value;
     }
-    }
 
-    return {};
+    default:
+        return {};
+    }
 }
 
 auto File_path::Vendor::fromJSON(const QJsonObject &obj) -> std::optional<File_path::Vendor>
@@ -444,7 +440,7 @@ auto File_path::Vendor::toString(bool refresh) const -> QString
     if(string.size() && !refresh)
         return string;
 
-    const char *type_string = "Unk";
+    const char *type_string = nullptr;
     switch(_type)
     {
     case EFIBoot::File_path::HWVendor::TYPE:
@@ -457,6 +453,10 @@ auto File_path::Vendor::toString(bool refresh) const -> QString
 
     case EFIBoot::File_path::MEDIAVendor::TYPE:
         type_string = "Media";
+        break;
+
+    default:
+        type_string = "Unk";
         break;
     }
 

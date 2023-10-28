@@ -171,8 +171,8 @@ int efi_error_get(unsigned int n, char **const filename, char **const function, 
 
     *filename = "IOKitLib.h";
     *line = -1;
-    *error = (int)errno; // FIXME
-    *function = (char *)last_iokit_function;
+    *error = errno; // FIXME
+    *function = last_iokit_function;
     *message = mach_error_string(err);
     return 1;
 }

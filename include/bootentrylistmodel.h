@@ -27,7 +27,7 @@ class BootEntryListModel: public QAbstractListModel
     friend class MoveBootEntryFilePathCommand;
 
 public:
-    enum Option
+    enum class Option : uint8_t
     {
         ReadOnly = 0x1,
         IsBoot = 0x2,

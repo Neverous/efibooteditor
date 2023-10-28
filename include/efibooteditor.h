@@ -37,7 +37,7 @@ private:
     std::unique_ptr<QMessageBox> confirmation;
     std::unique_ptr<QMessageBox> error;
     std::unique_ptr<QProgressDialog> progress;
-    std::unique_ptr<DisableUndoRedo> disable_undo_redo;
+    std::unique_ptr<DisableUndoRedo> disable_undo_redo{std::make_unique<DisableUndoRedo>()};
 
     QUndoStack undo_stack{this};
 
