@@ -42,7 +42,7 @@ private:
     QUndoStack undo_stack{this};
 
 public:
-    explicit EFIBootEditor(const std::optional<std::tstring> &efi_error_message, QWidget *parent = nullptr);
+    explicit EFIBootEditor(const std::optional<tstring> &efi_error_message, QWidget *parent = nullptr);
     EFIBootEditor(const EFIBootEditor &) = delete;
     EFIBootEditor &operator=(const EFIBootEditor &) = delete;
     ~EFIBootEditor() override;
@@ -52,7 +52,7 @@ public:
 public slots:
     void reload();
     void save();
-    void import();
+    void import_();
     void export_();
     void dump();
     void reorder();

@@ -63,8 +63,8 @@ private:
         MEDIA = 2,
     };
 
-    typedef DataFormat VendorDataFormat;
-    typedef DataFormat UnknownDataFormat;
+    using VendorDataFormat = DataFormat;
+    using UnknownDataFormat = DataFormat;
 
     HorizontalTabStyle horizontal_tab_style;
     std::unique_ptr<Ui::FilePathDialog> ui;
@@ -95,7 +95,7 @@ public:
     void setFirmwareFileForm(const File_path::FirmwareFile &firmware_file);
     void setFirmwareVolumeForm(const File_path::FirmwareVolume &firmware_volume);
     void setBIOSBootSpecificationForm(const File_path::BIOSBootSpecification &bios_boot_specification);
-    void setEndForm(const EFIBoot::EFIDP_END subtype);
+    void setEndForm(const uint8_t subtype);
     void setUnknownForm(const File_path::Unknown &unknown);
 
 private:

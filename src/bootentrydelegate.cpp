@@ -4,10 +4,6 @@
 #include "bootentry.h"
 #include "bootentrylistmodel.h"
 
-BootEntryDelegate::BootEntryDelegate()
-{
-}
-
 void BootEntryDelegate::setOptions(const BootEntryListModel::Options &options_)
 {
     options = options_;

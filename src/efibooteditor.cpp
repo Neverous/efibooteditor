@@ -16,7 +16,7 @@
 #include <QRadioButton>
 #include <cctype>
 
-EFIBootEditor::EFIBootEditor(const std::optional<std::tstring> &efi_error_message, QWidget *parent)
+EFIBootEditor::EFIBootEditor(const std::optional<tstring> &efi_error_message, QWidget *parent)
     : QMainWindow{parent}
     , ui{std::make_unique<Ui::EFIBootEditor>()}
     , confirmation{std::make_unique<QMessageBox>(QMessageBox::Question, qApp->applicationName(), "", QMessageBox::NoButton, this)}
@@ -201,7 +201,7 @@ void EFIBootEditor::save()
         &EFIBootData::save);
 }
 
-void EFIBootEditor::import()
+void EFIBootEditor::import_()
 {
     const QString file_name = QFileDialog::getOpenFileName(this, tr("Open boot configuration dump"), "", tr("JSON documents (*.json)"));
     if(file_name.isEmpty())
@@ -215,7 +215,7 @@ void EFIBootEditor::import()
     ui->redo->setEnabled(false);
     data.clear();
     data.setUndoStack(nullptr);
-    data.import(file_name);
+    data.import_(file_name);
     data.setUndoStack(&undo_stack);
 }
 

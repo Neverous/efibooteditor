@@ -132,26 +132,26 @@ void BootEntryForm::setAttribute(int)
     entries_list_model->setEntryAttributes(current_index, getAttributes());
 }
 
-uint32_t BootEntryForm::getAttributes() const
+EFIBoot::Load_option_attribute BootEntryForm::getAttributes() const
 {
-    uint32_t attr = EFIBoot::Load_option_attribute::EMPTY;
+    EFIBoot::Load_option_attribute attr = EFIBoot::Load_option_attribute::EMPTY;
     if(ui->attribute_active->isChecked())
-        attr |= EFIBoot::Load_option_attribute::ACTIVE;
+        attr = attr | EFIBoot::Load_option_attribute::ACTIVE;
 
     if(ui->attribute_hidden->isChecked())
-        attr |= EFIBoot::Load_option_attribute::HIDDEN;
+        attr = attr | EFIBoot::Load_option_attribute::HIDDEN;
 
     if(ui->attribute_force_reconnect->isChecked())
-        attr |= EFIBoot::Load_option_attribute::FORCE_RECONNECT;
+        attr = attr | EFIBoot::Load_option_attribute::FORCE_RECONNECT;
 
     switch(ui->category_combo->currentIndex())
     {
     case 0:
-        attr |= EFIBoot::Load_option_attribute::CATEGORY_BOOT;
+        attr = attr | EFIBoot::Load_option_attribute::CATEGORY_BOOT;
         break;
 
     case 1:
-        attr |= EFIBoot::Load_option_attribute::CATEGORY_APP;
+        attr = attr | EFIBoot::Load_option_attribute::CATEGORY_APP;
         break;
     }
 

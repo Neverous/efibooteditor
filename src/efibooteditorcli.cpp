@@ -4,7 +4,7 @@
 #include <QTextStream>
 #include <iostream>
 
-EFIBootEditorCLI::EFIBootEditorCLI(const std::optional<std::tstring> &efi_error_message, QObject *parent)
+EFIBootEditorCLI::EFIBootEditorCLI(const std::optional<tstring> &efi_error_message, QObject *parent)
     : QObject{parent}
     , efi_supported{!efi_error_message}
 {
@@ -28,7 +28,7 @@ EFIBootEditorCLI::~EFIBootEditorCLI()
 {
 }
 
-bool EFIBootEditorCLI::process(QCoreApplication &app)
+bool EFIBootEditorCLI::process(const QCoreApplication &app)
 {
     bool processed = false;
     parser.process(app);
@@ -63,7 +63,7 @@ bool EFIBootEditorCLI::process(QCoreApplication &app)
 
         processed = true;
         ts << tr("Importing boot configuration…") << Qt::endl;
-        data.import(parser.value("import"));
+        data.import_(parser.value("import"));
         ts << tr("Loaded %0 %1 entries").arg(data.boot_entries_list_model.rowCount()).arg(tr("Boot")) << Qt::endl;
         ts << tr("Loaded %0 %1 entries").arg(data.driver_entries_list_model.rowCount()).arg(tr("Driver")) << Qt::endl;
         ts << tr("Loaded %0 %1 entries").arg(data.sysprep_entries_list_model.rowCount()).arg(tr("System Preparation")) << Qt::endl;

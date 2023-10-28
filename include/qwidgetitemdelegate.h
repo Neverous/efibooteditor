@@ -12,8 +12,8 @@ template <class Widget_, class Item_ = QStandardItem>
 class QWidgetItemDelegate: public QStyledItemDelegate
 {
 public:
-    typedef Widget_ Widget;
-    typedef Item_ Item;
+    using Widget = Widget_;
+    using Item = Item_;
 
 private:
     friend class Guard;

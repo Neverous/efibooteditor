@@ -45,5 +45,5 @@ private slots:
     void setAttribute(int state);
 
 private:
-    uint32_t getAttributes() const;
+    EFIBoot::Load_option_attribute getAttributes() const;
 };

@@ -169,20 +169,20 @@ auto FilePathDialog::toFilePath() const -> File_path::ANY
     case FormIndex::HD:
     {
         File_path::HD hd;
-        hd.signature_type = static_cast<uint8_t>(ui->signature_type_combo->currentIndex());
-        hd.partition_format = hd.signature_type ? hd.signature_type : static_cast<uint8_t>(EFIBoot::File_path::SIGNATURE::MBR);
+        hd.signature_type = static_cast<decltype(hd.signature_type)>(ui->signature_type_combo->currentIndex());
+        hd.partition_format = static_cast<decltype(hd.partition_format)>(hd.signature_type != EFIBoot::File_path::HD::SIGNATURE::NONE ? hd.signature_type : EFIBoot::File_path::HD::SIGNATURE::MBR);
         hd.partition_number = static_cast<uint32_t>(ui->partition_number->value());
-        switch(static_cast<EFIBoot::File_path::SIGNATURE>(hd.signature_type))
+        switch(hd.signature_type)
         {
-        case EFIBoot::File_path::SIGNATURE::GUID:
+        case EFIBoot::File_path::HD::SIGNATURE::GUID:
             hd.partition_signature = QUuid::fromString(ui->signature_text->text());
             break;
 
-        case EFIBoot::File_path::SIGNATURE::MBR:
+        case EFIBoot::File_path::HD::SIGNATURE::MBR:
             hd.partition_signature = QUuid{ui->signature_text->text().toUInt(nullptr, HEX_BASE), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
             break;
 
-        case EFIBoot::File_path::SIGNATURE::NONE:
+        case EFIBoot::File_path::HD::SIGNATURE::NONE:
             hd.partition_signature = QUuid{};
             break;
         }
@@ -221,10 +221,10 @@ auto FilePathDialog::toFilePath() const -> File_path::ANY
     {
         File_path::End end;
         if(ui->end_subtype_combo->currentIndex() == 0)
-            end._subtype = EFIBoot::EFIDP_END_INSTANCE;
+            end._subtype = EFIBoot::File_path::End_instance::SUBTYPE;
 
         else
-            end._subtype = EFIBoot::EFIDP_END_ENTIRE;
+            end._subtype = EFIBoot::File_path::End_entire::SUBTYPE;
 
         return end;
     }
@@ -374,7 +374,7 @@ void FilePathDialog::setHDForm(const File_path::HD &hd)
     for(int index = 0; index < ui->disk_combo->count() - 2; ++index)
     {
         const auto &drive_info = ui->disk_combo->itemData(index).value<DriveInfo>();
-        if(static_cast<uint8_t>(drive_info.signature_type) == hd.signature_type && drive_info.partition == hd.partition_number)
+        if(static_cast<std::underlying_type_t<DriveInfo::SIGNATURE>>(drive_info.signature_type) == static_cast<std::underlying_type_t<EFIBoot::File_path::HD::SIGNATURE>>(hd.signature_type) && drive_info.partition == hd.partition_number)
         {
             bool found = false;
             switch(static_cast<DriveInfo::SIGNATURE>(drive_info.signature_type))
@@ -401,23 +401,23 @@ void FilePathDialog::setHDForm(const File_path::HD &hd)
     ui->disk_combo->setCurrentIndex(ui->disk_combo->count() - 1);
     diskChoiceChanged(ui->disk_combo->currentIndex());
 
-    switch(static_cast<EFIBoot::File_path::SIGNATURE>(hd.signature_type))
+    switch(hd.signature_type)
     {
-    case EFIBoot::File_path::SIGNATURE::NONE:
+    case EFIBoot::File_path::HD::SIGNATURE::NONE:
         ui->signature_type_combo->setCurrentIndex(0);
         break;
 
-    case EFIBoot::File_path::SIGNATURE::MBR:
+    case EFIBoot::File_path::HD::SIGNATURE::MBR:
         ui->signature_type_combo->setCurrentIndex(1);
         break;
 
-    case EFIBoot::File_path::SIGNATURE::GUID:
+    case EFIBoot::File_path::HD::SIGNATURE::GUID:
         ui->signature_type_combo->setCurrentIndex(2);
         break;
     }
 
     signatureTypeChoiceChanged(ui->signature_type_combo->currentIndex());
-    if(hd.signature_type != EFIBoot::File_path::SIGNATURE::NONE)
+    if(hd.signature_type != EFIBoot::File_path::HD::SIGNATURE::NONE)
         ui->signature_text->setText(hd.partition_signature.toString());
 
     ui->partition_number->setValue(static_cast<int>(hd.partition_number));
@@ -451,10 +451,10 @@ void FilePathDialog::setBIOSBootSpecificationForm(const File_path::BIOSBootSpeci
     ui->description_text->setText(bios_boot_specification.description);
 }
 
-void FilePathDialog::setEndForm(const EFIBoot::EFIDP_END subtype)
+void FilePathDialog::setEndForm(const uint8_t subtype)
 {
     ui->options->setCurrentIndex(FormIndex::End);
-    ui->end_subtype_combo->setCurrentIndex(subtype == EFIBoot::EFIDP_END_INSTANCE ? 0 : 1);
+    ui->end_subtype_combo->setCurrentIndex(subtype == EFIBoot::File_path::End_instance::SUBTYPE ? 0 : 1);
 }
 
 void FilePathDialog::setUnknownForm(const File_path::Unknown &unknown)

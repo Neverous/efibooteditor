@@ -7,8 +7,8 @@
 template <class Type>
 class SetEFIBootDataValueCommand: public QUndoCommand
 {
-    typedef Type EFIBootData::*PropertyPtr;
-    typedef void (EFIBootData::*SignalPtr)(const Type &);
+    using PropertyPtr = Type EFIBootData::*;
+    using SignalPtr = void (EFIBootData::*)(const Type &);
 
     EFIBootData &data;
     const QString name;
@@ -130,9 +130,21 @@ public:
 };
 
 template <class Type>
+struct type_identity
+{
+    using type = Type;
+};
+
+template <class Type>
+struct underlying_type
+{
+    using type = typename std::conditional_t<std::is_enum_v<Type>, std::underlying_type<Type>, type_identity<Type>>::type;
+};
+
+template <class Type>
 class SetBootEntryValueCommand: public QUndoCommand
 {
-    typedef Type BootEntry::*PropertyPtr;
+    using PropertyPtr = Type BootEntry::*;
 
     BootEntryListModel &model;
     const QString title;
@@ -151,7 +163,7 @@ public:
         , property{property_}
         , value{value_}
     {
-        setText(QObject::tr("Change %1 entry \"%2\" %3 to \"%4\"").arg(model.name, title, name).arg(value));
+        setText(QObject::tr("Change %1 entry \"%2\" %3 to \"%4\"").arg(model.name, title, name).arg(static_cast<typename underlying_type<Type>::type>(value)));
     }
 
     SetBootEntryValueCommand(const SetBootEntryValueCommand &) = delete;
@@ -192,7 +204,7 @@ public:
         if(value == entry.*property)
             setObsolete(true);
 
-        setText(QObject::tr("Change %1 entry \"%2\" %3 to \"%4\"").arg(model.name, title, name).arg(entry.*property));
+        setText(QObject::tr("Change %1 entry \"%2\" %3 to \"%4\"").arg(model.name, title, name).arg(static_cast<typename underlying_type<Type>::type>(entry.*property)));
         return true;
     }
 };

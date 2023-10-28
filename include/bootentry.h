@@ -236,7 +236,7 @@ public:
     uint64_t partition_size = 0;
     uint32_t partition_number = 0;
     uint8_t partition_format = 0;
-    uint8_t signature_type = 9;
+    EFIBoot::File_path::HD::SIGNATURE signature_type = EFIBoot::File_path::HD::SIGNATURE::NONE;
 
 public:
     HD() = default;
@@ -353,27 +353,27 @@ private:
     mutable QString string = "";
 
 public:
-    EFIBoot::EFIDP_END _subtype = EFIBoot::EFIDP_END_ENTIRE;
+    uint8_t _subtype = EFIBoot::File_path::End_entire::SUBTYPE;
 
 public:
     End() = default;
     End(const EFIBoot::File_path::End_instance &)
-        : _subtype{EFIBoot::EFIDP_END_INSTANCE}
+        : _subtype{EFIBoot::File_path::End_instance::SUBTYPE}
     {
     }
     End(const EFIBoot::File_path::End_entire &)
-        : _subtype{EFIBoot::EFIDP_END_ENTIRE}
+        : _subtype{EFIBoot::File_path::End_entire::SUBTYPE}
     {
     }
     EFIBoot::File_path::ANY toEFIBootFilePath() const
     {
         switch(_subtype)
         {
-        case EFIBoot::EFIDP_END_INSTANCE:
+        case EFIBoot::File_path::End_instance::SUBTYPE:
             return EFIBoot::File_path::End_instance{};
             break;
 
-        case EFIBoot::EFIDP_END_ENTIRE:
+        case EFIBoot::File_path::End_entire::SUBTYPE:
             return EFIBoot::File_path::End_entire{};
             break;
         }
@@ -412,7 +412,7 @@ public:
     QString toString(bool refresh = true) const;
 };
 
-typedef std::variant<
+using ANY = std::variant<
     PCI,
     HID,
     USB,
@@ -427,8 +427,7 @@ typedef std::variant<
     FirmwareVolume,
     BIOSBootSpecification,
     End,
-    Unknown>
-    ANY;
+    Unknown>;
 
 inline std::unordered_map<QString, std::function<std::optional<ANY>(const QJsonObject &)>> JSON_readers()
 {
@@ -479,7 +478,7 @@ public:
     QString description = "New entry";
     QString error = "";
     QString optional_data = "";
-    uint32_t attributes = EFIBoot::Load_option_attribute::EMPTY;
+    EFIBoot::Load_option_attribute attributes = EFIBoot::Load_option_attribute::EMPTY;
     uint32_t efi_attributes = EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS;
     uint16_t index = 0;
     OptionalDataFormat optional_data_format = OptionalDataFormat::Base64;

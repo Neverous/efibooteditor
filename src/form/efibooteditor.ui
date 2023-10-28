@@ -1552,7 +1552,7 @@
    <sender>import_</sender>
    <signal>triggered()</signal>
    <receiver>EFIBootEditor</receiver>
-   <slot>import()</slot>
+   <slot>import_()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -1796,7 +1796,7 @@
   <slot>reload()</slot>
   <slot>save()</slot>
   <slot>export_()</slot>
-  <slot>import()</slot>
+  <slot>import_()</slot>
   <slot>dump()</slot>
   <slot>reorder()</slot>
   <slot>switchBootEntryEditor(int)</slot>
