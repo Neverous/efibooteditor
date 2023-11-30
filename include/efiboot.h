@@ -1292,7 +1292,7 @@ inline std::unordered_map<tstring, efi_guid_t> get_variables(const Filter_fn &fi
         if(!filter_fn(*guid, name))
             continue;
 
-        variables[name] = *guid;
+        memcpy(&variables[name], guid, sizeof(efi_guid_t));
     }
 
     efi_set_get_next_variable_name_progress_cb(nullptr);
@@ -1303,7 +1303,7 @@ inline std::unordered_map<tstring, efi_guid_t> get_variables(const Filter_fn &fi
 template <class Filter_fn>
 inline std::unordered_map<tstring, efi_guid_t> get_variables(Filter_fn filter_fn)
 {
-    return get_variables(filter_fn, [](size_t, size_t) {});
+    return get_variables(filter_fn, [](size_t, size_t) { /* noprogress */ });
 }
 
 inline std::unordered_map<tstring, efi_guid_t> get_variables()
@@ -1311,7 +1311,7 @@ inline std::unordered_map<tstring, efi_guid_t> get_variables()
     return get_variables(
         [](const efi_guid_t &, const tstring_view)
         { return true; },
-        [](size_t, size_t) {});
+        [](size_t, size_t) { /* noprogress */ });
 }
 
 template <class Type>

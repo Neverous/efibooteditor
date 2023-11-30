@@ -86,7 +86,7 @@ typedef struct
 {
     efidp_header header;
     uint8_t guid[16];
-    uint8_t data[1];
+    uint8_t data[ANYSIZE_ARRAY];
 } efidp_vendor;
 
 typedef struct
@@ -160,7 +160,7 @@ enum EFIDP_HD_SIGNATURE
 typedef struct
 {
     efidp_header header;
-    uint16_t name[1];
+    uint16_t name[ANYSIZE_ARRAY];
 } efidp_file;
 
 typedef struct
@@ -180,7 +180,7 @@ typedef struct
     efidp_header header;
     uint16_t device_type;
     uint16_t status_flag;
-    uint8_t description[1];
+    uint8_t description[ANYSIZE_ARRAY];
 } efidp_bios_boot_specification;
 
 enum EFIDP_END

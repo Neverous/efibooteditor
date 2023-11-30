@@ -3,6 +3,8 @@
  * efivar interface <> WinAPI translation.
  */
 #include <Windows.h>
+#include <ntstatus.h>
+#include <winternl.h>
 
 #include "compat.h"
 #include "efivar-lite.common.h"
@@ -10,9 +12,27 @@
 #include "efivar-lite/efivar.h"
 
 #pragma comment(lib, "advapi32.lib")
+#pragma comment(lib, "ntdll.lib")
 
-const efi_guid_t efi_guid_global = {_T("{8be4df61-93ca-11d2-aa0d-00e098032b8c}")};
-const efi_guid_t efi_guid_apple = {_T("{7c436110-ab2a-4bbb-a880-fe41995c9f82}")};
+// NT syscall for fetching EFI Variables
+NTSTATUS
+NTAPI
+NtEnumerateSystemEnvironmentValuesEx(
+    _In_ ULONG InformationClass,
+    _Out_ PVOID Buffer,
+    _Inout_ PULONG BufferLength);
+
+static const ULONG SystemEnvironmentNameInformation = 1;
+typedef struct
+{
+    ULONG NextEntryOffset;
+    GUID VendorGUID;
+    TCHAR Name[ANYSIZE_ARRAY];
+} variable_info_t;
+// END
+
+const efi_guid_t efi_guid_global = {_T("{8BE4DF61-93CA-11D2-AA0D-00E098032B8C}")};
+const efi_guid_t efi_guid_apple = {_T("{7C436110-AB2A-4BBB-A880-FE41995C9F82}")};
 static TCHAR *last_winapi_function = NULL;
 
 int efi_variables_supported(void)
@@ -116,32 +136,57 @@ void efi_set_get_next_variable_name_progress_cb(void (*progress_cb)(size_t, size
     efi_get_next_variable_name_progress_cb = progress_cb;
 }
 
-static size_t current_variable = 0u;
+static ULONG current_offset = 0u;
+static PVOID variables = NULL;
+static ULONG variables_size = 0u;
+static efi_guid_t current_guid;
+
 int efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name)
 {
-    while(1)
+    if(current_offset == 0u)
     {
-        ++current_variable;
-        if(efi_get_next_variable_name_progress_cb && current_variable % (EFI_MAX_VARIABLES / 100u) == 0u)
-            efi_get_next_variable_name_progress_cb(current_variable, EFI_MAX_VARIABLES);
-
-        int ret = _efi_get_next_variable_name(guid, name);
-        if(ret <= 0)
+        NTSTATUS ret = 0;
+        variables_size = 1;
+        do
         {
-            current_variable = 0u;
+            free(variables);
+            variables = malloc(variables_size);
+            if(!variables)
+                return -1;
+
+            ret = NtEnumerateSystemEnvironmentValuesEx(SystemEnvironmentNameInformation, variables, &variables_size);
+            last_winapi_function = _T("NtEnumerateSystemEnvironmentValuesEx");
+        } while(ret == STATUS_BUFFER_TOO_SMALL || ret == STATUS_INFO_LENGTH_MISMATCH);
+
+        if(ret < 0)
             return ret;
-        }
-
-        if(GetFirmwareEnvironmentVariable(*name, (*guid)->data, NULL, 0) == 0)
-        {
-            last_winapi_function = _T("GetFirmwareEnvironmentVariable");
-            DWORD err = GetLastError();
-            if(err != ERROR_INSUFFICIENT_BUFFER)
-                continue;
-        }
-
-        return ret;
     }
+
+    if(efi_get_next_variable_name_progress_cb)
+        efi_get_next_variable_name_progress_cb(current_offset, variables_size);
+
+    if(current_offset >= variables_size)
+    {
+        current_offset = 0u;
+        return 0;
+    }
+
+    const variable_info_t *variable = advance_bytes(variables, current_offset);
+    if(!variable->NextEntryOffset)
+        current_offset = variables_size;
+    else
+        current_offset += variable->NextEntryOffset;
+
+    if(_sntprintf_s(current_guid.data, 40, 39, _T("{%08lX-%04hX-%04hX-%02hhX%02hhX-%02hhX%02hhX%02hhX%02hhX%02hhX%02hhX}"),
+           variable->VendorGUID.Data1, variable->VendorGUID.Data2, variable->VendorGUID.Data3,
+           variable->VendorGUID.Data4[0], variable->VendorGUID.Data4[1], variable->VendorGUID.Data4[2], variable->VendorGUID.Data4[3],
+           variable->VendorGUID.Data4[4], variable->VendorGUID.Data4[5], variable->VendorGUID.Data4[6], variable->VendorGUID.Data4[7])
+        != 38)
+        return -1;
+
+    *guid = &current_guid;
+    *name = (TCHAR *)variable->Name;
+    return 1;
 }
 
 int efi_guid_cmp(const efi_guid_t *a, const efi_guid_t *b)
