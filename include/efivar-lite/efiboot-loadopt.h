@@ -8,9 +8,9 @@ typedef struct efi_load_option_s
 {
     uint32_t attributes;
     uint16_t file_path_list_length;
-    uint16_t description[1];
-    // uint8_t file_path_list[1];
-    // uint8_t optional_data[1];
+    uint16_t description[ANYSIZE_ARRAY];
+    // uint8_t file_path_list[ANYSIZE_ARRAY];
+    // uint8_t optional_data[ANYSIZE_ARRAY];
 } efi_load_option;
 #pragma pack(pop)
 

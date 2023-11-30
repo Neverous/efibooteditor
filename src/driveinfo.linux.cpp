@@ -42,28 +42,19 @@ auto DriveInfo::getAll(bool refresh) -> QVector<DriveInfo>
         }
 
         const auto &sys_path = QString("/sys/class/block/%1").arg(driveinfo.name);
+        if(QFile file{sys_path + "/partition"}; file.open(QIODevice::ReadOnly))
         {
-            QFile file{sys_path + "/partition"};
-            if(file.open(QIODevice::ReadOnly))
-            {
-                driveinfo.partition = file.readAll().toUInt();
-            }
+            driveinfo.partition = file.readAll().toUInt();
         }
 
+        if(QFile file{sys_path + "/start"}; file.open(QIODevice::ReadOnly))
         {
-            QFile file{sys_path + "/start"};
-            if(file.open(QIODevice::ReadOnly))
-            {
-                driveinfo.start = file.readAll().toULongLong();
-            }
+            driveinfo.start = file.readAll().toULongLong();
         }
 
+        if(QFile file{sys_path + "/size"}; file.open(QIODevice::ReadOnly))
         {
-            QFile file{sys_path + "/size"};
-            if(file.open(QIODevice::ReadOnly))
-            {
-                driveinfo.size = file.readAll().toULongLong();
-            }
+            driveinfo.size = file.readAll().toULongLong();
         }
 
         all.append(driveinfo);

@@ -55,6 +55,7 @@ typedef uint32_t mode_t;
 #include <sys/stat.h>
 #include <sys/types.h>
 typedef char TCHAR;
+#define ANYSIZE_ARRAY 1
 #if defined(__clang__)
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wreserved-id-macro"
