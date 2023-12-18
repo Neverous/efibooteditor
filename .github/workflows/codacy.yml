@@ -30,6 +30,6 @@ jobs:
           gh-code-scanning-compat: true
 
       - name: Upload Codacy Code Analysis results to GitHub
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: codacy.sarif
