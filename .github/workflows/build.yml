@@ -44,7 +44,7 @@ jobs:
             ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}-
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
+        uses: github/codeql-action/init@v3
         with:
           languages: cpp
           queries: security-and-quality
@@ -129,7 +129,7 @@ jobs:
         working-directory: build
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
+        uses: github/codeql-action/analyze@v3
         if: inputs.build-config == 'Debug'
         continue-on-error: true
 
@@ -144,7 +144,7 @@ jobs:
         continue-on-error: true
 
       - name: Upload MSVC Code Analysis results to GitHub
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: ${{ steps.msvc-analysis.outputs.sarif }}
         if: inputs.build-config == 'Debug' && inputs.compiler == 'MSVC'
