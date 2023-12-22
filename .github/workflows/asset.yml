@@ -31,7 +31,7 @@ jobs:
           - 6.6.1 # Supported until 2024-03-10
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: EFIBootEditor-${{ github.sha }}-${{ inputs.os }}-qt-${{ matrix.qt-version }}-${{ inputs.compiler }}
           path: .
