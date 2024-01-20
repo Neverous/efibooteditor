@@ -1476,7 +1476,7 @@
         <location filename="../src/efibooteditor.cpp" line="259"/>
         <source>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; for EFI variables access.&lt;/p&gt;&lt;p&gt;Uses Tango Icons as fallback icons.&lt;/p&gt;</source>
         <extracomment>About dialog details</extracomment>
-        <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;网站&lt;/a&gt;&lt;/p&gt;&lt;p&gt;该程序按原样提供，不提供任何形式的保证，包括设计、适销性和特定用途适用性的保证。&lt;/p&gt;&lt;p&gt;简体中文由 大眼仔~旭 翻译&lt;/p&gt;&lt;p&gt;许可证： &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;在 Linux 上，使用 &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; 进行 EFI 变量访问。&lt;/p&gt;&lt;p&gt;使用 Tango 图标作为备用图标。&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;网站&lt;/a&gt;&lt;/p&gt;&lt;p&gt;该程序按原样提供，不提供任何形式的保证，包括设计、适销性和特定用途适用性的保证 .&lt;/p&gt;&lt;p&gt;许可证：&lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL 版本 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;在 Linux 上使用 &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; 用于 EFI 变量访问。&lt;/p&gt;&lt;p&gt;使用 Tango 图标作为后备图标。&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="318"/>
