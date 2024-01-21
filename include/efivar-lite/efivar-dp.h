@@ -45,6 +45,7 @@ enum EFIDP_MSG
     EFIDP_MSG_IPV4 = 0x0c,
     EFIDP_MSG_IPV6 = 0x0d,
     EFIDP_MSG_SATA = 0x12,
+    EFIDP_MSG_URI = 0x18,
 };
 
 enum EFIDP_MEDIA
@@ -133,6 +134,12 @@ typedef struct
 typedef struct
 {
     efidp_header header;
+    uint8_t uri[ANYSIZE_ARRAY];
+} efidp_uri;
+
+typedef struct
+{
+    efidp_header header;
     uint32_t partition_number;
     uint64_t partition_start;
     uint64_t partition_size;
@@ -201,6 +208,7 @@ typedef union
     efidp_ipv4 ipv4;
     efidp_ipv6 ipv6;
     efidp_sata sata;
+    efidp_uri uri;
     efidp_hd hd;
     efidp_file file;
     efidp_firmware_file firmware_file;

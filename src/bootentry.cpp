@@ -720,6 +720,43 @@ auto File_path::SATA::toString(bool refresh) const -> QString
     return string = QString("Sata(%1,%2,%3)").arg(hba_port).arg(port_multiplier_port).arg(lun);
 }
 
+File_path::URI::URI(const EFIBoot::File_path::URI &_uri)
+    : uri{QUrl::fromEncoded(QString::fromStdString(_uri.uri).toUtf8())}
+{
+}
+
+auto File_path::URI::toEFIBootFilePath() const -> EFIBoot::File_path::URI
+{
+    EFIBoot::File_path::URI value = {};
+    value.uri = uri.toEncoded().toStdString();
+    return value;
+}
+
+auto File_path::URI::fromJSON(const QJsonObject &obj) -> std::optional<File_path::URI>
+{
+    URI value{};
+    check_obj();
+    value.uri = QUrl::fromEncoded(obj["uri"].toString().toUtf8());
+    return {value};
+}
+
+auto File_path::URI::toJSON() const -> QJsonObject
+{
+    QJsonObject value{};
+    value["type"] = TYPE;
+    value["subtype"] = SUBTYPE;
+    value["uri"] = QString(uri.toEncoded());
+    return value;
+}
+
+auto File_path::URI::toString(bool refresh) const -> QString
+{
+    if(string.size() && !refresh)
+        return string;
+
+    return string = QString("Uri(%1)").arg(uri.toDisplayString());
+}
+
 static_assert(sizeof(File_path::HD::partition_signature) == sizeof(EFIBoot::File_path::HD::partition_signature));
 
 File_path::HD::HD(const EFIBoot::File_path::HD &hd)

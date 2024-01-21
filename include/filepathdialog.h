@@ -39,13 +39,14 @@ private:
         IPv4 = 5,
         IPv6 = 6,
         SATA = 7,
-        HD = 8,
-        File = 9,
-        FirmwareFile = 10,
-        FirmwareVolume = 11,
-        BIOSBootSpecification = 12,
-        End = 13,
-        Unknown_ = 14,
+        URI = 8,
+        HD = 9,
+        File = 10,
+        FirmwareFile = 11,
+        FirmwareVolume = 12,
+        BIOSBootSpecification = 13,
+        End = 14,
+        Unknown_ = 15,
     };
 
     enum DataFormat
@@ -90,6 +91,7 @@ public:
     void setIPv4Form(const File_path::IPv4 &ipv4);
     void setIPv6Form(const File_path::IPv6 &ipv6);
     void setSATAForm(const File_path::SATA &sata);
+    void setURIForm(const File_path::URI &uri);
     void setHDForm(const File_path::HD &hd);
     void setFileForm(const File_path::File &file);
     void setFirmwareFileForm(const File_path::FirmwareFile &firmware_file);
@@ -110,6 +112,7 @@ private:
     void resetIPv4Form();
     void resetIPv6Form();
     void resetSATAForm();
+    void resetURIForm();
     void resetHDForm();
     void resetFileForm();
     void resetFirmwareFileForm();

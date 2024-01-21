@@ -4,6 +4,7 @@
 #include <QHostAddress>
 #include <QMetaType>
 #include <QString>
+#include <QUrl>
 #include <QUuid>
 #include <QVariant>
 #include <QVector>
@@ -221,6 +222,29 @@ public:
     QString toString(bool refresh = true) const;
 };
 
+class URI
+{
+public:
+    static constexpr auto TYPE = "MSG";
+    static constexpr auto SUBTYPE = "URI";
+
+private:
+    mutable QString string = "";
+
+public:
+    QUrl uri = {};
+
+public:
+    URI() = default;
+    URI(const EFIBoot::File_path::URI &uri);
+    EFIBoot::File_path::URI toEFIBootFilePath() const;
+
+    static std::optional<URI> fromJSON(const QJsonObject &obj);
+    QJsonObject toJSON() const;
+
+    QString toString(bool refresh = true) const;
+};
+
 class HD
 {
 public:
@@ -421,6 +445,7 @@ using ANY = std::variant<
     IPv4,
     IPv6,
     SATA,
+    URI,
     HD,
     File,
     FirmwareFile,
@@ -445,6 +470,7 @@ inline std::unordered_map<QString, std::function<std::optional<ANY>(const QJsonO
         reader(IPv4),
         reader(IPv6),
         reader(SATA),
+        reader(URI),
         reader(HD),
         reader(File),
         reader(FirmwareFile),
