@@ -654,7 +654,7 @@ inline std::optional<File_path::HWVendor> deserialize(const void *data, size_t d
     std::copy(std::begin(dp->guid), std::end(dp->guid), std::begin(value.guid));
     size_t data_length = data_size - sizeof(dp->header) - sizeof(dp->guid) / sizeof(dp->guid[0]);
     value.data.resize(data_length);
-    memcpy(&value.data[0], dp->data, data_length);
+    memcpy(value.data.data(), dp->data, data_length);
     return {value};
 }
 
@@ -767,7 +767,7 @@ inline std::optional<File_path::MSGVendor> deserialize(const void *data, size_t 
     std::copy(std::begin(dp->guid), std::end(dp->guid), std::begin(value.guid));
     size_t data_length = data_size - sizeof(dp->header) - sizeof(dp->guid) / sizeof(dp->guid[0]);
     value.data.resize(data_length);
-    memcpy(&value.data[0], dp->data, data_length);
+    memcpy(value.data.data(), dp->data, data_length);
     return {value};
 }
 
@@ -1024,8 +1024,7 @@ inline std::optional<File_path::MEDIAVendor> deserialize(const void *data, size_
     File_path::MEDIAVendor value{};
     std::copy(std::begin(dp->guid), std::end(dp->guid), std::begin(value.guid));
     size_t data_length = data_size - sizeof(dp->header) - sizeof(dp->guid) / sizeof(dp->guid[0]);
-    value.data.resize(data_length);
-    memcpy(&value.data[0], dp->data, data_length);
+    memcpy(value.data.data(), dp->data, data_length);
     return {value};
 }
 
@@ -1208,7 +1207,7 @@ inline std::optional<File_path::Unknown> deserialize(const void *data, size_t da
 
     size_t data_length = data_size - sizeof(*dp);
     value.data.resize(data_length);
-    memcpy(&value.data[0], static_cast<const uint8_t *>(advance_bytes(data, sizeof(const efidp_header))), data_length);
+    memcpy(value.data.data(), static_cast<const uint8_t *>(advance_bytes(data, sizeof(const efidp_header))), data_length);
     return {value};
 }
 
