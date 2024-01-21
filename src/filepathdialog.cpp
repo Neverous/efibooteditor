@@ -163,6 +163,12 @@ auto FilePathDialog::toFilePath() const -> File_path::ANY
         sata.lun = static_cast<uint16_t>(ui->lun_number->value());
         return sata;
     }
+    case FormIndex::URI:
+    {
+        File_path::URI uri;
+        uri.uri = QUrl::fromUserInput(ui->uri_text->text());
+        return uri;
+    }
     case FormIndex::HD:
     {
         File_path::HD hd;
@@ -263,6 +269,7 @@ void FilePathDialog::setFilePath(const File_path::ANY *_file_path)
         void operator()(const File_path::IPv4 &ipv4) { parent->setIPv4Form(ipv4); }
         void operator()(const File_path::IPv6 &ipv6) { parent->setIPv6Form(ipv6); }
         void operator()(const File_path::SATA &sata) { parent->setSATAForm(sata); }
+        void operator()(const File_path::URI &uri) { parent->setURIForm(uri); }
         void operator()(const File_path::HD &hd) { parent->setHDForm(hd); }
         void operator()(const File_path::File &file) { parent->setFileForm(file); }
         void operator()(const File_path::FirmwareFile &firmware_file) { parent->setFirmwareFileForm(firmware_file); }
@@ -367,6 +374,12 @@ void FilePathDialog::setSATAForm(const File_path::SATA &sata)
     ui->hba_port_number->setValue(sata.hba_port);
     ui->port_multiplier_port_number->setValue(sata.port_multiplier_port);
     ui->lun_number->setValue(sata.lun);
+}
+
+void FilePathDialog::setURIForm(const File_path::URI &uri)
+{
+    ui->options->setCurrentIndex(FormIndex::URI);
+    ui->uri_text->setText(uri.uri.toDisplayString());
 }
 
 void FilePathDialog::setHDForm(const File_path::HD &hd)
@@ -652,6 +665,7 @@ void FilePathDialog::resetForms()
     resetIPv4Form();
     resetIPv6Form();
     resetSATAForm();
+    resetURIForm();
     resetHDForm();
     resetFileForm();
     resetFirmwareFileForm();
@@ -756,6 +770,11 @@ void FilePathDialog::resetSATAForm()
     ui->hba_port_number->clear();
     ui->port_multiplier_port_number->clear();
     ui->lun_number->clear();
+}
+
+void FilePathDialog::resetURIForm()
+{
+    ui->uri_text->clear();
 }
 
 void FilePathDialog::resetHDForm()

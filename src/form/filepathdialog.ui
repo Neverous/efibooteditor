@@ -40,8 +40,7 @@
      </property>
      <widget class="QWidget" name="pci_tab">
       <attribute name="icon">
-       <iconset theme="system">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="system"/>
       </attribute>
       <attribute name="title">
        <string>PCI</string>
@@ -151,8 +150,7 @@
      </widget>
      <widget class="QWidget" name="hid_tab">
       <attribute name="icon">
-       <iconset theme="system">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="system"/>
       </attribute>
       <attribute name="title">
        <string>HID</string>
@@ -263,8 +261,7 @@
      </widget>
      <widget class="QWidget" name="usb_tab">
       <attribute name="icon">
-       <iconset theme="drive-removable-media">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="drive-removable-media"/>
       </attribute>
       <attribute name="title">
        <string>USB</string>
@@ -374,8 +371,7 @@
      </widget>
      <widget class="QWidget" name="vendor_tab">
       <attribute name="icon">
-       <iconset theme="document">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="document"/>
       </attribute>
       <attribute name="title">
        <string>Vendor</string>
@@ -572,8 +568,7 @@
      </widget>
      <widget class="QWidget" name="mac_tab">
       <attribute name="icon">
-       <iconset theme="network-wired">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="network-wired"/>
       </attribute>
       <attribute name="title">
        <string>MAC</string>
@@ -682,8 +677,7 @@
      </widget>
      <widget class="QWidget" name="ipv4_tab">
       <attribute name="icon">
-       <iconset theme="network-wired">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="network-wired"/>
       </attribute>
       <attribute name="title">
        <string>IPv4</string>
@@ -1023,8 +1017,7 @@
      </widget>
      <widget class="QWidget" name="ipv6_tab">
       <attribute name="icon">
-       <iconset theme="network-wired">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="network-wired"/>
       </attribute>
       <attribute name="title">
        <string>IPv6</string>
@@ -1368,8 +1361,7 @@
      </widget>
      <widget class="QWidget" name="sata_tab">
       <attribute name="icon">
-       <iconset theme="harddrive">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="harddrive"/>
       </attribute>
       <attribute name="title">
        <string>SATA</string>
@@ -1515,10 +1507,60 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="uri_tab">
+      <attribute name="icon">
+       <iconset theme="text-html"/>
+      </attribute>
+      <attribute name="title">
+       <string>URI</string>
+      </attribute>
+      <attribute name="toolTip">
+       <string>URI settings</string>
+      </attribute>
+      <attribute name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;URI settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </attribute>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="uri_label">
+         <property name="toolTip">
+          <string>URI</string>
+         </property>
+         <property name="statusTip">
+          <string>URI</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;URI&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>URI</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="uri_text">
+         <property name="toolTip">
+          <string>URI</string>
+         </property>
+         <property name="statusTip">
+          <string>URI</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;URI&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="inputMask">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string notr="true"/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
      <widget class="QWidget" name="hd_tab">
       <attribute name="icon">
-       <iconset theme="harddrive">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="harddrive"/>
       </attribute>
       <attribute name="title">
        <string>HD</string>
@@ -1614,8 +1656,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset theme="reload">
-             <normaloff>.</normaloff>.</iconset>
+            <iconset theme="reload"/>
            </property>
            <property name="iconSize">
             <size>
@@ -1827,8 +1868,7 @@
      </widget>
      <widget class="QWidget" name="file_tab">
       <attribute name="icon">
-       <iconset theme="document">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="document"/>
       </attribute>
       <attribute name="title">
        <string>File</string>
@@ -1891,8 +1931,7 @@
      </widget>
      <widget class="QWidget" name="firmware_file_tab">
       <attribute name="icon">
-       <iconset theme="document">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="document"/>
       </attribute>
       <attribute name="title">
        <string>Firmware file</string>
@@ -1963,8 +2002,7 @@
      </widget>
      <widget class="QWidget" name="firmware_volume_tab">
       <attribute name="icon">
-       <iconset theme="document">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="document"/>
       </attribute>
       <attribute name="title">
        <string>Firmware volume</string>
@@ -2035,8 +2073,7 @@
      </widget>
      <widget class="QWidget" name="bios_boot_specification_tab">
       <attribute name="icon">
-       <iconset theme="computer">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="computer"/>
       </attribute>
       <attribute name="title">
        <string>BIOS Boot Specification</string>
@@ -2179,8 +2216,7 @@
      </widget>
      <widget class="QWidget" name="end_tab">
       <attribute name="icon">
-       <iconset theme="stop">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="stop"/>
       </attribute>
       <attribute name="title">
        <string>End</string>
@@ -2259,8 +2295,7 @@
      </widget>
      <widget class="QWidget" name="unknown_tab">
       <attribute name="icon">
-       <iconset theme="system-search">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset theme="system-search"/>
       </attribute>
       <attribute name="title">
        <string>Unknown</string>

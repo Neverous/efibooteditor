@@ -133,6 +133,14 @@ struct SATA
     uint16_t lun = 0;
 };
 
+struct URI
+{
+    static const uint8_t TYPE = EFIDP_TYPE_MSG;
+    static const uint8_t SUBTYPE = EFIDP_MSG_URI;
+
+    std::string uri = "";
+};
+
 struct HD
 {
     enum class SIGNATURE : uint8_t
@@ -225,6 +233,7 @@ using ANY = std::variant<
     IPv4,
     IPv6,
     SATA,
+    URI,
     HD,
     MEDIAVendor,
     File,
@@ -964,6 +973,43 @@ inline size_t serialize(Raw_data &output, const File_path::SATA &sata)
 }
 
 template <>
+inline std::optional<File_path::URI> deserialize(const void *data, size_t data_size)
+{
+    auto dp = static_cast<const efidp_uri *>(data);
+    if(dp->header.length != data_size)
+        return std::nullopt;
+
+    if(dp->header.type != File_path::URI::TYPE)
+        return std::nullopt;
+
+    if(dp->header.subtype != File_path::URI::SUBTYPE)
+        return std::nullopt;
+
+    File_path::URI value{};
+    size_t data_length = data_size - sizeof(dp->header);
+    value.uri.resize(data_length);
+    memcpy(value.uri.data(), dp->uri, data_length);
+    return {value};
+}
+
+template <>
+inline size_t serialize(Raw_data &output, const File_path::URI &uri)
+{
+    size_t bytes = 0;
+    uint8_t type = File_path::URI::TYPE;
+    bytes += serialize(output, type);
+    uint8_t subtype = File_path::URI::SUBTYPE;
+    bytes += serialize(output, subtype);
+    size_t pos = output.size();
+    uint16_t length = 0;
+    bytes += serialize(output, length);
+    bytes += serialize(output, uri.uri);
+    length = static_cast<uint16_t>(bytes);
+    memcpy(&output[pos], &length, sizeof(length));
+    return bytes;
+}
+
+template <>
 inline std::optional<File_path::HD> deserialize(const void *data, size_t data_size)
 {
     auto dp = static_cast<const efidp_hd *>(data);
@@ -1249,6 +1295,7 @@ inline std::optional<File_path::ANY> deserialize(const void *data, size_t data_s
         casefp(IPv4);
         casefp(IPv6);
         casefp(SATA);
+        casefp(URI);
         casefp(HD);
         casefp(MEDIAVendor);
         casefp(File);
