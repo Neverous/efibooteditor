@@ -370,28 +370,28 @@
 <context>
     <name>EFIBootData</name>
     <message>
-        <location filename="../src/efibootdata.cpp" line="99"/>
-        <location filename="../src/efibootdata.cpp" line="683"/>
-        <location filename="../src/efibootdata.cpp" line="882"/>
-        <location filename="../src/efibootdata.cpp" line="1177"/>
-        <location filename="../src/efibootdata.cpp" line="1288"/>
+        <location filename="../src/efibootdata.cpp" line="96"/>
+        <location filename="../src/efibootdata.cpp" line="680"/>
+        <location filename="../src/efibootdata.cpp" line="877"/>
+        <location filename="../src/efibootdata.cpp" line="1172"/>
+        <location filename="../src/efibootdata.cpp" line="1283"/>
         <source>%1: not found</source>
         <translation>%1: nenájdené</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="107"/>
-        <location filename="../src/efibootdata.cpp" line="691"/>
-        <location filename="../src/efibootdata.cpp" line="1203"/>
+        <location filename="../src/efibootdata.cpp" line="104"/>
+        <location filename="../src/efibootdata.cpp" line="688"/>
+        <location filename="../src/efibootdata.cpp" line="1198"/>
         <source>%1: failed deserialization</source>
         <translation>%1: neúspešná deserializácia</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="263"/>
+        <location filename="../src/efibootdata.cpp" line="259"/>
         <source>Error loading entries</source>
         <translation>Chyba pri načítaní záznamov</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="263"/>
+        <location filename="../src/efibootdata.cpp" line="259"/>
         <source>Failed to load some EFI Boot Manager entries:
 
   - %1</source>
@@ -400,85 +400,85 @@
   - %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="316"/>
-        <location filename="../src/efibootdata.cpp" line="587"/>
+        <location filename="../src/efibootdata.cpp" line="314"/>
+        <location filename="../src/efibootdata.cpp" line="585"/>
         <source>Error saving entries</source>
         <translation>Chyba pri ukladaní záznamov</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="316"/>
-        <location filename="../src/efibootdata.cpp" line="587"/>
+        <location filename="../src/efibootdata.cpp" line="314"/>
+        <location filename="../src/efibootdata.cpp" line="585"/>
         <source>Entry %1(%2): duplicated index!</source>
         <translation>Záznam %1(%2): duplikovaný index!</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="339"/>
-        <location filename="../src/efibootdata.cpp" line="359"/>
-        <location filename="../src/efibootdata.cpp" line="380"/>
-        <location filename="../src/efibootdata.cpp" line="388"/>
-        <location filename="../src/efibootdata.cpp" line="395"/>
-        <location filename="../src/efibootdata.cpp" line="414"/>
+        <location filename="../src/efibootdata.cpp" line="337"/>
+        <location filename="../src/efibootdata.cpp" line="357"/>
+        <location filename="../src/efibootdata.cpp" line="378"/>
+        <location filename="../src/efibootdata.cpp" line="386"/>
+        <location filename="../src/efibootdata.cpp" line="393"/>
+        <location filename="../src/efibootdata.cpp" line="412"/>
         <source>Error saving %1</source>
         <translation>Chyba pri ukladaní %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="350"/>
-        <location filename="../src/efibootdata.cpp" line="371"/>
-        <location filename="../src/efibootdata.cpp" line="405"/>
+        <location filename="../src/efibootdata.cpp" line="348"/>
+        <location filename="../src/efibootdata.cpp" line="369"/>
+        <location filename="../src/efibootdata.cpp" line="403"/>
         <source>Error removing %1</source>
         <translation>Chyba pri odstraňovaní %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="431"/>
-        <location filename="../src/efibootdata.cpp" line="440"/>
-        <location filename="../src/efibootdata.cpp" line="454"/>
-        <location filename="../src/efibootdata.cpp" line="1156"/>
-        <location filename="../src/efibootdata.cpp" line="1360"/>
+        <location filename="../src/efibootdata.cpp" line="429"/>
+        <location filename="../src/efibootdata.cpp" line="438"/>
+        <location filename="../src/efibootdata.cpp" line="452"/>
+        <location filename="../src/efibootdata.cpp" line="1151"/>
+        <location filename="../src/efibootdata.cpp" line="1355"/>
         <source>Error importing boot configuration</source>
         <translation>Chyba pri importovaní spúšťacej konfigurácie</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="431"/>
-        <location filename="../src/efibootdata.cpp" line="654"/>
+        <location filename="../src/efibootdata.cpp" line="429"/>
+        <location filename="../src/efibootdata.cpp" line="651"/>
         <source>Couldn&apos;t open selected file (%1).</source>
         <translation>Vybraný súbor sa nepodarilo otvoriť (%1).</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="440"/>
+        <location filename="../src/efibootdata.cpp" line="438"/>
         <source>Parser failed: %1</source>
         <translation>Analyzátor zlyhal: %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="454"/>
+        <location filename="../src/efibootdata.cpp" line="452"/>
         <source>Invalid _Type: %1</source>
         <translation>Neplatný _Type: %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="467"/>
-        <location filename="../src/efibootdata.cpp" line="639"/>
+        <location filename="../src/efibootdata.cpp" line="465"/>
+        <location filename="../src/efibootdata.cpp" line="636"/>
         <source>Error exporting boot configuration</source>
         <translation>Chyba pri exportovaní spúšťacej konfigurácie</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="467"/>
+        <location filename="../src/efibootdata.cpp" line="465"/>
         <source>Couldn&apos;t open selected file (%1): %2.</source>
         <translation>Vybraný súbor sa nepodarilo otvoriť (%1): %2.</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="639"/>
-        <location filename="../src/efibootdata.cpp" line="744"/>
+        <location filename="../src/efibootdata.cpp" line="636"/>
+        <location filename="../src/efibootdata.cpp" line="739"/>
         <source>Couldn&apos;t write into file (%1): %2.</source>
         <translation>Nepodaril sa zápis do súboru (%1): %2.</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="654"/>
-        <location filename="../src/efibootdata.cpp" line="744"/>
-        <location filename="../src/efibootdata.cpp" line="750"/>
+        <location filename="../src/efibootdata.cpp" line="651"/>
+        <location filename="../src/efibootdata.cpp" line="739"/>
+        <location filename="../src/efibootdata.cpp" line="745"/>
         <source>Error dumping raw EFI data</source>
         <translation>Chyba výpisu nespracovaných dát EFI</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="750"/>
+        <location filename="../src/efibootdata.cpp" line="745"/>
         <source>Failed to dump some EFI Boot Manager entries:
 
   - %1</source>
@@ -487,181 +487,181 @@
   - %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="760"/>
+        <location filename="../src/efibootdata.cpp" line="755"/>
         <source>Timeout</source>
         <translation>Časový limit</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="776"/>
+        <location filename="../src/efibootdata.cpp" line="771"/>
         <source>Apple boot-args</source>
         <translation>Argumenty spúšťania Apple</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="792"/>
+        <location filename="../src/efibootdata.cpp" line="787"/>
         <source>Firmware actions</source>
         <translation>Akcie firmvéru</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="70"/>
+        <location filename="../src/efibootdata.cpp" line="67"/>
         <source>Loading EFI Boot Manager entries…</source>
         <translation>Načítanie položiek EFI Boot Manager…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="86"/>
-        <location filename="../src/efibootdata.cpp" line="667"/>
+        <location filename="../src/efibootdata.cpp" line="83"/>
+        <location filename="../src/efibootdata.cpp" line="664"/>
         <source>Searching EFI Boot Manager entries…</source>
         <translation>Vyhľadávanie položiek EFI Boot Manager…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="95"/>
-        <location filename="../src/efibootdata.cpp" line="253"/>
+        <location filename="../src/efibootdata.cpp" line="92"/>
+        <location filename="../src/efibootdata.cpp" line="250"/>
         <source>Processing EFI Boot Manager entries (%1)…</source>
         <translation>Spracovanie položiek EFI Boot Manager (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="270"/>
+        <location filename="../src/efibootdata.cpp" line="266"/>
         <source>Saving EFI Boot Manager entries…</source>
         <translation>Ukladanie položiek EFI Boot Manager…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="290"/>
+        <location filename="../src/efibootdata.cpp" line="288"/>
         <source>Searching old EFI Boot Manager entries…</source>
         <translation>Vyhľadávanie starých položiek EFI Boot Manager…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="321"/>
-        <location filename="../src/efibootdata.cpp" line="356"/>
-        <location filename="../src/efibootdata.cpp" line="377"/>
-        <location filename="../src/efibootdata.cpp" line="385"/>
-        <location filename="../src/efibootdata.cpp" line="392"/>
-        <location filename="../src/efibootdata.cpp" line="411"/>
+        <location filename="../src/efibootdata.cpp" line="319"/>
+        <location filename="../src/efibootdata.cpp" line="354"/>
+        <location filename="../src/efibootdata.cpp" line="375"/>
+        <location filename="../src/efibootdata.cpp" line="383"/>
+        <location filename="../src/efibootdata.cpp" line="390"/>
+        <location filename="../src/efibootdata.cpp" line="409"/>
         <source>Saving EFI Boot Manager entries (%1)…</source>
         <translation>Ukladanie položiek EFI Boot Manager (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="368"/>
+        <location filename="../src/efibootdata.cpp" line="366"/>
         <source>Removing old EFI Boot Manager entries (%1)…</source>
         <translation>Odstraňovanie starých položiek EFI Boot Manager (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="347"/>
-        <location filename="../src/efibootdata.cpp" line="402"/>
+        <location filename="../src/efibootdata.cpp" line="345"/>
+        <location filename="../src/efibootdata.cpp" line="400"/>
         <source>Removing EFI Boot Manager entries (%1)…</source>
         <translation>Odstraňovanie položiek EFI Boot Manager (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="427"/>
+        <location filename="../src/efibootdata.cpp" line="425"/>
         <source>Importing boot configuration…</source>
         <translation>Importovanie spúšťacej konfigurácie…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="463"/>
-        <location filename="../src/efibootdata.cpp" line="650"/>
+        <location filename="../src/efibootdata.cpp" line="461"/>
+        <location filename="../src/efibootdata.cpp" line="647"/>
         <source>Exporting boot configuration…</source>
         <translation>Exportovanie spúšťacej konfigurácie…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="484"/>
-        <location filename="../src/efibootdata.cpp" line="679"/>
-        <location filename="../src/efibootdata.cpp" line="728"/>
+        <location filename="../src/efibootdata.cpp" line="482"/>
+        <location filename="../src/efibootdata.cpp" line="676"/>
+        <location filename="../src/efibootdata.cpp" line="725"/>
         <source>Exporting EFI Boot Manager entries (%1)…</source>
         <translation>Exportovanie položiek EFI Boot Manager (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="868"/>
+        <location filename="../src/efibootdata.cpp" line="863"/>
         <source>Importing boot configuration from JSON…</source>
         <translation>Importovať konfiguráciu spúšťania z JSON…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="887"/>
-        <location filename="../src/efibootdata.cpp" line="1182"/>
-        <location filename="../src/efibootdata.cpp" line="1293"/>
+        <location filename="../src/efibootdata.cpp" line="882"/>
+        <location filename="../src/efibootdata.cpp" line="1177"/>
+        <location filename="../src/efibootdata.cpp" line="1288"/>
         <source>Importing EFI Boot Manager entries (%1)…</source>
         <translation>Importovanie položiek EFI Boot Manager (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="890"/>
-        <location filename="../src/efibootdata.cpp" line="952"/>
-        <location filename="../src/efibootdata.cpp" line="989"/>
-        <location filename="../src/efibootdata.cpp" line="1033"/>
-        <location filename="../src/efibootdata.cpp" line="1078"/>
-        <location filename="../src/efibootdata.cpp" line="1103"/>
-        <location filename="../src/efibootdata.cpp" line="1185"/>
-        <location filename="../src/efibootdata.cpp" line="1192"/>
-        <location filename="../src/efibootdata.cpp" line="1296"/>
-        <location filename="../src/efibootdata.cpp" line="1310"/>
-        <location filename="../src/efibootdata.cpp" line="1347"/>
+        <location filename="../src/efibootdata.cpp" line="885"/>
+        <location filename="../src/efibootdata.cpp" line="947"/>
+        <location filename="../src/efibootdata.cpp" line="984"/>
+        <location filename="../src/efibootdata.cpp" line="1028"/>
+        <location filename="../src/efibootdata.cpp" line="1073"/>
+        <location filename="../src/efibootdata.cpp" line="1098"/>
+        <location filename="../src/efibootdata.cpp" line="1180"/>
+        <location filename="../src/efibootdata.cpp" line="1187"/>
+        <location filename="../src/efibootdata.cpp" line="1291"/>
+        <location filename="../src/efibootdata.cpp" line="1305"/>
+        <location filename="../src/efibootdata.cpp" line="1342"/>
         <source>%1: %2 expected</source>
         <translation>%1: očakáva sa %2</translation>
     </message>
     <message>
+        <location filename="../src/efibootdata.cpp" line="893"/>
         <location filename="../src/efibootdata.cpp" line="898"/>
         <location filename="../src/efibootdata.cpp" line="903"/>
-        <location filename="../src/efibootdata.cpp" line="908"/>
-        <location filename="../src/efibootdata.cpp" line="1078"/>
+        <location filename="../src/efibootdata.cpp" line="1073"/>
         <source>number</source>
         <translation>číslo</translation>
     </message>
     <message>
+        <location filename="../src/efibootdata.cpp" line="908"/>
         <location filename="../src/efibootdata.cpp" line="913"/>
         <location filename="../src/efibootdata.cpp" line="918"/>
         <location filename="../src/efibootdata.cpp" line="923"/>
         <location filename="../src/efibootdata.cpp" line="928"/>
-        <location filename="../src/efibootdata.cpp" line="933"/>
         <source>bool</source>
         <translation>bool</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="964"/>
+        <location filename="../src/efibootdata.cpp" line="959"/>
         <source>%1: unknown boot manager capability</source>
         <translation>%1: neznáma funkcia správcu spúšťania</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="977"/>
-        <location filename="../src/efibootdata.cpp" line="1021"/>
-        <location filename="../src/efibootdata.cpp" line="1067"/>
+        <location filename="../src/efibootdata.cpp" line="972"/>
+        <location filename="../src/efibootdata.cpp" line="1016"/>
+        <location filename="../src/efibootdata.cpp" line="1062"/>
         <source>array</source>
         <translation>pole</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="952"/>
-        <location filename="../src/efibootdata.cpp" line="989"/>
-        <location filename="../src/efibootdata.cpp" line="1033"/>
-        <location filename="../src/efibootdata.cpp" line="1149"/>
+        <location filename="../src/efibootdata.cpp" line="947"/>
+        <location filename="../src/efibootdata.cpp" line="984"/>
+        <location filename="../src/efibootdata.cpp" line="1028"/>
+        <location filename="../src/efibootdata.cpp" line="1144"/>
         <source>string</source>
         <translation>reťazec</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1011"/>
-        <location filename="../src/efibootdata.cpp" line="1047"/>
+        <location filename="../src/efibootdata.cpp" line="1006"/>
+        <location filename="../src/efibootdata.cpp" line="1042"/>
         <source>%1: unknown os indication</source>
         <translation>%1: neznáma indikácia os</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="938"/>
-        <location filename="../src/efibootdata.cpp" line="1090"/>
-        <location filename="../src/efibootdata.cpp" line="1119"/>
-        <location filename="../src/efibootdata.cpp" line="1144"/>
-        <location filename="../src/efibootdata.cpp" line="1185"/>
-        <location filename="../src/efibootdata.cpp" line="1296"/>
-        <location filename="../src/efibootdata.cpp" line="1347"/>
+        <location filename="../src/efibootdata.cpp" line="933"/>
+        <location filename="../src/efibootdata.cpp" line="1085"/>
+        <location filename="../src/efibootdata.cpp" line="1114"/>
+        <location filename="../src/efibootdata.cpp" line="1139"/>
+        <location filename="../src/efibootdata.cpp" line="1180"/>
+        <location filename="../src/efibootdata.cpp" line="1291"/>
+        <location filename="../src/efibootdata.cpp" line="1342"/>
         <source>object</source>
         <translation>objekt</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1103"/>
-        <location filename="../src/efibootdata.cpp" line="1310"/>
+        <location filename="../src/efibootdata.cpp" line="1098"/>
+        <location filename="../src/efibootdata.cpp" line="1305"/>
         <source>hexadecimal number</source>
         <translation>hexadecimálne číslo</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1125"/>
+        <location filename="../src/efibootdata.cpp" line="1120"/>
         <source>%1: failed parsing</source>
         <translation>%1: neúspešná analýza</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1156"/>
-        <location filename="../src/efibootdata.cpp" line="1360"/>
+        <location filename="../src/efibootdata.cpp" line="1151"/>
+        <location filename="../src/efibootdata.cpp" line="1355"/>
         <source>Failed to import some EFI Boot Manager entries:
 
   - %1</source>
@@ -670,12 +670,12 @@
   - %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1163"/>
+        <location filename="../src/efibootdata.cpp" line="1158"/>
         <source>Importing boot configuration from raw dump…</source>
         <translation>Importovať konfiguráciu spúšťania zo surového výpisu…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1195"/>
+        <location filename="../src/efibootdata.cpp" line="1190"/>
         <source>object(raw_data: string, efi_attributes: number)</source>
         <extracomment>Expected JSON structure, thrown as error description. raw_data and efi_attributes are field names in JSON file</extracomment>
         <translation>object(raw_data: string, efi_attributes: number)</translation>
@@ -710,8 +710,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="72"/>
-        <location filename="../src/efibooteditor.cpp" line="390"/>
-        <location filename="../src/efibooteditor.cpp" line="403"/>
+        <location filename="../src/efibooteditor.cpp" line="393"/>
         <source>Boot</source>
         <translation>Boot</translation>
     </message>
@@ -730,7 +729,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="134"/>
-        <location filename="../src/efibooteditor.cpp" line="393"/>
+        <location filename="../src/efibooteditor.cpp" line="396"/>
         <source>Driver</source>
         <translation>Ovládač</translation>
     </message>
@@ -749,7 +748,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="196"/>
-        <location filename="../src/efibooteditor.cpp" line="396"/>
+        <location filename="../src/efibooteditor.cpp" line="399"/>
         <source>System Preparation</source>
         <translation>Príprava systému</translation>
     </message>
@@ -768,7 +767,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="258"/>
-        <location filename="../src/efibooteditor.cpp" line="399"/>
+        <location filename="../src/efibooteditor.cpp" line="402"/>
         <source>Platform Recovery</source>
         <translation>Obnova platformy</translation>
     </message>
@@ -1370,7 +1369,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1280"/>
-        <location filename="../src/efibooteditor.cpp" line="249"/>
+        <location filename="../src/efibooteditor.cpp" line="248"/>
         <source>About EFI Boot Editor</source>
         <translation>O aplikácii EFI Boot Editor</translation>
     </message>
@@ -1420,76 +1419,76 @@
         <translation>Spracováva sa…</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="70"/>
+        <location filename="../src/efibooteditor.cpp" line="69"/>
         <source>Undo %1</source>
         <translation>Späť %1</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="73"/>
+        <location filename="../src/efibooteditor.cpp" line="72"/>
         <source>Redo %1</source>
         <translation>Znova %1</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="115"/>
+        <location filename="../src/efibooteditor.cpp" line="114"/>
         <source>Are you sure you want to reload the entries?&lt;br/&gt;ALL of your changes will be lost!</source>
         <translation>Chcete znovu načítať položky?&lt;br/&gt;VŠETKY zmeny sa stratia!</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="139"/>
+        <location filename="../src/efibooteditor.cpp" line="138"/>
         <source>Are you sure you want to reorder the boot entries?&lt;br/&gt;All indexes will be overwritten!</source>
         <translation>Chcete zmeniť poradie spúšťacích položiek?&lt;br/&gt;Všetky indexy budú prepísané!</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="197"/>
+        <location filename="../src/efibooteditor.cpp" line="196"/>
         <source>Are you sure you want to save?&lt;br/&gt;Your EFI configuration will be overwritten!</source>
         <translation>Chcete uložiť zmeny?&lt;br/&gt;Vaša konfigurácia EFI bude prepísaná!</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="206"/>
+        <location filename="../src/efibooteditor.cpp" line="205"/>
         <source>Open boot configuration dump</source>
         <translation>Otvoriť výpis konfigurácie spúšťania</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="206"/>
-        <location filename="../src/efibooteditor.cpp" line="224"/>
-        <location filename="../src/efibooteditor.cpp" line="236"/>
+        <location filename="../src/efibooteditor.cpp" line="205"/>
+        <location filename="../src/efibooteditor.cpp" line="223"/>
+        <location filename="../src/efibooteditor.cpp" line="235"/>
         <source>JSON documents (*.json)</source>
         <translation>Dokumenty JSON (*.json)</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="224"/>
+        <location filename="../src/efibooteditor.cpp" line="223"/>
         <source>Save boot configuration dump</source>
         <translation>Uloženie výpisu konfigurácie spúšťania</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="236"/>
+        <location filename="../src/efibooteditor.cpp" line="235"/>
         <source>Save raw EFI dump</source>
         <translation>Uložiť nespracované údaje EFI</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="251"/>
+        <location filename="../src/efibooteditor.cpp" line="250"/>
         <source>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</source>
         <extracomment>About dialog</extracomment>
         <translation>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Verzia &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor pre systémy založené na (U)EFI.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="259"/>
+        <location filename="../src/efibooteditor.cpp" line="258"/>
         <source>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; for EFI variables access.&lt;/p&gt;&lt;p&gt;Uses Tango Icons as fallback icons.&lt;/p&gt;</source>
         <extracomment>About dialog details</extracomment>
         <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Webstránka&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Program sa poskytuje TAK AKO JE, bez ŽIADNEJ ZÁRUKY, VRÁTANE ZÁRUKY NA DIZAJN, PREDAJNOSTI A VHODNOSTI NA KONKRÉTNY ÚČEL.&lt;/p&gt;&lt;p&gt;Licencia: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL verzia 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Pre systém Linux používa &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; pre prístup k premenným EFI.&lt;/p&gt;&lt;p&gt;Použité ikony Tango ako rezervné ikony.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="318"/>
+        <location filename="../src/efibooteditor.cpp" line="321"/>
         <source>Reorder %1 entries</source>
         <translation>Zmena poradia položiek %1</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="432"/>
+        <location filename="../src/efibooteditor.cpp" line="434"/>
         <source>Are you sure you want to quit?</source>
         <translation>Ste si istý, že chcete skončiť?</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="101"/>
+        <location filename="../src/efibooteditor.cpp" line="100"/>
         <source>EFI support required</source>
         <translation>Vyžaduje sa podpora EFI</translation>
     </message>
@@ -1602,1039 +1601,1065 @@ Vaša konfigurácia EFI bude prepísaná!</translation>
         <translation>Editor cesty k súboru</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="47"/>
+        <location filename="../src/form/filepathdialog.ui" line="46"/>
         <source>PCI</source>
         <translation>PCI</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="50"/>
+        <location filename="../src/form/filepathdialog.ui" line="49"/>
         <source>PCI settings</source>
         <translation>Nastavenia PCI</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="53"/>
+        <location filename="../src/form/filepathdialog.ui" line="52"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nastavenia PCI.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="77"/>
-        <location filename="../src/form/filepathdialog.ui" line="80"/>
-        <location filename="../src/form/filepathdialog.ui" line="86"/>
-        <location filename="../src/form/filepathdialog.ui" line="115"/>
-        <location filename="../src/form/filepathdialog.ui" line="118"/>
+        <location filename="../src/form/filepathdialog.ui" line="76"/>
+        <location filename="../src/form/filepathdialog.ui" line="79"/>
+        <location filename="../src/form/filepathdialog.ui" line="85"/>
+        <location filename="../src/form/filepathdialog.ui" line="114"/>
+        <location filename="../src/form/filepathdialog.ui" line="117"/>
         <source>Function</source>
         <translation>Funkcia</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="83"/>
-        <location filename="../src/form/filepathdialog.ui" line="121"/>
+        <location filename="../src/form/filepathdialog.ui" line="82"/>
+        <location filename="../src/form/filepathdialog.ui" line="120"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Function.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Funkcia.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="93"/>
-        <location filename="../src/form/filepathdialog.ui" line="96"/>
-        <location filename="../src/form/filepathdialog.ui" line="102"/>
-        <location filename="../src/form/filepathdialog.ui" line="137"/>
-        <location filename="../src/form/filepathdialog.ui" line="140"/>
+        <location filename="../src/form/filepathdialog.ui" line="92"/>
+        <location filename="../src/form/filepathdialog.ui" line="95"/>
+        <location filename="../src/form/filepathdialog.ui" line="101"/>
+        <location filename="../src/form/filepathdialog.ui" line="136"/>
+        <location filename="../src/form/filepathdialog.ui" line="139"/>
         <source>Device</source>
         <translation>Zariadenie</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="99"/>
-        <location filename="../src/form/filepathdialog.ui" line="143"/>
+        <location filename="../src/form/filepathdialog.ui" line="98"/>
+        <location filename="../src/form/filepathdialog.ui" line="142"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zariadenie.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="158"/>
-        <location filename="../src/form/filepathdialog.ui" line="185"/>
-        <location filename="../src/form/filepathdialog.ui" line="188"/>
-        <location filename="../src/form/filepathdialog.ui" line="194"/>
-        <location filename="../src/form/filepathdialog.ui" line="206"/>
-        <location filename="../src/form/filepathdialog.ui" line="209"/>
+        <location filename="../src/form/filepathdialog.ui" line="156"/>
+        <location filename="../src/form/filepathdialog.ui" line="183"/>
+        <location filename="../src/form/filepathdialog.ui" line="186"/>
+        <location filename="../src/form/filepathdialog.ui" line="192"/>
+        <location filename="../src/form/filepathdialog.ui" line="204"/>
+        <location filename="../src/form/filepathdialog.ui" line="207"/>
         <source>HID</source>
         <translation>HID</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="161"/>
-        <location filename="../src/form/filepathdialog.ui" line="2048"/>
+        <location filename="../src/form/filepathdialog.ui" line="159"/>
+        <location filename="../src/form/filepathdialog.ui" line="2085"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;BIOS Boot Specification settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nastavenia špecifikácie spúšťania systému BIOS.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="191"/>
+        <location filename="../src/form/filepathdialog.ui" line="189"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="212"/>
+        <location filename="../src/form/filepathdialog.ui" line="210"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID v šestnástkovej sústave.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="225"/>
-        <location filename="../src/form/filepathdialog.ui" line="228"/>
-        <location filename="../src/form/filepathdialog.ui" line="234"/>
-        <location filename="../src/form/filepathdialog.ui" line="246"/>
-        <location filename="../src/form/filepathdialog.ui" line="249"/>
+        <location filename="../src/form/filepathdialog.ui" line="223"/>
+        <location filename="../src/form/filepathdialog.ui" line="226"/>
+        <location filename="../src/form/filepathdialog.ui" line="232"/>
+        <location filename="../src/form/filepathdialog.ui" line="244"/>
+        <location filename="../src/form/filepathdialog.ui" line="247"/>
         <source>UID</source>
         <translation>UID</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="231"/>
+        <location filename="../src/form/filepathdialog.ui" line="229"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="252"/>
+        <location filename="../src/form/filepathdialog.ui" line="250"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UID in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UID v šestnástkovej sústave.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="270"/>
+        <location filename="../src/form/filepathdialog.ui" line="267"/>
         <source>USB</source>
         <translation>USB</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="273"/>
+        <location filename="../src/form/filepathdialog.ui" line="270"/>
         <source>USB settings</source>
         <translation>Nastavenia USB</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="276"/>
+        <location filename="../src/form/filepathdialog.ui" line="273"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nastavenia USB.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+        <location filename="../src/form/filepathdialog.ui" line="297"/>
         <location filename="../src/form/filepathdialog.ui" line="300"/>
-        <location filename="../src/form/filepathdialog.ui" line="303"/>
-        <location filename="../src/form/filepathdialog.ui" line="309"/>
+        <location filename="../src/form/filepathdialog.ui" line="306"/>
+        <location filename="../src/form/filepathdialog.ui" line="357"/>
         <location filename="../src/form/filepathdialog.ui" line="360"/>
-        <location filename="../src/form/filepathdialog.ui" line="363"/>
         <source>Parent port number</source>
         <translation>Číslo nadradeného portu</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="306"/>
-        <location filename="../src/form/filepathdialog.ui" line="366"/>
+        <location filename="../src/form/filepathdialog.ui" line="303"/>
+        <location filename="../src/form/filepathdialog.ui" line="363"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Parent port number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Číslo nadradeného portu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+        <location filename="../src/form/filepathdialog.ui" line="313"/>
         <location filename="../src/form/filepathdialog.ui" line="316"/>
-        <location filename="../src/form/filepathdialog.ui" line="319"/>
-        <location filename="../src/form/filepathdialog.ui" line="325"/>
+        <location filename="../src/form/filepathdialog.ui" line="322"/>
+        <location filename="../src/form/filepathdialog.ui" line="335"/>
         <location filename="../src/form/filepathdialog.ui" line="338"/>
-        <location filename="../src/form/filepathdialog.ui" line="341"/>
         <source>Interface</source>
         <translation>Rozhranie</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="322"/>
-        <location filename="../src/form/filepathdialog.ui" line="344"/>
+        <location filename="../src/form/filepathdialog.ui" line="319"/>
+        <location filename="../src/form/filepathdialog.ui" line="341"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Rozhranie.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="381"/>
+        <location filename="../src/form/filepathdialog.ui" line="377"/>
         <source>Vendor</source>
         <translation>Predajca</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="384"/>
+        <location filename="../src/form/filepathdialog.ui" line="380"/>
         <source>Vendor settings</source>
         <translation>Nastavenia predajcu</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="387"/>
+        <location filename="../src/form/filepathdialog.ui" line="383"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nastavenia predajcu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="461"/>
-        <location filename="../src/form/filepathdialog.ui" line="464"/>
-        <location filename="../src/form/filepathdialog.ui" line="482"/>
-        <location filename="../src/form/filepathdialog.ui" line="485"/>
+        <location filename="../src/form/filepathdialog.ui" line="457"/>
+        <location filename="../src/form/filepathdialog.ui" line="460"/>
+        <location filename="../src/form/filepathdialog.ui" line="478"/>
+        <location filename="../src/form/filepathdialog.ui" line="481"/>
         <source>Vendor GUID</source>
         <translation>GUID predajcu</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="467"/>
-        <location filename="../src/form/filepathdialog.ui" line="488"/>
+        <location filename="../src/form/filepathdialog.ui" line="463"/>
+        <location filename="../src/form/filepathdialog.ui" line="484"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor GUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GUID predajcu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="470"/>
-        <location filename="../src/form/filepathdialog.ui" line="1674"/>
+        <location filename="../src/form/filepathdialog.ui" line="466"/>
+        <location filename="../src/form/filepathdialog.ui" line="1715"/>
         <source>GUID</source>
         <translation>GUID</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="523"/>
-        <location filename="../src/form/filepathdialog.ui" line="526"/>
-        <location filename="../src/form/filepathdialog.ui" line="2398"/>
-        <location filename="../src/form/filepathdialog.ui" line="2401"/>
+        <location filename="../src/form/filepathdialog.ui" line="519"/>
+        <location filename="../src/form/filepathdialog.ui" line="522"/>
+        <location filename="../src/form/filepathdialog.ui" line="2433"/>
+        <location filename="../src/form/filepathdialog.ui" line="2436"/>
         <source>Data format</source>
         <translation>Formát údajov</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="529"/>
-        <location filename="../src/form/filepathdialog.ui" line="2404"/>
+        <location filename="../src/form/filepathdialog.ui" line="525"/>
+        <location filename="../src/form/filepathdialog.ui" line="2439"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Formát údajov.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="533"/>
-        <location filename="../src/form/filepathdialog.ui" line="2408"/>
+        <location filename="../src/form/filepathdialog.ui" line="529"/>
+        <location filename="../src/form/filepathdialog.ui" line="2443"/>
         <source>BASE64</source>
         <translation>BASE64</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="538"/>
-        <location filename="../src/form/filepathdialog.ui" line="2413"/>
+        <location filename="../src/form/filepathdialog.ui" line="534"/>
+        <location filename="../src/form/filepathdialog.ui" line="2448"/>
         <source>UTF-16</source>
         <translation>UTF-16</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="543"/>
-        <location filename="../src/form/filepathdialog.ui" line="2418"/>
+        <location filename="../src/form/filepathdialog.ui" line="539"/>
+        <location filename="../src/form/filepathdialog.ui" line="2453"/>
         <source>UTF-8</source>
         <translation>UTF-8</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="548"/>
-        <location filename="../src/form/filepathdialog.ui" line="2423"/>
+        <location filename="../src/form/filepathdialog.ui" line="544"/>
+        <location filename="../src/form/filepathdialog.ui" line="2458"/>
         <source>HEX</source>
         <translation>HEX</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="510"/>
-        <location filename="../src/form/filepathdialog.ui" line="561"/>
-        <location filename="../src/form/filepathdialog.ui" line="564"/>
-        <location filename="../src/form/filepathdialog.ui" line="2385"/>
-        <location filename="../src/form/filepathdialog.ui" line="2436"/>
-        <location filename="../src/form/filepathdialog.ui" line="2439"/>
+        <location filename="../src/form/filepathdialog.ui" line="506"/>
+        <location filename="../src/form/filepathdialog.ui" line="557"/>
+        <location filename="../src/form/filepathdialog.ui" line="560"/>
+        <location filename="../src/form/filepathdialog.ui" line="2420"/>
+        <location filename="../src/form/filepathdialog.ui" line="2471"/>
+        <location filename="../src/form/filepathdialog.ui" line="2474"/>
         <source>Data</source>
         <translation>Data</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="567"/>
-        <location filename="../src/form/filepathdialog.ui" line="2442"/>
+        <location filename="../src/form/filepathdialog.ui" line="563"/>
+        <location filename="../src/form/filepathdialog.ui" line="2477"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="501"/>
-        <location filename="../src/form/filepathdialog.ui" line="504"/>
+        <location filename="../src/form/filepathdialog.ui" line="497"/>
+        <location filename="../src/form/filepathdialog.ui" line="500"/>
         <source>Vendor data</source>
         <translation>Údaje predajcu</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="507"/>
+        <location filename="../src/form/filepathdialog.ui" line="503"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Údaje predajcu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="411"/>
-        <location filename="../src/form/filepathdialog.ui" line="414"/>
-        <location filename="../src/form/filepathdialog.ui" line="420"/>
-        <location filename="../src/form/filepathdialog.ui" line="433"/>
-        <location filename="../src/form/filepathdialog.ui" line="436"/>
-        <location filename="../src/form/filepathdialog.ui" line="2305"/>
+        <location filename="../src/form/filepathdialog.ui" line="407"/>
+        <location filename="../src/form/filepathdialog.ui" line="410"/>
+        <location filename="../src/form/filepathdialog.ui" line="416"/>
+        <location filename="../src/form/filepathdialog.ui" line="429"/>
+        <location filename="../src/form/filepathdialog.ui" line="432"/>
+        <location filename="../src/form/filepathdialog.ui" line="2340"/>
         <source>Type</source>
         <translation>Typ</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="417"/>
-        <location filename="../src/form/filepathdialog.ui" line="439"/>
+        <location filename="../src/form/filepathdialog.ui" line="413"/>
+        <location filename="../src/form/filepathdialog.ui" line="435"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Typ.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="443"/>
+        <location filename="../src/form/filepathdialog.ui" line="439"/>
         <source>HW</source>
         <translation>HW</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="448"/>
+        <location filename="../src/form/filepathdialog.ui" line="444"/>
         <source>MSG</source>
         <translation>MSG</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="453"/>
+        <location filename="../src/form/filepathdialog.ui" line="449"/>
         <source>MEDIA</source>
         <translation>MEDIA</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="579"/>
-        <location filename="../src/form/filepathdialog.ui" line="618"/>
+        <location filename="../src/form/filepathdialog.ui" line="574"/>
+        <location filename="../src/form/filepathdialog.ui" line="613"/>
         <source>MAC</source>
         <translation>MAC</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="582"/>
+        <location filename="../src/form/filepathdialog.ui" line="577"/>
         <source>MAC settings</source>
         <translation>Nastavenia MAC</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="585"/>
+        <location filename="../src/form/filepathdialog.ui" line="580"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nastavenia MAC.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="609"/>
-        <location filename="../src/form/filepathdialog.ui" line="612"/>
-        <location filename="../src/form/filepathdialog.ui" line="630"/>
-        <location filename="../src/form/filepathdialog.ui" line="633"/>
+        <location filename="../src/form/filepathdialog.ui" line="604"/>
+        <location filename="../src/form/filepathdialog.ui" line="607"/>
+        <location filename="../src/form/filepathdialog.ui" line="625"/>
+        <location filename="../src/form/filepathdialog.ui" line="628"/>
         <source>MAC address</source>
         <translation>Adresa MAC</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="615"/>
-        <location filename="../src/form/filepathdialog.ui" line="636"/>
+        <location filename="../src/form/filepathdialog.ui" line="610"/>
+        <location filename="../src/form/filepathdialog.ui" line="631"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adresa MAC.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="649"/>
-        <location filename="../src/form/filepathdialog.ui" line="652"/>
-        <location filename="../src/form/filepathdialog.ui" line="658"/>
-        <location filename="../src/form/filepathdialog.ui" line="671"/>
-        <location filename="../src/form/filepathdialog.ui" line="674"/>
+        <location filename="../src/form/filepathdialog.ui" line="644"/>
+        <location filename="../src/form/filepathdialog.ui" line="647"/>
+        <location filename="../src/form/filepathdialog.ui" line="653"/>
+        <location filename="../src/form/filepathdialog.ui" line="666"/>
+        <location filename="../src/form/filepathdialog.ui" line="669"/>
         <source>Interface type</source>
         <translation>Typ rozhrania</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="655"/>
-        <location filename="../src/form/filepathdialog.ui" line="677"/>
+        <location filename="../src/form/filepathdialog.ui" line="650"/>
+        <location filename="../src/form/filepathdialog.ui" line="672"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Interface type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Typ rozhrania.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="689"/>
+        <location filename="../src/form/filepathdialog.ui" line="683"/>
         <source>IPv4</source>
         <translation>IPv4</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="692"/>
+        <location filename="../src/form/filepathdialog.ui" line="686"/>
         <source>IPv4 settings</source>
         <translation>Nastavenia IPv4</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="695"/>
+        <location filename="../src/form/filepathdialog.ui" line="689"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv4 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nastavenia IPv4.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="719"/>
-        <location filename="../src/form/filepathdialog.ui" line="722"/>
-        <location filename="../src/form/filepathdialog.ui" line="788"/>
-        <location filename="../src/form/filepathdialog.ui" line="791"/>
-        <location filename="../src/form/filepathdialog.ui" line="1060"/>
-        <location filename="../src/form/filepathdialog.ui" line="1063"/>
-        <location filename="../src/form/filepathdialog.ui" line="1193"/>
-        <location filename="../src/form/filepathdialog.ui" line="1196"/>
+        <location filename="../src/form/filepathdialog.ui" line="713"/>
+        <location filename="../src/form/filepathdialog.ui" line="716"/>
+        <location filename="../src/form/filepathdialog.ui" line="782"/>
+        <location filename="../src/form/filepathdialog.ui" line="785"/>
+        <location filename="../src/form/filepathdialog.ui" line="1053"/>
+        <location filename="../src/form/filepathdialog.ui" line="1056"/>
+        <location filename="../src/form/filepathdialog.ui" line="1186"/>
+        <location filename="../src/form/filepathdialog.ui" line="1189"/>
         <source>Local IP address</source>
         <translation>Miestna IP adresa</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="725"/>
-        <location filename="../src/form/filepathdialog.ui" line="794"/>
-        <location filename="../src/form/filepathdialog.ui" line="1066"/>
-        <location filename="../src/form/filepathdialog.ui" line="1199"/>
+        <location filename="../src/form/filepathdialog.ui" line="719"/>
+        <location filename="../src/form/filepathdialog.ui" line="788"/>
+        <location filename="../src/form/filepathdialog.ui" line="1059"/>
+        <location filename="../src/form/filepathdialog.ui" line="1192"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Miestna IP adresa.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="728"/>
-        <location filename="../src/form/filepathdialog.ui" line="1069"/>
+        <location filename="../src/form/filepathdialog.ui" line="722"/>
+        <location filename="../src/form/filepathdialog.ui" line="1062"/>
         <source>Local IP</source>
         <translation>Miestne IP</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="735"/>
+        <location filename="../src/form/filepathdialog.ui" line="729"/>
+        <location filename="../src/form/filepathdialog.ui" line="732"/>
         <location filename="../src/form/filepathdialog.ui" line="738"/>
-        <location filename="../src/form/filepathdialog.ui" line="744"/>
-        <location filename="../src/form/filepathdialog.ui" line="813"/>
-        <location filename="../src/form/filepathdialog.ui" line="816"/>
-        <location filename="../src/form/filepathdialog.ui" line="1076"/>
-        <location filename="../src/form/filepathdialog.ui" line="1079"/>
-        <location filename="../src/form/filepathdialog.ui" line="1085"/>
-        <location filename="../src/form/filepathdialog.ui" line="1218"/>
-        <location filename="../src/form/filepathdialog.ui" line="1221"/>
+        <location filename="../src/form/filepathdialog.ui" line="807"/>
+        <location filename="../src/form/filepathdialog.ui" line="810"/>
+        <location filename="../src/form/filepathdialog.ui" line="1069"/>
+        <location filename="../src/form/filepathdialog.ui" line="1072"/>
+        <location filename="../src/form/filepathdialog.ui" line="1078"/>
+        <location filename="../src/form/filepathdialog.ui" line="1211"/>
+        <location filename="../src/form/filepathdialog.ui" line="1214"/>
         <source>Local port</source>
         <translation>Miestny port</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="741"/>
-        <location filename="../src/form/filepathdialog.ui" line="819"/>
-        <location filename="../src/form/filepathdialog.ui" line="1082"/>
-        <location filename="../src/form/filepathdialog.ui" line="1224"/>
+        <location filename="../src/form/filepathdialog.ui" line="735"/>
+        <location filename="../src/form/filepathdialog.ui" line="813"/>
+        <location filename="../src/form/filepathdialog.ui" line="1075"/>
+        <location filename="../src/form/filepathdialog.ui" line="1217"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Local port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Miestny port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="751"/>
-        <location filename="../src/form/filepathdialog.ui" line="754"/>
-        <location filename="../src/form/filepathdialog.ui" line="831"/>
-        <location filename="../src/form/filepathdialog.ui" line="834"/>
-        <location filename="../src/form/filepathdialog.ui" line="1092"/>
-        <location filename="../src/form/filepathdialog.ui" line="1095"/>
-        <location filename="../src/form/filepathdialog.ui" line="1236"/>
-        <location filename="../src/form/filepathdialog.ui" line="1239"/>
+        <location filename="../src/form/filepathdialog.ui" line="745"/>
+        <location filename="../src/form/filepathdialog.ui" line="748"/>
+        <location filename="../src/form/filepathdialog.ui" line="825"/>
+        <location filename="../src/form/filepathdialog.ui" line="828"/>
+        <location filename="../src/form/filepathdialog.ui" line="1085"/>
+        <location filename="../src/form/filepathdialog.ui" line="1088"/>
+        <location filename="../src/form/filepathdialog.ui" line="1229"/>
+        <location filename="../src/form/filepathdialog.ui" line="1232"/>
         <source>Remote IP address</source>
         <translation>Vzdialená IP adresa</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="757"/>
-        <location filename="../src/form/filepathdialog.ui" line="837"/>
-        <location filename="../src/form/filepathdialog.ui" line="1098"/>
-        <location filename="../src/form/filepathdialog.ui" line="1242"/>
+        <location filename="../src/form/filepathdialog.ui" line="751"/>
+        <location filename="../src/form/filepathdialog.ui" line="831"/>
+        <location filename="../src/form/filepathdialog.ui" line="1091"/>
+        <location filename="../src/form/filepathdialog.ui" line="1235"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vzdialená IP adresa.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="760"/>
-        <location filename="../src/form/filepathdialog.ui" line="1101"/>
+        <location filename="../src/form/filepathdialog.ui" line="754"/>
+        <location filename="../src/form/filepathdialog.ui" line="1094"/>
         <source>Remote IP</source>
         <translation>Vzdialené IP</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="767"/>
+        <location filename="../src/form/filepathdialog.ui" line="761"/>
+        <location filename="../src/form/filepathdialog.ui" line="764"/>
         <location filename="../src/form/filepathdialog.ui" line="770"/>
-        <location filename="../src/form/filepathdialog.ui" line="776"/>
-        <location filename="../src/form/filepathdialog.ui" line="856"/>
-        <location filename="../src/form/filepathdialog.ui" line="859"/>
-        <location filename="../src/form/filepathdialog.ui" line="1108"/>
-        <location filename="../src/form/filepathdialog.ui" line="1111"/>
-        <location filename="../src/form/filepathdialog.ui" line="1117"/>
-        <location filename="../src/form/filepathdialog.ui" line="1261"/>
-        <location filename="../src/form/filepathdialog.ui" line="1264"/>
+        <location filename="../src/form/filepathdialog.ui" line="850"/>
+        <location filename="../src/form/filepathdialog.ui" line="853"/>
+        <location filename="../src/form/filepathdialog.ui" line="1101"/>
+        <location filename="../src/form/filepathdialog.ui" line="1104"/>
+        <location filename="../src/form/filepathdialog.ui" line="1110"/>
+        <location filename="../src/form/filepathdialog.ui" line="1254"/>
+        <location filename="../src/form/filepathdialog.ui" line="1257"/>
         <source>Remote port</source>
         <translation>Vzdialený port</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="773"/>
-        <location filename="../src/form/filepathdialog.ui" line="862"/>
-        <location filename="../src/form/filepathdialog.ui" line="1114"/>
-        <location filename="../src/form/filepathdialog.ui" line="1267"/>
+        <location filename="../src/form/filepathdialog.ui" line="767"/>
+        <location filename="../src/form/filepathdialog.ui" line="856"/>
+        <location filename="../src/form/filepathdialog.ui" line="1107"/>
+        <location filename="../src/form/filepathdialog.ui" line="1260"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remote port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vzdialený port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="869"/>
+        <location filename="../src/form/filepathdialog.ui" line="863"/>
+        <location filename="../src/form/filepathdialog.ui" line="866"/>
         <location filename="../src/form/filepathdialog.ui" line="872"/>
-        <location filename="../src/form/filepathdialog.ui" line="878"/>
-        <location filename="../src/form/filepathdialog.ui" line="891"/>
-        <location filename="../src/form/filepathdialog.ui" line="894"/>
-        <location filename="../src/form/filepathdialog.ui" line="1124"/>
-        <location filename="../src/form/filepathdialog.ui" line="1127"/>
-        <location filename="../src/form/filepathdialog.ui" line="1133"/>
-        <location filename="../src/form/filepathdialog.ui" line="1280"/>
-        <location filename="../src/form/filepathdialog.ui" line="1283"/>
+        <location filename="../src/form/filepathdialog.ui" line="885"/>
+        <location filename="../src/form/filepathdialog.ui" line="888"/>
+        <location filename="../src/form/filepathdialog.ui" line="1117"/>
+        <location filename="../src/form/filepathdialog.ui" line="1120"/>
+        <location filename="../src/form/filepathdialog.ui" line="1126"/>
+        <location filename="../src/form/filepathdialog.ui" line="1273"/>
+        <location filename="../src/form/filepathdialog.ui" line="1276"/>
         <source>Protocol</source>
         <translation>Protokol</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="875"/>
-        <location filename="../src/form/filepathdialog.ui" line="897"/>
-        <location filename="../src/form/filepathdialog.ui" line="1130"/>
-        <location filename="../src/form/filepathdialog.ui" line="1286"/>
+        <location filename="../src/form/filepathdialog.ui" line="869"/>
+        <location filename="../src/form/filepathdialog.ui" line="891"/>
+        <location filename="../src/form/filepathdialog.ui" line="1123"/>
+        <location filename="../src/form/filepathdialog.ui" line="1279"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protokol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="904"/>
-        <location filename="../src/form/filepathdialog.ui" line="907"/>
-        <location filename="../src/form/filepathdialog.ui" line="926"/>
-        <location filename="../src/form/filepathdialog.ui" line="929"/>
+        <location filename="../src/form/filepathdialog.ui" line="898"/>
+        <location filename="../src/form/filepathdialog.ui" line="901"/>
+        <location filename="../src/form/filepathdialog.ui" line="920"/>
+        <location filename="../src/form/filepathdialog.ui" line="923"/>
         <source>Static IP address</source>
         <translation>Statická IP adresa</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="910"/>
-        <location filename="../src/form/filepathdialog.ui" line="932"/>
+        <location filename="../src/form/filepathdialog.ui" line="904"/>
+        <location filename="../src/form/filepathdialog.ui" line="926"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Static IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Statická IP adresa.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="913"/>
-        <location filename="../src/form/filepathdialog.ui" line="1309"/>
+        <location filename="../src/form/filepathdialog.ui" line="907"/>
+        <location filename="../src/form/filepathdialog.ui" line="1302"/>
         <source>Static</source>
         <translation>Statické</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="945"/>
-        <location filename="../src/form/filepathdialog.ui" line="948"/>
-        <location filename="../src/form/filepathdialog.ui" line="966"/>
-        <location filename="../src/form/filepathdialog.ui" line="969"/>
-        <location filename="../src/form/filepathdialog.ui" line="1156"/>
-        <location filename="../src/form/filepathdialog.ui" line="1159"/>
-        <location filename="../src/form/filepathdialog.ui" line="1332"/>
-        <location filename="../src/form/filepathdialog.ui" line="1335"/>
+        <location filename="../src/form/filepathdialog.ui" line="939"/>
+        <location filename="../src/form/filepathdialog.ui" line="942"/>
+        <location filename="../src/form/filepathdialog.ui" line="960"/>
+        <location filename="../src/form/filepathdialog.ui" line="963"/>
+        <location filename="../src/form/filepathdialog.ui" line="1149"/>
+        <location filename="../src/form/filepathdialog.ui" line="1152"/>
+        <location filename="../src/form/filepathdialog.ui" line="1325"/>
+        <location filename="../src/form/filepathdialog.ui" line="1328"/>
         <source>Gateway IP address</source>
         <translation>Adresa IP brány</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="951"/>
-        <location filename="../src/form/filepathdialog.ui" line="972"/>
-        <location filename="../src/form/filepathdialog.ui" line="1162"/>
-        <location filename="../src/form/filepathdialog.ui" line="1338"/>
+        <location filename="../src/form/filepathdialog.ui" line="945"/>
+        <location filename="../src/form/filepathdialog.ui" line="966"/>
+        <location filename="../src/form/filepathdialog.ui" line="1155"/>
+        <location filename="../src/form/filepathdialog.ui" line="1331"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gateway IP address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adresa IP brány.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="954"/>
-        <location filename="../src/form/filepathdialog.ui" line="1165"/>
+        <location filename="../src/form/filepathdialog.ui" line="948"/>
+        <location filename="../src/form/filepathdialog.ui" line="1158"/>
         <source>Gateway IP</source>
         <translation>Brána IP</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="985"/>
+        <location filename="../src/form/filepathdialog.ui" line="979"/>
+        <location filename="../src/form/filepathdialog.ui" line="982"/>
         <location filename="../src/form/filepathdialog.ui" line="988"/>
-        <location filename="../src/form/filepathdialog.ui" line="994"/>
-        <location filename="../src/form/filepathdialog.ui" line="1006"/>
-        <location filename="../src/form/filepathdialog.ui" line="1009"/>
+        <location filename="../src/form/filepathdialog.ui" line="1000"/>
+        <location filename="../src/form/filepathdialog.ui" line="1003"/>
         <source>Subnet mask</source>
         <translation>Maska podsiete</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="991"/>
-        <location filename="../src/form/filepathdialog.ui" line="1012"/>
+        <location filename="../src/form/filepathdialog.ui" line="985"/>
+        <location filename="../src/form/filepathdialog.ui" line="1006"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnet mask.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Maska podsiete.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1030"/>
+        <location filename="../src/form/filepathdialog.ui" line="1023"/>
         <source>IPv6</source>
         <translation>IPv6</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1033"/>
+        <location filename="../src/form/filepathdialog.ui" line="1026"/>
         <source>IPv6 settings</source>
         <translation>Nastavenia IPv6</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1036"/>
+        <location filename="../src/form/filepathdialog.ui" line="1029"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv6 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nastavenia IPv6.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1140"/>
-        <location filename="../src/form/filepathdialog.ui" line="1143"/>
-        <location filename="../src/form/filepathdialog.ui" line="1299"/>
-        <location filename="../src/form/filepathdialog.ui" line="1302"/>
+        <location filename="../src/form/filepathdialog.ui" line="1133"/>
+        <location filename="../src/form/filepathdialog.ui" line="1136"/>
+        <location filename="../src/form/filepathdialog.ui" line="1292"/>
+        <location filename="../src/form/filepathdialog.ui" line="1295"/>
         <source>IP address origin</source>
         <translation>Pôvod IP adresy</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1146"/>
-        <location filename="../src/form/filepathdialog.ui" line="1305"/>
+        <location filename="../src/form/filepathdialog.ui" line="1139"/>
+        <location filename="../src/form/filepathdialog.ui" line="1298"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IP address origin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pôvod IP adresy.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1149"/>
+        <location filename="../src/form/filepathdialog.ui" line="1142"/>
         <source>Origin</source>
         <translation>Pôvod</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1172"/>
-        <location filename="../src/form/filepathdialog.ui" line="1175"/>
-        <location filename="../src/form/filepathdialog.ui" line="1181"/>
-        <location filename="../src/form/filepathdialog.ui" line="1357"/>
-        <location filename="../src/form/filepathdialog.ui" line="1360"/>
+        <location filename="../src/form/filepathdialog.ui" line="1165"/>
+        <location filename="../src/form/filepathdialog.ui" line="1168"/>
+        <location filename="../src/form/filepathdialog.ui" line="1174"/>
+        <location filename="../src/form/filepathdialog.ui" line="1350"/>
+        <location filename="../src/form/filepathdialog.ui" line="1353"/>
         <source>Prefix length</source>
         <translation>Dĺžka predpony</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1178"/>
-        <location filename="../src/form/filepathdialog.ui" line="1363"/>
+        <location filename="../src/form/filepathdialog.ui" line="1171"/>
+        <location filename="../src/form/filepathdialog.ui" line="1356"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Prefix length.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dĺžka predpony.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1314"/>
+        <location filename="../src/form/filepathdialog.ui" line="1307"/>
         <source>Stateless auto-configuration</source>
         <translation>Bezstavová automatická konfigurácia</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1319"/>
+        <location filename="../src/form/filepathdialog.ui" line="1312"/>
         <source>Stateful auto-configuration</source>
         <translation>Stavová automatická konfigurácia</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1375"/>
+        <location filename="../src/form/filepathdialog.ui" line="1367"/>
         <source>SATA</source>
         <translation>SATA</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1378"/>
+        <location filename="../src/form/filepathdialog.ui" line="1370"/>
         <source>SATA settings</source>
         <translation>Nastavenia SATA</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1381"/>
+        <location filename="../src/form/filepathdialog.ui" line="1373"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SATA settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nastavenia SATA.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1405"/>
-        <location filename="../src/form/filepathdialog.ui" line="1408"/>
-        <location filename="../src/form/filepathdialog.ui" line="1414"/>
-        <location filename="../src/form/filepathdialog.ui" line="1459"/>
-        <location filename="../src/form/filepathdialog.ui" line="1462"/>
+        <location filename="../src/form/filepathdialog.ui" line="1397"/>
+        <location filename="../src/form/filepathdialog.ui" line="1400"/>
+        <location filename="../src/form/filepathdialog.ui" line="1406"/>
+        <location filename="../src/form/filepathdialog.ui" line="1451"/>
+        <location filename="../src/form/filepathdialog.ui" line="1454"/>
         <source>HBA port</source>
         <translation>HBA port</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1411"/>
-        <location filename="../src/form/filepathdialog.ui" line="1465"/>
+        <location filename="../src/form/filepathdialog.ui" line="1403"/>
+        <location filename="../src/form/filepathdialog.ui" line="1457"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HBA port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HBA port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1421"/>
-        <location filename="../src/form/filepathdialog.ui" line="1424"/>
-        <location filename="../src/form/filepathdialog.ui" line="1430"/>
-        <location filename="../src/form/filepathdialog.ui" line="1481"/>
-        <location filename="../src/form/filepathdialog.ui" line="1484"/>
+        <location filename="../src/form/filepathdialog.ui" line="1413"/>
+        <location filename="../src/form/filepathdialog.ui" line="1416"/>
+        <location filename="../src/form/filepathdialog.ui" line="1422"/>
+        <location filename="../src/form/filepathdialog.ui" line="1473"/>
+        <location filename="../src/form/filepathdialog.ui" line="1476"/>
         <source>Port multiplier port</source>
         <translation>Port multiplikátora portov</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1427"/>
-        <location filename="../src/form/filepathdialog.ui" line="1487"/>
+        <location filename="../src/form/filepathdialog.ui" line="1419"/>
+        <location filename="../src/form/filepathdialog.ui" line="1479"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Port multiplier port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Port multiplikátora portov.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1437"/>
-        <location filename="../src/form/filepathdialog.ui" line="1440"/>
-        <location filename="../src/form/filepathdialog.ui" line="1446"/>
-        <location filename="../src/form/filepathdialog.ui" line="1503"/>
-        <location filename="../src/form/filepathdialog.ui" line="1506"/>
+        <location filename="../src/form/filepathdialog.ui" line="1429"/>
+        <location filename="../src/form/filepathdialog.ui" line="1432"/>
+        <location filename="../src/form/filepathdialog.ui" line="1438"/>
+        <location filename="../src/form/filepathdialog.ui" line="1495"/>
+        <location filename="../src/form/filepathdialog.ui" line="1498"/>
         <source>LUN</source>
         <translation>LUN</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1443"/>
-        <location filename="../src/form/filepathdialog.ui" line="1509"/>
+        <location filename="../src/form/filepathdialog.ui" line="1435"/>
+        <location filename="../src/form/filepathdialog.ui" line="1501"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;LUN.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;LUN.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1524"/>
+        <location filename="../src/form/filepathdialog.ui" line="1515"/>
+        <location filename="../src/form/filepathdialog.ui" line="1527"/>
+        <location filename="../src/form/filepathdialog.ui" line="1530"/>
+        <location filename="../src/form/filepathdialog.ui" line="1536"/>
+        <location filename="../src/form/filepathdialog.ui" line="1543"/>
+        <location filename="../src/form/filepathdialog.ui" line="1546"/>
+        <source>URI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/form/filepathdialog.ui" line="1518"/>
+        <source>URI settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/form/filepathdialog.ui" line="1521"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;URI settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/form/filepathdialog.ui" line="1533"/>
+        <location filename="../src/form/filepathdialog.ui" line="1549"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;URI&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/form/filepathdialog.ui" line="1566"/>
         <source>HD</source>
         <translation>HD</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1527"/>
+        <location filename="../src/form/filepathdialog.ui" line="1569"/>
         <source>HID settings</source>
         <translation>Nastavenia HID</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1530"/>
+        <location filename="../src/form/filepathdialog.ui" line="1572"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;HID settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nastavenia HID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1554"/>
-        <location filename="../src/form/filepathdialog.ui" line="1557"/>
-        <location filename="../src/form/filepathdialog.ui" line="1563"/>
+        <location filename="../src/form/filepathdialog.ui" line="1596"/>
+        <location filename="../src/form/filepathdialog.ui" line="1599"/>
+        <location filename="../src/form/filepathdialog.ui" line="1605"/>
         <source>Disk</source>
         <translation>Disk</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1560"/>
+        <location filename="../src/form/filepathdialog.ui" line="1602"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1581"/>
-        <location filename="../src/form/filepathdialog.ui" line="1584"/>
+        <location filename="../src/form/filepathdialog.ui" line="1623"/>
+        <location filename="../src/form/filepathdialog.ui" line="1626"/>
         <source>Choose disk</source>
         <translation>Výber disku</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1587"/>
+        <location filename="../src/form/filepathdialog.ui" line="1629"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Choose disk from discovered in the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vyberte disk z tých, ktoré boli nájdené v systéme.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1591"/>
+        <location filename="../src/form/filepathdialog.ui" line="1633"/>
         <source>Custom</source>
         <translation>Vlastné</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1605"/>
-        <location filename="../src/form/filepathdialog.ui" line="1608"/>
+        <location filename="../src/form/filepathdialog.ui" line="1647"/>
+        <location filename="../src/form/filepathdialog.ui" line="1650"/>
         <source>Reload drives</source>
         <translation>Znovu načítať disky</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1611"/>
+        <location filename="../src/form/filepathdialog.ui" line="1653"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reload system drives list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Znovu načítať zoznam systémových diskov.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1633"/>
-        <location filename="../src/form/filepathdialog.ui" line="1636"/>
-        <location filename="../src/form/filepathdialog.ui" line="1687"/>
-        <location filename="../src/form/filepathdialog.ui" line="1690"/>
+        <location filename="../src/form/filepathdialog.ui" line="1674"/>
+        <location filename="../src/form/filepathdialog.ui" line="1677"/>
+        <location filename="../src/form/filepathdialog.ui" line="1728"/>
+        <location filename="../src/form/filepathdialog.ui" line="1731"/>
         <source>Partition signature</source>
         <translation>Podpis oddielu</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1639"/>
-        <location filename="../src/form/filepathdialog.ui" line="1693"/>
+        <location filename="../src/form/filepathdialog.ui" line="1680"/>
+        <location filename="../src/form/filepathdialog.ui" line="1734"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition signature.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Podpis oddielu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1642"/>
+        <location filename="../src/form/filepathdialog.ui" line="1683"/>
         <source>Signature</source>
         <translation>Podpis</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1654"/>
-        <location filename="../src/form/filepathdialog.ui" line="1657"/>
+        <location filename="../src/form/filepathdialog.ui" line="1695"/>
+        <location filename="../src/form/filepathdialog.ui" line="1698"/>
         <source>Partition signature type</source>
         <translation>Typ podpisu oddielu</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1660"/>
+        <location filename="../src/form/filepathdialog.ui" line="1701"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Choose partition signature type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Výber typu podpisu oddielu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1664"/>
+        <location filename="../src/form/filepathdialog.ui" line="1705"/>
         <source>NONE</source>
         <translation>ŽIADNY</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1669"/>
+        <location filename="../src/form/filepathdialog.ui" line="1710"/>
         <source>MBR</source>
         <translation>MBR</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1708"/>
-        <location filename="../src/form/filepathdialog.ui" line="1711"/>
-        <location filename="../src/form/filepathdialog.ui" line="1730"/>
-        <location filename="../src/form/filepathdialog.ui" line="1733"/>
+        <location filename="../src/form/filepathdialog.ui" line="1749"/>
+        <location filename="../src/form/filepathdialog.ui" line="1752"/>
+        <location filename="../src/form/filepathdialog.ui" line="1771"/>
+        <location filename="../src/form/filepathdialog.ui" line="1774"/>
         <source>Partition number</source>
         <translation>Číslo oddielu</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1714"/>
-        <location filename="../src/form/filepathdialog.ui" line="1736"/>
+        <location filename="../src/form/filepathdialog.ui" line="1755"/>
+        <location filename="../src/form/filepathdialog.ui" line="1777"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Číslo oddielu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1717"/>
+        <location filename="../src/form/filepathdialog.ui" line="1758"/>
         <source>Partition</source>
         <translation>Oddiel</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1749"/>
-        <location filename="../src/form/filepathdialog.ui" line="1752"/>
-        <location filename="../src/form/filepathdialog.ui" line="1770"/>
-        <location filename="../src/form/filepathdialog.ui" line="1773"/>
+        <location filename="../src/form/filepathdialog.ui" line="1790"/>
+        <location filename="../src/form/filepathdialog.ui" line="1793"/>
+        <location filename="../src/form/filepathdialog.ui" line="1811"/>
+        <location filename="../src/form/filepathdialog.ui" line="1814"/>
         <source>Partition start offset</source>
         <translation>Počiatočný posun oddielu</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1755"/>
+        <location filename="../src/form/filepathdialog.ui" line="1796"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition start offset.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Počiatočný posun oddielu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1758"/>
+        <location filename="../src/form/filepathdialog.ui" line="1799"/>
         <source>Start</source>
         <translation>Štart</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1776"/>
+        <location filename="../src/form/filepathdialog.ui" line="1817"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition start offset in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Počiatočný posun oddielu v hexadecimálnej sústave.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1789"/>
-        <location filename="../src/form/filepathdialog.ui" line="1792"/>
-        <location filename="../src/form/filepathdialog.ui" line="1810"/>
-        <location filename="../src/form/filepathdialog.ui" line="1813"/>
+        <location filename="../src/form/filepathdialog.ui" line="1830"/>
+        <location filename="../src/form/filepathdialog.ui" line="1833"/>
+        <location filename="../src/form/filepathdialog.ui" line="1851"/>
+        <location filename="../src/form/filepathdialog.ui" line="1854"/>
         <source>Partition size</source>
         <translation>Veľkosť oddielu</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1795"/>
+        <location filename="../src/form/filepathdialog.ui" line="1836"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition size.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Veľkosť oddielu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1798"/>
+        <location filename="../src/form/filepathdialog.ui" line="1839"/>
         <source>Size</source>
         <translation>Veľkosť</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1816"/>
+        <location filename="../src/form/filepathdialog.ui" line="1857"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Partition size in hexadecimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Veľkosť oddielu v hexadecimálnej sústave.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1834"/>
+        <location filename="../src/form/filepathdialog.ui" line="1874"/>
         <source>File</source>
         <translation>Súbor</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1837"/>
+        <location filename="../src/form/filepathdialog.ui" line="1877"/>
         <source>File settings</source>
         <translation>Nastavenia súborov</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1840"/>
+        <location filename="../src/form/filepathdialog.ui" line="1880"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nastavenia súborov.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1864"/>
-        <location filename="../src/form/filepathdialog.ui" line="1867"/>
-        <location filename="../src/form/filepathdialog.ui" line="1880"/>
-        <location filename="../src/form/filepathdialog.ui" line="1883"/>
+        <location filename="../src/form/filepathdialog.ui" line="1904"/>
+        <location filename="../src/form/filepathdialog.ui" line="1907"/>
+        <location filename="../src/form/filepathdialog.ui" line="1920"/>
+        <location filename="../src/form/filepathdialog.ui" line="1923"/>
         <source>File path</source>
         <translation>Cesta k súboru</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1870"/>
-        <location filename="../src/form/filepathdialog.ui" line="1886"/>
+        <location filename="../src/form/filepathdialog.ui" line="1910"/>
+        <location filename="../src/form/filepathdialog.ui" line="1926"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cesta k súboru.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1873"/>
+        <location filename="../src/form/filepathdialog.ui" line="1913"/>
         <source>File name</source>
         <translation>Názov súboru</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1898"/>
+        <location filename="../src/form/filepathdialog.ui" line="1937"/>
         <source>Firmware file</source>
         <translation>Súbor firmvéru</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1901"/>
+        <location filename="../src/form/filepathdialog.ui" line="1940"/>
         <source>Firmware file settings</source>
         <translation>Nastavenia súborov firmvéru</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1904"/>
+        <location filename="../src/form/filepathdialog.ui" line="1943"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nastavenia súborov firmvéru.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1928"/>
-        <location filename="../src/form/filepathdialog.ui" line="1931"/>
-        <location filename="../src/form/filepathdialog.ui" line="1949"/>
-        <location filename="../src/form/filepathdialog.ui" line="1952"/>
+        <location filename="../src/form/filepathdialog.ui" line="1967"/>
+        <location filename="../src/form/filepathdialog.ui" line="1970"/>
+        <location filename="../src/form/filepathdialog.ui" line="1988"/>
+        <location filename="../src/form/filepathdialog.ui" line="1991"/>
         <source>Firmware file UUID</source>
         <translation>Súbor firmvéru UUID</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1934"/>
-        <location filename="../src/form/filepathdialog.ui" line="1955"/>
+        <location filename="../src/form/filepathdialog.ui" line="1973"/>
+        <location filename="../src/form/filepathdialog.ui" line="1994"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file UUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Súbor firmvéru UUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1937"/>
-        <location filename="../src/form/filepathdialog.ui" line="2009"/>
+        <location filename="../src/form/filepathdialog.ui" line="1976"/>
+        <location filename="../src/form/filepathdialog.ui" line="2047"/>
         <source>Name</source>
         <translation>Názov</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1970"/>
+        <location filename="../src/form/filepathdialog.ui" line="2008"/>
         <source>Firmware volume</source>
         <translation>Objem firmvéru</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1973"/>
+        <location filename="../src/form/filepathdialog.ui" line="2011"/>
         <source>Firmware volume settings</source>
         <translation>Nastavenia objemu firmvéru</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="1976"/>
+        <location filename="../src/form/filepathdialog.ui" line="2014"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware volume settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nastavenia objemu firmvéru.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2000"/>
-        <location filename="../src/form/filepathdialog.ui" line="2003"/>
-        <location filename="../src/form/filepathdialog.ui" line="2021"/>
-        <location filename="../src/form/filepathdialog.ui" line="2024"/>
+        <location filename="../src/form/filepathdialog.ui" line="2038"/>
+        <location filename="../src/form/filepathdialog.ui" line="2041"/>
+        <location filename="../src/form/filepathdialog.ui" line="2059"/>
+        <location filename="../src/form/filepathdialog.ui" line="2062"/>
         <source>Firmware volume UUID</source>
         <translation>Objem firmvéru UUID</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2006"/>
-        <location filename="../src/form/filepathdialog.ui" line="2027"/>
+        <location filename="../src/form/filepathdialog.ui" line="2044"/>
+        <location filename="../src/form/filepathdialog.ui" line="2065"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware volume UUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Objem firmvéru UUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2042"/>
+        <location filename="../src/form/filepathdialog.ui" line="2079"/>
         <source>BIOS Boot Specification</source>
         <translation>Špecifikácia spúšťania systému BIOS</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2045"/>
+        <location filename="../src/form/filepathdialog.ui" line="2082"/>
         <source>BIOS Boot Specification settings</source>
         <translation>Nastavenia špecifikácie spúšťania systému BIOS</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2072"/>
-        <location filename="../src/form/filepathdialog.ui" line="2075"/>
-        <location filename="../src/form/filepathdialog.ui" line="2081"/>
-        <location filename="../src/form/filepathdialog.ui" line="2093"/>
-        <location filename="../src/form/filepathdialog.ui" line="2096"/>
+        <location filename="../src/form/filepathdialog.ui" line="2109"/>
+        <location filename="../src/form/filepathdialog.ui" line="2112"/>
+        <location filename="../src/form/filepathdialog.ui" line="2118"/>
+        <location filename="../src/form/filepathdialog.ui" line="2130"/>
+        <location filename="../src/form/filepathdialog.ui" line="2133"/>
         <source>Device type</source>
         <translation>Typ zariadenia</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2078"/>
-        <location filename="../src/form/filepathdialog.ui" line="2099"/>
+        <location filename="../src/form/filepathdialog.ui" line="2115"/>
+        <location filename="../src/form/filepathdialog.ui" line="2136"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Typ zariadenia.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2112"/>
-        <location filename="../src/form/filepathdialog.ui" line="2115"/>
-        <location filename="../src/form/filepathdialog.ui" line="2121"/>
-        <location filename="../src/form/filepathdialog.ui" line="2133"/>
-        <location filename="../src/form/filepathdialog.ui" line="2136"/>
+        <location filename="../src/form/filepathdialog.ui" line="2149"/>
+        <location filename="../src/form/filepathdialog.ui" line="2152"/>
+        <location filename="../src/form/filepathdialog.ui" line="2158"/>
+        <location filename="../src/form/filepathdialog.ui" line="2170"/>
+        <location filename="../src/form/filepathdialog.ui" line="2173"/>
         <source>Status flag</source>
         <translation>Príznak stavu</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2118"/>
-        <location filename="../src/form/filepathdialog.ui" line="2139"/>
+        <location filename="../src/form/filepathdialog.ui" line="2155"/>
+        <location filename="../src/form/filepathdialog.ui" line="2176"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Status flag.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Príznak stavu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2152"/>
-        <location filename="../src/form/filepathdialog.ui" line="2155"/>
-        <location filename="../src/form/filepathdialog.ui" line="2161"/>
-        <location filename="../src/form/filepathdialog.ui" line="2168"/>
-        <location filename="../src/form/filepathdialog.ui" line="2171"/>
+        <location filename="../src/form/filepathdialog.ui" line="2189"/>
+        <location filename="../src/form/filepathdialog.ui" line="2192"/>
+        <location filename="../src/form/filepathdialog.ui" line="2198"/>
+        <location filename="../src/form/filepathdialog.ui" line="2205"/>
+        <location filename="../src/form/filepathdialog.ui" line="2208"/>
         <source>Description</source>
         <translation>Popis</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2158"/>
-        <location filename="../src/form/filepathdialog.ui" line="2174"/>
+        <location filename="../src/form/filepathdialog.ui" line="2195"/>
+        <location filename="../src/form/filepathdialog.ui" line="2211"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Popis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2186"/>
+        <location filename="../src/form/filepathdialog.ui" line="2222"/>
         <source>End</source>
         <translation>Koniec</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2189"/>
+        <location filename="../src/form/filepathdialog.ui" line="2225"/>
         <source>End of device path marker</source>
         <translation>Značka konca cesty zariadenia</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2192"/>
+        <location filename="../src/form/filepathdialog.ui" line="2228"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;End of device path marker.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Značka konca cesty zariadenia.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2216"/>
-        <location filename="../src/form/filepathdialog.ui" line="2219"/>
-        <location filename="../src/form/filepathdialog.ui" line="2225"/>
-        <location filename="../src/form/filepathdialog.ui" line="2238"/>
-        <location filename="../src/form/filepathdialog.ui" line="2241"/>
-        <location filename="../src/form/filepathdialog.ui" line="2345"/>
+        <location filename="../src/form/filepathdialog.ui" line="2252"/>
+        <location filename="../src/form/filepathdialog.ui" line="2255"/>
+        <location filename="../src/form/filepathdialog.ui" line="2261"/>
+        <location filename="../src/form/filepathdialog.ui" line="2274"/>
+        <location filename="../src/form/filepathdialog.ui" line="2277"/>
+        <location filename="../src/form/filepathdialog.ui" line="2380"/>
         <source>Sub-Type</source>
         <translation>Podtyp</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2222"/>
-        <location filename="../src/form/filepathdialog.ui" line="2244"/>
+        <location filename="../src/form/filepathdialog.ui" line="2258"/>
+        <location filename="../src/form/filepathdialog.ui" line="2280"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sub-Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Podtyp.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2248"/>
+        <location filename="../src/form/filepathdialog.ui" line="2284"/>
         <source>End This Instance</source>
         <translation>Ukončenie tejto inštancie</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2253"/>
+        <location filename="../src/form/filepathdialog.ui" line="2289"/>
         <source>End Entire</source>
         <translation>Ukončiť celé</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2266"/>
+        <location filename="../src/form/filepathdialog.ui" line="2301"/>
         <source>Unknown</source>
         <translation>Neznámy</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2269"/>
+        <location filename="../src/form/filepathdialog.ui" line="2304"/>
         <source>Unknown file path specifier settings</source>
         <translation>Neznáme nastavenia špecifikátora cesty k súboru</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2272"/>
+        <location filename="../src/form/filepathdialog.ui" line="2307"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown file path specifier settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Neznáme nastavenia špecifikátora cesty k súboru.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2296"/>
-        <location filename="../src/form/filepathdialog.ui" line="2299"/>
-        <location filename="../src/form/filepathdialog.ui" line="2317"/>
-        <location filename="../src/form/filepathdialog.ui" line="2320"/>
+        <location filename="../src/form/filepathdialog.ui" line="2331"/>
+        <location filename="../src/form/filepathdialog.ui" line="2334"/>
+        <location filename="../src/form/filepathdialog.ui" line="2352"/>
+        <location filename="../src/form/filepathdialog.ui" line="2355"/>
         <source>Unknown Type</source>
         <translation>Neznámy typ</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2302"/>
-        <location filename="../src/form/filepathdialog.ui" line="2323"/>
+        <location filename="../src/form/filepathdialog.ui" line="2337"/>
+        <location filename="../src/form/filepathdialog.ui" line="2358"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Neznámy typ.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2336"/>
-        <location filename="../src/form/filepathdialog.ui" line="2339"/>
-        <location filename="../src/form/filepathdialog.ui" line="2357"/>
-        <location filename="../src/form/filepathdialog.ui" line="2360"/>
+        <location filename="../src/form/filepathdialog.ui" line="2371"/>
+        <location filename="../src/form/filepathdialog.ui" line="2374"/>
+        <location filename="../src/form/filepathdialog.ui" line="2392"/>
+        <location filename="../src/form/filepathdialog.ui" line="2395"/>
         <source>Unknown Sub-Type</source>
         <translation>Neznámy podtyp</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2342"/>
-        <location filename="../src/form/filepathdialog.ui" line="2363"/>
+        <location filename="../src/form/filepathdialog.ui" line="2377"/>
+        <location filename="../src/form/filepathdialog.ui" line="2398"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown Sub-Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Neznámy podtyp.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2376"/>
-        <location filename="../src/form/filepathdialog.ui" line="2379"/>
+        <location filename="../src/form/filepathdialog.ui" line="2411"/>
+        <location filename="../src/form/filepathdialog.ui" line="2414"/>
         <source>Unknown data</source>
         <translation>Neznáme údaje</translation>
     </message>
     <message>
-        <location filename="../src/form/filepathdialog.ui" line="2382"/>
+        <location filename="../src/form/filepathdialog.ui" line="2417"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Neznáme údaje.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/filepathdialog.cpp" line="565"/>
-        <location filename="../src/filepathdialog.cpp" line="607"/>
+        <location filename="../src/filepathdialog.cpp" line="608"/>
+        <location filename="../src/filepathdialog.cpp" line="650"/>
         <source>Couldn&apos;t change Vendor data format!</source>
         <translation>Nepodarilo sa zmeniť formát dát predajcu!</translation>
     </message>
@@ -2642,57 +2667,57 @@ Vaša konfigurácia EFI bude prepísaná!</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../include/commands.h" line="21"/>
-        <location filename="../include/commands.h" line="66"/>
+        <location filename="../include/commands.h" line="20"/>
+        <location filename="../include/commands.h" line="65"/>
         <source>Change %1 to &quot;%2&quot;</source>
         <translation>Zmeniť %1 na &quot;%2&quot;</translation>
     </message>
     <message>
-        <location filename="../include/commands.h" line="112"/>
+        <location filename="../src/commands.cpp" line="34"/>
         <source>Insert %1 entry &quot;%2&quot; at position %3</source>
         <translation>Vložiť %1 položku &quot;%2&quot; na pozíciu %3</translation>
     </message>
     <message>
-        <location filename="../include/commands.h" line="134"/>
+        <location filename="../src/commands.cpp" line="49"/>
         <source>Removing %1 entry &quot;%2&quot; from position %3</source>
         <translation>Odstrániť %1 položku &quot;%2&quot; z pozície %3</translation>
     </message>
     <message>
-        <location filename="../include/commands.h" line="171"/>
-        <location filename="../include/commands.h" line="213"/>
+        <location filename="../src/commands.cpp" line="72"/>
+        <location filename="../src/commands.cpp" line="111"/>
         <source>Move %1 entry &quot;%2&quot; from position %3 to %4</source>
         <translation>Presunúť %1 položku &quot;%2&quot; z pozície %3 na %4</translation>
     </message>
     <message>
-        <location filename="../include/commands.h" line="243"/>
-        <location filename="../include/commands.h" line="284"/>
-        <location filename="../include/commands.h" line="368"/>
+        <location filename="../src/commands.cpp" line="186"/>
+        <location filename="../include/commands.h" line="156"/>
+        <location filename="../include/commands.h" line="197"/>
         <source>Change %1 entry &quot;%2&quot; %3 to &quot;%4&quot;</source>
         <translation>Zmeniť %1 položku &quot;%2&quot; %3 na &quot;%4&quot;</translation>
     </message>
     <message>
-        <location filename="../include/commands.h" line="368"/>
+        <location filename="../src/commands.cpp" line="186"/>
         <source>Optional data</source>
         <translation>Voliteľné údaje</translation>
     </message>
     <message>
-        <location filename="../include/commands.h" line="415"/>
+        <location filename="../src/commands.cpp" line="220"/>
         <source>Insert %1 entry &quot;%2&quot; file path at position %3</source>
         <translation>Vložiť %1 položku &quot;%2&quot; cesta k súboru na pozícii %3</translation>
     </message>
     <message>
-        <location filename="../include/commands.h" line="437"/>
+        <location filename="../src/commands.cpp" line="235"/>
         <source>Removing %1 entry &quot;%2&quot; file path from position %3</source>
         <translation>Odstrániť %1 položku &quot;%2&quot; cesta k súboru z pozície %3</translation>
     </message>
     <message>
-        <location filename="../include/commands.h" line="465"/>
+        <location filename="../src/commands.cpp" line="250"/>
         <source>Setting %1 entry &quot;%2&quot; file path at position %3</source>
         <translation>Nastaviť %1 položku &quot;%2&quot; cesta k súboru na pozícii %3</translation>
     </message>
     <message>
-        <location filename="../include/commands.h" line="509"/>
-        <location filename="../include/commands.h" line="552"/>
+        <location filename="../src/commands.cpp" line="286"/>
+        <location filename="../src/commands.cpp" line="326"/>
         <source>Move %1 entry &quot;%2&quot; file path from position %3 to %4</source>
         <translation>Presunúť %1 položku &quot;%2&quot; cesta k súboru z pozície %3 na %4</translation>
     </message>
