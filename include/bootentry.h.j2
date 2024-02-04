@@ -1,0 +1,242 @@
+// SPDX-License-Identifier: LGPL-3.0-or-later
+#pragma once
+
+#include <QHostAddress>
+#include <QMetaType>
+#include <QString>
+#include <QUrl>
+#include <QUuid>
+#include <QVariant>
+#include <QVector>
+
+#include "efiboot.h"
+
+namespace FilePath
+{
+
+{% for category in device_paths.values() %}
+/*
+   {{ category.name }}
+   {{ category.description }}
+*/
+
+{% for node in category.nodes if node.slug not in ("vendor", "entire", "instance") %}
+{% set qslug = node.slug.split("_")|map("capitalize")|join %}
+/*
+   {{ node.name }}
+   {{ node.description }}
+*/
+class {{ qslug }}
+{
+public:
+    static constexpr auto TYPE = "{{ category.slug.upper() }}";
+    static constexpr auto SUBTYPE = "{{ node.slug.upper() }}";
+
+private:
+    mutable QString _string = {};
+
+public:
+    {% for field in node.fields %}
+    {%- if field.type == "guid" %}
+    QUuid
+    {%- elif field.type in ("ip4", "ip6") %}
+    QHostAddress
+    {%- elif "string" in field.type or field.type == "mac" %}
+    QString
+    {%- elif field.type == "uri" %}
+    QUrl
+    {%- elif field.type == "raw_data" %}
+    QByteArray
+    {%- elif field.type in ("int", "hex") %}
+    uint{{ field.size * 8 }}_t
+    {%- elif field.type == "enum" %}
+    EFIBoot::File_path::{{ category.slug.upper() }}::{{ node.slug.capitalize() }}::{{ field.slug.upper() }}
+    {%- else %}
+    {{ field.type }}
+    {%- endif %} {{ field.slug }} = {};
+    {% endfor %}
+
+public:
+    {{ qslug }}() = default;
+    {{ qslug }}(const EFIBoot::File_path::{{ category.slug.upper() }}::{{ node.slug.capitalize() }} &{{ node.slug }});
+    EFIBoot::File_path::{{ category.slug.upper() }}::{{ node.slug.capitalize() }} toEFIBootFilePath() const;
+
+    static std::optional<{{ qslug }}> fromJSON(const QJsonObject &obj);
+    QJsonObject toJSON() const;
+
+    QString toString(bool refresh = true) const;
+};
+
+{% endfor %}{% endfor %}
+class Vendor
+{
+public:
+    static constexpr auto TYPE = "MULTI";
+    static constexpr auto SUBTYPE = "VENDOR";
+
+private:
+    mutable QString _string = {};
+
+public:
+    QByteArray data = {};
+    QUuid guid = {};
+    uint8_t _type = {};
+
+public:
+    Vendor() = default;
+    Vendor(const EFIBoot::File_path::HW::Vendor &vendor);
+    Vendor(const EFIBoot::File_path::MSG::Vendor &vendor);
+    Vendor(const EFIBoot::File_path::MEDIA::Vendor &vendor);
+    EFIBoot::File_path::ANY toEFIBootFilePath() const;
+
+    static std::optional<Vendor> fromJSON(const QJsonObject &obj);
+    QJsonObject toJSON() const;
+
+    QString toString(bool refresh = true) const;
+};
+
+class End
+{
+public:
+    static constexpr auto TYPE = "END";
+    static constexpr auto SUBTYPE = "MULTI";
+
+private:
+    mutable QString _string = {};
+
+public:
+    uint8_t _subtype = {};
+
+public:
+    End() = default;
+    End(const EFIBoot::File_path::END::Instance &)
+        : _subtype{EFIBoot::File_path::END::Instance::SUBTYPE}
+    {
+    }
+    End(const EFIBoot::File_path::END::Entire &)
+        : _subtype{EFIBoot::File_path::END::Entire::SUBTYPE}
+    {
+    }
+    EFIBoot::File_path::ANY toEFIBootFilePath() const
+    {
+        switch(_subtype)
+        {
+        case EFIBoot::File_path::END::Instance::SUBTYPE:
+            return EFIBoot::File_path::END::Instance{};
+            break;
+
+        case EFIBoot::File_path::END::Entire::SUBTYPE:
+            return EFIBoot::File_path::END::Entire{};
+            break;
+        }
+
+        return {};
+    }
+
+    static std::optional<End> fromJSON(const QJsonObject &obj);
+    QJsonObject toJSON() const;
+
+    QString toString(bool refresh = true) const;
+};
+
+class Unknown
+{
+public:
+    static constexpr auto TYPE = "UNK";
+    static constexpr auto SUBTYPE = "UNKNOWN";
+
+private:
+    mutable QString _string = {};
+
+public:
+    QByteArray data = {};
+    uint8_t _type = {};
+    uint8_t _subtype = {};
+
+public:
+    Unknown() = default;
+    Unknown(const EFIBoot::File_path::Unknown &unknown);
+    EFIBoot::File_path::Unknown toEFIBootFilePath() const;
+
+    static std::optional<Unknown> fromJSON(const QJsonObject &obj);
+    QJsonObject toJSON() const;
+
+    QString toString(bool refresh = true) const;
+};
+
+using ANY = std::variant<
+{% for category in device_paths.values() %}{% for node in category.nodes if node.slug not in ("vendor", "entire", "instance") %}
+    {{ node.slug.split("_")|map("capitalize")|join }},
+{% endfor %}{% endfor %}
+    Vendor,
+    End,
+    Unknown>;
+
+inline std::unordered_map<QString, std::function<std::optional<ANY>(const QJsonObject &)>> JSON_readers()
+{
+#define reader(Type)                                                                  \
+    {                                                                                 \
+        QString("%1/%2").arg(Type::TYPE).arg(Type::SUBTYPE),                          \
+            [](const auto &obj) -> std::optional<ANY> { return Type::fromJSON(obj); } \
+    }
+    return {
+{% for category in device_paths.values() %}{% for node in category.nodes if node.slug not in ("vendor", "entire", "instance") %}
+        reader({{ node.slug.split("_")|map("capitalize")|join }}),
+{% endfor %}{% endfor %}
+        reader(Vendor),
+        reader(End),
+        reader(Unknown),
+    };
+#undef reader
+}
+
+} // namespace FilePath
+
+Q_DECLARE_METATYPE(const FilePath::ANY *)
+
+class BootEntry
+{
+private:
+    mutable QString device_path_str = {};
+
+public:
+    enum class OptionalDataFormat : uint8_t
+    {
+        Base64 = 0,
+        Utf16 = 1,
+        Utf8 = 2,
+        Hex = 3,
+    };
+
+    QVector<FilePath::ANY> device_path = {};
+    QString description = "New entry";
+    QString error = {};
+    QString optional_data = {};
+    EFIBoot::Load_option_attribute attributes = EFIBoot::Load_option_attribute::EMPTY;
+    uint32_t efi_attributes = EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS;
+    uint16_t index = 0;
+    OptionalDataFormat optional_data_format = OptionalDataFormat::Base64;
+
+    bool is_current_boot = false;
+    bool is_next_boot = false;
+    bool is_error = false;
+
+public:
+    static BootEntry fromEFIBootLoadOption(const EFIBoot::Load_option &load_option);
+    static BootEntry fromError(const QString &error);
+    EFIBoot::Load_option toEFIBootLoadOption() const;
+
+    static std::optional<BootEntry> fromJSON(const QJsonObject &obj);
+    QJsonObject toJSON() const;
+
+    QString formatDevicePath(bool refresh = true) const;
+    QString getTitle() const;
+
+    bool changeOptionalDataFormat(OptionalDataFormat format, bool test = false);
+
+private:
+    QByteArray getRawOptionalData() const;
+};
+
+Q_DECLARE_METATYPE(const BootEntry *)
+

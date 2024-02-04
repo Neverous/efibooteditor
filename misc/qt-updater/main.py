@@ -146,7 +146,7 @@ if __name__ == "__main__":
 
     log.info("Compiling target Qt versions")
     now = date.today()
-    latest = {}
+    latest: dict[Version, Version] = {}
     for version in fetch_installable_qt_versions():
         minor = version.nopatch()
         if latest.get(minor, Version(0, 0)) < version:

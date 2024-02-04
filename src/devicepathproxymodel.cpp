@@ -48,7 +48,7 @@ auto DevicePathProxyModel::setData(const QModelIndex &index, const QVariant &val
     if(!index.isValid() || !checkIndex(index))
         return false;
 
-    boot_entry_list_model->setEntryFilePath(boot_entry_index, index.row(), *value.value<const File_path::ANY *>());
+    boot_entry_list_model->setEntryFilePath(boot_entry_index, index.row(), *value.value<const FilePath::ANY *>());
     emit dataChanged(index, index, {role});
     return true;
 }

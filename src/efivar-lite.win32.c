@@ -8,8 +8,8 @@
 
 #include "compat.h"
 #include "efivar-lite.common.h"
-#include "efivar-lite/efiboot-loadopt.h"
-#include "efivar-lite/efivar.h"
+#include "efivar-lite/efivar-lite.h"
+#include "efivar-lite/load-option.h"
 
 #pragma comment(lib, "advapi32.lib")
 #pragma comment(lib, "ntdll.lib")

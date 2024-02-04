@@ -5,7 +5,7 @@
 #include "qwidgetitemdelegate.h"
 #include <QLabel>
 
-class FilePathDelegate: public QWidgetItemDelegate<QLabel, const File_path::ANY *>
+class FilePathDelegate: public QWidgetItemDelegate<QLabel, const FilePath::ANY *>
 {
 public:
     FilePathDelegate() = default;

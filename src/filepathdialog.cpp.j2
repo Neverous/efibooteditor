@@ -1,0 +1,509 @@
+// SPDX-License-Identifier: LGPL-3.0-or-later
+#include "filepathdialog.h"
+
+#include "compat.h"
+#include "driveinfo.h"
+#include "form/ui_filepathdialog.h"
+
+#include <QMessageBox>
+
+QSize HorizontalTabStyle::sizeFromContents(ContentsType type, const QStyleOption *option, const QSize &size, const QWidget *widget) const
+{
+    QSize s = QProxyStyle::sizeFromContents(type, option, size, widget);
+    if(type == QStyle::CT_TabBarTab)
+        s.transpose();
+
+    return s;
+}
+
+void HorizontalTabStyle::drawControl(ControlElement element, const QStyleOption *option, QPainter *painter, const QWidget *widget) const
+{
+    if(element != CE_TabBarTabLabel)
+    {
+        QProxyStyle::drawControl(element, option, painter, widget);
+        return;
+    }
+
+    const QStyleOptionTab *tab = qstyleoption_cast<const QStyleOptionTab *>(option);
+    if(!tab)
+    {
+        QProxyStyle::drawControl(element, option, painter, widget);
+        return;
+    }
+
+    QStyleOptionTab opt(*tab);
+    opt.shape = QTabBar::RoundedNorth;
+    QProxyStyle::drawControl(element, &opt, painter, widget);
+}
+
+FilePathDialog::FilePathDialog(QWidget *parent)
+    : QDialog(parent)
+    , ui{std::make_unique<Ui::FilePathDialog>()}
+{
+    ui->setupUi(this);
+    setFilePath(nullptr);
+    ui->options->tabBar()->setStyle(&horizontal_tab_style);
+}
+
+FilePathDialog::~FilePathDialog()
+{
+}
+
+void FilePathDialog::setReadOnly(bool readonly)
+{
+    for(auto &widget: findChildren<QLineEdit *>())
+        widget->setReadOnly(readonly);
+
+    for(auto &widget: findChildren<QPlainTextEdit *>())
+        widget->setReadOnly(readonly);
+
+    for(auto &widget: findChildren<QSpinBox *>())
+        widget->setReadOnly(readonly);
+
+    for(auto &widget: findChildren<QComboBox *>())
+        widget->setDisabled(readonly);
+
+    for(auto &widget: findChildren<QCheckBox *>())
+        widget->setDisabled(readonly);
+
+    for(auto &widget: findChildren<QLabel *>())
+        widget->setDisabled(readonly);
+
+    ui->hd_disk_refresh->setDisabled(readonly);
+    ui->options->tabBar()->setDisabled(readonly);
+{% for category in device_paths.values() %}{% for node in category.nodes if node.slug not in ("vendor", "instance", "entire") %}{% for field in node.fields if field.type == "raw_data" %}
+    ui->{{ node.slug }}_{{ field.slug }}_format->setDisabled(false);
+{% endfor %}{% endfor %}{% endfor %}
+    ui->unknown_data_format->setDisabled(false);
+    ui->vendor_data_format->setDisabled(false);
+}
+
+auto FilePathDialog::toFilePath() const -> FilePath::ANY
+{
+    switch(static_cast<FormIndex>(ui->options->currentIndex()))
+    {
+{% for category in device_paths.values() %}
+    // {{ category.name }}
+{% for node in category.nodes if node.slug not in ("vendor", "instance", "entire") %}
+    case FormIndex::{{ node.slug.upper() }}:
+    {
+        FilePath::{{ node.slug.split("_")|map("capitalize")|join }} value{};
+        {% for field in node.fields %}
+        {% set ui_slug = node.slug + "_" + field.slug %}
+        {% if field.type in ("mac", "string", "wstring") %}
+        value.{{ field.slug }} = ui->{{ ui_slug }}->text();
+        {% elif field.type == "raw_data" %}
+        value.{{ field.slug }} = getData(*ui->{{ ui_slug }}, ui->{{ ui_slug }}_format->currentIndex());
+        {% elif field.type in ("ip4", "ip6") %}
+        value.{{ field.slug }}.setAddress(ui->{{ ui_slug }}->text());
+        {% elif field.type == "guid" %}
+        value.{{ field.slug }} = QUuid::fromString(ui->{{ ui_slug }}->text());
+        {% elif field.type == "uri" %}
+        value.{{ field.slug }} = QUrl::fromUserInput(ui->{{ ui_slug }}->text());
+        {% elif field.type == "bool" %}
+        value.{{ field.slug }} = ui->{{ ui_slug }}->isChecked();
+        {% elif field.type == "enum" %}
+        value.{{ field.slug }} = static_cast<decltype(value.{{ field.slug }})>(ui->{{ ui_slug }}->currentIndex());
+        {% elif field.type == "hex" %}
+        {% if field.size > 4 %}
+        value.{{ field.slug }} = ui->{{ ui_slug }}->text().toULongLong(nullptr, HEX_BASE);
+        {% elif field.size > 2 %}
+        value.{{ field.slug }} = ui->{{ ui_slug }}->text().toUInt(nullptr, HEX_BASE);
+        {% elif field.size > 1 %}
+        value.{{ field.slug }} = ui->{{ ui_slug }}->text().toUShort(nullptr, HEX_BASE);
+        {% else %}
+        value.{{ field.slug }} = static_cast<decltype(value.{{ field.slug }})>(ui->{{ ui_slug }}->text().toUShort(nullptr, HEX_BASE));
+        {% endif %}
+        {% else %}
+        value.{{ field.slug }} = static_cast<decltype(value.{{ field.slug }})>(ui->{{ ui_slug }}->value());
+        {% endif %}
+        {% endfor %}
+        return value;
+    }
+{% endfor %}{% endfor %}
+    case FormIndex::VENDOR:
+    {
+        FilePath::Vendor vendor;
+        switch(static_cast<VendorTypeIndex>(ui->vendor_type->currentIndex()))
+        {
+        case VendorTypeIndex::HW:
+            vendor._type = EFIBoot::File_path::HW::Vendor::TYPE;
+            break;
+
+        case VendorTypeIndex::MSG:
+            vendor._type = EFIBoot::File_path::MSG::Vendor::TYPE;
+            break;
+
+        case VendorTypeIndex::MEDIA:
+            vendor._type = EFIBoot::File_path::MEDIA::Vendor::TYPE;
+            break;
+        }
+
+        vendor.guid = QUuid::fromString(ui->vendor_guid->text());
+        vendor.data = getData(*ui->vendor_data, ui->vendor_data_format->currentIndex());
+        return vendor;
+    }
+    case FormIndex::END:
+    {
+        FilePath::End end;
+        if(ui->end_subtype->currentIndex() == 0)
+            end._subtype = EFIBoot::File_path::END::Instance::SUBTYPE;
+
+        else
+            end._subtype = EFIBoot::File_path::END::Entire::SUBTYPE;
+
+        return end;
+    }
+    case FormIndex::UNKNOWN:
+    {
+        FilePath::Unknown unknown;
+        unknown._type = static_cast<uint8_t>(ui->unknown_type->text().toUShort(nullptr, HEX_BASE));
+        unknown._subtype = static_cast<uint8_t>(ui->unknown_subtype->text().toUShort(nullptr, HEX_BASE));
+        unknown.data = getData(*ui->unknown_data, ui->unknown_data_format->currentIndex());
+        return unknown;
+    }
+    }
+
+    return {};
+}
+
+struct FilePathVisitor
+{
+    FilePathDialog *parent;
+    explicit FilePathVisitor(FilePathDialog *parent_)
+        : parent{parent_}
+    {
+    }
+
+{% for category in device_paths.values() %}{% for node in category.nodes if node.slug not in ("vendor", "instance", "entire") %}
+{% set qslug = node.slug.split("_")|map("capitalize")|join %}
+    void operator()(const FilePath::{{ qslug }} &{{ node.slug }}) { parent->set{{ qslug }}Form({{ node.slug }}); }
+{% endfor %}{% endfor %}
+    void operator()(const FilePath::Vendor &vendor) { parent->setVendorForm(vendor); }
+    void operator()(const FilePath::End &end) { parent->setEndForm(end._subtype); }
+    void operator()(const FilePath::Unknown &unknown) { parent->setUnknownForm(unknown); }
+};
+
+void FilePathDialog::setFilePath(const FilePath::ANY *_file_path)
+{
+    resetForms();
+    if(!_file_path)
+    {
+        update();
+        return;
+    }
+
+    std::visit(FilePathVisitor(this), *_file_path);
+    update();
+}
+
+{% for category in device_paths.values() %}
+// {{ category.name }}
+
+{% for node in category.nodes if node.slug not in ("vendor", "instance", "entire") %}
+{% set qslug = node.slug.split("_")|map("capitalize")|join %}
+void FilePathDialog::set{{ qslug }}Form(const FilePath::{{ qslug }} &{{ node.slug }})
+{
+    ui->options->setCurrentIndex(FormIndex::{{ node.slug.upper() }});
+    {% for field in node.fields %}
+    {% set ui_slug = node.slug + "_" + field.slug %}
+    {% if field.type in ("mac", "string", "wstring") %}
+    ui->{{ ui_slug }}->setText({{ node.slug }}.{{ field.slug }});
+    {% elif field.type == "raw_data" %}
+    ui->{{ ui_slug }}_format->setCurrentIndex(DataFormat::Base64);
+    {{ ui_slug }}_format_index = 0;
+    ui->{{ ui_slug }}->setPlainText({{ node.slug }}.{{ field.slug }}.toBase64());
+    {% elif field.type in ("ip4", "ip6", "guid") %}
+    ui->{{ ui_slug }}->setText({{ node.slug }}.{{ field.slug }}.toString());
+    {% elif field.type == "uri" %}
+    ui->{{ ui_slug }}->setText({{ node.slug }}.{{ field.slug }}.toDisplayString());
+    {% elif field.type == "bool" %}
+    ui->{{ ui_slug }}->setChecked({{ node.slug }}.{{ field.slug }});
+    {% elif field.type == "enum" %}
+    ui->{{ ui_slug }}->setCurrentIndex(static_cast<int>({{ node.slug }}.{{ field.slug }}));
+    {% elif field.type == "hex" %}
+    ui->{{ ui_slug }}->setText(toHex({{ node.slug }}.{{ field.slug }}));
+    {% else %}
+    ui->{{ ui_slug }}->setValue(static_cast<int>({{ node.slug }}.{{ field.slug }}));
+    {% endif %}
+    {% endfor %}
+}
+
+{% endfor %}{% endfor %}
+void FilePathDialog::setVendorForm(const FilePath::Vendor &vendor)
+{
+    ui->options->setCurrentIndex(FormIndex::VENDOR);
+    VendorTypeIndex index{};
+    switch(vendor._type)
+    {
+    case EFIBoot::File_path::HW::Vendor::TYPE:
+        index = VendorTypeIndex::HW;
+        break;
+
+    case EFIBoot::File_path::MSG::Vendor::TYPE:
+        index = VendorTypeIndex::MSG;
+        break;
+
+    case EFIBoot::File_path::MEDIA::Vendor::TYPE:
+        index = VendorTypeIndex::MEDIA;
+        break;
+
+    default:
+        index = VendorTypeIndex::HW;
+        break;
+    }
+
+    ui->vendor_type->setCurrentIndex(static_cast<int>(index));
+    ui->vendor_guid->setText(vendor.guid.toString(QUuid::WithoutBraces));
+    ui->vendor_data_format->setCurrentIndex(DataFormat::Base64);
+    vendor_data_format_index = 0;
+    ui->vendor_data->setPlainText(vendor.data.toBase64());
+}
+
+void FilePathDialog::setEndForm(const uint8_t subtype)
+{
+    ui->options->setCurrentIndex(FormIndex::END);
+    ui->end_subtype->setCurrentIndex(subtype == EFIBoot::File_path::END::Instance::SUBTYPE ? 0 : 1);
+}
+
+void FilePathDialog::setUnknownForm(const FilePath::Unknown &unknown)
+{
+    ui->options->setCurrentIndex(FormIndex::UNKNOWN);
+    ui->unknown_type->setText(toHex(unknown._type));
+    ui->unknown_subtype->setText(toHex(unknown._subtype));
+    ui->unknown_data_format->setCurrentIndex(DataFormat::Base64);
+    unknown_data_format_index = 0;
+    ui->unknown_data->setPlainText(unknown.data.toBase64());
+}
+
+void FilePathDialog::resetForms()
+{
+{% for category in device_paths.values() %}{% for node in category.nodes if node.slug not in ("vendor", "instance", "entire") %}
+    reset{{ node.slug.split("_")|map("capitalize")|join }}Form();
+{% endfor %}{% endfor %}
+    resetVendorForm();
+    resetEndForm();
+    resetUnknownForm();
+}
+
+{% for category in device_paths.values() %}
+// {{ category.name }}
+
+{% for node in category.nodes if node.slug not in ("vendor", "instance", "entire") %}
+{% set qslug = node.slug.split("_")|map("capitalize")|join %}
+void FilePathDialog::reset{{ qslug }}Form()
+{
+    {% for field in node.fields %}
+    {% set ui_slug = node.slug + "_" + field.slug %}
+    {% if field.type == "bool" %}
+    ui->{{ ui_slug }}->setChecked(false);
+    {% elif field.type == "enum" %}
+    ui->{{ ui_slug }}->setCurrentIndex(0);
+    {% elif field.type == "raw_data" %}
+    ui->{{ ui_slug }}_format->setCurrentIndex(DataFormat::Base64);
+    {{ ui_slug }}_format_index = 0;
+    ui->{{ ui_slug }}->clear();
+    {% else %}
+    ui->{{ ui_slug }}->clear();
+    {% endif %}
+    {% endfor %}
+}
+
+{% endfor %}{% endfor %}
+void FilePathDialog::resetVendorForm()
+{
+    ui->vendor_guid->clear();
+    ui->vendor_type->setCurrentIndex(0);
+    ui->vendor_data_format->setCurrentIndex(DataFormat::Base64);
+    vendor_data_format_index = 0;
+    ui->vendor_data->clear();
+}
+
+void FilePathDialog::resetEndForm()
+{
+    ui->end_subtype->setCurrentIndex(0);
+}
+
+void FilePathDialog::resetUnknownForm()
+{
+    ui->unknown_type->clear();
+    ui->unknown_subtype->clear();
+    ui->unknown_data_format->setCurrentIndex(DataFormat::Base64);
+    unknown_data_format_index = 0;
+    ui->unknown_data->clear();
+}
+
+void FilePathDialog::refreshDiskCombo(bool force)
+{
+    ui->hd_disk->clear();
+    const auto drives = DriveInfo::getAll(force);
+    for(const auto &drive: drives)
+    {
+        QVariant item;
+        item.setValue(drive);
+        ui->hd_disk->addItem(drive.name, item);
+    }
+
+    ui->hd_disk->insertSeparator(ui->hd_disk->count());
+    ui->hd_disk->addItem("Custom");
+
+    int index = ui->hd_disk->count() - 1;
+    ui->hd_disk->setCurrentIndex(index);
+    diskChoiceChanged(index);
+}
+
+QByteArray FilePathDialog::getData(const QPlainTextEdit &data, int index) const
+{
+    switch(static_cast<DataFormat>(index))
+    {
+    case DataFormat::Base64:
+        return QByteArray::fromBase64(data.toPlainText().toUtf8());
+
+    case DataFormat::Utf16:
+        return fromUnicode(data.toPlainText(), "UTF-16");
+
+    case DataFormat::Utf8:
+        return fromUnicode(data.toPlainText(), "UTF-8");
+
+    case DataFormat::Hex:
+        return QByteArray::fromHex(data.toPlainText().toUtf8());
+    }
+
+    return {};
+}
+
+void FilePathDialog::dataFormatChanged(int &index, int new_index, QPlainTextEdit &data, QComboBox &format)
+{
+    bool success = false;
+    QByteArray input = getData(data, index);
+    QString output;
+    switch(static_cast<DataFormat>(new_index))
+    {
+    case DataFormat::Base64:
+        output = input.toBase64();
+        success = true;
+        break;
+
+    case DataFormat::Utf16:
+        if(static_cast<uint>(input.size()) % sizeof(char16_t) == 0)
+            success = toUnicode(output, input, "UTF-16");
+
+        break;
+
+    case DataFormat::Utf8:
+        success = toUnicode(output, input, "UTF-8");
+        break;
+
+    case DataFormat::Hex:
+        output = input.toHex();
+        success = true;
+        break;
+    }
+
+    if(output.contains(QChar(0)))
+        success = false;
+
+    if(!success)
+    {
+        QMessageBox::critical(this, qApp->applicationName(), tr("Couldn't change data format!"));
+        format.setCurrentIndex(index);
+        return;
+    }
+
+    data.setPlainText(output);
+    index = new_index;
+}
+
+void FilePathDialog::resetDiskCombo()
+{
+    refreshDiskCombo(true);
+}
+
+void FilePathDialog::diskChoiceChanged(int index)
+{
+    bool disabled = index + 1 != ui->hd_disk->count();
+    ui->hd_signature_type->setDisabled(disabled);
+    ui->hd_partition_signature->setDisabled(disabled);
+    ui->hd_partition_number->setDisabled(disabled);
+    ui->hd_partition_start->setDisabled(disabled);
+    ui->hd_partition_size->setDisabled(disabled);
+
+    if(index + 1 == ui->hd_disk->count())
+        return;
+
+    ui->hd_signature_type->setCurrentIndex(0);
+    signatureTypeChoiceChanged(ui->hd_signature_type->currentIndex());
+    ui->hd_partition_number->clear();
+    ui->hd_partition_start->clear();
+    ui->hd_partition_size->clear();
+
+    const auto &driveinfo = ui->hd_disk->itemData(index).value<DriveInfo>();
+    switch(static_cast<DriveInfo::SIGNATURE>(driveinfo.signature_type))
+    {
+    case DriveInfo::SIGNATURE::NONE:
+        ui->hd_signature_type->setCurrentIndex(0);
+        break;
+
+    case DriveInfo::SIGNATURE::MBR:
+        ui->hd_signature_type->setCurrentIndex(1);
+        break;
+
+    case DriveInfo::SIGNATURE::GUID:
+        ui->hd_signature_type->setCurrentIndex(2);
+        break;
+    }
+
+    signatureTypeChoiceChanged(ui->hd_signature_type->currentIndex());
+    if(driveinfo.signature_type != DriveInfo::SIGNATURE::NONE)
+        ui->hd_partition_signature->setText(driveinfo.signature.toString());
+
+    ui->hd_partition_number->setValue(static_cast<int>(driveinfo.partition));
+    ui->hd_partition_start->setText(toHex(driveinfo.start));
+    ui->hd_partition_size->setText(toHex(driveinfo.size));
+}
+
+void FilePathDialog::signatureTypeChoiceChanged(int index)
+{
+    switch(static_cast<DriveInfo::SIGNATURE>(index))
+    {
+    case DriveInfo::SIGNATURE::NONE:
+        ui->hd_partition_signature->setDisabled(true);
+        ui->hd_partition_signature->setInputMask("");
+        ui->hd_partition_signature->clear();
+        ui->hd_partition_number->setMaximum(INT_MAX);
+        break;
+
+    case DriveInfo::SIGNATURE::MBR:
+        ui->hd_partition_signature->setDisabled(ui->hd_disk->currentIndex() + 1 != ui->hd_disk->count());
+        ui->hd_partition_signature->setInputMask("<\\0\\xHHHHHHHH;_");
+        ui->hd_partition_signature->clear();
+        ui->hd_partition_number->setMaximum(4);
+        break;
+
+    case DriveInfo::SIGNATURE::GUID:
+        ui->hd_partition_signature->setDisabled(ui->hd_disk->currentIndex() + 1 != ui->hd_disk->count());
+        ui->hd_partition_signature->setInputMask("<HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH;_");
+        ui->hd_partition_signature->clear();
+        ui->hd_partition_number->setMaximum(128);
+        break;
+    }
+}
+
+{% for category in device_paths.values() %}{% for node in category.nodes if node.slug not in ("vendor", "instance", "entire") %}{% for field in node.fields if field.type == "raw_data" %}
+{% set ui_slug = node.slug + "_" + field.slug %}
+void FilePathDialog::{{ node.slug.split("_")|map("capitalize")|join }}{{ field.slug.split("_")|map("capitalize")|join }}Changed(int index)
+{
+    return dataFormatChanged({{ ui_slug }}_format_index, index, *ui->{{ ui_slug }}, *ui->{{ ui_slug }}_format);
+}
+
+{% endfor %}{% endfor %}{% endfor %}
+void FilePathDialog::VendorDataFormatChanged(int index)
+{
+    dataFormatChanged(vendor_data_format_index, index, *ui->vendor_data, *ui->vendor_data_format);
+}
+
+void FilePathDialog::UnknownDataFormatChanged(int index)
+{
+    dataFormatChanged(unknown_data_format_index, index, *ui->unknown_data, *ui->unknown_data_format);
+}
+

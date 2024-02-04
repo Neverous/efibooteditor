@@ -1,0 +1,1636 @@
+hardware:
+  name: Hardware
+  slug: hw
+  description: This Device Path defines how a device is attached to the resource
+    domain of a system, where resource domain is simply the shared memory,
+    memory mapped I/O, and I/O space of the system.
+  type: 1
+  nodes:
+    - name: PCI
+      slug: pci
+      description: The Device Path for PCI defines the path to the PCI
+        configuration space address for a PCI device.
+      icon: audio-card
+      type: 1
+      subtype: 1
+      fields:
+        - name: Function
+          slug: function
+          description: PCI Function Number.
+          offset: 4
+          size: 1
+          type: int
+          int:
+            maximum: 7
+        - name: Device
+          slug: device
+          description: PCI Device Number.
+          offset: 5
+          size: 1
+          type: int
+          int:
+            maximum: 31
+    - name: PCCARD
+      slug: pccard
+      description: PCCARD Settings.
+      icon: audio-card
+      type: 1
+      subtype: 2
+      fields:
+        - name: Function
+          slug: function_number
+          description: Function Number (0 = First Function).
+          offset: 4
+          size: 1
+          type: int
+    - name: Memory Mapped
+      slug: memory_mapped
+      description: Memory Mapped Settings.
+      icon: media-flash
+      type: 1
+      subtype: 3
+      fields:
+        - name: Memory Type
+          slug: memory_type
+          description: The type of memory to allocate.
+          offset: 4
+          size: 4
+          type: enum
+          enum:
+            - name: Reserved
+              slug: reserved
+              description: Not usable.
+              value: 0
+            - name: Loader Code
+              slug: loader_code
+              description: The code portions of a loaded UEFI application.
+              value: 1
+            - name: Loader Data
+              slug: loader_data
+              description: The data portions of a loaded UEFI application and the default data allocation type used by a UEFI application to allocate pool memory.
+              value: 2
+            - name: Boot Services Code
+              slug: boot_services_code
+              description: The code portions of a loaded UEFI Boot Service Driver.
+              value: 3
+            - name: Boot Services Data
+              slug: boot_services_data
+              description: The data portions of a loaded UEFI Boot Serve Driver, and the default data allocation type used by a UEFI Boot Service Driver to allocate pool memory.
+              value: 4
+            - name: Runtime Services Code
+              slug: runtime_services_code
+              description: The code portions of a loaded UEFI Runtime Driver.
+              value: 5
+            - name: Runtime Services Data
+              slug: runtime_services_data
+              description: The data portions of a loaded UEFI Runtime Driver and the default data allocation type used by a UEFI Runtime Driver to allocate pool memory.
+              value: 6
+            - name: Conventional
+              slug: conventional
+              description: Free (unallocated) memory.
+              value: 7
+            - name: Unusable
+              slug: unusable
+              description: Memory in which errors have been detected.
+              value: 8
+            - name: ACPI Reclaim
+              slug: acpi_reclaim
+              description: Memory that holds the ACPI tables.
+              value: 9
+            - name: ACPI Memory NVS
+              slug: acpi_memory_nvs
+              description: Address space reserved for use by the firmware.
+              value: 10
+            - name: Memory Mapped IO
+              slug: memory_mapped_io
+              description: Used by system firmware to request that a memory-mapped IO region be mapped by the OS to a virtual address so it can be accessed by EFI runtime services.
+              value: 11
+            - name: Memory Mapped IO Port Space
+              slug: memory_mappd_io_port_space
+              description: System memory-mapped IO region that is used to translate memory cycles to IO cycles by the processor.
+              value: 12
+            - name: Pal Code
+              slug: pal_code
+              description: Address space reserved by the firmware for code that is part of the processor.
+              value: 13
+            - name: Persistent
+              slug: persistent
+              description: A memory region that operates as Conventional. However, it happens to also support byte-addressable non-volatility.
+              value: 14
+            - name: Unaccepted
+              slug: unaccepted
+              description: A memory region that represents unaccepted memory, that must be accepted by the boot target before it can be used. Unless otherwise noted, ll other EFI memory types are accepted. For platforms that support unaccepted memory, all unaccepted valid memory will be reported as unaccepted in the memory map. Unreported physical address ranges must be treated as not-present memory.
+              value: 15
+        - name: Start Address
+          slug: start_address
+          description: Starting Memory Address.
+          offset: 8
+          size: 8
+          type: hex
+        - name: End Address
+          slug: end_address
+          description: Ending Memory Address.
+          offset: 16
+          size: 8
+          type: hex
+    - name: Vendor-Defined Hardware
+      slug: vendor
+      description: The Vendor Device Path allows the creation of vendor-defined
+        Device Paths.
+      icon: audio-card
+      type: 1
+      subtype: 4
+      fields:
+        - name: GUID
+          slug: guid
+          description: Vendor-assigned GUID that defines the data that follows.
+          offset: 4
+          size: 16
+          type: guid
+        - name: Data
+          slug: data
+          description: Vendor-defined variable size data.
+          offset: 20
+          size: n
+          type: raw_data
+    - name: Controller
+      slug: controller
+      description: Controller settings.
+      icon: input-gaming
+      type: 1
+      subtype: 5
+      fields:
+        - name: Controller
+          slug: controller_number
+          description: Controller number.
+          offset: 4
+          size: 4
+          type: int
+    - name: BMC
+      slug: bmc
+      description: The Device Path for a Baseboard Management Controller (BMC) host interface.
+      icon: audio-card
+      type: 1
+      subtype: 6
+      fields:
+        - name: Interface Type
+          slug: interface_type
+          description: |-
+            The Baseboard Management Controller (BMC) host interface type:
+            0x00 - Unknown.
+            0x01 - KCS: Keyboard Controller Style.
+            0x02 - SMIC: Server Management Interface Chip.
+            0x03 - BT: Block Transfer.
+          offset: 4
+          size: 1
+          type: enum
+          enum:
+            - name: Unknown
+              slug: unknown
+              description: Unknown.
+              value: 0
+            - name: Keyboard Controller Style
+              slug: kcs
+              description: 'KCS: Keyboard Controller Style.'
+              value: 1
+            - name: Server Management Interface Chip
+              slug: smic
+              description: 'SMIC: Server Management Interface Chip.'
+              value: 2
+            - name: Block Transfer
+              slug: bt
+              description: 'BT: Block Transfer.'
+              value: 3
+        - name: Base Address
+          slug: base_address
+          description: Base address (either memory-mapped or I/O) of the BMC.
+            If the least-significant bit of the field is a 1, the address is in
+            I/O space; otherwise, the address is memory-mapped. Refer to the
+            IPMI Interface Specification for usage details.
+          offset: 5
+          size: 8
+          type: hex
+acpi:
+  name: ACPI
+  slug: acpi
+  description: This Device Path is used to describe devices whose enumeration
+    is not described in an industry-standard fashion. These devices must be
+    described using ACPI AML in the ACPI name space; this Device Path is
+    a linkage to the ACPI name space.
+  type: 2
+  nodes:
+    - name: ACPI
+      slug: acpi
+      description: This Device Path contains ACPI Device IDs that represent
+        a device’s Plug and Play Hardware ID and its corresponding unique
+        persistent ID.
+      icon: computer
+      type: 2
+      subtype: 1
+      fields:
+        - name: HID
+          slug: hid
+          description: Devices PnP hardware ID stored in a numeric 32-bit
+            compressed EISA-type ID. This value must match the corresponding HID
+            in the ACPI name space.
+          offset: 4
+          size: 4
+          type: hex
+        - name: UID
+          slug: uid
+          description: Unique ID that is required by ACPI if two devices have
+            the same HID. This value must also match the corresponding UID/HID
+            pair in the ACPI name space. Only the 32-bit numeric value type of
+            UID is supported; thus strings must not be used for the UID in the
+            ACPI name space.
+          offset: 8
+          size: 4
+          type: hex
+    - name: Expanded
+      slug: expanded
+      description: This Device Path contains ACPI Device IDs that represent
+        a device’s Plug and Play Hardware ID and its corresponding unique
+        persistent ID.
+      icon: computer
+      type: 2
+      subtype: 2
+      fields:
+        - name: HID
+          slug: hid
+          description: Devices PnP hardware ID stored in a numeric 32-bit
+            compressed EISA-type ID. This value must match the corresponding HID
+            in the ACPI name space.
+          offset: 4
+          size: 4
+          type: hex
+        - name: UID
+          slug: uid
+          description: Unique ID that is required by ACPI if two devices have
+            the same HID. This value must also match the corresponding UID/HID
+            pair in the ACPI name space. Only the 32-bit numeric value type of
+            UID is supported; thus strings must not be used for the UID in the
+            ACPI name space.
+          offset: 8
+          size: 4
+          type: hex
+        - name: CID
+          slug: cid
+          description: Devices compatible PnP hardware ID stored in a numeric
+            32-bit compressed EISA-type ID. This value must match at least one
+            of the compatible device IDs returned by the corresponding CID in
+            the ACPI name space.
+          offset: 12
+          size: 4
+          type: hex
+        - name: HIDSTR
+          slug: hidstr
+          description: Devices PnP hardware ID stored as a string. This value
+            must match the corresponding HID in the ACPI name space. If the
+            length of this string is 0, then the HID field is used. If the
+            length of this string is greater than 0, then this field supersedes
+            the HID field.
+          offset: 16
+          size: n
+          type: string
+        - name: UIDSTR
+          slug: uidstr
+          description: Unique ID that is required by ACPI if two devices have
+            the same HID. This value must also match the corresponding UID/HID
+            pair in the ACPI name space. This value is stored as a string. If
+            the length of this string is 0, then the UID field is used. If the
+            length of this string is greater than 0, then this field supersedes
+            the UID field.
+          offset: varies
+          size: n
+          type: string
+        - name: CIDSTR
+          slug: cidstr
+          description: Devices compatible PnP hardware ID stored as a string.
+            This value must match at least one of the compatible device IDs
+            returned by the corresponding CID in the ACPI namespace. If the
+            length of this string is 0, then the CID field is used. If the
+            length of this string is greater than 0, then this field supersedes
+            the CID field.
+          offset: varies
+          size: n
+          type: string
+    - name: ADR
+      slug: adr
+      description: The ADR device path is used to contain video output device attributes to support the Graphics Output Protocol.
+      icon: computer
+      type: 2
+      subtype: 3
+      fields:
+        - name: ADR
+          slug: adr
+          description: ADR value. For video output devices the value of this
+            field comes from Table B-2 ACPI 3.0 specification. At least one ADR
+            value is required
+          offset: 4
+          size: 4
+          type: hex
+        - name: Additional ADR
+          slug: additional_adr
+          description: This device path may optionally contain more than one ADR
+            entry.
+          offset: 8
+          size: n
+          type: raw_data
+    - name: NVDIMM
+      slug: nvdimm
+      description: This device path describes an NVDIMM device using the ACPI 6.0 specification defined NFIT Device Handle as the identifier.
+      icon: computer
+      type: 2
+      subtype: 4
+      fields:
+        - name: NFIT Device Handle
+          slug: nfit_device_handle
+          description: NFIT Device Handle - Unique physical identifier. See ACPI
+            Defined Devices and Device Specific Objects section, NVDIMM Devices
+            sub-chapter for the specific definition of the fields utilized for
+            this handle.
+          offset: 4
+          size: 4
+          type: hex
+messaging:
+  name: Messaging
+  slug: msg
+  description: This Device Path is used to describe the connection of devices
+    outside the resource domain of the system. This Device Path can describe
+    physical messaging information such as a SCSI ID, or abstract information
+    such as networking protocol IP addresses.
+  type: 3
+  nodes:
+    - name: ATAPI
+      slug: atapi
+      description: ATAPI Settings.
+      icon: computer
+      type: 3
+      subtype: 1
+      fields:
+        - name: Primary
+          slug: primary
+          description: Set to zero for primary or one for secondary.
+          offset: 4
+          size: 1
+          type: bool
+        - name: Slave
+          slug: slave
+          description: Set to zero for master or one for slave mode.
+          offset: 5
+          size: 1
+          type: bool
+        - name: LUN
+          slug: lun
+          description: Logical Unit Number.
+          offset: 6
+          size: 2
+          type: int
+    - name: SCSI
+      slug: scsi
+      description: SCSI Settings.
+      icon: network-wired
+      type: 3
+      subtype: 2
+      fields:
+        - name: Target ID
+          slug: pun
+          description: Target ID on the SCSI bus (PUN).
+          offset: 4
+          size: 2
+          type: int
+        - name: LUN
+          slug: lun
+          description: Logical Unit Number (LUN).
+          offset: 6
+          size: 2
+          type: int
+    - name: Fibre Channel
+      slug: fibre_channel
+      description: Fibre Channel Settings
+      icon: network-wired
+      type: 3
+      subtype: 3
+      fields:
+        - name: Reserved
+          slug: reserved
+          description: Reserved.
+          offset: 4
+          size: 4
+          type: hex
+        - name: World Wide Name
+          slug: world_wide_name
+          description: Fibre Channel World Wide Name.
+          offset: 8
+          size: 8
+          type: hex
+        - name: LUN
+          slug: lun
+          description: Fibre Channel Logical Unit Number.
+          offset: 16
+          size: 8
+          type: hex
+    - name: Firewire
+      slug: firewire
+      description: Firewire Settings.
+      icon: network-wired
+      type: 3
+      subtype: 4
+      fields:
+        - name: Reserved
+          slug: reserved
+          description: Reserved.
+          offset: 4
+          size: 4
+          type: hex
+        - name: GUID
+          slug: guid
+          description: 1394 Global Unique ID (GUID)
+          offset: 8
+          size: 8
+          type: hex
+    - name: USB
+      slug: usb
+      description: USB settings.
+      icon: drive-removable-media
+      type: 3
+      subtype: 5
+      fields:
+        - name: Parent Port
+          slug: parent_port_number
+          description: USB Parent Port Number.
+          offset: 4
+          size: 1
+          type: int
+        - name: Interface
+          slug: interface_number
+          description: USB Interface Number.
+          offset: 5
+          size: 1
+          type: int
+    - name: I2O
+      slug: i2o
+      description: I2O Settings
+      icon: computer
+      type: 3
+      subtype: 6
+      fields:
+        - name: Target ID
+          slug: tid
+          description: Target ID (TID) for a device.
+          offset: 4
+          size: 4
+          type: int
+    - name: InfiniBand
+      slug: infiniband
+      description: InfiniBand Settings.
+      icon: network-wireless
+      type: 3
+      subtype: 9
+      fields:
+        - name: Resource Flags
+          slug: resource_flags
+          description: |-
+            Flags to help identify/manage InfiniBand device path elements:
+            Bit 0 - IOC/Service (0b = IOC, 1b = Service).
+            Bit 1 - Extend Boot Environment.
+            Bit 2 - Console Protocol.
+            Bit 3 - Storage Protocol.
+            Bit 4 - Network Protocol.
+            All other bits are reserved.
+          offset: 4
+          size: 4
+          type: hex
+        - name: PORT GID
+          slug: port_gid
+          description: 128-bit Global Identifier for remote fabric port
+          offset: 8
+          size: 16
+          type: guid
+        - name: IOC GUID/Service ID
+          slug: ioc_guid_service_id
+          description: 64-bit unique identifier to remote IOC or server process.
+            Interpretation of field specified by Resource Flags (bit 0)
+          offset: 24
+          size: 8
+          type: hex
+        - name: Target Port ID
+          slug: target_port_id
+          description: 64-bit persistent ID of remote IOC port.
+          offset: 32
+          size: 8
+          type: hex
+        - name: Device ID
+          slug: device_id
+          description: 64-bit persistent ID of remote device.
+          offset: 40
+          size: 8
+          type: hex
+    - name: Vendor-Defined Messaging
+      slug: vendor
+      description: The Vendor Device Path allows the creation of vendor-defined
+        Device Paths.
+      icon: audio-card
+      type: 3
+      subtype: 10
+      fields:
+        - name: GUID
+          slug: guid
+          description: Vendor-assigned GUID that defines the data that follows.
+          offset: 4
+          size: 16
+          type: guid
+        - name: Data
+          slug: data
+          description: Vendor-defined variable size data.
+          offset: 20
+          size: n
+          type: raw_data
+    - name: MAC Address
+      slug: mac_address
+      description: MAC settings.
+      icon: network-wired
+      type: 3
+      subtype: 11
+      fields:
+        - name: MAC
+          slug: address
+          description: The MAC address for a network interface padded with 0s.
+          offset: 4
+          size: 32
+          type: mac
+        - name: Interface Type
+          slug: if_type
+          description: Network interface type (i.e., 802.3, FDDI). See RFC 3232.
+          offset: 36
+          size: 1
+          type: int
+    - name: IPv4
+      slug: ipv4
+      description: IPv4 settings.
+      icon: network-wired
+      type: 3
+      subtype: 12
+      fields:
+        - name: Local IP Address
+          slug: local_ip_address
+          description: The local IPv4 address.
+          offset: 4
+          size: 4
+          type: ip4
+        - name: Remote IP Address
+          slug: remote_ip_address
+          description: The remote IPv4 address.
+          offset: 8
+          size: 4
+          type: ip4
+        - name: Local Port
+          slug: local_port
+          description: The local port number.
+          offset: 12
+          size: 2
+          type: int
+        - name: Remote Port
+          slug: remote_port
+          description: The remote port number.
+          offset: 14
+          size: 2
+          type: int
+        - name: Protocol
+          slug: protocol
+          description: The network protocol (i.e., UDP, TCP). See RFC 3232.
+          offset: 16
+          size: 2
+          type: int
+        - name: Static IP Address
+          slug: static_ip_address
+          description: |-
+            0x00 - The Source IP Address was assigned though DHCP.
+            0x01 - The Source IP Address is statically bound.
+          offset: 18
+          size: 1
+          type: bool
+        - name: Gateway IP Address
+          slug: gateway_ip_address
+          description: The Gateway IP Address.
+          offset: 19
+          size: 4
+          type: ip4
+        - name: Subnet Mask
+          slug: subnet_mask
+          description: Subnet mask.
+          offset: 23
+          size: 4
+          type: ip4
+    - name: IPv6
+      slug: ipv6
+      description: IPv6 settings.
+      icon: network-wired
+      type: 3
+      subtype: 13
+      fields:
+        - name: Local IP Address
+          slug: local_ip_address
+          description: The local IPv6 address.
+          offset: 4
+          size: 16
+          type: ip6
+        - name: Remote IP Address
+          slug: remote_ip_address
+          description: The remote IPv6 address.
+          offset: 20
+          size: 16
+          type: ip6
+        - name: Local Port
+          slug: local_port
+          description: The local port number.
+          offset: 36
+          size: 2
+          type: int
+        - name: Remote Port
+          slug: remote_port
+          description: The remote port number.
+          offset: 38
+          size: 2
+          type: int
+        - name: Protocol
+          slug: protocol
+          description: The network protocol (i.e., UDP, TCP). See RFC 3232.
+          offset: 40
+          size: 2
+          type: int
+        - name: IP Address Origin
+          slug: ip_address_origin
+          description: |-
+            0x00 - The Local IP Address was manually configured.
+            0x01 - The Local IP Address is assigned through IPv6 stateless auto-configuration.
+            0x02 - The Local IP Address is assigned through IPv6 stateful configuration.
+          offset: 42
+          size: 1
+          type: enum
+          enum:
+            - name: Static
+              slug: static
+              description: The Local IP Address was manually configured.
+              value: 0
+            - name: Stateless auto-configuration
+              slug: stateless
+              description: The Local IP Address is assigned through IPv6 stateless auto-configuration.
+              value: 1
+            - name: Stateful auto-configuration
+              slug: stateful
+              description: The Local IP Address is assigned through IPv6 stateful configuration.
+              value: 2
+        - name: Prefix Length
+          slug: prefix_length
+          description: The Prefix Length.
+          offset: 43
+          size: 1
+          type: int
+          int:
+            maximum: 128
+        - name: Gateway IP Address
+          slug: gateway_ip_address
+          description: The Gateway IP Address.
+          offset: 44
+          size: 16
+          type: ip6
+    - name: UART
+      slug: uart
+      description: UART Settings.
+      icon: audio-card
+      type: 3
+      subtype: 14
+      fields:
+        - name: Reserved
+          slug: reserved
+          description: Reserved.
+          offset: 4
+          size: 4
+          type: hex
+        - name: Baud Rate
+          slug: baud_rate
+          description: The baud rate setting for the UART style device. A value
+            of 0 means that the devices default baud rate will be used.
+          offset: 8
+          size: 8
+          type: hex
+        - name: Data Bits
+          slug: data_bits
+          description: The number of data bits for the UART style device. A
+            value of 0 means that the devices default number of data bits will
+            be used.
+          offset: 16
+          size: 1
+          type: int
+        - name: Parity
+          slug: parity
+          description: |-
+            The parity setting for the UART style device:
+            0x00 - Default Parity.
+            0x01 - No Parity.
+            0x02 - Even Parity.
+            0x03 - Odd Parity.
+            0x04 - Mark Parity.
+            0x05 - Space Parity.
+          offset: 17
+          size: 1
+          type: enum
+          enum:
+            - name: Default
+              slug: default
+              description: Default Parity.
+              value: 0
+            - name: 'No'
+              slug: 'no'
+              description: No Parity.
+              value: 1
+            - name: Even
+              slug: even
+              description: Even Parity.
+              value: 2
+            - name: Odd
+              slug: odd
+              description: Odd Parity.
+              value: 3
+            - name: Mark
+              slug: mark
+              description: Mark Parity.
+              value: 4
+            - name: Space
+              slug: space
+              description: Space Parity.
+              value: 5
+        - name: Stop Bits
+          slug: stop_bits
+          description: |-
+            The number of stop bits for the UART style device:
+            0x00 - Default Stop Bits.
+            0x01 - 1 Stop Bit.
+            0x02 - 1.5 Stop Bits.
+            0x03 - 2 Stop Bits.
+          offset: 18
+          size: 1
+          type: enum
+          enum:
+            - name: Default
+              slug: default
+              description: Default Stop Bits.
+              value: 0
+            - name: 1
+              slug: one
+              description: 1 Stop Bit.
+              value: 1
+            - name: 1.5
+              slug: one_and_half
+              description: 1.5 Stop Bits.
+              value: 2
+            - name: 2
+              slug: two
+              description: 2 Stop Bits.
+              value: 3
+    - name: USB Class
+      slug: usb_class
+      description: USB Class Settings.
+      icon: drive-removable-media
+      type: 3
+      subtype: 15
+      fields:
+        - name: Vendor ID
+          slug: vendor_id
+          description: Vendor ID assigned by USB-IF. A value of 0xFFFF will
+            match any Vendor ID.
+          offset: 4
+          size: 2
+          type: hex
+        - name: Product ID
+          slug: product_id
+          description: Product ID assigned by USB-IF. A value of 0xFFFF will
+            match any Product ID.
+          offset: 6
+          size: 2
+          type: hex
+        - name: Device Class
+          slug: device_class
+          description: The class code assigned by the USB-IF. A value of 0xFF
+            will match any class code.
+          offset: 8
+          size: 1
+          type: hex
+        - name: Device Subclass
+          slug: device_subclass
+          description: The subclass code assigned by the USB-IF. A value of 0xFF
+            will match any subclass code.
+          offset: 9
+          size: 1
+          type: hex
+        - name: Device Protocol
+          slug: device_protocol
+          description: The protocol code assigned by the USB-IF. A value of 0xFF
+            will match any protocol code.
+          offset: 10
+          size: 1
+          type: hex
+    - name: USB WWID
+      slug: usb_wwid
+      description: This device path describes a USB device using its serial number.
+      icon: drive-removable-media
+      type: 3
+      subtype: 16
+      fields:
+        - name: Interface
+          slug: interface_number
+          description: USB interface Number.
+          offset: 4
+          size: 2
+          type: int
+        - name: Device Vendor Id
+          slug: device_vendor_id
+          description: USB vendor id of the device.
+          offset: 6
+          size: 2
+          type: hex
+        - name: Device Product Id
+          slug: device_product_id
+          description: USB product id of the device.
+          offset: 8
+          size: 2
+          type: hex
+        - name: Serial Number
+          slug: serial_number
+          description: Last 64-or-fewer UTF-16 characters of the USB serial
+            number. The length of the string is determined by the Length field
+            less the offset of the Serial Number field (10).
+          offset: 10
+          size: n
+          type: wstring
+    - name: Device Logical Unit
+      slug: device_logical_unit
+      description: Device Logical Unit Settings.
+      icon: computer
+      type: 3
+      subtype: 17
+      fields:
+        - name: LUN
+          slug: lun
+          description: Logical Unit Number for the interface.
+          offset: 4
+          size: 1
+          type: int
+    - name: SATA
+      slug: sata
+      description: SATA settings.
+      icon: drive-harddisk
+      type: 3
+      subtype: 18
+      fields:
+        - name: HBA Port
+          slug: hba_port_number
+          description: The HBA port number that facilitates the connection to
+            the device or a port multiplier. The value 0xFFFF is reserved.
+          offset: 4
+          size: 2
+          type: int
+          int:
+            maximum: 65534
+        - name: Port Multiplier Port
+          slug: port_multiplier_port_number
+          description: The Port multiplier port number that facilitates the
+            connection to the device. Must be set to 0xFFFF if the device is
+            directly connected to the HBA.
+          offset: 6
+          size: 2
+          type: int
+        - name: LUN
+          slug: lun
+          description: Logical Unit Number.
+          offset: 8
+          size: 2
+          type: int
+    - name: iSCSI
+      slug: iscsi
+      description: iSCSI Settings.
+      icon: computer
+      type: 3
+      subtype: 19
+      fields:
+        - name: Protocol
+          slug: protocol
+          description: Network Protocol (0 = TCP, 1+ = reserved).
+          offset: 4
+          size: 2
+          type: int
+        - name: Options
+          slug: options
+          description: iSCSI Login Options.
+          offset: 6
+          size: 2
+          type: hex
+        - name: LUN
+          slug: lun
+          description: 8 byte array containing the iSCSI Logical Unit Number.
+          offset: 8
+          size: 8
+          type: hex
+        - name: Target Portal Group
+          slug: target_portal_group
+          description: iSCSI Target Portal group tag the initiator intends to
+            establish a session with.
+          offset: 16
+          size: 2
+          type: int
+        - name: Target Name
+          slug: target_name
+          description: iSCSI NodeTarget Name.
+          offset: 18
+          size: n
+          type: string
+    - name: VLAN
+      slug: vlan
+      description: VLAN Settings.
+      icon: network-wired
+      type: 3
+      subtype: 20
+      fields:
+        - name: Vlan ID
+          slug: vlan_id
+          description: VLAN identifier (0-4094).
+          offset: 4
+          size: 2
+          type: int
+          int:
+            maximum: 4094
+    - name: Fibre Channel Ex
+      slug: fibre_channel_ex
+      description: The Fibre Channel Ex device path clarifies the definition of
+        the Logical Unit Number field to conform with the T-10 SCSI Architecture
+        Model 4 specification.
+      icon: network-wired
+      type: 3
+      subtype: 21
+      fields:
+        - name: Reserved
+          slug: reserved
+          description: Reserved.
+          offset: 4
+          size: 4
+          type: hex
+        - name: World Wide Name
+          slug: world_wide_name
+          description: 8 byte array containing Fibre Channel End Device Port
+            Name (a.k.a., World Wide Name).
+          offset: 8
+          size: 8
+          type: hex
+        - name: LUN
+          slug: lun
+          description: 8 byte array containing Fibre Channel Logical Unit Number.
+          offset: 16
+          size: 8
+          type: hex
+    - name: SAS Extended Messaging
+      slug: sas_extended_messaging
+      description: The SAS Ex device path clarifies the definition of the
+        Logical Unit Number field to conform with the T-10 SCSI Architecture
+        Model 4 specification.
+      icon: drive-harddisk
+      type: 3
+      subtype: 22
+      fields:
+        - name: SAS Address
+          slug: sas_address
+          description: 8-byte array of the SAS Address for Serial Attached SCSI
+            Target Port.
+          offset: 4
+          size: 8
+          type: hex
+        - name: LUN
+          slug: lun
+          description: 8-byte array of the SAS Logical Unit Number.
+          offset: 20
+          size: 8
+          type: hex
+        - name: Device and Topology Info
+          slug: device_and_topology_info
+          description: More Information about the device and its interconnect.
+          offset: 28
+          size: 2
+          type: hex
+        - name: Relative Target Port
+          slug: relative_target_port
+          description: Relative Target Port (RTP).
+          offset: 30
+          size: 2
+          type: int
+    - name: NVM Express NS
+      slug: nvm_express_ns
+      description: NVM Express Namespace Settings.
+      icon: drive-harddisk
+      type: 3
+      subtype: 23
+      fields:
+        - name: NSID
+          slug: namespace_identifier
+          description: Namespace identifier (NSID). The values of 0 and
+            0xFFFFFFFF are invalid.
+          offset: 4
+          size: 4
+          type: hex
+        - name: EUI-64
+          slug: ieee_extended_unique_identifier
+          description: This field contains the IEEE Extended Unique Identifier
+            (EUI-64). Devices without an EUI-64 value must initialize this field
+            with a value of 0.
+          offset: 8
+          size: 8
+          type: hex
+    - name: URI
+      slug: uri
+      description: Refer to RFC 3986 for details on the URI contents.
+      icon: text-html
+      type: 3
+      subtype: 24
+      fields:
+        - name: URI
+          slug: uri
+          description: Instance of the URI pursuant to RFC 3986.
+          offset: 4
+          size: n
+          type: uri
+    - name: UFS
+      slug: ufs
+      description: UFS Settings.
+      icon: drive-removable-media
+      type: 3
+      subtype: 25
+      fields:
+        - name: Target ID
+          slug: pun
+          description: Target ID on the UFS interface (PUN).
+          offset: 4
+          size: 1
+          type: hex
+        - name: LUN
+          slug: lun
+          description: Logical Unit Number (LUN).
+          offset: 5
+          size: 1
+          type: hex
+    - name: SD
+      slug: sd
+      description: SD Settings.
+      icon: media-flash
+      type: 3
+      subtype: 26
+      fields:
+        - name: Slot
+          slug: slot_number
+          description: Slot Number
+          offset: 4
+          size: 1
+          type: int
+    - name: Bluetooth
+      slug: bluetooth
+      description: EFI Bluetooth Settings.
+      icon: network-wireless
+      type: 3
+      subtype: 27
+      fields:
+        - name: Device Address
+          slug: device_address
+          description: 48-bit Bluetooth device address.
+          offset: 4
+          size: 6
+          type: mac
+    - name: Wi-Fi
+      slug: wi_fi
+      description: Wi-Fi Settings.
+      icon: network-wireless
+      type: 3
+      subtype: 28
+      fields:
+        - name: SSID
+          slug: ssid
+          description: SSID in octet string.
+          offset: 4
+          size: 32
+          type: string
+    - name: eMMC
+      slug: emmc
+      description: Embedded Multi-Media Card Settings.
+      icon: media-flash
+      type: 3
+      subtype: 29
+      fields:
+        - name: Slot
+          slug: slot_number
+          description: Slot Number
+          offset: 4
+          size: 1
+          type: int
+    - name: BluetoothLE
+      slug: bluetoothle
+      description: EFI BluetoothLE Settings.
+      icon: network-wireless
+      type: 3
+      subtype: 30
+      fields:
+        - name: Device Address
+          slug: device_address
+          description: 48-bit Bluetooth device address.
+          offset: 4
+          size: 6
+          type: mac
+        - name: Address Type
+          slug: address_type
+          description: |-
+            0x00 - Public Device Address.
+            0x01 - Random Device Address.
+          offset: 10
+          size: 1
+          type: enum
+          enum:
+            - name: Public
+              slug: public
+              description: Public Device Address
+              value: 0
+            - name: Random
+              slug: random
+              description: Random Device Address
+              value: 1
+    - name: DNS
+      slug: dns
+      description: DNS Settings.
+      icon: network-wired
+      type: 3
+      subtype: 31
+      fields:
+        - name: IPv6
+          slug: ipv6
+          description: |-
+            0x00 - The DNS server address is IPv4 address.
+            0x01 - The DNS server address is IPv6 address.
+          offset: 4
+          size: 1
+          type: bool
+        - name: Data
+          slug: data
+          description: One or more instances of the DNS server address in
+            EFI_IP_ADDRESS.
+          offset: 5
+          size: n
+          type: raw_data
+    - name: NVDIMM NS
+      slug: nvdimm_ns
+      description: This device path describes a bootable NVDIMM namespace that
+        is defined by a namespace label.
+      icon: drive-harddisk
+      type: 3
+      subtype: 32
+      fields:
+        - name: UUID
+          slug: uuid
+          description: Namespace unique label identifier UUID. See the Uuid
+            description in the NVDIMM Label Protocol - Label definitions section
+            for details on this field.
+          offset: 4
+          size: 16
+          type: guid
+    - name: REST Service
+      slug: rest_service
+      description: REST Service Settings.
+      icon: network-wired
+      type: 3
+      subtype: 33
+      fields:
+        - name: REST Service
+          slug: rest_service
+          description: |-
+            0x01 - Redfish REST Service.
+            0x02 - OData REST Service.
+            0xFF - Vendor specific REST Service.
+          offset: 4
+          size: 1
+          type: enum
+          enum:
+            - name: Redfish
+              slug: redfish
+              description: Redfish REST Service
+              value: 1
+            - name: OData
+              slug: odata
+              description: OData REST Service
+              value: 2
+            - name: Vendor specific
+              slug: vendor
+              description: Vendor specific REST Service
+              value: 255
+        - name: Access Mode
+          slug: access_mode
+          description: |-
+            0x01 - In-Band REST Service.
+            0x02 - Out-of-band REST Service.
+          offset: 5
+          size: 1
+          type: enum
+          enum:
+            - name: In-Band
+              slug: in_band
+              description: In-Band REST Service
+              value: 1
+            - name: Out-of-band
+              slug: out_of_band
+              description: Out-of-band REST Service
+              value: 2
+        - name: GUID
+          slug: guid
+          description: GUID of vendor specific REST service.
+          offset: 6
+          size: 16
+          type: guid
+        - name: Data
+          slug: data
+          description: Vendor-defined data.
+          offset: 22
+          size: n
+          type: raw_data
+    - name: NVMe-oF NS
+      slug: nvme_of_ns
+      description: This device path describes a bootable NVMe over Fiber
+        namespace that is defined by a unique Namespace and Subsystem NQN
+        identity.
+      icon: network-wired
+      type: 3
+      subtype: 34
+      fields:
+        - name: NIDT
+          slug: nidt
+          description: Namespace Identifier Type (NIDT), for globally unique
+            type values defined in the CNS 03h NIDT field (1h, 2h, or 3h) by the
+            NVM Express Base Specification.
+          offset: 4
+          size: 1
+          type: int
+        - name: NID
+          slug: nid
+          description: Namespace Identifier (NID), a globally unique value
+            defined in the Namespace Identification De-scriptor list (CNS 03h)
+            by the NVM Express Base Specification in big endian format.
+          offset: 5
+          size: 16
+          type: guid
+        - name: Subsystem NQN
+          slug: subsystem_nqn
+          description: Unique identifier of an NVM subsystem stored as UTF-8
+            string of n-bytes in compliance with the NVMe Qualified Name in
+            the NVM Express Base Specification. Subsystem NQN is used for
+            purposes of identification and authentication. Maximum length of 224
+            bytes.
+          offset: 21
+          size: n
+          type: string
+          string:
+            max_length: 224
+media:
+  name: Media
+  slug: media
+  description: This Device Path is used to describe the portion of a medium that
+    is being abstracted by a boot service. For example, a Media Device Path
+    could define which partition on a hard drive was being used.
+  type: 4
+  nodes:
+    - name: Hard Drive
+      slug: hd
+      description: The Hard Drive Media Device Path is used to represent a
+        partition on a hard drive.
+      icon: drive-harddisk
+      type: 4
+      subtype: 1
+      fields:
+        - name: Partition
+          slug: partition_number
+          description: Describes the entry in a partition table, starting with
+            entry 1. Partition number zero represents the entire device. Valid
+            partition numbers for a MBR partition are [1, 4]. Valid partition
+            numbers for a GPT partition are [1, NumberOfPartitionEntries].
+          offset: 4
+          size: 4
+          type: int
+          int:
+            minimum: 1
+            maximum: 128
+        - name: Partition Start
+          slug: partition_start
+          description: Starting LBA of the partition on the hard drive.
+          offset: 8
+          size: 8
+          type: hex
+        - name: Partition Size
+          slug: partition_size
+          description: Size of the partition in units of Logical Blocks.
+          offset: 16
+          size: 8
+          type: hex
+        - name: Partition Signature
+          slug: partition_signature
+          description: |-
+            Signature unique to this partition:
+            If SignatureType is 0, this field has to be initialized with 16 zeroes.
+            If SignatureType is 1, the MBR signature is stored in the first 4 bytes of this field. The other 12 bytes are initialized with zeroes.
+            If SignatureType is 2, this field contains a 16 byte signature.
+          offset: 24
+          size: 16
+          type: guid
+        - name: Partition Format
+          slug: partition_format
+          description: |-
+            Partition Format(Unused values reserved):
+            0x01 - PC-AT compatible legacy MBR (Legacy MBR). Partition Start and Partition Size come from PartitionStartingLBA and PartitionSizeInLBA for the partition.
+            0x02 - GUID Partition Table.
+          offset: 40
+          size: 1
+          type: enum
+          enum:
+            - name: MBR
+              slug: mbr
+              description: PC-AT compatible legacy MBR.
+              value: 1
+            - name: GUID
+              slug: guid
+              description: GUID Partition Table.
+              value: 2
+        - name: Signature Type
+          slug: signature_type
+          description: |-
+            Type of Disk Signature(Unused values reserved):
+            0x00 - No Disk Signature.
+            0x01 - 32-bit signature from address 0x1b8 of the type 0x01 MBR.
+            0x02 - GUID signature.
+          offset: 41
+          size: 1
+          type: enum
+          enum:
+            - name: None
+              slug: none
+              description: No Disk Signature.
+              value: 0
+            - name: MBR
+              slug: mbr
+              description: 32-bit signature from address 0x1b8 of the type 0x01 MBR.
+              value: 1
+            - name: GUID
+              slug: guid
+              description: GUID signature.
+              value: 2
+    - name: CD-ROM
+      slug: cd_rom
+      description: The CD-ROM Media Device Path is used to define a system
+        partition that exists on a CD-ROM.
+      icon: drive-optical
+      type: 4
+      subtype: 2
+      fields:
+        - name: Boot Entry
+          slug: boot_entry
+          description: Boot Entry number from the Boot Catalog. The
+            Initial/Default entry is defined as zero.
+          offset: 4
+          size: 4
+          type: int
+        - name: Partition Start
+          slug: partition_start
+          description: Starting RBA of the partition on the medium. CD-ROMs use
+            Relative logical Block Addressing.
+          offset: 8
+          size: 8
+          type: hex
+        - name: Partition Size
+          slug: partition_size
+          description: Size of the partition in units of Blocks, also called
+            Sectors.
+          offset: 16
+          size: 8
+          type: hex
+    - name: Vendor-Defined Media
+      slug: vendor
+      description: The Vendor Device Path allows the creation of vendor-defined
+        Device Paths.
+      icon: computer
+      type: 4
+      subtype: 3
+      fields:
+        - name: GUID
+          slug: guid
+          description: Vendor-assigned GUID that defines the data that follows.
+          offset: 4
+          size: 16
+          type: guid
+        - name: Data
+          slug: data
+          description: Vendor-defined variable size data.
+          offset: 20
+          size: n
+          type: raw_data
+    - name: File Path
+      slug: file_path
+      description: File Path settings.
+      icon: document
+      type: 4
+      subtype: 4
+      fields:
+        - name: Path Name
+          slug: path_name
+          description: Path including directory and file names.
+          offset: 4
+          size: n
+          type: wstring
+    - name: Protocol
+      slug: protocol
+      description: The Media Protocol Device Path is used to denote the protocol
+        that is being used in a device path at the location of the path
+        specified.
+      icon: media-floppy
+      type: 4
+      subtype: 5
+      fields:
+        - name: GUID
+          slug: guid
+          description: The ID of the protocol.
+          offset: 4
+          size: 16
+          type: guid
+    - name: Firmware File
+      slug: firmware_file
+      description: Describes a firmware file in a firmware volume.
+      icon: document
+      type: 4
+      subtype: 6
+      fields:
+        - name: Name
+          slug: name
+          description: Firmware file name GUID.
+          offset: 4
+          size: 16
+          type: guid
+    - name: Firmware Volume
+      slug: firmware_volume
+      description: Describes a firmware volume.
+      icon: document
+      type: 4
+      subtype: 7
+      fields:
+        - name: Name
+          slug: name
+          description: Firmware volume name GUID.
+          offset: 4
+          size: 16
+          type: guid
+    - name: Relative Offset Range
+      slug: relative_offset_range
+      description: This device path node specifies a range of offsets relative
+        to the first byte available on the device.
+      icon: computer
+      type: 4
+      subtype: 8
+      fields:
+        - name: Reserved
+          slug: reserved
+          description: Reserved for future use.
+          offset: 4
+          size: 4
+          type: hex
+        - name: Starting Offset
+          slug: starting_offset
+          description: Offset of the first byte, relative to the parent device
+            node.
+          offset: 8
+          size: 8
+          type: hex
+        - name: Ending Offset
+          slug: ending_offset
+          description: Offset of the last byte, relative to the parent device
+            node.
+          offset: 16
+          size: 8
+          type: hex
+    - name: RAM Disk
+      slug: ram_disk
+      description: RAM Disk Settings.
+      icon: computer
+      type: 4
+      subtype: 9
+      fields:
+        - name: Starting Address
+          slug: starting_address
+          description: Starting Memory Address.
+          offset: 4
+          size: 8
+          type: hex
+        - name: Ending Address
+          slug: ending_address
+          description: Ending Memory Address.
+          offset: 12
+          size: 8
+          type: hex
+        - name: GUID
+          slug: guid
+          description: GUID that defines the type of the RAM Disk.
+          offset: 20
+          size: 16
+          type: guid
+        - name: Disk Instance
+          slug: disk_instance
+          description: RAM Disk instance number, if supported.
+          offset: 36
+          size: 2
+          type: int
+bios:
+  name: BIOS
+  slug: bios
+  description: This Device Path is used to point to boot legacy operating
+    systems. it is based on the BIOS Boot Specification Version 1.01.
+  type: 5
+  nodes:
+    - name: BIOS Boot Specification
+      slug: boot_specification
+      description: This Device Path is used to describe the booting of
+        non-EFI-aware operating systems.
+      icon: computer
+      type: 5
+      subtype: 1
+      fields:
+        - name: Device Type
+          slug: device_type
+          description: |-
+            An identification number that describes what type of device this is:
+              0x00 - Reserved.
+              0x01 - Floppy.
+              0x02 - Hard disk.
+              0x03 - CD-ROM.
+              0x04 - PCMCIA.
+              0x05 - USB device.
+              0x06 - Embedded network.
+              0x07..0x7F - Reserved.
+              0x80 - BEV device.
+              0x81..0xFE - Reserved.
+              0xFF - Unknown.
+          offset: 4
+          size: 2
+          type: hex
+        - name: Status Flag
+          slug: status_flag
+          description: |-
+            Status Flags as defined by the BIOS Boot Specification:
+            |  Bits  |     Field     | Value | Description
+            |========|===============|=======|=============
+            |  3..0  | Old Position  | 0..15 | This entry’s index in the table at the last boot. For updating the IPL or BCV Priority if individual device detection is done.
+            |--------|-------------- |-------|-------------
+            |  7..4  |  (Reserved)   |   0   | Reserved for future use, must be zero.
+            |--------|-------------- |-------|-------------
+            |   8    |    Enabled    | 0..1  | 0 = Entry will be ignored for booting (IPL); entry will not be called for boot connection (BCV).
+            |        |               |       | 1 = Entry will be attempted for booting (IPL); entry will be called for boot connection (BCV).
+            |--------|---------------|-------|-------------
+            |    9   |    Failed     | 0..1  | 0 = Has not been attempted for boot, or it is unknown if boot failure occurred (IPL); entry connected successfully (BCV).
+            |        |               |       | 1 = Failed boot attempt (IPL); failed connection attempt (BCV).
+            |--------|---------------|-------|-------------
+            | 11..10 | Media Present | 0..3  | 0 = No bootable media present in the device.
+            |        |               |       | 1 = Unknown if bootable media present.
+            |        |               |       | 2 = Media present and appears bootable.
+            |        |               |       | 3 = Reserved for future use.
+            |--------|---------------|-------|-------------
+            | 15..12 |  (Reserved)   |   0   | Reserved for future use, must be zero
+          offset: 6
+          size: 2
+          type: hex
+        - name: Description
+          slug: description
+          description: String that describes the boot device to a user.
+          offset: 8
+          size: n
+          type: string
+end:
+  name: End
+  slug: end
+  description: Depending on the Sub-Type, this Device Path node is used to
+    indicate the end of the Device Path instance or Device Path structure.
+  type: 127
+  nodes:
+    - name: End This Instance
+      slug: instance
+      description: This type of node terminates one Device Path instance and
+        denotes the start of another. This is only required when an environment
+        variable represents multiple devices.
+      icon: stop
+      type: 127
+      subtype: 1
+      fields: []
+    - name: End Entire
+      slug: entire
+      description: This type of node terminates an entire Device Path. Software
+        searches for this sub-type to find the end of a Device Path. All Device
+        Paths must end with this sub-type.
+      icon: stop
+      type: 127
+      subtype: 255
+      fields: []
+

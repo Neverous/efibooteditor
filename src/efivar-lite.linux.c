@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
-#include "efivar-lite/efivar.h"
+#include "efivar-lite/efivar-lite.h"
 
 #if BYTE_ORDER == LITTLE_ENDIAN
 const efi_guid_t efi_guid_apple = {0x7c436110, 0xab2a, 0x4bbb, 0x80a8, {0xfe, 0x41, 0x99, 0x5c, 0x9f, 0x82}};
