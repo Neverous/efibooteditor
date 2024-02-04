@@ -2232,23 +2232,23 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="1543"/>
         <location filename="../src/form/filepathdialog.ui" line="1546"/>
         <source>URI</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">URI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1518"/>
         <source>URI settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">URI settings</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1521"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;URI settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;URI settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1533"/>
         <location filename="../src/form/filepathdialog.ui" line="1549"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;URI&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;URI&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1566"/>
