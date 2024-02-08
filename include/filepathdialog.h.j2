@@ -31,7 +31,7 @@ class FilePathDialog: public QDialog
     Q_OBJECT
 
 private:
-    enum FormIndex
+    enum class FormIndex : uint8_t
     {
 {% set form_index = [0] %}
 {% for category in device_paths.values() %}{% for node in category.nodes if node.slug not in ("vendor", "instance", "entire") %}
@@ -42,7 +42,7 @@ private:
         UNKNOWN = {{ form_index.append(form_index.pop() + 1) or form_index[0] - 1 }},
     };
 
-    enum DataFormat
+    enum class DataFormat : uint8_t
     {
         Base64 = 0,
         Utf16 = 1,

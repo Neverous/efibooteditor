@@ -347,7 +347,7 @@ inline std::optional<File_path::{{ category.slug.upper() }}::{{ node.slug.capita
     {% elif field.size == "n" %}
     {
         static_assert(sizeof(*value.{{ field.slug }}.data()) == sizeof(dp->{{ field.slug }}[0]));
-        size_t length = static_cast<size_t>(static_cast<decltype(&dp->{{ field.slug }}[0])>(advance_bytes(data, data_size)) - &dp->{{ field.slug }}[0]);
+        auto length = static_cast<size_t>(static_cast<decltype(&dp->{{ field.slug }}[0])>(advance_bytes(data, data_size)) - &dp->{{ field.slug }}[0]);
         value.{{ field.slug }}.resize(length);
         memcpy(value.{{ field.slug }}.data(), dp->{{ field.slug }}, length * sizeof(dp->{{ field.slug }}[0]));
     }

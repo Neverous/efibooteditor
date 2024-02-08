@@ -31,7 +31,7 @@ class FilePathDialog: public QDialog
     Q_OBJECT
 
 private:
-    enum FormIndex
+    enum class FormIndex : uint8_t
     {
         PCI = 0,
         PCCARD = 1,
@@ -87,7 +87,7 @@ private:
         UNKNOWN = 51,
     };
 
-    enum DataFormat
+    enum class DataFormat : uint8_t
     {
         Base64 = 0,
         Utf16 = 1,

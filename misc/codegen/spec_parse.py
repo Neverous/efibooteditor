@@ -101,7 +101,7 @@ re_device_path = re.compile(r"^.*device-path.*$", re.IGNORECASE)
 re_type = re.compile(r"^type -?0?x?\d+ (-? )?(.*)$", re.IGNORECASE)
 re_subtype = re.compile(r"^(sub.type)? ?(\d+)[ -].*$", re.IGNORECASE)
 re_node_name = re.compile(r" device paths?.*$", re.IGNORECASE)
-re_slug = re.compile(r"[\W_-]+")
+re_slug = re.compile(r"\W+")
 re_description = re.compile(r"\n\W+")
 
 SPEC_URL = "https://uefi.org/specs/UEFI/2.10/10_Protocols_Device_Path_Protocol.html"

@@ -11,7 +11,7 @@ log = logging.getLogger("gen_efidp")
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
-    env = jinja2.Environment(trim_blocks=True, lstrip_blocks=True)
+    env = jinja2.Environment(trim_blocks=True, lstrip_blocks=True, autoescape=True)
     device_paths = yaml.safe_load(open(sys.argv[1]).read())
     for category in device_paths.values():
         for node in category["nodes"]:

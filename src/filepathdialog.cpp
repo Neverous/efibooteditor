@@ -604,20 +604,20 @@ void FilePathDialog::setFilePath(const FilePath::ANY *_file_path)
 
 void FilePathDialog::setPciForm(const FilePath::Pci &pci)
 {
-    ui->options->setCurrentIndex(FormIndex::PCI);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::PCI));
     ui->pci_function->setValue(static_cast<int>(pci.function));
     ui->pci_device->setValue(static_cast<int>(pci.device));
 }
 
 void FilePathDialog::setPccardForm(const FilePath::Pccard &pccard)
 {
-    ui->options->setCurrentIndex(FormIndex::PCCARD);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::PCCARD));
     ui->pccard_function_number->setValue(static_cast<int>(pccard.function_number));
 }
 
 void FilePathDialog::setMemoryMappedForm(const FilePath::MemoryMapped &memory_mapped)
 {
-    ui->options->setCurrentIndex(FormIndex::MEMORY_MAPPED);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::MEMORY_MAPPED));
     ui->memory_mapped_memory_type->setCurrentIndex(static_cast<int>(memory_mapped.memory_type));
     ui->memory_mapped_start_address->setText(toHex(memory_mapped.start_address));
     ui->memory_mapped_end_address->setText(toHex(memory_mapped.end_address));
@@ -625,13 +625,13 @@ void FilePathDialog::setMemoryMappedForm(const FilePath::MemoryMapped &memory_ma
 
 void FilePathDialog::setControllerForm(const FilePath::Controller &controller)
 {
-    ui->options->setCurrentIndex(FormIndex::CONTROLLER);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::CONTROLLER));
     ui->controller_controller_number->setValue(static_cast<int>(controller.controller_number));
 }
 
 void FilePathDialog::setBmcForm(const FilePath::Bmc &bmc)
 {
-    ui->options->setCurrentIndex(FormIndex::BMC);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::BMC));
     ui->bmc_interface_type->setCurrentIndex(static_cast<int>(bmc.interface_type));
     ui->bmc_base_address->setText(toHex(bmc.base_address));
 }
@@ -640,14 +640,14 @@ void FilePathDialog::setBmcForm(const FilePath::Bmc &bmc)
 
 void FilePathDialog::setAcpiForm(const FilePath::Acpi &acpi)
 {
-    ui->options->setCurrentIndex(FormIndex::ACPI);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::ACPI));
     ui->acpi_hid->setText(toHex(acpi.hid));
     ui->acpi_uid->setText(toHex(acpi.uid));
 }
 
 void FilePathDialog::setExpandedForm(const FilePath::Expanded &expanded)
 {
-    ui->options->setCurrentIndex(FormIndex::EXPANDED);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::EXPANDED));
     ui->expanded_hid->setText(toHex(expanded.hid));
     ui->expanded_uid->setText(toHex(expanded.uid));
     ui->expanded_cid->setText(toHex(expanded.cid));
@@ -658,16 +658,16 @@ void FilePathDialog::setExpandedForm(const FilePath::Expanded &expanded)
 
 void FilePathDialog::setAdrForm(const FilePath::Adr &adr)
 {
-    ui->options->setCurrentIndex(FormIndex::ADR);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::ADR));
     ui->adr_adr->setText(toHex(adr.adr));
-    ui->adr_additional_adr_format->setCurrentIndex(DataFormat::Base64);
+    ui->adr_additional_adr_format->setCurrentIndex(static_cast<int>(DataFormat::Base64));
     adr_additional_adr_format_index = 0;
     ui->adr_additional_adr->setPlainText(adr.additional_adr.toBase64());
 }
 
 void FilePathDialog::setNvdimmForm(const FilePath::Nvdimm &nvdimm)
 {
-    ui->options->setCurrentIndex(FormIndex::NVDIMM);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::NVDIMM));
     ui->nvdimm_nfit_device_handle->setText(toHex(nvdimm.nfit_device_handle));
 }
 
@@ -675,7 +675,7 @@ void FilePathDialog::setNvdimmForm(const FilePath::Nvdimm &nvdimm)
 
 void FilePathDialog::setAtapiForm(const FilePath::Atapi &atapi)
 {
-    ui->options->setCurrentIndex(FormIndex::ATAPI);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::ATAPI));
     ui->atapi_primary->setChecked(atapi.primary);
     ui->atapi_slave->setChecked(atapi.slave);
     ui->atapi_lun->setValue(static_cast<int>(atapi.lun));
@@ -683,14 +683,14 @@ void FilePathDialog::setAtapiForm(const FilePath::Atapi &atapi)
 
 void FilePathDialog::setScsiForm(const FilePath::Scsi &scsi)
 {
-    ui->options->setCurrentIndex(FormIndex::SCSI);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::SCSI));
     ui->scsi_pun->setValue(static_cast<int>(scsi.pun));
     ui->scsi_lun->setValue(static_cast<int>(scsi.lun));
 }
 
 void FilePathDialog::setFibreChannelForm(const FilePath::FibreChannel &fibre_channel)
 {
-    ui->options->setCurrentIndex(FormIndex::FIBRE_CHANNEL);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::FIBRE_CHANNEL));
     ui->fibre_channel_reserved->setText(toHex(fibre_channel.reserved));
     ui->fibre_channel_world_wide_name->setText(toHex(fibre_channel.world_wide_name));
     ui->fibre_channel_lun->setText(toHex(fibre_channel.lun));
@@ -698,27 +698,27 @@ void FilePathDialog::setFibreChannelForm(const FilePath::FibreChannel &fibre_cha
 
 void FilePathDialog::setFirewireForm(const FilePath::Firewire &firewire)
 {
-    ui->options->setCurrentIndex(FormIndex::FIREWIRE);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::FIREWIRE));
     ui->firewire_reserved->setText(toHex(firewire.reserved));
     ui->firewire_guid->setText(toHex(firewire.guid));
 }
 
 void FilePathDialog::setUsbForm(const FilePath::Usb &usb)
 {
-    ui->options->setCurrentIndex(FormIndex::USB);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::USB));
     ui->usb_parent_port_number->setValue(static_cast<int>(usb.parent_port_number));
     ui->usb_interface_number->setValue(static_cast<int>(usb.interface_number));
 }
 
 void FilePathDialog::setI2oForm(const FilePath::I2o &i2o)
 {
-    ui->options->setCurrentIndex(FormIndex::I2O);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::I2O));
     ui->i2o_tid->setValue(static_cast<int>(i2o.tid));
 }
 
 void FilePathDialog::setInfinibandForm(const FilePath::Infiniband &infiniband)
 {
-    ui->options->setCurrentIndex(FormIndex::INFINIBAND);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::INFINIBAND));
     ui->infiniband_resource_flags->setText(toHex(infiniband.resource_flags));
     ui->infiniband_port_gid->setText(infiniband.port_gid.toString());
     ui->infiniband_ioc_guid_service_id->setText(toHex(infiniband.ioc_guid_service_id));
@@ -728,14 +728,14 @@ void FilePathDialog::setInfinibandForm(const FilePath::Infiniband &infiniband)
 
 void FilePathDialog::setMacAddressForm(const FilePath::MacAddress &mac_address)
 {
-    ui->options->setCurrentIndex(FormIndex::MAC_ADDRESS);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::MAC_ADDRESS));
     ui->mac_address_address->setText(mac_address.address);
     ui->mac_address_if_type->setValue(static_cast<int>(mac_address.if_type));
 }
 
 void FilePathDialog::setIpv4Form(const FilePath::Ipv4 &ipv4)
 {
-    ui->options->setCurrentIndex(FormIndex::IPV4);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::IPV4));
     ui->ipv4_local_ip_address->setText(ipv4.local_ip_address.toString());
     ui->ipv4_remote_ip_address->setText(ipv4.remote_ip_address.toString());
     ui->ipv4_local_port->setValue(static_cast<int>(ipv4.local_port));
@@ -748,7 +748,7 @@ void FilePathDialog::setIpv4Form(const FilePath::Ipv4 &ipv4)
 
 void FilePathDialog::setIpv6Form(const FilePath::Ipv6 &ipv6)
 {
-    ui->options->setCurrentIndex(FormIndex::IPV6);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::IPV6));
     ui->ipv6_local_ip_address->setText(ipv6.local_ip_address.toString());
     ui->ipv6_remote_ip_address->setText(ipv6.remote_ip_address.toString());
     ui->ipv6_local_port->setValue(static_cast<int>(ipv6.local_port));
@@ -761,7 +761,7 @@ void FilePathDialog::setIpv6Form(const FilePath::Ipv6 &ipv6)
 
 void FilePathDialog::setUartForm(const FilePath::Uart &uart)
 {
-    ui->options->setCurrentIndex(FormIndex::UART);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::UART));
     ui->uart_reserved->setText(toHex(uart.reserved));
     ui->uart_baud_rate->setText(toHex(uart.baud_rate));
     ui->uart_data_bits->setValue(static_cast<int>(uart.data_bits));
@@ -771,7 +771,7 @@ void FilePathDialog::setUartForm(const FilePath::Uart &uart)
 
 void FilePathDialog::setUsbClassForm(const FilePath::UsbClass &usb_class)
 {
-    ui->options->setCurrentIndex(FormIndex::USB_CLASS);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::USB_CLASS));
     ui->usb_class_vendor_id->setText(toHex(usb_class.vendor_id));
     ui->usb_class_product_id->setText(toHex(usb_class.product_id));
     ui->usb_class_device_class->setText(toHex(usb_class.device_class));
@@ -781,7 +781,7 @@ void FilePathDialog::setUsbClassForm(const FilePath::UsbClass &usb_class)
 
 void FilePathDialog::setUsbWwidForm(const FilePath::UsbWwid &usb_wwid)
 {
-    ui->options->setCurrentIndex(FormIndex::USB_WWID);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::USB_WWID));
     ui->usb_wwid_interface_number->setValue(static_cast<int>(usb_wwid.interface_number));
     ui->usb_wwid_device_vendor_id->setText(toHex(usb_wwid.device_vendor_id));
     ui->usb_wwid_device_product_id->setText(toHex(usb_wwid.device_product_id));
@@ -790,13 +790,13 @@ void FilePathDialog::setUsbWwidForm(const FilePath::UsbWwid &usb_wwid)
 
 void FilePathDialog::setDeviceLogicalUnitForm(const FilePath::DeviceLogicalUnit &device_logical_unit)
 {
-    ui->options->setCurrentIndex(FormIndex::DEVICE_LOGICAL_UNIT);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::DEVICE_LOGICAL_UNIT));
     ui->device_logical_unit_lun->setValue(static_cast<int>(device_logical_unit.lun));
 }
 
 void FilePathDialog::setSataForm(const FilePath::Sata &sata)
 {
-    ui->options->setCurrentIndex(FormIndex::SATA);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::SATA));
     ui->sata_hba_port_number->setValue(static_cast<int>(sata.hba_port_number));
     ui->sata_port_multiplier_port_number->setValue(static_cast<int>(sata.port_multiplier_port_number));
     ui->sata_lun->setValue(static_cast<int>(sata.lun));
@@ -804,7 +804,7 @@ void FilePathDialog::setSataForm(const FilePath::Sata &sata)
 
 void FilePathDialog::setIscsiForm(const FilePath::Iscsi &iscsi)
 {
-    ui->options->setCurrentIndex(FormIndex::ISCSI);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::ISCSI));
     ui->iscsi_protocol->setValue(static_cast<int>(iscsi.protocol));
     ui->iscsi_options->setText(toHex(iscsi.options));
     ui->iscsi_lun->setText(toHex(iscsi.lun));
@@ -814,13 +814,13 @@ void FilePathDialog::setIscsiForm(const FilePath::Iscsi &iscsi)
 
 void FilePathDialog::setVlanForm(const FilePath::Vlan &vlan)
 {
-    ui->options->setCurrentIndex(FormIndex::VLAN);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::VLAN));
     ui->vlan_vlan_id->setValue(static_cast<int>(vlan.vlan_id));
 }
 
 void FilePathDialog::setFibreChannelExForm(const FilePath::FibreChannelEx &fibre_channel_ex)
 {
-    ui->options->setCurrentIndex(FormIndex::FIBRE_CHANNEL_EX);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::FIBRE_CHANNEL_EX));
     ui->fibre_channel_ex_reserved->setText(toHex(fibre_channel_ex.reserved));
     ui->fibre_channel_ex_world_wide_name->setText(toHex(fibre_channel_ex.world_wide_name));
     ui->fibre_channel_ex_lun->setText(toHex(fibre_channel_ex.lun));
@@ -828,7 +828,7 @@ void FilePathDialog::setFibreChannelExForm(const FilePath::FibreChannelEx &fibre
 
 void FilePathDialog::setSasExtendedMessagingForm(const FilePath::SasExtendedMessaging &sas_extended_messaging)
 {
-    ui->options->setCurrentIndex(FormIndex::SAS_EXTENDED_MESSAGING);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::SAS_EXTENDED_MESSAGING));
     ui->sas_extended_messaging_sas_address->setText(toHex(sas_extended_messaging.sas_address));
     ui->sas_extended_messaging_lun->setText(toHex(sas_extended_messaging.lun));
     ui->sas_extended_messaging_device_and_topology_info->setText(toHex(sas_extended_messaging.device_and_topology_info));
@@ -837,84 +837,84 @@ void FilePathDialog::setSasExtendedMessagingForm(const FilePath::SasExtendedMess
 
 void FilePathDialog::setNvmExpressNsForm(const FilePath::NvmExpressNs &nvm_express_ns)
 {
-    ui->options->setCurrentIndex(FormIndex::NVM_EXPRESS_NS);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::NVM_EXPRESS_NS));
     ui->nvm_express_ns_namespace_identifier->setText(toHex(nvm_express_ns.namespace_identifier));
     ui->nvm_express_ns_ieee_extended_unique_identifier->setText(toHex(nvm_express_ns.ieee_extended_unique_identifier));
 }
 
 void FilePathDialog::setUriForm(const FilePath::Uri &uri)
 {
-    ui->options->setCurrentIndex(FormIndex::URI);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::URI));
     ui->uri_uri->setText(uri.uri.toDisplayString());
 }
 
 void FilePathDialog::setUfsForm(const FilePath::Ufs &ufs)
 {
-    ui->options->setCurrentIndex(FormIndex::UFS);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::UFS));
     ui->ufs_pun->setText(toHex(ufs.pun));
     ui->ufs_lun->setText(toHex(ufs.lun));
 }
 
 void FilePathDialog::setSdForm(const FilePath::Sd &sd)
 {
-    ui->options->setCurrentIndex(FormIndex::SD);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::SD));
     ui->sd_slot_number->setValue(static_cast<int>(sd.slot_number));
 }
 
 void FilePathDialog::setBluetoothForm(const FilePath::Bluetooth &bluetooth)
 {
-    ui->options->setCurrentIndex(FormIndex::BLUETOOTH);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::BLUETOOTH));
     ui->bluetooth_device_address->setText(bluetooth.device_address);
 }
 
 void FilePathDialog::setWiFiForm(const FilePath::WiFi &wi_fi)
 {
-    ui->options->setCurrentIndex(FormIndex::WI_FI);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::WI_FI));
     ui->wi_fi_ssid->setText(wi_fi.ssid);
 }
 
 void FilePathDialog::setEmmcForm(const FilePath::Emmc &emmc)
 {
-    ui->options->setCurrentIndex(FormIndex::EMMC);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::EMMC));
     ui->emmc_slot_number->setValue(static_cast<int>(emmc.slot_number));
 }
 
 void FilePathDialog::setBluetoothleForm(const FilePath::Bluetoothle &bluetoothle)
 {
-    ui->options->setCurrentIndex(FormIndex::BLUETOOTHLE);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::BLUETOOTHLE));
     ui->bluetoothle_device_address->setText(bluetoothle.device_address);
     ui->bluetoothle_address_type->setCurrentIndex(static_cast<int>(bluetoothle.address_type));
 }
 
 void FilePathDialog::setDnsForm(const FilePath::Dns &dns)
 {
-    ui->options->setCurrentIndex(FormIndex::DNS);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::DNS));
     ui->dns_ipv6->setChecked(dns.ipv6);
-    ui->dns_data_format->setCurrentIndex(DataFormat::Base64);
+    ui->dns_data_format->setCurrentIndex(static_cast<int>(DataFormat::Base64));
     dns_data_format_index = 0;
     ui->dns_data->setPlainText(dns.data.toBase64());
 }
 
 void FilePathDialog::setNvdimmNsForm(const FilePath::NvdimmNs &nvdimm_ns)
 {
-    ui->options->setCurrentIndex(FormIndex::NVDIMM_NS);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::NVDIMM_NS));
     ui->nvdimm_ns_uuid->setText(nvdimm_ns.uuid.toString());
 }
 
 void FilePathDialog::setRestServiceForm(const FilePath::RestService &rest_service)
 {
-    ui->options->setCurrentIndex(FormIndex::REST_SERVICE);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::REST_SERVICE));
     ui->rest_service_rest_service->setCurrentIndex(static_cast<int>(rest_service.rest_service));
     ui->rest_service_access_mode->setCurrentIndex(static_cast<int>(rest_service.access_mode));
     ui->rest_service_guid->setText(rest_service.guid.toString());
-    ui->rest_service_data_format->setCurrentIndex(DataFormat::Base64);
+    ui->rest_service_data_format->setCurrentIndex(static_cast<int>(DataFormat::Base64));
     rest_service_data_format_index = 0;
     ui->rest_service_data->setPlainText(rest_service.data.toBase64());
 }
 
 void FilePathDialog::setNvmeOfNsForm(const FilePath::NvmeOfNs &nvme_of_ns)
 {
-    ui->options->setCurrentIndex(FormIndex::NVME_OF_NS);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::NVME_OF_NS));
     ui->nvme_of_ns_nidt->setValue(static_cast<int>(nvme_of_ns.nidt));
     ui->nvme_of_ns_nid->setText(nvme_of_ns.nid.toString());
     ui->nvme_of_ns_subsystem_nqn->setText(nvme_of_ns.subsystem_nqn);
@@ -924,7 +924,7 @@ void FilePathDialog::setNvmeOfNsForm(const FilePath::NvmeOfNs &nvme_of_ns)
 
 void FilePathDialog::setHdForm(const FilePath::Hd &hd)
 {
-    ui->options->setCurrentIndex(FormIndex::HD);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::HD));
     // Match existing drive
     for(int index = 0; index < ui->hd_disk->count() - 2; ++index)
     {
@@ -968,7 +968,7 @@ void FilePathDialog::setHdForm(const FilePath::Hd &hd)
 
 void FilePathDialog::setCdRomForm(const FilePath::CdRom &cd_rom)
 {
-    ui->options->setCurrentIndex(FormIndex::CD_ROM);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::CD_ROM));
     ui->cd_rom_boot_entry->setValue(static_cast<int>(cd_rom.boot_entry));
     ui->cd_rom_partition_start->setText(toHex(cd_rom.partition_start));
     ui->cd_rom_partition_size->setText(toHex(cd_rom.partition_size));
@@ -976,31 +976,31 @@ void FilePathDialog::setCdRomForm(const FilePath::CdRom &cd_rom)
 
 void FilePathDialog::setFilePathForm(const FilePath::FilePath &file_path)
 {
-    ui->options->setCurrentIndex(FormIndex::FILE_PATH);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::FILE_PATH));
     ui->file_path_path_name->setText(file_path.path_name);
 }
 
 void FilePathDialog::setProtocolForm(const FilePath::Protocol &protocol)
 {
-    ui->options->setCurrentIndex(FormIndex::PROTOCOL);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::PROTOCOL));
     ui->protocol_guid->setText(protocol.guid.toString());
 }
 
 void FilePathDialog::setFirmwareFileForm(const FilePath::FirmwareFile &firmware_file)
 {
-    ui->options->setCurrentIndex(FormIndex::FIRMWARE_FILE);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::FIRMWARE_FILE));
     ui->firmware_file_name->setText(firmware_file.name.toString());
 }
 
 void FilePathDialog::setFirmwareVolumeForm(const FilePath::FirmwareVolume &firmware_volume)
 {
-    ui->options->setCurrentIndex(FormIndex::FIRMWARE_VOLUME);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::FIRMWARE_VOLUME));
     ui->firmware_volume_name->setText(firmware_volume.name.toString());
 }
 
 void FilePathDialog::setRelativeOffsetRangeForm(const FilePath::RelativeOffsetRange &relative_offset_range)
 {
-    ui->options->setCurrentIndex(FormIndex::RELATIVE_OFFSET_RANGE);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::RELATIVE_OFFSET_RANGE));
     ui->relative_offset_range_reserved->setText(toHex(relative_offset_range.reserved));
     ui->relative_offset_range_starting_offset->setText(toHex(relative_offset_range.starting_offset));
     ui->relative_offset_range_ending_offset->setText(toHex(relative_offset_range.ending_offset));
@@ -1008,7 +1008,7 @@ void FilePathDialog::setRelativeOffsetRangeForm(const FilePath::RelativeOffsetRa
 
 void FilePathDialog::setRamDiskForm(const FilePath::RamDisk &ram_disk)
 {
-    ui->options->setCurrentIndex(FormIndex::RAM_DISK);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::RAM_DISK));
     ui->ram_disk_starting_address->setText(toHex(ram_disk.starting_address));
     ui->ram_disk_ending_address->setText(toHex(ram_disk.ending_address));
     ui->ram_disk_guid->setText(ram_disk.guid.toString());
@@ -1019,7 +1019,7 @@ void FilePathDialog::setRamDiskForm(const FilePath::RamDisk &ram_disk)
 
 void FilePathDialog::setBootSpecificationForm(const FilePath::BootSpecification &boot_specification)
 {
-    ui->options->setCurrentIndex(FormIndex::BOOT_SPECIFICATION);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::BOOT_SPECIFICATION));
     ui->boot_specification_device_type->setText(toHex(boot_specification.device_type));
     ui->boot_specification_status_flag->setText(toHex(boot_specification.status_flag));
     ui->boot_specification_description->setText(boot_specification.description);
@@ -1027,7 +1027,7 @@ void FilePathDialog::setBootSpecificationForm(const FilePath::BootSpecification 
 
 void FilePathDialog::setVendorForm(const FilePath::Vendor &vendor)
 {
-    ui->options->setCurrentIndex(FormIndex::VENDOR);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::VENDOR));
     VendorTypeIndex index{};
     switch(vendor._type)
     {
@@ -1050,23 +1050,23 @@ void FilePathDialog::setVendorForm(const FilePath::Vendor &vendor)
 
     ui->vendor_type->setCurrentIndex(static_cast<int>(index));
     ui->vendor_guid->setText(vendor.guid.toString(QUuid::WithoutBraces));
-    ui->vendor_data_format->setCurrentIndex(DataFormat::Base64);
+    ui->vendor_data_format->setCurrentIndex(static_cast<int>(DataFormat::Base64));
     vendor_data_format_index = 0;
     ui->vendor_data->setPlainText(vendor.data.toBase64());
 }
 
 void FilePathDialog::setEndForm(const uint8_t subtype)
 {
-    ui->options->setCurrentIndex(FormIndex::END);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::END));
     ui->end_subtype->setCurrentIndex(subtype == EFIBoot::File_path::END::Instance::SUBTYPE ? 0 : 1);
 }
 
 void FilePathDialog::setUnknownForm(const FilePath::Unknown &unknown)
 {
-    ui->options->setCurrentIndex(FormIndex::UNKNOWN);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::UNKNOWN));
     ui->unknown_type->setText(toHex(unknown._type));
     ui->unknown_subtype->setText(toHex(unknown._subtype));
-    ui->unknown_data_format->setCurrentIndex(DataFormat::Base64);
+    ui->unknown_data_format->setCurrentIndex(static_cast<int>(DataFormat::Base64));
     unknown_data_format_index = 0;
     ui->unknown_data->setPlainText(unknown.data.toBase64());
 }
@@ -1179,7 +1179,7 @@ void FilePathDialog::resetExpandedForm()
 void FilePathDialog::resetAdrForm()
 {
     ui->adr_adr->clear();
-    ui->adr_additional_adr_format->setCurrentIndex(DataFormat::Base64);
+    ui->adr_additional_adr_format->setCurrentIndex(static_cast<int>(DataFormat::Base64));
     adr_additional_adr_format_index = 0;
     ui->adr_additional_adr->clear();
 }
@@ -1380,7 +1380,7 @@ void FilePathDialog::resetBluetoothleForm()
 void FilePathDialog::resetDnsForm()
 {
     ui->dns_ipv6->setChecked(false);
-    ui->dns_data_format->setCurrentIndex(DataFormat::Base64);
+    ui->dns_data_format->setCurrentIndex(static_cast<int>(DataFormat::Base64));
     dns_data_format_index = 0;
     ui->dns_data->clear();
 }
@@ -1395,7 +1395,7 @@ void FilePathDialog::resetRestServiceForm()
     ui->rest_service_rest_service->setCurrentIndex(0);
     ui->rest_service_access_mode->setCurrentIndex(0);
     ui->rest_service_guid->clear();
-    ui->rest_service_data_format->setCurrentIndex(DataFormat::Base64);
+    ui->rest_service_data_format->setCurrentIndex(static_cast<int>(DataFormat::Base64));
     rest_service_data_format_index = 0;
     ui->rest_service_data->clear();
 }
@@ -1474,7 +1474,7 @@ void FilePathDialog::resetVendorForm()
 {
     ui->vendor_guid->clear();
     ui->vendor_type->setCurrentIndex(0);
-    ui->vendor_data_format->setCurrentIndex(DataFormat::Base64);
+    ui->vendor_data_format->setCurrentIndex(static_cast<int>(DataFormat::Base64));
     vendor_data_format_index = 0;
     ui->vendor_data->clear();
 }
@@ -1488,7 +1488,7 @@ void FilePathDialog::resetUnknownForm()
 {
     ui->unknown_type->clear();
     ui->unknown_subtype->clear();
-    ui->unknown_data_format->setCurrentIndex(DataFormat::Base64);
+    ui->unknown_data_format->setCurrentIndex(static_cast<int>(DataFormat::Base64));
     unknown_data_format_index = 0;
     ui->unknown_data->clear();
 }
@@ -1512,30 +1512,30 @@ void FilePathDialog::refreshDiskCombo(bool force)
     diskChoiceChanged(index);
 }
 
-QByteArray FilePathDialog::getData(const QPlainTextEdit &data, int index) const
+QByteArray FilePathDialog::getData(const QPlainTextEdit &_data, int index) const
 {
     switch(static_cast<DataFormat>(index))
     {
     case DataFormat::Base64:
-        return QByteArray::fromBase64(data.toPlainText().toUtf8());
+        return QByteArray::fromBase64(_data.toPlainText().toUtf8());
 
     case DataFormat::Utf16:
-        return fromUnicode(data.toPlainText(), "UTF-16");
+        return fromUnicode(_data.toPlainText(), "UTF-16");
 
     case DataFormat::Utf8:
-        return fromUnicode(data.toPlainText(), "UTF-8");
+        return fromUnicode(_data.toPlainText(), "UTF-8");
 
     case DataFormat::Hex:
-        return QByteArray::fromHex(data.toPlainText().toUtf8());
+        return QByteArray::fromHex(_data.toPlainText().toUtf8());
     }
 
     return {};
 }
 
-void FilePathDialog::dataFormatChanged(int &index, int new_index, QPlainTextEdit &data, QComboBox &format)
+void FilePathDialog::dataFormatChanged(int &index, int new_index, QPlainTextEdit &_data, QComboBox &format)
 {
     bool success = false;
-    QByteArray input = getData(data, index);
+    QByteArray input = getData(_data, index);
     QString output;
     switch(static_cast<DataFormat>(new_index))
     {
@@ -1570,7 +1570,7 @@ void FilePathDialog::dataFormatChanged(int &index, int new_index, QPlainTextEdit
         return;
     }
 
-    data.setPlainText(output);
+    _data.setPlainText(output);
     index = new_index;
 }
 

@@ -293,9 +293,9 @@ FilePath::Expanded::Expanded(const EFIBoot::File_path::ACPI::Expanded &_expanded
     , hid{_expanded.hid}
     , uid{_expanded.uid}
     , cid{_expanded.cid}
-    , hidstr{QByteArray::fromRawData(reinterpret_cast<const char *>(_expanded.hidstr.data()), static_cast<int>(_expanded.hidstr.size() * sizeof(*_expanded.hidstr.data())))}
-    , uidstr{QByteArray::fromRawData(reinterpret_cast<const char *>(_expanded.uidstr.data()), static_cast<int>(_expanded.uidstr.size() * sizeof(*_expanded.uidstr.data())))}
-    , cidstr{QByteArray::fromRawData(reinterpret_cast<const char *>(_expanded.cidstr.data()), static_cast<int>(_expanded.cidstr.size() * sizeof(*_expanded.cidstr.data())))}
+    , hidstr{QByteArray::fromRawData(_expanded.hidstr.data(), static_cast<int>(_expanded.hidstr.size() * sizeof(*_expanded.hidstr.data())))}
+    , uidstr{QByteArray::fromRawData(_expanded.uidstr.data(), static_cast<int>(_expanded.uidstr.size() * sizeof(*_expanded.uidstr.data())))}
+    , cidstr{QByteArray::fromRawData(_expanded.cidstr.data(), static_cast<int>(_expanded.cidstr.size() * sizeof(*_expanded.cidstr.data())))}
 {
 }
 
@@ -1229,7 +1229,7 @@ FilePath::Iscsi::Iscsi(const EFIBoot::File_path::MSG::Iscsi &_iscsi)
     , options{_iscsi.options}
     , lun{_iscsi.lun}
     , target_portal_group{_iscsi.target_portal_group}
-    , target_name{QByteArray::fromRawData(reinterpret_cast<const char *>(_iscsi.target_name.data()), static_cast<int>(_iscsi.target_name.size() * sizeof(*_iscsi.target_name.data())))}
+    , target_name{QByteArray::fromRawData(_iscsi.target_name.data(), static_cast<int>(_iscsi.target_name.size() * sizeof(*_iscsi.target_name.data())))}
 {
 }
 
@@ -1629,7 +1629,7 @@ auto FilePath::Bluetooth::toString(bool refresh) const -> QString
 
 FilePath::WiFi::WiFi(const EFIBoot::File_path::MSG::Wi_fi &_wi_fi)
     : _string{}
-    , ssid{QByteArray::fromRawData(reinterpret_cast<const char *>(_wi_fi.ssid.data()), static_cast<int>(_wi_fi.ssid.size() * sizeof(*_wi_fi.ssid.data())))}
+    , ssid{QByteArray::fromRawData(_wi_fi.ssid.data(), static_cast<int>(_wi_fi.ssid.size() * sizeof(*_wi_fi.ssid.data())))}
 {
 }
 
@@ -1894,7 +1894,7 @@ FilePath::NvmeOfNs::NvmeOfNs(const EFIBoot::File_path::MSG::Nvme_of_ns &_nvme_of
     : _string{}
     , nidt{_nvme_of_ns.nidt}
     , nid{}
-    , subsystem_nqn{QByteArray::fromRawData(reinterpret_cast<const char *>(_nvme_of_ns.subsystem_nqn.data()), static_cast<int>(_nvme_of_ns.subsystem_nqn.size() * sizeof(*_nvme_of_ns.subsystem_nqn.data())))}
+    , subsystem_nqn{QByteArray::fromRawData(_nvme_of_ns.subsystem_nqn.data(), static_cast<int>(_nvme_of_ns.subsystem_nqn.size() * sizeof(*_nvme_of_ns.subsystem_nqn.data())))}
 {
     static_assert(sizeof(nid) == sizeof(_nvme_of_ns.nid));
     memcpy(reinterpret_cast<void *>(&nid), &_nvme_of_ns.nid, sizeof(nid));
@@ -2340,7 +2340,7 @@ FilePath::BootSpecification::BootSpecification(const EFIBoot::File_path::BIOS::B
     : _string{}
     , device_type{_boot_specification.device_type}
     , status_flag{_boot_specification.status_flag}
-    , description{QByteArray::fromRawData(reinterpret_cast<const char *>(_boot_specification.description.data()), static_cast<int>(_boot_specification.description.size() * sizeof(*_boot_specification.description.data())))}
+    , description{QByteArray::fromRawData(_boot_specification.description.data(), static_cast<int>(_boot_specification.description.size() * sizeof(*_boot_specification.description.data())))}
 {
 }
 

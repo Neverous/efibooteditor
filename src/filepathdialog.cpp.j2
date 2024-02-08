@@ -204,13 +204,13 @@ void FilePathDialog::setFilePath(const FilePath::ANY *_file_path)
 {% set qslug = node.slug.split("_")|map("capitalize")|join %}
 void FilePathDialog::set{{ qslug }}Form(const FilePath::{{ qslug }} &{{ node.slug }})
 {
-    ui->options->setCurrentIndex(FormIndex::{{ node.slug.upper() }});
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::{{ node.slug.upper() }}));
     {% for field in node.fields %}
     {% set ui_slug = node.slug + "_" + field.slug %}
     {% if field.type in ("mac", "string", "wstring") %}
     ui->{{ ui_slug }}->setText({{ node.slug }}.{{ field.slug }});
     {% elif field.type == "raw_data" %}
-    ui->{{ ui_slug }}_format->setCurrentIndex(DataFormat::Base64);
+    ui->{{ ui_slug }}_format->setCurrentIndex(static_cast<int>(DataFormat::Base64));
     {{ ui_slug }}_format_index = 0;
     ui->{{ ui_slug }}->setPlainText({{ node.slug }}.{{ field.slug }}.toBase64());
     {% elif field.type in ("ip4", "ip6", "guid") %}
@@ -232,7 +232,7 @@ void FilePathDialog::set{{ qslug }}Form(const FilePath::{{ qslug }} &{{ node.slu
 {% endfor %}{% endfor %}
 void FilePathDialog::setVendorForm(const FilePath::Vendor &vendor)
 {
-    ui->options->setCurrentIndex(FormIndex::VENDOR);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::VENDOR));
     VendorTypeIndex index{};
     switch(vendor._type)
     {
@@ -255,23 +255,23 @@ void FilePathDialog::setVendorForm(const FilePath::Vendor &vendor)
 
     ui->vendor_type->setCurrentIndex(static_cast<int>(index));
     ui->vendor_guid->setText(vendor.guid.toString(QUuid::WithoutBraces));
-    ui->vendor_data_format->setCurrentIndex(DataFormat::Base64);
+    ui->vendor_data_format->setCurrentIndex(static_cast<int>(DataFormat::Base64));
     vendor_data_format_index = 0;
     ui->vendor_data->setPlainText(vendor.data.toBase64());
 }
 
 void FilePathDialog::setEndForm(const uint8_t subtype)
 {
-    ui->options->setCurrentIndex(FormIndex::END);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::END));
     ui->end_subtype->setCurrentIndex(subtype == EFIBoot::File_path::END::Instance::SUBTYPE ? 0 : 1);
 }
 
 void FilePathDialog::setUnknownForm(const FilePath::Unknown &unknown)
 {
-    ui->options->setCurrentIndex(FormIndex::UNKNOWN);
+    ui->options->setCurrentIndex(static_cast<int>(FormIndex::UNKNOWN));
     ui->unknown_type->setText(toHex(unknown._type));
     ui->unknown_subtype->setText(toHex(unknown._subtype));
-    ui->unknown_data_format->setCurrentIndex(DataFormat::Base64);
+    ui->unknown_data_format->setCurrentIndex(static_cast<int>(DataFormat::Base64));
     unknown_data_format_index = 0;
     ui->unknown_data->setPlainText(unknown.data.toBase64());
 }
@@ -300,7 +300,7 @@ void FilePathDialog::reset{{ qslug }}Form()
     {% elif field.type == "enum" %}
     ui->{{ ui_slug }}->setCurrentIndex(0);
     {% elif field.type == "raw_data" %}
-    ui->{{ ui_slug }}_format->setCurrentIndex(DataFormat::Base64);
+    ui->{{ ui_slug }}_format->setCurrentIndex(static_cast<int>(DataFormat::Base64));
     {{ ui_slug }}_format_index = 0;
     ui->{{ ui_slug }}->clear();
     {% else %}
@@ -314,7 +314,7 @@ void FilePathDialog::resetVendorForm()
 {
     ui->vendor_guid->clear();
     ui->vendor_type->setCurrentIndex(0);
-    ui->vendor_data_format->setCurrentIndex(DataFormat::Base64);
+    ui->vendor_data_format->setCurrentIndex(static_cast<int>(DataFormat::Base64));
     vendor_data_format_index = 0;
     ui->vendor_data->clear();
 }
@@ -328,7 +328,7 @@ void FilePathDialog::resetUnknownForm()
 {
     ui->unknown_type->clear();
     ui->unknown_subtype->clear();
-    ui->unknown_data_format->setCurrentIndex(DataFormat::Base64);
+    ui->unknown_data_format->setCurrentIndex(static_cast<int>(DataFormat::Base64));
     unknown_data_format_index = 0;
     ui->unknown_data->clear();
 }
@@ -352,30 +352,30 @@ void FilePathDialog::refreshDiskCombo(bool force)
     diskChoiceChanged(index);
 }
 
-QByteArray FilePathDialog::getData(const QPlainTextEdit &data, int index) const
+QByteArray FilePathDialog::getData(const QPlainTextEdit &_data, int index) const
 {
     switch(static_cast<DataFormat>(index))
     {
     case DataFormat::Base64:
-        return QByteArray::fromBase64(data.toPlainText().toUtf8());
+        return QByteArray::fromBase64(_data.toPlainText().toUtf8());
 
     case DataFormat::Utf16:
-        return fromUnicode(data.toPlainText(), "UTF-16");
+        return fromUnicode(_data.toPlainText(), "UTF-16");
 
     case DataFormat::Utf8:
-        return fromUnicode(data.toPlainText(), "UTF-8");
+        return fromUnicode(_data.toPlainText(), "UTF-8");
 
     case DataFormat::Hex:
-        return QByteArray::fromHex(data.toPlainText().toUtf8());
+        return QByteArray::fromHex(_data.toPlainText().toUtf8());
     }
 
     return {};
 }
 
-void FilePathDialog::dataFormatChanged(int &index, int new_index, QPlainTextEdit &data, QComboBox &format)
+void FilePathDialog::dataFormatChanged(int &index, int new_index, QPlainTextEdit &_data, QComboBox &format)
 {
     bool success = false;
-    QByteArray input = getData(data, index);
+    QByteArray input = getData(_data, index);
     QString output;
     switch(static_cast<DataFormat>(new_index))
     {
@@ -410,7 +410,7 @@ void FilePathDialog::dataFormatChanged(int &index, int new_index, QPlainTextEdit
         return;
     }
 
-    data.setPlainText(output);
+    _data.setPlainText(output);
     index = new_index;
 }
 

@@ -37,18 +37,20 @@ FilePath::{{ qslug }}::{{ qslug }}(const EFIBoot::File_path::{{ category.slug.up
     {% set node_field = "_" + node.slug + "." + field.slug %}
     {% if field.type in ("mac", "raw_data", "string", "wstring") %}
     {% if field.type == "wstring" %}
-    , {{ field.slug + "{QString::fromStdU16String(" + node_field + ")}" }}
+    , {{ field.slug }}{QString::fromStdU16String({{ node_field }})}
+    {% elif field.type == "string" %}
+    , {{ field.slug }}{QByteArray::fromRawData({{ node_field }}.data(), static_cast<int>({{ node_field }}.size() * sizeof(*{{ node_field }}.data())))}
     {% else %}
-    , {{ field.slug + "{QByteArray::fromRawData(reinterpret_cast<const char *>(" + node_field + ".data()), static_cast<int>(" + node_field + ".size() * sizeof(*" + node_field + ".data())))}" }}
+    , {{ field.slug }}{QByteArray::fromRawData(reinterpret_cast<const char *>({{ node_field }}.data()), static_cast<int>({{ node_field }}.size() * sizeof(*{{ node_field }}.data())))}
     {% endif %}
     {% elif field.type == "ip4" %}
-    , {{ field.slug + "{*reinterpret_cast<const uint32_t *>(" + node_field + ".data())}" }}
+    , {{ field.slug }}{*reinterpret_cast<const uint32_t *>({{ node_field }}.data())}
     {% elif field.type == "ip6" %}
     , {{ field.slug + "{" + node_field + ".data()}" }}
     {% elif field.type == "guid" %}
-    , {{ field.slug + "{}" }}
+    , {{ field.slug }}{}
     {% elif field.type == "uri" %}
-    , {{ field.slug + "{QUrl::fromEncoded(QByteArray::fromRawData(reinterpret_cast<const char *>(" + node_field + ".data()), static_cast<int>(" + node_field + ".size() * sizeof(*" + node_field + ".data()))))}" }}
+    , {{ field.slug }}{QUrl::fromEncoded(QByteArray::fromRawData(reinterpret_cast<const char *>({{ node_field }}.data()), static_cast<int>({{ node_field }}.size() * sizeof(*{{ node_field }}.data()))))}
     {% else %}
     , {{ field.slug + "{" + node_field + "}" }}
     {% endif %}
