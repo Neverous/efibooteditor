@@ -64,7 +64,7 @@ void BootEntryListModel::setNextBootEntry(const QModelIndex &index, bool value)
     next_boot = QModelIndex{};
 }
 
-void BootEntryListModel::setEntryFilePath(const QModelIndex &index, int row, const File_path::ANY &file_path)
+void BootEntryListModel::setEntryFilePath(const QModelIndex &index, int row, const FilePath::ANY &file_path)
 {
     if(!index.isValid() || !checkIndex(index))
         return;
@@ -80,7 +80,7 @@ void BootEntryListModel::setEntryFilePath(const QModelIndex &index, int row, con
     undo_stack->push(command);
 }
 
-void BootEntryListModel::insertEntryFilePath(const QModelIndex &index, int row, const File_path::ANY &file_path)
+void BootEntryListModel::insertEntryFilePath(const QModelIndex &index, int row, const FilePath::ANY &file_path)
 {
     if(!index.isValid() || !checkIndex(index))
         return;

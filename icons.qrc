@@ -18,11 +18,17 @@
         <file>icons/Tango/scalable/actions/up.svg</file>
         <file>icons/Tango/scalable/apps/help.svg</file>
         <file>icons/Tango/scalable/categories/preferences-system.svg</file>
+        <file>icons/Tango/scalable/devices/audio-card.svg</file>
         <file>icons/Tango/scalable/devices/computer.svg</file>
+        <file>icons/Tango/scalable/devices/drive-harddisk.svg</file>
+        <file>icons/Tango/scalable/devices/drive-optical.svg</file>
         <file>icons/Tango/scalable/devices/drive-removable-media.svg</file>
-        <file>icons/Tango/scalable/devices/harddrive.svg</file>
+        <file>icons/Tango/scalable/devices/input-gaming.svg</file>
+        <file>icons/Tango/scalable/devices/media-flash.svg</file>
+        <file>icons/Tango/scalable/devices/media-floppy.svg</file>
         <file>icons/Tango/scalable/devices/network-wired.svg</file>
-        <file>icons/Tango/scalable/devices/system.svg</file>
+        <file>icons/Tango/scalable/devices/network-wireless.svg</file>
         <file>icons/Tango/scalable/mimetypes/document.svg</file>
+        <file>icons/Tango/scalable/mimetypes/text-html.svg</file>
     </qresource>
 </RCC>

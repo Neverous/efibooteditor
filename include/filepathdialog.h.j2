@@ -1,0 +1,111 @@
+// SPDX-License-Identifier: LGPL-3.0-or-later
+#pragma once
+
+#include "bootentry.h"
+#include <QDialog>
+#include <memory>
+
+#include <QComboBox>
+#include <QPlainTextEdit>
+#include <QProxyStyle>
+#include <QStyleOptionTab>
+
+namespace Ui
+{
+class FilePathDialog;
+}
+
+class HorizontalTabStyle: public QProxyStyle
+{
+public:
+    HorizontalTabStyle() = default;
+    HorizontalTabStyle(const HorizontalTabStyle &) = delete;
+    HorizontalTabStyle &operator=(const HorizontalTabStyle &) = delete;
+
+    QSize sizeFromContents(ContentsType type, const QStyleOption *option, const QSize &size, const QWidget *widget) const override;
+    void drawControl(ControlElement element, const QStyleOption *option, QPainter *painter, const QWidget *widget) const override;
+};
+
+class FilePathDialog: public QDialog
+{
+    Q_OBJECT
+
+private:
+    enum class FormIndex : uint8_t
+    {
+{% set form_index = [0] %}
+{% for category in device_paths.values() %}{% for node in category.nodes if node.slug not in ("vendor", "instance", "entire") %}
+        {{ node.slug.upper() }} = {{ form_index.append(form_index.pop() + 1) or form_index[0] - 1 }},
+{% endfor %}{% endfor %}
+        VENDOR = {{ form_index.append(form_index.pop() + 1) or form_index[0] - 1 }},
+        END = {{ form_index.append(form_index.pop() + 1) or form_index[0] - 1}},
+        UNKNOWN = {{ form_index.append(form_index.pop() + 1) or form_index[0] - 1 }},
+    };
+
+    enum class DataFormat : uint8_t
+    {
+        Base64 = 0,
+        Utf16 = 1,
+        Utf8 = 2,
+        Hex = 3,
+    };
+
+    enum class VendorTypeIndex : uint8_t
+    {
+        HW = 0,
+        MSG = 1,
+        MEDIA = 2,
+    };
+
+    HorizontalTabStyle horizontal_tab_style{};
+    std::unique_ptr<Ui::FilePathDialog> ui;
+{% for category in device_paths.values() %}{% for node in category.nodes if node.slug not in ("vendor", "instance", "entire") %}{% for field in node.fields if field.type == "raw_data" %}
+    int {{ node.slug }}_{{ field.slug }}_format_index = 0;
+{% endfor %}{% endfor %}{% endfor %}
+    int vendor_data_format_index = 0;
+    int unknown_data_format_index = 0;
+
+public:
+    explicit FilePathDialog(QWidget *parent = nullptr);
+    FilePathDialog(const FilePathDialog &) = delete;
+    FilePathDialog &operator=(const FilePathDialog &) = delete;
+    ~FilePathDialog() override;
+
+    void setReadOnly(bool readonly);
+
+    FilePath::ANY toFilePath() const;
+
+    void setFilePath(const FilePath::ANY *_file_path);
+{% for category in device_paths.values() %}{% for node in category.nodes if node.slug not in ("vendor", "instance", "entire") %}
+{% set qslug = node.slug.split("_")|map("capitalize")|join %}
+    void set{{ qslug }}Form(const FilePath::{{ qslug }} &{{ node.slug }});
+{% endfor %}{% endfor %}
+    void setVendorForm(const FilePath::Vendor &vendor);
+    void setEndForm(const uint8_t subtype);
+    void setUnknownForm(const FilePath::Unknown &unknown);
+
+private:
+    void resetForms();
+{% for category in device_paths.values() %}{% for node in category.nodes if node.slug not in ("vendor", "instance", "entire") %}
+    void reset{{ node.slug.split("_")|map("capitalize")|join }}Form();
+{% endfor %}{% endfor %}
+    void resetVendorForm();
+    void resetEndForm();
+    void resetUnknownForm();
+
+    void refreshDiskCombo(bool force);
+    QByteArray getData(const QPlainTextEdit &widget, int index) const;
+    void dataFormatChanged(int &index, int new_index, QPlainTextEdit &data, QComboBox &format);
+
+private slots:
+    void resetDiskCombo();
+    void diskChoiceChanged(int index);
+    void signatureTypeChoiceChanged(int index);
+
+{% for category in device_paths.values() %}{% for node in category.nodes if node.slug not in ("vendor", "instance", "entire") %}{% for field in node.fields if field.type == "raw_data" %}
+    void {{ node.slug.split("_")|map("capitalize")|join }}{{ field.slug.split("_")|map("capitalize")|join }}Changed(int index);
+{% endfor %}{% endfor %}{% endfor %}
+    void VendorDataFormatChanged(int index);
+    void UnknownDataFormatChanged(int index);
+};
+

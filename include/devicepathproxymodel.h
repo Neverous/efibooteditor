@@ -35,5 +35,5 @@ public:
 private:
     BootEntryListModel *boot_entry_list_model = nullptr;
     QModelIndex boot_entry_index = {};
-    const QVector<File_path::ANY> *boot_entry_device_path = nullptr;
+    const QVector<FilePath::ANY> *boot_entry_device_path = nullptr;
 };

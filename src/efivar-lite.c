@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #include "compat.h"
 #include "efivar-lite.common.h"
-#include "efivar-lite/efiboot-loadopt.h"
+#include "efivar-lite/load-option.h"
 
 // UEFI Specification, Version 2.8
 static const TCHAR *variable_names[] = {

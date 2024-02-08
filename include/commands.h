@@ -222,12 +222,12 @@ class InsertRemoveBootEntryFilePathCommand: public QUndoCommand
 {
 protected:
     BootEntryListModel &model;
-    File_path::ANY file_path;
+    FilePath::ANY file_path;
     const QModelIndex index;
     int row;
 
 public:
-    InsertRemoveBootEntryFilePathCommand(BootEntryListModel &model_, const QString &description, const QModelIndex &index_, int row_, const File_path::ANY &file_path_, QUndoCommand *parent = nullptr);
+    InsertRemoveBootEntryFilePathCommand(BootEntryListModel &model_, const QString &description, const QModelIndex &index_, int row_, const FilePath::ANY &file_path_, QUndoCommand *parent = nullptr);
     InsertRemoveBootEntryFilePathCommand(const InsertRemoveBootEntryFilePathCommand &) = delete;
     InsertRemoveBootEntryFilePathCommand &operator=(const InsertRemoveBootEntryFilePathCommand &) = delete;
 
@@ -240,7 +240,7 @@ protected:
 class InsertBootEntryFilePathCommand: public InsertRemoveBootEntryFilePathCommand
 {
 public:
-    InsertBootEntryFilePathCommand(BootEntryListModel &model_, const QModelIndex &index_, int row_, const File_path::ANY &file_path_, QUndoCommand *parent = nullptr);
+    InsertBootEntryFilePathCommand(BootEntryListModel &model_, const QModelIndex &index_, int row_, const FilePath::ANY &file_path_, QUndoCommand *parent = nullptr);
     InsertBootEntryFilePathCommand(const InsertBootEntryFilePathCommand &) = delete;
     InsertBootEntryFilePathCommand &operator=(const InsertBootEntryFilePathCommand &) = delete;
 
@@ -264,11 +264,11 @@ class SetBootEntryFilePathCommand: public QUndoCommand
 protected:
     BootEntryListModel &model;
     QModelIndex index;
-    File_path::ANY value;
+    FilePath::ANY value;
     int row;
 
 public:
-    SetBootEntryFilePathCommand(BootEntryListModel &model_, const QModelIndex &index_, int row_, const File_path::ANY &value_, QUndoCommand *parent = nullptr);
+    SetBootEntryFilePathCommand(BootEntryListModel &model_, const QModelIndex &index_, int row_, const FilePath::ANY &value_, QUndoCommand *parent = nullptr);
     SetBootEntryFilePathCommand(const SetBootEntryFilePathCommand &) = delete;
     SetBootEntryFilePathCommand &operator=(const SetBootEntryFilePathCommand &) = delete;
 

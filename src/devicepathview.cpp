@@ -42,7 +42,7 @@ void DevicePathView::editCurrentRow()
         return;
 
     dialog->setReadOnly(readonly);
-    dialog->setFilePath(model()->data(index).value<const File_path::ANY *>());
+    dialog->setFilePath(model()->data(index).value<const FilePath::ANY *>());
     const auto status = dialog->exec();
     if(!readonly && status == QDialog::Accepted)
     {

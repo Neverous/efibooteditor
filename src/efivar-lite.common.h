@@ -5,7 +5,7 @@
 #include <string.h>
 
 #include "compat.h"
-#include "efivar-lite/efivar.h"
+#include "efivar-lite/efivar-lite.h"
 
 extern const size_t EFI_MAX_VARIABLES;
 #if defined(__clang__)

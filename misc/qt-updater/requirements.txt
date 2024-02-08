@@ -4,8 +4,6 @@
 #
 #    pip-compile --all-extras --output-file=requirements.txt pyproject.toml
 #
-black==23.10.1
-    # via qt-updater (pyproject.toml)
 build==1.0.3
     # via pip-tools
 certifi==2023.7.22
@@ -13,27 +11,17 @@ certifi==2023.7.22
 charset-normalizer==3.3.1
     # via requests
 click==8.1.7
-    # via
-    #   black
-    #   pip-tools
+    # via pip-tools
 idna==3.4
     # via requests
 mypy==1.6.1
     # via qt-updater (pyproject.toml)
 mypy-extensions==1.0.0
-    # via
-    #   black
-    #   mypy
+    # via mypy
 packaging==23.2
-    # via
-    #   black
-    #   build
-pathspec==0.11.2
-    # via black
+    # via build
 pip-tools==7.3.0
     # via qt-updater (pyproject.toml)
-platformdirs==3.11.0
-    # via black
 pyproject-hooks==1.0.0
     # via build
 requests==2.31.0

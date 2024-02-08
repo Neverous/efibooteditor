@@ -186,7 +186,7 @@ void ChangeOptionalDataFormatCommand::updateTitle(BootEntry::OptionalDataFormat 
     setText(QObject::tr("Change %1 entry \"%2\" %3 to \"%4\"").arg(model.name, title, QObject::tr("Optional data"), format));
 }
 
-InsertRemoveBootEntryFilePathCommand::InsertRemoveBootEntryFilePathCommand(BootEntryListModel &model_, const QString &description, const QModelIndex &index_, int row_, const File_path::ANY &file_path_, QUndoCommand *parent)
+InsertRemoveBootEntryFilePathCommand::InsertRemoveBootEntryFilePathCommand(BootEntryListModel &model_, const QString &description, const QModelIndex &index_, int row_, const FilePath::ANY &file_path_, QUndoCommand *parent)
     : QUndoCommand(description, parent)
     , model{model_}
     , file_path{file_path_}
@@ -216,7 +216,7 @@ void InsertRemoveBootEntryFilePathCommand::remove()
     emit model.dataChanged(index, index, {Qt::EditRole});
 }
 
-InsertBootEntryFilePathCommand::InsertBootEntryFilePathCommand(BootEntryListModel &model_, const QModelIndex &index_, int row_, const File_path::ANY &file_path_, QUndoCommand *parent)
+InsertBootEntryFilePathCommand::InsertBootEntryFilePathCommand(BootEntryListModel &model_, const QModelIndex &index_, int row_, const FilePath::ANY &file_path_, QUndoCommand *parent)
     : InsertRemoveBootEntryFilePathCommand(model_, QObject::tr("Insert %1 entry \"%2\" file path at position %3").arg(model_.name, model_.entries.at(index_.row()).getTitle()).arg(row_), index_, row_, file_path_, parent)
 {
 }
@@ -246,7 +246,7 @@ void RemoveBootEntryFilePathCommand::redo()
     remove();
 }
 
-SetBootEntryFilePathCommand::SetBootEntryFilePathCommand(BootEntryListModel &model_, const QModelIndex &index_, int row_, const File_path::ANY &value_, QUndoCommand *parent)
+SetBootEntryFilePathCommand::SetBootEntryFilePathCommand(BootEntryListModel &model_, const QModelIndex &index_, int row_, const FilePath::ANY &value_, QUndoCommand *parent)
     : QUndoCommand(QObject::tr("Setting %1 entry \"%2\" file path at position %3").arg(model_.name, model_.entries.at(index_.row()).getTitle()).arg(row_), parent)
     , model{model_}
     , index{index_}

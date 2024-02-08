@@ -61,8 +61,8 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     void setNextBootEntry(const QModelIndex &index, bool value);
 
-    void setEntryFilePath(const QModelIndex &index, int row, const File_path::ANY &file_path);
-    void insertEntryFilePath(const QModelIndex &index, int row, const File_path::ANY &file_path);
+    void setEntryFilePath(const QModelIndex &index, int row, const FilePath::ANY &file_path);
+    void insertEntryFilePath(const QModelIndex &index, int row, const FilePath::ANY &file_path);
     void removeEntryFilePath(const QModelIndex &index, int row);
     void moveEntryFilePath(const QModelIndex &index, int source_row, int destination_row);
     void clearEntryDevicePath(const QModelIndex &index);

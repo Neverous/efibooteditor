@@ -1,0 +1,581 @@
+// SPDX-License-Identifier: LGPL-3.0-or-later
+#include "bootentry.h"
+
+#include "compat.h"
+#include "efiboot.h"
+#include <QJsonArray>
+#include <QJsonObject>
+
+EFIBoot::Progress_fn EFIBoot::_get_variables_progress_fn = nullptr;
+
+#define check_obj()                                      \
+    if(obj["type"] != TYPE || obj["subtype"] != SUBTYPE) \
+    return std::nullopt
+#define check_type(field, typecheck)                          \
+    if(!obj.contains(#field) || !obj[#field].is##typecheck()) \
+    return std::nullopt
+#define try_read(field, typecheck) try_read_3(field, typecheck, typecheck)
+#define try_read_3(field, typecheck, typecast) \
+    check_type(field, typecheck);              \
+    value.field = static_cast<decltype(value.field)>(obj[#field].to##typecast())
+#define try_read_4(field, old_name, typecheck, typecast)                                \
+    if(obj.contains(old_name) && obj[old_name].is##typecheck())                         \
+        value.field = static_cast<decltype(value.field)>(obj[old_name].to##typecast()); \
+    else if(obj.contains(#field) && obj[#field].is##typecheck())                        \
+        value.field = static_cast<decltype(value.field)>(obj[#field].to##typecast());   \
+    else                                                                                \
+        return std::nullopt
+
+{% for category in device_paths.values() %}
+// {{ category.name }}
+
+{% for node in category.nodes if node.slug not in ("vendor", "instance", "entire") %}
+{% set qslug = node.slug.split("_")|map("capitalize")|join %}
+FilePath::{{ qslug }}::{{ qslug }}(const EFIBoot::File_path::{{ category.slug.upper() }}::{{ node.slug.capitalize() }} &_{{ node.slug }})
+    : _string{}
+    {% for field in node.fields %}
+    {% set node_field = "_" + node.slug + "." + field.slug %}
+    {% if field.type in ("mac", "raw_data", "string", "wstring") %}
+    {% if field.type == "wstring" %}
+    , {{ field.slug }}{QString::fromStdU16String({{ node_field }})}
+    {% elif field.type == "string" %}
+    , {{ field.slug }}{QByteArray::fromRawData({{ node_field }}.data(), static_cast<int>({{ node_field }}.size() * sizeof(*{{ node_field }}.data())))}
+    {% else %}
+    , {{ field.slug }}{QByteArray::fromRawData(reinterpret_cast<const char *>({{ node_field }}.data()), static_cast<int>({{ node_field }}.size() * sizeof(*{{ node_field }}.data())))}
+    {% endif %}
+    {% elif field.type == "ip4" %}
+    , {{ field.slug }}{*reinterpret_cast<const uint32_t *>({{ node_field }}.data())}
+    {% elif field.type == "ip6" %}
+    , {{ field.slug + "{" + node_field + ".data()}" }}
+    {% elif field.type == "guid" %}
+    , {{ field.slug }}{}
+    {% elif field.type == "uri" %}
+    , {{ field.slug }}{QUrl::fromEncoded(QByteArray::fromRawData(reinterpret_cast<const char *>({{ node_field }}.data()), static_cast<int>({{ node_field }}.size() * sizeof(*{{ node_field }}.data()))))}
+    {% else %}
+    , {{ field.slug + "{" + node_field + "}" }}
+    {% endif %}
+    {% endfor %}
+{
+    {% for field in node.fields %}
+    {% set node_field = "_" + node.slug + "." + field.slug %}
+    {% if field.type == "raw_data" %}
+    {{ field.slug }}.detach();
+    {% elif field.type == "ip4" %}
+    static_assert(sizeof({{ field.slug }}.toIPv4Address()) == sizeof({{ node_field }}));
+    {% elif field.type == "ip6" %}
+    static_assert(sizeof({{ field.slug }}.toIPv6Address()) == sizeof({{ node_field }}));
+    {% elif field.type == "guid" %}
+    static_assert(sizeof({{ field.slug }}) == sizeof({{ node_field }}));
+    memcpy(reinterpret_cast<void *>(&{{ field.slug }}), &{{ node_field }}, sizeof({{ field.slug }}));
+    {% endif %}
+    {% endfor %}
+}
+
+auto FilePath::{{ qslug }}::toEFIBootFilePath() const -> EFIBoot::File_path::{{ category.slug.upper() }}::{{ node.slug.capitalize() }}
+{
+    EFIBoot::File_path::{{ category.slug.upper() }}::{{ node.slug.capitalize() }} value{};
+    {% for field in node.fields %}
+    {% if field.type in ("ip4", "ip6") %}
+    {
+    {% if field.size == 4 %}
+        auto ip_address = {{ field.slug }}.toIPv4Address();
+    {% else %}
+        auto ip_address = {{ field.slug }}.toIPv6Address();
+    {% endif %}
+        static_assert(sizeof(ip_address) == sizeof(value.{{ field.slug }}));
+        memcpy(value.{{ field.slug }}.data(), &ip_address, sizeof(value.{{ field.slug }}));
+    }
+    {% elif field.type == "guid" %}
+    static_assert(sizeof({{ field.slug }}) == sizeof(value.{{ field.slug }}));
+    memcpy(value.{{ field.slug }}.data(), &{{ field.slug }}, sizeof(value.{{ field.slug }}));
+    {% elif field.type == "string" %}
+    value.{{ field.slug }} = {{ field.slug }}.toStdString();
+    {% elif field.type == "wstring" %}
+    value.{{ field.slug }} = {{ field.slug }}.toStdU16String();
+    {% elif field.type == "raw_data" %}
+    value.{{ field.slug }} = {{ "{" + field.slug + ".begin(), " + field.slug + ".end()}" }};
+    {% elif field.type == "uri" %}
+    {
+        auto encoded = {{ field.slug }}.toEncoded();
+        value.{{ field.slug }} = {encoded.begin(), encoded.end()};
+    }
+    {% elif field.type == "mac" %}
+    {
+        auto bytes = QByteArray::fromHex({{ field.slug }}.toUtf8());
+        memcpy(value.{{ field.slug }}.data(), bytes.data(), qMin(static_cast<size_t>(bytes.size()), sizeof(value.{{ field.slug }})));
+    }
+    {#% else %}
+    memcpy(value.{{ field.slug }}.data(), {{ field.slug }}.data(), qMin(static_cast<size_t>({{ field.slug }}.size()), sizeof(value.{{ field.slug }})));
+    {% endif %#}
+    {% else %}
+    value.{{ field.slug }} = {{ field.slug }};
+    {% endif %}
+    {% endfor %}
+    return value;
+}
+
+auto FilePath::{{ qslug }}::fromJSON(const QJsonObject &obj) -> std::optional<{{ qslug }}>
+{
+    {{ qslug }} value{};
+    check_obj();
+    {% for field in node.fields %}
+    {% if field.type == "bool" %}
+    try_read({{ field.slug }}, Bool);
+    {% elif field.type in ("ip4", "ip6", "mac", "string", "wstring") %}
+    try_read({{ field.slug }}, String);
+    {% elif field.type == "raw_data" %}
+    check_type({{ field.slug }}, String);
+    value.{{ field.slug }} = QByteArray::fromBase64(obj["{{ field.slug }}"].toString().toUtf8());
+    {% elif field.type == "guid" %}
+    check_type({{ field.slug }}, String);
+    value.{{ field.slug }} = QUuid::fromString(obj["{{ field.slug }}"].toString());
+    {% elif field.type == "uri" %}
+    check_type({{ field.slug }}, String);
+    value.{{ field.slug }} = QUrl::fromEncoded(obj["{{ field.slug }}"].toString().toUtf8());
+    {% elif field.size > 4 %}
+    check_type({{ field.slug }}, String);
+    value.{{ field.slug }} = obj["{{ field.slug }}"].toString().toULongLong(nullptr, HEX_BASE);
+    {% else %}
+    try_read_3({{ field.slug }}, Double, Int);
+    {% endif %}
+    {% endfor %}
+    return {value};
+}
+
+auto FilePath::{{ qslug }}::toJSON() const -> QJsonObject
+{
+    QJsonObject value{};
+    value["type"] = TYPE;
+    value["subtype"] = SUBTYPE;
+    {% for field in node.fields %}
+    {% if field.type in ("bool", "mac", "string", "wstring") %}
+    value["{{ field.slug }}"] = {{ field.slug }};
+    {% elif field.type == "raw_data" %}
+    value["{{ field.slug }}"] = static_cast<QString>({{ field.slug }}.toBase64());
+    {% elif field.type in ("guid", "ip4", "ip6") %}
+    value["{{ field.slug }}"] = {{ field.slug }}.toString();
+    {% elif field.type == "uri" %}
+    value["{{ field.slug }}"] = static_cast<QString>({{ field.slug }}.toEncoded());
+    {% elif field.size > 4 %}
+    value["{{ field.slug }}"] = toHex({{ field.slug }});
+    {% else %}
+    value["{{ field.slug }}"] = static_cast<int>({{ field.slug }});
+    {% endif %}
+    {% endfor %}
+    return value;
+}
+
+auto FilePath::{{ qslug }}::toString(bool refresh) const -> QString
+{
+    if(_string.size() && !refresh)
+        return _string;
+
+    return {};
+}
+
+{% endfor %}{% endfor %}
+FilePath::Vendor::Vendor(const EFIBoot::File_path::HW::Vendor &vendor)
+    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size() * sizeof(*vendor.data.data())))}
+    , _type{EFIBoot::File_path::HW::Vendor::TYPE}
+{
+    data.detach();
+    static_assert(sizeof(guid) == sizeof(vendor.guid));
+    memcpy(reinterpret_cast<void *>(&guid), &vendor.guid, sizeof(vendor.guid));
+}
+
+FilePath::Vendor::Vendor(const EFIBoot::File_path::MSG::Vendor &vendor)
+    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size() * sizeof(*vendor.data.data())))}
+    , _type{EFIBoot::File_path::MSG::Vendor::TYPE}
+{
+    data.detach();
+    static_assert(sizeof(guid) == sizeof(vendor.guid));
+    memcpy(reinterpret_cast<void *>(&guid), &vendor.guid, sizeof(vendor.guid));
+}
+
+FilePath::Vendor::Vendor(const EFIBoot::File_path::MEDIA::Vendor &vendor)
+    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size() * sizeof(*vendor.data.data())))}
+    , _type{EFIBoot::File_path::MEDIA::Vendor::TYPE}
+{
+    data.detach();
+    static_assert(sizeof(guid) == sizeof(vendor.guid));
+    memcpy(reinterpret_cast<void *>(&guid), &vendor.guid, sizeof(vendor.guid));
+}
+
+auto FilePath::Vendor::toEFIBootFilePath() const -> EFIBoot::File_path::ANY
+{
+    switch(_type)
+    {
+    case EFIBoot::File_path::HW::Vendor::TYPE:
+    {
+        EFIBoot::File_path::HW::Vendor value = {};
+        static_assert(sizeof(guid) == sizeof(value.guid));
+        memcpy(value.guid.data(), &guid, sizeof(guid));
+        value.data.resize(static_cast<size_t>(data.size()));
+        std::copy(std::begin(data), std::end(data), std::begin(value.data));
+        return value;
+    }
+
+    case EFIBoot::File_path::MSG::Vendor::TYPE:
+    {
+        EFIBoot::File_path::MSG::Vendor value = {};
+        static_assert(sizeof(guid) == sizeof(value.guid));
+        memcpy(value.guid.data(), &guid, sizeof(guid));
+        value.data.resize(static_cast<size_t>(data.size()));
+        std::copy(std::begin(data), std::end(data), std::begin(value.data));
+        return value;
+    }
+
+    case EFIBoot::File_path::MEDIA::Vendor::TYPE:
+    {
+        EFIBoot::File_path::MEDIA::Vendor value = {};
+        static_assert(sizeof(guid) == sizeof(value.guid));
+        memcpy(value.guid.data(), &guid, sizeof(guid));
+        value.data.resize(static_cast<size_t>(data.size()));
+        std::copy(std::begin(data), std::end(data), std::begin(value.data));
+        return value;
+    }
+
+    default:
+        return {};
+    }
+}
+
+auto FilePath::Vendor::fromJSON(const QJsonObject &obj) -> std::optional<Vendor>
+{
+    Vendor value{};
+    check_obj();
+    try_read_3(_type, Double, Int);
+    check_type(guid, String);
+    value.guid = QUuid::fromString(obj["guid"].toString());
+    check_type(data, String);
+    value.data = QByteArray::fromBase64(obj["data"].toString().toUtf8());
+    return {value};
+}
+
+auto FilePath::Vendor::toJSON() const -> QJsonObject
+{
+    QJsonObject value{};
+    value["type"] = TYPE;
+    value["subtype"] = SUBTYPE;
+    value["_type"] = _type;
+    value["guid"] = guid.toString();
+    value["data"] = static_cast<QString>(data.toBase64());
+    return value;
+}
+
+auto FilePath::Vendor::toString(bool refresh) const -> QString
+{
+    if(_string.size() && !refresh)
+        return _string;
+
+    const char *type_string = nullptr;
+    switch(_type)
+    {
+    case EFIBoot::File_path::HW::Vendor::TYPE:
+        type_string = "Hw";
+        break;
+
+    case EFIBoot::File_path::MSG::Vendor::TYPE:
+        type_string = "Msg";
+        break;
+
+    case EFIBoot::File_path::MEDIA::Vendor::TYPE:
+        type_string = "Media";
+        break;
+
+    default:
+        type_string = "Unk";
+        break;
+    }
+
+    return _string = QString("Ven%1(%2,[%3B])").arg(type_string, guid.toString(QUuid::WithoutBraces)).arg(data.size());
+}
+
+auto FilePath::End::fromJSON(const QJsonObject &obj) -> std::optional<End>
+{
+    End value{};
+    check_obj();
+    try_read_3(_subtype, Double, Int);
+    return {value};
+}
+
+auto FilePath::End::toJSON() const -> QJsonObject
+{
+    QJsonObject end_instance;
+    end_instance["type"] = TYPE;
+    end_instance["subtype"] = SUBTYPE;
+    end_instance["_subtype"] = _subtype;
+    return end_instance;
+}
+
+auto FilePath::End::toString(bool refresh) const -> QString
+{
+    if(_string.size() && !refresh)
+        return _string;
+
+    const char *subtype_string = "Unknown";
+    switch(_subtype)
+    {
+    case EFIBoot::File_path::END::Instance::SUBTYPE:
+        subtype_string = "Instance";
+        break;
+
+    case EFIBoot::File_path::END::Entire::SUBTYPE:
+        subtype_string = "Entire";
+        break;
+    }
+
+    return _string = QString("End(%1)").arg(subtype_string);
+}
+
+FilePath::Unknown::Unknown(const EFIBoot::File_path::Unknown &unknown)
+    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(unknown.data.data()), static_cast<int>(unknown.data.size() * sizeof(*unknown.data.data())))}
+    , _type{unknown.TYPE}
+    , _subtype{unknown.SUBTYPE}
+{
+    data.detach();
+}
+
+auto FilePath::Unknown::toEFIBootFilePath() const -> EFIBoot::File_path::Unknown
+{
+    EFIBoot::File_path::Unknown value = {};
+    value.TYPE = _type;
+    value.SUBTYPE = _subtype;
+    value.data.resize(static_cast<size_t>(data.size()));
+    std::copy(std::begin(data), std::end(data), std::begin(value.data));
+    return value;
+}
+
+auto FilePath::Unknown::fromJSON(const QJsonObject &obj) -> std::optional<Unknown>
+{
+    Unknown value{};
+    check_obj();
+    try_read_3(_type, Double, Int);
+    try_read_3(_subtype, Double, Int);
+    check_type(data, String);
+    value.data = QByteArray::fromBase64(obj["data"].toString().toUtf8());
+    return {value};
+}
+
+auto FilePath::Unknown::toJSON() const -> QJsonObject
+{
+    QJsonObject value{};
+    value["type"] = TYPE;
+    value["subtype"] = SUBTYPE;
+    value["_type"] = _type;
+    value["_subtype"] = _subtype;
+    value["data"] = static_cast<QString>(data.toBase64());
+    return value;
+}
+
+auto FilePath::Unknown::toString(bool refresh) const -> QString
+{
+    if(_string.size() && !refresh)
+        return _string;
+
+    return _string = QString("Path(%1,%2,[%3B])").arg(toHex(_type), toHex(_subtype)).arg(data.size());
+}
+
+auto BootEntry::fromEFIBootLoadOption(
+    const EFIBoot::Load_option &load_option) -> BootEntry
+{
+    BootEntry value{};
+    value.description = QString::fromStdU16String(load_option.description);
+
+    value.optional_data_format = OptionalDataFormat::Base64;
+    if(toUnicode(value.optional_data, load_option.optional_data, "UTF-8") && !value.optional_data.contains(QChar(0)))
+        value.optional_data_format = OptionalDataFormat::Utf8;
+
+    if(value.optional_data_format == OptionalDataFormat::Base64 && load_option.optional_data.size() % sizeof(char16_t) == 0 && toUnicode(value.optional_data, load_option.optional_data, "UTF-16") && !value.optional_data.contains(QChar(0)))
+        value.optional_data_format = OptionalDataFormat::Utf16;
+
+    if(value.optional_data_format == OptionalDataFormat::Base64)
+        value.optional_data = QByteArray::fromRawData(reinterpret_cast<const char *>(load_option.optional_data.data()), static_cast<int>(load_option.optional_data.size() * sizeof(*load_option.optional_data.data()))).toBase64();
+
+    value.attributes = load_option.attributes;
+
+    for(const auto &file_path: load_option.device_path)
+        value.device_path.push_back(std::visit([](const auto &path) -> FilePath::ANY
+            { return path; },
+            file_path));
+
+    return value;
+}
+
+auto BootEntry::fromError(const QString &error) -> BootEntry
+{
+    BootEntry value{};
+    value.is_error = true;
+    value.description = "Error";
+    value.error = error;
+    return value;
+}
+
+auto BootEntry::toEFIBootLoadOption() const -> EFIBoot::Load_option
+{
+    if(is_error)
+        return {};
+
+    EFIBoot::Load_option load_option{};
+    load_option.description = description.toStdU16String();
+    {
+        auto bytes = getRawOptionalData();
+        auto begin = reinterpret_cast<const EFIBoot::Raw_data::value_type *>(bytes.constData());
+        std::copy(begin, std::next(begin, bytes.size()), std::back_inserter(load_option.optional_data));
+    }
+
+    load_option.attributes = attributes;
+    for(const auto &file_path: device_path)
+        load_option.device_path.push_back(std::visit([](const auto &obj) -> EFIBoot::File_path::ANY
+            { return obj.toEFIBootFilePath(); },
+            file_path));
+
+    return load_option;
+}
+
+auto BootEntry::fromJSON(const QJsonObject &obj) -> std::optional<BootEntry>
+{
+    BootEntry value{};
+    try_read(description, String);
+    try_read_3(optional_data_format, Double, Int);
+    try_read(optional_data, String);
+    try_read_3(attributes, Double, Int);
+    try_read_3(efi_attributes, Double, Int);
+    check_type(file_path, Array);
+    const auto device_path = obj["file_path"].toArray();
+    for(const auto file_path: device_path)
+    {
+        auto dp = file_path.toObject();
+        auto path = get_default(FilePath::JSON_readers(), QString("%1/%2").arg(dp["type"].toString(), dp["subtype"].toString()), [](const auto &)
+            { return std::nullopt; })(dp);
+        if(!path)
+            return std::nullopt;
+
+        value.device_path.push_back(*path);
+    }
+
+    return {value};
+}
+
+auto BootEntry::toJSON() const -> QJsonObject
+{
+    if(is_error)
+        return {};
+
+    QJsonObject load_option;
+    load_option["description"] = description;
+    load_option["optional_data_format"] = static_cast<int>(optional_data_format);
+    load_option["optional_data"] = optional_data;
+    load_option["attributes"] = static_cast<int>(attributes);
+    load_option["efi_attributes"] = static_cast<int>(efi_attributes);
+    QJsonArray file_path_json;
+    for(const auto &file_path: device_path)
+        file_path_json.push_back(std::visit([](const auto &obj) -> QJsonObject
+            { return obj.toJSON(); },
+            file_path));
+
+    load_option["file_path"] = file_path_json;
+    return load_option;
+}
+
+auto BootEntry::formatDevicePath(bool refresh) const -> QString
+{
+    if(device_path.empty())
+        return {};
+
+    if(device_path_str.size() && !refresh)
+        return device_path_str;
+
+    device_path_str.clear();
+    for(const auto &file_path: device_path)
+    {
+        if(!device_path_str.isEmpty())
+            device_path_str += "/";
+
+        device_path_str += std::visit([refresh](const auto &obj)
+            { return obj.toString(refresh); },
+            file_path);
+    }
+
+    return device_path_str;
+}
+
+QString BootEntry::getTitle() const
+{
+    return QString("%1 (%2)").arg(description, toHex(index, 4));
+}
+
+auto BootEntry::changeOptionalDataFormat(BootEntry::OptionalDataFormat format, bool test) -> bool
+{
+    if(format == optional_data_format)
+        return true;
+
+    auto bytes = getRawOptionalData();
+    QString temp_optional_data;
+    switch(format)
+    {
+    case OptionalDataFormat::Base64:
+        temp_optional_data = bytes.toBase64();
+        break;
+
+    case OptionalDataFormat::Utf16:
+        if(static_cast<uint>(bytes.size()) % sizeof(char16_t) != 0)
+            return false;
+
+        if(!toUnicode(temp_optional_data, bytes, "UTF-16"))
+            return false;
+
+        break;
+
+    case OptionalDataFormat::Utf8:
+        if(!toUnicode(temp_optional_data, bytes, "UTF-8"))
+            return false;
+
+        break;
+
+    case OptionalDataFormat::Hex:
+        temp_optional_data = bytes.toHex();
+        break;
+    }
+
+    if(temp_optional_data.contains(QChar(0)))
+        return false;
+
+    if(!test)
+    {
+        optional_data_format = format;
+        optional_data = temp_optional_data;
+    }
+    return true;
+}
+
+auto BootEntry::getRawOptionalData() const -> QByteArray
+{
+    QByteArray bytes;
+    switch(optional_data_format)
+    {
+    case OptionalDataFormat::Base64:
+        bytes = QByteArray::fromBase64(optional_data.toUtf8());
+        break;
+
+    case OptionalDataFormat::Utf16:
+        bytes = fromUnicode(optional_data, "UTF-16");
+        break;
+
+    case OptionalDataFormat::Utf8:
+        bytes = fromUnicode(optional_data, "UTF-8");
+        break;
+
+    case OptionalDataFormat::Hex:
+        bytes = QByteArray::fromHex(optional_data.toUtf8());
+        break;
+    }
+
+    return bytes;
+}
+
+#undef try_read_3
+#undef try_read
+#undef check_type
+#undef check_obj
+

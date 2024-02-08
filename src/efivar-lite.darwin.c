@@ -7,8 +7,8 @@
 
 #include "compat.h"
 #include "efivar-lite.common.h"
-#include "efivar-lite/efiboot-loadopt.h"
-#include "efivar-lite/efivar.h"
+#include "efivar-lite/efivar-lite.h"
+#include "efivar-lite/load-option.h"
 
 const efi_guid_t efi_guid_global = {"8BE4DF61-93CA-11D2-AA0D-00E098032B8C"};
 const efi_guid_t efi_guid_apple = {"7C436110-AB2A-4BBB-A880-FE41995C9F82"};

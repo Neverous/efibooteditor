@@ -182,9 +182,9 @@ target_sources(${PROJECT_NAME} PRIVATE
     include/efibootdata.h
     include/efibooteditor.h
     include/efibooteditorcli.h
-    include/efivar-lite/efiboot-loadopt.h
-    include/efivar-lite/efivar-dp.h
-    include/efivar-lite/efivar.h
+    include/efivar-lite/load-option.h
+    include/efivar-lite/device-paths.h
+    include/efivar-lite/efivar-lite.h
     include/filepathdelegate.h
     include/filepathdialog.h
     include/qindicatorwidget.h
