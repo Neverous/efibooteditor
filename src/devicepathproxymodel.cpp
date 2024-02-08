@@ -67,7 +67,7 @@ auto DevicePathProxyModel::removeRows(int row, int count, const QModelIndex &par
 {
     beginRemoveRows(parent, row, row + count - 1);
     for(int c = 0; c < count; ++c)
-        boot_entry_list_model->removeEntryFilePath(boot_entry_index, row + count - c);
+        boot_entry_list_model->removeEntryFilePath(boot_entry_index, row + count - 1 - c);
 
     endRemoveRows();
     return true;
