@@ -251,32 +251,32 @@
 <context>
     <name>BootEntryListModel</name>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="50"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="82"/>
         <source>Set Next boot to &quot;%1&quot;</source>
         <translation>Set Next boot to &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="146"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="178"/>
         <source>Index</source>
         <translation>Index</translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="162"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="194"/>
         <source>Description</source>
         <translation>Description</translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="199"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="231"/>
         <source>Optional data</source>
         <translation>Optional data</translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="215"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="247"/>
         <source>Attributes</source>
         <translation>Attributes</translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="231"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="263"/>
         <source>Next boot</source>
         <translation>Next boot</translation>
     </message>
@@ -710,7 +710,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="71"/>
-        <location filename="../src/efibooteditor.cpp" line="393"/>
+        <location filename="../src/efibooteditor.cpp" line="398"/>
         <source>Boot</source>
         <translation>Boot</translation>
     </message>
@@ -729,7 +729,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="133"/>
-        <location filename="../src/efibooteditor.cpp" line="396"/>
+        <location filename="../src/efibooteditor.cpp" line="401"/>
         <source>Driver</source>
         <translation>Driver</translation>
     </message>
@@ -748,7 +748,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="195"/>
-        <location filename="../src/efibooteditor.cpp" line="399"/>
+        <location filename="../src/efibooteditor.cpp" line="404"/>
         <source>System Preparation</source>
         <translation>System Preparation</translation>
     </message>
@@ -767,7 +767,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="257"/>
-        <location filename="../src/efibooteditor.cpp" line="402"/>
+        <location filename="../src/efibooteditor.cpp" line="407"/>
         <source>Platform Recovery</source>
         <translation>Platform Recovery</translation>
     </message>
@@ -802,614 +802,625 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="377"/>
         <location filename="../src/form/efibooteditor.ui" line="380"/>
-        <source>Remove entry</source>
-        <translation>Remove entry</translation>
+        <source>Duplicate entry</source>
+        <translation>Duplicate entry</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="383"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to remove currently selected entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to remove currently selected entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duplicate entry&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duplicate entry&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="408"/>
         <location filename="../src/form/efibooteditor.ui" line="411"/>
-        <source>Move entry up</source>
-        <translation>Move entry up</translation>
+        <source>Remove entry</source>
+        <translation>Remove entry</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="414"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to remove currently selected entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to remove currently selected entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="439"/>
         <location filename="../src/form/efibooteditor.ui" line="442"/>
-        <source>Move entry down</source>
-        <translation>Move entry down</translation>
+        <source>Move entry up</source>
+        <translation>Move entry up</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="445"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="470"/>
         <location filename="../src/form/efibooteditor.ui" line="473"/>
+        <source>Move entry down</source>
+        <translation>Move entry down</translation>
+    </message>
+    <message>
+        <location filename="../src/form/efibooteditor.ui" line="476"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/form/efibooteditor.ui" line="501"/>
+        <location filename="../src/form/efibooteditor.ui" line="504"/>
         <source>Reorder entries</source>
         <translation>Reorder entries</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="476"/>
+        <location filename="../src/form/efibooteditor.ui" line="507"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to adjust the order of all entries based on their position on the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to adjust the order of all entries based on their position on the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="568"/>
-        <location filename="../src/form/efibooteditor.ui" line="577"/>
+        <location filename="../src/form/efibooteditor.ui" line="599"/>
+        <location filename="../src/form/efibooteditor.ui" line="608"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Global settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Global settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="571"/>
+        <location filename="../src/form/efibooteditor.ui" line="602"/>
         <source>Global</source>
         <translation>Global</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="601"/>
-        <location filename="../src/form/efibooteditor.ui" line="604"/>
-        <location filename="../src/form/efibooteditor.ui" line="623"/>
-        <location filename="../src/form/efibooteditor.ui" line="626"/>
+        <location filename="../src/form/efibooteditor.ui" line="632"/>
+        <location filename="../src/form/efibooteditor.ui" line="635"/>
+        <location filename="../src/form/efibooteditor.ui" line="654"/>
+        <location filename="../src/form/efibooteditor.ui" line="657"/>
         <source>Boot manager timeout</source>
         <translation>Boot manager timeout</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="607"/>
-        <location filename="../src/form/efibooteditor.ui" line="629"/>
+        <location filename="../src/form/efibooteditor.ui" line="638"/>
+        <location filename="../src/form/efibooteditor.ui" line="660"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot manager timeout.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot manager timeout.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="632"/>
+        <location filename="../src/form/efibooteditor.ui" line="663"/>
         <source>s</source>
         <translation>s</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="643"/>
-        <location filename="../src/form/efibooteditor.ui" line="646"/>
-        <location filename="../src/form/efibooteditor.ui" line="655"/>
+        <location filename="../src/form/efibooteditor.ui" line="674"/>
+        <location filename="../src/form/efibooteditor.ui" line="677"/>
+        <location filename="../src/form/efibooteditor.ui" line="686"/>
         <source>Firmware details</source>
         <translation>Firmware details</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="649"/>
-        <location filename="../src/form/efibooteditor.ui" line="658"/>
+        <location filename="../src/form/efibooteditor.ui" line="680"/>
+        <location filename="../src/form/efibooteditor.ui" line="689"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="652"/>
+        <location filename="../src/form/efibooteditor.ui" line="683"/>
         <source>Firmware</source>
         <translation>Firmware</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="688"/>
-        <location filename="../src/form/efibooteditor.ui" line="691"/>
+        <location filename="../src/form/efibooteditor.ui" line="719"/>
+        <location filename="../src/form/efibooteditor.ui" line="722"/>
         <source>Available firmware features</source>
         <translation>Available firmware features</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="694"/>
+        <location filename="../src/form/efibooteditor.ui" line="725"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware features.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware features.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="697"/>
+        <location filename="../src/form/efibooteditor.ui" line="728"/>
         <source>Features</source>
         <translation>Features</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="706"/>
-        <location filename="../src/form/efibooteditor.ui" line="709"/>
+        <location filename="../src/form/efibooteditor.ui" line="737"/>
+        <location filename="../src/form/efibooteditor.ui" line="740"/>
         <source>Platform supports reporting of deferred capsule processing by creation of result variable</source>
         <translation>Platform supports reporting of deferred capsule processing by creation of result variable</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="712"/>
+        <location filename="../src/form/efibooteditor.ui" line="743"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports reporting of deferred capsule processing by creation of result variable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports reporting of deferred capsule processing by creation of result variable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="715"/>
+        <location filename="../src/form/efibooteditor.ui" line="746"/>
         <source>Capsule Reporting</source>
         <translation>Capsule Reporting</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="725"/>
-        <location filename="../src/form/efibooteditor.ui" line="728"/>
+        <location filename="../src/form/efibooteditor.ui" line="756"/>
+        <location filename="../src/form/efibooteditor.ui" line="759"/>
         <source>Firmware supports timestamp based revocation</source>
         <translation>Firmware supports timestamp based revocation</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="731"/>
+        <location filename="../src/form/efibooteditor.ui" line="762"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware supports timestamp based revocation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware supports timestamp based revocation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="734"/>
+        <location filename="../src/form/efibooteditor.ui" line="765"/>
         <source>Timestamp based revocation</source>
         <translation>Timestamp based revocation</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="744"/>
-        <location filename="../src/form/efibooteditor.ui" line="747"/>
+        <location filename="../src/form/efibooteditor.ui" line="775"/>
+        <location filename="../src/form/efibooteditor.ui" line="778"/>
         <source>Platform supports processing of Firmware Management Protocol update capsule</source>
         <translation>Platform supports processing of Firmware Management Protocol update capsule</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="750"/>
+        <location filename="../src/form/efibooteditor.ui" line="781"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports processing of Firmware Management Protocol update capsule.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports processing of Firmware Management Protocol update capsule.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="753"/>
+        <location filename="../src/form/efibooteditor.ui" line="784"/>
         <source>FMP Capsule</source>
         <translation>FMP Capsule</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="763"/>
-        <location filename="../src/form/efibooteditor.ui" line="766"/>
+        <location filename="../src/form/efibooteditor.ui" line="794"/>
+        <location filename="../src/form/efibooteditor.ui" line="797"/>
         <source>Platform supports processing of file capsules</source>
         <translation>Platform supports processing of file capsules</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="769"/>
+        <location filename="../src/form/efibooteditor.ui" line="800"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports processing of file capsules.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports processing of file capsules.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="772"/>
+        <location filename="../src/form/efibooteditor.ui" line="803"/>
         <source>File Capsule</source>
         <translation>File Capsule</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="797"/>
-        <location filename="../src/form/efibooteditor.ui" line="800"/>
+        <location filename="../src/form/efibooteditor.ui" line="828"/>
+        <location filename="../src/form/efibooteditor.ui" line="831"/>
         <source>Available firmware actions</source>
         <translation>Available firmware actions</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="803"/>
+        <location filename="../src/form/efibooteditor.ui" line="834"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware actions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware actions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="806"/>
+        <location filename="../src/form/efibooteditor.ui" line="837"/>
         <source>Actions</source>
         <translation>Actions</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="815"/>
-        <location filename="../src/form/efibooteditor.ui" line="818"/>
+        <location filename="../src/form/efibooteditor.ui" line="846"/>
+        <location filename="../src/form/efibooteditor.ui" line="849"/>
         <source>Stop at a firmware user interface on the next boot</source>
         <translation>Stop at a firmware user interface on the next boot</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="821"/>
+        <location filename="../src/form/efibooteditor.ui" line="852"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Stop at a firmware user interface on the next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Stop at a firmware user interface on the next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="824"/>
+        <location filename="../src/form/efibooteditor.ui" line="855"/>
         <source>Boot to firmware UI</source>
         <translation>Boot to firmware UI</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="831"/>
-        <location filename="../src/form/efibooteditor.ui" line="834"/>
+        <location filename="../src/form/efibooteditor.ui" line="862"/>
+        <location filename="../src/form/efibooteditor.ui" line="865"/>
         <source>Trigger collecting current configuration and reporting the refreshed data to EFI System Configuration Table on next boot</source>
         <translation>Trigger collecting current configuration and reporting the refreshed data to EFI System Configuration Table on next boot</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="837"/>
+        <location filename="../src/form/efibooteditor.ui" line="868"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Trigger collecting current configuration and reporting the refreshed data to EFI System Configuration Table on next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Trigger collecting current configuration and reporting the refreshed data to EFI System Configuration Table on next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="840"/>
+        <location filename="../src/form/efibooteditor.ui" line="871"/>
         <source>Collect current config</source>
         <translation>Collect current config</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="847"/>
-        <location filename="../src/form/efibooteditor.ui" line="850"/>
+        <location filename="../src/form/efibooteditor.ui" line="878"/>
+        <location filename="../src/form/efibooteditor.ui" line="881"/>
         <source>Indicate that Platform-defined recovery should commence upon reboot</source>
         <translation>Indicate that Platform-defined recovery should commence upon reboot</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="853"/>
+        <location filename="../src/form/efibooteditor.ui" line="884"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that Platform-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that Platform-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="856"/>
+        <location filename="../src/form/efibooteditor.ui" line="887"/>
         <source>Start Platform recovery</source>
         <translation>Start Platform recovery</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="863"/>
-        <location filename="../src/form/efibooteditor.ui" line="866"/>
+        <location filename="../src/form/efibooteditor.ui" line="894"/>
+        <location filename="../src/form/efibooteditor.ui" line="897"/>
         <source>Indicate that OS-defined recovery should commence upon reboot</source>
         <translation>Indicate that OS-defined recovery should commence upon reboot</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="869"/>
+        <location filename="../src/form/efibooteditor.ui" line="900"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that OS-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that OS-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="872"/>
+        <location filename="../src/form/efibooteditor.ui" line="903"/>
         <source>Start OS recovery</source>
         <translation>Start OS recovery</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="901"/>
-        <location filename="../src/form/efibooteditor.ui" line="904"/>
-        <location filename="../src/form/efibooteditor.ui" line="913"/>
+        <location filename="../src/form/efibooteditor.ui" line="932"/>
+        <location filename="../src/form/efibooteditor.ui" line="935"/>
+        <location filename="../src/form/efibooteditor.ui" line="944"/>
         <source>Secure boot settings</source>
         <translation>Secure boot settings</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="907"/>
-        <location filename="../src/form/efibooteditor.ui" line="916"/>
+        <location filename="../src/form/efibooteditor.ui" line="938"/>
+        <location filename="../src/form/efibooteditor.ui" line="947"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Secure boot settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Secure boot settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="910"/>
-        <location filename="../src/form/efibooteditor.ui" line="994"/>
+        <location filename="../src/form/efibooteditor.ui" line="941"/>
+        <location filename="../src/form/efibooteditor.ui" line="1025"/>
         <source>Secure Boot</source>
         <translation>Secure Boot</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="947"/>
-        <location filename="../src/form/efibooteditor.ui" line="950"/>
+        <location filename="../src/form/efibooteditor.ui" line="978"/>
+        <location filename="../src/form/efibooteditor.ui" line="981"/>
         <source>Defines whether the system is currently operating in Audit Mode</source>
         <translation>Defines whether the system is currently operating in Audit Mode</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="953"/>
+        <location filename="../src/form/efibooteditor.ui" line="984"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system is currently operating in Audit Mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system is currently operating in Audit Mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="956"/>
+        <location filename="../src/form/efibooteditor.ui" line="987"/>
         <source>Audit Mode</source>
         <translation>Audit Mode</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="966"/>
-        <location filename="../src/form/efibooteditor.ui" line="969"/>
+        <location filename="../src/form/efibooteditor.ui" line="997"/>
+        <location filename="../src/form/efibooteditor.ui" line="1000"/>
         <source>Defines whether the system is currently operating in Deployed Mode</source>
         <translation>Defines whether the system is currently operating in Deployed Mode</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="972"/>
+        <location filename="../src/form/efibooteditor.ui" line="1003"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system is currently operating in Deployed Mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system is currently operating in Deployed Mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="975"/>
+        <location filename="../src/form/efibooteditor.ui" line="1006"/>
         <source>Deployed Mode</source>
         <translation>Deployed Mode</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="985"/>
-        <location filename="../src/form/efibooteditor.ui" line="988"/>
+        <location filename="../src/form/efibooteditor.ui" line="1016"/>
+        <location filename="../src/form/efibooteditor.ui" line="1019"/>
         <source>Defines whether the platform firmware is operating with Secure Boot enabled</source>
         <translation>Defines whether the platform firmware is operating with Secure Boot enabled</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="991"/>
+        <location filename="../src/form/efibooteditor.ui" line="1022"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the platform firmware is operating with Secure Boot enabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the platform firmware is operating with Secure Boot enabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1004"/>
-        <location filename="../src/form/efibooteditor.ui" line="1007"/>
+        <location filename="../src/form/efibooteditor.ui" line="1035"/>
+        <location filename="../src/form/efibooteditor.ui" line="1038"/>
         <source>Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables</source>
         <translation>Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1010"/>
+        <location filename="../src/form/efibooteditor.ui" line="1041"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1013"/>
+        <location filename="../src/form/efibooteditor.ui" line="1044"/>
         <source>Setup Mode</source>
         <translation>Setup Mode</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1023"/>
-        <location filename="../src/form/efibooteditor.ui" line="1026"/>
+        <location filename="../src/form/efibooteditor.ui" line="1054"/>
+        <location filename="../src/form/efibooteditor.ui" line="1057"/>
         <source>Defines whether the Security Boot Policy Variables have been modified by anyone other than the platform vendor or a holder of the vendor-provided keys</source>
         <translation>Defines whether the Security Boot Policy Variables have been modified by anyone other than the platform vendor or a holder of the vendor-provided keys</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1029"/>
+        <location filename="../src/form/efibooteditor.ui" line="1060"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the Security Boot Policy Variables have been modified by anyone other than the platform vendor or a holder of the vendor-provided keys.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the Security Boot Policy Variables have been modified by anyone other than the platform vendor or a holder of the vendor-provided keys.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1032"/>
+        <location filename="../src/form/efibooteditor.ui" line="1063"/>
         <source>Vendor Keys</source>
         <translation>Vendor Keys</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1043"/>
-        <location filename="../src/form/efibooteditor.ui" line="1046"/>
-        <location filename="../src/form/efibooteditor.ui" line="1055"/>
+        <location filename="../src/form/efibooteditor.ui" line="1074"/>
+        <location filename="../src/form/efibooteditor.ui" line="1077"/>
+        <location filename="../src/form/efibooteditor.ui" line="1086"/>
         <source>Apple settings</source>
         <translation>Apple settings</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1049"/>
-        <location filename="../src/form/efibooteditor.ui" line="1058"/>
+        <location filename="../src/form/efibooteditor.ui" line="1080"/>
+        <location filename="../src/form/efibooteditor.ui" line="1089"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apple settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apple settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1052"/>
+        <location filename="../src/form/efibooteditor.ui" line="1083"/>
         <source>Apple</source>
         <translation>Apple</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1082"/>
-        <location filename="../src/form/efibooteditor.ui" line="1085"/>
-        <location filename="../src/form/efibooteditor.ui" line="1098"/>
-        <location filename="../src/form/efibooteditor.ui" line="1101"/>
+        <location filename="../src/form/efibooteditor.ui" line="1113"/>
+        <location filename="../src/form/efibooteditor.ui" line="1116"/>
+        <location filename="../src/form/efibooteditor.ui" line="1129"/>
+        <location filename="../src/form/efibooteditor.ui" line="1132"/>
         <source>macOS boot arguments</source>
         <translation>macOS boot arguments</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1088"/>
-        <location filename="../src/form/efibooteditor.ui" line="1104"/>
+        <location filename="../src/form/efibooteditor.ui" line="1119"/>
+        <location filename="../src/form/efibooteditor.ui" line="1135"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;macOS boot arguments.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;macOS boot arguments.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1130"/>
-        <location filename="../src/form/efibooteditor.ui" line="1133"/>
+        <location filename="../src/form/efibooteditor.ui" line="1161"/>
+        <location filename="../src/form/efibooteditor.ui" line="1164"/>
         <source>Undo stack</source>
         <translation>Undo stack</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1136"/>
+        <location filename="../src/form/efibooteditor.ui" line="1167"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo stack&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo stack&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1163"/>
+        <location filename="../src/form/efibooteditor.ui" line="1194"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1183"/>
+        <location filename="../src/form/efibooteditor.ui" line="1214"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Help menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Help menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1222"/>
+        <location filename="../src/form/efibooteditor.ui" line="1253"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Exit the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Exit the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1239"/>
+        <location filename="../src/form/efibooteditor.ui" line="1270"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apply changes to the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apply changes to the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1256"/>
+        <location filename="../src/form/efibooteditor.ui" line="1287"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reloads EFI data from the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reloads EFI data from the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1273"/>
+        <location filename="../src/form/efibooteditor.ui" line="1304"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show information about the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show information about the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1287"/>
+        <location filename="../src/form/efibooteditor.ui" line="1318"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Export current entries into JSON.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Export current entries into JSON.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1304"/>
+        <location filename="../src/form/efibooteditor.ui" line="1335"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Import EFI data from JSON dump.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Import EFI data from JSON dump.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1321"/>
+        <location filename="../src/form/efibooteditor.ui" line="1352"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dumps raw EFI data for debugging purposes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dumps raw EFI data for debugging purposes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1329"/>
+        <location filename="../src/form/efibooteditor.ui" line="1360"/>
         <source>&amp;Undo</source>
         <translation>&amp;Undo</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1332"/>
+        <location filename="../src/form/efibooteditor.ui" line="1363"/>
         <source>Undo</source>
         <translation>Undo</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1335"/>
+        <location filename="../src/form/efibooteditor.ui" line="1366"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1338"/>
+        <location filename="../src/form/efibooteditor.ui" line="1369"/>
         <source>Ctrl+Z</source>
         <translation>Ctrl+Z</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1346"/>
+        <location filename="../src/form/efibooteditor.ui" line="1377"/>
         <source>&amp;Redo</source>
         <translation>&amp;Redo</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1349"/>
+        <location filename="../src/form/efibooteditor.ui" line="1380"/>
         <source>Redo</source>
         <translation>Redo</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1352"/>
+        <location filename="../src/form/efibooteditor.ui" line="1383"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Redo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Redo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1355"/>
+        <location filename="../src/form/efibooteditor.ui" line="1386"/>
         <source>Ctrl+Shift+Z</source>
         <translation>Ctrl+Shift+Z</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="562"/>
-        <location filename="../src/form/efibooteditor.ui" line="565"/>
-        <location filename="../src/form/efibooteditor.ui" line="574"/>
+        <location filename="../src/form/efibooteditor.ui" line="593"/>
+        <location filename="../src/form/efibooteditor.ui" line="596"/>
+        <location filename="../src/form/efibooteditor.ui" line="605"/>
         <source>Global settings</source>
         <translation>Global settings</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="610"/>
+        <location filename="../src/form/efibooteditor.ui" line="641"/>
         <source>Timeout</source>
         <translation>Timeout</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1091"/>
+        <location filename="../src/form/efibooteditor.ui" line="1122"/>
         <source>Boot args</source>
         <translation>Boot args</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1157"/>
-        <location filename="../src/form/efibooteditor.ui" line="1160"/>
+        <location filename="../src/form/efibooteditor.ui" line="1188"/>
+        <location filename="../src/form/efibooteditor.ui" line="1191"/>
         <source>File</source>
         <translation>File</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1166"/>
+        <location filename="../src/form/efibooteditor.ui" line="1197"/>
         <source>&amp;File</source>
         <translation>&amp;File</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1177"/>
-        <location filename="../src/form/efibooteditor.ui" line="1180"/>
+        <location filename="../src/form/efibooteditor.ui" line="1208"/>
+        <location filename="../src/form/efibooteditor.ui" line="1211"/>
         <source>Help</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1186"/>
+        <location filename="../src/form/efibooteditor.ui" line="1217"/>
         <source>&amp;Help</source>
         <translation>&amp;Help</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1194"/>
+        <location filename="../src/form/efibooteditor.ui" line="1225"/>
         <source>&amp;Edit</source>
         <translation>&amp;Edit</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1216"/>
+        <location filename="../src/form/efibooteditor.ui" line="1247"/>
         <source>&amp;Quit</source>
         <translation>&amp;Quit</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1219"/>
+        <location filename="../src/form/efibooteditor.ui" line="1250"/>
         <source>Quit</source>
         <translation>Quit</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1225"/>
+        <location filename="../src/form/efibooteditor.ui" line="1256"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1233"/>
+        <location filename="../src/form/efibooteditor.ui" line="1264"/>
         <source>&amp;Save</source>
         <translation>&amp;Save</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1236"/>
+        <location filename="../src/form/efibooteditor.ui" line="1267"/>
         <source>Save</source>
         <translation>Save</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1242"/>
+        <location filename="../src/form/efibooteditor.ui" line="1273"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1250"/>
+        <location filename="../src/form/efibooteditor.ui" line="1281"/>
         <source>&amp;Reload</source>
         <translation>&amp;Reload</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1253"/>
+        <location filename="../src/form/efibooteditor.ui" line="1284"/>
         <source>Reload</source>
         <translation>Reload</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1259"/>
+        <location filename="../src/form/efibooteditor.ui" line="1290"/>
         <source>Ctrl+R</source>
         <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1267"/>
+        <location filename="../src/form/efibooteditor.ui" line="1298"/>
         <source>About &amp;EFI Boot Editor</source>
         <translation>About &amp;EFI Boot Editor</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1270"/>
+        <location filename="../src/form/efibooteditor.ui" line="1301"/>
         <location filename="../src/efibooteditor.cpp" line="248"/>
         <source>About EFI Boot Editor</source>
         <translation>About EFI Boot Editor</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1281"/>
+        <location filename="../src/form/efibooteditor.ui" line="1312"/>
         <source>&amp;Export</source>
         <translation>&amp;Export</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1284"/>
+        <location filename="../src/form/efibooteditor.ui" line="1315"/>
         <source>Export</source>
         <translation>Export</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1290"/>
+        <location filename="../src/form/efibooteditor.ui" line="1321"/>
         <source>Ctrl+E</source>
         <translation>Ctrl+E</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1298"/>
+        <location filename="../src/form/efibooteditor.ui" line="1329"/>
         <source>&amp;Import</source>
         <translation>&amp;Import</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1301"/>
+        <location filename="../src/form/efibooteditor.ui" line="1332"/>
         <source>Import</source>
         <translation>Import</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1307"/>
+        <location filename="../src/form/efibooteditor.ui" line="1338"/>
         <source>Ctrl+I</source>
         <translation>Ctrl+I</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1315"/>
+        <location filename="../src/form/efibooteditor.ui" line="1346"/>
         <source>&amp;Dump raw EFI data</source>
         <translation>&amp;Dump raw EFI data</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1318"/>
+        <location filename="../src/form/efibooteditor.ui" line="1349"/>
         <source>Dump raw EFI data</source>
         <translation>Dump raw EFI data</translation>
     </message>
@@ -1478,12 +1489,12 @@
         <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; for EFI variables access.&lt;/p&gt;&lt;p&gt;Uses Tango Icons as fallback icons.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="321"/>
+        <location filename="../src/efibooteditor.cpp" line="316"/>
         <source>Reorder %1 entries</source>
         <translation>Reorder %1 entries</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="434"/>
+        <location filename="../src/efibooteditor.cpp" line="439"/>
         <source>Are you sure you want to quit?</source>
         <translation>Are you sure you want to quit?</translation>
     </message>

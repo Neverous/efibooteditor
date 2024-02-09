@@ -251,32 +251,32 @@
 <context>
     <name>BootEntryListModel</name>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="50"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="82"/>
         <source>Set Next boot to &quot;%1&quot;</source>
         <translation>设置下次启动为 &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="146"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="178"/>
         <source>Index</source>
         <translation>索引</translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="162"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="194"/>
         <source>Description</source>
         <translation>描述</translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="199"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="231"/>
         <source>Optional data</source>
         <translation>可选数据</translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="215"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="247"/>
         <source>Attributes</source>
         <translation>属性</translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="231"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="263"/>
         <source>Next boot</source>
         <translation>下一个引导</translation>
     </message>
@@ -710,7 +710,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="71"/>
-        <location filename="../src/efibooteditor.cpp" line="393"/>
+        <location filename="../src/efibooteditor.cpp" line="398"/>
         <source>Boot</source>
         <translation>引导</translation>
     </message>
@@ -729,7 +729,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="133"/>
-        <location filename="../src/efibooteditor.cpp" line="396"/>
+        <location filename="../src/efibooteditor.cpp" line="401"/>
         <source>Driver</source>
         <translation>设备</translation>
     </message>
@@ -748,7 +748,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="195"/>
-        <location filename="../src/efibooteditor.cpp" line="399"/>
+        <location filename="../src/efibooteditor.cpp" line="404"/>
         <source>System Preparation</source>
         <translation>系统准备</translation>
     </message>
@@ -767,7 +767,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="257"/>
-        <location filename="../src/efibooteditor.cpp" line="402"/>
+        <location filename="../src/efibooteditor.cpp" line="407"/>
         <source>Platform Recovery</source>
         <translation>平台恢复</translation>
     </message>
@@ -802,614 +802,625 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="377"/>
         <location filename="../src/form/efibooteditor.ui" line="380"/>
-        <source>Remove entry</source>
-        <translation>移除条目</translation>
+        <source>Duplicate entry</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="383"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to remove currently selected entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;单击此按钮可删除当前所选条目。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duplicate entry&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="408"/>
         <location filename="../src/form/efibooteditor.ui" line="411"/>
-        <source>Move entry up</source>
-        <translation>向上移动条目</translation>
+        <source>Remove entry</source>
+        <translation>移除条目</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="414"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;单击此按钮可将当前所选条目向上移动。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to remove currently selected entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;单击此按钮可删除当前所选条目。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="439"/>
         <location filename="../src/form/efibooteditor.ui" line="442"/>
-        <source>Move entry down</source>
-        <translation>向下移动条目</translation>
+        <source>Move entry up</source>
+        <translation>向上移动条目</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="445"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;单击此按钮可将当前所选条目下移。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;单击此按钮可将当前所选条目向上移动。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="470"/>
         <location filename="../src/form/efibooteditor.ui" line="473"/>
+        <source>Move entry down</source>
+        <translation>向下移动条目</translation>
+    </message>
+    <message>
+        <location filename="../src/form/efibooteditor.ui" line="476"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;单击此按钮可将当前所选条目下移。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/form/efibooteditor.ui" line="501"/>
+        <location filename="../src/form/efibooteditor.ui" line="504"/>
         <source>Reorder entries</source>
         <translation>重新排序条目</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="476"/>
+        <location filename="../src/form/efibooteditor.ui" line="507"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to adjust the order of all entries based on their position on the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;单击此处可根据所有条目在列表中的位置调整所有条目的顺序。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="568"/>
-        <location filename="../src/form/efibooteditor.ui" line="577"/>
+        <location filename="../src/form/efibooteditor.ui" line="599"/>
+        <location filename="../src/form/efibooteditor.ui" line="608"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Global settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;全局设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="571"/>
+        <location filename="../src/form/efibooteditor.ui" line="602"/>
         <source>Global</source>
         <translation>全局</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="601"/>
-        <location filename="../src/form/efibooteditor.ui" line="604"/>
-        <location filename="../src/form/efibooteditor.ui" line="623"/>
-        <location filename="../src/form/efibooteditor.ui" line="626"/>
+        <location filename="../src/form/efibooteditor.ui" line="632"/>
+        <location filename="../src/form/efibooteditor.ui" line="635"/>
+        <location filename="../src/form/efibooteditor.ui" line="654"/>
+        <location filename="../src/form/efibooteditor.ui" line="657"/>
         <source>Boot manager timeout</source>
         <translation>引导管理器超时</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="607"/>
-        <location filename="../src/form/efibooteditor.ui" line="629"/>
+        <location filename="../src/form/efibooteditor.ui" line="638"/>
+        <location filename="../src/form/efibooteditor.ui" line="660"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot manager timeout.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;引导管理器超时。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="632"/>
+        <location filename="../src/form/efibooteditor.ui" line="663"/>
         <source>s</source>
         <translation>s</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="643"/>
-        <location filename="../src/form/efibooteditor.ui" line="646"/>
-        <location filename="../src/form/efibooteditor.ui" line="655"/>
+        <location filename="../src/form/efibooteditor.ui" line="674"/>
+        <location filename="../src/form/efibooteditor.ui" line="677"/>
+        <location filename="../src/form/efibooteditor.ui" line="686"/>
         <source>Firmware details</source>
         <translation>固件详细信息</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="649"/>
-        <location filename="../src/form/efibooteditor.ui" line="658"/>
+        <location filename="../src/form/efibooteditor.ui" line="680"/>
+        <location filename="../src/form/efibooteditor.ui" line="689"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;固件详细信息。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="652"/>
+        <location filename="../src/form/efibooteditor.ui" line="683"/>
         <source>Firmware</source>
         <translation>固件</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="688"/>
-        <location filename="../src/form/efibooteditor.ui" line="691"/>
+        <location filename="../src/form/efibooteditor.ui" line="719"/>
+        <location filename="../src/form/efibooteditor.ui" line="722"/>
         <source>Available firmware features</source>
         <translation>可用的固件功能</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="694"/>
+        <location filename="../src/form/efibooteditor.ui" line="725"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware features.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;可用的固件功能。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="697"/>
+        <location filename="../src/form/efibooteditor.ui" line="728"/>
         <source>Features</source>
         <translation>功能</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="706"/>
-        <location filename="../src/form/efibooteditor.ui" line="709"/>
+        <location filename="../src/form/efibooteditor.ui" line="737"/>
+        <location filename="../src/form/efibooteditor.ui" line="740"/>
         <source>Platform supports reporting of deferred capsule processing by creation of result variable</source>
         <translation>平台支持通过创建结果变量来报告延迟封装处理</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="712"/>
+        <location filename="../src/form/efibooteditor.ui" line="743"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports reporting of deferred capsule processing by creation of result variable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;平台支持通过创建结果变量来报告延迟封装处理。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="715"/>
+        <location filename="../src/form/efibooteditor.ui" line="746"/>
         <source>Capsule Reporting</source>
         <translation>封装报告</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="725"/>
-        <location filename="../src/form/efibooteditor.ui" line="728"/>
+        <location filename="../src/form/efibooteditor.ui" line="756"/>
+        <location filename="../src/form/efibooteditor.ui" line="759"/>
         <source>Firmware supports timestamp based revocation</source>
         <translation>固件支持基于时间戳的撤销</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="731"/>
+        <location filename="../src/form/efibooteditor.ui" line="762"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware supports timestamp based revocation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;固件支持基于时间戳的撤销。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="734"/>
+        <location filename="../src/form/efibooteditor.ui" line="765"/>
         <source>Timestamp based revocation</source>
         <translation>基于时间戳的撤销</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="744"/>
-        <location filename="../src/form/efibooteditor.ui" line="747"/>
+        <location filename="../src/form/efibooteditor.ui" line="775"/>
+        <location filename="../src/form/efibooteditor.ui" line="778"/>
         <source>Platform supports processing of Firmware Management Protocol update capsule</source>
         <translation>平台支持固件管理协议更新封装的处理</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="750"/>
+        <location filename="../src/form/efibooteditor.ui" line="781"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports processing of Firmware Management Protocol update capsule.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;平台支持固件管理协议更新封装的处理。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="753"/>
+        <location filename="../src/form/efibooteditor.ui" line="784"/>
         <source>FMP Capsule</source>
         <translation>FMP 封装</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="763"/>
-        <location filename="../src/form/efibooteditor.ui" line="766"/>
+        <location filename="../src/form/efibooteditor.ui" line="794"/>
+        <location filename="../src/form/efibooteditor.ui" line="797"/>
         <source>Platform supports processing of file capsules</source>
         <translation>平台支持文件封装处理</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="769"/>
+        <location filename="../src/form/efibooteditor.ui" line="800"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports processing of file capsules.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;平台支持文件封装的处理。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="772"/>
+        <location filename="../src/form/efibooteditor.ui" line="803"/>
         <source>File Capsule</source>
         <translation>文件封装</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="797"/>
-        <location filename="../src/form/efibooteditor.ui" line="800"/>
+        <location filename="../src/form/efibooteditor.ui" line="828"/>
+        <location filename="../src/form/efibooteditor.ui" line="831"/>
         <source>Available firmware actions</source>
         <translation>可用的固件操作</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="803"/>
+        <location filename="../src/form/efibooteditor.ui" line="834"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware actions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;可用的固件操作。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="806"/>
+        <location filename="../src/form/efibooteditor.ui" line="837"/>
         <source>Actions</source>
         <translation>操作</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="815"/>
-        <location filename="../src/form/efibooteditor.ui" line="818"/>
+        <location filename="../src/form/efibooteditor.ui" line="846"/>
+        <location filename="../src/form/efibooteditor.ui" line="849"/>
         <source>Stop at a firmware user interface on the next boot</source>
         <translation>下次引导时停止在固件用户界面</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="821"/>
+        <location filename="../src/form/efibooteditor.ui" line="852"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Stop at a firmware user interface on the next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;下次引导时停止在固件用户界面。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="824"/>
+        <location filename="../src/form/efibooteditor.ui" line="855"/>
         <source>Boot to firmware UI</source>
         <translation>引导到固件 UI</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="831"/>
-        <location filename="../src/form/efibooteditor.ui" line="834"/>
+        <location filename="../src/form/efibooteditor.ui" line="862"/>
+        <location filename="../src/form/efibooteditor.ui" line="865"/>
         <source>Trigger collecting current configuration and reporting the refreshed data to EFI System Configuration Table on next boot</source>
         <translation>触发收集当前配置并在下次启动时将刷新的数据报告给 EFI 系统配置表</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="837"/>
+        <location filename="../src/form/efibooteditor.ui" line="868"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Trigger collecting current configuration and reporting the refreshed data to EFI System Configuration Table on next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;触发收集当前配置并在下次启动时将刷新的数据报告给 EFI 系统配置表。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="840"/>
+        <location filename="../src/form/efibooteditor.ui" line="871"/>
         <source>Collect current config</source>
         <translation>收集当前配置</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="847"/>
-        <location filename="../src/form/efibooteditor.ui" line="850"/>
+        <location filename="../src/form/efibooteditor.ui" line="878"/>
+        <location filename="../src/form/efibooteditor.ui" line="881"/>
         <source>Indicate that Platform-defined recovery should commence upon reboot</source>
         <translation>指示平台定义的恢复应在重新引导时开始</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="853"/>
+        <location filename="../src/form/efibooteditor.ui" line="884"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that Platform-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;指示平台定义的恢复应在重新引导时开始。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="856"/>
+        <location filename="../src/form/efibooteditor.ui" line="887"/>
         <source>Start Platform recovery</source>
         <translation>启动平台恢复</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="863"/>
-        <location filename="../src/form/efibooteditor.ui" line="866"/>
+        <location filename="../src/form/efibooteditor.ui" line="894"/>
+        <location filename="../src/form/efibooteditor.ui" line="897"/>
         <source>Indicate that OS-defined recovery should commence upon reboot</source>
         <translation>指示操作系统定义的恢复应该在重新引导时开始</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="869"/>
+        <location filename="../src/form/efibooteditor.ui" line="900"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that OS-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;指示操作系统定义的恢复应该在重新引导时开始。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="872"/>
+        <location filename="../src/form/efibooteditor.ui" line="903"/>
         <source>Start OS recovery</source>
         <translation>开始操作系统恢复</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="901"/>
-        <location filename="../src/form/efibooteditor.ui" line="904"/>
-        <location filename="../src/form/efibooteditor.ui" line="913"/>
+        <location filename="../src/form/efibooteditor.ui" line="932"/>
+        <location filename="../src/form/efibooteditor.ui" line="935"/>
+        <location filename="../src/form/efibooteditor.ui" line="944"/>
         <source>Secure boot settings</source>
         <translation>安全引导设置</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="907"/>
-        <location filename="../src/form/efibooteditor.ui" line="916"/>
+        <location filename="../src/form/efibooteditor.ui" line="938"/>
+        <location filename="../src/form/efibooteditor.ui" line="947"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Secure boot settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;安全引导设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="910"/>
-        <location filename="../src/form/efibooteditor.ui" line="994"/>
+        <location filename="../src/form/efibooteditor.ui" line="941"/>
+        <location filename="../src/form/efibooteditor.ui" line="1025"/>
         <source>Secure Boot</source>
         <translation>安全引导</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="947"/>
-        <location filename="../src/form/efibooteditor.ui" line="950"/>
+        <location filename="../src/form/efibooteditor.ui" line="978"/>
+        <location filename="../src/form/efibooteditor.ui" line="981"/>
         <source>Defines whether the system is currently operating in Audit Mode</source>
         <translation>定义系统当前是否在审核模式下运行</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="953"/>
+        <location filename="../src/form/efibooteditor.ui" line="984"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system is currently operating in Audit Mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;定义系统当前是否在审核模式下运行。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="956"/>
+        <location filename="../src/form/efibooteditor.ui" line="987"/>
         <source>Audit Mode</source>
         <translation>审核模式</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="966"/>
-        <location filename="../src/form/efibooteditor.ui" line="969"/>
+        <location filename="../src/form/efibooteditor.ui" line="997"/>
+        <location filename="../src/form/efibooteditor.ui" line="1000"/>
         <source>Defines whether the system is currently operating in Deployed Mode</source>
         <translation>定义系统当前是否在部署模式下运行</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="972"/>
+        <location filename="../src/form/efibooteditor.ui" line="1003"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system is currently operating in Deployed Mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;定义系统当前是否在部署模式下运行。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="975"/>
+        <location filename="../src/form/efibooteditor.ui" line="1006"/>
         <source>Deployed Mode</source>
         <translation>部署模式</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="985"/>
-        <location filename="../src/form/efibooteditor.ui" line="988"/>
+        <location filename="../src/form/efibooteditor.ui" line="1016"/>
+        <location filename="../src/form/efibooteditor.ui" line="1019"/>
         <source>Defines whether the platform firmware is operating with Secure Boot enabled</source>
         <translation>定义平台固件是否在启用安全引导的情况下运行</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="991"/>
+        <location filename="../src/form/efibooteditor.ui" line="1022"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the platform firmware is operating with Secure Boot enabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;定义平台固件是否在启用安全引导的情况下运行。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1004"/>
-        <location filename="../src/form/efibooteditor.ui" line="1007"/>
+        <location filename="../src/form/efibooteditor.ui" line="1035"/>
+        <location filename="../src/form/efibooteditor.ui" line="1038"/>
         <source>Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables</source>
         <translation>定义系统是否应要求对安全引导策略变量的请求进行身份验证</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1010"/>
+        <location filename="../src/form/efibooteditor.ui" line="1041"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;定义系统是否应要求对安全引导策略变量的请求进行身份验证。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1013"/>
+        <location filename="../src/form/efibooteditor.ui" line="1044"/>
         <source>Setup Mode</source>
         <translation>设置模式</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1023"/>
-        <location filename="../src/form/efibooteditor.ui" line="1026"/>
+        <location filename="../src/form/efibooteditor.ui" line="1054"/>
+        <location filename="../src/form/efibooteditor.ui" line="1057"/>
         <source>Defines whether the Security Boot Policy Variables have been modified by anyone other than the platform vendor or a holder of the vendor-provided keys</source>
         <translation>定义安全引导策略变量是否已被平台供应商或供应商提供的密钥的持有者以外的任何人修改</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1029"/>
+        <location filename="../src/form/efibooteditor.ui" line="1060"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the Security Boot Policy Variables have been modified by anyone other than the platform vendor or a holder of the vendor-provided keys.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;定义安全引导策略变量是否已被平台供应商或供应商提供的密钥的持有者以外的任何人修改。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1032"/>
+        <location filename="../src/form/efibooteditor.ui" line="1063"/>
         <source>Vendor Keys</source>
         <translation>供应商密钥</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1043"/>
-        <location filename="../src/form/efibooteditor.ui" line="1046"/>
-        <location filename="../src/form/efibooteditor.ui" line="1055"/>
+        <location filename="../src/form/efibooteditor.ui" line="1074"/>
+        <location filename="../src/form/efibooteditor.ui" line="1077"/>
+        <location filename="../src/form/efibooteditor.ui" line="1086"/>
         <source>Apple settings</source>
         <translation>Apple 设置</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1049"/>
-        <location filename="../src/form/efibooteditor.ui" line="1058"/>
+        <location filename="../src/form/efibooteditor.ui" line="1080"/>
+        <location filename="../src/form/efibooteditor.ui" line="1089"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apple settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apple 设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1052"/>
+        <location filename="../src/form/efibooteditor.ui" line="1083"/>
         <source>Apple</source>
         <translation>Apple</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1082"/>
-        <location filename="../src/form/efibooteditor.ui" line="1085"/>
-        <location filename="../src/form/efibooteditor.ui" line="1098"/>
-        <location filename="../src/form/efibooteditor.ui" line="1101"/>
+        <location filename="../src/form/efibooteditor.ui" line="1113"/>
+        <location filename="../src/form/efibooteditor.ui" line="1116"/>
+        <location filename="../src/form/efibooteditor.ui" line="1129"/>
+        <location filename="../src/form/efibooteditor.ui" line="1132"/>
         <source>macOS boot arguments</source>
         <translation>macOS 引导参数</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1088"/>
-        <location filename="../src/form/efibooteditor.ui" line="1104"/>
+        <location filename="../src/form/efibooteditor.ui" line="1119"/>
+        <location filename="../src/form/efibooteditor.ui" line="1135"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;macOS boot arguments.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;macOS 引导参数。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1130"/>
-        <location filename="../src/form/efibooteditor.ui" line="1133"/>
+        <location filename="../src/form/efibooteditor.ui" line="1161"/>
+        <location filename="../src/form/efibooteditor.ui" line="1164"/>
         <source>Undo stack</source>
         <translation>撤消堆栈</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1136"/>
+        <location filename="../src/form/efibooteditor.ui" line="1167"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo stack&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;撤消堆栈&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1163"/>
+        <location filename="../src/form/efibooteditor.ui" line="1194"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;文件菜单。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1183"/>
+        <location filename="../src/form/efibooteditor.ui" line="1214"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Help menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;帮助菜单。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1222"/>
+        <location filename="../src/form/efibooteditor.ui" line="1253"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Exit the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;退出程序。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1239"/>
+        <location filename="../src/form/efibooteditor.ui" line="1270"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apply changes to the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;对系统应用更改。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1256"/>
+        <location filename="../src/form/efibooteditor.ui" line="1287"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reloads EFI data from the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;从系统重新加载 EFI 数据。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1273"/>
+        <location filename="../src/form/efibooteditor.ui" line="1304"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show information about the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;显示有关该程序的信息。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1287"/>
+        <location filename="../src/form/efibooteditor.ui" line="1318"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Export current entries into JSON.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将当前条目导出为 JSON。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1304"/>
+        <location filename="../src/form/efibooteditor.ui" line="1335"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Import EFI data from JSON dump.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;从 JSON 转储导入 EFI 数据。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1321"/>
+        <location filename="../src/form/efibooteditor.ui" line="1352"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dumps raw EFI data for debugging purposes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;转储原始 EFI 数据以用于调试目的。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1329"/>
+        <location filename="../src/form/efibooteditor.ui" line="1360"/>
         <source>&amp;Undo</source>
         <translation>撤消(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1332"/>
+        <location filename="../src/form/efibooteditor.ui" line="1363"/>
         <source>Undo</source>
         <translation>撤消</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1335"/>
+        <location filename="../src/form/efibooteditor.ui" line="1366"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;撤消&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1338"/>
+        <location filename="../src/form/efibooteditor.ui" line="1369"/>
         <source>Ctrl+Z</source>
         <translation>Ctrl+Z</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1346"/>
+        <location filename="../src/form/efibooteditor.ui" line="1377"/>
         <source>&amp;Redo</source>
         <translation>重做(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1349"/>
+        <location filename="../src/form/efibooteditor.ui" line="1380"/>
         <source>Redo</source>
         <translation>重做</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1352"/>
+        <location filename="../src/form/efibooteditor.ui" line="1383"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Redo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;重做&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1355"/>
+        <location filename="../src/form/efibooteditor.ui" line="1386"/>
         <source>Ctrl+Shift+Z</source>
         <translation>Ctrl+Shift+Z</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="562"/>
-        <location filename="../src/form/efibooteditor.ui" line="565"/>
-        <location filename="../src/form/efibooteditor.ui" line="574"/>
+        <location filename="../src/form/efibooteditor.ui" line="593"/>
+        <location filename="../src/form/efibooteditor.ui" line="596"/>
+        <location filename="../src/form/efibooteditor.ui" line="605"/>
         <source>Global settings</source>
         <translation>全局设置</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="610"/>
+        <location filename="../src/form/efibooteditor.ui" line="641"/>
         <source>Timeout</source>
         <translation>超时</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1091"/>
+        <location filename="../src/form/efibooteditor.ui" line="1122"/>
         <source>Boot args</source>
         <translation>引导参数</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1157"/>
-        <location filename="../src/form/efibooteditor.ui" line="1160"/>
+        <location filename="../src/form/efibooteditor.ui" line="1188"/>
+        <location filename="../src/form/efibooteditor.ui" line="1191"/>
         <source>File</source>
         <translation>文件</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1166"/>
+        <location filename="../src/form/efibooteditor.ui" line="1197"/>
         <source>&amp;File</source>
         <translation>文件(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1177"/>
-        <location filename="../src/form/efibooteditor.ui" line="1180"/>
+        <location filename="../src/form/efibooteditor.ui" line="1208"/>
+        <location filename="../src/form/efibooteditor.ui" line="1211"/>
         <source>Help</source>
         <translation>帮助</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1186"/>
+        <location filename="../src/form/efibooteditor.ui" line="1217"/>
         <source>&amp;Help</source>
         <translation>帮助(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1194"/>
+        <location filename="../src/form/efibooteditor.ui" line="1225"/>
         <source>&amp;Edit</source>
         <translation>编辑 (&amp;E)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1216"/>
+        <location filename="../src/form/efibooteditor.ui" line="1247"/>
         <source>&amp;Quit</source>
         <translation>退出(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1219"/>
+        <location filename="../src/form/efibooteditor.ui" line="1250"/>
         <source>Quit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1225"/>
+        <location filename="../src/form/efibooteditor.ui" line="1256"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1233"/>
+        <location filename="../src/form/efibooteditor.ui" line="1264"/>
         <source>&amp;Save</source>
         <translation>保存(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1236"/>
+        <location filename="../src/form/efibooteditor.ui" line="1267"/>
         <source>Save</source>
         <translation>保存</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1242"/>
+        <location filename="../src/form/efibooteditor.ui" line="1273"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1250"/>
+        <location filename="../src/form/efibooteditor.ui" line="1281"/>
         <source>&amp;Reload</source>
         <translation>重新加载(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1253"/>
+        <location filename="../src/form/efibooteditor.ui" line="1284"/>
         <source>Reload</source>
         <translation>重新加载</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1259"/>
+        <location filename="../src/form/efibooteditor.ui" line="1290"/>
         <source>Ctrl+R</source>
         <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1267"/>
+        <location filename="../src/form/efibooteditor.ui" line="1298"/>
         <source>About &amp;EFI Boot Editor</source>
         <translation>关于 EFI Boot Editor(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1270"/>
+        <location filename="../src/form/efibooteditor.ui" line="1301"/>
         <location filename="../src/efibooteditor.cpp" line="248"/>
         <source>About EFI Boot Editor</source>
         <translation>关于 EFI Boot Editor</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1281"/>
+        <location filename="../src/form/efibooteditor.ui" line="1312"/>
         <source>&amp;Export</source>
         <translation>导出(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1284"/>
+        <location filename="../src/form/efibooteditor.ui" line="1315"/>
         <source>Export</source>
         <translation>导出</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1290"/>
+        <location filename="../src/form/efibooteditor.ui" line="1321"/>
         <source>Ctrl+E</source>
         <translation>Ctrl+E</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1298"/>
+        <location filename="../src/form/efibooteditor.ui" line="1329"/>
         <source>&amp;Import</source>
         <translation>导入(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1301"/>
+        <location filename="../src/form/efibooteditor.ui" line="1332"/>
         <source>Import</source>
         <translation>导入</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1307"/>
+        <location filename="../src/form/efibooteditor.ui" line="1338"/>
         <source>Ctrl+I</source>
         <translation>Ctrl+I</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1315"/>
+        <location filename="../src/form/efibooteditor.ui" line="1346"/>
         <source>&amp;Dump raw EFI data</source>
         <translation>转储原始 EFI 数据(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1318"/>
+        <location filename="../src/form/efibooteditor.ui" line="1349"/>
         <source>Dump raw EFI data</source>
         <translation>转储原始 EFI 数据</translation>
     </message>
@@ -1478,12 +1489,12 @@
         <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;网站&lt;/a&gt;&lt;/p&gt;&lt;p&gt;该程序按原样提供，不提供任何形式的保证，包括设计、适销性和特定用途适用性的保证 .&lt;/p&gt;&lt;p&gt;许可证：&lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL 版本 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;在 Linux 上使用 &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; 用于 EFI 变量访问。&lt;/p&gt;&lt;p&gt;使用 Tango 图标作为后备图标。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="321"/>
+        <location filename="../src/efibooteditor.cpp" line="316"/>
         <source>Reorder %1 entries</source>
         <translation>重新排序 %1 条目</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="434"/>
+        <location filename="../src/efibooteditor.cpp" line="439"/>
         <source>Are you sure you want to quit?</source>
         <translation>你确定你要退出吗？</translation>
     </message>

@@ -30,6 +30,7 @@ signals:
 
 public slots:
     void insertRow();
+    void duplicateRow();
     void removeCurrentRow();
     void moveCurrentRowUp();
     void moveCurrentRowDown();

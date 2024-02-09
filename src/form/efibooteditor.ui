@@ -318,7 +318,7 @@
        </item>
        <item>
         <widget class="QWidget" name="entries_actions" native="true">
-         <layout class="QVBoxLayout" name="entries_actions_layout" stretch="0,0,0,0,0,1">
+         <layout class="QVBoxLayout" name="entries_actions_layout" stretch="0,0,0,0,0,0,1">
           <property name="spacing">
            <number>6</number>
           </property>
@@ -356,6 +356,37 @@
             </property>
             <property name="icon">
              <iconset theme="add"/>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="entry_duplcate">
+            <property name="maximumSize">
+             <size>
+              <width>48</width>
+              <height>48</height>
+             </size>
+            </property>
+            <property name="toolTip">
+             <string>Duplicate entry</string>
+            </property>
+            <property name="statusTip">
+             <string>Duplicate entry</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duplicate entry&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset theme="edit-copy"/>
             </property>
             <property name="iconSize">
              <size>
@@ -1758,14 +1789,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>undo_view</sender>
-   <signal>pressed(QModelIndex)</signal>
+   <sender>entry_duplcate</sender>
+   <signal>clicked()</signal>
    <receiver>EFIBootEditor</receiver>
-   <slot>undoViewChanged(QModelIndex)</slot>
+   <slot>duplicateBootEntry()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>399</x>
-     <y>471</y>
+     <x>329</x>
+     <y>76</y>
     </hint>
     <hint type="destinationlabel">
      <x>399</x>
@@ -1796,6 +1827,6 @@
   <slot>setOsIndication(bool)</slot>
   <slot>undo()</slot>
   <slot>redo()</slot>
-  <slot>undoViewChanged(QModelIndex)</slot>
+  <slot>duplicateBootEntry()</slot>
  </slots>
 </ui>

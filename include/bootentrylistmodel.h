@@ -59,6 +59,7 @@ public:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole) override;
     void setNextBootEntry(const QModelIndex &index, bool value);
 
     void setEntryFilePath(const QModelIndex &index, int row, const FilePath::ANY &file_path);

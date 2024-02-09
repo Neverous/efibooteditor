@@ -251,32 +251,32 @@
 <context>
     <name>BootEntryListModel</name>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="50"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="82"/>
         <source>Set Next boot to &quot;%1&quot;</source>
         <translation>다음 부팅을 &quot;%1&quot;로 설정</translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="146"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="178"/>
         <source>Index</source>
         <translation>인덱스</translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="162"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="194"/>
         <source>Description</source>
         <translation>설명</translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="199"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="231"/>
         <source>Optional data</source>
         <translation>선택사항 데이터</translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="215"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="247"/>
         <source>Attributes</source>
         <translation>속성</translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="231"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="263"/>
         <source>Next boot</source>
         <translation>다음 부팅</translation>
     </message>
@@ -710,7 +710,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="71"/>
-        <location filename="../src/efibooteditor.cpp" line="393"/>
+        <location filename="../src/efibooteditor.cpp" line="398"/>
         <source>Boot</source>
         <translation>부팅</translation>
     </message>
@@ -729,7 +729,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="133"/>
-        <location filename="../src/efibooteditor.cpp" line="396"/>
+        <location filename="../src/efibooteditor.cpp" line="401"/>
         <source>Driver</source>
         <translation>드라이버</translation>
     </message>
@@ -748,7 +748,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="195"/>
-        <location filename="../src/efibooteditor.cpp" line="399"/>
+        <location filename="../src/efibooteditor.cpp" line="404"/>
         <source>System Preparation</source>
         <translation>시스템 준비</translation>
     </message>
@@ -767,7 +767,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="257"/>
-        <location filename="../src/efibooteditor.cpp" line="402"/>
+        <location filename="../src/efibooteditor.cpp" line="407"/>
         <source>Platform Recovery</source>
         <translation>플랫폼 복구</translation>
     </message>
@@ -802,614 +802,625 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="377"/>
         <location filename="../src/form/efibooteditor.ui" line="380"/>
-        <source>Remove entry</source>
-        <translation>항목 제거</translation>
+        <source>Duplicate entry</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="383"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to remove currently selected entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;현재 선택한 항목을 제거하려면 이 옵션을 클릭합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duplicate entry&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="408"/>
         <location filename="../src/form/efibooteditor.ui" line="411"/>
-        <source>Move entry up</source>
-        <translation>항목을 위로 이동</translation>
+        <source>Remove entry</source>
+        <translation>항목 제거</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="414"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;현재 선택한 항목을 위로 이동하려면 이 옵션을 클릭합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to remove currently selected entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;현재 선택한 항목을 제거하려면 이 옵션을 클릭합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="439"/>
         <location filename="../src/form/efibooteditor.ui" line="442"/>
-        <source>Move entry down</source>
-        <translation>항목을 아래로 이동</translation>
+        <source>Move entry up</source>
+        <translation>항목을 위로 이동</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="445"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;현재 선택한 항목을 아래로 이동하려면 이 옵션을 클릭합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;현재 선택한 항목을 위로 이동하려면 이 옵션을 클릭합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="470"/>
         <location filename="../src/form/efibooteditor.ui" line="473"/>
+        <source>Move entry down</source>
+        <translation>항목을 아래로 이동</translation>
+    </message>
+    <message>
+        <location filename="../src/form/efibooteditor.ui" line="476"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;현재 선택한 항목을 아래로 이동하려면 이 옵션을 클릭합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/form/efibooteditor.ui" line="501"/>
+        <location filename="../src/form/efibooteditor.ui" line="504"/>
         <source>Reorder entries</source>
         <translation>항목 순서를 다시 정렬</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="476"/>
+        <location filename="../src/form/efibooteditor.ui" line="507"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to adjust the order of all entries based on their position on the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;목록에서 모든 항목의 위치를 기준으로 모든 항목의 순서를 조정하려면 여기를 클릭하십시오.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="568"/>
-        <location filename="../src/form/efibooteditor.ui" line="577"/>
+        <location filename="../src/form/efibooteditor.ui" line="599"/>
+        <location filename="../src/form/efibooteditor.ui" line="608"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Global settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;전역 설정.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="571"/>
+        <location filename="../src/form/efibooteditor.ui" line="602"/>
         <source>Global</source>
         <translation>전역 설정</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="601"/>
-        <location filename="../src/form/efibooteditor.ui" line="604"/>
-        <location filename="../src/form/efibooteditor.ui" line="623"/>
-        <location filename="../src/form/efibooteditor.ui" line="626"/>
+        <location filename="../src/form/efibooteditor.ui" line="632"/>
+        <location filename="../src/form/efibooteditor.ui" line="635"/>
+        <location filename="../src/form/efibooteditor.ui" line="654"/>
+        <location filename="../src/form/efibooteditor.ui" line="657"/>
         <source>Boot manager timeout</source>
         <translation>부팅 관리자 시간 초과</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="607"/>
-        <location filename="../src/form/efibooteditor.ui" line="629"/>
+        <location filename="../src/form/efibooteditor.ui" line="638"/>
+        <location filename="../src/form/efibooteditor.ui" line="660"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot manager timeout.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;부팅 관리자 시간 초과.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="632"/>
+        <location filename="../src/form/efibooteditor.ui" line="663"/>
         <source>s</source>
         <translation>초</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="643"/>
-        <location filename="../src/form/efibooteditor.ui" line="646"/>
-        <location filename="../src/form/efibooteditor.ui" line="655"/>
+        <location filename="../src/form/efibooteditor.ui" line="674"/>
+        <location filename="../src/form/efibooteditor.ui" line="677"/>
+        <location filename="../src/form/efibooteditor.ui" line="686"/>
         <source>Firmware details</source>
         <translation>펌웨어 상세정보</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="649"/>
-        <location filename="../src/form/efibooteditor.ui" line="658"/>
+        <location filename="../src/form/efibooteditor.ui" line="680"/>
+        <location filename="../src/form/efibooteditor.ui" line="689"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;펌웨어 상세정보.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="652"/>
+        <location filename="../src/form/efibooteditor.ui" line="683"/>
         <source>Firmware</source>
         <translation>펌웨어</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="688"/>
-        <location filename="../src/form/efibooteditor.ui" line="691"/>
+        <location filename="../src/form/efibooteditor.ui" line="719"/>
+        <location filename="../src/form/efibooteditor.ui" line="722"/>
         <source>Available firmware features</source>
         <translation>사용 가능한 펌웨어 기능</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="694"/>
+        <location filename="../src/form/efibooteditor.ui" line="725"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware features.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;사용 가능한 펌웨어 기능.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="697"/>
+        <location filename="../src/form/efibooteditor.ui" line="728"/>
         <source>Features</source>
         <translation>기능</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="706"/>
-        <location filename="../src/form/efibooteditor.ui" line="709"/>
+        <location filename="../src/form/efibooteditor.ui" line="737"/>
+        <location filename="../src/form/efibooteditor.ui" line="740"/>
         <source>Platform supports reporting of deferred capsule processing by creation of result variable</source>
         <translation>플랫폼은 결과 변수를 생성하여 지연 캡슐 처리 보고를 지원합니다</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="712"/>
+        <location filename="../src/form/efibooteditor.ui" line="743"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports reporting of deferred capsule processing by creation of result variable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;플랫폼은 결과 변수를 생성하여 지연 캡슐 처리 보고를 지원합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="715"/>
+        <location filename="../src/form/efibooteditor.ui" line="746"/>
         <source>Capsule Reporting</source>
         <translation>캡슐 보고</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="725"/>
-        <location filename="../src/form/efibooteditor.ui" line="728"/>
+        <location filename="../src/form/efibooteditor.ui" line="756"/>
+        <location filename="../src/form/efibooteditor.ui" line="759"/>
         <source>Firmware supports timestamp based revocation</source>
         <translation>펌웨어는 타임스탬프 기반 취소를 지원합니다</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="731"/>
+        <location filename="../src/form/efibooteditor.ui" line="762"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware supports timestamp based revocation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;펌웨어는 타임스탬프 기반 취소를 지원합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="734"/>
+        <location filename="../src/form/efibooteditor.ui" line="765"/>
         <source>Timestamp based revocation</source>
         <translation>타임스탬프 기반 취소</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="744"/>
-        <location filename="../src/form/efibooteditor.ui" line="747"/>
+        <location filename="../src/form/efibooteditor.ui" line="775"/>
+        <location filename="../src/form/efibooteditor.ui" line="778"/>
         <source>Platform supports processing of Firmware Management Protocol update capsule</source>
         <translation>플랫폼에서 펌웨어 관리 프로토콜 업데이트 캡슐 처리 지원</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="750"/>
+        <location filename="../src/form/efibooteditor.ui" line="781"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports processing of Firmware Management Protocol update capsule.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;플랫폼은 펌웨어 관리 프로토콜 업데이트 캡슐 처리를 지원합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="753"/>
+        <location filename="../src/form/efibooteditor.ui" line="784"/>
         <source>FMP Capsule</source>
         <translation>FMP 캡슐</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="763"/>
-        <location filename="../src/form/efibooteditor.ui" line="766"/>
+        <location filename="../src/form/efibooteditor.ui" line="794"/>
+        <location filename="../src/form/efibooteditor.ui" line="797"/>
         <source>Platform supports processing of file capsules</source>
         <translation>플랫폼에서 파일 캡슐 처리 지원</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="769"/>
+        <location filename="../src/form/efibooteditor.ui" line="800"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports processing of file capsules.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;플랫폼은 파일캡슐 처리를 지원합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="772"/>
+        <location filename="../src/form/efibooteditor.ui" line="803"/>
         <source>File Capsule</source>
         <translation>파일 캡슐</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="797"/>
-        <location filename="../src/form/efibooteditor.ui" line="800"/>
+        <location filename="../src/form/efibooteditor.ui" line="828"/>
+        <location filename="../src/form/efibooteditor.ui" line="831"/>
         <source>Available firmware actions</source>
         <translation>사용 가능한 펌웨어 작업</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="803"/>
+        <location filename="../src/form/efibooteditor.ui" line="834"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware actions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;사용 가능한 펌웨어 작업.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="806"/>
+        <location filename="../src/form/efibooteditor.ui" line="837"/>
         <source>Actions</source>
         <translation>작업</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="815"/>
-        <location filename="../src/form/efibooteditor.ui" line="818"/>
+        <location filename="../src/form/efibooteditor.ui" line="846"/>
+        <location filename="../src/form/efibooteditor.ui" line="849"/>
         <source>Stop at a firmware user interface on the next boot</source>
         <translation>다음 부팅 시 펌웨어 사용자 인터페이스에서 중지</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="821"/>
+        <location filename="../src/form/efibooteditor.ui" line="852"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Stop at a firmware user interface on the next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;다음 부팅 시 펌웨어 사용자 인터페이스에서 중지합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="824"/>
+        <location filename="../src/form/efibooteditor.ui" line="855"/>
         <source>Boot to firmware UI</source>
         <translation>펌웨어 UI로 부팅</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="831"/>
-        <location filename="../src/form/efibooteditor.ui" line="834"/>
+        <location filename="../src/form/efibooteditor.ui" line="862"/>
+        <location filename="../src/form/efibooteditor.ui" line="865"/>
         <source>Trigger collecting current configuration and reporting the refreshed data to EFI System Configuration Table on next boot</source>
         <translation>현재 구성 수집을 트리거하고 다음 부팅 시 새로 고침된 데이터를 EFI 시스템 구성 테이블에 보고합니다</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="837"/>
+        <location filename="../src/form/efibooteditor.ui" line="868"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Trigger collecting current configuration and reporting the refreshed data to EFI System Configuration Table on next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;현재 구성 수집을 트리거하고 다음 부팅 시 새로 고침된 데이터를 EFI 시스템 구성 테이블에 보고합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="840"/>
+        <location filename="../src/form/efibooteditor.ui" line="871"/>
         <source>Collect current config</source>
         <translation>현재 구성 수집</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="847"/>
-        <location filename="../src/form/efibooteditor.ui" line="850"/>
+        <location filename="../src/form/efibooteditor.ui" line="878"/>
+        <location filename="../src/form/efibooteditor.ui" line="881"/>
         <source>Indicate that Platform-defined recovery should commence upon reboot</source>
         <translation>재부팅 시 플랫폼 정의 복구를 시작해야 함을 나타냅니다</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="853"/>
+        <location filename="../src/form/efibooteditor.ui" line="884"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that Platform-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;재부팅 시 플랫폼 정의 복구를 시작해야 함을 나타냅니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="856"/>
+        <location filename="../src/form/efibooteditor.ui" line="887"/>
         <source>Start Platform recovery</source>
         <translation>플랫폼 복구 시작</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="863"/>
-        <location filename="../src/form/efibooteditor.ui" line="866"/>
+        <location filename="../src/form/efibooteditor.ui" line="894"/>
+        <location filename="../src/form/efibooteditor.ui" line="897"/>
         <source>Indicate that OS-defined recovery should commence upon reboot</source>
         <translation>재부팅 시 OS 정의 복구를 시작해야 함을 나타냅니다</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="869"/>
+        <location filename="../src/form/efibooteditor.ui" line="900"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that OS-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;재부팅 시 OS 정의 복구를 시작해야 함을 나타냅니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="872"/>
+        <location filename="../src/form/efibooteditor.ui" line="903"/>
         <source>Start OS recovery</source>
         <translation>OS 복구 시작</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="901"/>
-        <location filename="../src/form/efibooteditor.ui" line="904"/>
-        <location filename="../src/form/efibooteditor.ui" line="913"/>
+        <location filename="../src/form/efibooteditor.ui" line="932"/>
+        <location filename="../src/form/efibooteditor.ui" line="935"/>
+        <location filename="../src/form/efibooteditor.ui" line="944"/>
         <source>Secure boot settings</source>
         <translation>보안 부팅 설정</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="907"/>
-        <location filename="../src/form/efibooteditor.ui" line="916"/>
+        <location filename="../src/form/efibooteditor.ui" line="938"/>
+        <location filename="../src/form/efibooteditor.ui" line="947"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Secure boot settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;보안 부팅 설정&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="910"/>
-        <location filename="../src/form/efibooteditor.ui" line="994"/>
+        <location filename="../src/form/efibooteditor.ui" line="941"/>
+        <location filename="../src/form/efibooteditor.ui" line="1025"/>
         <source>Secure Boot</source>
         <translation>보안 부팅</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="947"/>
-        <location filename="../src/form/efibooteditor.ui" line="950"/>
+        <location filename="../src/form/efibooteditor.ui" line="978"/>
+        <location filename="../src/form/efibooteditor.ui" line="981"/>
         <source>Defines whether the system is currently operating in Audit Mode</source>
         <translation>시스템이 현재 감사 모드로 작동 중인지 여부를 정의합니다</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="953"/>
+        <location filename="../src/form/efibooteditor.ui" line="984"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system is currently operating in Audit Mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;시스템이 현재 감사 모드로 작동 중인지 여부를 정의합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="956"/>
+        <location filename="../src/form/efibooteditor.ui" line="987"/>
         <source>Audit Mode</source>
         <translation>감사 모드</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="966"/>
-        <location filename="../src/form/efibooteditor.ui" line="969"/>
+        <location filename="../src/form/efibooteditor.ui" line="997"/>
+        <location filename="../src/form/efibooteditor.ui" line="1000"/>
         <source>Defines whether the system is currently operating in Deployed Mode</source>
         <translation>시스템이 현재 배포 모드로 작동 중인지 여부를 정의합니다</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="972"/>
+        <location filename="../src/form/efibooteditor.ui" line="1003"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system is currently operating in Deployed Mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;시스템이 현재 배포 모드로 작동 중인지 여부를 정의합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="975"/>
+        <location filename="../src/form/efibooteditor.ui" line="1006"/>
         <source>Deployed Mode</source>
         <translation>배포 모드</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="985"/>
-        <location filename="../src/form/efibooteditor.ui" line="988"/>
+        <location filename="../src/form/efibooteditor.ui" line="1016"/>
+        <location filename="../src/form/efibooteditor.ui" line="1019"/>
         <source>Defines whether the platform firmware is operating with Secure Boot enabled</source>
         <translation>플랫폼 펌웨어가 보안 부팅이 활성화된 상태에서 작동하는지 여부를 정의합니다</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="991"/>
+        <location filename="../src/form/efibooteditor.ui" line="1022"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the platform firmware is operating with Secure Boot enabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;플랫폼 펌웨어가 보안 부팅이 활성화된 상태에서 작동하는지 여부를 정의합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1004"/>
-        <location filename="../src/form/efibooteditor.ui" line="1007"/>
+        <location filename="../src/form/efibooteditor.ui" line="1035"/>
+        <location filename="../src/form/efibooteditor.ui" line="1038"/>
         <source>Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables</source>
         <translation>Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1010"/>
+        <location filename="../src/form/efibooteditor.ui" line="1041"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;시스템에서 보안 부팅 정책 변수에 대한 요청 시 인증이 필요한지 여부를 정의합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1013"/>
+        <location filename="../src/form/efibooteditor.ui" line="1044"/>
         <source>Setup Mode</source>
         <translation>설정 모드</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1023"/>
-        <location filename="../src/form/efibooteditor.ui" line="1026"/>
+        <location filename="../src/form/efibooteditor.ui" line="1054"/>
+        <location filename="../src/form/efibooteditor.ui" line="1057"/>
         <source>Defines whether the Security Boot Policy Variables have been modified by anyone other than the platform vendor or a holder of the vendor-provided keys</source>
         <translation>플랫폼 공급업체가 아닌 다른 사용자가 보안 부팅 정책 변수를 수정했는지 또는 벤더가 제공한 키를 보유했는지 여부를 정의합니다</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1029"/>
+        <location filename="../src/form/efibooteditor.ui" line="1060"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the Security Boot Policy Variables have been modified by anyone other than the platform vendor or a holder of the vendor-provided keys.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;플랫폼 공급업체가 아닌 다른 사용자가 보안 부팅 정책 변수를 수정했는지 또는 벤더가 제공한 키를 보유했는지 여부를 정의합니다&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1032"/>
+        <location filename="../src/form/efibooteditor.ui" line="1063"/>
         <source>Vendor Keys</source>
         <translation>공급업체 키</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1043"/>
-        <location filename="../src/form/efibooteditor.ui" line="1046"/>
-        <location filename="../src/form/efibooteditor.ui" line="1055"/>
+        <location filename="../src/form/efibooteditor.ui" line="1074"/>
+        <location filename="../src/form/efibooteditor.ui" line="1077"/>
+        <location filename="../src/form/efibooteditor.ui" line="1086"/>
         <source>Apple settings</source>
         <translation>Apple 설정</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1049"/>
-        <location filename="../src/form/efibooteditor.ui" line="1058"/>
+        <location filename="../src/form/efibooteditor.ui" line="1080"/>
+        <location filename="../src/form/efibooteditor.ui" line="1089"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apple settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apple 설정.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1052"/>
+        <location filename="../src/form/efibooteditor.ui" line="1083"/>
         <source>Apple</source>
         <translation>Apple</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1082"/>
-        <location filename="../src/form/efibooteditor.ui" line="1085"/>
-        <location filename="../src/form/efibooteditor.ui" line="1098"/>
-        <location filename="../src/form/efibooteditor.ui" line="1101"/>
+        <location filename="../src/form/efibooteditor.ui" line="1113"/>
+        <location filename="../src/form/efibooteditor.ui" line="1116"/>
+        <location filename="../src/form/efibooteditor.ui" line="1129"/>
+        <location filename="../src/form/efibooteditor.ui" line="1132"/>
         <source>macOS boot arguments</source>
         <translation>macOS 부팅 인수</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1088"/>
-        <location filename="../src/form/efibooteditor.ui" line="1104"/>
+        <location filename="../src/form/efibooteditor.ui" line="1119"/>
+        <location filename="../src/form/efibooteditor.ui" line="1135"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;macOS boot arguments.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;macOS 부팅 인수.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1130"/>
-        <location filename="../src/form/efibooteditor.ui" line="1133"/>
+        <location filename="../src/form/efibooteditor.ui" line="1161"/>
+        <location filename="../src/form/efibooteditor.ui" line="1164"/>
         <source>Undo stack</source>
         <translation>스택 실행 취소</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1136"/>
+        <location filename="../src/form/efibooteditor.ui" line="1167"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo stack&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;스택 실행 취소&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1163"/>
+        <location filename="../src/form/efibooteditor.ui" line="1194"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;파일 메뉴.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1183"/>
+        <location filename="../src/form/efibooteditor.ui" line="1214"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Help menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;도움말 메뉴.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1222"/>
+        <location filename="../src/form/efibooteditor.ui" line="1253"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Exit the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;프로그램 종료.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1239"/>
+        <location filename="../src/form/efibooteditor.ui" line="1270"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apply changes to the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;시스템에 변경사항 적용.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1256"/>
+        <location filename="../src/form/efibooteditor.ui" line="1287"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reloads EFI data from the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;시스템에서 EFI 데이터를 다시 로드합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1273"/>
+        <location filename="../src/form/efibooteditor.ui" line="1304"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show information about the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;프로그램에 대한 정보를 표시합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1287"/>
+        <location filename="../src/form/efibooteditor.ui" line="1318"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Export current entries into JSON.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;현재 항목을 JSON으로 내보냅니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1304"/>
+        <location filename="../src/form/efibooteditor.ui" line="1335"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Import EFI data from JSON dump.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JSON 덤프에서 EFI 데이터를 가져옵니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1321"/>
+        <location filename="../src/form/efibooteditor.ui" line="1352"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dumps raw EFI data for debugging purposes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;디버깅 목적으로 원시 EFI 데이터를 덤프합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1329"/>
+        <location filename="../src/form/efibooteditor.ui" line="1360"/>
         <source>&amp;Undo</source>
         <translation>실행 취소(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1332"/>
+        <location filename="../src/form/efibooteditor.ui" line="1363"/>
         <source>Undo</source>
         <translation>실행 취소</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1335"/>
+        <location filename="../src/form/efibooteditor.ui" line="1366"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;실행 취소&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1338"/>
+        <location filename="../src/form/efibooteditor.ui" line="1369"/>
         <source>Ctrl+Z</source>
         <translation>Ctrl+Z</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1346"/>
+        <location filename="../src/form/efibooteditor.ui" line="1377"/>
         <source>&amp;Redo</source>
         <translation>다시 실행(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1349"/>
+        <location filename="../src/form/efibooteditor.ui" line="1380"/>
         <source>Redo</source>
         <translation>다시 실행</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1352"/>
+        <location filename="../src/form/efibooteditor.ui" line="1383"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Redo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;다시 실행&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1355"/>
+        <location filename="../src/form/efibooteditor.ui" line="1386"/>
         <source>Ctrl+Shift+Z</source>
         <translation>Ctrl+Shift+Z</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="562"/>
-        <location filename="../src/form/efibooteditor.ui" line="565"/>
-        <location filename="../src/form/efibooteditor.ui" line="574"/>
+        <location filename="../src/form/efibooteditor.ui" line="593"/>
+        <location filename="../src/form/efibooteditor.ui" line="596"/>
+        <location filename="../src/form/efibooteditor.ui" line="605"/>
         <source>Global settings</source>
         <translation>전역 설정</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="610"/>
+        <location filename="../src/form/efibooteditor.ui" line="641"/>
         <source>Timeout</source>
         <translation>시간 초과</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1091"/>
+        <location filename="../src/form/efibooteditor.ui" line="1122"/>
         <source>Boot args</source>
         <translation>부팅 배열</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1157"/>
-        <location filename="../src/form/efibooteditor.ui" line="1160"/>
+        <location filename="../src/form/efibooteditor.ui" line="1188"/>
+        <location filename="../src/form/efibooteditor.ui" line="1191"/>
         <source>File</source>
         <translation>파일</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1166"/>
+        <location filename="../src/form/efibooteditor.ui" line="1197"/>
         <source>&amp;File</source>
         <translation>파일(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1177"/>
-        <location filename="../src/form/efibooteditor.ui" line="1180"/>
+        <location filename="../src/form/efibooteditor.ui" line="1208"/>
+        <location filename="../src/form/efibooteditor.ui" line="1211"/>
         <source>Help</source>
         <translation>도움말</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1186"/>
+        <location filename="../src/form/efibooteditor.ui" line="1217"/>
         <source>&amp;Help</source>
         <translation>도움말(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1194"/>
+        <location filename="../src/form/efibooteditor.ui" line="1225"/>
         <source>&amp;Edit</source>
         <translation>편집(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1216"/>
+        <location filename="../src/form/efibooteditor.ui" line="1247"/>
         <source>&amp;Quit</source>
         <translation>끝내기(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1219"/>
+        <location filename="../src/form/efibooteditor.ui" line="1250"/>
         <source>Quit</source>
         <translation>끝내기</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1225"/>
+        <location filename="../src/form/efibooteditor.ui" line="1256"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1233"/>
+        <location filename="../src/form/efibooteditor.ui" line="1264"/>
         <source>&amp;Save</source>
         <translation>저장(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1236"/>
+        <location filename="../src/form/efibooteditor.ui" line="1267"/>
         <source>Save</source>
         <translation>저장</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1242"/>
+        <location filename="../src/form/efibooteditor.ui" line="1273"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1250"/>
+        <location filename="../src/form/efibooteditor.ui" line="1281"/>
         <source>&amp;Reload</source>
         <translation>다시 로드(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1253"/>
+        <location filename="../src/form/efibooteditor.ui" line="1284"/>
         <source>Reload</source>
         <translation>다시 로드</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1259"/>
+        <location filename="../src/form/efibooteditor.ui" line="1290"/>
         <source>Ctrl+R</source>
         <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1267"/>
+        <location filename="../src/form/efibooteditor.ui" line="1298"/>
         <source>About &amp;EFI Boot Editor</source>
         <translation>EFI Boot Editor 정보(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1270"/>
+        <location filename="../src/form/efibooteditor.ui" line="1301"/>
         <location filename="../src/efibooteditor.cpp" line="248"/>
         <source>About EFI Boot Editor</source>
         <translation>EFI Boot Editor 정보</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1281"/>
+        <location filename="../src/form/efibooteditor.ui" line="1312"/>
         <source>&amp;Export</source>
         <translation>내보내기(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1284"/>
+        <location filename="../src/form/efibooteditor.ui" line="1315"/>
         <source>Export</source>
         <translation>내보내기</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1290"/>
+        <location filename="../src/form/efibooteditor.ui" line="1321"/>
         <source>Ctrl+E</source>
         <translation>Ctrl+E</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1298"/>
+        <location filename="../src/form/efibooteditor.ui" line="1329"/>
         <source>&amp;Import</source>
         <translation>가져오기(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1301"/>
+        <location filename="../src/form/efibooteditor.ui" line="1332"/>
         <source>Import</source>
         <translation>가져오기</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1307"/>
+        <location filename="../src/form/efibooteditor.ui" line="1338"/>
         <source>Ctrl+I</source>
         <translation>Ctrl+I</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1315"/>
+        <location filename="../src/form/efibooteditor.ui" line="1346"/>
         <source>&amp;Dump raw EFI data</source>
         <translation>원시 EFI 데이터 덤프(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1318"/>
+        <location filename="../src/form/efibooteditor.ui" line="1349"/>
         <source>Dump raw EFI data</source>
         <translation>원시 EFI 데이터 덤프</translation>
     </message>
@@ -1478,12 +1489,12 @@
         <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;웹사이트&lt;/a&gt;&lt;/p&gt;&lt;p&gt;이 프로그램은 디자인, 상품성 및 특정 목적에 대한 적합성에 대한 보증을 포함하여 어떤 종류의 보증도 없이 그대로 제공됩니다.&lt;/p&gt;&lt;p&gt;라이선스: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL 버전 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Linux에서는 EFI 변수 액세스를 위해 &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt;를 사용합니다.&lt;/p&gt;&lt;p&gt;아이콘을 폴백 아이콘으로 사용합니다.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="321"/>
+        <location filename="../src/efibooteditor.cpp" line="316"/>
         <source>Reorder %1 entries</source>
         <translation>%1개 항목의 순서 변경</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="434"/>
+        <location filename="../src/efibooteditor.cpp" line="439"/>
         <source>Are you sure you want to quit?</source>
         <translation>정말 그만두시겠습니까?</translation>
     </message>
