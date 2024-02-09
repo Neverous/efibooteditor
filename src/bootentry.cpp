@@ -1461,7 +1461,7 @@ auto FilePath::NvmExpressNs::toString(bool refresh) const -> QString
     if(_string.size() && !refresh)
         return _string;
 
-    return _string = QString("NCMe(%1,%2)").arg(namespace_identifier).arg(ieee_extended_unique_identifier);
+    return _string = QString("NVMe(%1,%2)").arg(toHex(namespace_identifier)).arg(toHex(ieee_extended_unique_identifier));
 }
 
 FilePath::Uri::Uri(const EFIBoot::File_path::MSG::Uri &_uri)
