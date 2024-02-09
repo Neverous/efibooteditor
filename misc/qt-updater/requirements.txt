@@ -40,7 +40,7 @@ urllib3==2.2.0
     # via
     #   requests
     #   types-requests
-wheel==0.41.2
+wheel==0.42.0
     # via pip-tools
 
 # The following packages are considered to be unsafe in a requirements file:
