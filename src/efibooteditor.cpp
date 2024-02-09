@@ -120,12 +120,12 @@ void EFIBootEditor::reload()
 
 void EFIBootEditor::reloadBootConfiguration()
 {
-    disableBootEntryEditor();
     ui->entries->setCurrentIndex(0);
     ui->settings->setCurrentIndex(0);
     ui->undo_view->setHidden(true);
     ui->undo->setEnabled(false);
     ui->redo->setEnabled(false);
+    disableBootEntryEditor();
     data.clear();
     data.setUndoStack(nullptr);
     data.reload();
@@ -145,13 +145,11 @@ void EFIBootEditor::reorder()
 void EFIBootEditor::undo()
 {
     undo_stack.undo();
-    refreshBootEntryEditor();
 }
 
 void EFIBootEditor::redo()
 {
     undo_stack.redo();
-    refreshBootEntryEditor();
 }
 
 void EFIBootEditor::enableBootEntryEditor(const QModelIndex &index)
@@ -159,11 +157,14 @@ void EFIBootEditor::enableBootEntryEditor(const QModelIndex &index)
     if(!index.isValid())
         return disableBootEntryEditor();
 
-    const auto item = index.data().value<const BootEntry *>();
-    ui->entry_form->setItem(index, item);
     auto [name, list, model] = currentBootEntryList();
     (void)name;
     (void)list;
+    if(&model != index.model())
+        return disableBootEntryEditor();
+
+    const auto item = index.data().value<const BootEntry *>();
+    ui->entry_form->setItem(index, item);
     ui->entry_form->setReadOnly((model.options & BootEntryListModel::Option::ReadOnly) || item->is_error);
 }
 
@@ -185,7 +186,6 @@ void EFIBootEditor::switchBootEntryEditor(int index)
     auto [name, list, model] = getBootEntryList(index);
     (void)name;
     ui->entry_form->setBootEntryListModel(model);
-    list.setCurrentIndex(list.currentIndex());
     enableBootEntryEditor(list.currentIndex());
     ui->entries_actions->setDisabled(model.options & BootEntryListModel::Option::ReadOnly);
 }
@@ -305,11 +305,6 @@ void EFIBootEditor::updateBootOptionSupport(uint32_t flags)
 #endif
 }
 
-void EFIBootEditor::undoViewChanged(const QModelIndex &)
-{
-    refreshBootEntryEditor();
-}
-
 void EFIBootEditor::reorderBootEntries()
 {
     auto [name, list, model] = currentBootEntryList();
@@ -383,6 +378,16 @@ void EFIBootEditor::insertBootEntry()
         return;
 
     list.insertRow();
+}
+
+void EFIBootEditor::duplicateBootEntry()
+{
+    auto [name, list, model] = currentBootEntryList();
+    (void)name;
+    if(model.options & BootEntryListModel::Option::ReadOnly)
+        return;
+
+    list.duplicateRow();
 }
 
 std::tuple<QString, BootEntryListView &, BootEntryListModel &> EFIBootEditor::getBootEntryList(int index)

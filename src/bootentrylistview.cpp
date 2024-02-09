@@ -11,9 +11,13 @@ void BootEntryListView::setModel(BootEntryListModel *model)
 {
     options = model->options;
     delegate.setOptions(options);
-    disconnect(this->model(), &BootEntryListModel::rowsMoved, this, &BootEntryListView::rowsMoved);
-    disconnect(this->model(), &BootEntryListModel::rowsRemoved, this, &BootEntryListView::rowsChanged);
-    disconnect(this->model(), &BootEntryListModel::rowsInserted, this, &BootEntryListView::rowsChanged);
+    if(this->model())
+    {
+        disconnect(this->model(), &BootEntryListModel::rowsMoved, this, &BootEntryListView::rowsMoved);
+        disconnect(this->model(), &BootEntryListModel::rowsRemoved, this, &BootEntryListView::rowsChanged);
+        disconnect(this->model(), &BootEntryListModel::rowsInserted, this, &BootEntryListView::rowsChanged);
+    }
+
     QListView::setModel(model);
     connect(this->model(), &BootEntryListModel::rowsMoved, this, &BootEntryListView::rowsMoved);
     connect(this->model(), &BootEntryListModel::rowsRemoved, this, &BootEntryListView::rowsChanged);
@@ -30,6 +34,17 @@ void BootEntryListView::insertRow()
     setCurrentIndex(model()->index(row + 1, 0));
 }
 
+void BootEntryListView::duplicateRow()
+{
+    if(options & BootEntryListModel::Option::ReadOnly)
+        return;
+
+    auto row = currentIndex().row();
+    auto idx = model()->index(row, 0);
+    model()->setData(idx, idx);
+    setCurrentIndex(model()->index(row + 1, 0));
+}
+
 void BootEntryListView::removeCurrentRow()
 {
     if(options & BootEntryListModel::Option::ReadOnly)
@@ -41,11 +56,6 @@ void BootEntryListView::removeCurrentRow()
 
     auto row = index.row();
     model()->removeRow(row);
-    index = model()->index(row - 1, 0);
-    if(!index.isValid())
-        index = model()->index(row, 0);
-
-    setCurrentIndex(index);
 }
 
 void BootEntryListView::moveCurrentRowUp()
@@ -97,7 +107,6 @@ void BootEntryListView::rowsMoved(const QModelIndex &, int sourceStart, int sour
     }
 
     setCurrentIndex(index);
-    emit selected(index);
 }
 
 void BootEntryListView::rowsChanged(const QModelIndex &, int, int)

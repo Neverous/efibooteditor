@@ -37,6 +37,38 @@ auto BootEntryListModel::data(const QModelIndex &index, int) const -> QVariant
     return data;
 }
 
+auto BootEntryListModel::setData(const QModelIndex &index, const QVariant &value, int role) -> bool
+{
+    if(role != Qt::EditRole)
+        return false;
+
+    if(!index.isValid() || !checkIndex(index))
+        return false;
+
+    auto row = index.row();
+    InsertBootEntryCommand *command = nullptr;
+    // Duplicate entry from given index
+    if(value.canConvert<QModelIndex>())
+        command = new InsertBootEntryCommand{*this, {}, row + 1, entries.at(value.value<QModelIndex>().row())};
+
+    // Insert given entry
+    else
+        command = new InsertBootEntryCommand{*this, {}, row + 1, *value.value<const BootEntry *>()};
+
+    if(undo_stack)
+        undo_stack->push(command);
+
+    else
+    {
+        command->redo();
+        delete command;
+    }
+
+    auto idx = this->index(row + 1, 0);
+    emit dataChanged(idx, idx, {role});
+    return true;
+}
+
 void BootEntryListModel::setNextBootEntry(const QModelIndex &index, bool value)
 {
     if(!index.isValid() || !checkIndex(index))

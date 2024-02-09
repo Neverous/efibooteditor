@@ -64,6 +64,7 @@ public slots:
     void moveCurrentBootEntryUp();
     void moveCurrentBootEntryDown();
     void insertBootEntry();
+    void duplicateBootEntry();
 
     void enableBootEntryEditor(const QModelIndex &index);
     void switchBootEntryEditor(int index);
@@ -75,8 +76,6 @@ public slots:
     void setOsIndication(bool checked);
 
     void updateBootOptionSupport(uint32_t flags);
-
-    void undoViewChanged(const QModelIndex &index);
 
 signals:
     void osIndicationsChanged(uint64_t value);
