@@ -17,9 +17,14 @@
                     "type": "MEDIA"
                 },
                 {
-                    "name": "\\EFI\\Microsoft\\Boot\\bootmgfw.efi",
-                    "subtype": "FILE",
+                    "path_name": "\\EFI\\Microsoft\\Boot\\bootmgfw.efi",
+                    "subtype": "FILE_PATH",
                     "type": "MEDIA"
+                },
+                {
+                    "_subtype": 255,
+                    "subtype": "MULTI",
+                    "type": "END"
                 }
             ],
             "optional_data": "V0lORE9XUwABAAAAiAAAAHgAAABCAEMARABPAEIASgBFAEMAVAA9AHsAOQBkAGUAYQA4ADYAMgBjAC0ANQBjAGQAZAAtADQAZQA3ADAALQBhAGMAYwAxAC0AZgAzADIAYgAzADQANABkADQANwA5ADUAfQAAADkAAQAAABAAAAAEAAAAf/8EAA==",
@@ -41,9 +46,14 @@
                     "type": "MEDIA"
                 },
                 {
-                    "name": "\\vmlinuz-linux",
-                    "subtype": "FILE",
+                    "path_name": "\\vmlinuz-linux",
+                    "subtype": "FILE_PATH",
                     "type": "MEDIA"
+                },
+                {
+                    "_subtype": 255,
+                    "subtype": "MULTI",
+                    "type": "END"
                 }
             ],
             "optional_data": "root=/dev/sda2 rw initrd=\\initramfs-linux.img init=/lib/systemd/systemd quiet logo.nologo console=tty1",
@@ -58,6 +68,11 @@
                     "name": "{721c8b66-426c-4e86-8e99-3457c46ab0b9}",
                     "subtype": "FIRMWARE_FILE",
                     "type": "MEDIA"
+                },
+                {
+                    "_subtype": 255,
+                    "subtype": "MULTI",
+                    "type": "END"
                 }
             ],
             "optional_data": "",
@@ -72,6 +87,11 @@
                     "name": "{721c8b66-426c-4e86-8e99-3457c46ab0b9}",
                     "subtype": "FIRMWARE_FILE",
                     "type": "MEDIA"
+                },
+                {
+                    "_subtype": 255,
+                    "subtype": "MULTI",
+                    "type": "END"
                 }
             ],
             "optional_data": "",
@@ -86,6 +106,11 @@
                     "name": "{721c8b66-426c-4e86-8e99-3457c46ab0b9}",
                     "subtype": "FIRMWARE_FILE",
                     "type": "MEDIA"
+                },
+                {
+                    "_subtype": 255,
+                    "subtype": "MULTI",
+                    "type": "END"
                 }
             ],
             "optional_data": "",
@@ -98,7 +123,7 @@
             "file_path": [
                 {
                     "hid": 167985616,
-                    "subtype": "HID",
+                    "subtype": "ACPI",
                     "type": "ACPI",
                     "uid": 0
                 },
@@ -131,6 +156,11 @@
                     "subnet_mask": "0.0.0.0",
                     "subtype": "IPV4",
                     "type": "MSG"
+                },
+                {
+                    "_subtype": 255,
+                    "subtype": "MULTI",
+                    "type": "END"
                 }
             ],
             "optional_data": "꡸꽊⨫仼鲧쳵㶏̸",
@@ -143,7 +173,7 @@
             "file_path": [
                 {
                     "hid": 167985616,
-                    "subtype": "HID",
+                    "subtype": "ACPI",
                     "type": "ACPI",
                     "uid": 0
                 },
@@ -176,17 +206,34 @@
                     "remote_port": 0,
                     "subtype": "IPV6",
                     "type": "MSG"
+                },
+                {
+                    "_subtype": 255,
+                    "subtype": "MULTI",
+                    "type": "END"
                 }
             ],
             "optional_data": "꡸꽊⨫仼鲧쳵㶏̸",
             "optional_data_format": 1
         }
     },
+    "BootOptionSupport": {
+        "capabilities": [
+            "KEY",
+            "APP",
+            "SYSPREP"
+        ],
+        "key_count": 3
+    },
     "BootOrder": [
         0,
         1
     ],
     "DeployedMode": false,
+    "OsIndicationsSupported": [
+        "BOOT_TO_FW_UI",
+        "CAPSULE_RESULT_VAR_SUPPORTED"
+    ],
     "SecureBoot": true,
     "SetupMode": false,
     "Timeout": 10,
