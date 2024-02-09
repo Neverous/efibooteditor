@@ -3,6 +3,17 @@ name: Prepare release assets
 on:
   push:
     branches: [master]
+    paths:
+      - .github/workflows/build.yml
+      - .github/workflows/release.yml
+      - CMakeLists.txt
+      - cmake/**
+      - icons.qrc
+      - icons/**
+      - include/**
+      - src/**
+      - translations/**
+      - windows.rc
   release:
     types: [published]
 

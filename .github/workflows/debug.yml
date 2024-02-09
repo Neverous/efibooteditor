@@ -3,8 +3,28 @@ name: Debug build
 on:
   push:
     branches: [master]
+    paths:
+      - .github/workflows/build.yml
+      - .github/workflows/debug.yml
+      - CMakeLists.txt
+      - cmake/**
+      - icons.qrc
+      - icons/**
+      - include/**
+      - src/**
+      - windows.rc
   pull_request:
     branches: [master]
+    paths:
+      - .github/workflows/build.yml
+      - .github/workflows/debug.yml
+      - CMakeLists.txt
+      - cmake/**
+      - icons.qrc
+      - icons/**
+      - include/**
+      - src/**
+      - windows.rc
   schedule:
     - cron: 0 8 * * 5
 
