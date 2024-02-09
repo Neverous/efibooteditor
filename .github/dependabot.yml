@@ -4,3 +4,11 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+  - package-ecosystem: "pip"
+    directory: "/misc/codegen"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "pip"
+    directory: "/misc/qt-updater"
+    schedule:
+      interval: "weekly"
