@@ -4793,17 +4793,17 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6547"/>
         <source>File Path</source>
-        <translation type="unfinished">File Path</translation>
+        <translation>Dateipfad</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6550"/>
         <source>File Path settings.</source>
-        <translation type="unfinished">File Path settings.</translation>
+        <translation>Dateipfad-Einstellungen.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6553"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File Path settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File Path settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dateipfad-Einstellungen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6577"/>
@@ -4816,7 +4816,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="6586"/>
         <location filename="../src/form/filepathdialog.ui" line="6602"/>
         <source>Path Name</source>
-        <translation type="unfinished">Path Name</translation>
+        <translation>Pfadname</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6583"/>
@@ -4838,18 +4838,18 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="6646"/>
         <location filename="../src/form/filepathdialog.ui" line="6667"/>
         <source>The ID of the protocol.</source>
-        <translation type="unfinished">The ID of the protocol.</translation>
+        <translation>Die ID des Protokolls.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6652"/>
         <location filename="../src/form/filepathdialog.ui" line="6673"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The ID of the protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The ID of the protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Die ID des Protokolls.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6687"/>
         <source>Firmware File</source>
-        <translation type="unfinished">Firmware File</translation>
+        <translation>Firmware Datei</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6690"/>
@@ -4865,13 +4865,13 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="6717"/>
         <location filename="../src/form/filepathdialog.ui" line="6738"/>
         <source>Firmware file name GUID.</source>
-        <translation type="unfinished">Firmware file name GUID.</translation>
+        <translation>Firmware Dateiname GUID.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6723"/>
         <location filename="../src/form/filepathdialog.ui" line="6744"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file name GUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file name GUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware Dateiname GUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6758"/>
@@ -4968,17 +4968,17 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6983"/>
         <source>RAM Disk</source>
-        <translation type="unfinished">RAM Disk</translation>
+        <translation>RAM Disk</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6986"/>
         <source>RAM Disk Settings.</source>
-        <translation type="unfinished">RAM Disk Settings.</translation>
+        <translation>RAM-Disk-Einstellungen.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6989"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RAM Disk Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RAM Disk Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RAM-Disk-Einstellungen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7016"/>
@@ -5068,7 +5068,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="7237"/>
         <location filename="../src/form/filepathdialog.ui" line="7263"/>
         <source>Device Type</source>
-        <translation type="unfinished">Device Type</translation>
+        <translation>Gerätetyp</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7223"/>
@@ -5193,13 +5193,13 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="7402"/>
         <location filename="../src/form/filepathdialog.ui" line="7424"/>
         <source>String that describes the boot device to a user.</source>
-        <translation type="unfinished">String that describes the boot device to a user.</translation>
+        <translation>Zeichenfolge, die das Boot-Gerät für einen Benutzer beschreibt.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7408"/>
         <location filename="../src/form/filepathdialog.ui" line="7430"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;String that describes the boot device to a user.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;String that describes the boot device to a user.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zeichenfolge, die das Boot-Gerät für einen Benutzer beschreibt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7522"/>
