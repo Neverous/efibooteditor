@@ -1039,12 +1039,12 @@
         <location filename="../src/form/efibooteditor.ui" line="863"/>
         <location filename="../src/form/efibooteditor.ui" line="866"/>
         <source>Indicate that OS-defined recovery should commence upon reboot</source>
-        <translation type="unfinished">Indicate that OS-defined recovery should commence upon reboot</translation>
+        <translation>Angeben, dass die vom Betriebssystem definierte Wiederherstellung beim Neustart beginnen soll</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="869"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that OS-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that OS-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Angeben, dass die vom Betriebssystem definierte Wiederherstellung beim Neustart beginnen soll.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="872"/>
