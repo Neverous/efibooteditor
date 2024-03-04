@@ -30,7 +30,7 @@ ruff==0.2.2
     # via codegen (pyproject.toml)
 soupsieve==2.5
     # via beautifulsoup4
-types-beautifulsoup4==4.12.0.20240106
+types-beautifulsoup4==4.12.0.20240229
     # via codegen (pyproject.toml)
 types-html5lib==1.1.11.20240222
     # via types-beautifulsoup4
