@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="6"/>
         <source>Boot entry form</source>
-        <translation>Bootformular</translation>
+        <translation>Booteintragformular</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="24"/>
@@ -395,7 +395,7 @@
         <source>Failed to load some EFI Boot Manager entries:
 
   - %1</source>
-        <translation type="unfinished">Failed to load some EFI Boot Manager entries:
+        <translation>Einige EFI Boot Manager-Einträge konnten nicht geladen werden:
 
   - %1</translation>
     </message>
@@ -482,7 +482,7 @@
         <source>Failed to dump some EFI Boot Manager entries:
 
   - %1</source>
-        <translation type="unfinished">Failed to dump some EFI Boot Manager entries:
+        <translation>Einige EFI-Bootmanager-Einträge konnten nicht gedumpt werden:
 
   - %1</translation>
     </message>
@@ -665,7 +665,7 @@
         <source>Failed to import some EFI Boot Manager entries:
 
   - %1</source>
-        <translation type="unfinished">Failed to import some EFI Boot Manager entries:
+        <translation>Importieren einiger EFI Boot Manager-Einträge ist fehlgeschlagen:
 
   - %1</translation>
     </message>
@@ -1495,7 +1495,7 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="383"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duplicate entry&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duplicate entry&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duplizierter Eintrag&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="377"/>
@@ -2601,12 +2601,12 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1212"/>
         <source>This device path describes an NVDIMM device using the ACPI 6.0 specification defined NFIT Device Handle as the identifier.</source>
-        <translation type="unfinished">This device path describes an NVDIMM device using the ACPI 6.0 specification defined NFIT Device Handle as the identifier.</translation>
+        <translation>Dieser Gerätepfad beschreibt ein NVDIMM-Gerät unter Verwendung des in der ACPI 6.0-Spezifikation definierten NFIT-Geräte-Handles als Bezeichner.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1215"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path describes an NVDIMM device using the ACPI 6.0 specification defined NFIT Device Handle as the identifier.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path describes an NVDIMM device using the ACPI 6.0 specification defined NFIT Device Handle as the identifier.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dieser Gerätepfad beschreibt ein NVDIMM-Gerät unter Verwendung des in der ACPI 6.0-Spezifikation definierten NFIT-Geräte-Handles als Bezeichner.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1239"/>
@@ -2619,7 +2619,7 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
         <location filename="../src/form/filepathdialog.ui" line="1248"/>
         <location filename="../src/form/filepathdialog.ui" line="1263"/>
         <source>NFIT Device Handle</source>
-        <translation type="unfinished">NFIT Device Handle</translation>
+        <translation>NFIT Gerät Handle</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1245"/>
@@ -3063,13 +3063,13 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2289"/>
         <location filename="../src/form/filepathdialog.ui" line="2310"/>
         <source>The MAC address for a network interface padded with 0s.</source>
-        <translation type="unfinished">The MAC address for a network interface padded with 0s.</translation>
+        <translation>Die MAC-Adresse für eine Netzwerkschnittstelle, aufgefüllt mit Nullen.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2295"/>
         <location filename="../src/form/filepathdialog.ui" line="2316"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The MAC address for a network interface padded with 0s.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The MAC address for a network interface padded with 0s.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Die MAC-Adresse für eine Netzwerkschnittstelle, aufgefüllt mit Nullen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2329"/>
@@ -3847,7 +3847,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="4237"/>
         <location filename="../src/form/filepathdialog.ui" line="4253"/>
         <source>Target Portal Group</source>
-        <translation type="unfinished">Target Portal Group</translation>
+        <translation>Ziel-Portal-Gruppe</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4234"/>
@@ -4486,13 +4486,13 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="5800"/>
         <location filename="../src/form/filepathdialog.ui" line="5821"/>
         <source>GUID of vendor specific REST service.</source>
-        <translation type="unfinished">GUID of vendor specific REST service.</translation>
+        <translation>GUID des herstellerspezifischen REST-Dienstes.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5806"/>
         <location filename="../src/form/filepathdialog.ui" line="5827"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GUID of vendor specific REST service.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GUID of vendor specific REST service.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GUID des herstellerspezifischen REST-Dienstes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5837"/>
@@ -4908,12 +4908,12 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6832"/>
         <source>This device path node specifies a range of offsets relative to the first byte available on the device.</source>
-        <translation type="unfinished">This device path node specifies a range of offsets relative to the first byte available on the device.</translation>
+        <translation>Dieser Gerätepfadknoten gibt einen Bereich von Versätzen relativ zu dem auf dem Gerät verfügbaren ersten Byte an.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6835"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path node specifies a range of offsets relative to the first byte available on the device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path node specifies a range of offsets relative to the first byte available on the device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dieser Gerätepfadknoten gibt einen Bereich von Versätzen relativ zu dem auf dem Gerät verfügbaren ersten Byte an.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6859"/>
@@ -4938,7 +4938,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="6908"/>
         <location filename="../src/form/filepathdialog.ui" line="6923"/>
         <source>Starting Offset</source>
-        <translation type="unfinished">Starting Offset</translation>
+        <translation>Startversatz</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6905"/>
@@ -4957,7 +4957,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="6948"/>
         <location filename="../src/form/filepathdialog.ui" line="6963"/>
         <source>Ending Offset</source>
-        <translation type="unfinished">Ending Offset</translation>
+        <translation>Endversatz</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6945"/>
@@ -4998,13 +4998,13 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="7093"/>
         <location filename="../src/form/filepathdialog.ui" line="7114"/>
         <source>GUID that defines the type of the RAM Disk.</source>
-        <translation type="unfinished">GUID that defines the type of the RAM Disk.</translation>
+        <translation>GUID, die den Typ der RAM-Disk definiert.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7099"/>
         <location filename="../src/form/filepathdialog.ui" line="7120"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GUID that defines the type of the RAM Disk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GUID that defines the type of the RAM Disk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GUID, die den Typ der RAM-Disk definiert.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7130"/>
@@ -5145,7 +5145,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="7335"/>
         <location filename="../src/form/filepathdialog.ui" line="7368"/>
         <source>Status Flag</source>
-        <translation type="unfinished">Status Flag</translation>
+        <translation>Status Flagge</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7314"/>
@@ -5205,13 +5205,13 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="7522"/>
         <location filename="../src/form/filepathdialog.ui" line="7543"/>
         <source>Vendor-assigned GUID that defines the data that follows.</source>
-        <translation type="unfinished">Vendor-assigned GUID that defines the data that follows.</translation>
+        <translation>Hersteller zugewiesene GUID, die die folgenden Daten definiert.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7528"/>
         <location filename="../src/form/filepathdialog.ui" line="7549"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor-assigned GUID that defines the data that follows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor-assigned GUID that defines the data that follows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hersteller zugewiesene GUID, die die folgenden Daten definiert.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7562"/>
