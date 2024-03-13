@@ -9,6 +9,7 @@ Source0:        https://github.com/Neverous/efibooteditor/archive/refs/tags/v%{v
 
 BuildRequires:  cmake
 BuildRequires:  cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Tools)
 BuildRequires:  pkgconfig(efivar)
 
 Requires:       efivar
