@@ -803,12 +803,12 @@
         <location filename="../src/form/efibooteditor.ui" line="377"/>
         <location filename="../src/form/efibooteditor.ui" line="380"/>
         <source>Duplicate entry</source>
-        <translation type="unfinished">Duplicate entry</translation>
+        <translation>重复条目</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="383"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duplicate entry&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duplicate entry&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;重复条目&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="408"/>
@@ -2049,36 +2049,36 @@ Your EFI configuration will be overwritten!</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="50"/>
         <source>The Device Path for PCI defines the path to the PCI configuration space address for a PCI device.</source>
-        <translation type="unfinished">The Device Path for PCI defines the path to the PCI configuration space address for a PCI device.</translation>
+        <translation>PCI 的设备路径定义了 PCI 设备的 PCI 配置空间地址的路径。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="53"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Device Path for PCI defines the path to the PCI configuration space address for a PCI device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Device Path for PCI defines the path to the PCI configuration space address for a PCI device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI 的设备路径定义了 PCI 设备的 PCI 配置空间地址的路径。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="77"/>
         <location filename="../src/form/filepathdialog.ui" line="99"/>
         <source>PCI Function Number.</source>
-        <translation type="unfinished">PCI Function Number.</translation>
+        <translation>PCI 功能编号。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="83"/>
         <location filename="../src/form/filepathdialog.ui" line="105"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Function Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Function Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI 功能编号。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="118"/>
         <location filename="../src/form/filepathdialog.ui" line="140"/>
         <source>PCI Device Number.</source>
-        <translation type="unfinished">PCI Device Number.</translation>
+        <translation>PCI 设备编号。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="124"/>
         <location filename="../src/form/filepathdialog.ui" line="146"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Device Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Device Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI 设备编号。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="163"/>
@@ -2088,58 +2088,58 @@ Your EFI configuration will be overwritten!</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="166"/>
         <source>PCCARD Settings.</source>
-        <translation type="unfinished">PCCARD Settings.</translation>
+        <translation>PCCARD 设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="169"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCCARD Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCCARD Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCCARD 设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="193"/>
         <location filename="../src/form/filepathdialog.ui" line="215"/>
         <source>Function Number (0 = First Function).</source>
-        <translation type="unfinished">Function Number (0 = First Function).</translation>
+        <translation>功能编号（0 = 第一个功能）。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="199"/>
         <location filename="../src/form/filepathdialog.ui" line="221"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Function Number (0 = First Function).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Function Number (0 = First Function).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;功能编号（0 = 第一个功能）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="238"/>
         <source>Memory Mapped</source>
-        <translation type="unfinished">Memory Mapped</translation>
+        <translation>内存映射</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="241"/>
         <source>Memory Mapped Settings.</source>
-        <translation type="unfinished">Memory Mapped Settings.</translation>
+        <translation>内存映射设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="244"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Memory Mapped Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Memory Mapped Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;内存映射设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="268"/>
         <location filename="../src/form/filepathdialog.ui" line="290"/>
         <source>The type of memory to allocate.</source>
-        <translation type="unfinished">The type of memory to allocate.</translation>
+        <translation>要分配的内存类型。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="271"/>
         <location filename="../src/form/filepathdialog.ui" line="277"/>
         <location filename="../src/form/filepathdialog.ui" line="293"/>
         <source>Memory Type</source>
-        <translation type="unfinished">Memory Type</translation>
+        <translation>内存类型</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="274"/>
         <location filename="../src/form/filepathdialog.ui" line="296"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The type of memory to allocate.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The type of memory to allocate.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;要分配的内存类型。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="300"/>
@@ -2159,82 +2159,82 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="6868"/>
         <location filename="../src/form/filepathdialog.ui" line="6883"/>
         <source>Reserved</source>
-        <translation type="unfinished">Reserved</translation>
+        <translation>已预留</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="305"/>
         <source>Loader Code</source>
-        <translation type="unfinished">Loader Code</translation>
+        <translation>加载程序代码</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="310"/>
         <source>Loader Data</source>
-        <translation type="unfinished">Loader Data</translation>
+        <translation>加载程序数据</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="315"/>
         <source>Boot Services Code</source>
-        <translation type="unfinished">Boot Services Code</translation>
+        <translation>引导服务代码</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="320"/>
         <source>Boot Services Data</source>
-        <translation type="unfinished">Boot Services Data</translation>
+        <translation>引导服务数据</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="325"/>
         <source>Runtime Services Code</source>
-        <translation type="unfinished">Runtime Services Code</translation>
+        <translation>运行时服务代码</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="330"/>
         <source>Runtime Services Data</source>
-        <translation type="unfinished">Runtime Services Data</translation>
+        <translation>运行时服务数据</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="335"/>
         <source>Conventional</source>
-        <translation type="unfinished">Conventional</translation>
+        <translation>传统</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="340"/>
         <source>Unusable</source>
-        <translation type="unfinished">Unusable</translation>
+        <translation>不可用</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="345"/>
         <source>ACPI Reclaim</source>
-        <translation type="unfinished">ACPI Reclaim</translation>
+        <translation>ACPI 回收</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="350"/>
         <source>ACPI Memory NVS</source>
-        <translation type="unfinished">ACPI Memory NVS</translation>
+        <translation>ACPI 内存 NVS</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="355"/>
         <source>Memory Mapped IO</source>
-        <translation type="unfinished">Memory Mapped IO</translation>
+        <translation>内存映射 IO</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="360"/>
         <source>Memory Mapped IO Port Space</source>
-        <translation type="unfinished">Memory Mapped IO Port Space</translation>
+        <translation>内存映射 IO 端口空间</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="365"/>
         <source>Pal Code</source>
-        <translation type="unfinished">Pal Code</translation>
+        <translation>Pal 代码</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="370"/>
         <source>Persistent</source>
-        <translation type="unfinished">Persistent</translation>
+        <translation>持久</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="375"/>
         <source>Unaccepted</source>
-        <translation type="unfinished">Unaccepted</translation>
+        <translation>未接受</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="383"/>
@@ -2242,14 +2242,14 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="7013"/>
         <location filename="../src/form/filepathdialog.ui" line="7034"/>
         <source>Starting Memory Address.</source>
-        <translation type="unfinished">Starting Memory Address.</translation>
+        <translation>起始内存地址。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="386"/>
         <location filename="../src/form/filepathdialog.ui" line="392"/>
         <location filename="../src/form/filepathdialog.ui" line="407"/>
         <source>Start Address</source>
-        <translation type="unfinished">Start Address</translation>
+        <translation>起始地址</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="389"/>
@@ -2257,7 +2257,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="7019"/>
         <location filename="../src/form/filepathdialog.ui" line="7040"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starting Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starting Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;起始内存地址。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="423"/>
@@ -2265,14 +2265,14 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="7053"/>
         <location filename="../src/form/filepathdialog.ui" line="7074"/>
         <source>Ending Memory Address.</source>
-        <translation type="unfinished">Ending Memory Address.</translation>
+        <translation>结束内存地址。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="426"/>
         <location filename="../src/form/filepathdialog.ui" line="432"/>
         <location filename="../src/form/filepathdialog.ui" line="447"/>
         <source>End Address</source>
-        <translation type="unfinished">End Address</translation>
+        <translation>结束地址</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="429"/>
@@ -2280,7 +2280,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="7059"/>
         <location filename="../src/form/filepathdialog.ui" line="7080"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ending Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ending Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;结束内存地址。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="467"/>
@@ -2288,29 +2288,29 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="506"/>
         <location filename="../src/form/filepathdialog.ui" line="522"/>
         <source>Controller</source>
-        <translation type="unfinished">Controller</translation>
+        <translation>控制器</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="470"/>
         <source>Controller settings.</source>
-        <translation type="unfinished">Controller settings.</translation>
+        <translation>控制器设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="473"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controller settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controller settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;控制器设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="497"/>
         <location filename="../src/form/filepathdialog.ui" line="519"/>
         <source>Controller number.</source>
-        <translation type="unfinished">Controller number.</translation>
+        <translation>控制器编号。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="503"/>
         <location filename="../src/form/filepathdialog.ui" line="525"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controller number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controller number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;控制器编号。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="542"/>
@@ -2320,12 +2320,12 @@ Your EFI configuration will be overwritten!</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="545"/>
         <source>The Device Path for a Baseboard Management Controller (BMC) host interface.</source>
-        <translation type="unfinished">The Device Path for a Baseboard Management Controller (BMC) host interface.</translation>
+        <translation>底板管理控制器 (BMC) 主机接口的设备路径。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="548"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Device Path for a Baseboard Management Controller (BMC) host interface.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Device Path for a Baseboard Management Controller (BMC) host interface.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;底板管理控制器 (BMC) 主机接口的设备路径。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="572"/>
@@ -2335,11 +2335,11 @@ Your EFI configuration will be overwritten!</source>
 0x01 - KCS: Keyboard Controller Style.
 0x02 - SMIC: Server Management Interface Chip.
 0x03 - BT: Block Transfer.</source>
-        <translation type="unfinished">The Baseboard Management Controller (BMC) host interface type:
-0x00 - Unknown.
-0x01 - KCS: Keyboard Controller Style.
-0x02 - SMIC: Server Management Interface Chip.
-0x03 - BT: Block Transfer.</translation>
+        <translation>底板管理控制器 (BMC) 主机接口类型：
+0x00 - 未知。
+0x01 - KCS：键盘控制器风格。
+0x02 - SMIC：服务器管理接口芯片。
+0x03 - BT：块传输。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="579"/>
@@ -2349,7 +2349,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="2338"/>
         <location filename="../src/form/filepathdialog.ui" line="2354"/>
         <source>Interface Type</source>
-        <translation type="unfinished">Interface Type</translation>
+        <translation>接口类型</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="582"/>
@@ -2359,45 +2359,45 @@ Your EFI configuration will be overwritten!</source>
 0x01 - KCS: Keyboard Controller Style.
 0x02 - SMIC: Server Management Interface Chip.
 0x03 - BT: Block Transfer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Baseboard Management Controller (BMC) host interface type:
-0x00 - Unknown.
-0x01 - KCS: Keyboard Controller Style.
-0x02 - SMIC: Server Management Interface Chip.
-0x03 - BT: Block Transfer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;底板管理控制器 (BMC) 主机接口类型：
+0x00 - 未知。
+0x01 - KCS：键盘控制器风格。
+0x02 - SMIC：服务器管理接口芯片。
+0x03 - BT：块传输。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="625"/>
         <source>Keyboard Controller Style</source>
-        <translation type="unfinished">Keyboard Controller Style</translation>
+        <translation>键盘控制器样式</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="630"/>
         <source>Server Management Interface Chip</source>
-        <translation type="unfinished">Server Management Interface Chip</translation>
+        <translation>服务器管理接口芯片</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="635"/>
         <source>Block Transfer</source>
-        <translation type="unfinished">Block Transfer</translation>
+        <translation>块传输</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="643"/>
         <location filename="../src/form/filepathdialog.ui" line="664"/>
         <source>Base address (either memory-mapped or I/O) of the BMC. If the least-significant bit of the field is a 1, the address is in I/O space; otherwise, the address is memory-mapped. Refer to the IPMI Interface Specification for usage details.</source>
-        <translation type="unfinished">Base address (either memory-mapped or I/O) of the BMC. If the least-significant bit of the field is a 1, the address is in I/O space; otherwise, the address is memory-mapped. Refer to the IPMI Interface Specification for usage details.</translation>
+        <translation>BMC 的基地址（内存映射或 I/O）。 如果该字段的最低有效位为 1，则该地址位于 I/O 空间； 否则，该地址是内存映射的。 使用详情请参阅 IPMI 接口规范。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="646"/>
         <location filename="../src/form/filepathdialog.ui" line="652"/>
         <location filename="../src/form/filepathdialog.ui" line="667"/>
         <source>Base Address</source>
-        <translation type="unfinished">Base Address</translation>
+        <translation>基址</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="649"/>
         <location filename="../src/form/filepathdialog.ui" line="670"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Base address (either memory-mapped or I/O) of the BMC. If the least-significant bit of the field is a 1, the address is in I/O space; otherwise, the address is memory-mapped. Refer to the IPMI Interface Specification for usage details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Base address (either memory-mapped or I/O) of the BMC. If the least-significant bit of the field is a 1, the address is in I/O space; otherwise, the address is memory-mapped. Refer to the IPMI Interface Specification for usage details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;BMC 的基地址（内存映射或 I/O）。 如果该字段的最低有效位为 1，则该地址位于 I/O 空间； 否则，该地址是内存映射的。 使用详情请参阅 IPMI 接口规范。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="688"/>
@@ -2408,13 +2408,13 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="691"/>
         <location filename="../src/form/filepathdialog.ui" line="805"/>
         <source>This Device Path contains ACPI Device IDs that represent a device’s Plug and Play Hardware ID and its corresponding unique persistent ID.</source>
-        <translation type="unfinished">This Device Path contains ACPI Device IDs that represent a device’s Plug and Play Hardware ID and its corresponding unique persistent ID.</translation>
+        <translation>此设备路径包含表示设备的即插即用硬件 ID 及其相应的唯一持久 ID 的 ACPI 设备 ID。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="694"/>
         <location filename="../src/form/filepathdialog.ui" line="808"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This Device Path contains ACPI Device IDs that represent a device’s Plug and Play Hardware ID and its corresponding unique persistent ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This Device Path contains ACPI Device IDs that represent a device’s Plug and Play Hardware ID and its corresponding unique persistent ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;此设备路径包含表示设备的即插即用硬件 ID 及其相应的唯一持久 ID 的 ACPI 设备 ID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="718"/>
@@ -2422,7 +2422,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="832"/>
         <location filename="../src/form/filepathdialog.ui" line="853"/>
         <source>Devices PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match the corresponding HID in the ACPI name space.</source>
-        <translation type="unfinished">Devices PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match the corresponding HID in the ACPI name space.</translation>
+        <translation>设备 PnP 硬件 ID 存储在数字 32 位压缩 EISA 类型 ID 中。 该值必须与 ACPI 名称空间中相应的 HID 匹配。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="724"/>
@@ -2430,7 +2430,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="838"/>
         <location filename="../src/form/filepathdialog.ui" line="859"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match the corresponding HID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match the corresponding HID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设备 PnP 硬件 ID 存储在数字 32 位压缩 EISA 类型 ID 中。 该值必须与 ACPI 名称空间中相应的 HID 匹配。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="758"/>
@@ -2438,7 +2438,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="872"/>
         <location filename="../src/form/filepathdialog.ui" line="893"/>
         <source>Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. Only the 32-bit numeric value type of UID is supported; thus strings must not be used for the UID in the ACPI name space.</source>
-        <translation type="unfinished">Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. Only the 32-bit numeric value type of UID is supported; thus strings must not be used for the UID in the ACPI name space.</translation>
+        <translation>如果两个设备具有相同的 HID，则 ACPI 需要唯一的 ID。 该值还必须与 ACPI 名称空间中相应的 UID/HID 对匹配。 仅支持 32 位数值类型的 UID； 因此，字符串不得用于 ACPI 名称空间中的 UID。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="764"/>
@@ -2446,18 +2446,18 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="878"/>
         <location filename="../src/form/filepathdialog.ui" line="899"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. Only the 32-bit numeric value type of UID is supported; thus strings must not be used for the UID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. Only the 32-bit numeric value type of UID is supported; thus strings must not be used for the UID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果两个设备具有相同的 HID，则 ACPI 需要唯一的 ID。 该值还必须与 ACPI 名称空间中相应的 UID/HID 对匹配。 仅支持 32 位数值类型的 UID； 因此，字符串不得用于 ACPI 名称空间中的 UID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="802"/>
         <source>Expanded</source>
-        <translation type="unfinished">Expanded</translation>
+        <translation>扩展</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="912"/>
         <location filename="../src/form/filepathdialog.ui" line="933"/>
         <source>Devices compatible PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI name space.</source>
-        <translation type="unfinished">Devices compatible PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI name space.</translation>
+        <translation>设备兼容的 PnP 硬件 ID 存储在数字 32 位压缩 EISA 类型 ID 中。 该值必须至少与 ACPI 命名空间中相应 CID 返回的兼容设备 ID 之一匹配。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="915"/>
@@ -2470,13 +2470,13 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="918"/>
         <location filename="../src/form/filepathdialog.ui" line="939"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices compatible PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices compatible PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设备兼容的 PnP 硬件 ID 存储在数字 32 位压缩 EISA 类型 ID 中。 该值必须至少与 ACPI 命名空间中相应 CID 返回的兼容设备 ID 之一匹配。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="952"/>
         <location filename="../src/form/filepathdialog.ui" line="974"/>
         <source>Devices PnP hardware ID stored as a string. This value must match the corresponding HID in the ACPI name space. If the length of this string is 0, then the HID field is used. If the length of this string is greater than 0, then this field supersedes the HID field.</source>
-        <translation type="unfinished">Devices PnP hardware ID stored as a string. This value must match the corresponding HID in the ACPI name space. If the length of this string is 0, then the HID field is used. If the length of this string is greater than 0, then this field supersedes the HID field.</translation>
+        <translation>设备 PnP 硬件 ID 以字符串形式存储。 该值必须与 ACPI 名称空间中相应的 HID 匹配。 如果该字符串的长度为 0，则使用 HID 字段。 如果该字符串的长度大于 0，则该字段将取代 HID 字段。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="955"/>
@@ -2489,13 +2489,13 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="958"/>
         <location filename="../src/form/filepathdialog.ui" line="980"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored as a string. This value must match the corresponding HID in the ACPI name space. If the length of this string is 0, then the HID field is used. If the length of this string is greater than 0, then this field supersedes the HID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored as a string. This value must match the corresponding HID in the ACPI name space. If the length of this string is 0, then the HID field is used. If the length of this string is greater than 0, then this field supersedes the HID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设备 PnP 硬件 ID 以字符串形式存储。 该值必须与 ACPI 名称空间中相应的 HID 匹配。 如果该字符串的长度为 0，则使用 HID 字段。 如果该字符串的长度大于 0，则该字段将取代 HID 字段。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="987"/>
         <location filename="../src/form/filepathdialog.ui" line="1009"/>
         <source>Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. This value is stored as a string. If the length of this string is 0, then the UID field is used. If the length of this string is greater than 0, then this field supersedes the UID field.</source>
-        <translation type="unfinished">Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. This value is stored as a string. If the length of this string is 0, then the UID field is used. If the length of this string is greater than 0, then this field supersedes the UID field.</translation>
+        <translation>如果两个设备具有相同的 HID，则 ACPI 需要唯一的 ID。 该值还必须与 ACPI 名称空间中相应的 UID/HID 对匹配。 该值存储为字符串。 如果该字符串的长度为 0，则使用 UID 字段。 如果该字符串的长度大于 0，则该字段将取代 UID 字段。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="990"/>
@@ -2508,13 +2508,13 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="993"/>
         <location filename="../src/form/filepathdialog.ui" line="1015"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. This value is stored as a string. If the length of this string is 0, then the UID field is used. If the length of this string is greater than 0, then this field supersedes the UID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. This value is stored as a string. If the length of this string is 0, then the UID field is used. If the length of this string is greater than 0, then this field supersedes the UID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果两个设备具有相同的 HID，则 ACPI 需要唯一的 ID。 该值还必须与 ACPI 名称空间中相应的 UID/HID 对匹配。 该值存储为字符串。 如果该字符串的长度为 0，则使用 UID 字段。 如果该字符串的长度大于 0，则该字段将取代 UID 字段。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1022"/>
         <location filename="../src/form/filepathdialog.ui" line="1044"/>
         <source>Devices compatible PnP hardware ID stored as a string. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI namespace. If the length of this string is 0, then the CID field is used. If the length of this string is greater than 0, then this field supersedes the CID field.</source>
-        <translation type="unfinished">Devices compatible PnP hardware ID stored as a string. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI namespace. If the length of this string is 0, then the CID field is used. If the length of this string is greater than 0, then this field supersedes the CID field.</translation>
+        <translation>设备兼容的 PnP 硬件 ID 以字符串形式存储。 该值必须至少与 ACPI 命名空间中相应 CID 返回的兼容设备 ID 之一匹配。 如果该字符串的长度为 0，则使用 CID 字段。 如果该字符串的长度大于 0，则该字段将取代 CID 字段。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1025"/>
@@ -2527,7 +2527,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="1028"/>
         <location filename="../src/form/filepathdialog.ui" line="1050"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices compatible PnP hardware ID stored as a string. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI namespace. If the length of this string is 0, then the CID field is used. If the length of this string is greater than 0, then this field supersedes the CID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices compatible PnP hardware ID stored as a string. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI namespace. If the length of this string is 0, then the CID field is used. If the length of this string is greater than 0, then this field supersedes the CID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设备兼容的 PnP 硬件 ID 以字符串形式存储。 该值必须至少与 ACPI 命名空间中相应 CID 返回的兼容设备 ID 之一匹配。 如果该字符串的长度为 0，则使用 CID 字段。 如果该字符串的长度大于 0，则该字段将取代 CID 字段。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1061"/>
@@ -2540,58 +2540,58 @@ Your EFI configuration will be overwritten!</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1064"/>
         <source>The ADR device path is used to contain video output device attributes to support the Graphics Output Protocol.</source>
-        <translation type="unfinished">The ADR device path is used to contain video output device attributes to support the Graphics Output Protocol.</translation>
+        <translation>ADR 设备路径用于包含视频输出设备属性以支持图形输出协议。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1067"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The ADR device path is used to contain video output device attributes to support the Graphics Output Protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The ADR device path is used to contain video output device attributes to support the Graphics Output Protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ADR 设备路径用于包含视频输出设备属性以支持图形输出协议。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1091"/>
         <location filename="../src/form/filepathdialog.ui" line="1112"/>
         <source>ADR value. For video output devices the value of this field comes from Table B-2 ACPI 3.0 specification. At least one ADR value is required</source>
-        <translation type="unfinished">ADR value. For video output devices the value of this field comes from Table B-2 ACPI 3.0 specification. At least one ADR value is required</translation>
+        <translation>ADR 值。 对于视频输出设备，该字段的值来自表 B-2 ACPI 3.0 规范。 至少需要一个 ADR 值</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1097"/>
         <location filename="../src/form/filepathdialog.ui" line="1118"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ADR value. For video output devices the value of this field comes from Table B-2 ACPI 3.0 specification. At least one ADR value is required&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ADR value. For video output devices the value of this field comes from Table B-2 ACPI 3.0 specification. At least one ADR value is required&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ADR 值。 对于视频输出设备，该字段的值来自表 B-2 ACPI 3.0 规范。 至少需要一个 ADR 值&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1131"/>
         <location filename="../src/form/filepathdialog.ui" line="1192"/>
         <source>This device path may optionally contain more than one ADR entry.</source>
-        <translation type="unfinished">This device path may optionally contain more than one ADR entry.</translation>
+        <translation>该设备路径可以选择包含多个 ADR 条目。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1134"/>
         <location filename="../src/form/filepathdialog.ui" line="1140"/>
         <location filename="../src/form/filepathdialog.ui" line="1195"/>
         <source>Additional ADR</source>
-        <translation type="unfinished">Additional ADR</translation>
+        <translation>额外的 ADR</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1137"/>
         <location filename="../src/form/filepathdialog.ui" line="1198"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path may optionally contain more than one ADR entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path may optionally contain more than one ADR entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;该设备路径可以选择包含多个 ADR 条目。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1153"/>
         <source>Additional ADR format.</source>
-        <translation type="unfinished">Additional ADR format.</translation>
+        <translation>额外的 ADR 格式。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1156"/>
         <source>Additional ADR format</source>
-        <translation type="unfinished">Additional ADR format</translation>
+        <translation>额外的 ADR 格式</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1159"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Additional ADR format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Additional ADR format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;额外的 ADR 格式。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1209"/>
@@ -2601,31 +2601,31 @@ Your EFI configuration will be overwritten!</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1212"/>
         <source>This device path describes an NVDIMM device using the ACPI 6.0 specification defined NFIT Device Handle as the identifier.</source>
-        <translation type="unfinished">This device path describes an NVDIMM device using the ACPI 6.0 specification defined NFIT Device Handle as the identifier.</translation>
+        <translation>此设备路径使用 ACPI 6.0 规范定义的 NFIT 设备句柄作为标识符来描述 NVDIMM 设备。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1215"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path describes an NVDIMM device using the ACPI 6.0 specification defined NFIT Device Handle as the identifier.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path describes an NVDIMM device using the ACPI 6.0 specification defined NFIT Device Handle as the identifier.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;此设备路径使用 ACPI 6.0 规范定义的 NFIT 设备句柄作为标识符来描述 NVDIMM 设备。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1239"/>
         <location filename="../src/form/filepathdialog.ui" line="1260"/>
         <source>NFIT Device Handle - Unique physical identifier. See ACPI Defined Devices and Device Specific Objects section, NVDIMM Devices sub-chapter for the specific definition of the fields utilized for this handle.</source>
-        <translation type="unfinished">NFIT Device Handle - Unique physical identifier. See ACPI Defined Devices and Device Specific Objects section, NVDIMM Devices sub-chapter for the specific definition of the fields utilized for this handle.</translation>
+        <translation>NFIT 设备句柄 - 唯一物理标识符。 有关用于此句柄的字段的具体定义，请参阅“ACPI 定义的设备和设备特定对象”部分的“NVDIMM 设备”子章节。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1242"/>
         <location filename="../src/form/filepathdialog.ui" line="1248"/>
         <location filename="../src/form/filepathdialog.ui" line="1263"/>
         <source>NFIT Device Handle</source>
-        <translation type="unfinished">NFIT Device Handle</translation>
+        <translation>NFIT 设备句柄</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1245"/>
         <location filename="../src/form/filepathdialog.ui" line="1266"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NFIT Device Handle - Unique physical identifier. See ACPI Defined Devices and Device Specific Objects section, NVDIMM Devices sub-chapter for the specific definition of the fields utilized for this handle.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NFIT Device Handle - Unique physical identifier. See ACPI Defined Devices and Device Specific Objects section, NVDIMM Devices sub-chapter for the specific definition of the fields utilized for this handle.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NFIT 设备句柄 - 唯一物理标识符。 有关用于此句柄的字段的具体定义，请参阅“ACPI 定义的设备和设备特定对象”部分的“NVDIMM 设备”子章节。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1284"/>
@@ -2635,50 +2635,50 @@ Your EFI configuration will be overwritten!</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1287"/>
         <source>ATAPI Settings.</source>
-        <translation type="unfinished">ATAPI Settings.</translation>
+        <translation>ATAPI 设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1290"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ATAPI Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ATAPI Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ATAPI 设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1314"/>
         <location filename="../src/form/filepathdialog.ui" line="1336"/>
         <source>Set to zero for primary or one for secondary.</source>
-        <translation type="unfinished">Set to zero for primary or one for secondary.</translation>
+        <translation>初级设置为零，次级设置为 1。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1317"/>
         <location filename="../src/form/filepathdialog.ui" line="1323"/>
         <location filename="../src/form/filepathdialog.ui" line="1339"/>
         <source>Primary</source>
-        <translation type="unfinished">Primary</translation>
+        <translation>基本</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1320"/>
         <location filename="../src/form/filepathdialog.ui" line="1342"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set to zero for primary or one for secondary.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set to zero for primary or one for secondary.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;初级设置为零，次级设置为 1。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1349"/>
         <location filename="../src/form/filepathdialog.ui" line="1371"/>
         <source>Set to zero for master or one for slave mode.</source>
-        <translation type="unfinished">Set to zero for master or one for slave mode.</translation>
+        <translation>对于主模式设置为零，对于从模式设置为 1。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1352"/>
         <location filename="../src/form/filepathdialog.ui" line="1358"/>
         <location filename="../src/form/filepathdialog.ui" line="1374"/>
         <source>Slave</source>
-        <translation type="unfinished">Slave</translation>
+        <translation>从属</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1355"/>
         <location filename="../src/form/filepathdialog.ui" line="1377"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set to zero for master or one for slave mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set to zero for master or one for slave mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;对于主模式设置为零，对于从模式设置为 1。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1384"/>
@@ -2686,7 +2686,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="4032"/>
         <location filename="../src/form/filepathdialog.ui" line="4054"/>
         <source>Logical Unit Number.</source>
-        <translation type="unfinished">Logical Unit Number.</translation>
+        <translation>逻辑单元号。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1390"/>
@@ -2694,7 +2694,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="4038"/>
         <location filename="../src/form/filepathdialog.ui" line="4060"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;逻辑单元号。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1429"/>
@@ -2704,18 +2704,18 @@ Your EFI configuration will be overwritten!</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1432"/>
         <source>SCSI Settings.</source>
-        <translation type="unfinished">SCSI Settings.</translation>
+        <translation>SCSI 设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1435"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SCSI Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SCSI Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SCSI 设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1459"/>
         <location filename="../src/form/filepathdialog.ui" line="1481"/>
         <source>Target ID on the SCSI bus (PUN).</source>
-        <translation type="unfinished">Target ID on the SCSI bus (PUN).</translation>
+        <translation>SCSI 总线 (PUN) 上的目标 ID。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1462"/>
@@ -2728,13 +2728,13 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="4954"/>
         <location filename="../src/form/filepathdialog.ui" line="4969"/>
         <source>Target ID</source>
-        <translation type="unfinished">Target ID</translation>
+        <translation>目标 ID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1465"/>
         <location filename="../src/form/filepathdialog.ui" line="1487"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Target ID on the SCSI bus (PUN).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Target ID on the SCSI bus (PUN).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SCSI 总线 (PUN) 上的目标 ID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1500"/>
@@ -2742,7 +2742,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="4985"/>
         <location filename="../src/form/filepathdialog.ui" line="5006"/>
         <source>Logical Unit Number (LUN).</source>
-        <translation type="unfinished">Logical Unit Number (LUN).</translation>
+        <translation>逻辑单元号 (LUN)。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1506"/>
@@ -2750,22 +2750,22 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="4991"/>
         <location filename="../src/form/filepathdialog.ui" line="5012"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Logical Unit Number (LUN).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Logical Unit Number (LUN).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;逻辑单元号 (LUN)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1545"/>
         <source>Fibre Channel</source>
-        <translation type="unfinished">Fibre Channel</translation>
+        <translation>光纤通道</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1548"/>
         <source>Fibre Channel Settings</source>
-        <translation type="unfinished">Fibre Channel Settings</translation>
+        <translation>光纤通道设置</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1551"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fibre Channel Settings&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fibre Channel Settings&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;光纤通道设置&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1575"/>
@@ -2777,7 +2777,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="4413"/>
         <location filename="../src/form/filepathdialog.ui" line="4434"/>
         <source>Reserved.</source>
-        <translation type="unfinished">Reserved.</translation>
+        <translation>预留。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1581"/>
@@ -2789,13 +2789,13 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="4419"/>
         <location filename="../src/form/filepathdialog.ui" line="4440"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;预留。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1615"/>
         <location filename="../src/form/filepathdialog.ui" line="1636"/>
         <source>Fibre Channel World Wide Name.</source>
-        <translation type="unfinished">Fibre Channel World Wide Name.</translation>
+        <translation>光纤通道全球通用名称。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1618"/>
@@ -2805,88 +2805,88 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="4462"/>
         <location filename="../src/form/filepathdialog.ui" line="4477"/>
         <source>World Wide Name</source>
-        <translation type="unfinished">World Wide Name</translation>
+        <translation>全球通用名称</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1621"/>
         <location filename="../src/form/filepathdialog.ui" line="1642"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fibre Channel World Wide Name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fibre Channel World Wide Name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;光纤通道全球通用名称。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1655"/>
         <location filename="../src/form/filepathdialog.ui" line="1676"/>
         <source>Fibre Channel Logical Unit Number.</source>
-        <translation type="unfinished">Fibre Channel Logical Unit Number.</translation>
+        <translation>光纤通道逻辑单元号。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1661"/>
         <location filename="../src/form/filepathdialog.ui" line="1682"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fibre Channel Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fibre Channel Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;光纤通道逻辑单元号。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1699"/>
         <source>Firewire</source>
-        <translation type="unfinished">Firewire</translation>
+        <translation>火线</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1702"/>
         <source>Firewire Settings.</source>
-        <translation type="unfinished">Firewire Settings.</translation>
+        <translation>火线设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1705"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firewire Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firewire Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;火线设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1769"/>
         <location filename="../src/form/filepathdialog.ui" line="1790"/>
         <source>1394 Global Unique ID (GUID)</source>
-        <translation type="unfinished">1394 Global Unique ID (GUID)</translation>
+        <translation>1394 全球唯一ID (GUID)</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1775"/>
         <location filename="../src/form/filepathdialog.ui" line="1796"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1394 Global Unique ID (GUID)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1394 Global Unique ID (GUID)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1394 全球唯一ID (GUID)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1816"/>
         <source>USB settings.</source>
-        <translation type="unfinished">USB settings.</translation>
+        <translation>USB 设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1843"/>
         <location filename="../src/form/filepathdialog.ui" line="1865"/>
         <source>USB Parent Port Number.</source>
-        <translation type="unfinished">USB Parent Port Number.</translation>
+        <translation>USB 父端口号。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1846"/>
         <location filename="../src/form/filepathdialog.ui" line="1852"/>
         <location filename="../src/form/filepathdialog.ui" line="1868"/>
         <source>Parent Port</source>
-        <translation type="unfinished">Parent Port</translation>
+        <translation>父端口</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1849"/>
         <location filename="../src/form/filepathdialog.ui" line="1871"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB Parent Port Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB Parent Port Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB 父端口号。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1884"/>
         <location filename="../src/form/filepathdialog.ui" line="1906"/>
         <source>USB Interface Number.</source>
-        <translation type="unfinished">USB Interface Number.</translation>
+        <translation>USB 接口编号。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1890"/>
         <location filename="../src/form/filepathdialog.ui" line="1912"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB Interface Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB Interface Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB 接口编号。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1929"/>
@@ -2896,39 +2896,39 @@ Your EFI configuration will be overwritten!</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1932"/>
         <source>I2O Settings</source>
-        <translation type="unfinished">I2O Settings</translation>
+        <translation>I2O 设置</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1935"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I2O Settings&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I2O Settings&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I2O 设置&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1959"/>
         <location filename="../src/form/filepathdialog.ui" line="1981"/>
         <source>Target ID (TID) for a device.</source>
-        <translation type="unfinished">Target ID (TID) for a device.</translation>
+        <translation>设备的目标 ID (TID)。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1965"/>
         <location filename="../src/form/filepathdialog.ui" line="1987"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Target ID (TID) for a device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Target ID (TID) for a device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设备的目标 ID (TID)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2004"/>
         <source>InfiniBand</source>
-        <translation type="unfinished">InfiniBand</translation>
+        <translation>无限带宽</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2007"/>
         <source>InfiniBand Settings.</source>
-        <translation type="unfinished">InfiniBand Settings.</translation>
+        <translation>无限带宽设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2010"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;InfiniBand Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;InfiniBand Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;无限带宽设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2034"/>
@@ -2940,20 +2940,20 @@ Bit 2 - Console Protocol.
 Bit 3 - Storage Protocol.
 Bit 4 - Network Protocol.
 All other bits are reserved.</source>
-        <translation type="unfinished">Flags to help identify/manage InfiniBand device path elements:
-Bit 0 - IOC/Service (0b = IOC, 1b = Service).
-Bit 1 - Extend Boot Environment.
-Bit 2 - Console Protocol.
-Bit 3 - Storage Protocol.
-Bit 4 - Network Protocol.
-All other bits are reserved.</translation>
+        <translation>帮助识别/管理 InfiniBand 设备路径元素的标志：
+位 0 - IOC/服务（0b = IOC，1b = 服务）。
+位 1 - 扩展引导环境。
+位 2 - 控制台协议。
+位 3 - 存储协议。
+位 4 - 网络协议。
+所有其他位均保留。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2043"/>
         <location filename="../src/form/filepathdialog.ui" line="2055"/>
         <location filename="../src/form/filepathdialog.ui" line="2076"/>
         <source>Resource Flags</source>
-        <translation type="unfinished">Resource Flags</translation>
+        <translation>资源标志</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2046"/>
@@ -2965,19 +2965,19 @@ Bit 2 - Console Protocol.
 Bit 3 - Storage Protocol.
 Bit 4 - Network Protocol.
 All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Flags to help identify/manage InfiniBand device path elements:
-Bit 0 - IOC/Service (0b = IOC, 1b = Service).
-Bit 1 - Extend Boot Environment.
-Bit 2 - Console Protocol.
-Bit 3 - Storage Protocol.
-Bit 4 - Network Protocol.
-All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于帮助识别/管理无限带宽设备路径元素的标志：
+位 0 - IOC/服务（0b = IOC，1b = 服务）。
+位 1 - 扩展引导环境。
+位 2 - 控制台协议。
+位 3 - 存储协议。
+位 4 - 网络协议。
+所有其他位均保留。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2098"/>
         <location filename="../src/form/filepathdialog.ui" line="2119"/>
         <source>128-bit Global Identifier for remote fabric port</source>
-        <translation type="unfinished">128-bit Global Identifier for remote fabric port</translation>
+        <translation>用于远程结构端口的 128 位全局标识符</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2101"/>
@@ -2990,109 +2990,109 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2104"/>
         <location filename="../src/form/filepathdialog.ui" line="2125"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;128-bit Global Identifier for remote fabric port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;128-bit Global Identifier for remote fabric port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于远程结构端口的 128 位全局标识符&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2135"/>
         <location filename="../src/form/filepathdialog.ui" line="2156"/>
         <source>64-bit unique identifier to remote IOC or server process. Interpretation of field specified by Resource Flags (bit 0)</source>
-        <translation type="unfinished">64-bit unique identifier to remote IOC or server process. Interpretation of field specified by Resource Flags (bit 0)</translation>
+        <translation>远程 IOC 或服务器进程的 64 位唯一标识符。 资源标志（位 0）指定的字段的解释</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2138"/>
         <location filename="../src/form/filepathdialog.ui" line="2144"/>
         <location filename="../src/form/filepathdialog.ui" line="2159"/>
         <source>IOC GUID/Service ID</source>
-        <translation type="unfinished">IOC GUID/Service ID</translation>
+        <translation>IOC GUID/服务 ID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2141"/>
         <location filename="../src/form/filepathdialog.ui" line="2162"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;64-bit unique identifier to remote IOC or server process. Interpretation of field specified by Resource Flags (bit 0)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;64-bit unique identifier to remote IOC or server process. Interpretation of field specified by Resource Flags (bit 0)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;远程 IOC 或服务器进程的 64 位唯一标识符。 资源标志（位 0）指定的字段的解释&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2175"/>
         <location filename="../src/form/filepathdialog.ui" line="2196"/>
         <source>64-bit persistent ID of remote IOC port.</source>
-        <translation type="unfinished">64-bit persistent ID of remote IOC port.</translation>
+        <translation>远程 IOC 端口的 64 位持久 ID。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2178"/>
         <location filename="../src/form/filepathdialog.ui" line="2184"/>
         <location filename="../src/form/filepathdialog.ui" line="2199"/>
         <source>Target Port ID</source>
-        <translation type="unfinished">Target Port ID</translation>
+        <translation>目标端口 ID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2181"/>
         <location filename="../src/form/filepathdialog.ui" line="2202"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;64-bit persistent ID of remote IOC port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;64-bit persistent ID of remote IOC port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;远程 IOC 端口的 64 位持久 ID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2215"/>
         <location filename="../src/form/filepathdialog.ui" line="2236"/>
         <source>64-bit persistent ID of remote device.</source>
-        <translation type="unfinished">64-bit persistent ID of remote device.</translation>
+        <translation>远程设备的 64 位持久 ID。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2218"/>
         <location filename="../src/form/filepathdialog.ui" line="2224"/>
         <location filename="../src/form/filepathdialog.ui" line="2239"/>
         <source>Device ID</source>
-        <translation type="unfinished">Device ID</translation>
+        <translation>设备 ID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2221"/>
         <location filename="../src/form/filepathdialog.ui" line="2242"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;64-bit persistent ID of remote device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;64-bit persistent ID of remote device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;远程设备的 64 位持久 ID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2259"/>
         <source>MAC Address</source>
-        <translation type="unfinished">MAC Address</translation>
+        <translation>MAC 地址</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2262"/>
         <source>MAC settings.</source>
-        <translation type="unfinished">MAC settings.</translation>
+        <translation>MAC 设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2289"/>
         <location filename="../src/form/filepathdialog.ui" line="2310"/>
         <source>The MAC address for a network interface padded with 0s.</source>
-        <translation type="unfinished">The MAC address for a network interface padded with 0s.</translation>
+        <translation>以 0 填充的网络接口的 MAC 地址。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2295"/>
         <location filename="../src/form/filepathdialog.ui" line="2316"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The MAC address for a network interface padded with 0s.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The MAC address for a network interface padded with 0s.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;以 0 填充的网络接口的 MAC 地址。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2329"/>
         <location filename="../src/form/filepathdialog.ui" line="2351"/>
         <source>Network interface type (i.e., 802.3, FDDI). See RFC 3232.</source>
-        <translation type="unfinished">Network interface type (i.e., 802.3, FDDI). See RFC 3232.</translation>
+        <translation>网络接口类型（例如 802.3、FDDI）。 请参阅 RFC 3232。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2335"/>
         <location filename="../src/form/filepathdialog.ui" line="2357"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Network interface type (i.e., 802.3, FDDI). See RFC 3232.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Network interface type (i.e., 802.3, FDDI). See RFC 3232.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;网络接口类型（例如 802.3、FDDI）。 请参阅 RFC 3232。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2377"/>
         <source>IPv4 settings.</source>
-        <translation type="unfinished">IPv4 settings.</translation>
+        <translation>IPv4 设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2404"/>
         <location filename="../src/form/filepathdialog.ui" line="2425"/>
         <source>The local IPv4 address.</source>
-        <translation type="unfinished">The local IPv4 address.</translation>
+        <translation>本地 IPv4 地址。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2407"/>
@@ -3102,19 +3102,19 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2769"/>
         <location filename="../src/form/filepathdialog.ui" line="2784"/>
         <source>Local IP Address</source>
-        <translation type="unfinished">Local IP Address</translation>
+        <translation>本地 IP 地址</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2410"/>
         <location filename="../src/form/filepathdialog.ui" line="2431"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The local IPv4 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The local IPv4 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;本地 IPv4 地址。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2444"/>
         <location filename="../src/form/filepathdialog.ui" line="2465"/>
         <source>The remote IPv4 address.</source>
-        <translation type="unfinished">The remote IPv4 address.</translation>
+        <translation>远程 IPv4 地址。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2447"/>
@@ -3124,13 +3124,13 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2809"/>
         <location filename="../src/form/filepathdialog.ui" line="2824"/>
         <source>Remote IP Address</source>
-        <translation type="unfinished">Remote IP Address</translation>
+        <translation>远程 IP 地址</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2450"/>
         <location filename="../src/form/filepathdialog.ui" line="2471"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The remote IPv4 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The remote IPv4 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;远程 IPv4 地址。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2484"/>
@@ -3138,7 +3138,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2840"/>
         <location filename="../src/form/filepathdialog.ui" line="2862"/>
         <source>The local port number.</source>
-        <translation type="unfinished">The local port number.</translation>
+        <translation>本地端口号。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2487"/>
@@ -3148,7 +3148,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2849"/>
         <location filename="../src/form/filepathdialog.ui" line="2865"/>
         <source>Local Port</source>
-        <translation type="unfinished">Local Port</translation>
+        <translation>本地端口</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2490"/>
@@ -3156,7 +3156,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2846"/>
         <location filename="../src/form/filepathdialog.ui" line="2868"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The local port number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The local port number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;本地端口号。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2525"/>
@@ -3164,7 +3164,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2881"/>
         <location filename="../src/form/filepathdialog.ui" line="2903"/>
         <source>The remote port number.</source>
-        <translation type="unfinished">The remote port number.</translation>
+        <translation>远程端口号。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2528"/>
@@ -3174,7 +3174,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2890"/>
         <location filename="../src/form/filepathdialog.ui" line="2906"/>
         <source>Remote Port</source>
-        <translation type="unfinished">Remote Port</translation>
+        <translation>远程端口</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2531"/>
@@ -3182,7 +3182,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2887"/>
         <location filename="../src/form/filepathdialog.ui" line="2909"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The remote port number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The remote port number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;远程端口号。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2566"/>
@@ -3190,7 +3190,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2922"/>
         <location filename="../src/form/filepathdialog.ui" line="2944"/>
         <source>The network protocol (i.e., UDP, TCP). See RFC 3232.</source>
-        <translation type="unfinished">The network protocol (i.e., UDP, TCP). See RFC 3232.</translation>
+        <translation>网络协议（例如 UDP、TCP）。 请参阅 RFC 3232。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2572"/>
@@ -3198,30 +3198,30 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2928"/>
         <location filename="../src/form/filepathdialog.ui" line="2950"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The network protocol (i.e., UDP, TCP). See RFC 3232.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The network protocol (i.e., UDP, TCP). See RFC 3232.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;网络协议（例如 UDP、TCP）。 请参阅 RFC 3232。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2607"/>
         <location filename="../src/form/filepathdialog.ui" line="2631"/>
         <source>0x00 - The Source IP Address was assigned though DHCP.
 0x01 - The Source IP Address is statically bound.</source>
-        <translation type="unfinished">0x00 - The Source IP Address was assigned though DHCP.
-0x01 - The Source IP Address is statically bound.</translation>
+        <translation>0x00 - 源 IP 地址是通过 DHCP 分配的。
+0x01 - 源 IP 地址是静态绑定的。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2611"/>
         <location filename="../src/form/filepathdialog.ui" line="2618"/>
         <location filename="../src/form/filepathdialog.ui" line="2635"/>
         <source>Static IP Address</source>
-        <translation type="unfinished">Static IP Address</translation>
+        <translation>静态 IP 地址</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2614"/>
         <location filename="../src/form/filepathdialog.ui" line="2638"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - The Source IP Address was assigned though DHCP.
 0x01 - The Source IP Address is statically bound.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - The Source IP Address was assigned though DHCP.
-0x01 - The Source IP Address is statically bound.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - 源 IP 地址是通过 DHCP 分配的。
+0x01 - 源 IP 地址是静态绑定的。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2646"/>
@@ -3229,7 +3229,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="3062"/>
         <location filename="../src/form/filepathdialog.ui" line="3083"/>
         <source>The Gateway IP Address.</source>
-        <translation type="unfinished">The Gateway IP Address.</translation>
+        <translation>网关 IP 地址。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2649"/>
@@ -3239,7 +3239,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="3071"/>
         <location filename="../src/form/filepathdialog.ui" line="3086"/>
         <source>Gateway IP Address</source>
-        <translation type="unfinished">Gateway IP Address</translation>
+        <translation>网关 IP 地址</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2652"/>
@@ -3247,49 +3247,49 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="3068"/>
         <location filename="../src/form/filepathdialog.ui" line="3089"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Gateway IP Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Gateway IP Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;网关 IP 地址。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2686"/>
         <location filename="../src/form/filepathdialog.ui" line="2707"/>
         <source>Subnet mask.</source>
-        <translation type="unfinished">Subnet mask.</translation>
+        <translation>子网掩码。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2689"/>
         <location filename="../src/form/filepathdialog.ui" line="2695"/>
         <location filename="../src/form/filepathdialog.ui" line="2710"/>
         <source>Subnet Mask</source>
-        <translation type="unfinished">Subnet Mask</translation>
+        <translation>子网掩码</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2733"/>
         <source>IPv6 settings.</source>
-        <translation type="unfinished">IPv6 settings.</translation>
+        <translation>IPv6 设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2760"/>
         <location filename="../src/form/filepathdialog.ui" line="2781"/>
         <source>The local IPv6 address.</source>
-        <translation type="unfinished">The local IPv6 address.</translation>
+        <translation>本地 IPv6 地址。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2766"/>
         <location filename="../src/form/filepathdialog.ui" line="2787"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The local IPv6 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The local IPv6 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;本地 IPv6 地址。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2800"/>
         <location filename="../src/form/filepathdialog.ui" line="2821"/>
         <source>The remote IPv6 address.</source>
-        <translation type="unfinished">The remote IPv6 address.</translation>
+        <translation>远程 IPv6 地址。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2806"/>
         <location filename="../src/form/filepathdialog.ui" line="2827"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The remote IPv6 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The remote IPv6 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;远程 IPv6 地址。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2963"/>
@@ -3297,16 +3297,16 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <source>0x00 - The Local IP Address was manually configured.
 0x01 - The Local IP Address is assigned through IPv6 stateless auto-configuration.
 0x02 - The Local IP Address is assigned through IPv6 stateful configuration.</source>
-        <translation type="unfinished">0x00 - The Local IP Address was manually configured.
-0x01 - The Local IP Address is assigned through IPv6 stateless auto-configuration.
-0x02 - The Local IP Address is assigned through IPv6 stateful configuration.</translation>
+        <translation>0x00 - 手动配置本地 IP 地址。
+0x01 - 本地 IP 地址通过 IPv6 无状态自动配置分配。
+0x02 - 本地 IP 地址是通过 IPv6 状态配置分配的。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2968"/>
         <location filename="../src/form/filepathdialog.ui" line="2976"/>
         <location filename="../src/form/filepathdialog.ui" line="2994"/>
         <source>IP Address Origin</source>
-        <translation type="unfinished">IP Address Origin</translation>
+        <translation>IP 地址来源</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2971"/>
@@ -3314,28 +3314,28 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - The Local IP Address was manually configured.
 0x01 - The Local IP Address is assigned through IPv6 stateless auto-configuration.
 0x02 - The Local IP Address is assigned through IPv6 stateful configuration.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - The Local IP Address was manually configured.
-0x01 - The Local IP Address is assigned through IPv6 stateless auto-configuration.
-0x02 - The Local IP Address is assigned through IPv6 stateful configuration.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - 手动配置本地 IP 地址。
+0x01 - 本地 IP 地址通过 IPv6 无状态自动配置分配。
+0x02 - 本地 IP 地址是通过 IPv6 状态配置分配的。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3021"/>
         <location filename="../src/form/filepathdialog.ui" line="3043"/>
         <source>The Prefix Length.</source>
-        <translation type="unfinished">The Prefix Length.</translation>
+        <translation>前缀长度。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3024"/>
         <location filename="../src/form/filepathdialog.ui" line="3030"/>
         <location filename="../src/form/filepathdialog.ui" line="3046"/>
         <source>Prefix Length</source>
-        <translation type="unfinished">Prefix Length</translation>
+        <translation>前缀长度</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3027"/>
         <location filename="../src/form/filepathdialog.ui" line="3049"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Prefix Length.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Prefix Length.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;前缀长度。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3106"/>
@@ -3345,50 +3345,50 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3109"/>
         <source>UART Settings.</source>
-        <translation type="unfinished">UART Settings.</translation>
+        <translation>UART 设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3112"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UART Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UART Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UART 设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3176"/>
         <location filename="../src/form/filepathdialog.ui" line="3197"/>
         <source>The baud rate setting for the UART style device. A value of 0 means that the devices default baud rate will be used.</source>
-        <translation type="unfinished">The baud rate setting for the UART style device. A value of 0 means that the devices default baud rate will be used.</translation>
+        <translation>UART 类型设备的波特率设置。 值 0 表示将使用设备默认波特率。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3179"/>
         <location filename="../src/form/filepathdialog.ui" line="3185"/>
         <location filename="../src/form/filepathdialog.ui" line="3200"/>
         <source>Baud Rate</source>
-        <translation type="unfinished">Baud Rate</translation>
+        <translation>波特率</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3182"/>
         <location filename="../src/form/filepathdialog.ui" line="3203"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The baud rate setting for the UART style device. A value of 0 means that the devices default baud rate will be used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The baud rate setting for the UART style device. A value of 0 means that the devices default baud rate will be used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UART 类型设备的波特率设置。 值 0 表示将使用设备默认波特率。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3216"/>
         <location filename="../src/form/filepathdialog.ui" line="3238"/>
         <source>The number of data bits for the UART style device. A value of 0 means that the devices default number of data bits will be used.</source>
-        <translation type="unfinished">The number of data bits for the UART style device. A value of 0 means that the devices default number of data bits will be used.</translation>
+        <translation>UART 类型设备的数据位数。 值 0 表示将使用设备默认的数据位数。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3219"/>
         <location filename="../src/form/filepathdialog.ui" line="3225"/>
         <location filename="../src/form/filepathdialog.ui" line="3241"/>
         <source>Data Bits</source>
-        <translation type="unfinished">Data Bits</translation>
+        <translation>数据位数</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3222"/>
         <location filename="../src/form/filepathdialog.ui" line="3244"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The number of data bits for the UART style device. A value of 0 means that the devices default number of data bits will be used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The number of data bits for the UART style device. A value of 0 means that the devices default number of data bits will be used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UART 类型设备的数据位数。 值 0 表示将使用设备默认的数据位数。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3257"/>
@@ -3400,20 +3400,20 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 0x03 - Odd Parity.
 0x04 - Mark Parity.
 0x05 - Space Parity.</source>
-        <translation type="unfinished">The parity setting for the UART style device:
-0x00 - Default Parity.
-0x01 - No Parity.
-0x02 - Even Parity.
-0x03 - Odd Parity.
-0x04 - Mark Parity.
-0x05 - Space Parity.</translation>
+        <translation>UART 类型设备的奇偶校验设置：
+0x00 - 默认奇偶校验。
+0x01 - 无奇偶校验。
+0x02 - 偶校验。
+0x03 - 奇校验。
+0x04 - 标记奇偶校验。
+0x05 - 空间奇偶校验。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3266"/>
         <location filename="../src/form/filepathdialog.ui" line="3278"/>
         <location filename="../src/form/filepathdialog.ui" line="3300"/>
         <source>Parity</source>
-        <translation type="unfinished">Parity</translation>
+        <translation>奇偶校验</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3269"/>
@@ -3425,44 +3425,44 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 0x03 - Odd Parity.
 0x04 - Mark Parity.
 0x05 - Space Parity.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The parity setting for the UART style device:
-0x00 - Default Parity.
-0x01 - No Parity.
-0x02 - Even Parity.
-0x03 - Odd Parity.
-0x04 - Mark Parity.
-0x05 - Space Parity.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UART 类型设备的奇偶校验设置：
+0x00 - 默认奇偶校验。
+0x01 - 无奇偶校验。
+0x02 - 偶校验。
+0x03 - 奇校验。
+0x04 - 标记奇偶校验。
+0x05 - 空间奇偶校验。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3313"/>
         <location filename="../src/form/filepathdialog.ui" line="3394"/>
         <source>Default</source>
-        <translation type="unfinished">Default</translation>
+        <translation>默认</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3318"/>
         <source>No</source>
-        <translation type="unfinished">No</translation>
+        <translation>否</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3323"/>
         <source>Even</source>
-        <translation type="unfinished">Even</translation>
+        <translation>偶数</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3328"/>
         <source>Odd</source>
-        <translation type="unfinished">Odd</translation>
+        <translation>奇数</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3333"/>
         <source>Mark</source>
-        <translation type="unfinished">Mark</translation>
+        <translation>标记</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3338"/>
         <source>Space</source>
-        <translation type="unfinished">Space</translation>
+        <translation>空间</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3346"/>
@@ -3472,18 +3472,18 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 0x01 - 1 Stop Bit.
 0x02 - 1.5 Stop Bits.
 0x03 - 2 Stop Bits.</source>
-        <translation type="unfinished">The number of stop bits for the UART style device:
-0x00 - Default Stop Bits.
-0x01 - 1 Stop Bit.
-0x02 - 1.5 Stop Bits.
-0x03 - 2 Stop Bits.</translation>
+        <translation>UART 类型设备的停止位数量：
+0x00 - 默认停止位。
+0x01 - 1 个停止位。
+0x02 - 1.5 停止位。
+0x03 - 2 个停止位。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3353"/>
         <location filename="../src/form/filepathdialog.ui" line="3363"/>
         <location filename="../src/form/filepathdialog.ui" line="3383"/>
         <source>Stop Bits</source>
-        <translation type="unfinished">Stop Bits</translation>
+        <translation>停止位</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3356"/>
@@ -3493,11 +3493,11 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 0x01 - 1 Stop Bit.
 0x02 - 1.5 Stop Bits.
 0x03 - 2 Stop Bits.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The number of stop bits for the UART style device:
-0x00 - Default Stop Bits.
-0x01 - 1 Stop Bit.
-0x02 - 1.5 Stop Bits.
-0x03 - 2 Stop Bits.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UART 类型设备的停止位数量：
+0x00 - 默认停止位。
+0x01 - 1 个停止位。
+0x02 - 1.5 个停止位。
+0x03 - 2 个停止位。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3399"/>
@@ -3517,106 +3517,106 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3421"/>
         <source>USB Class</source>
-        <translation type="unfinished">USB Class</translation>
+        <translation>USB 类</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3424"/>
         <source>USB Class Settings.</source>
-        <translation type="unfinished">USB Class Settings.</translation>
+        <translation>USB 类设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3427"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB Class Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB Class Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB 类设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3451"/>
         <location filename="../src/form/filepathdialog.ui" line="3472"/>
         <source>Vendor ID assigned by USB-IF. A value of 0xFFFF will match any Vendor ID.</source>
-        <translation type="unfinished">Vendor ID assigned by USB-IF. A value of 0xFFFF will match any Vendor ID.</translation>
+        <translation>由 USB-IF 分配的供应商 ID。 值 0xFFFF 将匹配任何供应商 ID。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3454"/>
         <location filename="../src/form/filepathdialog.ui" line="3460"/>
         <location filename="../src/form/filepathdialog.ui" line="3475"/>
         <source>Vendor ID</source>
-        <translation type="unfinished">Vendor ID</translation>
+        <translation>供应商 ID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3457"/>
         <location filename="../src/form/filepathdialog.ui" line="3478"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor ID assigned by USB-IF. A value of 0xFFFF will match any Vendor ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor ID assigned by USB-IF. A value of 0xFFFF will match any Vendor ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;由 USB-IF 分配的供应商 ID。 值 0xFFFF 将匹配任何供应商 ID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3491"/>
         <location filename="../src/form/filepathdialog.ui" line="3512"/>
         <source>Product ID assigned by USB-IF. A value of 0xFFFF will match any Product ID.</source>
-        <translation type="unfinished">Product ID assigned by USB-IF. A value of 0xFFFF will match any Product ID.</translation>
+        <translation>由 USB-IF 分配的产品 ID。 值 0xFFFF 将匹配任何产品 ID。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3494"/>
         <location filename="../src/form/filepathdialog.ui" line="3500"/>
         <location filename="../src/form/filepathdialog.ui" line="3515"/>
         <source>Product ID</source>
-        <translation type="unfinished">Product ID</translation>
+        <translation>产品 ID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3497"/>
         <location filename="../src/form/filepathdialog.ui" line="3518"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Product ID assigned by USB-IF. A value of 0xFFFF will match any Product ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Product ID assigned by USB-IF. A value of 0xFFFF will match any Product ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;由 USB-IF 分配的产品 ID。 值 0xFFFF 将匹配任何产品 ID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3531"/>
         <location filename="../src/form/filepathdialog.ui" line="3552"/>
         <source>The class code assigned by the USB-IF. A value of 0xFF will match any class code.</source>
-        <translation type="unfinished">The class code assigned by the USB-IF. A value of 0xFF will match any class code.</translation>
+        <translation>USB-IF 分配的类别代码。 0xFF 值将匹配任何类别代码。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3534"/>
         <location filename="../src/form/filepathdialog.ui" line="3540"/>
         <location filename="../src/form/filepathdialog.ui" line="3555"/>
         <source>Device Class</source>
-        <translation type="unfinished">Device Class</translation>
+        <translation>设备类别</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3537"/>
         <location filename="../src/form/filepathdialog.ui" line="3558"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The class code assigned by the USB-IF. A value of 0xFF will match any class code.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The class code assigned by the USB-IF. A value of 0xFF will match any class code.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB-IF 分配的类别代码。 0xFF 值将匹配任何类别代码。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3571"/>
         <location filename="../src/form/filepathdialog.ui" line="3592"/>
         <source>The subclass code assigned by the USB-IF. A value of 0xFF will match any subclass code.</source>
-        <translation type="unfinished">The subclass code assigned by the USB-IF. A value of 0xFF will match any subclass code.</translation>
+        <translation>USB-IF 分配的子类代码。 0xFF 值将匹配任何子类代码。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3574"/>
         <location filename="../src/form/filepathdialog.ui" line="3580"/>
         <location filename="../src/form/filepathdialog.ui" line="3595"/>
         <source>Device Subclass</source>
-        <translation type="unfinished">Device Subclass</translation>
+        <translation>设备子类</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3577"/>
         <location filename="../src/form/filepathdialog.ui" line="3598"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The subclass code assigned by the USB-IF. A value of 0xFF will match any subclass code.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The subclass code assigned by the USB-IF. A value of 0xFF will match any subclass code.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB-IF 分配的子类代码。 0xFF 值将匹配任何子类代码。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3611"/>
         <location filename="../src/form/filepathdialog.ui" line="3632"/>
         <source>The protocol code assigned by the USB-IF. A value of 0xFF will match any protocol code.</source>
-        <translation type="unfinished">The protocol code assigned by the USB-IF. A value of 0xFF will match any protocol code.</translation>
+        <translation>USB-IF 分配的协议代码。 值 0xFF 将匹配任何协议代码。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3614"/>
         <location filename="../src/form/filepathdialog.ui" line="3620"/>
         <location filename="../src/form/filepathdialog.ui" line="3635"/>
         <source>Device Protocol</source>
-        <translation type="unfinished">Device Protocol</translation>
+        <translation>设备协议</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3617"/>
