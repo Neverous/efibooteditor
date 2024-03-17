@@ -18,7 +18,7 @@ mypy==1.9.0
     # via qt-updater (pyproject.toml)
 mypy-extensions==1.0.0
     # via mypy
-packaging==23.2
+packaging==24.0
     # via build
 pip-tools==7.4.1
     # via qt-updater (pyproject.toml)
