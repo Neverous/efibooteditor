@@ -40,7 +40,7 @@ jobs:
         shell: bash
 
       - name: Upload ${{ inputs.extension }}
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           prerelease: ${{ github.ref_type != 'tag' }}
           files: |
