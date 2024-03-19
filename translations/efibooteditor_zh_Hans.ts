@@ -1934,7 +1934,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="4885"/>
         <location filename="../src/form/filepathdialog.ui" line="4901"/>
         <source>URI</source>
-        <translation type="unfinished">URI</translation>
+        <translation>URI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6096"/>
@@ -2083,7 +2083,7 @@ Your EFI configuration will be overwritten!</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="163"/>
         <source>PCCARD</source>
-        <translation type="unfinished">PCCARD</translation>
+        <translation>PCCARD</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="166"/>
@@ -2315,7 +2315,7 @@ Your EFI configuration will be overwritten!</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="542"/>
         <source>BMC</source>
-        <translation type="unfinished">BMC</translation>
+        <translation>BMC</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="545"/>
@@ -2402,7 +2402,7 @@ Your EFI configuration will be overwritten!</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="688"/>
         <source>ACPI</source>
-        <translation type="unfinished">ACPI</translation>
+        <translation>ACPI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="691"/>
@@ -2464,7 +2464,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="921"/>
         <location filename="../src/form/filepathdialog.ui" line="936"/>
         <source>CID</source>
-        <translation type="unfinished">CID</translation>
+        <translation>CID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="918"/>
@@ -2483,7 +2483,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="961"/>
         <location filename="../src/form/filepathdialog.ui" line="977"/>
         <source>HIDSTR</source>
-        <translation type="unfinished">HIDSTR</translation>
+        <translation>HIDSTR</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="958"/>
@@ -2502,7 +2502,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="996"/>
         <location filename="../src/form/filepathdialog.ui" line="1012"/>
         <source>UIDSTR</source>
-        <translation type="unfinished">UIDSTR</translation>
+        <translation>UIDSTR</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="993"/>
@@ -2521,7 +2521,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="1031"/>
         <location filename="../src/form/filepathdialog.ui" line="1047"/>
         <source>CIDSTR</source>
-        <translation type="unfinished">CIDSTR</translation>
+        <translation>CIDSTR</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1028"/>
@@ -2535,7 +2535,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="1100"/>
         <location filename="../src/form/filepathdialog.ui" line="1115"/>
         <source>ADR</source>
-        <translation type="unfinished">ADR</translation>
+        <translation>ADR</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1064"/>
@@ -2596,7 +2596,7 @@ Your EFI configuration will be overwritten!</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1209"/>
         <source>NVDIMM</source>
-        <translation type="unfinished">NVDIMM</translation>
+        <translation>NVDIMM</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1212"/>
@@ -2630,7 +2630,7 @@ Your EFI configuration will be overwritten!</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1284"/>
         <source>ATAPI</source>
-        <translation type="unfinished">ATAPI</translation>
+        <translation>ATAPI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1287"/>
@@ -2699,7 +2699,7 @@ Your EFI configuration will be overwritten!</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1429"/>
         <source>SCSI</source>
-        <translation type="unfinished">SCSI</translation>
+        <translation>SCSI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1432"/>
@@ -2891,7 +2891,7 @@ Your EFI configuration will be overwritten!</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1929"/>
         <source>I2O</source>
-        <translation type="unfinished">I2O</translation>
+        <translation>I2O</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1932"/>
@@ -2984,7 +2984,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="2107"/>
         <location filename="../src/form/filepathdialog.ui" line="2122"/>
         <source>PORT GID</source>
-        <translation type="unfinished">PORT GID</translation>
+        <translation>PORT GID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2104"/>
@@ -3340,7 +3340,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3106"/>
         <source>UART</source>
-        <translation type="unfinished">UART</translation>
+        <translation>UART</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3109"/>
@@ -3502,17 +3502,17 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3399"/>
         <source>1</source>
-        <translation type="unfinished">1</translation>
+        <translation>1</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3404"/>
         <source>1.5</source>
-        <translation type="unfinished">1.5</translation>
+        <translation>1.5</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3409"/>
         <source>2</source>
-        <translation type="unfinished">2</translation>
+        <translation>2</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3421"/>
@@ -3622,123 +3622,123 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="3617"/>
         <location filename="../src/form/filepathdialog.ui" line="3638"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The protocol code assigned by the USB-IF. A value of 0xFF will match any protocol code.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The protocol code assigned by the USB-IF. A value of 0xFF will match any protocol code.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;由 USB-IF 分配的协议代码。数值 0xFF 匹配所有协议代码。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3655"/>
         <source>USB WWID</source>
-        <translation type="unfinished">USB WWID</translation>
+        <translation>USB WWID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3658"/>
         <source>This device path describes a USB device using its serial number.</source>
-        <translation type="unfinished">This device path describes a USB device using its serial number.</translation>
+        <translation>此设备路径用序列号描述了一个 USB 设备。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3661"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path describes a USB device using its serial number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path describes a USB device using its serial number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;此设备路径用序列号描述了一个 USB 设备。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3685"/>
         <location filename="../src/form/filepathdialog.ui" line="3707"/>
         <source>USB interface Number.</source>
-        <translation type="unfinished">USB interface Number.</translation>
+        <translation>USB 接口编号。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3691"/>
         <location filename="../src/form/filepathdialog.ui" line="3713"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB interface Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB interface Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB 接口编号。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3726"/>
         <location filename="../src/form/filepathdialog.ui" line="3747"/>
         <source>USB vendor id of the device.</source>
-        <translation type="unfinished">USB vendor id of the device.</translation>
+        <translation>设备的 USB 制造商 ID。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3729"/>
         <location filename="../src/form/filepathdialog.ui" line="3735"/>
         <location filename="../src/form/filepathdialog.ui" line="3750"/>
         <source>Device Vendor Id</source>
-        <translation type="unfinished">Device Vendor Id</translation>
+        <translation>设备制造商 ID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3732"/>
         <location filename="../src/form/filepathdialog.ui" line="3753"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB vendor id of the device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB vendor id of the device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设备的 USB 制造商 ID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3766"/>
         <location filename="../src/form/filepathdialog.ui" line="3787"/>
         <source>USB product id of the device.</source>
-        <translation type="unfinished">USB product id of the device.</translation>
+        <translation>设备的 USB 产品 ID。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3769"/>
         <location filename="../src/form/filepathdialog.ui" line="3775"/>
         <location filename="../src/form/filepathdialog.ui" line="3790"/>
         <source>Device Product Id</source>
-        <translation type="unfinished">Device Product Id</translation>
+        <translation>设备产品 ID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3772"/>
         <location filename="../src/form/filepathdialog.ui" line="3793"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB product id of the device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB product id of the device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设备的 USB 产品 ID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3806"/>
         <location filename="../src/form/filepathdialog.ui" line="3828"/>
         <source>Last 64-or-fewer UTF-16 characters of the USB serial number. The length of the string is determined by the Length field less the offset of the Serial Number field (10).</source>
-        <translation type="unfinished">Last 64-or-fewer UTF-16 characters of the USB serial number. The length of the string is determined by the Length field less the offset of the Serial Number field (10).</translation>
+        <translation>USB 序列号的最后 64 个或更少的 UTF-16 字符。字符串的长度由长度字段减去序列号字段偏移量 (10) 决定。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3809"/>
         <location filename="../src/form/filepathdialog.ui" line="3815"/>
         <location filename="../src/form/filepathdialog.ui" line="3831"/>
         <source>Serial Number</source>
-        <translation type="unfinished">Serial Number</translation>
+        <translation>序列号</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3812"/>
         <location filename="../src/form/filepathdialog.ui" line="3834"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Last 64-or-fewer UTF-16 characters of the USB serial number. The length of the string is determined by the Length field less the offset of the Serial Number field (10).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Last 64-or-fewer UTF-16 characters of the USB serial number. The length of the string is determined by the Length field less the offset of the Serial Number field (10).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB 序列号的最后 64 个或更少的 UTF-16 字符。字符串的长度由长度字段减去序列号字段偏移量 (10) 决定。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3845"/>
         <source>Device Logical Unit</source>
-        <translation type="unfinished">Device Logical Unit</translation>
+        <translation>设备逻辑单元</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3848"/>
         <source>Device Logical Unit Settings.</source>
-        <translation type="unfinished">Device Logical Unit Settings.</translation>
+        <translation>设备逻辑单元设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3851"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device Logical Unit Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device Logical Unit Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设备逻辑单元设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3875"/>
         <location filename="../src/form/filepathdialog.ui" line="3897"/>
         <source>Logical Unit Number for the interface.</source>
-        <translation type="unfinished">Logical Unit Number for the interface.</translation>
+        <translation>接口的逻辑单元号。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3881"/>
         <location filename="../src/form/filepathdialog.ui" line="3903"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Logical Unit Number for the interface.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Logical Unit Number for the interface.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;接口的逻辑单元号。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3923"/>
         <source>SATA settings.</source>
-        <translation type="unfinished">SATA settings.</translation>
+        <translation>SATA 设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3950"/>
@@ -3751,7 +3751,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="3959"/>
         <location filename="../src/form/filepathdialog.ui" line="3975"/>
         <source>HBA Port</source>
-        <translation type="unfinished">HBA Port</translation>
+        <translation>HBA 端口</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3956"/>
@@ -3770,7 +3770,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4000"/>
         <location filename="../src/form/filepathdialog.ui" line="4016"/>
         <source>Port Multiplier Port</source>
-        <translation type="unfinished">Port Multiplier Port</translation>
+        <translation>端口复用器端口</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3997"/>
@@ -3781,17 +3781,17 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4077"/>
         <source>iSCSI</source>
-        <translation type="unfinished">iSCSI</translation>
+        <translation>iSCSI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4080"/>
         <source>iSCSI Settings.</source>
-        <translation type="unfinished">iSCSI Settings.</translation>
+        <translation>iSCSI 设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4083"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI 设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4107"/>
@@ -3809,20 +3809,20 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4148"/>
         <location filename="../src/form/filepathdialog.ui" line="4169"/>
         <source>iSCSI Login Options.</source>
-        <translation type="unfinished">iSCSI Login Options.</translation>
+        <translation>iSCSI 登录设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4151"/>
         <location filename="../src/form/filepathdialog.ui" line="4157"/>
         <location filename="../src/form/filepathdialog.ui" line="4172"/>
         <source>Options</source>
-        <translation type="unfinished">Options</translation>
+        <translation>设置</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4154"/>
         <location filename="../src/form/filepathdialog.ui" line="4175"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI Login Options.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI Login Options.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI 登录设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4188"/>
@@ -3866,7 +3866,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4278"/>
         <location filename="../src/form/filepathdialog.ui" line="4294"/>
         <source>Target Name</source>
-        <translation type="unfinished">Target Name</translation>
+        <translation>目标名称</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4275"/>
@@ -3877,17 +3877,17 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4308"/>
         <source>VLAN</source>
-        <translation type="unfinished">VLAN</translation>
+        <translation>VLAN</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4311"/>
         <source>VLAN Settings.</source>
-        <translation type="unfinished">VLAN Settings.</translation>
+        <translation>VLAN 设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4314"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VLAN Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VLAN Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VLAN 设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4338"/>
@@ -3900,7 +3900,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4347"/>
         <location filename="../src/form/filepathdialog.ui" line="4363"/>
         <source>Vlan ID</source>
-        <translation type="unfinished">Vlan ID</translation>
+        <translation>Vlan ID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4344"/>
@@ -3973,7 +3973,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4576"/>
         <location filename="../src/form/filepathdialog.ui" line="4591"/>
         <source>SAS Address</source>
-        <translation type="unfinished">SAS Address</translation>
+        <translation>SAS 地址</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4573"/>
@@ -4057,7 +4057,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4771"/>
         <location filename="../src/form/filepathdialog.ui" line="4786"/>
         <source>NSID</source>
-        <translation type="unfinished">NSID</translation>
+        <translation>NSID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4768"/>
@@ -4076,7 +4076,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4811"/>
         <location filename="../src/form/filepathdialog.ui" line="4826"/>
         <source>EUI-64</source>
-        <translation type="unfinished">EUI-64</translation>
+        <translation>EUI-64</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4808"/>
@@ -4109,17 +4109,17 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4915"/>
         <source>UFS</source>
-        <translation type="unfinished">UFS</translation>
+        <translation>UFS</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4918"/>
         <source>UFS Settings.</source>
-        <translation type="unfinished">UFS Settings.</translation>
+        <translation>UFS 设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4921"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UFS Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UFS Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UFS 设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4945"/>
@@ -4136,17 +4136,17 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5029"/>
         <source>SD</source>
-        <translation type="unfinished">SD</translation>
+        <translation>SD</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5032"/>
         <source>SD Settings.</source>
-        <translation type="unfinished">SD Settings.</translation>
+        <translation>SD 设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5035"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SD Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SD Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SD 设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5059"/>
@@ -4154,7 +4154,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5277"/>
         <location filename="../src/form/filepathdialog.ui" line="5299"/>
         <source>Slot Number</source>
-        <translation type="unfinished">Slot Number</translation>
+        <translation>槽位号</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5062"/>
@@ -4164,7 +4164,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5286"/>
         <location filename="../src/form/filepathdialog.ui" line="5302"/>
         <source>Slot</source>
-        <translation type="unfinished">Slot</translation>
+        <translation>槽位</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5065"/>
@@ -4172,12 +4172,12 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5283"/>
         <location filename="../src/form/filepathdialog.ui" line="5305"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Slot Number&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Slot Number&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;槽位号&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5104"/>
         <source>Bluetooth</source>
-        <translation type="unfinished">Bluetooth</translation>
+        <translation>蓝牙</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5107"/>
@@ -4205,7 +4205,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5361"/>
         <location filename="../src/form/filepathdialog.ui" line="5376"/>
         <source>Device Address</source>
-        <translation type="unfinished">Device Address</translation>
+        <translation>设备地址</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5140"/>
@@ -4218,17 +4218,17 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5178"/>
         <source>Wi-Fi</source>
-        <translation type="unfinished">Wi-Fi</translation>
+        <translation>Wi-Fi</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5181"/>
         <source>Wi-Fi Settings.</source>
-        <translation type="unfinished">Wi-Fi Settings.</translation>
+        <translation>Wi-Fi 设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5184"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wi-Fi Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wi-Fi Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wi-Fi 设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5208"/>
@@ -4241,7 +4241,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5217"/>
         <location filename="../src/form/filepathdialog.ui" line="5233"/>
         <source>SSID</source>
-        <translation type="unfinished">SSID</translation>
+        <translation>SSID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5214"/>
@@ -4252,7 +4252,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5247"/>
         <source>eMMC</source>
-        <translation type="unfinished">eMMC</translation>
+        <translation>eMMC</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5250"/>
@@ -4267,7 +4267,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5322"/>
         <source>BluetoothLE</source>
-        <translation type="unfinished">BluetoothLE</translation>
+        <translation>BluetoothLE</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5325"/>
@@ -4292,7 +4292,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5403"/>
         <location filename="../src/form/filepathdialog.ui" line="5420"/>
         <source>Address Type</source>
-        <translation type="unfinished">Address Type</translation>
+        <translation>地址类型</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5399"/>
@@ -4305,27 +4305,27 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5428"/>
         <source>Public</source>
-        <translation type="unfinished">Public</translation>
+        <translation>公共</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5433"/>
         <source>Random</source>
-        <translation type="unfinished">Random</translation>
+        <translation>随机</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5445"/>
         <source>DNS</source>
-        <translation type="unfinished">DNS</translation>
+        <translation>DNS</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5448"/>
         <source>DNS Settings.</source>
-        <translation type="unfinished">DNS Settings.</translation>
+        <translation>DNS 设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5451"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DNS Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DNS Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DNS 设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5475"/>
@@ -4360,12 +4360,12 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5859"/>
         <location filename="../src/form/filepathdialog.ui" line="7584"/>
         <source>Data format.</source>
-        <translation type="unfinished">Data format.</translation>
+        <translation>数据格式。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5592"/>
         <source>NVDIMM NS</source>
-        <translation type="unfinished">NVDIMM NS</translation>
+        <translation>NVDIMM NS</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5595"/>
@@ -4388,7 +4388,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5631"/>
         <location filename="../src/form/filepathdialog.ui" line="5646"/>
         <source>UUID</source>
-        <translation type="unfinished">UUID</translation>
+        <translation>UUID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5628"/>
@@ -4402,7 +4402,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5706"/>
         <location filename="../src/form/filepathdialog.ui" line="5724"/>
         <source>REST Service</source>
-        <translation type="unfinished">REST Service</translation>
+        <translation>REST 服务</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5666"/>
@@ -4437,17 +4437,17 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5733"/>
         <source>Redfish</source>
-        <translation type="unfinished">Redfish</translation>
+        <translation>Redfish</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5738"/>
         <source>OData</source>
-        <translation type="unfinished">OData</translation>
+        <translation>OData</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5743"/>
         <source>Vendor specific</source>
-        <translation type="unfinished">Vendor specific</translation>
+        <translation>制造商专用</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5751"/>
@@ -4462,7 +4462,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5762"/>
         <location filename="../src/form/filepathdialog.ui" line="5779"/>
         <source>Access Mode</source>
-        <translation type="unfinished">Access Mode</translation>
+        <translation>访问模式</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5758"/>
@@ -4475,12 +4475,12 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5787"/>
         <source>In-Band</source>
-        <translation type="unfinished">In-Band</translation>
+        <translation>波段内</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5792"/>
         <source>Out-of-band</source>
-        <translation type="unfinished">Out-of-band</translation>
+        <translation>超出波段</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5800"/>
@@ -4498,18 +4498,18 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5837"/>
         <location filename="../src/form/filepathdialog.ui" line="5898"/>
         <source>Vendor-defined data.</source>
-        <translation type="unfinished">Vendor-defined data.</translation>
+        <translation>制造商定义数据。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5843"/>
         <location filename="../src/form/filepathdialog.ui" line="5904"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor-defined data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor-defined data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;制造商定义数据。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5915"/>
         <source>NVMe-oF NS</source>
-        <translation type="unfinished">NVMe-oF NS</translation>
+        <translation>NVMe-oF NS</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5918"/>
@@ -4532,7 +4532,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5954"/>
         <location filename="../src/form/filepathdialog.ui" line="5970"/>
         <source>NIDT</source>
-        <translation type="unfinished">NIDT</translation>
+        <translation>NIDT</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5951"/>
@@ -4551,7 +4551,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5995"/>
         <location filename="../src/form/filepathdialog.ui" line="6010"/>
         <source>NID</source>
-        <translation type="unfinished">NID</translation>
+        <translation>NID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5992"/>
@@ -4570,7 +4570,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="6032"/>
         <location filename="../src/form/filepathdialog.ui" line="6048"/>
         <source>Subsystem NQN</source>
-        <translation type="unfinished">Subsystem NQN</translation>
+        <translation>子系统 NQN</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6029"/>
@@ -4581,7 +4581,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6066"/>
         <source>Hard Drive</source>
-        <translation type="unfinished">Hard Drive</translation>
+        <translation>硬盘</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6069"/>
@@ -4619,7 +4619,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="6472"/>
         <location filename="../src/form/filepathdialog.ui" line="6487"/>
         <source>Partition Start</source>
-        <translation type="unfinished">Partition Start</translation>
+        <translation>分区起点</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6221"/>
@@ -4641,7 +4641,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="6512"/>
         <location filename="../src/form/filepathdialog.ui" line="6527"/>
         <source>Partition Size</source>
-        <translation type="unfinished">Partition Size</translation>
+        <translation>分区大小</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6261"/>
@@ -4665,7 +4665,7 @@ If SignatureType is 2, this field contains a 16 byte signature.</translation>
         <location filename="../src/form/filepathdialog.ui" line="6310"/>
         <location filename="../src/form/filepathdialog.ui" line="6367"/>
         <source>Partition Signature</source>
-        <translation type="unfinished">Partition Signature</translation>
+        <translation>分区签名</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6304"/>
@@ -4692,7 +4692,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6328"/>
         <source>Signature Type</source>
-        <translation type="unfinished">Signature Type</translation>
+        <translation>签名类型</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6331"/>
@@ -4708,7 +4708,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6338"/>
         <source>None</source>
-        <translation type="unfinished">None</translation>
+        <translation>无</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6361"/>
@@ -4735,7 +4735,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6392"/>
         <source>CD-ROM</source>
-        <translation type="unfinished">CD-ROM</translation>
+        <translation>CD-ROM</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6395"/>
@@ -4758,7 +4758,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="6431"/>
         <location filename="../src/form/filepathdialog.ui" line="6447"/>
         <source>Boot Entry</source>
-        <translation type="unfinished">Boot Entry</translation>
+        <translation>启动条目</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6428"/>
@@ -4793,7 +4793,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6547"/>
         <source>File Path</source>
-        <translation type="unfinished">File Path</translation>
+        <translation>文件路径</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6550"/>
@@ -4816,7 +4816,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="6586"/>
         <location filename="../src/form/filepathdialog.ui" line="6602"/>
         <source>Path Name</source>
-        <translation type="unfinished">Path Name</translation>
+        <translation>路径名</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6583"/>
@@ -4849,7 +4849,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6687"/>
         <source>Firmware File</source>
-        <translation type="unfinished">Firmware File</translation>
+        <translation>固件文件</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6690"/>
@@ -4876,7 +4876,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6758"/>
         <source>Firmware Volume</source>
-        <translation type="unfinished">Firmware Volume</translation>
+        <translation>固件卷</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6761"/>
@@ -4938,7 +4938,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="6908"/>
         <location filename="../src/form/filepathdialog.ui" line="6923"/>
         <source>Starting Offset</source>
-        <translation type="unfinished">Starting Offset</translation>
+        <translation>起始偏移</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6905"/>
@@ -4957,7 +4957,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="6948"/>
         <location filename="../src/form/filepathdialog.ui" line="6963"/>
         <source>Ending Offset</source>
-        <translation type="unfinished">Ending Offset</translation>
+        <translation>末端偏移</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6945"/>
@@ -4968,7 +4968,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6983"/>
         <source>RAM Disk</source>
-        <translation type="unfinished">RAM Disk</translation>
+        <translation>内存盘</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6986"/>
@@ -4985,14 +4985,14 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="7022"/>
         <location filename="../src/form/filepathdialog.ui" line="7037"/>
         <source>Starting Address</source>
-        <translation type="unfinished">Starting Address</translation>
+        <translation>起始地址</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7056"/>
         <location filename="../src/form/filepathdialog.ui" line="7062"/>
         <location filename="../src/form/filepathdialog.ui" line="7077"/>
         <source>Ending Address</source>
-        <translation type="unfinished">Ending Address</translation>
+        <translation>终止地址</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7093"/>
@@ -5017,7 +5017,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="7139"/>
         <location filename="../src/form/filepathdialog.ui" line="7155"/>
         <source>Disk Instance</source>
-        <translation type="unfinished">Disk Instance</translation>
+        <translation>磁盘实例</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7136"/>
@@ -5068,7 +5068,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="7237"/>
         <location filename="../src/form/filepathdialog.ui" line="7263"/>
         <source>Device Type</source>
-        <translation type="unfinished">Device Type</translation>
+        <translation>设备类型</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7223"/>
@@ -5145,7 +5145,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="7335"/>
         <location filename="../src/form/filepathdialog.ui" line="7368"/>
         <source>Status Flag</source>
-        <translation type="unfinished">Status Flag</translation>
+        <translation>状态标志</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7314"/>
