@@ -30,7 +30,7 @@ jobs:
           - 5.12.12 # Supported in Ubuntu Focal Fossa until 2025-04-02
           - 5.15.2 # Supported in Ubuntu Jammy Jellyfish until 2027-04-01
           - 6.2.4 # Supported in Ubuntu Jammy Jellyfish until 2027-04-01
-          - 6.6.2 # Supported until 2024-04-09
+          - 6.6.3 # Supported until 2024-04-09
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
