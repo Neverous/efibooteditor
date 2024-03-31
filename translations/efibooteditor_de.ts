@@ -462,13 +462,13 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="465"/>
         <source>Couldn&apos;t open selected file (%1): %2.</source>
-        <translation type="unfinished">Couldn&apos;t open selected file (%1): %2.</translation>
+        <translation>Ausgewählte Datei (%1) konnte nicht geöffnet werden: %2.</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="636"/>
         <location filename="../src/efibootdata.cpp" line="739"/>
         <source>Couldn&apos;t write into file (%1): %2.</source>
-        <translation type="unfinished">Couldn&apos;t write into file (%1): %2.</translation>
+        <translation>Es konnte nicht in die Datei (%1) geschrieben werden: %2.</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="651"/>
