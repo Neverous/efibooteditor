@@ -419,14 +419,14 @@
         <location filename="../src/efibootdata.cpp" line="393"/>
         <location filename="../src/efibootdata.cpp" line="412"/>
         <source>Error saving %1</source>
-        <translation type="unfinished">Error saving %1</translation>
+        <translation>Fehler beim Speichern von %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="348"/>
         <location filename="../src/efibootdata.cpp" line="369"/>
         <location filename="../src/efibootdata.cpp" line="403"/>
         <source>Error removing %1</source>
-        <translation type="unfinished">Error removing %1</translation>
+        <translation>Fehler beim Entfernen von %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="429"/>
@@ -2391,7 +2391,7 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
         <location filename="../src/form/filepathdialog.ui" line="652"/>
         <location filename="../src/form/filepathdialog.ui" line="667"/>
         <source>Base Address</source>
-        <translation type="unfinished">Base Address</translation>
+        <translation>Basisadresse</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="649"/>
@@ -3457,7 +3457,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3333"/>
         <source>Mark</source>
-        <translation type="unfinished">Mark</translation>
+        <translation>Markieren</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3338"/>
@@ -3786,7 +3786,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4080"/>
         <source>iSCSI Settings.</source>
-        <translation>iSCSI Einstellungen.</translation>
+        <translation>iSCSI-Einstellungen.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4083"/>
