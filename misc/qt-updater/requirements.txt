@@ -22,7 +22,7 @@ packaging==24.0
     # via build
 pip-tools==7.4.1
     # via qt-updater (pyproject.toml)
-pyproject-hooks==1.0.0
+pyproject-hooks==1.1.0
     # via build
 requests==2.31.0
     # via qt-updater (pyproject.toml)
