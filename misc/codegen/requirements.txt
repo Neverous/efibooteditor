@@ -22,7 +22,7 @@ packaging==24.0
     # via build
 pip-tools==7.4.1
     # via codegen (pyproject.toml)
-pyproject-hooks==1.0.0
+pyproject-hooks==1.1.0
     # via build
 pyyaml==6.0.1
     # via codegen (pyproject.toml)
