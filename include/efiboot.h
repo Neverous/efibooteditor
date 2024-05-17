@@ -3628,11 +3628,10 @@ inline tstring get_error_trace()
         if(rc < 0)
             output += _T("error fetching trace value\n");
 
-        if(rc == 0)
+        if(rc <= 0)
             break;
 
-        rc = _tcserror_s(error_str, ERROR_STR_BUFFER_SIZE - 1, error);
-        if(rc != 0)
+        if(_tcserror_s(error_str, ERROR_STR_BUFFER_SIZE - 1, error) != 0)
             output += _T("error translating error code to string\n");
 
         output += filename;
@@ -3642,12 +3641,19 @@ inline tstring get_error_trace()
         output += function;
         output += _T("(): ");
         output += error_str;
-        output += _T(": ");
+        output += _T("[");
+        output += to_tstring(error);
+        output += _T("]: ");
         output += message;
         output += _T("\n");
     }
 
     return output;
+}
+
+inline void error_clear()
+{
+    efi_error_clear();
 }
 
 } // namespace EFIBoot

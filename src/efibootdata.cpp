@@ -348,6 +348,9 @@ void EFIBootData::save()
                 emit error(tr("Error removing %1").arg(order_name), QStringFromStdTString(EFIBoot::get_error_trace()));
                 return;
             }
+
+            // EFIBoot::get_variable above might've thrown an error, we don't care about it
+            EFIBoot::error_clear();
         }
         else
         {
@@ -403,6 +406,9 @@ void EFIBootData::save()
             emit error(tr("Error removing %1").arg("Apple/boot-args"), QStringFromStdTString(EFIBoot::get_error_trace()));
             return;
         }
+
+        // EFIBoot::get_variable above might've thrown an error, we don't care about it
+        EFIBoot::error_clear();
     }
     else
     {
