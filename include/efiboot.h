@@ -3593,6 +3593,16 @@ inline bool set_variable(const efi_guid_t &guid, const tstring &name, const Vari
     auto [value, attributes] = variable;
     Raw_data bytes;
     size_t size = serialize(bytes, value);
+    // Skip overwriting with exactly the same value
+    if(const auto current = EFIBoot::get_variable<Raw_data>(guid, name); current)
+    {
+        const auto &[current_bytes, current_attributes] = *current;
+        if(current_attributes == attributes && current_bytes == bytes)
+            return true;
+    }
+
+    // Don't care about the error from get_variable
+    efi_error_clear();
     return efi_set_variable(guid, name.c_str(), bytes.data(), size, attributes, mode) == 0;
 }
 
@@ -3602,6 +3612,16 @@ inline bool set_list_variable(const efi_guid_t &guid, const tstring &name, const
     auto [value, attributes] = variable;
     Raw_data bytes;
     size_t size = serialize_list(bytes, value);
+    // Skip overwriting with exactly the same value
+    if(const auto current = EFIBoot::get_variable<Raw_data>(guid, name); current)
+    {
+        const auto &[current_bytes, current_attributes] = *current;
+        if(current_attributes == attributes && current_bytes == bytes)
+            return true;
+    }
+
+    // Don't care about the error from get_variable
+    efi_error_clear();
     return efi_set_variable(guid, name.c_str(), bytes.data(), size, attributes, mode) == 0;
 }
 
