@@ -215,3 +215,8 @@ int efi_error_get(unsigned int n, TCHAR **const filename, TCHAR **const function
     *message = error_buffer;
     return 1;
 }
+
+void efi_error_clear(void)
+{
+    // Nothing to do
+}

@@ -176,3 +176,8 @@ int efi_error_get(unsigned int n, char **const filename, char **const function, 
     *message = mach_error_string(err);
     return 1;
 }
+
+void efi_error_clear(void)
+{
+    // Nothing to do
+}

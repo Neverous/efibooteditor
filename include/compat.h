@@ -63,12 +63,23 @@ typedef char TCHAR;
 #pragma clang diagnostic ignored "-Wreserved-macro-identifier"
 #endif
 #define _T
+#define _TRUNCATE STATIC_CAST(size_t)(-1)
+inline int _tcsncpy_s(TCHAR *buffer, size_t size, TCHAR *src, size_t _size)
+{
+    (void)_size;
+    return !buffer || *strncpy(buffer, src, size - 1) == 0;
+}
+
 inline int _tcserror_s(TCHAR *buffer, size_t size, int errnum)
 {
 #if defined(__APPLE__) || ((_POSIX_C_SOURCE >= 200112L) && !defined(_GNU_SOURCE))
     return strerror_r(errnum, buffer, size);
 #else
-    return strerror_r(errnum, buffer, size) == NULL;
+    TCHAR *msg = strerror_r(errnum, buffer, size);
+    if(msg == NULL)
+        return 0;
+
+    return _tcsncpy_s(buffer, size, msg, _TRUNCATE);
 #endif
 }
 
