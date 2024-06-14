@@ -2540,24 +2540,24 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1064"/>
         <source>The ADR device path is used to contain video output device attributes to support the Graphics Output Protocol.</source>
-        <translation type="unfinished">The ADR device path is used to contain video output device attributes to support the Graphics Output Protocol.</translation>
+        <translation>Der ADR-Gerätepfad wird verwendet, um Videoausgabegeräteattribute zur Unterstützung des Grafikausgabeprotokolls zu enthalten.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1067"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The ADR device path is used to contain video output device attributes to support the Graphics Output Protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The ADR device path is used to contain video output device attributes to support the Graphics Output Protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Der ADR-Gerätepfad wird verwendet, um Videoausgabegeräteattribute zur Unterstützung des Grafikausgabeprotokolls zu enthalten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1091"/>
         <location filename="../src/form/filepathdialog.ui" line="1112"/>
         <source>ADR value. For video output devices the value of this field comes from Table B-2 ACPI 3.0 specification. At least one ADR value is required</source>
-        <translation type="unfinished">ADR value. For video output devices the value of this field comes from Table B-2 ACPI 3.0 specification. At least one ADR value is required</translation>
+        <translation>ADR-Wert. Für Videoausgabegeräte stammt der Wert dieses Feldes aus Tabelle B-2 der ACPI 3.0-Spezifikation. Mindestens ein ADR-Wert ist erforderlich</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1097"/>
         <location filename="../src/form/filepathdialog.ui" line="1118"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ADR value. For video output devices the value of this field comes from Table B-2 ACPI 3.0 specification. At least one ADR value is required&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ADR value. For video output devices the value of this field comes from Table B-2 ACPI 3.0 specification. At least one ADR value is required&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ADR-Wert. Für Videoausgabegeräte stammt der Wert dieses Feldes aus Tabelle B-2 der ACPI 3.0-Spezifikation. Mindestens ein ADR-Wert ist erforderlich&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1131"/>
