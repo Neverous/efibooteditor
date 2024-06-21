@@ -34,7 +34,7 @@ ruff==0.4.9
     # via qt-updater (pyproject.toml)
 types-requests==2.31.0.20240406
     # via qt-updater (pyproject.toml)
-typing-extensions==4.11.0
+typing-extensions==4.12.2
     # via mypy
 urllib3==2.2.1
     # via
