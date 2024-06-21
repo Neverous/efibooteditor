@@ -191,7 +191,13 @@ int efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name)
 
 int efi_guid_cmp(const efi_guid_t *a, const efi_guid_t *b)
 {
-    return memcmp(a, b, sizeof(efi_guid_t));
+    return _tcsncmp(a->data, b->data, sizeof(a->data) / sizeof(a->data[0]));
+}
+
+int efi_guid_to_str(const efi_guid_t *guid, TCHAR **sp)
+{
+    *sp = (TCHAR *)guid->data;
+    return 0;
 }
 
 static TCHAR error_buffer[1024];
