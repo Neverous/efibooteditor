@@ -36,7 +36,7 @@ types-html5lib==1.1.11.20240228
     # via types-beautifulsoup4
 types-pyyaml==6.0.12.20240311
     # via codegen (pyproject.toml)
-typing-extensions==4.11.0
+typing-extensions==4.12.2
     # via mypy
 wheel==0.43.0
     # via pip-tools
