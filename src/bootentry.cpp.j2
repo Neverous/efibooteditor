@@ -286,6 +286,9 @@ auto FilePath::Vendor::toString(bool refresh) const -> QString
     default:
         type_string = "Unk";
         break;
+
+    default:
+        break;
     }
 
     return _string = QString("Ven%1(%2,[%3B])").arg(type_string, guid.toString(QUuid::WithoutBraces)).arg(data.size());
@@ -322,6 +325,9 @@ auto FilePath::End::toString(bool refresh) const -> QString
 
     case EFIBoot::File_path::END::Entire::SUBTYPE:
         subtype_string = "Entire";
+        break;
+
+    default:
         break;
     }
 

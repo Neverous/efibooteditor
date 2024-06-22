@@ -2538,6 +2538,9 @@ auto FilePath::End::toString(bool refresh) const -> QString
     case EFIBoot::File_path::END::Entire::SUBTYPE:
         subtype_string = "Entire";
         break;
+
+    default:
+        break;
     }
 
     return _string = QString("End(%1)").arg(subtype_string);

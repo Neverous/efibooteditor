@@ -1504,14 +1504,13 @@ public:
         {
         case EFIBoot::File_path::END::Instance::SUBTYPE:
             return EFIBoot::File_path::END::Instance{};
-            break;
 
         case EFIBoot::File_path::END::Entire::SUBTYPE:
             return EFIBoot::File_path::END::Entire{};
-            break;
-        }
 
-        return {};
+        default:
+            return {};
+        }
     }
 
     static std::optional<End> fromJSON(const QJsonObject &obj);
