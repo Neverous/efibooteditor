@@ -224,6 +224,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
         -Wno-global-constructors
         -Wno-padded
         -Wno-return-std-move-in-c++11
+        -Wno-switch-default
         -Wno-unknown-warning-option
         -Wno-unsafe-buffer-usage
     )
