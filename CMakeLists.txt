@@ -374,6 +374,12 @@ endif()
 
 set(CMAKE_INSTALL_UCRT_LIBRARIES TRUE)
 set(CMAKE_INSTALL_SYSTEM_RUNTIME_COMPONENT Runtime)
+
+if("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+    set(CMAKE_INSTALL_DEBUG_LIBRARIES TRUE)
+    set(CMAKE_INSTALL_DEBUG_LIBRARIES_ONLY TRUE)
+endif()
+
 include(InstallRequiredSystemLibraries)
 
 # Bundle Qt Libraries
