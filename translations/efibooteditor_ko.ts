@@ -803,12 +803,12 @@
         <location filename="../src/form/efibooteditor.ui" line="377"/>
         <location filename="../src/form/efibooteditor.ui" line="380"/>
         <source>Duplicate entry</source>
-        <translation type="unfinished">Duplicate entry</translation>
+        <translation>중복 항목</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="383"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duplicate entry&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duplicate entry&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;중복 항목&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="408"/>
@@ -1934,7 +1934,7 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4885"/>
         <location filename="../src/form/filepathdialog.ui" line="4901"/>
         <source>URI</source>
-        <translation type="unfinished">URI</translation>
+        <translation>URI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6096"/>
@@ -2049,97 +2049,97 @@ EFI 구성을 덮어씁니다!</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="50"/>
         <source>The Device Path for PCI defines the path to the PCI configuration space address for a PCI device.</source>
-        <translation type="unfinished">The Device Path for PCI defines the path to the PCI configuration space address for a PCI device.</translation>
+        <translation>PCI용 장치 경로는 PCI 장치에 대한 PCI 구성 공간 주소의 경로를 정의합니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="53"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Device Path for PCI defines the path to the PCI configuration space address for a PCI device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Device Path for PCI defines the path to the PCI configuration space address for a PCI device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI용 장치 경로는 PCI 장치에 대한 PCI 구성 공간 주소의 경로를 정의합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="77"/>
         <location filename="../src/form/filepathdialog.ui" line="99"/>
         <source>PCI Function Number.</source>
-        <translation type="unfinished">PCI Function Number.</translation>
+        <translation>PCI 기능 번호입니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="83"/>
         <location filename="../src/form/filepathdialog.ui" line="105"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Function Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Function Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI 기능 번호입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="118"/>
         <location filename="../src/form/filepathdialog.ui" line="140"/>
         <source>PCI Device Number.</source>
-        <translation type="unfinished">PCI Device Number.</translation>
+        <translation>PCI 장치 번호입니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="124"/>
         <location filename="../src/form/filepathdialog.ui" line="146"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Device Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Device Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI 장치 번호입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="163"/>
         <source>PCCARD</source>
-        <translation type="unfinished">PCCARD</translation>
+        <translation>PCCARD</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="166"/>
         <source>PCCARD Settings.</source>
-        <translation type="unfinished">PCCARD Settings.</translation>
+        <translation>PCCARD 설정입니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="169"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCCARD Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCCARD Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCCARD 설정입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="193"/>
         <location filename="../src/form/filepathdialog.ui" line="215"/>
         <source>Function Number (0 = First Function).</source>
-        <translation type="unfinished">Function Number (0 = First Function).</translation>
+        <translation>기능 번호 (0 = 첫 번째 기능)입니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="199"/>
         <location filename="../src/form/filepathdialog.ui" line="221"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Function Number (0 = First Function).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Function Number (0 = First Function).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;기능 번호 (0 = 첫 번째 기능)입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="238"/>
         <source>Memory Mapped</source>
-        <translation type="unfinished">Memory Mapped</translation>
+        <translation>메모리 매핑</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="241"/>
         <source>Memory Mapped Settings.</source>
-        <translation type="unfinished">Memory Mapped Settings.</translation>
+        <translation>메모리 매핑 설정입니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="244"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Memory Mapped Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Memory Mapped Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;메모리 매핑 설정 입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="268"/>
         <location filename="../src/form/filepathdialog.ui" line="290"/>
         <source>The type of memory to allocate.</source>
-        <translation type="unfinished">The type of memory to allocate.</translation>
+        <translation>할당할 메모리 유형입니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="271"/>
         <location filename="../src/form/filepathdialog.ui" line="277"/>
         <location filename="../src/form/filepathdialog.ui" line="293"/>
         <source>Memory Type</source>
-        <translation type="unfinished">Memory Type</translation>
+        <translation>메모리 유형</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="274"/>
         <location filename="../src/form/filepathdialog.ui" line="296"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The type of memory to allocate.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The type of memory to allocate.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;할당할 메모리 유형입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="300"/>
@@ -2159,82 +2159,82 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="6868"/>
         <location filename="../src/form/filepathdialog.ui" line="6883"/>
         <source>Reserved</source>
-        <translation type="unfinished">Reserved</translation>
+        <translation>예약됨</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="305"/>
         <source>Loader Code</source>
-        <translation type="unfinished">Loader Code</translation>
+        <translation>로더 코드</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="310"/>
         <source>Loader Data</source>
-        <translation type="unfinished">Loader Data</translation>
+        <translation>로더 데이터</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="315"/>
         <source>Boot Services Code</source>
-        <translation type="unfinished">Boot Services Code</translation>
+        <translation>부팅 서비스 코드</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="320"/>
         <source>Boot Services Data</source>
-        <translation type="unfinished">Boot Services Data</translation>
+        <translation>부팅 서비스 데이터</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="325"/>
         <source>Runtime Services Code</source>
-        <translation type="unfinished">Runtime Services Code</translation>
+        <translation>런타임 서비스 코드</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="330"/>
         <source>Runtime Services Data</source>
-        <translation type="unfinished">Runtime Services Data</translation>
+        <translation>런타임 서비스 데이터</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="335"/>
         <source>Conventional</source>
-        <translation type="unfinished">Conventional</translation>
+        <translation>기존</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="340"/>
         <source>Unusable</source>
-        <translation type="unfinished">Unusable</translation>
+        <translation>사용할 수 없음</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="345"/>
         <source>ACPI Reclaim</source>
-        <translation type="unfinished">ACPI Reclaim</translation>
+        <translation>ACPI 저감</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="350"/>
         <source>ACPI Memory NVS</source>
-        <translation type="unfinished">ACPI Memory NVS</translation>
+        <translation>ACPI 메모리 NVS</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="355"/>
         <source>Memory Mapped IO</source>
-        <translation type="unfinished">Memory Mapped IO</translation>
+        <translation>메모리 매핑 IO</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="360"/>
         <source>Memory Mapped IO Port Space</source>
-        <translation type="unfinished">Memory Mapped IO Port Space</translation>
+        <translation>메모리 매핑 IO 포트 공간</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="365"/>
         <source>Pal Code</source>
-        <translation type="unfinished">Pal Code</translation>
+        <translation>Pal 코드</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="370"/>
         <source>Persistent</source>
-        <translation type="unfinished">Persistent</translation>
+        <translation>지속적</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="375"/>
         <source>Unaccepted</source>
-        <translation type="unfinished">Unaccepted</translation>
+        <translation>수락되지 않음</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="383"/>
@@ -2242,14 +2242,14 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7013"/>
         <location filename="../src/form/filepathdialog.ui" line="7034"/>
         <source>Starting Memory Address.</source>
-        <translation type="unfinished">Starting Memory Address.</translation>
+        <translation>시작 메모리 주소입니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="386"/>
         <location filename="../src/form/filepathdialog.ui" line="392"/>
         <location filename="../src/form/filepathdialog.ui" line="407"/>
         <source>Start Address</source>
-        <translation type="unfinished">Start Address</translation>
+        <translation>시작 메모리</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="389"/>
@@ -2257,7 +2257,7 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7019"/>
         <location filename="../src/form/filepathdialog.ui" line="7040"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starting Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starting Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;시작 메모리 주소입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="423"/>
@@ -2265,14 +2265,14 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7053"/>
         <location filename="../src/form/filepathdialog.ui" line="7074"/>
         <source>Ending Memory Address.</source>
-        <translation type="unfinished">Ending Memory Address.</translation>
+        <translation>끝 메모리 주소입니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="426"/>
         <location filename="../src/form/filepathdialog.ui" line="432"/>
         <location filename="../src/form/filepathdialog.ui" line="447"/>
         <source>End Address</source>
-        <translation type="unfinished">End Address</translation>
+        <translation>끝 메모리</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="429"/>
@@ -2280,7 +2280,7 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7059"/>
         <location filename="../src/form/filepathdialog.ui" line="7080"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ending Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ending Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;끝 메모리 주소입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="467"/>
@@ -2288,44 +2288,44 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="506"/>
         <location filename="../src/form/filepathdialog.ui" line="522"/>
         <source>Controller</source>
-        <translation type="unfinished">Controller</translation>
+        <translation>컨트롤러</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="470"/>
         <source>Controller settings.</source>
-        <translation type="unfinished">Controller settings.</translation>
+        <translation>컨트롤러 설정입니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="473"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controller settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controller settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;컨트롤러 설정입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="497"/>
         <location filename="../src/form/filepathdialog.ui" line="519"/>
         <source>Controller number.</source>
-        <translation type="unfinished">Controller number.</translation>
+        <translation>컨트롤러 번호입니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="503"/>
         <location filename="../src/form/filepathdialog.ui" line="525"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controller number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controller number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;컨트롤러 번호입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="542"/>
         <source>BMC</source>
-        <translation type="unfinished">BMC</translation>
+        <translation>BMC</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="545"/>
         <source>The Device Path for a Baseboard Management Controller (BMC) host interface.</source>
-        <translation type="unfinished">The Device Path for a Baseboard Management Controller (BMC) host interface.</translation>
+        <translation>베이스보드 관리 컨트롤러 (BMC) 호스트 인터페이스의 장치 경로입니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="548"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Device Path for a Baseboard Management Controller (BMC) host interface.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Device Path for a Baseboard Management Controller (BMC) host interface.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;베이스보드 관리 컨트롤러 (BMC) 호스트 인터페이스의 장치 경로입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="572"/>
@@ -2335,11 +2335,11 @@ EFI 구성을 덮어씁니다!</translation>
 0x01 - KCS: Keyboard Controller Style.
 0x02 - SMIC: Server Management Interface Chip.
 0x03 - BT: Block Transfer.</source>
-        <translation type="unfinished">The Baseboard Management Controller (BMC) host interface type:
-0x00 - Unknown.
-0x01 - KCS: Keyboard Controller Style.
-0x02 - SMIC: Server Management Interface Chip.
-0x03 - BT: Block Transfer.</translation>
+        <translation>베이스보드 관리 컨트롤러 (BMC) 호스트 인터페이스 유형:
+0x00 - 알 수 없음.
+0x01 - KCS: 키보드 컨트롤러 스타일.
+0x02 - SMIC: 서버 관리 인터페이스 칩.
+0x03 - BT: 블록 전송.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="579"/>
@@ -2349,7 +2349,7 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="2338"/>
         <location filename="../src/form/filepathdialog.ui" line="2354"/>
         <source>Interface Type</source>
-        <translation type="unfinished">Interface Type</translation>
+        <translation>인터페이스 유형</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="582"/>
@@ -2359,62 +2359,62 @@ EFI 구성을 덮어씁니다!</translation>
 0x01 - KCS: Keyboard Controller Style.
 0x02 - SMIC: Server Management Interface Chip.
 0x03 - BT: Block Transfer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Baseboard Management Controller (BMC) host interface type:
-0x00 - Unknown.
-0x01 - KCS: Keyboard Controller Style.
-0x02 - SMIC: Server Management Interface Chip.
-0x03 - BT: Block Transfer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;베이스보드 관리 컨트롤러 (BMC) 호스트 인터페이스 유형
+0x00 - 알 수 없음.
+0x01 - KCS: 키보드 컨트롤러 스타일.
+0x02 - SMIC: 서버 관리 인터페이스 칩.
+0x03 - BT: 블록 전송.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="625"/>
         <source>Keyboard Controller Style</source>
-        <translation type="unfinished">Keyboard Controller Style</translation>
+        <translation>키보드 컨트롤러 스타일</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="630"/>
         <source>Server Management Interface Chip</source>
-        <translation type="unfinished">Server Management Interface Chip</translation>
+        <translation>서버 관리 인터페이스 칩</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="635"/>
         <source>Block Transfer</source>
-        <translation type="unfinished">Block Transfer</translation>
+        <translation>블록 전송</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="643"/>
         <location filename="../src/form/filepathdialog.ui" line="664"/>
         <source>Base address (either memory-mapped or I/O) of the BMC. If the least-significant bit of the field is a 1, the address is in I/O space; otherwise, the address is memory-mapped. Refer to the IPMI Interface Specification for usage details.</source>
-        <translation type="unfinished">Base address (either memory-mapped or I/O) of the BMC. If the least-significant bit of the field is a 1, the address is in I/O space; otherwise, the address is memory-mapped. Refer to the IPMI Interface Specification for usage details.</translation>
+        <translation>BMC의 기본 주소 (메모리 매핑 또는 I/O)입니다. 필드의 최하위 비트가 1이면 주소가 I/O 공간에 있고, 그렇지 않으면 주소가 메모리 매핑됩니다. 자세한 사용법은 IPMI 인터페이스 사양을 참조하세요.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="646"/>
         <location filename="../src/form/filepathdialog.ui" line="652"/>
         <location filename="../src/form/filepathdialog.ui" line="667"/>
         <source>Base Address</source>
-        <translation type="unfinished">Base Address</translation>
+        <translation>기본 주소</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="649"/>
         <location filename="../src/form/filepathdialog.ui" line="670"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Base address (either memory-mapped or I/O) of the BMC. If the least-significant bit of the field is a 1, the address is in I/O space; otherwise, the address is memory-mapped. Refer to the IPMI Interface Specification for usage details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Base address (either memory-mapped or I/O) of the BMC. If the least-significant bit of the field is a 1, the address is in I/O space; otherwise, the address is memory-mapped. Refer to the IPMI Interface Specification for usage details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;BMC의 기본 주소 (메모리 매핑 또는 I/O)입니다. 필드의 최하위 비트가 1이면 주소가 I/O 공간에 있고, 그렇지 않으면 주소가 메모리 매핑됩니다. 자세한 사용법은 IPMI 인터페이스 사양을 참조하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="688"/>
         <source>ACPI</source>
-        <translation type="unfinished">ACPI</translation>
+        <translation>ACPI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="691"/>
         <location filename="../src/form/filepathdialog.ui" line="805"/>
         <source>This Device Path contains ACPI Device IDs that represent a device’s Plug and Play Hardware ID and its corresponding unique persistent ID.</source>
-        <translation type="unfinished">This Device Path contains ACPI Device IDs that represent a device’s Plug and Play Hardware ID and its corresponding unique persistent ID.</translation>
+        <translation>이 장치 경로에는 장치의 플러그 앤 플레이 하드웨어 ID와 해당 고유 퍼시스턴트 ID를 나타내는 ACPI 장치 ID가 포함되어 있습니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="694"/>
         <location filename="../src/form/filepathdialog.ui" line="808"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This Device Path contains ACPI Device IDs that represent a device’s Plug and Play Hardware ID and its corresponding unique persistent ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This Device Path contains ACPI Device IDs that represent a device’s Plug and Play Hardware ID and its corresponding unique persistent ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;이 장치 경로에는 장치의 플러그 앤 플레이 하드웨어 ID와 해당 고유 퍼시스턴트 ID를 나타내는 ACPI 장치 ID가 포함되어 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="718"/>
@@ -2422,7 +2422,7 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="832"/>
         <location filename="../src/form/filepathdialog.ui" line="853"/>
         <source>Devices PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match the corresponding HID in the ACPI name space.</source>
-        <translation type="unfinished">Devices PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match the corresponding HID in the ACPI name space.</translation>
+        <translation>숫자 32비트 압축 EISA 유형 ID로 저장된 장치 PnP 하드웨어 ID입니다. 이 값은 ACPI 네임스페이스의 해당 HID와 일치해야 합니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="724"/>
@@ -2430,7 +2430,7 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="838"/>
         <location filename="../src/form/filepathdialog.ui" line="859"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match the corresponding HID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match the corresponding HID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;숫자 32비트 압축 EISA 유형 ID로 저장된 장치 PnP 하드웨어 ID입니다. 이 값은 ACPI 네임스페이스의 해당 HID와 일치해야 합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="758"/>
@@ -2438,7 +2438,7 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="872"/>
         <location filename="../src/form/filepathdialog.ui" line="893"/>
         <source>Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. Only the 32-bit numeric value type of UID is supported; thus strings must not be used for the UID in the ACPI name space.</source>
-        <translation type="unfinished">Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. Only the 32-bit numeric value type of UID is supported; thus strings must not be used for the UID in the ACPI name space.</translation>
+        <translation>두 장치의 HID가 동일한 경우 ACPI에서 요구하는 고유 ID입니다. 이 값은 ACPI 이름 공간에서 해당 UID/HID 쌍과도 일치해야 합니다. 32비트 숫자 값 유형의 UID만 지원되므로 ACPI 네임스페이스의 UID에는 문자열을 사용해서는 안 됩니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="764"/>
@@ -2446,88 +2446,88 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="878"/>
         <location filename="../src/form/filepathdialog.ui" line="899"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. Only the 32-bit numeric value type of UID is supported; thus strings must not be used for the UID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. Only the 32-bit numeric value type of UID is supported; thus strings must not be used for the UID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;두 장치의 HID가 동일한 경우 ACPI에서 요구하는 고유 ID입니다. 이 값은 ACPI 이름 공간에서 해당 UID/HID 쌍과도 일치해야 합니다. 32비트 숫자 값 유형의 UID만 지원되므로 ACPI 네임스페이스의 UID에는 문자열을 사용해서는 안 됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="802"/>
         <source>Expanded</source>
-        <translation type="unfinished">Expanded</translation>
+        <translation>확장</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="912"/>
         <location filename="../src/form/filepathdialog.ui" line="933"/>
         <source>Devices compatible PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI name space.</source>
-        <translation type="unfinished">Devices compatible PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI name space.</translation>
+        <translation>숫자 32비트 압축 EISA 유형 ID로 저장된 장치 호환 PnP 하드웨어 ID입니다. 이 값은 ACPI 이름 공간에서 해당 CID가 반환한 호환 가능한 장치 ID 중 하나 이상과 일치해야 합니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="915"/>
         <location filename="../src/form/filepathdialog.ui" line="921"/>
         <location filename="../src/form/filepathdialog.ui" line="936"/>
         <source>CID</source>
-        <translation type="unfinished">CID</translation>
+        <translation>CID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="918"/>
         <location filename="../src/form/filepathdialog.ui" line="939"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices compatible PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices compatible PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;숫자 32비트 압축 EISA 유형 ID로 저장된 장치 호환 PnP 하드웨어 ID입니다. 이 값은 ACPI 이름 공간에서 해당 CID가 반환한 호환 가능한 장치 ID 중 하나 이상과 일치해야 합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="952"/>
         <location filename="../src/form/filepathdialog.ui" line="974"/>
         <source>Devices PnP hardware ID stored as a string. This value must match the corresponding HID in the ACPI name space. If the length of this string is 0, then the HID field is used. If the length of this string is greater than 0, then this field supersedes the HID field.</source>
-        <translation type="unfinished">Devices PnP hardware ID stored as a string. This value must match the corresponding HID in the ACPI name space. If the length of this string is 0, then the HID field is used. If the length of this string is greater than 0, then this field supersedes the HID field.</translation>
+        <translation>문자열로 저장된 장치 PnP 하드웨어 ID입니다. 이 값은 ACPI 네임스페이스의 해당 HID와 일치해야 합니다. 이 문자열의 길이가 0이면 HID 필드가 사용됩니다. 이 문자열의 길이가 0보다 크면 이 필드가 HID 필드를 대체합니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="955"/>
         <location filename="../src/form/filepathdialog.ui" line="961"/>
         <location filename="../src/form/filepathdialog.ui" line="977"/>
         <source>HIDSTR</source>
-        <translation type="unfinished">HIDSTR</translation>
+        <translation>HIDSTR</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="958"/>
         <location filename="../src/form/filepathdialog.ui" line="980"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored as a string. This value must match the corresponding HID in the ACPI name space. If the length of this string is 0, then the HID field is used. If the length of this string is greater than 0, then this field supersedes the HID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored as a string. This value must match the corresponding HID in the ACPI name space. If the length of this string is 0, then the HID field is used. If the length of this string is greater than 0, then this field supersedes the HID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;문자열로 저장된 장치 PnP 하드웨어 ID입니다. 이 값은 ACPI 네임스페이스의 해당 HID와 일치해야 합니다. 이 문자열의 길이가 0이면 HID 필드가 사용됩니다. 이 문자열의 길이가 0보다 크면 이 필드가 HID 필드를 대체합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="987"/>
         <location filename="../src/form/filepathdialog.ui" line="1009"/>
         <source>Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. This value is stored as a string. If the length of this string is 0, then the UID field is used. If the length of this string is greater than 0, then this field supersedes the UID field.</source>
-        <translation type="unfinished">Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. This value is stored as a string. If the length of this string is 0, then the UID field is used. If the length of this string is greater than 0, then this field supersedes the UID field.</translation>
+        <translation>두 장치에 동일한 HID가 있는 경우 ACPI에 필요한 고유 ID입니다. 이 값은 ACPI 이름 공간에서 해당 UID/HID 쌍과도 일치해야 합니다. 이 값은 문자열로 저장됩니다. 이 문자열의 길이가 0이면 UID 필드가 사용됩니다. 이 문자열의 길이가 0보다 크면 이 필드가 UID 필드를 대체합니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="990"/>
         <location filename="../src/form/filepathdialog.ui" line="996"/>
         <location filename="../src/form/filepathdialog.ui" line="1012"/>
         <source>UIDSTR</source>
-        <translation type="unfinished">UIDSTR</translation>
+        <translation>UIDSTR</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="993"/>
         <location filename="../src/form/filepathdialog.ui" line="1015"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. This value is stored as a string. If the length of this string is 0, then the UID field is used. If the length of this string is greater than 0, then this field supersedes the UID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. This value is stored as a string. If the length of this string is 0, then the UID field is used. If the length of this string is greater than 0, then this field supersedes the UID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;두 장치에 동일한 HID가 있는 경우 ACPI에 필요한 고유 ID입니다. 이 값은 ACPI 이름 공간에서 해당 UID/HID 쌍과도 일치해야 합니다. 이 값은 문자열로 저장됩니다. 이 문자열의 길이가 0이면 UID 필드가 사용됩니다. 이 문자열의 길이가 0보다 크면 이 필드가 UID 필드를 대체합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1022"/>
         <location filename="../src/form/filepathdialog.ui" line="1044"/>
         <source>Devices compatible PnP hardware ID stored as a string. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI namespace. If the length of this string is 0, then the CID field is used. If the length of this string is greater than 0, then this field supersedes the CID field.</source>
-        <translation type="unfinished">Devices compatible PnP hardware ID stored as a string. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI namespace. If the length of this string is 0, then the CID field is used. If the length of this string is greater than 0, then this field supersedes the CID field.</translation>
+        <translation>문자열로 저장된 장치 호환 PnP 하드웨어 ID입니다. 이 값은 ACPI 네임스페이스에서 해당 CID가 반환한 호환 가능한 장치 ID 중 하나 이상과 일치해야 합니다. 이 문자열의 길이가 0이면 CID 필드가 사용됩니다. 이 문자열의 길이가 0보다 크면 이 필드가 CID 필드를 대체합니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1025"/>
         <location filename="../src/form/filepathdialog.ui" line="1031"/>
         <location filename="../src/form/filepathdialog.ui" line="1047"/>
         <source>CIDSTR</source>
-        <translation type="unfinished">CIDSTR</translation>
+        <translation>CIDSTR</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1028"/>
         <location filename="../src/form/filepathdialog.ui" line="1050"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices compatible PnP hardware ID stored as a string. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI namespace. If the length of this string is 0, then the CID field is used. If the length of this string is greater than 0, then this field supersedes the CID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices compatible PnP hardware ID stored as a string. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI namespace. If the length of this string is 0, then the CID field is used. If the length of this string is greater than 0, then this field supersedes the CID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;문자열로 저장된 장치 호환 PnP 하드웨어 ID입니다. 이 값은 ACPI 네임스페이스에서 해당 CID가 반환한 호환 가능한 장치 ID 중 하나 이상과 일치해야 합니다. 이 문자열의 길이가 0이면 CID 필드가 사용됩니다. 이 문자열의 길이가 0보다 크면 이 필드가 CID 필드를 대체합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1061"/>
@@ -2535,150 +2535,150 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="1100"/>
         <location filename="../src/form/filepathdialog.ui" line="1115"/>
         <source>ADR</source>
-        <translation type="unfinished">ADR</translation>
+        <translation>ADR</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1064"/>
         <source>The ADR device path is used to contain video output device attributes to support the Graphics Output Protocol.</source>
-        <translation type="unfinished">The ADR device path is used to contain video output device attributes to support the Graphics Output Protocol.</translation>
+        <translation>ADR 장치 경로는 그래픽 출력 프로토콜을 지원하기 위한 비디오 출력 장치 속성을 포함하는 데 사용됩니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1067"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The ADR device path is used to contain video output device attributes to support the Graphics Output Protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The ADR device path is used to contain video output device attributes to support the Graphics Output Protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ADR 장치 경로는 그래픽 출력 프로토콜을 지원하기 위한 비디오 출력 장치 속성을 포함하는 데 사용됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1091"/>
         <location filename="../src/form/filepathdialog.ui" line="1112"/>
         <source>ADR value. For video output devices the value of this field comes from Table B-2 ACPI 3.0 specification. At least one ADR value is required</source>
-        <translation type="unfinished">ADR value. For video output devices the value of this field comes from Table B-2 ACPI 3.0 specification. At least one ADR value is required</translation>
+        <translation>ADR 값입니다. 비디오 출력 장치의 경우 이 필드의 값은 표 B-2 ACPI 3.0 사양에서 가져옵니다. 하나 이상의 ADR 값이 필요합니다</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1097"/>
         <location filename="../src/form/filepathdialog.ui" line="1118"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ADR value. For video output devices the value of this field comes from Table B-2 ACPI 3.0 specification. At least one ADR value is required&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ADR value. For video output devices the value of this field comes from Table B-2 ACPI 3.0 specification. At least one ADR value is required&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ADR 값입니다. 비디오 출력 장치의 경우 이 필드의 값은 표 B-2 ACPI 3.0 사양에서 가져옵니다. 하나 이상의 ADR 값이 필요합니다&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1131"/>
         <location filename="../src/form/filepathdialog.ui" line="1192"/>
         <source>This device path may optionally contain more than one ADR entry.</source>
-        <translation type="unfinished">This device path may optionally contain more than one ADR entry.</translation>
+        <translation>이 장치 경로에는 선택적으로 둘 이상의 ADR 항목이 포함될 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1134"/>
         <location filename="../src/form/filepathdialog.ui" line="1140"/>
         <location filename="../src/form/filepathdialog.ui" line="1195"/>
         <source>Additional ADR</source>
-        <translation type="unfinished">Additional ADR</translation>
+        <translation>추가 ADR</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1137"/>
         <location filename="../src/form/filepathdialog.ui" line="1198"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path may optionally contain more than one ADR entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path may optionally contain more than one ADR entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;이 장치 경로에는 선택적으로 둘 이상의 ADR 항목이 포함될 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1153"/>
         <source>Additional ADR format.</source>
-        <translation type="unfinished">Additional ADR format.</translation>
+        <translation>추가 ADR 형식입니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1156"/>
         <source>Additional ADR format</source>
-        <translation type="unfinished">Additional ADR format</translation>
+        <translation>추가 ADR 형식</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1159"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Additional ADR format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Additional ADR format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;추가 ADR 형식입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1209"/>
         <source>NVDIMM</source>
-        <translation type="unfinished">NVDIMM</translation>
+        <translation>NVDIMM</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1212"/>
         <source>This device path describes an NVDIMM device using the ACPI 6.0 specification defined NFIT Device Handle as the identifier.</source>
-        <translation type="unfinished">This device path describes an NVDIMM device using the ACPI 6.0 specification defined NFIT Device Handle as the identifier.</translation>
+        <translation>이 장치 경로는 ACPI 6.0 사양에 정의된 NFIT 장치 핸들을 식별자로 사용하는 NVDIMM 장치를 설명합니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1215"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path describes an NVDIMM device using the ACPI 6.0 specification defined NFIT Device Handle as the identifier.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path describes an NVDIMM device using the ACPI 6.0 specification defined NFIT Device Handle as the identifier.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;이 장치 경로는 ACPI 6.0 사양에 정의된 NFIT 장치 핸들을 식별자로 사용하는 NVDIMM 장치를 설명합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1239"/>
         <location filename="../src/form/filepathdialog.ui" line="1260"/>
         <source>NFIT Device Handle - Unique physical identifier. See ACPI Defined Devices and Device Specific Objects section, NVDIMM Devices sub-chapter for the specific definition of the fields utilized for this handle.</source>
-        <translation type="unfinished">NFIT Device Handle - Unique physical identifier. See ACPI Defined Devices and Device Specific Objects section, NVDIMM Devices sub-chapter for the specific definition of the fields utilized for this handle.</translation>
+        <translation>NFIT 디바이스 핸들 - 고유한 물리적 식별자입니다. 이 핸들에 사용되는 필드에 대한 구체적인 정의는 ACPI 정의 장치 및 장치별 개체 섹션의 NVDIMM 장치 하위 장을 참조하세요.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1242"/>
         <location filename="../src/form/filepathdialog.ui" line="1248"/>
         <location filename="../src/form/filepathdialog.ui" line="1263"/>
         <source>NFIT Device Handle</source>
-        <translation type="unfinished">NFIT Device Handle</translation>
+        <translation>NFIT 장치 핸들</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1245"/>
         <location filename="../src/form/filepathdialog.ui" line="1266"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NFIT Device Handle - Unique physical identifier. See ACPI Defined Devices and Device Specific Objects section, NVDIMM Devices sub-chapter for the specific definition of the fields utilized for this handle.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NFIT Device Handle - Unique physical identifier. See ACPI Defined Devices and Device Specific Objects section, NVDIMM Devices sub-chapter for the specific definition of the fields utilized for this handle.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NFIT 장치 핸들 - 고유한 물리적 식별자입니다. 이 핸들에 사용되는 필드에 대한 구체적인 정의는 ACPI 정의 장치 및 장치별 개체 섹션의 NVDIMM 장치 하위 장을 참조하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1284"/>
         <source>ATAPI</source>
-        <translation type="unfinished">ATAPI</translation>
+        <translation>ATAPI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1287"/>
         <source>ATAPI Settings.</source>
-        <translation type="unfinished">ATAPI Settings.</translation>
+        <translation>ATAPI 설정입니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1290"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ATAPI Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ATAPI Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ATAPI 설정 입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1314"/>
         <location filename="../src/form/filepathdialog.ui" line="1336"/>
         <source>Set to zero for primary or one for secondary.</source>
-        <translation type="unfinished">Set to zero for primary or one for secondary.</translation>
+        <translation>기본은 0으로, 보조는 1로 설정합니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1317"/>
         <location filename="../src/form/filepathdialog.ui" line="1323"/>
         <location filename="../src/form/filepathdialog.ui" line="1339"/>
         <source>Primary</source>
-        <translation type="unfinished">Primary</translation>
+        <translation>기본</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1320"/>
         <location filename="../src/form/filepathdialog.ui" line="1342"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set to zero for primary or one for secondary.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set to zero for primary or one for secondary.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;기본은 0으로, 보조는 1로 설정합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1349"/>
         <location filename="../src/form/filepathdialog.ui" line="1371"/>
         <source>Set to zero for master or one for slave mode.</source>
-        <translation type="unfinished">Set to zero for master or one for slave mode.</translation>
+        <translation>마스터의 경우 0으로 설정하고 슬레이브 모드의 경우 1로 설정합니다.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1352"/>
         <location filename="../src/form/filepathdialog.ui" line="1358"/>
         <location filename="../src/form/filepathdialog.ui" line="1374"/>
         <source>Slave</source>
-        <translation type="unfinished">Slave</translation>
+        <translation>슬레이브</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1355"/>
         <location filename="../src/form/filepathdialog.ui" line="1377"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set to zero for master or one for slave mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set to zero for master or one for slave mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;마스터의 경우 0으로 설정하거나 슬레이브 모드의 경우 1로 설정합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1384"/>
