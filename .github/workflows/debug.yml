@@ -2,29 +2,9 @@ name: Debug build
 
 on:
   push:
-    branches: [master]
-    paths:
-      - .github/workflows/build.yml
-      - .github/workflows/debug.yml
-      - CMakeLists.txt
-      - cmake/**
-      - icons.qrc
-      - icons/**
-      - include/**
-      - src/**
-      - windows.rc
+    branches: [master, win-debug]
   pull_request:
     branches: [master]
-    paths:
-      - .github/workflows/build.yml
-      - .github/workflows/debug.yml
-      - CMakeLists.txt
-      - cmake/**
-      - icons.qrc
-      - icons/**
-      - include/**
-      - src/**
-      - windows.rc
   schedule:
     - cron: 0 8 * * 5
 
@@ -33,58 +13,14 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-linux:
-    name: ${{ matrix.os }} with ${{ matrix.compiler }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-20.04, ubuntu-22.04, ubuntu-24.04]
-        compiler:
-          - Clang
-          - GCC
-
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-
-    uses: ./.github/workflows/build.yml
-    with:
-      os: ${{ matrix.os }}
-      compiler: ${{ matrix.compiler }}
-      build-config: Debug
-      version: ${{ github.sha }}
-
   build-windows:
     name: ${{ matrix.os }} with ${{ matrix.compiler }}
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-2019, windows-2022]
+        os: [windows-2022]
         compiler:
-          - Clang
           - MSVC
-
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-
-    uses: ./.github/workflows/build.yml
-    with:
-      os: ${{ matrix.os }}
-      compiler: ${{ matrix.compiler }}
-      build-config: Debug
-      version: ${{ github.sha }}
-
-  build-macos:
-    name: ${{ matrix.os }} with ${{ matrix.compiler }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [macos-12, macos-13, macos-14]
-        compiler:
-          - Clang
 
     permissions:
       actions: read
