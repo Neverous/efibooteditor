@@ -676,10 +676,19 @@ void EFIBootData::dump(const QString &file_name)
     }
 
     QJsonObject output;
+    QJsonObject debug;
     output["_Type"] = "raw";
+
+    QJsonArray all;
     const auto variables = EFIBoot::get_variables(
-        [](const EFIBoot::efi_guid_t &guid, const tstring_view)
+        [&all](const EFIBoot::efi_guid_t &guid, const tstring_view &tname)
         {
+            QJsonObject var;
+            TCHAR *tguid = nullptr;
+            efi_guid_to_str(&guid, &tguid);
+            var["guid"] = QStringFromStdTString(static_cast<tstring>(tguid));
+            var["name"] = QStringFromStdTString(static_cast<tstring>(tname));
+            all.append(var);
             return guid == EFIBoot::efi_guid_global;
         },
         [&](size_t step, size_t total)
@@ -693,7 +702,9 @@ void EFIBootData::dump(const QString &file_name)
         return;
     }
 
+    debug["all_variables"] = all;
     const auto name_to_guid = *variables;
+
     QStringList errors;
     if(name_to_guid.size() == 0)
         errors.push_back(tr("Couldn't find any EFI Boot Manager variables"));
@@ -767,6 +778,7 @@ void EFIBootData::dump(const QString &file_name)
         output["Apple"] = apple;
     }
 
+    output["_Debug"] = debug;
     if(QJsonDocument json_document(output); !dump_file.write(json_document.toJson()))
     {
         emit error(tr("Error dumping raw EFI data"), tr("Couldn't write into file (%1): %2.").arg(file_name, dump_file.errorString()));

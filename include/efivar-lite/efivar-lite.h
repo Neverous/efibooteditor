@@ -78,6 +78,7 @@ int efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name) ATTR_NONNULL(1, 
 void efi_set_get_next_variable_name_progress_cb(void (*progress_cb)(size_t, size_t));
 
 int efi_guid_cmp(const efi_guid_t *a, const efi_guid_t *b);
+int efi_guid_to_str(const efi_guid_t *guid, TCHAR **sp) ATTR_NONNULL(1);
 
 int efi_error_get(unsigned int n, TCHAR **const filename, TCHAR **const function, int *line, TCHAR **const message, int *error) ATTR_NONNULL(2, 3, 4, 5, 6);
 void efi_error_clear(void);

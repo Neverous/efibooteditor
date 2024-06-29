@@ -158,7 +158,13 @@ int efi_get_next_variable_name(efi_guid_t **guid, char **name)
 
 int efi_guid_cmp(const efi_guid_t *a, const efi_guid_t *b)
 {
-    return memcmp(a, b, sizeof(efi_guid_t));
+    return strncmp(a->data, b->data, sizeof(a->data) / sizeof(a->data[0]));
+}
+
+int efi_guid_to_str(const efi_guid_t *guid, char **sp)
+{
+    *sp = (char *)guid->data;
+    return 0;
 }
 
 int efi_error_get(unsigned int n, char **const filename, char **const function, int *line, char **const message, int *error)
