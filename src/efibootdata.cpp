@@ -73,7 +73,7 @@ void EFIBootData::reload()
         errors.push_back(error);
     };
 
-    const auto name_to_guid = EFIBoot::get_variables(
+    const auto variables = EFIBoot::get_variables(
         [](const EFIBoot::efi_guid_t &guid, const tstring_view)
         {
             return guid == EFIBoot::efi_guid_global;
@@ -82,6 +82,16 @@ void EFIBootData::reload()
         {
             emit progress(step, total + 1u, tr("Searching EFI Boot Manager entries…"));
         });
+
+    if(!variables)
+    {
+        emit error(tr("Couldn't load EFI Boot Manager variables"), QStringFromStdTString(EFIBoot::get_error_trace()));
+        return;
+    }
+
+    const auto name_to_guid = *variables;
+    if(name_to_guid.size() == 0)
+        errors.push_back(tr("Couldn't find any EFI Boot Manager variables"));
 
     size_t step = 1;
     const size_t total_steps = name_to_guid.size() + 1u;
@@ -266,7 +276,7 @@ void EFIBootData::save()
     emit progress(0, 1, tr("Saving EFI Boot Manager entries…"));
     int32_t next_boot = -1;
 
-    auto old_entries = EFIBoot::get_variables(
+    auto variables = EFIBoot::get_variables(
         [&](const EFIBoot::efi_guid_t &guid, const tstring_view tname)
         {
             if(guid != EFIBoot::efi_guid_global)
@@ -288,6 +298,13 @@ void EFIBootData::save()
             emit progress(step, total + 1u, tr("Searching old EFI Boot Manager entries…"));
         });
 
+    if(!variables)
+    {
+        emit error(tr("Couldn't load EFI Boot Manager variables"), QStringFromStdTString(EFIBoot::get_error_trace()));
+        return;
+    }
+
+    auto old_entries = *variables;
     size_t step = 1;
     size_t total_steps = 4u // remember to update when adding static vars
         + static_cast<size_t>(boot_entries_list_model.getEntries().size())
@@ -660,7 +677,7 @@ void EFIBootData::dump(const QString &file_name)
 
     QJsonObject output;
     output["_Type"] = "raw";
-    const auto name_to_guid = EFIBoot::get_variables(
+    const auto variables = EFIBoot::get_variables(
         [](const EFIBoot::efi_guid_t &guid, const tstring_view)
         {
             return guid == EFIBoot::efi_guid_global;
@@ -670,7 +687,17 @@ void EFIBootData::dump(const QString &file_name)
             emit progress(step, total + 1u, tr("Searching EFI Boot Manager entries…"));
         });
 
+    if(!variables)
+    {
+        emit error(tr("Couldn't load EFI Boot Manager variables"), QStringFromStdTString(EFIBoot::get_error_trace()));
+        return;
+    }
+
+    const auto name_to_guid = *variables;
     QStringList errors;
+    if(name_to_guid.size() == 0)
+        errors.push_back(tr("Couldn't find any EFI Boot Manager variables"));
+
     size_t step = 1;
     const size_t total_steps = name_to_guid.size() + 1u;
     auto process_entry = [&](QJsonObject &root, const QString &key, tstring tname = _T(""), bool optional = false)

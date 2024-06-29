@@ -127,6 +127,13 @@ jobs:
         shell: bash
         working-directory: build
 
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: EFIBootEditor-${{ github.sha }}-${{ inputs.os }}-qt-${{ matrix.qt-version }}-${{ inputs.compiler }}
+          if-no-files-found: error
+          path: build/dist/EFIBootEditor-*
+
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         if: inputs.build-config == 'Debug'
@@ -148,10 +155,3 @@ jobs:
           sarif_file: ${{ steps.msvc-analysis.outputs.sarif }}
         if: inputs.build-config == 'Debug' && inputs.compiler == 'MSVC'
         continue-on-error: true
-
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: EFIBootEditor-${{ github.sha }}-${{ inputs.os }}-qt-${{ matrix.qt-version }}-${{ inputs.compiler }}
-          if-no-files-found: error
-          path: build/dist/EFIBootEditor-*

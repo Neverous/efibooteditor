@@ -1024,11 +1024,11 @@ template <class Type = Raw_data>
 size_t serialize_list(Raw_data &output, const std::vector<Type> &value);
 
 template <class Filter_fn>
-std::unordered_map<tstring, efi_guid_t> get_variables(const Filter_fn &filter, const Progress_fn &progress);
+std::optional<std::unordered_map<tstring, efi_guid_t>> get_variables(const Filter_fn &filter, const Progress_fn &progress);
 
 template <class Filter_fn>
-std::unordered_map<tstring, efi_guid_t> get_variables(const Filter_fn &filter);
-std::unordered_map<tstring, efi_guid_t> get_variables();
+std::optional<std::unordered_map<tstring, efi_guid_t>> get_variables(const Filter_fn &filter);
+std::optional<std::unordered_map<tstring, efi_guid_t>> get_variables();
 
 template <class Type = Raw_data>
 std::optional<Variable<Type>> get_variable(const efi_guid_t &guid, const tstring &name);
@@ -3503,7 +3503,7 @@ inline size_t serialize(Raw_data &output, const Load_option &load_option)
 extern Progress_fn _get_variables_progress_fn;
 
 template <class Filter_fn>
-inline std::unordered_map<tstring, efi_guid_t> get_variables(const Filter_fn &filter_fn, const Progress_fn &progress_fn)
+inline std::optional<std::unordered_map<tstring, efi_guid_t>> get_variables(const Filter_fn &filter_fn, const Progress_fn &progress_fn)
 {
     std::unordered_map<tstring, efi_guid_t> variables;
     efi_guid_t *guid = nullptr;
@@ -3512,7 +3512,8 @@ inline std::unordered_map<tstring, efi_guid_t> get_variables(const Filter_fn &fi
     efi_set_get_next_variable_name_progress_cb([](size_t step, size_t total) noexcept
         { try { if(_get_variables_progress_fn)_get_variables_progress_fn(step, total); } catch (...) {/* ignore */} });
 
-    while(efi_get_next_variable_name(&guid, &name) > 0)
+    int ret = 0;
+    while((ret = efi_get_next_variable_name(&guid, &name)) > 0)
     {
         if(!filter_fn(*guid, name))
             continue;
@@ -3522,16 +3523,20 @@ inline std::unordered_map<tstring, efi_guid_t> get_variables(const Filter_fn &fi
 
     efi_set_get_next_variable_name_progress_cb(nullptr);
     _get_variables_progress_fn = nullptr;
-    return variables;
+
+    if(ret < 0)
+        return std::nullopt;
+
+    return {variables};
 }
 
 template <class Filter_fn>
-inline std::unordered_map<tstring, efi_guid_t> get_variables(Filter_fn filter_fn)
+inline std::optional<std::unordered_map<tstring, efi_guid_t>> get_variables(Filter_fn filter_fn)
 {
     return get_variables(filter_fn, [](size_t, size_t) { /* noprogress */ });
 }
 
-inline std::unordered_map<tstring, efi_guid_t> get_variables()
+inline std::optional<std::unordered_map<tstring, efi_guid_t>> get_variables()
 {
     return get_variables(
         [](const efi_guid_t &, const tstring_view)
@@ -3633,8 +3638,8 @@ inline bool del_variable(const efi_guid_t &guid, const tstring &name)
 inline tstring get_error_trace()
 {
     tstring output = _T("Error trace:\n");
-    int rc = 1;
-    for(unsigned int i = 0; rc > 0; i++)
+    unsigned int i = 0;
+    while(true)
     {
         TCHAR *filename = nullptr;
         TCHAR *function = nullptr;
@@ -3644,13 +3649,14 @@ inline tstring get_error_trace()
         const int ERROR_STR_BUFFER_SIZE = 1024;
         TCHAR error_str[ERROR_STR_BUFFER_SIZE] = {};
 
-        rc = efi_error_get(i, &filename, &function, &line, &message, &error);
+        int rc = efi_error_get(i, &filename, &function, &line, &message, &error);
         if(rc < 0)
             output += _T("error fetching trace value\n");
 
         if(rc <= 0)
             break;
 
+        ++i;
         if(_tcserror_s(error_str, ERROR_STR_BUFFER_SIZE - 1, error) != 0)
             output += _T("error translating error code to string\n");
 
@@ -3659,7 +3665,7 @@ inline tstring get_error_trace()
         output += to_tstring(line);
         output += _T(" ");
         output += function;
-        output += _T("(): ");
+        output += _T("(): \n    ");
         output += error_str;
         output += _T("[");
         output += to_tstring(error);
@@ -3667,6 +3673,9 @@ inline tstring get_error_trace()
         output += message;
         output += _T("\n");
     }
+
+    if(i == 0)
+        output += _T("no errors?");
 
     return output;
 }
