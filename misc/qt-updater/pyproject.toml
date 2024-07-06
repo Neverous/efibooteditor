@@ -20,7 +20,7 @@ dev = [
 ]
 
 [tool.ruff]
-select = [
+lint.select = [
     "B",
     "C",
     "E",
