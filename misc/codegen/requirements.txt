@@ -26,7 +26,7 @@ pyproject-hooks==1.1.0
     # via build
 pyyaml==6.0.1
     # via codegen (pyproject.toml)
-ruff==0.5.0
+ruff==0.5.4
     # via codegen (pyproject.toml)
 soupsieve==2.5
     # via beautifulsoup4
