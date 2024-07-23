@@ -547,7 +547,7 @@
         <location filename="../src/efibootdata.cpp" line="345"/>
         <location filename="../src/efibootdata.cpp" line="400"/>
         <source>Removing EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Removing EFI Boot Manager entries (%1)…</translation>
+        <translation>EFI Boot Manager Einträge werden entfernt (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="425"/>
@@ -657,7 +657,7 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="1120"/>
         <source>%1: failed parsing</source>
-        <translation type="unfinished">%1: failed parsing</translation>
+        <translation>%1: Lesen fehlgeschlagen</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1151"/>
@@ -1231,7 +1231,7 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1321"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dumps raw EFI data for debugging purposes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dumps raw EFI data for debugging purposes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dumped rohe EFI Daten für Debugging-Zwecke.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1329"/>
@@ -2242,7 +2242,7 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7013"/>
         <location filename="../src/form/filepathdialog.ui" line="7034"/>
         <source>Starting Memory Address.</source>
-        <translation type="unfinished">Starting Memory Address.</translation>
+        <translation type="unfinished">Startspeicheradresse.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="386"/>
@@ -2257,7 +2257,7 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7019"/>
         <location filename="../src/form/filepathdialog.ui" line="7040"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starting Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starting Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Startspeicheradresse.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="423"/>
@@ -2265,7 +2265,7 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7053"/>
         <location filename="../src/form/filepathdialog.ui" line="7074"/>
         <source>Ending Memory Address.</source>
-        <translation type="unfinished">Ending Memory Address.</translation>
+        <translation>Endspeicheradresse.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="426"/>
@@ -2280,7 +2280,7 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7059"/>
         <location filename="../src/form/filepathdialog.ui" line="7080"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ending Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ending Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Endspeicheradresse.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="467"/>
@@ -2335,8 +2335,8 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
 0x01 - KCS: Keyboard Controller Style.
 0x02 - SMIC: Server Management Interface Chip.
 0x03 - BT: Block Transfer.</source>
-        <translation type="unfinished">The Baseboard Management Controller (BMC) host interface type:
-0x00 - Unknown.
+        <translation type="unfinished">Der Baseboard Management Controller (BMC) Hostinterfacetyp:
+0x00 - Unbekannt.
 0x01 - KCS: Keyboard Controller Style.
 0x02 - SMIC: Server Management Interface Chip.
 0x03 - BT: Block Transfer.</translation>
@@ -2359,8 +2359,8 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
 0x01 - KCS: Keyboard Controller Style.
 0x02 - SMIC: Server Management Interface Chip.
 0x03 - BT: Block Transfer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Baseboard Management Controller (BMC) host interface type:
-0x00 - Unknown.
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Der Baseboard Management Controller (BMC) Hostinterfacetyp:
+0x00 - Unbekannt.
 0x01 - KCS: Keyboard Controller Style.
 0x02 - SMIC: Server Management Interface Chip.
 0x03 - BT: Block Transfer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
@@ -2368,7 +2368,7 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="625"/>
         <source>Keyboard Controller Style</source>
-        <translation type="unfinished">Keyboard Controller Style</translation>
+        <translation>Tastaturcontrollerstil</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="630"/>
@@ -2408,13 +2408,13 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
         <location filename="../src/form/filepathdialog.ui" line="691"/>
         <location filename="../src/form/filepathdialog.ui" line="805"/>
         <source>This Device Path contains ACPI Device IDs that represent a device’s Plug and Play Hardware ID and its corresponding unique persistent ID.</source>
-        <translation type="unfinished">This Device Path contains ACPI Device IDs that represent a device’s Plug and Play Hardware ID and its corresponding unique persistent ID.</translation>
+        <translation>Dieser Gerätepfad enthält ACPI Geräte IDs, die eine Geräte Plug und Play Hardware ID und die zugehörige einzigartige persistente ID representieren.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="694"/>
         <location filename="../src/form/filepathdialog.ui" line="808"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This Device Path contains ACPI Device IDs that represent a device’s Plug and Play Hardware ID and its corresponding unique persistent ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This Device Path contains ACPI Device IDs that represent a device’s Plug and Play Hardware ID and its corresponding unique persistent ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dieser Gerätepfad enthält ACPI-Gerät IDs, die die Plug and Play Hardware ID des Geräts und die entsprechende eindeutige persistente ID darstellen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="718"/>
@@ -2422,7 +2422,7 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
         <location filename="../src/form/filepathdialog.ui" line="832"/>
         <location filename="../src/form/filepathdialog.ui" line="853"/>
         <source>Devices PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match the corresponding HID in the ACPI name space.</source>
-        <translation type="unfinished">Devices PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match the corresponding HID in the ACPI name space.</translation>
+        <translation>Geräte PnP Hardware ID gespeichert in einer numerischen 32-Bit komprimierten EISA-Typ ID. Dieser Wert muss der entsprechenden HID im Namensraum AKPI entsprechen.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="724"/>
@@ -2430,7 +2430,7 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
         <location filename="../src/form/filepathdialog.ui" line="838"/>
         <location filename="../src/form/filepathdialog.ui" line="859"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match the corresponding HID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match the corresponding HID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP Hardware ID gespeichert in einer numerischen 32-Bit komprimierten EISA-Typ-ID. Dieser Wert muss der entsprechenden HID im ACPI-Namensraum entsprechen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="758"/>
@@ -2438,7 +2438,7 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
         <location filename="../src/form/filepathdialog.ui" line="872"/>
         <location filename="../src/form/filepathdialog.ui" line="893"/>
         <source>Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. Only the 32-bit numeric value type of UID is supported; thus strings must not be used for the UID in the ACPI name space.</source>
-        <translation type="unfinished">Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. Only the 32-bit numeric value type of UID is supported; thus strings must not be used for the UID in the ACPI name space.</translation>
+        <translation>Einzigartige ID, die von ACPI benötigt wird, wenn zwei Geräte dieselbe HID haben. Dieser Wert muss auch dem entsprechenden UID/HID-Paar im ACPI-Namensraum entsprechen. Nur der 32-Bit-Numerwerttyp von UID wird unterstützt; daher dürfen keine Strings für die UID im ACPI-Namensraum verwendet werden.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="764"/>
@@ -2446,7 +2446,7 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
         <location filename="../src/form/filepathdialog.ui" line="878"/>
         <location filename="../src/form/filepathdialog.ui" line="899"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. Only the 32-bit numeric value type of UID is supported; thus strings must not be used for the UID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. Only the 32-bit numeric value type of UID is supported; thus strings must not be used for the UID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique ID, die von ACPI benötigt wird, wenn zwei Geräte dieselbe HID haben. Dieser Wert muss auch dem entsprechenden UID/HID-Paar im ACPI-Namensraum entsprechen. Nur der 32-Bit-Numerwerttyp von UID wird unterstützt; daher dürfen keine Strings für die UID im ACPI-Namensraum verwendet werden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="802"/>
@@ -2457,7 +2457,7 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
         <location filename="../src/form/filepathdialog.ui" line="912"/>
         <location filename="../src/form/filepathdialog.ui" line="933"/>
         <source>Devices compatible PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI name space.</source>
-        <translation type="unfinished">Devices compatible PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI name space.</translation>
+        <translation>Geräte kompatible PnP Hardware ID gespeichert in einer numerischen 32-Bit komprimierten EISA-Typ ID. Dieser Wert muss mindestens einer der kompatiblen Geräte-IDs entsprechen, die von der entsprechenden CID im Namensraum AKPI zurückgegeben wurden.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="915"/>
@@ -2470,13 +2470,13 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
         <location filename="../src/form/filepathdialog.ui" line="918"/>
         <location filename="../src/form/filepathdialog.ui" line="939"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices compatible PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices compatible PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices kompatible PnP Hardware ID gespeichert in einer numerischen 32-Bit komprimierten EISA-Typ-ID. Dieser Wert muss mindestens einer der kompatiblen Geräte-IDs entsprechen, die von der entsprechenden CID im ACPI-Namensraum zurückgegeben wurden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="952"/>
         <location filename="../src/form/filepathdialog.ui" line="974"/>
         <source>Devices PnP hardware ID stored as a string. This value must match the corresponding HID in the ACPI name space. If the length of this string is 0, then the HID field is used. If the length of this string is greater than 0, then this field supersedes the HID field.</source>
-        <translation type="unfinished">Devices PnP hardware ID stored as a string. This value must match the corresponding HID in the ACPI name space. If the length of this string is 0, then the HID field is used. If the length of this string is greater than 0, then this field supersedes the HID field.</translation>
+        <translation>Geräte PnP Hardware ID als String gespeichert. Dieser Wert muss der entsprechenden HID im Namensraum AKPI entsprechen. Ist die Länge dieses Strings 0, so wird das HID-Feld verwendet. Ist die Länge dieses Strings größer als 0, dann übertrifft dieses Feld das HID-Feld.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="955"/>
@@ -2489,7 +2489,7 @@ Deine EFI-Konfiguration wird überschrieben!</translation>
         <location filename="../src/form/filepathdialog.ui" line="958"/>
         <location filename="../src/form/filepathdialog.ui" line="980"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored as a string. This value must match the corresponding HID in the ACPI name space. If the length of this string is 0, then the HID field is used. If the length of this string is greater than 0, then this field supersedes the HID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored as a string. This value must match the corresponding HID in the ACPI name space. If the length of this string is 0, then the HID field is used. If the length of this string is greater than 0, then this field supersedes the HID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP Hardware ID als String gespeichert. Dieser Wert muss der entsprechenden HID im Namensraum AKPI entsprechen. Ist die Länge dieses Strings 0, so wird das HID-Feld verwendet. Ist die Länge dieses Strings größer als 0, dann übertrifft dieses Feld das HID-Feld.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="987"/>
