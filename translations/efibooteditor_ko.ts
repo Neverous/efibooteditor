@@ -198,7 +198,7 @@
         <location filename="../src/form/bootentryform.ui" line="473"/>
         <location filename="../src/form/bootentryform.ui" line="479"/>
         <source>Active</source>
-        <translation>황성</translation>
+        <translation>활성</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="515"/>
@@ -2704,18 +2704,18 @@ EFI 구성을 덮어씁니다!</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1432"/>
         <source>SCSI Settings.</source>
-        <translation>SCSI 설정입니다.</translation>
+        <translation>SCSI 설정.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1435"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SCSI Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SCSI 설정입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SCSI 설정.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1459"/>
         <location filename="../src/form/filepathdialog.ui" line="1481"/>
         <source>Target ID on the SCSI bus (PUN).</source>
-        <translation>SCSI 버스 (PUN)의 대상 ID입니다.</translation>
+        <translation>SCSI 버스 (PUN)의 대상 ID.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1462"/>
@@ -2734,7 +2734,7 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="1465"/>
         <location filename="../src/form/filepathdialog.ui" line="1487"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Target ID on the SCSI bus (PUN).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SCSI 버스 (PUN)의 대상 ID입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SCSI 버스(PUN)의 대상 ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1500"/>
@@ -2742,7 +2742,7 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4985"/>
         <location filename="../src/form/filepathdialog.ui" line="5006"/>
         <source>Logical Unit Number (LUN).</source>
-        <translation>논리 단위 번호 (LUN)입니다.</translation>
+        <translation>논리 단위 번호 (LUN).</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1506"/>
@@ -2750,7 +2750,7 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4991"/>
         <location filename="../src/form/filepathdialog.ui" line="5012"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Logical Unit Number (LUN).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;논리 단위 번호 (LUN)입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;논리 단위 번호 (LUN).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1545"/>
@@ -2777,7 +2777,7 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4413"/>
         <location filename="../src/form/filepathdialog.ui" line="4434"/>
         <source>Reserved.</source>
-        <translation>예약되었습니다.</translation>
+        <translation>예약됨.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1581"/>
@@ -2789,13 +2789,13 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4419"/>
         <location filename="../src/form/filepathdialog.ui" line="4440"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;예약되었습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;예약됨.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1615"/>
         <location filename="../src/form/filepathdialog.ui" line="1636"/>
         <source>Fibre Channel World Wide Name.</source>
-        <translation>광 채널 월드와이드 이름입니다.</translation>
+        <translation>광 채널 월드와이드 이름.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1618"/>
@@ -2805,25 +2805,25 @@ EFI 구성을 덮어씁니다!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4462"/>
         <location filename="../src/form/filepathdialog.ui" line="4477"/>
         <source>World Wide Name</source>
-        <translation>월드와이드 이름</translation>
+        <translation>월드 와이드 이름</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1621"/>
         <location filename="../src/form/filepathdialog.ui" line="1642"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fibre Channel World Wide Name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;광 채널 월드와이드 이름입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;광 채널 월드 와이드 이름.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1655"/>
         <location filename="../src/form/filepathdialog.ui" line="1676"/>
         <source>Fibre Channel Logical Unit Number.</source>
-        <translation>광 채널 논리 단위 번호입니다.</translation>
+        <translation>광 채널 논리 단위 번호.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1661"/>
         <location filename="../src/form/filepathdialog.ui" line="1682"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fibre Channel Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;광 채널 논리 단위 번호입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;광 채널 논리 단위 번호.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1699"/>
@@ -2833,12 +2833,12 @@ EFI 구성을 덮어씁니다!</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1702"/>
         <source>Firewire Settings.</source>
-        <translation>Firewire 설정 입니다.</translation>
+        <translation>FirewireS설정.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1705"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firewire Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firewire 설정 입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firewire 설정.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1769"/>
@@ -2855,38 +2855,38 @@ EFI 구성을 덮어씁니다!</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1816"/>
         <source>USB settings.</source>
-        <translation>USB 설정입니다.</translation>
+        <translation>USB 설정.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1843"/>
         <location filename="../src/form/filepathdialog.ui" line="1865"/>
         <source>USB Parent Port Number.</source>
-        <translation>USB 상위 포트 번호입니다.</translation>
+        <translation>USB 상위 포트 번호.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1846"/>
         <location filename="../src/form/filepathdialog.ui" line="1852"/>
         <location filename="../src/form/filepathdialog.ui" line="1868"/>
         <source>Parent Port</source>
-        <translation>상위 포트 번호</translation>
+        <translation>상위 포트</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1849"/>
         <location filename="../src/form/filepathdialog.ui" line="1871"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB Parent Port Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB 상위 포트 번호입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB 상위 포트 번호.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1884"/>
         <location filename="../src/form/filepathdialog.ui" line="1906"/>
         <source>USB Interface Number.</source>
-        <translation>USB 인터페이스 번호입니다.</translation>
+        <translation>USB 인터페이스 번호.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1890"/>
         <location filename="../src/form/filepathdialog.ui" line="1912"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB Interface Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB 인터페이스 번호입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB 인터페이스 번호.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1929"/>
@@ -2901,19 +2901,19 @@ EFI 구성을 덮어씁니다!</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1935"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I2O Settings&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I2O S설정&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I2O 설정&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1959"/>
         <location filename="../src/form/filepathdialog.ui" line="1981"/>
         <source>Target ID (TID) for a device.</source>
-        <translation>장치의 대상 ID (TID)입니다.</translation>
+        <translation>디바이스의 대상 ID (TID).</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1965"/>
         <location filename="../src/form/filepathdialog.ui" line="1987"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Target ID (TID) for a device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;장치의 대상 ID (TID)입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;장치의 대상 ID (TID).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2004"/>
