@@ -30,8 +30,8 @@ void BootEntryListView::insertRow()
         return;
 
     auto row = currentIndex().row();
-    model()->insertRow(row + 1);
-    setCurrentIndex(model()->index(row + 1, 0));
+    if(model()->insertRow(row + 1))
+        setCurrentIndex(model()->index(row + 1, 0));
 }
 
 void BootEntryListView::duplicateRow()
@@ -41,8 +41,8 @@ void BootEntryListView::duplicateRow()
 
     auto row = currentIndex().row();
     auto idx = model()->index(row, 0);
-    model()->setData(idx, idx);
-    setCurrentIndex(model()->index(row + 1, 0));
+    if(model()->setData(idx, idx))
+        setCurrentIndex(model()->index(row + 1, 0));
 }
 
 void BootEntryListView::removeCurrentRow()
@@ -68,8 +68,8 @@ void BootEntryListView::moveCurrentRowUp()
         return;
 
     auto previous_index = index.siblingAtRow(index.row() - 1);
-    model()->moveRow(index, index.row(), previous_index, previous_index.row());
-    setCurrentIndex(previous_index);
+    if(model()->moveRow(index, index.row(), previous_index, previous_index.row()))
+        setCurrentIndex(previous_index);
 }
 
 void BootEntryListView::moveCurrentRowDown()
@@ -82,8 +82,8 @@ void BootEntryListView::moveCurrentRowDown()
         return;
 
     auto next_index = index.siblingAtRow(index.row() + 1);
-    model()->moveRow(index, index.row(), next_index, next_index.row());
-    setCurrentIndex(next_index);
+    if(model()->moveRow(index, index.row(), next_index, next_index.row()))
+        setCurrentIndex(next_index);
 }
 
 void BootEntryListView::rowsMoved(const QModelIndex &, int sourceStart, int sourceEnd, const QModelIndex &, int destinationRow)

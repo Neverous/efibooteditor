@@ -79,14 +79,18 @@ int MoveBootEntryCommand::id() const
 
 void MoveBootEntryCommand::undo()
 {
-    model.beginMoveRows(destination_parent, destination_index, destination_index + 1, source_parent, source_index);
+    if(!model.beginMoveRows(destination_parent, destination_index, destination_index + 1, source_parent, source_index))
+        return;
+
     model.entries.move(destination_index, source_index);
     model.endMoveRows();
 }
 
 void MoveBootEntryCommand::redo()
 {
-    model.beginMoveRows(source_parent, source_index, source_index + 1, destination_parent, destination_index);
+    if(!model.beginMoveRows(source_parent, source_index, source_index + 1, destination_parent, destination_index))
+        return;
+
     model.entries.move(source_index, destination_index);
     model.endMoveRows();
 }
@@ -139,7 +143,9 @@ void ChangeOptionalDataFormatCommand::redo()
 {
     auto &entry = model.entries[index.row()];
     auto old_value = entry.optional_data_format;
-    entry.changeOptionalDataFormat(value);
+    if(!entry.changeOptionalDataFormat(value))
+        return;
+
     value = old_value;
     emit model.dataChanged(index, index, {Qt::EditRole});
 }

@@ -209,7 +209,7 @@ void EFIBootData::reload()
         // Add entries not in BootOrder at the end
         for(const auto &[tname, guid]: name_to_guid)
         {
-            (void)guid;
+            Q_UNUSED(guid)
             if(!is_bootentry(tname, QStringToStdTString(prefix)))
                 continue;
 
@@ -261,7 +261,7 @@ void EFIBootData::reload()
     if(const auto boot_args = EFIBoot::get_variable<std::string>(EFIBoot::efi_guid_apple, _T("boot-args")); boot_args)
     {
         const auto &[value, attributes] = *boot_args;
-        (void)attributes;
+        Q_UNUSED(attributes)
         setAppleBootArgs(QString::fromStdString(value));
     }
 
@@ -734,7 +734,7 @@ void EFIBootData::dump(const QString &file_name)
 
     for(const auto &[prefix, model]: BOOT_ENTRIES)
     {
-        (void)model;
+        Q_UNUSED(model)
         const QString order_name = QString("%1Order").arg(prefix);
 
         process_entry(output, order_name, _T(""), true);
@@ -742,7 +742,7 @@ void EFIBootData::dump(const QString &file_name)
         QJsonObject entries;
         for(const auto &[tname_, guid]: name_to_guid)
         {
-            (void)guid;
+            Q_UNUSED(guid)
             if(!is_bootentry(tname_, QStringToStdTString(prefix)))
                 continue;
 

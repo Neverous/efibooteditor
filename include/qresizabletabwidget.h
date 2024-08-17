@@ -64,8 +64,8 @@ private:
     {
         return horizontal
             ? QSize(qMax(s.width(), t.width() + rc.width() + lc.width()),
-                s.height() + (qMax(rc.height(), qMax(lc.height(), t.height()))))
+                  s.height() + (qMax(rc.height(), qMax(lc.height(), t.height()))))
             : QSize(s.width() + (qMax(rc.width(), qMax(lc.width(), t.width()))),
-                qMax(s.height(), t.height() + rc.height() + lc.height()));
+                  qMax(s.height(), t.height() + rc.height() + lc.height()));
     }
 };

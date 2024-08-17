@@ -22,10 +22,30 @@ EFIBootEditor::EFIBootEditor(const std::optional<tstring> &efi_error_message, QW
     , confirmation{std::make_unique<QMessageBox>(QMessageBox::Question, QApplication::applicationName(), "", QMessageBox::NoButton, this)}
     , error{std::make_unique<QMessageBox>(QMessageBox::Critical, QApplication::applicationName(), "", QMessageBox::NoButton, this)}
     , progress{std::make_unique<QProgressDialog>(tr("Working…"), nullptr, 0, 0, this)}
+    , about{std::make_unique<QMessageBox>(
+          QMessageBox::Information,
+          tr("About EFI Boot Editor"),
+          //: About dialog
+          tr("<h1>EFI Boot Editor</h1>"
+             "<p>Version <b>%1</b></p>"
+             "<p>Boot Editor for (U)EFI based systems.</p>")
+              .arg(QCoreApplication::applicationVersion()),
+          QMessageBox::Close,
+          this)}
 {
     data.setUndoStack(&undo_stack);
     ui->setupUi(this);
     progress->setWindowModality(Qt::WindowModal);
+
+    about->setIconPixmap(QIcon::fromTheme("preferences-system").pixmap(128, 128));
+    //: About dialog details
+    about->setInformativeText(tr("<p><a href='%1'>Website</a></p>"
+                                 "<p>The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</p>"
+                                 "<p>License: <a href='https://www.gnu.org/licenses/lgpl.html'>GNU LGPL Version 3</a></p>"
+                                 "<p>On Linux uses <a href='https://github.com/rhboot/efivar'>efivar</a> for EFI variables access.</p>"
+                                 "<p>Uses Tango Icons as fallback icons.</p>")
+                                  .arg(PROJECT_HOMEPAGE_URL));
+
     ui->boot_entries_list->setModel(&data.boot_entries_list_model);
     ui->driver_entries_list->setModel(&data.driver_entries_list_model);
     ui->sysprep_entries_list->setModel(&data.sysprep_entries_list_model);
@@ -158,8 +178,8 @@ void EFIBootEditor::enableBootEntryEditor(const QModelIndex &index)
         return disableBootEntryEditor();
 
     auto [name, list, model] = currentBootEntryList();
-    (void)name;
-    (void)list;
+    Q_UNUSED(name)
+    Q_UNUSED(list)
     if(&model != index.model())
         return disableBootEntryEditor();
 
@@ -176,15 +196,15 @@ void EFIBootEditor::disableBootEntryEditor()
 void EFIBootEditor::refreshBootEntryEditor()
 {
     auto [name, list, model] = currentBootEntryList();
-    (void)name;
-    (void)model;
+    Q_UNUSED(name)
+    Q_UNUSED(model)
     enableBootEntryEditor(list.currentIndex());
 }
 
 void EFIBootEditor::switchBootEntryEditor(int index)
 {
     auto [name, list, model] = getBootEntryList(index);
-    (void)name;
+    Q_UNUSED(name)
     ui->entry_form->setBootEntryListModel(model);
     enableBootEntryEditor(list.currentIndex());
     ui->entries_actions->setDisabled(model.options & BootEntryListModel::Option::ReadOnly);
@@ -244,25 +264,6 @@ void EFIBootEditor::dump()
 
 void EFIBootEditor::showAboutBox()
 {
-    auto *about = new QMessageBox(QMessageBox::Information,
-        tr("About EFI Boot Editor"),
-        //: About dialog
-        tr("<h1>EFI Boot Editor</h1>"
-           "<p>Version <b>%1</b></p>"
-           "<p>Boot Editor for (U)EFI based systems.</p>")
-            .arg(QCoreApplication::applicationVersion()),
-        QMessageBox::Close,
-        this);
-    about->setIconPixmap(QIcon::fromTheme("preferences-system").pixmap(128, 128));
-    //: About dialog details
-    about->setInformativeText(tr("<p><a href='%1'>Website</a></p>"
-                                 "<p>The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</p>"
-                                 "<p>License: <a href='https://www.gnu.org/licenses/lgpl.html'>GNU LGPL Version 3</a></p>"
-                                 "<p>On Linux uses <a href='https://github.com/rhboot/efivar'>efivar</a> for EFI variables access.</p>"
-                                 "<p>Uses Tango Icons as fallback icons.</p>")
-                                  .arg(PROJECT_HOMEPAGE_URL));
-    QObject::connect(about->button(QMessageBox::Close), &QAbstractButton::clicked, about, &QObject::deleteLater);
-    QObject::connect(qApp, &QApplication::aboutToQuit, about, &QObject::deleteLater);
     about->show();
 }
 
@@ -343,7 +344,7 @@ void EFIBootEditor::reorderBootEntries()
 void EFIBootEditor::removeCurrentBootEntry()
 {
     auto [name, list, model] = currentBootEntryList();
-    (void)name;
+    Q_UNUSED(name)
     if(model.options & BootEntryListModel::Option::ReadOnly)
         return;
 
@@ -353,7 +354,7 @@ void EFIBootEditor::removeCurrentBootEntry()
 void EFIBootEditor::moveCurrentBootEntryUp()
 {
     auto [name, list, model] = currentBootEntryList();
-    (void)name;
+    Q_UNUSED(name)
     if(model.options & BootEntryListModel::Option::ReadOnly)
         return;
 
@@ -363,7 +364,7 @@ void EFIBootEditor::moveCurrentBootEntryUp()
 void EFIBootEditor::moveCurrentBootEntryDown()
 {
     auto [name, list, model] = currentBootEntryList();
-    (void)name;
+    Q_UNUSED(name)
     if(model.options & BootEntryListModel::Option::ReadOnly)
         return;
 
@@ -373,7 +374,7 @@ void EFIBootEditor::moveCurrentBootEntryDown()
 void EFIBootEditor::insertBootEntry()
 {
     auto [name, list, model] = currentBootEntryList();
-    (void)name;
+    Q_UNUSED(name)
     if(model.options & BootEntryListModel::Option::ReadOnly)
         return;
 
@@ -383,7 +384,7 @@ void EFIBootEditor::insertBootEntry()
 void EFIBootEditor::duplicateBootEntry()
 {
     auto [name, list, model] = currentBootEntryList();
-    (void)name;
+    Q_UNUSED(name)
     if(model.options & BootEntryListModel::Option::ReadOnly)
         return;
 

@@ -26,12 +26,14 @@ void DevicePathView::insertRow()
     {
         auto row = index.row();
         const auto file_path = dialog->toFilePath();
-        model()->insertRow(row + 1);
+        if(!model()->insertRow(row + 1))
+            return;
+
         QVariant _data;
         _data.setValue(&file_path);
         index = model()->index(row + 1, 0);
-        model()->setData(index, _data);
-        setCurrentIndex(index);
+        if(model()->setData(index, _data))
+            setCurrentIndex(index);
     }
 }
 
@@ -49,8 +51,8 @@ void DevicePathView::editCurrentRow()
         const auto file_path = dialog->toFilePath();
         QVariant _data;
         _data.setValue(&file_path);
-        model()->setData(index, _data);
-        setCurrentIndex(index);
+        if(model()->setData(index, _data))
+            setCurrentIndex(index);
     }
 }
 
@@ -64,7 +66,9 @@ void DevicePathView::removeCurrentRow()
         return;
 
     auto row = index.row();
-    model()->removeRow(row);
+    if(!model()->removeRow(row))
+        return;
+
     index = index.siblingAtRow(row - 1);
     if(!index.isValid())
         index = model()->index(row, 0);
@@ -82,8 +86,8 @@ void DevicePathView::moveCurrentRowUp()
         return;
 
     auto previous_index = index.siblingAtRow(index.row() - 1);
-    model()->moveRow(index, index.row(), previous_index, previous_index.row());
-    setCurrentIndex(previous_index);
+    if(model()->moveRow(index, index.row(), previous_index, previous_index.row()))
+        setCurrentIndex(previous_index);
 }
 
 void DevicePathView::moveCurrentRowDown()
@@ -96,6 +100,6 @@ void DevicePathView::moveCurrentRowDown()
         return;
 
     auto next_index = index.siblingAtRow(index.row() + 1);
-    model()->moveRow(index, index.row(), next_index, next_index.row());
-    setCurrentIndex(next_index);
+    if(model()->moveRow(index, index.row(), next_index, next_index.row()))
+        setCurrentIndex(next_index);
 }

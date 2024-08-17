@@ -39,9 +39,9 @@ FilePath::{{ qslug }}::{{ qslug }}(const EFIBoot::File_path::{{ category.slug.up
     {% if field.type == "wstring" %}
     , {{ field.slug }}{QString::fromStdU16String({{ node_field }})}
     {% elif field.type == "string" %}
-    , {{ field.slug }}{QByteArray::fromRawData({{ node_field }}.data(), static_cast<int>({{ node_field }}.size() * sizeof(*{{ node_field }}.data())))}
+    , {{ field.slug }}{QByteArray::fromRawData({{ node_field }}.data(), static_cast<int>({{ node_field }}.size() * sizeof(decltype({{ node_field }})::value_type)))}
     {% else %}
-    , {{ field.slug }}{QByteArray::fromRawData(reinterpret_cast<const char *>({{ node_field }}.data()), static_cast<int>({{ node_field }}.size() * sizeof(*{{ node_field }}.data())))}
+    , {{ field.slug }}{QByteArray::fromRawData(reinterpret_cast<const char *>({{ node_field }}.data()), static_cast<int>({{ node_field }}.size() * sizeof(decltype({{ node_field }})::value_type)))}
     {% endif %}
     {% elif field.type == "ip4" %}
     , {{ field.slug }}{*reinterpret_cast<const uint32_t *>({{ node_field }}.data())}
@@ -50,7 +50,7 @@ FilePath::{{ qslug }}::{{ qslug }}(const EFIBoot::File_path::{{ category.slug.up
     {% elif field.type == "guid" %}
     , {{ field.slug }}{}
     {% elif field.type == "uri" %}
-    , {{ field.slug }}{QUrl::fromEncoded(QByteArray::fromRawData(reinterpret_cast<const char *>({{ node_field }}.data()), static_cast<int>({{ node_field }}.size() * sizeof(*{{ node_field }}.data()))))}
+    , {{ field.slug }}{QUrl::fromEncoded(QByteArray::fromRawData(reinterpret_cast<const char *>({{ node_field }}.data()), static_cast<int>({{ node_field }}.size() * sizeof(decltype({{ node_field }})::value_type))))}
     {% else %}
     , {{ field.slug + "{" + node_field + "}" }}
     {% endif %}
@@ -175,7 +175,7 @@ auto FilePath::{{ qslug }}::toString(bool refresh) const -> QString
 
 {% endfor %}{% endfor %}
 FilePath::Vendor::Vendor(const EFIBoot::File_path::HW::Vendor &vendor)
-    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size() * sizeof(*vendor.data.data())))}
+    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size() * sizeof(decltype(vendor.data)::value_type)))}
     , _type{EFIBoot::File_path::HW::Vendor::TYPE}
 {
     data.detach();
@@ -184,7 +184,7 @@ FilePath::Vendor::Vendor(const EFIBoot::File_path::HW::Vendor &vendor)
 }
 
 FilePath::Vendor::Vendor(const EFIBoot::File_path::MSG::Vendor &vendor)
-    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size() * sizeof(*vendor.data.data())))}
+    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size() * sizeof(decltype(vendor.data)::value_type)))}
     , _type{EFIBoot::File_path::MSG::Vendor::TYPE}
 {
     data.detach();
@@ -193,7 +193,7 @@ FilePath::Vendor::Vendor(const EFIBoot::File_path::MSG::Vendor &vendor)
 }
 
 FilePath::Vendor::Vendor(const EFIBoot::File_path::MEDIA::Vendor &vendor)
-    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size() * sizeof(*vendor.data.data())))}
+    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size() * sizeof(decltype(vendor.data)::value_type)))}
     , _type{EFIBoot::File_path::MEDIA::Vendor::TYPE}
 {
     data.detach();
@@ -332,7 +332,7 @@ auto FilePath::End::toString(bool refresh) const -> QString
 }
 
 FilePath::Unknown::Unknown(const EFIBoot::File_path::Unknown &unknown)
-    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(unknown.data.data()), static_cast<int>(unknown.data.size() * sizeof(*unknown.data.data())))}
+    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(unknown.data.data()), static_cast<int>(unknown.data.size() * sizeof(decltype(unknown.data)::value_type)))}
     , _type{unknown.TYPE}
     , _subtype{unknown.SUBTYPE}
 {
@@ -393,7 +393,7 @@ auto BootEntry::fromEFIBootLoadOption(
         value.optional_data_format = OptionalDataFormat::Utf16;
 
     if(value.optional_data_format == OptionalDataFormat::Base64)
-        value.optional_data = QByteArray::fromRawData(reinterpret_cast<const char *>(load_option.optional_data.data()), static_cast<int>(load_option.optional_data.size() * sizeof(*load_option.optional_data.data()))).toBase64();
+        value.optional_data = QByteArray::fromRawData(reinterpret_cast<const char *>(load_option.optional_data.data()), static_cast<int>(load_option.optional_data.size() * sizeof(decltype(load_option.optional_data)::value_type))).toBase64();
 
     value.attributes = load_option.attributes;
 

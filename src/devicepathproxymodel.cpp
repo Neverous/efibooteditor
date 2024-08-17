@@ -75,7 +75,9 @@ auto DevicePathProxyModel::removeRows(int row, int count, const QModelIndex &par
 
 auto DevicePathProxyModel::moveRows(const QModelIndex &sourceParent, int sourceRow, int count, const QModelIndex &destinationParent, int destinationChild) -> bool
 {
-    beginMoveRows(sourceParent, sourceRow, sourceRow + count, destinationParent, destinationChild);
+    if(!beginMoveRows(sourceParent, sourceRow, sourceRow + count, destinationParent, destinationChild))
+        return false;
+
     for(int c = 0; c < count; ++c)
         boot_entry_list_model->moveEntryFilePath(boot_entry_index, sourceRow, destinationChild + (sourceRow < destinationChild ? 0 : c));
 

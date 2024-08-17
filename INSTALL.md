@@ -83,6 +83,7 @@ work just fine for normal usage. Just keep in mind they might have some specific
 requirements inherited from the build environment.
 
 ### Winget
+
 Latest releases are also available for download with [Windows Package Manager](https://github.com/microsoft/winget-pkgs/tree/master/manifests/e/EFIBootEditor/EFIBootEditor).
 
 ### Assets

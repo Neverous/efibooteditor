@@ -1319,7 +1319,7 @@ inline std::optional<File_path::HW::Vendor> deserialize(const void *data, size_t
     File_path::HW::Vendor value{};
     std::copy(std::begin(dp->guid), std::end(dp->guid), std::begin(value.guid));
     {
-        static_assert(sizeof(*value.data.data()) == sizeof(dp->data[0]));
+        static_assert(sizeof(decltype(value.data)::value_type) == sizeof(dp->data[0]));
         auto length = static_cast<size_t>(static_cast<decltype(&dp->data[0])>(advance_bytes(data, data_size)) - &dp->data[0]);
         value.data.resize(length);
         memcpy(value.data.data(), dp->data, length * sizeof(dp->data[0]));
@@ -1519,7 +1519,7 @@ inline std::optional<File_path::ACPI::Adr> deserialize(const void *data, size_t 
     File_path::ACPI::Adr value{};
     value.adr = dp->adr;
     {
-        static_assert(sizeof(*value.additional_adr.data()) == sizeof(dp->additional_adr[0]));
+        static_assert(sizeof(decltype(value.additional_adr)::value_type) == sizeof(dp->additional_adr[0]));
         auto length = static_cast<size_t>(static_cast<decltype(&dp->additional_adr[0])>(advance_bytes(data, data_size)) - &dp->additional_adr[0]);
         value.additional_adr.resize(length);
         memcpy(value.additional_adr.data(), dp->additional_adr, length * sizeof(dp->additional_adr[0]));
@@ -1865,7 +1865,7 @@ inline std::optional<File_path::MSG::Vendor> deserialize(const void *data, size_
     File_path::MSG::Vendor value{};
     std::copy(std::begin(dp->guid), std::end(dp->guid), std::begin(value.guid));
     {
-        static_assert(sizeof(*value.data.data()) == sizeof(dp->data[0]));
+        static_assert(sizeof(decltype(value.data)::value_type) == sizeof(dp->data[0]));
         auto length = static_cast<size_t>(static_cast<decltype(&dp->data[0])>(advance_bytes(data, data_size)) - &dp->data[0]);
         value.data.resize(length);
         memcpy(value.data.data(), dp->data, length * sizeof(dp->data[0]));
@@ -2437,7 +2437,7 @@ inline std::optional<File_path::MSG::Uri> deserialize(const void *data, size_t d
 
     File_path::MSG::Uri value{};
     {
-        static_assert(sizeof(*value.uri.data()) == sizeof(dp->uri[0]));
+        static_assert(sizeof(decltype(value.uri)::value_type) == sizeof(dp->uri[0]));
         auto length = static_cast<size_t>(static_cast<decltype(&dp->uri[0])>(advance_bytes(data, data_size)) - &dp->uri[0]);
         value.uri.resize(length);
         memcpy(value.uri.data(), dp->uri, length * sizeof(dp->uri[0]));
@@ -2692,7 +2692,7 @@ inline std::optional<File_path::MSG::Dns> deserialize(const void *data, size_t d
     File_path::MSG::Dns value{};
     value.ipv6 = dp->ipv6;
     {
-        static_assert(sizeof(*value.data.data()) == sizeof(dp->data[0]));
+        static_assert(sizeof(decltype(value.data)::value_type) == sizeof(dp->data[0]));
         auto length = static_cast<size_t>(static_cast<decltype(&dp->data[0])>(advance_bytes(data, data_size)) - &dp->data[0]);
         value.data.resize(length);
         memcpy(value.data.data(), dp->data, length * sizeof(dp->data[0]));
@@ -2772,7 +2772,7 @@ inline std::optional<File_path::MSG::Rest_service> deserialize(const void *data,
     if(static_cast<File_path::MSG::Rest_service::REST_SERVICE>(dp->rest_service) == File_path::MSG::Rest_service::REST_SERVICE::VENDOR && data_size > 6)
     {
         std::copy(std::begin(dp->guid), std::end(dp->guid), std::begin(value.guid));
-        static_assert(sizeof(*value.data.data()) == sizeof(dp->data[0]));
+        static_assert(sizeof(decltype(value.data)::value_type) == sizeof(dp->data[0]));
         auto length = static_cast<size_t>(static_cast<decltype(&dp->data[0])>(advance_bytes(data, data_size)) - &dp->data[0]);
         value.data.resize(length);
         memcpy(value.data.data(), dp->data, length * sizeof(dp->data[0]));
@@ -2944,7 +2944,7 @@ inline std::optional<File_path::MEDIA::Vendor> deserialize(const void *data, siz
     File_path::MEDIA::Vendor value{};
     std::copy(std::begin(dp->guid), std::end(dp->guid), std::begin(value.guid));
     {
-        static_assert(sizeof(*value.data.data()) == sizeof(dp->data[0]));
+        static_assert(sizeof(decltype(value.data)::value_type) == sizeof(dp->data[0]));
         auto length = static_cast<size_t>(static_cast<decltype(&dp->data[0])>(advance_bytes(data, data_size)) - &dp->data[0]);
         value.data.resize(length);
         memcpy(value.data.data(), dp->data, length * sizeof(dp->data[0]));
@@ -3486,8 +3486,7 @@ inline size_t serialize(Raw_data &output, const Load_option &load_option)
     file_path_list_size = static_cast<uint16_t>(serialize_list(output, load_option.device_path));
     // Always set END_ENTIRE tag at the end of device path
     if(!load_option.device_path.size() || std::visit([](const auto &file_path)
-                                              { return file_path.SUBTYPE; },
-                                              load_option.device_path.back())
+                                              { return file_path.SUBTYPE; }, load_option.device_path.back())
             != File_path::END::Entire::SUBTYPE)
     {
         File_path::END::Entire end{};

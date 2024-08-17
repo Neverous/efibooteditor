@@ -293,9 +293,9 @@ FilePath::Expanded::Expanded(const EFIBoot::File_path::ACPI::Expanded &_expanded
     , hid{_expanded.hid}
     , uid{_expanded.uid}
     , cid{_expanded.cid}
-    , hidstr{QByteArray::fromRawData(_expanded.hidstr.data(), static_cast<int>(_expanded.hidstr.size() * sizeof(*_expanded.hidstr.data())))}
-    , uidstr{QByteArray::fromRawData(_expanded.uidstr.data(), static_cast<int>(_expanded.uidstr.size() * sizeof(*_expanded.uidstr.data())))}
-    , cidstr{QByteArray::fromRawData(_expanded.cidstr.data(), static_cast<int>(_expanded.cidstr.size() * sizeof(*_expanded.cidstr.data())))}
+    , hidstr{QByteArray::fromRawData(_expanded.hidstr.data(), static_cast<int>(_expanded.hidstr.size() * sizeof(decltype(_expanded.hidstr)::value_type)))}
+    , uidstr{QByteArray::fromRawData(_expanded.uidstr.data(), static_cast<int>(_expanded.uidstr.size() * sizeof(decltype(_expanded.uidstr)::value_type)))}
+    , cidstr{QByteArray::fromRawData(_expanded.cidstr.data(), static_cast<int>(_expanded.cidstr.size() * sizeof(decltype(_expanded.cidstr)::value_type)))}
 {
 }
 
@@ -349,7 +349,7 @@ auto FilePath::Expanded::toString(bool refresh) const -> QString
 FilePath::Adr::Adr(const EFIBoot::File_path::ACPI::Adr &_adr)
     : _string{}
     , adr{_adr.adr}
-    , additional_adr{QByteArray::fromRawData(reinterpret_cast<const char *>(_adr.additional_adr.data()), static_cast<int>(_adr.additional_adr.size() * sizeof(*_adr.additional_adr.data())))}
+    , additional_adr{QByteArray::fromRawData(reinterpret_cast<const char *>(_adr.additional_adr.data()), static_cast<int>(_adr.additional_adr.size() * sizeof(decltype(_adr.additional_adr)::value_type)))}
 {
     additional_adr.detach();
 }
@@ -753,7 +753,7 @@ auto FilePath::Infiniband::toString(bool refresh) const -> QString
 
 FilePath::MacAddress::MacAddress(const EFIBoot::File_path::MSG::Mac_address &_mac_address)
     : _string{}
-    , address{QByteArray::fromRawData(reinterpret_cast<const char *>(_mac_address.address.data()), static_cast<int>(_mac_address.address.size() * sizeof(*_mac_address.address.data())))}
+    , address{QByteArray::fromRawData(reinterpret_cast<const char *>(_mac_address.address.data()), static_cast<int>(_mac_address.address.size() * sizeof(decltype(_mac_address.address)::value_type)))}
     , if_type{_mac_address.if_type}
 {
 }
@@ -1229,7 +1229,7 @@ FilePath::Iscsi::Iscsi(const EFIBoot::File_path::MSG::Iscsi &_iscsi)
     , options{_iscsi.options}
     , lun{_iscsi.lun}
     , target_portal_group{_iscsi.target_portal_group}
-    , target_name{QByteArray::fromRawData(_iscsi.target_name.data(), static_cast<int>(_iscsi.target_name.size() * sizeof(*_iscsi.target_name.data())))}
+    , target_name{QByteArray::fromRawData(_iscsi.target_name.data(), static_cast<int>(_iscsi.target_name.size() * sizeof(decltype(_iscsi.target_name)::value_type)))}
 {
 }
 
@@ -1466,7 +1466,7 @@ auto FilePath::NvmExpressNs::toString(bool refresh) const -> QString
 
 FilePath::Uri::Uri(const EFIBoot::File_path::MSG::Uri &_uri)
     : _string{}
-    , uri{QUrl::fromEncoded(QByteArray::fromRawData(reinterpret_cast<const char *>(_uri.uri.data()), static_cast<int>(_uri.uri.size() * sizeof(*_uri.uri.data()))))}
+    , uri{QUrl::fromEncoded(QByteArray::fromRawData(reinterpret_cast<const char *>(_uri.uri.data()), static_cast<int>(_uri.uri.size() * sizeof(decltype(_uri.uri)::value_type))))}
 {
 }
 
@@ -1588,7 +1588,7 @@ auto FilePath::Sd::toString(bool refresh) const -> QString
 
 FilePath::Bluetooth::Bluetooth(const EFIBoot::File_path::MSG::Bluetooth &_bluetooth)
     : _string{}
-    , device_address{QByteArray::fromRawData(reinterpret_cast<const char *>(_bluetooth.device_address.data()), static_cast<int>(_bluetooth.device_address.size() * sizeof(*_bluetooth.device_address.data())))}
+    , device_address{QByteArray::fromRawData(reinterpret_cast<const char *>(_bluetooth.device_address.data()), static_cast<int>(_bluetooth.device_address.size() * sizeof(decltype(_bluetooth.device_address)::value_type)))}
 {
 }
 
@@ -1629,7 +1629,7 @@ auto FilePath::Bluetooth::toString(bool refresh) const -> QString
 
 FilePath::WiFi::WiFi(const EFIBoot::File_path::MSG::Wi_fi &_wi_fi)
     : _string{}
-    , ssid{QByteArray::fromRawData(_wi_fi.ssid.data(), static_cast<int>(_wi_fi.ssid.size() * sizeof(*_wi_fi.ssid.data())))}
+    , ssid{QByteArray::fromRawData(_wi_fi.ssid.data(), static_cast<int>(_wi_fi.ssid.size() * sizeof(decltype(_wi_fi.ssid)::value_type)))}
 {
 }
 
@@ -1705,7 +1705,7 @@ auto FilePath::Emmc::toString(bool refresh) const -> QString
 
 FilePath::Bluetoothle::Bluetoothle(const EFIBoot::File_path::MSG::Bluetoothle &_bluetoothle)
     : _string{}
-    , device_address{QByteArray::fromRawData(reinterpret_cast<const char *>(_bluetoothle.device_address.data()), static_cast<int>(_bluetoothle.device_address.size() * sizeof(*_bluetoothle.device_address.data())))}
+    , device_address{QByteArray::fromRawData(reinterpret_cast<const char *>(_bluetoothle.device_address.data()), static_cast<int>(_bluetoothle.device_address.size() * sizeof(decltype(_bluetoothle.device_address)::value_type)))}
     , address_type{_bluetoothle.address_type}
 {
 }
@@ -1751,7 +1751,7 @@ auto FilePath::Bluetoothle::toString(bool refresh) const -> QString
 FilePath::Dns::Dns(const EFIBoot::File_path::MSG::Dns &_dns)
     : _string{}
     , ipv6{_dns.ipv6}
-    , data{QByteArray::fromRawData(reinterpret_cast<const char *>(_dns.data.data()), static_cast<int>(_dns.data.size() * sizeof(*_dns.data.data())))}
+    , data{QByteArray::fromRawData(reinterpret_cast<const char *>(_dns.data.data()), static_cast<int>(_dns.data.size() * sizeof(decltype(_dns.data)::value_type)))}
 {
     data.detach();
 }
@@ -1839,7 +1839,7 @@ FilePath::RestService::RestService(const EFIBoot::File_path::MSG::Rest_service &
     , rest_service{_rest_service.rest_service}
     , access_mode{_rest_service.access_mode}
     , guid{}
-    , data{QByteArray::fromRawData(reinterpret_cast<const char *>(_rest_service.data.data()), static_cast<int>(_rest_service.data.size() * sizeof(*_rest_service.data.data())))}
+    , data{QByteArray::fromRawData(reinterpret_cast<const char *>(_rest_service.data.data()), static_cast<int>(_rest_service.data.size() * sizeof(decltype(_rest_service.data)::value_type)))}
 {
     static_assert(sizeof(guid) == sizeof(_rest_service.guid));
     memcpy(reinterpret_cast<void *>(&guid), &_rest_service.guid, sizeof(guid));
@@ -1894,7 +1894,7 @@ FilePath::NvmeOfNs::NvmeOfNs(const EFIBoot::File_path::MSG::Nvme_of_ns &_nvme_of
     : _string{}
     , nidt{_nvme_of_ns.nidt}
     , nid{}
-    , subsystem_nqn{QByteArray::fromRawData(_nvme_of_ns.subsystem_nqn.data(), static_cast<int>(_nvme_of_ns.subsystem_nqn.size() * sizeof(*_nvme_of_ns.subsystem_nqn.data())))}
+    , subsystem_nqn{QByteArray::fromRawData(_nvme_of_ns.subsystem_nqn.data(), static_cast<int>(_nvme_of_ns.subsystem_nqn.size() * sizeof(decltype(_nvme_of_ns.subsystem_nqn)::value_type)))}
 {
     static_assert(sizeof(nid) == sizeof(_nvme_of_ns.nid));
     memcpy(reinterpret_cast<void *>(&nid), &_nvme_of_ns.nid, sizeof(nid));
@@ -2340,7 +2340,7 @@ FilePath::BootSpecification::BootSpecification(const EFIBoot::File_path::BIOS::B
     : _string{}
     , device_type{_boot_specification.device_type}
     , status_flag{_boot_specification.status_flag}
-    , description{QByteArray::fromRawData(_boot_specification.description.data(), static_cast<int>(_boot_specification.description.size() * sizeof(*_boot_specification.description.data())))}
+    , description{QByteArray::fromRawData(_boot_specification.description.data(), static_cast<int>(_boot_specification.description.size() * sizeof(decltype(_boot_specification.description)::value_type)))}
 {
 }
 
@@ -2390,7 +2390,7 @@ auto FilePath::BootSpecification::toString(bool refresh) const -> QString
 }
 
 FilePath::Vendor::Vendor(const EFIBoot::File_path::HW::Vendor &vendor)
-    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size() * sizeof(*vendor.data.data())))}
+    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size() * sizeof(decltype(vendor.data)::value_type)))}
     , _type{EFIBoot::File_path::HW::Vendor::TYPE}
 {
     data.detach();
@@ -2399,7 +2399,7 @@ FilePath::Vendor::Vendor(const EFIBoot::File_path::HW::Vendor &vendor)
 }
 
 FilePath::Vendor::Vendor(const EFIBoot::File_path::MSG::Vendor &vendor)
-    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size() * sizeof(*vendor.data.data())))}
+    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size() * sizeof(decltype(vendor.data)::value_type)))}
     , _type{EFIBoot::File_path::MSG::Vendor::TYPE}
 {
     data.detach();
@@ -2408,7 +2408,7 @@ FilePath::Vendor::Vendor(const EFIBoot::File_path::MSG::Vendor &vendor)
 }
 
 FilePath::Vendor::Vendor(const EFIBoot::File_path::MEDIA::Vendor &vendor)
-    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size() * sizeof(*vendor.data.data())))}
+    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(vendor.data.data()), static_cast<int>(vendor.data.size() * sizeof(decltype(vendor.data)::value_type)))}
     , _type{EFIBoot::File_path::MEDIA::Vendor::TYPE}
 {
     data.detach();
@@ -2547,7 +2547,7 @@ auto FilePath::End::toString(bool refresh) const -> QString
 }
 
 FilePath::Unknown::Unknown(const EFIBoot::File_path::Unknown &unknown)
-    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(unknown.data.data()), static_cast<int>(unknown.data.size() * sizeof(*unknown.data.data())))}
+    : data{QByteArray::fromRawData(reinterpret_cast<const char *>(unknown.data.data()), static_cast<int>(unknown.data.size() * sizeof(decltype(unknown.data)::value_type)))}
     , _type{unknown.TYPE}
     , _subtype{unknown.SUBTYPE}
 {
@@ -2608,7 +2608,7 @@ auto BootEntry::fromEFIBootLoadOption(
         value.optional_data_format = OptionalDataFormat::Utf16;
 
     if(value.optional_data_format == OptionalDataFormat::Base64)
-        value.optional_data = QByteArray::fromRawData(reinterpret_cast<const char *>(load_option.optional_data.data()), static_cast<int>(load_option.optional_data.size() * sizeof(*load_option.optional_data.data()))).toBase64();
+        value.optional_data = QByteArray::fromRawData(reinterpret_cast<const char *>(load_option.optional_data.data()), static_cast<int>(load_option.optional_data.size() * sizeof(decltype(load_option.optional_data)::value_type))).toBase64();
 
     value.attributes = load_option.attributes;
 
