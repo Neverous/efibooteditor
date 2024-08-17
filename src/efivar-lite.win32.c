@@ -8,6 +8,7 @@
 #include <ntstatus.h>
 #include <winternl.h>
 
+#include "efivar-lite/device-paths.h"
 #include "efivar-lite/load-option.h"
 
 #pragma comment(lib, "advapi32.lib")
@@ -32,12 +33,12 @@ typedef struct
 
 const efi_guid_t efi_guid_global = {_T("{8BE4DF61-93CA-11D2-AA0D-00E098032B8C}")};
 const efi_guid_t efi_guid_apple = {_T("{7C436110-AB2A-4BBB-A880-FE41995C9F82}")};
-static TCHAR *last_winapi_function = NULL;
+static TCHAR *last_winapi_function = nullptr;
 
 int efi_variables_supported(void)
 {
     LUID luid;
-    if(LookupPrivilegeValue(NULL, SE_SYSTEM_ENVIRONMENT_NAME, &luid))
+    if(LookupPrivilegeValue(nullptr, SE_SYSTEM_ENVIRONMENT_NAME, &luid))
     {
         TOKEN_PRIVILEGES tp;
         memset(&tp, 0, sizeof(tp));
@@ -53,7 +54,7 @@ int efi_variables_supported(void)
             return 0;
         }
 
-        if(!AdjustTokenPrivileges(token, FALSE, &tp, sizeof(tp), NULL, NULL))
+        if(!AdjustTokenPrivileges(token, FALSE, &tp, sizeof(tp), nullptr, nullptr))
         {
             last_winapi_function = _T("AdjustTokenPrivileges");
             return 0;
@@ -73,7 +74,7 @@ int efi_variables_supported(void)
         return 0;
     }
 
-    uint8_t *data = NULL;
+    uint8_t *data = nullptr;
     size_t data_size = 0;
     uint32_t attributes = 0;
     efi_guid_t guid = {_T("{00000000-0000-0000-0000-000000000000}")};
@@ -83,7 +84,7 @@ int efi_variables_supported(void)
     return 1;
 }
 
-static uint8_t *variable_data_buffer = NULL;
+static uint8_t *variable_data_buffer = nullptr;
 
 int efi_get_variable(efi_guid_t guid, const TCHAR *name, uint8_t **data, size_t *data_size, uint32_t *attributes)
 {
@@ -115,7 +116,7 @@ int efi_del_variable(efi_guid_t guid, const TCHAR *name)
 {
     // setting nSize (data_size) = 0 => deletes variable
     // https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setfirmwareenvironmentvariablea#parameters
-    BOOL ret = SetFirmwareEnvironmentVariable(name, guid.data, NULL, 0);
+    BOOL ret = SetFirmwareEnvironmentVariable(name, guid.data, nullptr, 0);
     last_winapi_function = _T("SetFirmwareEnvironmentVariable");
     return ret == 0 ? -1 : 0;
 }
@@ -128,7 +129,7 @@ int efi_set_variable(efi_guid_t guid, const TCHAR *name, uint8_t *data, size_t d
     return ret == 0 ? -1 : 0;
 }
 
-static void (*efi_get_next_variable_name_progress_cb)(size_t, size_t) = NULL;
+static void (*efi_get_next_variable_name_progress_cb)(size_t, size_t) = nullptr;
 
 void efi_set_get_next_variable_name_progress_cb(void (*progress_cb)(size_t, size_t))
 {
@@ -136,7 +137,7 @@ void efi_set_get_next_variable_name_progress_cb(void (*progress_cb)(size_t, size
 }
 
 static ULONG current_offset = 0u;
-static PVOID variables = NULL;
+static PVOID variables = nullptr;
 static ULONG variables_size = 0u;
 static efi_guid_t current_guid;
 
@@ -208,7 +209,7 @@ int efi_error_get(unsigned int n, TCHAR **const filename, TCHAR **const function
     DWORD err = GetLastError();
     *error = (int)err;
     *function = last_winapi_function;
-    if(!FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS, NULL, err, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), error_buffer, 1024, NULL))
+    if(!FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS, nullptr, err, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), error_buffer, 1024, nullptr))
         return -1;
 
     *message = error_buffer;
