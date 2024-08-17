@@ -8,12 +8,9 @@
 /* casts */
 #if defined(__cplusplus)
 #define STATIC_CAST(type) static_cast<type>
-#if defined(NULL)
-#undef NULL
-#endif
-#define NULL nullptr
 #else
 #define STATIC_CAST(type) (type)
+#define nullptr NULL
 #endif
 
 /* attributes */
@@ -76,7 +73,7 @@ inline int _tcserror_s(TCHAR *buffer, size_t size, int errnum)
     return strerror_r(errnum, buffer, size);
 #else
     TCHAR *msg = strerror_r(errnum, buffer, size);
-    if(msg == NULL)
+    if(msg == nullptr)
         return 0;
 
     return _tcsncpy_s(buffer, size, msg, _TRUNCATE);

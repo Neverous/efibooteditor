@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #include "efivar-lite.common.h"
+#include "efivar-lite/device-paths.h"
 #include "efivar-lite/load-option.h"
 
 // UEFI Specification, Version 2.8
@@ -57,8 +58,8 @@ const size_t EFI_MAX_VARIABLES = sizeof(variable_names) / sizeof(variable_names[
 static size_t current_variable = 0u;
 int _efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name)
 {
-    *guid = NULL;
-    *name = NULL;
+    *guid = nullptr;
+    *name = nullptr;
     size_t index = current_variable;
     if(index < sizeof(variable_names) / sizeof(variable_names[0]))
     {
@@ -94,7 +95,7 @@ efidp efi_loadopt_path(efi_load_option *opt, ssize_t limit)
 {
     uint8_t *ptr = (uint8_t *)opt;
     if((size_t)limit <= offsetof(efi_load_option, description))
-        return NULL;
+        return nullptr;
 
     limit -= (ssize_t)offsetof(efi_load_option, description);
     ptr += offsetof(efi_load_option, description);
@@ -104,10 +105,10 @@ efidp efi_loadopt_path(efi_load_option *opt, ssize_t limit)
     limit -= (ssize_t)sizeof(opt->description[0]);
     ptr += sizeof(opt->description[0]);
     if(limit == 0)
-        return NULL;
+        return nullptr;
 
     if(limit < opt->file_path_list_length)
-        return NULL;
+        return nullptr;
 
     return (efidp)ptr;
 }

@@ -173,7 +173,7 @@ static inline int
 {
     while(1)
     {
-        const_efidp next = NULL;
+        const_efidp next = nullptr;
         int rc = efidp_next_node(dn, &next);
         if(rc < 0)
         {
@@ -244,7 +244,7 @@ static inline ssize_t
             return sz;
 
         size += sz;
-        const_efidp next = NULL;
+        const_efidp next = nullptr;
         int rc = efidp_next_instance(dp, &next);
         if(rc < 0)
         {
@@ -277,7 +277,7 @@ static inline ssize_t
         if(efidp_type(dpi) == EFIDP_TYPE_END)
             break;
 
-        const_efidp next = NULL;
+        const_efidp next = nullptr;
         int rc = efidp_next_node(dpi, &next);
         if(rc < 0)
             return rc;

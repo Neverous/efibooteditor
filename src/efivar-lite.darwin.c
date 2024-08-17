@@ -7,6 +7,7 @@
 #include <IOKit/IOKitLib.h>
 #include <mach/mach_error.h>
 
+#include "efivar-lite/device-paths.h"
 #include "efivar-lite/load-option.h"
 
 const efi_guid_t efi_guid_global = {"8BE4DF61-93CA-11D2-AA0D-00E098032B8C"};
@@ -14,7 +15,7 @@ const efi_guid_t efi_guid_apple = {"7C436110-AB2A-4BBB-A880-FE41995C9F82"};
 
 static io_registry_entry_t options_entry;
 static kern_return_t err;
-static char *last_iokit_function = NULL;
+static char *last_iokit_function = nullptr;
 
 int efi_variables_supported(void)
 {
@@ -28,15 +29,15 @@ int efi_variables_supported(void)
     return 1;
 }
 
-static uint8_t *variable_data_buffer = NULL;
+static uint8_t *variable_data_buffer = nullptr;
 
 static CFStringRef _get_nvram_variable_name(const efi_guid_t *guid, const char *name)
 {
     CFMutableStringRef name_cf = CFStringCreateMutable(kCFAllocatorDefault, 0);
-    if(name_cf == NULL)
+    if(name_cf == nullptr)
     {
         last_iokit_function = "CFStringCreateMutable";
-        return NULL;
+        return nullptr;
     }
 
     CFStringAppendCString(name_cf, guid->data, kCFStringEncodingUTF8);
@@ -48,12 +49,12 @@ static CFStringRef _get_nvram_variable_name(const efi_guid_t *guid, const char *
 int efi_get_variable(efi_guid_t guid, const char *name, uint8_t **data, size_t *data_size, uint32_t *attributes)
 {
     CFStringRef name_cf = _get_nvram_variable_name(&guid, name);
-    if(name_cf == NULL)
+    if(name_cf == nullptr)
         return -1;
 
     CFTypeRef value_cf = IORegistryEntryCreateCFProperty(options_entry, name_cf, kCFAllocatorDefault, 0);
     CFRelease(name_cf);
-    if(value_cf == NULL)
+    if(value_cf == nullptr)
     {
         last_iokit_function = "IORegistryEntryCreateCFProperty";
         return -1;
@@ -64,16 +65,16 @@ int efi_get_variable(efi_guid_t guid, const char *name, uint8_t **data, size_t *
     variable_data_buffer = malloc(*data_size);
     if(!variable_data_buffer)
     {
-        last_iokit_function = NULL;
+        last_iokit_function = nullptr;
         CFRelease(value_cf);
         return -1;
     }
 
     const void *ret = memcpy(variable_data_buffer, CFDataGetBytePtr(value_cf), *data_size);
     CFRelease(value_cf);
-    if(ret == NULL)
+    if(ret == nullptr)
     {
-        last_iokit_function = NULL;
+        last_iokit_function = nullptr;
         return -1;
     }
 
@@ -93,11 +94,11 @@ int efi_set_variable(efi_guid_t guid, const char *name, uint8_t *data, size_t da
     (void)mode;
 
     CFStringRef name_cf = _get_nvram_variable_name(&guid, name);
-    if(name_cf == NULL)
+    if(name_cf == nullptr)
         return -1;
 
     CFDataRef value_cf = CFDataCreateWithBytesNoCopy(kCFAllocatorDefault, data, (CFIndex)data_size, kCFAllocatorDefault);
-    if(value_cf == NULL)
+    if(value_cf == nullptr)
     {
         last_iokit_function = "CFDataCreateWithBytesNoCopy";
         CFRelease(name_cf);
@@ -116,7 +117,7 @@ int efi_set_variable(efi_guid_t guid, const char *name, uint8_t *data, size_t da
     return 0;
 }
 
-static void (*efi_get_next_variable_name_progress_cb)(size_t, size_t) = NULL;
+static void (*efi_get_next_variable_name_progress_cb)(size_t, size_t) = nullptr;
 
 void efi_set_get_next_variable_name_progress_cb(void (*progress_cb)(size_t, size_t))
 {
@@ -140,12 +141,12 @@ int efi_get_next_variable_name(efi_guid_t **guid, char **name)
         }
 
         CFStringRef name_cf = _get_nvram_variable_name(*guid, *name);
-        if(name_cf == NULL)
+        if(name_cf == nullptr)
             return -1;
 
         CFTypeRef value_cf = IORegistryEntryCreateCFProperty(options_entry, name_cf, kCFAllocatorDefault, 0);
         CFRelease(name_cf);
-        if(value_cf == NULL)
+        if(value_cf == nullptr)
             continue;
 
         CFIndex length = CFDataGetLength(value_cf);
