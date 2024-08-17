@@ -37,7 +37,7 @@ void HotKeyBootOptionDelegate::setupWidgetFromItem(Widget &widget, const Item &i
     if(role == Qt::EditRole)
     {
         // Commit data after select
-        connect(&widget, &QComboBox::activated, this, [&widget](int /*index*/)
+        QObject::connect(&widget, QOverload<int>::of(&QComboBox::activated), [&widget](int /*index*/)
             {
             // by pretending enter was sent
             QKeyEvent enter{QEvent::KeyPress, Qt::Key_Enter, Qt::NoModifier};
@@ -78,7 +78,7 @@ void HotKeyKeysDelegate::setupWidgetFromItem(Widget &widget, const Item &item, c
     if(role == Qt::EditRole)
     {
         // Commit data after edit is finished
-        connect(&widget, &EFIKeySequenceEdit::editingFinished, this, [&widget]()
+        QObject::connect(&widget, &EFIKeySequenceEdit::editingFinished, [&widget]()
             {
             // by pretending enter was sent
             QKeyEvent enter{QEvent::KeyPress, Qt::Key_Enter, Qt::NoModifier};

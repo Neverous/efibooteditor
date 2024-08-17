@@ -11,8 +11,8 @@ class DevicePathView: public QListView
 
 private:
     FilePathDelegate delegate{};
-    std::unique_ptr<FilePathDialog> dialog = nullptr;
-    bool readonly = false;
+    std::unique_ptr<FilePathDialog> dialog{nullptr};
+    bool readonly{false};
 
 public:
     explicit DevicePathView(QWidget *parent = nullptr);

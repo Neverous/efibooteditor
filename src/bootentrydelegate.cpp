@@ -9,7 +9,7 @@
 BootEntryDelegate::BootEntryDelegate()
     : QWidgetItemDelegate<BootEntryWidget, const BootEntry *>{}
 {
-    connect(&event_handler, &BootEntryWidget::nextBootClicked, this, &BootEntryDelegate::setNextBoot);
+    QObject::connect(&event_handler, &BootEntryWidget::nextBootClicked, this, &BootEntryDelegate::setNextBoot);
 }
 
 void BootEntryDelegate::setOptions(const BootEntryListModel::Options &options_)

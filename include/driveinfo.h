@@ -18,12 +18,12 @@ public:
     };
 
 public:
-    QString name = "";
-    QUuid signature = {};
-    uint64_t start = 0;
-    uint64_t size = 0;
-    uint32_t partition = 0;
-    SIGNATURE signature_type = SIGNATURE::NONE;
+    QString name{};
+    QUuid signature{};
+    uint64_t start{0};
+    uint64_t size{0};
+    uint32_t partition{0};
+    SIGNATURE signature_type{SIGNATURE::NONE};
 
 public:
     static QVector<DriveInfo> getAll(bool refresh = false);

@@ -8,7 +8,7 @@ EFIKey::EFIKey(const EFIBoot::efi_input_key &key)
     if(key.scan_code)
     {
         if(auto code = std::find_if(efi_scan_codes.begin(), efi_scan_codes.end(), [&](const auto &row)
-               { return std::get<uint16_t>(row) == key.scan_code; });
+               { return std::get<int>(row) == key.scan_code; });
             code != efi_scan_codes.end())
             scan_code = std::get<Qt::Key>(*code);
     }
@@ -26,7 +26,7 @@ EFIBoot::efi_input_key EFIKey::toEFIInputKey() const
         if(auto code = std::find_if(efi_scan_codes.begin(), efi_scan_codes.end(), [&](const auto &row)
                { return std::get<Qt::Key>(row) == scan_code; });
             code != efi_scan_codes.end())
-            value.scan_code = std::get<uint16_t>(*code);
+            value.scan_code = static_cast<uint16_t>(std::get<int>(*code));
     }
     else
         value.scan_code = 0;
@@ -159,7 +159,7 @@ bool EFIKeySequence::toEFIKeyOption(EFIBoot::efi_boot_key_data &key_data, std::v
     key_data.options.menu_pressed = shift_state.contains(Qt::Key_Menu);
     key_data.options.sys_req_pressed = shift_state.contains(Qt::Key_SysReq);
 
-    key_data.options.input_key_count = static_cast<uint32_t>(keys.size());
+    key_data.options.input_key_count = static_cast<uint32_t>(keys.size()) & 0x3;
     for(const auto &key: keys)
         keys_.push_back(key.toEFIInputKey());
 

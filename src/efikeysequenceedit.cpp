@@ -12,7 +12,7 @@ EFIKeySequenceEdit::EFIKeySequenceEdit(QWidget *parent)
     , lineEdit{std::make_unique<QLineEdit>(this)}
     , layout{std::make_unique<QVBoxLayout>(this)}
 {
-    connect(lineEdit.get(), &QLineEdit::textChanged, this, [this](const QString &text)
+    QObject::connect(lineEdit.get(), &QLineEdit::textChanged, this, [this](const QString &text)
         {
             // Clear the sequence if the user clicked on the clear icon
             if(text.isEmpty())

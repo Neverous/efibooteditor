@@ -266,7 +266,7 @@ void EFIBootData::reload()
     for(const auto &[tname, guid]: name_to_guid)
     {
         (void)guid;
-        if(!is_listentry(tname, "Key"))
+        if(!is_listentry(tname, _T("Key")))
             continue;
 
         const auto index = static_cast<uint16_t>(std::stoul(tname.substr(3), nullptr, HEX_BASE));
@@ -321,7 +321,7 @@ void EFIBootData::save()
                     return true;
             }
 
-            if(is_listentry(tname, "Key"))
+            if(is_listentry(tname, _T("Key")))
                 return true;
 
             return false;
@@ -843,7 +843,7 @@ void EFIBootData::dump(const QString &file_name)
         for(const auto &[tname_, guid]: name_to_guid)
         {
             (void)guid;
-            if(!is_listentry(tname_, "Key"))
+            if(!is_listentry(tname_, _T("Key")))
                 continue;
 
             const auto suffix = tname_.substr(3);

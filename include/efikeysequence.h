@@ -9,7 +9,7 @@
 
 #include "efiboot.h"
 
-static const QVector<std::tuple<uint16_t, QString, Qt::Key>> efi_scan_codes = {
+static const QVector<std::tuple<int, QString, Qt::Key>> efi_scan_codes = {
     {0x00, "NULL", Qt::Key_unknown},
     {0x01, "Up", Qt::Key_Up},
     {0x02, "Down", Qt::Key_Down},

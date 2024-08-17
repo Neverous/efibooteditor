@@ -26,7 +26,7 @@ protected:
 class HotKeyKeysDelegate: public QWidgetItemDelegate<EFIKeySequenceEdit, const EFIKeySequence *>
 {
 private:
-    qsizetype maximumSequenceLength = 3;
+    qsizetype maximumSequenceLength{3};
 
 public:
     HotKeyKeysDelegate() = default;

@@ -16,6 +16,8 @@ class HotKeysDialog: public QDialog
 
 public:
     explicit HotKeysDialog(HotKeyListModel &model, QWidget *parent = nullptr);
+    HotKeysDialog(const HotKeysDialog &) = delete;
+    HotKeysDialog &operator=(const HotKeysDialog &) = delete;
     ~HotKeysDialog() override;
 
     void refreshBootOptions(const BootEntryListModel &model);

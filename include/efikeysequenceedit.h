@@ -19,7 +19,7 @@ private:
     std::unique_ptr<QLineEdit> lineEdit;
     std::unique_ptr<QVBoxLayout> layout;
     EFIKeySequence _keySequence{};
-    qsizetype _maximumSequenceLength = 3;
+    qsizetype _maximumSequenceLength{3};
     int startKey{-1};
 
 public:

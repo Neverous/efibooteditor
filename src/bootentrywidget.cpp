@@ -12,7 +12,7 @@ BootEntryWidget::BootEntryWidget(QWidget *parent)
     ui->setupUi(this);
     ui->current_boot->setMaximumSize(6, 6);
 
-    connect(ui->next_boot, &QRadioButton::clicked, this, &BootEntryWidget::nextBootClicked);
+    QObject::connect(ui->next_boot, &QRadioButton::clicked, this, &BootEntryWidget::nextBootClicked);
 }
 
 BootEntryWidget::~BootEntryWidget()
