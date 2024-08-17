@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
+#include "compat.h"
+
 #include "devicepathview.h"
+
 #include "filepathdialog.h"
 
 DevicePathView::DevicePathView(QWidget *parent)

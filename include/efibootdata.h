@@ -2,7 +2,6 @@
 #pragma once
 
 #include "bootentrylistmodel.h"
-#include "compat.h"
 #include <QObject>
 #include <QUndoStack>
 

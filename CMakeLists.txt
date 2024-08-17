@@ -25,6 +25,7 @@ set(APPLICATION_NAME "EFI Boot Editor")
 set(APPLICATION_ICON "${CMAKE_SOURCE_DIR}/icons/Tango/256/categories/preferences-system.ico")
 
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOMOC_MOC_OPTIONS -b compat.h)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_CXX_EXTENSIONS OFF)

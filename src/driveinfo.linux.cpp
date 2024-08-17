@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
-#include <QDir>
-
 #include "compat.h"
+
 #include "driveinfo.h"
+
+#include <QDir>
 
 auto DriveInfo::getAll(bool refresh) -> QVector<DriveInfo>
 {

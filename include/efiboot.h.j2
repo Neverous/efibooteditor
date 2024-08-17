@@ -10,8 +10,6 @@
 #include <variant>
 #include <vector>
 
-#include "compat.h"
-
 namespace EFIBoot
 {
 

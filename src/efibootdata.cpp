@@ -1,12 +1,15 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
+#include "compat.h"
+
 #include "efibootdata.h"
 
-#include "commands.h"
 #include <QFile>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <unordered_set>
+
+#include "commands.h"
 
 static bool is_bootentry(const tstring_view &name, const tstring_view &prefix)
 {

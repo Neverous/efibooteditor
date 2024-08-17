@@ -1,10 +1,12 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
+#include "compat.h"
+
 #include "bootentry.h"
 
-#include "compat.h"
-#include "efiboot.h"
 #include <QJsonArray>
 #include <QJsonObject>
+
+#include "efiboot.h"
 
 EFIBoot::Progress_fn EFIBoot::_get_variables_progress_fn = nullptr;
 

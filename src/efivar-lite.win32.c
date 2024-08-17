@@ -2,13 +2,12 @@
 /*
  * efivar interface <> WinAPI translation.
  */
+#include "efivar-lite.common.h"
+
 #include <Windows.h>
 #include <ntstatus.h>
 #include <winternl.h>
 
-#include "compat.h"
-#include "efivar-lite.common.h"
-#include "efivar-lite/efivar-lite.h"
 #include "efivar-lite/load-option.h"
 
 #pragma comment(lib, "advapi32.lib")

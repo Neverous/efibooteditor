@@ -8,8 +8,6 @@
 #include <stdarg.h>
 #include <string.h>
 
-#include "compat.h"
-
 #pragma pack(push, 1)
 typedef struct ATTR_ALIGN(1)
 {

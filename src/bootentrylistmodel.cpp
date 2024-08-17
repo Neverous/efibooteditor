@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
+#include "compat.h"
+
 #include "bootentrylistmodel.h"
+
 #include "commands.h"
 
 BootEntryListModel::BootEntryListModel(const QString &name_, const Options &options_, QObject *parent)

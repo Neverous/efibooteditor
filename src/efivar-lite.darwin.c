@@ -2,12 +2,11 @@
 /*
  * efivar interface <> IOKit translation.
  */
+#include "efivar-lite.common.h"
+
 #include <IOKit/IOKitLib.h>
 #include <mach/mach_error.h>
 
-#include "compat.h"
-#include "efivar-lite.common.h"
-#include "efivar-lite/efivar-lite.h"
 #include "efivar-lite/load-option.h"
 
 const efi_guid_t efi_guid_global = {"8BE4DF61-93CA-11D2-AA0D-00E098032B8C"};

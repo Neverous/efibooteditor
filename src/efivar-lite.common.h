@@ -1,10 +1,11 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #pragma once
 
+#include "compat.h"
+
 #include <stdarg.h>
 #include <string.h>
 
-#include "compat.h"
 #include "efivar-lite/efivar-lite.h"
 
 extern const size_t EFI_MAX_VARIABLES;

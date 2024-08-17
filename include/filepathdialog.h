@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #pragma once
 
-#include "bootentry.h"
 #include <QDialog>
 #include <memory>
 
@@ -9,6 +8,8 @@
 #include <QPlainTextEdit>
 #include <QProxyStyle>
 #include <QStyleOptionTab>
+
+#include "bootentry.h"
 
 namespace Ui
 {

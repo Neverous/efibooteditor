@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
-#include "efibooteditor.h"
+#include "compat.h"
 
-#include "bootentry.h"
+#include "efibooteditor.h"
 #include "form/ui_efibooteditor.h"
+
 #include <QButtonGroup>
 #include <QFileDialog>
 #include <QJsonArray>
@@ -15,6 +16,8 @@
 #include <QPlainTextEdit>
 #include <QRadioButton>
 #include <cctype>
+
+#include "bootentry.h"
 
 EFIBootEditor::EFIBootEditor(const std::optional<tstring> &efi_error_message, QWidget *parent)
     : QMainWindow{parent}

@@ -4,7 +4,6 @@
 #include <QCommandLineParser>
 #include <QCoreApplication>
 
-#include "compat.h"
 #include "efibootdata.h"
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)

@@ -1,11 +1,12 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
-#include "filepathdialog.h"
-
 #include "compat.h"
-#include "driveinfo.h"
+
+#include "filepathdialog.h"
 #include "form/ui_filepathdialog.h"
 
 #include <QMessageBox>
+
+#include "driveinfo.h"
 
 QSize HorizontalTabStyle::sizeFromContents(ContentsType type, const QStyleOption *option, const QSize &size, const QWidget *widget) const
 {
