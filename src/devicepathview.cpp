@@ -3,8 +3,6 @@
 
 #include "devicepathview.h"
 
-#include "filepathdialog.h"
-
 DevicePathView::DevicePathView(QWidget *parent)
     : QListView(parent)
     , dialog{std::make_unique<FilePathDialog>(this)}
@@ -69,14 +67,7 @@ void DevicePathView::removeCurrentRow()
         return;
 
     auto row = index.row();
-    if(!model()->removeRow(row))
-        return;
-
-    index = index.siblingAtRow(row - 1);
-    if(!index.isValid())
-        index = model()->index(row, 0);
-
-    setCurrentIndex(index);
+    model()->removeRow(row);
 }
 
 void DevicePathView::moveCurrentRowUp()

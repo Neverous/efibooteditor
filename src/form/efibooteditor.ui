@@ -1226,6 +1226,8 @@
     </property>
     <addaction name="undo"/>
     <addaction name="redo"/>
+    <addaction name="separator"/>
+    <addaction name="hot_keys"/>
    </widget>
    <addaction name="file"/>
    <addaction name="edit"/>
@@ -1386,6 +1388,20 @@
     <string>Ctrl+Shift+Z</string>
    </property>
   </action>
+  <action name="hot_keys">
+   <property name="icon">
+    <iconset theme="emblem-symbolic-link"/>
+   </property>
+   <property name="text">
+    <string>Hot &amp;Keys</string>
+   </property>
+   <property name="statusTip">
+    <string>Hot Keys</string>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -1405,6 +1421,9 @@
    <extends>QWidget</extends>
    <header>bootentryform.h</header>
    <container>1</container>
+   <slots>
+    <signal>showHotKeysDialog(int)</signal>
+   </slots>
   </customwidget>
   <customwidget>
    <class>QResizableTabWidget</class>
@@ -1552,7 +1571,7 @@
    <sender>about</sender>
    <signal>triggered()</signal>
    <receiver>EFIBootEditor</receiver>
-   <slot>showAboutBox()</slot>
+   <slot>showAboutDialog()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -1804,11 +1823,43 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>hot_keys</sender>
+   <signal>triggered()</signal>
+   <receiver>EFIBootEditor</receiver>
+   <slot>showHotKeysDialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>entry_form</sender>
+   <signal>showHotKeysDialog(int)</signal>
+   <receiver>EFIBootEditor</receiver>
+   <slot>showHotKeysDialog(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>572</x>
+     <y>111</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>enableBootEntryEditor(QModelIndex)</slot>
   <slot>disableBootEntryEditor()</slot>
-  <slot>showAboutBox()</slot>
+  <slot>showAboutDialog()</slot>
   <slot>reload()</slot>
   <slot>save()</slot>
   <slot>export_()</slot>
@@ -1828,5 +1879,7 @@
   <slot>undo()</slot>
   <slot>redo()</slot>
   <slot>duplicateBootEntry()</slot>
+  <slot>showHotKeysDialog(int)</slot>
+  <slot>showHotKeysDialog()</slot>
  </slots>
 </ui>

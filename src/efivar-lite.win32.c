@@ -139,7 +139,7 @@ void efi_set_get_next_variable_name_progress_cb(void (*progress_cb)(size_t, size
 static ULONG current_offset = 0u;
 static PVOID variables = nullptr;
 static ULONG variables_size = 0u;
-static efi_guid_t current_guid;
+static efi_guid_t current_guid = {};
 
 int efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name)
 {

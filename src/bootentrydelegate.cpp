@@ -6,12 +6,18 @@
 #include "bootentry.h"
 #include "bootentrylistmodel.h"
 
+BootEntryDelegate::BootEntryDelegate()
+    : QWidgetItemDelegate<BootEntryWidget, const BootEntry *>{}
+{
+    connect(&event_handler, &BootEntryWidget::nextBootClicked, this, &BootEntryDelegate::setNextBoot);
+}
+
 void BootEntryDelegate::setOptions(const BootEntryListModel::Options &options_)
 {
     options = options_;
 }
 
-void BootEntryDelegate::setupWidgetFromItem(Widget &widget, const Item &item) const
+void BootEntryDelegate::setupWidgetFromItem(Widget &widget, const Item &item, const QModelIndex &index, int role) const
 {
     widget.setReadOnly(options & BootEntryListModel::Option::ReadOnly);
     widget.setIndex(item->index);
@@ -22,18 +28,19 @@ void BootEntryDelegate::setupWidgetFromItem(Widget &widget, const Item &item) co
     widget.showBootOptions(options & BootEntryListModel::Option::IsBoot);
     widget.setCurrentBoot(item->is_current_boot);
     widget.setNextBoot(item->is_next_boot);
+
+    if(role == Qt::EditRole)
+        currentIndex = &index;
 }
 
-auto BootEntryDelegate::handleWidgetDelegateEventResult(const QEvent *event, QAbstractItemModel *model, const QStyleOptionViewItem &, const QModelIndex &index, const Widget &widget, bool result) const -> bool
+void BootEntryDelegate::setNextBoot(bool checked)
 {
-    if(event->type() != QEvent::MouseButtonPress && event->type() != QEvent::MouseButtonRelease)
-        return result;
+    if(!currentIndex || !currentIndex->isValid())
+        return;
 
-    if(auto item = index.data().value<const BootEntry *>(); widget.getNextBoot() != item->is_next_boot)
+    if(auto item = currentIndex->data().value<const BootEntry *>(); checked != item->is_next_boot)
     {
-        auto entries_list_model = static_cast<BootEntryListModel *>(model);
-        entries_list_model->setNextBootEntry(index, widget.getNextBoot());
+        auto model = const_cast<BootEntryListModel *>(static_cast<const BootEntryListModel *>(currentIndex->model()));
+        model->setNextBootEntry(*currentIndex, checked);
     }
-
-    return result;
 }

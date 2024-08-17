@@ -117,7 +117,7 @@ void BootEntryListView::rowsChanged(const QModelIndex &, int, int)
     if(!index.isValid() || !model()->checkIndex(index) || index.row() >= model()->rowCount())
         return;
 
-    emit selected(index);
+    Q_EMIT selected(index);
 }
 
 void BootEntryListView::selectionChanged(const QItemSelection &selection, const QItemSelection &)
@@ -126,5 +126,5 @@ void BootEntryListView::selectionChanged(const QItemSelection &selection, const 
     if(!selection.indexes().isEmpty())
         index = selection.indexes().first();
 
-    emit selected(index);
+    Q_EMIT selected(index);
 }

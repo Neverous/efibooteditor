@@ -47,7 +47,7 @@ void InsertBootEntryCommand::redo()
 }
 
 RemoveBootEntryCommand::RemoveBootEntryCommand(BootEntryListModel &model_, const QModelIndex &index_parent_, int index_, QUndoCommand *parent)
-    : InsertRemoveBootEntryCommand(model_, QObject::tr("Removing %1 entry \"%2\" from position %3").arg(model_.name, model_.entries.at(index_).getTitle()).arg(index_), index_parent_, index_, model_.entries.at(index_), parent)
+    : InsertRemoveBootEntryCommand(model_, QObject::tr("Remove %1 entry \"%2\" from position %3").arg(model_.name, model_.entries.at(index_).getTitle()).arg(index_), index_parent_, index_, model_.entries.at(index_), parent)
 {
 }
 
@@ -148,7 +148,7 @@ void ChangeOptionalDataFormatCommand::redo()
         return;
 
     value = old_value;
-    emit model.dataChanged(index, index, {Qt::EditRole});
+    Q_EMIT model.dataChanged(index, index, {Qt::EditRole});
 }
 
 bool ChangeOptionalDataFormatCommand::mergeWith(const QUndoCommand *command)
@@ -212,7 +212,7 @@ void InsertRemoveBootEntryFilePathCommand::insert()
     auto &entry = model.entries[index.row()];
     entry.device_path.insert(row, file_path);
     entry.formatDevicePath();
-    emit model.dataChanged(index, index, {Qt::EditRole});
+    Q_EMIT model.dataChanged(index, index, {Qt::EditRole});
 }
 
 void InsertRemoveBootEntryFilePathCommand::remove()
@@ -220,7 +220,7 @@ void InsertRemoveBootEntryFilePathCommand::remove()
     auto &entry = model.entries[index.row()];
     entry.device_path.removeAt(row);
     entry.formatDevicePath();
-    emit model.dataChanged(index, index, {Qt::EditRole});
+    Q_EMIT model.dataChanged(index, index, {Qt::EditRole});
 }
 
 InsertBootEntryFilePathCommand::InsertBootEntryFilePathCommand(BootEntryListModel &model_, const QModelIndex &index_, int row_, const FilePath::ANY &file_path_, QUndoCommand *parent)
@@ -239,7 +239,7 @@ void InsertBootEntryFilePathCommand::redo()
 }
 
 RemoveBootEntryFilePathCommand::RemoveBootEntryFilePathCommand(BootEntryListModel &model_, const QModelIndex &index_, int row_, QUndoCommand *parent)
-    : InsertRemoveBootEntryFilePathCommand(model_, QObject::tr("Removing %1 entry \"%2\" file path from position %3").arg(model_.name, model_.entries.at(index_.row()).getTitle()).arg(row_), index_, row_, model_.entries.at(index_.row()).device_path.at(row_), parent)
+    : InsertRemoveBootEntryFilePathCommand(model_, QObject::tr("Remove %1 entry \"%2\" file path from position %3").arg(model_.name, model_.entries.at(index_.row()).getTitle()).arg(row_), index_, row_, model_.entries.at(index_.row()).device_path.at(row_), parent)
 {
 }
 
@@ -254,7 +254,7 @@ void RemoveBootEntryFilePathCommand::redo()
 }
 
 SetBootEntryFilePathCommand::SetBootEntryFilePathCommand(BootEntryListModel &model_, const QModelIndex &index_, int row_, const FilePath::ANY &value_, QUndoCommand *parent)
-    : QUndoCommand(QObject::tr("Setting %1 entry \"%2\" file path at position %3").arg(model_.name, model_.entries.at(index_.row()).getTitle()).arg(row_), parent)
+    : QUndoCommand(QObject::tr("Set %1 entry \"%2\" file path at position %3").arg(model_.name, model_.entries.at(index_.row()).getTitle()).arg(row_), parent)
     , model{model_}
     , index{index_}
     , value{value_}
@@ -279,7 +279,7 @@ void SetBootEntryFilePathCommand::redo()
     entry.device_path[row] = value;
     value = old_value;
     entry.formatDevicePath();
-    emit model.dataChanged(index, index, {Qt::EditRole});
+    Q_EMIT model.dataChanged(index, index, {Qt::EditRole});
 }
 
 MoveBootEntryFilePathCommand::MoveBootEntryFilePathCommand(BootEntryListModel &model_, const QModelIndex &index_, int source_row_, int destination_row_, QUndoCommand *parent)
@@ -303,7 +303,7 @@ void MoveBootEntryFilePathCommand::undo()
     auto &entry = model.entries[index.row()];
     entry.device_path.move(destination_row, source_row);
     entry.formatDevicePath();
-    emit model.dataChanged(index, index, {Qt::EditRole});
+    Q_EMIT model.dataChanged(index, index, {Qt::EditRole});
 }
 
 void MoveBootEntryFilePathCommand::redo()
@@ -311,7 +311,7 @@ void MoveBootEntryFilePathCommand::redo()
     auto &entry = model.entries[index.row()];
     entry.device_path.move(source_row, destination_row);
     entry.formatDevicePath();
-    emit model.dataChanged(index, index, {Qt::EditRole});
+    Q_EMIT model.dataChanged(index, index, {Qt::EditRole});
 }
 
 bool MoveBootEntryFilePathCommand::mergeWith(const QUndoCommand *command)
@@ -334,5 +334,107 @@ bool MoveBootEntryFilePathCommand::mergeWith(const QUndoCommand *command)
     if(source_row == destination_row)
         setObsolete(true);
 
+    return true;
+}
+
+InsertRemoveHotKeyCommand::InsertRemoveHotKeyCommand(HotKeyListModel &model_, const QString &description, const QModelIndex &index_parent_, int index_, const HotKey &entry_, QUndoCommand *parent)
+    : QUndoCommand(description, parent)
+    , model{model_}
+    , index_parent{index_parent_}
+    , entry{entry_}
+    , index{index_}
+{
+}
+
+int InsertRemoveHotKeyCommand::id() const
+{
+    return -1;
+}
+
+void InsertRemoveHotKeyCommand::insert()
+{
+    model.beginInsertRows(index_parent, index, index);
+    model.entries.insert(index, entry);
+    model.endInsertRows();
+}
+
+void InsertRemoveHotKeyCommand::remove()
+{
+    model.beginRemoveRows(index_parent, index, index);
+    model.entries.removeAt(index);
+    model.endRemoveRows();
+}
+
+InsertHotKeyCommand::InsertHotKeyCommand(HotKeyListModel &model_, const QModelIndex &index_parent_, int index_, const HotKey &entry_, QUndoCommand *parent)
+    : InsertRemoveHotKeyCommand(model_, QObject::tr("Insert %1 entry at position %2").arg(QObject::tr("Key")).arg(index_), index_parent_, index_, entry_, parent)
+{
+}
+
+void InsertHotKeyCommand::undo()
+{
+    remove();
+}
+
+void InsertHotKeyCommand::redo()
+{
+    insert();
+}
+
+RemoveHotKeyCommand::RemoveHotKeyCommand(HotKeyListModel &model_, const QModelIndex &index_parent_, int index_, QUndoCommand *parent)
+    : InsertRemoveHotKeyCommand(model_, QObject::tr("Remove %1 entry from position %2").arg(QObject::tr("Key")).arg(index_), index_parent_, index_, model_.entries.at(index_), parent)
+{
+}
+
+void RemoveHotKeyCommand::undo()
+{
+    insert();
+}
+
+void RemoveHotKeyCommand::redo()
+{
+    remove();
+}
+
+SetHotKeyKeysCommand::SetHotKeyKeysCommand(HotKeyListModel &model_, const QModelIndex &index_, const EFIKeySequence &value_, QUndoCommand *parent)
+    : QUndoCommand(QObject::tr("Change %1 entry at position %2 %3 to \"%4\"").arg(QObject::tr("Key")).arg(index_.row()).arg(QObject::tr("keys"), value_.toString()), parent)
+    , model{model_}
+    , index{index_}
+    , value{value_}
+{
+}
+
+int SetHotKeyKeysCommand::id() const
+{
+    return 7;
+}
+
+void SetHotKeyKeysCommand::undo()
+{
+    redo();
+}
+
+void SetHotKeyKeysCommand::redo()
+{
+    auto &entry = model.entries[index.row()];
+    auto old_value = entry.keys;
+    entry.keys = value;
+    value = old_value;
+    Q_EMIT model.dataChanged(index, index, {Qt::EditRole});
+}
+
+bool SetHotKeyKeysCommand::mergeWith(const QUndoCommand *command)
+{
+    auto cmd = static_cast<const SetHotKeyKeysCommand *>(command);
+    if(&cmd->model != &model)
+        return false;
+
+    if(cmd->index != index)
+        return false;
+
+    auto &entry = model.entries.at(index.row());
+    if(value == entry.keys)
+        setObsolete(true);
+
+    setText(QObject::tr("Change %1 entry at position %2 %3 to \"%4\"").arg(QObject::tr("Key")).arg(index.row()).arg(QObject::tr("keys"), entry.keys.toString()));
     return true;
 }

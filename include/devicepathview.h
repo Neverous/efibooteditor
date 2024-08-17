@@ -21,7 +21,7 @@ public:
 
     void setReadOnly(bool readonly);
 
-public slots:
+public Q_SLOTS:
     void insertRow();
     void editCurrentRow();
     void removeCurrentRow();

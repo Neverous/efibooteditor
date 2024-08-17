@@ -72,8 +72,8 @@ jobs:
         shell: bash
         if: startsWith(inputs.os, 'ubuntu')
 
-      - name: Install libxkbcommon-x11-0 and libxcb-cursor0
-        run: sudo apt-get install libxkbcommon-x11-0 libxcb-cursor0
+      - name: Install libxkbcommon-x11-0 and libxcb-cursor0 and zlib1g-dev
+        run: sudo apt-get install libxkbcommon-x11-0 libxcb-cursor0 zlib1g-dev
         shell: bash
         if: startsWith(inputs.os, 'ubuntu')
 

@@ -4,6 +4,7 @@
 #include "efibootdata.h"
 #include <QUndoCommand>
 
+// BootEntry
 template <class Type, class SignalPtr>
 class SetEFIBootDataValueCommand: public QUndoCommand
 {
@@ -289,6 +290,132 @@ public:
     MoveBootEntryFilePathCommand(BootEntryListModel &model_, const QModelIndex &index_, int source_row_, int destination_row_, QUndoCommand *parent = nullptr);
     MoveBootEntryFilePathCommand(const MoveBootEntryFilePathCommand &) = delete;
     MoveBootEntryFilePathCommand &operator=(const MoveBootEntryFilePathCommand &) = delete;
+
+    int id() const override;
+    void undo() override;
+    void redo() override;
+    bool mergeWith(const QUndoCommand *command) override;
+};
+
+// Hot Keys
+class InsertRemoveHotKeyCommand: public QUndoCommand
+{
+protected:
+    HotKeyListModel &model;
+    QModelIndex index_parent;
+    HotKey entry;
+    int index;
+
+public:
+    InsertRemoveHotKeyCommand(HotKeyListModel &model_, const QString &description, const QModelIndex &index_parent_, int index_, const HotKey &entry_, QUndoCommand *parent = nullptr);
+    InsertRemoveHotKeyCommand(const InsertRemoveHotKeyCommand &) = delete;
+    InsertRemoveHotKeyCommand &operator=(const InsertRemoveHotKeyCommand &) = delete;
+
+protected:
+    int id() const override;
+    void insert();
+    void remove();
+};
+
+class InsertHotKeyCommand: public InsertRemoveHotKeyCommand
+{
+public:
+    InsertHotKeyCommand(HotKeyListModel &model_, const QModelIndex &index_parent_, int index_, const HotKey &entry_, QUndoCommand *parent = nullptr);
+    InsertHotKeyCommand(const InsertHotKeyCommand &) = delete;
+    InsertHotKeyCommand &operator=(const InsertHotKeyCommand &) = delete;
+
+    void undo() override;
+    void redo() override;
+};
+
+class RemoveHotKeyCommand: public InsertRemoveHotKeyCommand
+{
+public:
+    RemoveHotKeyCommand(HotKeyListModel &model_, const QModelIndex &index_parent_, int index_, QUndoCommand *parent = nullptr);
+    RemoveHotKeyCommand(const RemoveHotKeyCommand &) = delete;
+    RemoveHotKeyCommand &operator=(const RemoveHotKeyCommand &) = delete;
+
+    void undo() override;
+    void redo() override;
+};
+
+template <class Type>
+class SetHotKeyValueCommand: public QUndoCommand
+{
+    using PropertyPtr = Type HotKey::*;
+
+    HotKeyListModel &model;
+    const QModelIndex index;
+    const QString name;
+    PropertyPtr property;
+    Type value;
+
+public:
+    SetHotKeyValueCommand(HotKeyListModel &model_, const QModelIndex &index_, const QString &name_, PropertyPtr property_, const Type &value_, QUndoCommand *parent = nullptr)
+        : QUndoCommand{"", parent}
+        , model{model_}
+        , index{index_}
+        , name{name_}
+        , property{property_}
+        , value{value_}
+    {
+        setText(QObject::tr("Change %1 entry at position %2 %3 to \"%4\"").arg("Key").arg(index.row()).arg(name).arg(static_cast<underlying_type_t<Type>>(value)));
+    }
+
+    SetHotKeyValueCommand(const SetHotKeyValueCommand &) = delete;
+    SetHotKeyValueCommand &operator=(const SetHotKeyValueCommand &) = delete;
+
+    int id() const override
+    {
+        return 6;
+    }
+
+    void undo() override
+    {
+        redo();
+    }
+
+    void redo() override
+    {
+        auto &entry = model.entries[index.row()];
+        auto old_value = entry.*property;
+        entry.*property = value;
+        value = old_value;
+        emit model.dataChanged(index, index, {Qt::EditRole});
+    }
+
+    bool mergeWith(const QUndoCommand *command) override
+    {
+        auto cmd = static_cast<const SetHotKeyValueCommand<Type> *>(command);
+        if(&cmd->model != &model)
+            return false;
+
+        if(cmd->index != index)
+            return false;
+
+        if(cmd->property != property)
+            return false;
+
+        auto &entry = model.entries.at(index.row());
+        if(value == entry.*property)
+            setObsolete(true);
+
+        setText(QObject::tr("Change %1 entry at position %2 %3 to \"%4\"").arg("Key").arg(index.row()).arg(name).arg(static_cast<underlying_type_t<Type>>(entry.*property)));
+        return true;
+    }
+};
+
+class SetHotKeyKeysCommand: public QUndoCommand
+{
+protected:
+    HotKeyListModel &model;
+    QModelIndex index;
+    EFIKeySequence value;
+
+public:
+    SetHotKeyKeysCommand(HotKeyListModel &model_, const QModelIndex &index_, const EFIKeySequence &value_, QUndoCommand *parent = nullptr);
+    SetHotKeyKeysCommand(const SetHotKeyKeysCommand &) = delete;
+    SetHotKeyKeysCommand &operator=(const SetHotKeyKeysCommand &) = delete;
 
     int id() const override;
     void undo() override;

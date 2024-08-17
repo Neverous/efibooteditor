@@ -11,7 +11,7 @@
 
 #include "commands.h"
 
-static bool is_bootentry(const tstring_view &name, const tstring_view &prefix)
+static bool is_listentry(const tstring_view &name, const tstring_view &prefix)
 {
     if(name.length() != prefix.length() + 4 || name.substr(0, prefix.length()) != prefix)
         return false;
@@ -27,6 +27,7 @@ EFIBootData::EFIBootData(QObject *parent)
     driver_entries_list_model.setUndoStack(undo_stack);
     sysprep_entries_list_model.setUndoStack(undo_stack);
     platform_recovery_entries_list_model.setUndoStack(undo_stack);
+    hot_keys_list_model.setUndoStack(undo_stack);
 }
 
 QUndoStack *EFIBootData::getUndoStack() const
@@ -41,6 +42,7 @@ void EFIBootData::setUndoStack(QUndoStack *undo_stack_)
     driver_entries_list_model.setUndoStack(undo_stack);
     sysprep_entries_list_model.setUndoStack(undo_stack);
     platform_recovery_entries_list_model.setUndoStack(undo_stack);
+    hot_keys_list_model.setUndoStack(undo_stack);
 }
 
 void EFIBootData::clear()
@@ -49,6 +51,7 @@ void EFIBootData::clear()
     driver_entries_list_model.clear();
     sysprep_entries_list_model.clear();
     platform_recovery_entries_list_model.clear();
+    hot_keys_list_model.clear();
 
     setTimeout(0);
     setSecureBoot(false);
@@ -67,7 +70,7 @@ void EFIBootData::clear()
 
 void EFIBootData::reload()
 {
-    emit progress(0, 1, tr("Loading EFI Boot Manager entries…"));
+    Q_EMIT progress(0, 1, tr("Loading EFI Boot Manager entries…"));
     int32_t current_boot = -1;
     int32_t next_boot = -1;
     QStringList errors;
@@ -83,12 +86,12 @@ void EFIBootData::reload()
         },
         [&, this](size_t step, size_t total)
         {
-            emit progress(step, total + 1u, tr("Searching EFI Boot Manager entries…"));
+            Q_EMIT progress(step, total + 1u, tr("Searching EFI Boot Manager entries…"));
         });
 
     if(!variables)
     {
-        emit error(tr("Couldn't load EFI Boot Manager variables"), QStringFromStdTString(EFIBoot::get_error_trace()));
+        Q_EMIT error(tr("Couldn't load EFI Boot Manager variables"), QStringFromStdTString(EFIBoot::get_error_trace()));
         return;
     }
 
@@ -102,7 +105,7 @@ void EFIBootData::reload()
     auto process_entry = [&, this](const auto &name, const auto &read_fn, const auto &process_fn, const auto &error_fn, bool optional = false)
     {
         const auto tname = QStringToStdTString(name);
-        emit progress(step++, total_steps, tr("Processing EFI Boot Manager entries (%1)…").arg(name));
+        Q_EMIT progress(step++, total_steps, tr("Processing EFI Boot Manager entries (%1)…").arg(name));
         if(!name_to_guid.count(tname))
         {
             if(!optional)
@@ -213,7 +216,7 @@ void EFIBootData::reload()
         for(const auto &[tname, guid]: name_to_guid)
         {
             Q_UNUSED(guid)
-            if(!is_bootentry(tname, QStringToStdTString(prefix)))
+            if(!is_listentry(tname, QStringToStdTString(prefix)))
                 continue;
 
             const auto index = static_cast<uint16_t>(std::stoul(tname.substr(static_cast<size_t>(prefix.size())), nullptr, HEX_BASE));
@@ -259,8 +262,32 @@ void EFIBootData::reload()
         }
     }
 
+    // Load Hot Keys
+    for(const auto &[tname, guid]: name_to_guid)
+    {
+        (void)guid;
+        if(!is_listentry(tname, "Key"))
+            continue;
+
+        const auto index = static_cast<uint16_t>(std::stoul(tname.substr(3), nullptr, HEX_BASE));
+        process_entry(
+            toHex(index, 4, "Key"), EFIBoot::get_variable<EFIBoot::Key_option>,
+            [&](const EFIBoot::Key_option &value, const uint32_t &attributes)
+            {
+                auto entry = HotKey::fromEFIBootKeyOption(value);
+                entry.efi_attributes = attributes;
+                hot_keys_list_model.appendRow(entry);
+            },
+            [&](const QString &error)
+            {
+                errors.push_back(error);
+                auto entry = HotKey::fromError(error);
+                hot_keys_list_model.appendRow(entry);
+            });
+    }
+
     // Apple
-    emit progress(step++, total_steps, tr("Processing EFI Boot Manager entries (%1)…").arg("Apple/boot-args"));
+    Q_EMIT progress(step++, total_steps, tr("Processing EFI Boot Manager entries (%1)…").arg("Apple/boot-args"));
     if(const auto boot_args = EFIBoot::get_variable<std::string>(EFIBoot::efi_guid_apple, _T("boot-args")); boot_args)
     {
         const auto &[value, attributes] = *boot_args;
@@ -269,14 +296,14 @@ void EFIBootData::reload()
     }
 
     if(!errors.isEmpty())
-        emit error(tr("Error loading entries"), tr("Failed to load some EFI Boot Manager entries:\n\n  - %1").arg(errors.join("\n  - ")));
+        Q_EMIT error(tr("Error loading entries"), tr("Failed to load some EFI Boot Manager entries:\n\n  - %1").arg(errors.join("\n  - ")));
 
-    emit done();
+    Q_EMIT done();
 }
 
 void EFIBootData::save()
 {
-    emit progress(0, 1, tr("Saving EFI Boot Manager entries…"));
+    Q_EMIT progress(0, 1, tr("Saving EFI Boot Manager entries…"));
     int32_t next_boot = -1;
 
     auto variables = EFIBoot::get_variables(
@@ -290,20 +317,23 @@ void EFIBootData::save()
                 if(model.options & BootEntryListModel::Option::ReadOnly)
                     continue;
 
-                if(is_bootentry(tname, QStringToStdTString(prefix)))
+                if(is_listentry(tname, QStringToStdTString(prefix)))
                     return true;
             }
+
+            if(is_listentry(tname, "Key"))
+                return true;
 
             return false;
         },
         [&, this](size_t step, size_t total)
         {
-            emit progress(step, total + 1u, tr("Searching old EFI Boot Manager entries…"));
+            Q_EMIT progress(step, total + 1u, tr("Searching old EFI Boot Manager entries…"));
         });
 
     if(!variables)
     {
-        emit error(tr("Couldn't load EFI Boot Manager variables"), QStringFromStdTString(EFIBoot::get_error_trace()));
+        Q_EMIT error(tr("Couldn't load EFI Boot Manager variables"), QStringFromStdTString(EFIBoot::get_error_trace()));
         return;
     }
 
@@ -313,9 +343,12 @@ void EFIBootData::save()
         + static_cast<size_t>(boot_entries_list_model.getEntries().size())
         + static_cast<size_t>(driver_entries_list_model.getEntries().size())
         + static_cast<size_t>(sysprep_entries_list_model.getEntries().size())
+        + static_cast<size_t>(hot_keys_list_model.getEntries().size())
         + 3u
         + old_entries.size()
         + 1u;
+
+    std::unordered_map<uint16_t, uint32_t> boot_option_crc32;
 
     // Save entries
     for(const auto &[prefix, model]: BOOT_ENTRIES)
@@ -331,18 +364,14 @@ void EFIBootData::save()
             const auto qname = toHex(entry.index, 4, prefix);
             if(saved.contains(entry.index))
             {
-                emit error(tr("Error saving entries"), tr("Entry %1(%2): duplicated index!").arg(qname, entry.description));
+                Q_EMIT error(tr("Error saving entries"), tr("Entry %1(%2): duplicated index!").arg(qname, entry.description));
                 return;
             }
 
             saved.insert(entry.index);
-            emit progress(step++, total_steps, tr("Saving EFI Boot Manager entries (%1)…").arg(qname));
+            Q_EMIT progress(step++, total_steps, tr("Saving EFI Boot Manager entries (%1)…").arg(qname));
             if((entry.attributes & EFIBoot::Load_option_attribute::CATEGORY_MASK) == EFIBoot::Load_option_attribute::CATEGORY_BOOT)
-            {
                 order.push_back(entry.index);
-                if(entry.is_next_boot)
-                    next_boot = entry.index;
-            }
 
             const tstring tname = QStringToStdTString(qname);
             if(auto _entry = old_entries.find(tname); _entry != old_entries.end())
@@ -352,20 +381,28 @@ void EFIBootData::save()
                 continue;
 
             const auto load_option = entry.toEFIBootLoadOption();
-            if(!EFIBoot::set_variable(EFIBoot::efi_guid_global, tname, EFIBoot::Variable<EFIBoot::Load_option>{load_option, entry.efi_attributes}, EFIBoot::EFI_VARIABLE_MODE_DEFAULTS))
+            uint32_t crc = 0;
+            if(!EFIBoot::set_variable_ex(EFIBoot::efi_guid_global, tname, EFIBoot::Variable<EFIBoot::Load_option>{load_option, entry.efi_attributes}, EFIBoot::EFI_VARIABLE_MODE_DEFAULTS, crc))
             {
-                emit error(tr("Error saving %1").arg(qname), QStringFromStdTString(EFIBoot::get_error_trace()));
+                Q_EMIT error(tr("Error saving %1").arg(qname), QStringFromStdTString(EFIBoot::get_error_trace()));
                 return;
+            }
+
+            if(model.options & BootEntryListModel::Option::IsBoot)
+            {
+                boot_option_crc32[entry.index] = crc;
+                if(entry.is_next_boot)
+                    next_boot = entry.index;
             }
         }
 
         // Save order
         if(order.empty())
         {
-            emit progress(step++, total_steps, tr("Removing EFI Boot Manager entries (%1)…").arg(order_name));
+            Q_EMIT progress(step++, total_steps, tr("Removing EFI Boot Manager entries (%1)…").arg(order_name));
             if(EFIBoot::get_variable(EFIBoot::efi_guid_global, QStringToStdTString(order_name)) && !EFIBoot::del_variable(EFIBoot::efi_guid_global, QStringToStdTString(order_name)))
             {
-                emit error(tr("Error removing %1").arg(order_name), QStringFromStdTString(EFIBoot::get_error_trace()));
+                Q_EMIT error(tr("Error removing %1").arg(order_name), QStringFromStdTString(EFIBoot::get_error_trace()));
                 return;
             }
 
@@ -374,10 +411,34 @@ void EFIBootData::save()
         }
         else
         {
-            emit progress(step++, total_steps, tr("Saving EFI Boot Manager entries (%1)…").arg(order_name));
+            Q_EMIT progress(step++, total_steps, tr("Saving EFI Boot Manager entries (%1)…").arg(order_name));
             if(!EFIBoot::set_list_variable(EFIBoot::efi_guid_global, QStringToStdTString(order_name), EFIBoot::Variable<std::vector<uint16_t>>{order, EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS}, EFIBoot::EFI_VARIABLE_MODE_DEFAULTS))
             {
-                emit error(tr("Error saving %1").arg(order_name), QStringFromStdTString(EFIBoot::get_error_trace()));
+                Q_EMIT error(tr("Error saving %1").arg(order_name), QStringFromStdTString(EFIBoot::get_error_trace()));
+                return;
+            }
+        }
+    }
+
+    // Save Hot Keys
+    if(boot_option_support & EFIBoot::EFI_BOOT_OPTION_SUPPORT_KEY)
+    {
+        unsigned long long idx = 0;
+        for(const auto &entry: hot_keys_list_model.getEntries())
+        {
+            const auto qname = toHex(idx, 4, "Key");
+            Q_EMIT progress(step++, total_steps, tr("Saving EFI Boot Manager entries (%1)…").arg(qname));
+            const tstring tname = QStringToStdTString(qname);
+            if(auto _entry = old_entries.find(tname); _entry != old_entries.end())
+                old_entries.erase(_entry);
+
+            if(entry.is_error)
+                continue;
+
+            const auto key_option = entry.toEFIBootKeyOption(boot_option_crc32);
+            if(!EFIBoot::set_variable(EFIBoot::efi_guid_global, tname, EFIBoot::Variable<EFIBoot::Key_option>{key_option, entry.efi_attributes}, EFIBoot::EFI_VARIABLE_MODE_DEFAULTS))
+            {
+                Q_EMIT error(tr("Error saving %1").arg(qname), QStringFromStdTString(EFIBoot::get_error_trace()));
                 return;
             }
         }
@@ -386,44 +447,44 @@ void EFIBootData::save()
     // Remove old entries
     for(const auto &[tname, guid]: old_entries)
     {
-        emit progress(step++, total_steps, tr("Removing old EFI Boot Manager entries (%1)…").arg(QStringFromStdTString(tname)));
+        Q_EMIT progress(step++, total_steps, tr("Removing old EFI Boot Manager entries (%1)…").arg(QStringFromStdTString(tname)));
         if(!EFIBoot::del_variable(guid, tname))
         {
-            emit error(tr("Error removing %1").arg(QStringFromStdTString(tname)), QStringFromStdTString(EFIBoot::get_error_trace()));
+            Q_EMIT error(tr("Error removing %1").arg(QStringFromStdTString(tname)), QStringFromStdTString(EFIBoot::get_error_trace()));
             return;
         }
     }
 
     // Save next boot
-    emit progress(step++, total_steps, tr("Saving EFI Boot Manager entries (%1)…").arg("BootNext"));
+    Q_EMIT progress(step++, total_steps, tr("Saving EFI Boot Manager entries (%1)…").arg("BootNext"));
     if(next_boot != -1 && !EFIBoot::set_variable(EFIBoot::efi_guid_global, _T("BootNext"), EFIBoot::Variable<uint16_t>{static_cast<uint16_t>(next_boot), EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS}, EFIBoot::EFI_VARIABLE_MODE_DEFAULTS))
     {
-        emit error(tr("Error saving %1").arg("BootNext"), QStringFromStdTString(EFIBoot::get_error_trace()));
+        Q_EMIT error(tr("Error saving %1").arg("BootNext"), QStringFromStdTString(EFIBoot::get_error_trace()));
         return;
     }
 
     // Save timeout
-    emit progress(step++, total_steps, tr("Saving EFI Boot Manager entries (%1)…").arg("Timeout"));
+    Q_EMIT progress(step++, total_steps, tr("Saving EFI Boot Manager entries (%1)…").arg("Timeout"));
     if(!EFIBoot::set_variable(EFIBoot::efi_guid_global, _T("Timeout"), EFIBoot::Variable<uint16_t>{timeout, EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS}, EFIBoot::EFI_VARIABLE_MODE_DEFAULTS))
     {
-        emit error(tr("Error saving %1").arg("Timeout"), QStringFromStdTString(EFIBoot::get_error_trace()));
+        Q_EMIT error(tr("Error saving %1").arg("Timeout"), QStringFromStdTString(EFIBoot::get_error_trace()));
         return;
     }
 
-    emit progress(step++, total_steps, tr("Saving EFI Boot Manager entries (%1)…").arg("OsIndications"));
+    Q_EMIT progress(step++, total_steps, tr("Saving EFI Boot Manager entries (%1)…").arg("OsIndications"));
     if(!EFIBoot::set_variable(EFIBoot::efi_guid_global, _T("OsIndications"), EFIBoot::Variable<uint64_t>{indications, EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS}, EFIBoot::EFI_VARIABLE_MODE_DEFAULTS))
     {
-        emit error(tr("Error saving %1").arg("OsIndications"), QStringFromStdTString(EFIBoot::get_error_trace()));
+        Q_EMIT error(tr("Error saving %1").arg("OsIndications"), QStringFromStdTString(EFIBoot::get_error_trace()));
         return;
     }
 
     // Apple
     if(apple_boot_args.isEmpty())
     {
-        emit progress(step++, total_steps, tr("Removing EFI Boot Manager entries (%1)…").arg("Apple/boot-args"));
+        Q_EMIT progress(step++, total_steps, tr("Removing EFI Boot Manager entries (%1)…").arg("Apple/boot-args"));
         if(EFIBoot::get_variable(EFIBoot::efi_guid_apple, _T("boot-args")) && !EFIBoot::del_variable(EFIBoot::efi_guid_apple, _T("boot-args")))
         {
-            emit error(tr("Error removing %1").arg("Apple/boot-args"), QStringFromStdTString(EFIBoot::get_error_trace()));
+            Q_EMIT error(tr("Error removing %1").arg("Apple/boot-args"), QStringFromStdTString(EFIBoot::get_error_trace()));
             return;
         }
 
@@ -432,10 +493,10 @@ void EFIBootData::save()
     }
     else
     {
-        emit progress(step++, total_steps, tr("Saving EFI Boot Manager entries (%1)…").arg("Apple/boot-args"));
+        Q_EMIT progress(step++, total_steps, tr("Saving EFI Boot Manager entries (%1)…").arg("Apple/boot-args"));
         if(!EFIBoot::set_variable(EFIBoot::efi_guid_apple, _T("boot-args"), EFIBoot::Variable<std::string>{apple_boot_args.toStdString(), EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS}, EFIBoot::EFI_VARIABLE_MODE_DEFAULTS))
         {
-            emit error(tr("Error saving %1").arg("Apple/boot-args"), QStringFromStdTString(EFIBoot::get_error_trace()));
+            Q_EMIT error(tr("Error saving %1").arg("Apple/boot-args"), QStringFromStdTString(EFIBoot::get_error_trace()));
             return;
         }
     }
@@ -443,16 +504,16 @@ void EFIBootData::save()
     if(undo_stack)
         undo_stack->clear();
 
-    emit done();
+    Q_EMIT done();
 }
 
 void EFIBootData::import_(const QString &file_name)
 {
-    emit progress(0, 1, tr("Importing boot configuration…"));
+    Q_EMIT progress(0, 1, tr("Importing boot configuration…"));
     QFile import_file(file_name);
     if(!import_file.open(QIODevice::ReadOnly))
     {
-        emit error(tr("Error importing boot configuration"), tr("Couldn't open selected file (%1).").arg(file_name));
+        Q_EMIT error(tr("Error importing boot configuration"), tr("Couldn't open selected file (%1).").arg(file_name));
         return;
     }
 
@@ -461,7 +522,7 @@ void EFIBootData::import_(const QString &file_name)
     import_file.close();
     if(json_document.isNull())
     {
-        emit error(tr("Error importing boot configuration"), tr("Parser failed: %1").arg(json_error.errorString()));
+        Q_EMIT error(tr("Error importing boot configuration"), tr("Parser failed: %1").arg(json_error.errorString()));
         return;
     }
 
@@ -475,7 +536,7 @@ void EFIBootData::import_(const QString &file_name)
         if(type == "export")
             return importJSONEFIData(input);
 
-        emit error(tr("Error importing boot configuration"), tr("Invalid _Type: %1").arg(input["_Type"].toString()));
+        Q_EMIT error(tr("Error importing boot configuration"), tr("Invalid _Type: %1").arg(input["_Type"].toString()));
         return;
     }
 
@@ -484,11 +545,11 @@ void EFIBootData::import_(const QString &file_name)
 
 void EFIBootData::export_(const QString &file_name)
 {
-    emit progress(0, 1, tr("Exporting boot configuration…"));
+    Q_EMIT progress(0, 1, tr("Exporting boot configuration…"));
     QFile export_file(file_name);
     if(!export_file.open(QIODevice::WriteOnly))
     {
-        emit error(tr("Error exporting boot configuration"), tr("Couldn't open selected file (%1): %2.").arg(file_name, export_file.errorString()));
+        Q_EMIT error(tr("Error exporting boot configuration"), tr("Couldn't open selected file (%1): %2.").arg(file_name, export_file.errorString()));
         return;
     }
 
@@ -501,11 +562,12 @@ void EFIBootData::export_(const QString &file_name)
         + static_cast<size_t>(driver_entries_list_model.getEntries().size())
         + static_cast<size_t>(sysprep_entries_list_model.getEntries().size())
         + static_cast<size_t>(platform_recovery_entries_list_model.getEntries().size())
+        + static_cast<size_t>(hot_keys_list_model.getEntries().size())
         + 8u + 1u;
 
     auto progress_fn = [&, this](const QString &name)
     {
-        emit progress(step++, total_steps, tr("Exporting EFI Boot Manager entries (%1)…").arg(name));
+        Q_EMIT progress(step++, total_steps, tr("Exporting EFI Boot Manager entries (%1)…").arg(name));
     };
 
     progress_fn("Timeout");
@@ -608,7 +670,7 @@ void EFIBootData::export_(const QString &file_name)
             const auto full_name = QString("%1%2").arg(prefix, name);
             if(saved.contains(entry.index))
             {
-                emit error(tr("Error saving entries"), tr("Entry %1(%2): duplicated index!").arg(full_name, entry.description));
+                Q_EMIT error(tr("Error saving entries"), tr("Entry %1(%2): duplicated index!").arg(full_name, entry.description));
                 return;
             }
 
@@ -648,6 +710,24 @@ void EFIBootData::export_(const QString &file_name)
     if(next_boot != -1)
         output["BootNext"] = next_boot;
 
+    // Hot Keys
+    {
+        unsigned long long idx = 0;
+        QJsonObject entries;
+        for(const auto &entry: hot_keys_list_model.getEntries())
+        {
+            const auto name = toHex(idx++, 4, "");
+            const auto full_name = QString("Key%2").arg(name);
+            progress_fn(full_name);
+            if(!entry.is_error)
+                entries[name] = entry.toJSON();
+        }
+
+        progress_fn("Key");
+        if(!entries.isEmpty())
+            output["Key"] = entries;
+    }
+
     // Apple
     progress_fn("Apple/boot-args");
     if(!apple_boot_args.isEmpty())
@@ -659,22 +739,22 @@ void EFIBootData::export_(const QString &file_name)
 
     if(QJsonDocument json_document(output); !export_file.write(json_document.toJson()))
     {
-        emit error(tr("Error exporting boot configuration"), tr("Couldn't write into file (%1): %2.").arg(file_name, export_file.errorString()));
+        Q_EMIT error(tr("Error exporting boot configuration"), tr("Couldn't write into file (%1): %2.").arg(file_name, export_file.errorString()));
         return;
     }
 
     export_file.close();
 
-    emit done();
+    Q_EMIT done();
 }
 
 void EFIBootData::dump(const QString &file_name)
 {
-    emit progress(0, 1, tr("Exporting boot configuration…"));
+    Q_EMIT progress(0, 1, tr("Exporting boot configuration…"));
     QFile dump_file(file_name);
     if(!dump_file.open(QIODevice::WriteOnly))
     {
-        emit error(tr("Error dumping raw EFI data"), tr("Couldn't open selected file (%1).").arg(file_name));
+        Q_EMIT error(tr("Error dumping raw EFI data"), tr("Couldn't open selected file (%1).").arg(file_name));
         return;
     }
 
@@ -687,12 +767,12 @@ void EFIBootData::dump(const QString &file_name)
         },
         [&, this](size_t step, size_t total)
         {
-            emit progress(step, total + 1u, tr("Searching EFI Boot Manager entries…"));
+            Q_EMIT progress(step, total + 1u, tr("Searching EFI Boot Manager entries…"));
         });
 
     if(!variables)
     {
-        emit error(tr("Couldn't load EFI Boot Manager variables"), QStringFromStdTString(EFIBoot::get_error_trace()));
+        Q_EMIT error(tr("Couldn't load EFI Boot Manager variables"), QStringFromStdTString(EFIBoot::get_error_trace()));
         return;
     }
 
@@ -709,7 +789,7 @@ void EFIBootData::dump(const QString &file_name)
             tname = QStringToStdTString(key);
 
         const auto qname = QStringFromStdTString(tname);
-        emit progress(step++, total_steps, tr("Exporting EFI Boot Manager entries (%1)…").arg(qname));
+        Q_EMIT progress(step++, total_steps, tr("Exporting EFI Boot Manager entries (%1)…").arg(qname));
         if(!name_to_guid.count(tname))
         {
             if(!optional)
@@ -746,7 +826,7 @@ void EFIBootData::dump(const QString &file_name)
         for(const auto &[tname_, guid]: name_to_guid)
         {
             Q_UNUSED(guid)
-            if(!is_bootentry(tname_, QStringToStdTString(prefix)))
+            if(!is_listentry(tname_, QStringToStdTString(prefix)))
                 continue;
 
             const auto suffix = tname_.substr(static_cast<size_t>(prefix.size()));
@@ -757,8 +837,25 @@ void EFIBootData::dump(const QString &file_name)
             output[prefix] = entries;
     }
 
+    // Hot Keys
+    {
+        QJsonObject entries;
+        for(const auto &[tname_, guid]: name_to_guid)
+        {
+            (void)guid;
+            if(!is_listentry(tname_, "Key"))
+                continue;
+
+            const auto suffix = tname_.substr(3);
+            process_entry(entries, QStringFromStdTString(suffix), tname_);
+        }
+
+        if(!entries.isEmpty())
+            output["Key"] = entries;
+    }
+
     // Apple
-    emit progress(step++, total_steps, tr("Exporting EFI Boot Manager entries (%1)…").arg("Apple/boot-args"));
+    Q_EMIT progress(step++, total_steps, tr("Exporting EFI Boot Manager entries (%1)…").arg("Apple/boot-args"));
     if(const auto boot_args = EFIBoot::get_variable<EFIBoot::Raw_data>(EFIBoot::efi_guid_apple, _T("boot-args")); boot_args)
     {
         QJsonObject apple;
@@ -772,15 +869,15 @@ void EFIBootData::dump(const QString &file_name)
 
     if(QJsonDocument json_document(output); !dump_file.write(json_document.toJson()))
     {
-        emit error(tr("Error dumping raw EFI data"), tr("Couldn't write into file (%1): %2.").arg(file_name, dump_file.errorString()));
+        Q_EMIT error(tr("Error dumping raw EFI data"), tr("Couldn't write into file (%1): %2.").arg(file_name, dump_file.errorString()));
         return;
     }
 
     dump_file.close();
     if(!errors.isEmpty())
-        emit error(tr("Error dumping raw EFI data"), tr("Failed to dump some EFI Boot Manager entries:\n\n  - %1").arg(errors.join("\n  - ")));
+        Q_EMIT error(tr("Error dumping raw EFI data"), tr("Failed to dump some EFI Boot Manager entries:\n\n  - %1").arg(errors.join("\n  - ")));
 
-    emit done();
+    Q_EMIT done();
 }
 
 void EFIBootData::setTimeout(uint16_t value)
@@ -837,7 +934,7 @@ void EFIBootData::setSecureBoot(bool enabled)
         return;
 
     secure_boot = enabled;
-    emit secureBootChanged(secure_boot);
+    Q_EMIT secureBootChanged(secure_boot);
 }
 
 void EFIBootData::setVendorKeys(bool enabled)
@@ -846,7 +943,7 @@ void EFIBootData::setVendorKeys(bool enabled)
         return;
 
     vendor_keys = enabled;
-    emit vendorKeysChanged(vendor_keys);
+    Q_EMIT vendorKeysChanged(vendor_keys);
 }
 
 void EFIBootData::setSetupMode(bool enabled)
@@ -855,7 +952,7 @@ void EFIBootData::setSetupMode(bool enabled)
         return;
 
     setup_mode = enabled;
-    emit setupModeChanged(setup_mode);
+    Q_EMIT setupModeChanged(setup_mode);
 }
 
 void EFIBootData::setAuditMode(bool enabled)
@@ -864,7 +961,7 @@ void EFIBootData::setAuditMode(bool enabled)
         return;
 
     audit_mode = enabled;
-    emit auditModeChanged(audit_mode);
+    Q_EMIT auditModeChanged(audit_mode);
 }
 
 void EFIBootData::setDeployedMode(bool enabled)
@@ -873,7 +970,7 @@ void EFIBootData::setDeployedMode(bool enabled)
         return;
 
     deployed_mode = enabled;
-    emit deployedModeChanged(deployed_mode);
+    Q_EMIT deployedModeChanged(deployed_mode);
 }
 
 void EFIBootData::setBootOptionSupport(uint32_t flags)
@@ -882,7 +979,7 @@ void EFIBootData::setBootOptionSupport(uint32_t flags)
         return;
 
     boot_option_support = flags;
-    emit bootOptionSupportChanged(boot_option_support);
+    Q_EMIT bootOptionSupportChanged(boot_option_support);
 }
 
 void EFIBootData::setOsIndicationsSupported(uint64_t value)
@@ -891,12 +988,12 @@ void EFIBootData::setOsIndicationsSupported(uint64_t value)
         return;
 
     supported_indications = value;
-    emit osIndicationsSupportedChanged(supported_indications);
+    Q_EMIT osIndicationsSupportedChanged(supported_indications);
 }
 
 void EFIBootData::importJSONEFIData(const QJsonObject &input)
 {
-    emit progress(0, 1, tr("Importing boot configuration from JSON…"));
+    Q_EMIT progress(0, 1, tr("Importing boot configuration from JSON…"));
     int32_t current_boot = -1;
     int32_t next_boot = -1;
     QStringList errors;
@@ -915,7 +1012,7 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
             return;
         }
 
-        emit progress(step++, total_steps, tr("Importing EFI Boot Manager entries (%1)…").arg(full_name));
+        Q_EMIT progress(step++, total_steps, tr("Importing EFI Boot Manager entries (%1)…").arg(full_name));
         if(!(root[name].*type_fn)())
         {
             errors.push_back(tr("%1: %2 expected").arg(full_name).arg(type_name));
@@ -1171,6 +1268,44 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
             "", order.empty());
     }
 
+    // Hot Keys
+    process_entry(
+        input, "Key", &QJsonValue::isObject, tr("object"),
+        [&](const QJsonValue &root)
+        {
+            const QString full_prefix = "Key/";
+            const auto entries = root.toObject();
+            total_steps += static_cast<size_t>(entries.size());
+            const auto keys = entries.keys();
+            hot_keys_list_model.clear();
+            for(const auto &qname: keys)
+            {
+                bool success = false;
+                qname.toULong(&success, HEX_BASE);
+                if(!success)
+                {
+                    errors.push_back(tr("%1: %2 expected").arg(full_prefix + qname, tr("hexadecimal number")));
+                    continue;
+                }
+
+                process_entry(
+                    entries, qname, &QJsonValue::isObject, tr("object"),
+                    [&](const QJsonValue &value)
+                    {
+                        auto entry = HotKey::fromJSON(value.toObject(), static_cast<int>((boot_option_support & EFIBoot::EFI_BOOT_OPTION_SUPPORT_COUNT) >> 8));
+                        if(!entry)
+                        {
+                            errors.push_back(tr("%1: failed parsing").arg(full_prefix + qname));
+                            return;
+                        }
+
+                        hot_keys_list_model.appendRow(*entry);
+                    },
+                    full_prefix);
+            }
+        },
+        "", true);
+
     process_entry(
         input, "Apple", &QJsonValue::isObject, tr("object"),
         [&](const QJsonValue &root)
@@ -1184,14 +1319,14 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
         "", true);
 
     if(!errors.isEmpty())
-        emit error(tr("Error importing boot configuration"), tr("Failed to import some EFI Boot Manager entries:\n\n  - %1").arg(errors.join("\n  - ")));
+        Q_EMIT error(tr("Error importing boot configuration"), tr("Failed to import some EFI Boot Manager entries:\n\n  - %1").arg(errors.join("\n  - ")));
 
-    emit done();
+    Q_EMIT done();
 }
 
 void EFIBootData::importRawEFIData(const QJsonObject &input)
 {
-    emit progress(0, 1, tr("Importing boot configuration from raw dump…"));
+    Q_EMIT progress(0, 1, tr("Importing boot configuration from raw dump…"));
     int32_t current_boot = -1;
     int32_t next_boot = -1;
     QStringList errors;
@@ -1210,7 +1345,7 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
             return;
         }
 
-        emit progress(step++, total_steps, tr("Importing EFI Boot Manager entries (%1)…").arg(full_name));
+        Q_EMIT progress(step++, total_steps, tr("Importing EFI Boot Manager entries (%1)…").arg(full_name));
         if(!root[name].isObject())
         {
             errors.push_back(tr("%1: %2 expected").arg(full_name, tr("object")));
@@ -1321,7 +1456,7 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
             continue;
         }
 
-        emit progress(step++, total_steps, tr("Importing EFI Boot Manager entries (%1)…").arg(prefix));
+        Q_EMIT progress(step++, total_steps, tr("Importing EFI Boot Manager entries (%1)…").arg(prefix));
         if(!input[prefix].isObject())
         {
             errors.push_back(tr("%1: %2 expected").arg(prefix, tr("object")));
@@ -1372,6 +1507,45 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
         }
     }
 
+    // Hot Keys
+    if(input.contains("Key"))
+    {
+        Q_EMIT progress(step++, total_steps, tr("Importing EFI Boot Manager entries (%1)…").arg("Key"));
+        if(!input["Key"].isObject())
+            errors.push_back(tr("%1: %2 expected").arg("Key", tr("object")));
+
+        else
+        {
+            const QString full_prefix = "Key/";
+            const auto entries = input["Key"].toObject();
+            total_steps += static_cast<size_t>(entries.size());
+            const auto keys = entries.keys();
+            hot_keys_list_model.clear();
+            for(const auto &qname: keys)
+            {
+                bool success = false;
+                qname.toULong(&success, HEX_BASE);
+                if(!success)
+                {
+                    errors.push_back(tr("%1: %2 expected").arg(full_prefix + qname, tr("hexadecimal number")));
+                    continue;
+                }
+
+                process_entry(
+                    entries, qname, EFIBoot::deserialize<EFIBoot::Key_option>,
+                    [&](const EFIBoot::Key_option &value, const uint32_t &efi_attributes)
+                    {
+                        // Translate STL to QTL
+                        auto entry = HotKey::fromEFIBootKeyOption(value);
+                        entry.efi_attributes = efi_attributes;
+                        hot_keys_list_model.appendRow(entry);
+                    },
+                    full_prefix);
+            }
+        }
+    }
+
+    // Apple
     if(input.contains("Apple"))
     {
         if(!input["Apple"].isObject())
@@ -1388,7 +1562,7 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
     }
 
     if(!errors.isEmpty())
-        emit error(tr("Error importing boot configuration"), tr("Failed to import some EFI Boot Manager entries:\n\n  - %1").arg(errors.join("\n  - ")));
+        Q_EMIT error(tr("Error importing boot configuration"), tr("Failed to import some EFI Boot Manager entries:\n\n  - %1").arg(errors.join("\n  - ")));
 
-    emit done();
+    Q_EMIT done();
 }

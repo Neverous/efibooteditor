@@ -10,15 +10,18 @@ class BootEntryDelegate: public QWidgetItemDelegate<BootEntryWidget, const BootE
 {
 private:
     BootEntryListModel::Options options{};
+    mutable const QModelIndex *currentIndex{nullptr};
 
 public:
-    BootEntryDelegate() = default;
+    BootEntryDelegate();
     BootEntryDelegate(const BootEntryDelegate &) = delete;
     BootEntryDelegate &operator=(const BootEntryDelegate &) = delete;
 
     void setOptions(const BootEntryListModel::Options &options_);
 
 protected:
-    void setupWidgetFromItem(Widget &widget, const Item &item) const override;
-    bool handleWidgetDelegateEventResult(const QEvent *event, QAbstractItemModel *model, const QStyleOptionViewItem &option, const QModelIndex &index, const Widget &widget, bool result) const override;
+    void setupWidgetFromItem(Widget &widget, const Item &item, const QModelIndex &index, int role) const override;
+
+private Q_SLOTS:
+    void setNextBoot(bool checked);
 };

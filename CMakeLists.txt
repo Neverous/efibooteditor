@@ -68,6 +68,9 @@ find_package(Qt${QT_VERSION_MAJOR}
         LinguistTools
     REQUIRED)
 
+find_package(ZLIB REQUIRED)
+message(STATUS "ZLIB: ${ZLIB_VERSION}")
+
 add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE
     src/main.cpp
 )
@@ -79,6 +82,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt${QT_VERSION_MAJOR}::Gui
     Qt${QT_VERSION_MAJOR}::Network
     Qt${QT_VERSION_MAJOR}::Widgets
+    ZLIB::ZLIB
 )
 
 if(${QT_VERSION_MAJOR} LESS_EQUAL 5)
@@ -136,8 +140,15 @@ target_sources(${PROJECT_NAME} PRIVATE
     src/efibootdata.cpp
     src/efibooteditor.cpp
     src/efibooteditorcli.cpp
+    src/efikeysequence.cpp
+    src/efikeysequenceedit.cpp
     src/filepathdelegate.cpp
     src/filepathdialog.cpp
+    src/hotkey.cpp
+    src/hotkeydelegate.cpp
+    src/hotkeylistmodel.cpp
+    src/hotkeysdialog.cpp
+    src/hotkeysview.cpp
 )
 
 if(UNIX AND NOT APPLE)
@@ -183,11 +194,19 @@ target_sources(${PROJECT_NAME} PRIVATE
     include/efibootdata.h
     include/efibooteditor.h
     include/efibooteditorcli.h
-    include/efivar-lite/load-option.h
+    include/efikeysequence.h
+    include/efikeysequenceedit.h
     include/efivar-lite/device-paths.h
     include/efivar-lite/efivar-lite.h
+    include/efivar-lite/key-option.h
+    include/efivar-lite/load-option.h
     include/filepathdelegate.h
     include/filepathdialog.h
+    include/hotkey.h
+    include/hotkeydelegate.h
+    include/hotkeylistmodel.h
+    include/hotkeysdialog.h
+    include/hotkeysview.h
     include/qindicatorwidget.h
     include/qlabelwrapped.h
     include/qresizabletabwidget.h
@@ -278,6 +297,7 @@ target_sources(${PROJECT_NAME} PRIVATE
     src/form/bootentrywidget.ui
     src/form/efibooteditor.ui
     src/form/filepathdialog.ui
+    src/form/hotkeysdialog.ui
 )
 
 # Resources:

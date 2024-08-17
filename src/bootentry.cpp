@@ -2794,6 +2794,7 @@ auto BootEntry::getRawOptionalData() const -> QByteArray
     return bytes;
 }
 
+#undef try_read_4
 #undef try_read_3
 #undef try_read
 #undef check_type

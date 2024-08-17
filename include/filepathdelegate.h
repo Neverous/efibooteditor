@@ -13,5 +13,5 @@ public:
     FilePathDelegate &operator=(const FilePathDelegate &) = delete;
 
 protected:
-    void setupWidgetFromItem(Widget &widget, const Item &item) const override;
+    void setupWidgetFromItem(Widget &widget, const Item &item, const QModelIndex &index, int role) const override;
 };

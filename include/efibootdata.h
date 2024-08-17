@@ -1,9 +1,11 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #pragma once
 
-#include "bootentrylistmodel.h"
 #include <QObject>
 #include <QUndoStack>
+
+#include "bootentrylistmodel.h"
+#include "hotkeylistmodel.h"
 
 class EFIBootData: public QObject
 {
@@ -14,6 +16,7 @@ public:
     BootEntryListModel driver_entries_list_model{tr("Driver"), {}, this};
     BootEntryListModel sysprep_entries_list_model{tr("System Preparation"), {}, this};
     BootEntryListModel platform_recovery_entries_list_model{tr("Platform Recovery"), BootEntryListModel::Option::ReadOnly, this};
+    HotKeyListModel hot_keys_list_model{};
 
     const std::vector<std::tuple<QString, BootEntryListModel &>> BOOT_ENTRIES{
         {"Boot", boot_entries_list_model},
@@ -45,7 +48,7 @@ public:
     QUndoStack *getUndoStack() const;
     void setUndoStack(QUndoStack *undo_stack_);
 
-public slots:
+public Q_SLOTS:
     void clear();
     void reload();
     void save();
@@ -57,7 +60,7 @@ public slots:
     void setAppleBootArgs(const QString &text);
     void setOsIndications(uint64_t value);
 
-signals:
+Q_SIGNALS:
     void error(const QString &message, const QString &details);
     void progress(size_t step, size_t total, const QString &details);
     void done();

@@ -15,7 +15,6 @@
 #include <QMetaMethod>
 #include <QPlainTextEdit>
 #include <QRadioButton>
-#include <cctype>
 
 #include "bootentry.h"
 
@@ -35,6 +34,7 @@ EFIBootEditor::EFIBootEditor(const std::optional<tstring> &efi_error_message, QW
               .arg(QCoreApplication::applicationVersion()),
           QMessageBox::Close,
           this)}
+    , hot_keys{std::make_unique<HotKeysDialog>(data.hot_keys_list_model, this)}
 {
     data.setUndoStack(&undo_stack);
     ui->setupUi(this);
@@ -120,7 +120,7 @@ EFIBootEditor::EFIBootEditor(const std::optional<tstring> &efi_error_message, QW
 
     if(efi_error_message)
     {
-        emit showError(tr("EFI support required"), QStringFromStdTString(*efi_error_message));
+        showError(tr("EFI support required"), QStringFromStdTString(*efi_error_message));
         ui->save->setDisabled(true);
         ui->reload->setDisabled(true);
         ui->dump_raw_efi_data->setDisabled(true);
@@ -153,6 +153,7 @@ void EFIBootEditor::reloadBootConfiguration()
     data.setUndoStack(nullptr);
     data.reload();
     data.setUndoStack(&undo_stack);
+    hot_keys->setMaxKeyCount(static_cast<int>((data.boot_option_support & EFIBoot::EFI_BOOT_OPTION_SUPPORT_COUNT) >> 8));
 }
 
 void EFIBootEditor::reorder()
@@ -189,6 +190,7 @@ void EFIBootEditor::enableBootEntryEditor(const QModelIndex &index)
     const auto item = index.data().value<const BootEntry *>();
     ui->entry_form->setItem(index, item);
     ui->entry_form->setReadOnly((model.options & BootEntryListModel::Option::ReadOnly) || item->is_error);
+    ui->entry_form->showHotKeys((data.boot_option_support & EFIBoot::EFI_BOOT_OPTION_SUPPORT_KEY) && (model.options & BootEntryListModel::Option::IsBoot));
 }
 
 void EFIBootEditor::disableBootEntryEditor()
@@ -265,9 +267,16 @@ void EFIBootEditor::dump()
     data.dump(file_name);
 }
 
-void EFIBootEditor::showAboutBox()
+void EFIBootEditor::showAboutDialog()
 {
     about->show();
+}
+
+void EFIBootEditor::showHotKeysDialog(int index)
+{
+    hot_keys->refreshBootOptions(data.boot_entries_list_model);
+    hot_keys->setIndexFilter(index);
+    hot_keys->exec();
 }
 
 void EFIBootEditor::setOsIndicationsSupported(uint64_t value)
@@ -295,13 +304,14 @@ void EFIBootEditor::setOsIndications(uint64_t value)
 
 void EFIBootEditor::setOsIndication(bool)
 {
-    emit osIndicationsChanged(getOsIndications());
+    Q_EMIT osIndicationsChanged(getOsIndications());
 }
 
 void EFIBootEditor::updateBootOptionSupport(uint32_t flags)
 {
-    // TODO: (flags & EFIBoot::EFI_BOOT_OPTION_SUPPORT_KEY)
+    ui->hot_keys->setDisabled(!(flags & EFIBoot::EFI_BOOT_OPTION_SUPPORT_KEY));
     ui->entry_form->showCategory(flags & EFIBoot::EFI_BOOT_OPTION_SUPPORT_APP);
+    ui->entry_form->showHotKeys((flags & EFIBoot::EFI_BOOT_OPTION_SUPPORT_KEY) && (std::get<2>(currentBootEntryList()).options & BootEntryListModel::Option::IsBoot));
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     ui->entries->setTabEnabled(ui->entries->indexOf(ui->sysprep_tab), flags & EFIBoot::EFI_BOOT_OPTION_SUPPORT_SYSPREP);
 #else

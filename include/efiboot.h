@@ -9,6 +9,7 @@
 #include <unordered_map>
 #include <variant>
 #include <vector>
+#include <zlib.h>
 
 namespace EFIBoot
 {
@@ -17,6 +18,7 @@ extern "C"
 {
 #include "efivar-lite/device-paths.h"
 #include "efivar-lite/efivar-lite.h"
+#include "efivar-lite/key-option.h"
 #include "efivar-lite/load-option.h"
 }
 
@@ -1003,6 +1005,14 @@ struct Load_option
     Load_option_attribute attributes = Load_option_attribute::EMPTY;
 };
 
+struct Key_option
+{
+    efi_boot_key_data key_data = {};
+    uint16_t boot_option = 0u;
+    uint32_t boot_option_crc = 9u;
+    std::vector<efi_input_key> keys = {};
+};
+
 using Progress_fn = std::function<void(size_t, size_t)>;
 
 template <class Type = Raw_data>
@@ -1037,6 +1047,9 @@ std::optional<Variable<std::vector<Type>>> get_list_variable(const efi_guid_t &g
 
 template <class Type = Raw_data, class Size_fn, class Advance_fn>
 std::optional<Variable<std::vector<Type>>> get_list_variable_ex(const efi_guid_t &guid, const tstring &name, const Size_fn &get_element_size, const Advance_fn &get_next_element);
+
+template <class Type = Raw_data>
+bool set_variable_ex(const efi_guid_t &guid, const tstring &name, const Variable<Type> &variable, mode_t mode, uint32_t &crc);
 
 template <class Type = Raw_data>
 bool set_variable(const efi_guid_t &guid, const tstring &name, const Variable<Type> &variable, mode_t mode);
@@ -3498,6 +3511,35 @@ inline size_t serialize(Raw_data &output, const Load_option &load_option)
     return size;
 }
 
+template <>
+inline std::optional<Key_option> deserialize(const void *data, size_t data_size)
+{
+    Key_option value{};
+    auto key_option = const_cast<efi_key_option *>(static_cast<const efi_key_option *>(data));
+
+    value.boot_option = key_option->boot_option;
+    value.boot_option_crc = key_option->boot_option_crc;
+    value.key_data = key_option->key_data;
+
+    auto keys = deserialize_list<efi_input_key>(key_option->keys, data_size - offsetof(efi_key_option, keys));
+    if(!keys || keys->empty())
+        return std::nullopt;
+
+    value.keys = *keys;
+    return {value};
+}
+
+template <>
+inline size_t serialize(Raw_data &output, const Key_option &key_option)
+{
+    size_t size = 0;
+    size += serialize(output, key_option.key_data);
+    size += serialize(output, key_option.boot_option_crc);
+    size += serialize(output, key_option.boot_option);
+    size += serialize_list(output, key_option.keys);
+    return size;
+}
+
 extern Progress_fn _get_variables_progress_fn;
 
 template <class Filter_fn>
@@ -3591,11 +3633,12 @@ inline std::optional<Variable<std::vector<Type>>> get_list_variable_ex(const efi
 }
 
 template <class Type>
-inline bool set_variable(const efi_guid_t &guid, const tstring &name, const Variable<Type> &variable, mode_t mode)
+inline bool set_variable_ex(const efi_guid_t &guid, const tstring &name, const Variable<Type> &variable, mode_t mode, uint32_t &crc)
 {
     auto [value, attributes] = variable;
     Raw_data bytes;
     size_t size = serialize(bytes, value);
+    crc = static_cast<uint32_t>(crc32(0, bytes.data(), static_cast<uInt>(bytes.size())));
     // Skip overwriting with exactly the same value
     if(const auto current = EFIBoot::get_variable<Raw_data>(guid, name); current)
     {
@@ -3607,6 +3650,13 @@ inline bool set_variable(const efi_guid_t &guid, const tstring &name, const Vari
     // Don't care about the error from get_variable
     efi_error_clear();
     return efi_set_variable(guid, name.c_str(), bytes.data(), size, attributes, mode) == 0;
+}
+
+template <class Type>
+inline bool set_variable(const efi_guid_t &guid, const tstring &name, const Variable<Type> &variable, mode_t mode)
+{
+    uint32_t crc = 0;
+    return set_variable_ex<Type>(guid, name, variable, mode, crc);
 }
 
 template <class Type>
