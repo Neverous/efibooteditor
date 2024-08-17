@@ -234,7 +234,7 @@ private:
     QByteArray getData(const QPlainTextEdit &widget, int index) const;
     void dataFormatChanged(int &index, int new_index, QPlainTextEdit &data, QComboBox &format);
 
-private slots:
+private Q_SLOTS:
     void resetDiskCombo();
     void diskChoiceChanged(int index);
     void signatureTypeChoiceChanged(int index);

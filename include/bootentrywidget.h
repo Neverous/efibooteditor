@@ -37,4 +37,7 @@ public:
     void setNextBoot(bool next_boot);
     bool getCurrentBoot() const;
     void setCurrentBoot(bool current_boot);
+
+Q_SIGNALS:
+    void nextBootClicked(bool checked);
 };

@@ -52,9 +52,6 @@ public:
     void setUndoStack(QUndoStack *undo_stack_);
     QUndoStack *getUndoStack() const;
 
-    // Header:
-    QVariant headerData(int, Qt::Orientation, int = Qt::DisplayRole) const override { return {}; }
-
     // Basic functionality:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
@@ -73,8 +70,6 @@ public:
     void setEntryOptionalData(const QModelIndex &index, const QString &text);
     void setEntryAttributes(const QModelIndex &index, EFIBoot::Load_option_attribute value);
     void setEntryNextBoot(const QModelIndex &index, bool value);
-
-    Qt::ItemFlags flags(const QModelIndex &index) const override;
 
     // Add data:
     bool insertRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;

@@ -10,6 +10,7 @@
 #include "bootentrylistview.h"
 #include "disableundoredo.h"
 #include "efibootdata.h"
+#include "hotkeysdialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -38,6 +39,7 @@ private:
     std::unique_ptr<QMessageBox> error;
     std::unique_ptr<QProgressDialog> progress;
     std::unique_ptr<QMessageBox> about;
+    std::unique_ptr<HotKeysDialog> hot_keys;
     std::unique_ptr<DisableUndoRedo> disable_undo_redo{std::make_unique<DisableUndoRedo>()};
 
     QUndoStack undo_stack{this};
@@ -50,7 +52,7 @@ public:
 
     void reloadBootConfiguration();
 
-public slots:
+public Q_SLOTS:
     void reload();
     void save();
     void import_();
@@ -69,7 +71,8 @@ public slots:
 
     void enableBootEntryEditor(const QModelIndex &index);
     void switchBootEntryEditor(int index);
-    void showAboutBox();
+    void showAboutDialog();
+    void showHotKeysDialog(int index = -1);
 
     void setOsIndicationsSupported(uint64_t value);
     void setOsIndications(uint64_t value);
@@ -78,7 +81,7 @@ public slots:
 
     void updateBootOptionSupport(uint32_t flags);
 
-signals:
+Q_SIGNALS:
     void osIndicationsChanged(uint64_t value);
 
 private:

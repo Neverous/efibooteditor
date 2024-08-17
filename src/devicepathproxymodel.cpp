@@ -32,8 +32,11 @@ auto DevicePathProxyModel::rowCount(const QModelIndex &parent) const -> int
     return static_cast<int>(boot_entry_device_path->size());
 }
 
-auto DevicePathProxyModel::data(const QModelIndex &index, int) const -> QVariant
+auto DevicePathProxyModel::data(const QModelIndex &index, int role) const -> QVariant
 {
+    if(role != Qt::DisplayRole)
+        return {};
+
     if(!index.isValid() || !checkIndex(index))
         return {};
 
@@ -51,7 +54,7 @@ auto DevicePathProxyModel::setData(const QModelIndex &index, const QVariant &val
         return false;
 
     boot_entry_list_model->setEntryFilePath(boot_entry_index, index.row(), *value.value<const FilePath::ANY *>());
-    emit dataChanged(index, index, {role});
+    Q_EMIT dataChanged(index, index, {role});
     return true;
 }
 

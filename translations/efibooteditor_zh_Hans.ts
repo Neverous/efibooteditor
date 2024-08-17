@@ -4,37 +4,37 @@
 <context>
     <name>BootEntryForm</name>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="105"/>
-        <location filename="../src/form/bootentryform.ui" line="108"/>
-        <location filename="../src/form/bootentryform.ui" line="111"/>
-        <location filename="../src/form/bootentryform.ui" line="118"/>
-        <location filename="../src/form/bootentryform.ui" line="121"/>
+        <location filename="../src/form/bootentryform.ui" line="169"/>
+        <location filename="../src/form/bootentryform.ui" line="172"/>
+        <location filename="../src/form/bootentryform.ui" line="175"/>
+        <location filename="../src/form/bootentryform.ui" line="182"/>
+        <location filename="../src/form/bootentryform.ui" line="185"/>
         <source>Description</source>
         <translation>描述</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="134"/>
-        <location filename="../src/form/bootentryform.ui" line="137"/>
-        <location filename="../src/form/bootentryform.ui" line="140"/>
+        <location filename="../src/form/bootentryform.ui" line="198"/>
+        <location filename="../src/form/bootentryform.ui" line="201"/>
+        <location filename="../src/form/bootentryform.ui" line="204"/>
         <source>Path</source>
         <translation>路径</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="351"/>
-        <location filename="../src/form/bootentryform.ui" line="354"/>
-        <location filename="../src/form/bootentryform.ui" line="414"/>
-        <location filename="../src/form/bootentryform.ui" line="417"/>
+        <location filename="../src/form/bootentryform.ui" line="415"/>
+        <location filename="../src/form/bootentryform.ui" line="418"/>
+        <location filename="../src/form/bootentryform.ui" line="478"/>
+        <location filename="../src/form/bootentryform.ui" line="481"/>
         <source>Optional data</source>
         <translation>可选数据</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="357"/>
+        <location filename="../src/form/bootentryform.ui" line="421"/>
         <source>Optional</source>
         <translation>可选</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="370"/>
-        <location filename="../src/form/bootentryform.ui" line="373"/>
+        <location filename="../src/form/bootentryform.ui" line="434"/>
+        <location filename="../src/form/bootentryform.ui" line="437"/>
         <source>Optional data format</source>
         <translation>可选数据格式</translation>
     </message>
@@ -61,175 +61,186 @@
         <translation>此处显示此条目占位符以指示它在引导顺序中被引用。 保存时不会对其进行修改，保持原样。</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="124"/>
+        <location filename="../src/form/bootentryform.ui" line="147"/>
+        <location filename="../src/form/bootentryform.ui" line="150"/>
+        <source>Hot Keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/form/bootentryform.ui" line="153"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/form/bootentryform.ui" line="188"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;条目描述。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="158"/>
-        <location filename="../src/form/bootentryform.ui" line="161"/>
+        <location filename="../src/form/bootentryform.ui" line="222"/>
+        <location filename="../src/form/bootentryform.ui" line="225"/>
         <source>Device path</source>
         <translation>设备路径</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="164"/>
+        <location filename="../src/form/bootentryform.ui" line="228"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设备路径。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="216"/>
-        <location filename="../src/form/bootentryform.ui" line="219"/>
+        <location filename="../src/form/bootentryform.ui" line="280"/>
+        <location filename="../src/form/bootentryform.ui" line="283"/>
         <source>Move file path up</source>
         <translation>向上移动文件路径</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="222"/>
+        <location filename="../src/form/bootentryform.ui" line="286"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;向上移动文件路径。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="241"/>
-        <location filename="../src/form/bootentryform.ui" line="244"/>
+        <location filename="../src/form/bootentryform.ui" line="305"/>
+        <location filename="../src/form/bootentryform.ui" line="308"/>
         <source>Move file path down</source>
         <translation>向下移动文件路径</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="247"/>
+        <location filename="../src/form/bootentryform.ui" line="311"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;向下移动文件路径。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="266"/>
-        <location filename="../src/form/bootentryform.ui" line="269"/>
+        <location filename="../src/form/bootentryform.ui" line="330"/>
+        <location filename="../src/form/bootentryform.ui" line="333"/>
         <source>Remove file path</source>
         <translation>删除文件路径</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="272"/>
+        <location filename="../src/form/bootentryform.ui" line="336"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;删除文件路径。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="291"/>
-        <location filename="../src/form/bootentryform.ui" line="294"/>
+        <location filename="../src/form/bootentryform.ui" line="355"/>
+        <location filename="../src/form/bootentryform.ui" line="358"/>
         <source>Edit file path</source>
         <translation>编辑文件路径</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="297"/>
+        <location filename="../src/form/bootentryform.ui" line="361"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Edit file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;编辑文件路径。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="316"/>
-        <location filename="../src/form/bootentryform.ui" line="319"/>
+        <location filename="../src/form/bootentryform.ui" line="380"/>
+        <location filename="../src/form/bootentryform.ui" line="383"/>
         <source>Add file path</source>
         <translation>添加文件路径</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="322"/>
+        <location filename="../src/form/bootentryform.ui" line="386"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;添加文件路径。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="376"/>
+        <location filename="../src/form/bootentryform.ui" line="440"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;可选数据格式。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="380"/>
+        <location filename="../src/form/bootentryform.ui" line="444"/>
         <source>BASE64</source>
         <translation>BASE64</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="385"/>
+        <location filename="../src/form/bootentryform.ui" line="449"/>
         <source>UTF-16</source>
         <translation>UTF-16</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="390"/>
+        <location filename="../src/form/bootentryform.ui" line="454"/>
         <source>UTF-8</source>
         <translation>UTF-8</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="395"/>
+        <location filename="../src/form/bootentryform.ui" line="459"/>
         <source>HEX</source>
         <translation>HEX</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="420"/>
+        <location filename="../src/form/bootentryform.ui" line="484"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;输入可选数据。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="433"/>
-        <location filename="../src/form/bootentryform.ui" line="436"/>
-        <location filename="../src/form/bootentryform.ui" line="439"/>
+        <location filename="../src/form/bootentryform.ui" line="497"/>
+        <location filename="../src/form/bootentryform.ui" line="500"/>
+        <location filename="../src/form/bootentryform.ui" line="503"/>
         <source>Attributes</source>
         <translation>属性</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="559"/>
+        <location filename="../src/form/bootentryform.ui" line="623"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;条目类别。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="92"/>
+        <location filename="../src/form/bootentryform.ui" line="122"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;条目索引。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="476"/>
+        <location filename="../src/form/bootentryform.ui" line="540"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Is entry considered for automatic boot?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;是否考虑自动启动引导？&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="505"/>
+        <location filename="../src/form/bootentryform.ui" line="569"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hidden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;隐藏。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="521"/>
+        <location filename="../src/form/bootentryform.ui" line="585"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Force reconnect.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;强制重新连接。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="470"/>
-        <location filename="../src/form/bootentryform.ui" line="473"/>
-        <location filename="../src/form/bootentryform.ui" line="479"/>
+        <location filename="../src/form/bootentryform.ui" line="534"/>
+        <location filename="../src/form/bootentryform.ui" line="537"/>
+        <location filename="../src/form/bootentryform.ui" line="543"/>
         <source>Active</source>
         <translation>活动</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="515"/>
-        <location filename="../src/form/bootentryform.ui" line="518"/>
-        <location filename="../src/form/bootentryform.ui" line="524"/>
+        <location filename="../src/form/bootentryform.ui" line="579"/>
+        <location filename="../src/form/bootentryform.ui" line="582"/>
+        <location filename="../src/form/bootentryform.ui" line="588"/>
         <source>Force reconnect</source>
         <translation>强制重新连接</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="499"/>
-        <location filename="../src/form/bootentryform.ui" line="502"/>
-        <location filename="../src/form/bootentryform.ui" line="508"/>
+        <location filename="../src/form/bootentryform.ui" line="563"/>
+        <location filename="../src/form/bootentryform.ui" line="566"/>
+        <location filename="../src/form/bootentryform.ui" line="572"/>
         <source>Hidden</source>
         <translation>隐藏</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="534"/>
-        <location filename="../src/form/bootentryform.ui" line="537"/>
-        <location filename="../src/form/bootentryform.ui" line="540"/>
-        <location filename="../src/form/bootentryform.ui" line="553"/>
-        <location filename="../src/form/bootentryform.ui" line="556"/>
+        <location filename="../src/form/bootentryform.ui" line="598"/>
+        <location filename="../src/form/bootentryform.ui" line="601"/>
+        <location filename="../src/form/bootentryform.ui" line="604"/>
+        <location filename="../src/form/bootentryform.ui" line="617"/>
+        <location filename="../src/form/bootentryform.ui" line="620"/>
         <source>Category</source>
         <translation>类别</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="563"/>
+        <location filename="../src/form/bootentryform.ui" line="627"/>
         <source>Boot</source>
         <translation>引导</translation>
     </message>
     <message>
-        <location filename="../src/form/bootentryform.ui" line="568"/>
+        <location filename="../src/form/bootentryform.ui" line="632"/>
         <source>App</source>
         <translation>应用程序</translation>
     </message>
@@ -237,13 +248,13 @@
         <location filename="../src/form/bootentryform.ui" line="68"/>
         <location filename="../src/form/bootentryform.ui" line="71"/>
         <location filename="../src/form/bootentryform.ui" line="74"/>
-        <location filename="../src/form/bootentryform.ui" line="86"/>
-        <location filename="../src/form/bootentryform.ui" line="89"/>
+        <location filename="../src/form/bootentryform.ui" line="116"/>
+        <location filename="../src/form/bootentryform.ui" line="119"/>
         <source>Index</source>
         <translation>索引</translation>
     </message>
     <message>
-        <location filename="../src/bootentryform.cpp" line="111"/>
+        <location filename="../src/bootentryform.cpp" line="117"/>
         <source>Couldn&apos;t change optional data format!</source>
         <translation>无法更改可选数据格式！</translation>
     </message>
@@ -251,34 +262,34 @@
 <context>
     <name>BootEntryListModel</name>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="85"/>
+        <location filename="../src/bootentrylistmodel.cpp" line="88"/>
         <source>Set Next boot to &quot;%1&quot;</source>
         <translation>设置下次启动为 &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="181"/>
-        <source>Index</source>
-        <translation>索引</translation>
+        <location filename="../src/bootentrylistmodel.cpp" line="184"/>
+        <source>index</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="197"/>
-        <source>Description</source>
-        <translation>描述</translation>
+        <location filename="../src/bootentrylistmodel.cpp" line="200"/>
+        <source>description</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="234"/>
-        <source>Optional data</source>
-        <translation>可选数据</translation>
+        <location filename="../src/bootentrylistmodel.cpp" line="237"/>
+        <source>optional data</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="250"/>
-        <source>Attributes</source>
-        <translation>属性</translation>
+        <location filename="../src/bootentrylistmodel.cpp" line="253"/>
+        <source>attributes</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/bootentrylistmodel.cpp" line="266"/>
-        <source>Next boot</source>
-        <translation>下一个引导</translation>
+        <location filename="../src/bootentrylistmodel.cpp" line="269"/>
+        <source>next boot</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -370,28 +381,28 @@
 <context>
     <name>EFIBootData</name>
     <message>
-        <location filename="../src/efibootdata.cpp" line="109"/>
-        <location filename="../src/efibootdata.cpp" line="716"/>
-        <location filename="../src/efibootdata.cpp" line="913"/>
-        <location filename="../src/efibootdata.cpp" line="1208"/>
-        <location filename="../src/efibootdata.cpp" line="1319"/>
+        <location filename="../src/efibootdata.cpp" line="112"/>
+        <location filename="../src/efibootdata.cpp" line="796"/>
+        <location filename="../src/efibootdata.cpp" line="1010"/>
+        <location filename="../src/efibootdata.cpp" line="1343"/>
+        <location filename="../src/efibootdata.cpp" line="1454"/>
         <source>%1: not found</source>
         <translation>%1: 未找到</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="117"/>
-        <location filename="../src/efibootdata.cpp" line="724"/>
-        <location filename="../src/efibootdata.cpp" line="1234"/>
+        <location filename="../src/efibootdata.cpp" line="120"/>
+        <location filename="../src/efibootdata.cpp" line="804"/>
+        <location filename="../src/efibootdata.cpp" line="1369"/>
         <source>%1: failed deserialization</source>
         <translation>%1: 反序列化失败</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="272"/>
+        <location filename="../src/efibootdata.cpp" line="299"/>
         <source>Error loading entries</source>
         <translation>加载条目时出错</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="272"/>
+        <location filename="../src/efibootdata.cpp" line="299"/>
         <source>Failed to load some EFI Boot Manager entries:
 
   - %1</source>
@@ -400,85 +411,86 @@
   - %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="334"/>
-        <location filename="../src/efibootdata.cpp" line="611"/>
+        <location filename="../src/efibootdata.cpp" line="367"/>
+        <location filename="../src/efibootdata.cpp" line="673"/>
         <source>Error saving entries</source>
         <translation>保存条目时出错</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="334"/>
-        <location filename="../src/efibootdata.cpp" line="611"/>
+        <location filename="../src/efibootdata.cpp" line="367"/>
+        <location filename="../src/efibootdata.cpp" line="673"/>
         <source>Entry %1(%2): duplicated index!</source>
         <translation>条目 %1(%2): 重复索引！</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="357"/>
-        <location filename="../src/efibootdata.cpp" line="380"/>
-        <location filename="../src/efibootdata.cpp" line="401"/>
-        <location filename="../src/efibootdata.cpp" line="409"/>
-        <location filename="../src/efibootdata.cpp" line="416"/>
-        <location filename="../src/efibootdata.cpp" line="438"/>
+        <location filename="../src/efibootdata.cpp" line="387"/>
+        <location filename="../src/efibootdata.cpp" line="417"/>
+        <location filename="../src/efibootdata.cpp" line="441"/>
+        <location filename="../src/efibootdata.cpp" line="462"/>
+        <location filename="../src/efibootdata.cpp" line="470"/>
+        <location filename="../src/efibootdata.cpp" line="477"/>
+        <location filename="../src/efibootdata.cpp" line="499"/>
         <source>Error saving %1</source>
         <translation>保存 %1 错误</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="368"/>
-        <location filename="../src/efibootdata.cpp" line="392"/>
-        <location filename="../src/efibootdata.cpp" line="426"/>
+        <location filename="../src/efibootdata.cpp" line="405"/>
+        <location filename="../src/efibootdata.cpp" line="453"/>
+        <location filename="../src/efibootdata.cpp" line="487"/>
         <source>Error removing %1</source>
         <translation>移除 %1 错误</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="455"/>
-        <location filename="../src/efibootdata.cpp" line="464"/>
-        <location filename="../src/efibootdata.cpp" line="478"/>
-        <location filename="../src/efibootdata.cpp" line="1187"/>
-        <location filename="../src/efibootdata.cpp" line="1391"/>
+        <location filename="../src/efibootdata.cpp" line="516"/>
+        <location filename="../src/efibootdata.cpp" line="525"/>
+        <location filename="../src/efibootdata.cpp" line="539"/>
+        <location filename="../src/efibootdata.cpp" line="1322"/>
+        <location filename="../src/efibootdata.cpp" line="1565"/>
         <source>Error importing boot configuration</source>
         <translation>导入引导配置时出错</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="455"/>
-        <location filename="../src/efibootdata.cpp" line="677"/>
+        <location filename="../src/efibootdata.cpp" line="516"/>
+        <location filename="../src/efibootdata.cpp" line="757"/>
         <source>Couldn&apos;t open selected file (%1).</source>
         <translation>无法打开所选文件 (%1)。</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="464"/>
+        <location filename="../src/efibootdata.cpp" line="525"/>
         <source>Parser failed: %1</source>
         <translation>解析器失败: %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="478"/>
+        <location filename="../src/efibootdata.cpp" line="539"/>
         <source>Invalid _Type: %1</source>
         <translation>无效类型: %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="491"/>
-        <location filename="../src/efibootdata.cpp" line="662"/>
+        <location filename="../src/efibootdata.cpp" line="552"/>
+        <location filename="../src/efibootdata.cpp" line="742"/>
         <source>Error exporting boot configuration</source>
         <translation>导出引导配置时出错</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="491"/>
+        <location filename="../src/efibootdata.cpp" line="552"/>
         <source>Couldn&apos;t open selected file (%1): %2.</source>
         <translation>无法打开所选文件 (%1): %2。</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="662"/>
-        <location filename="../src/efibootdata.cpp" line="775"/>
+        <location filename="../src/efibootdata.cpp" line="742"/>
+        <location filename="../src/efibootdata.cpp" line="872"/>
         <source>Couldn&apos;t write into file (%1): %2.</source>
         <translation>无法写入文件 (%1): %2。</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="677"/>
-        <location filename="../src/efibootdata.cpp" line="775"/>
-        <location filename="../src/efibootdata.cpp" line="781"/>
+        <location filename="../src/efibootdata.cpp" line="757"/>
+        <location filename="../src/efibootdata.cpp" line="872"/>
+        <location filename="../src/efibootdata.cpp" line="878"/>
         <source>Error dumping raw EFI data</source>
         <translation>转储原始 EFI 数据时出错</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="781"/>
+        <location filename="../src/efibootdata.cpp" line="878"/>
         <source>Failed to dump some EFI Boot Manager entries:
 
   - %1</source>
@@ -487,194 +499,205 @@
   - %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="791"/>
+        <location filename="../src/efibootdata.cpp" line="888"/>
         <source>Timeout</source>
         <translation>超时</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="807"/>
+        <location filename="../src/efibootdata.cpp" line="904"/>
         <source>Apple boot-args</source>
         <translation>Apple 引导参数</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="823"/>
+        <location filename="../src/efibootdata.cpp" line="920"/>
         <source>Firmware actions</source>
         <translation>固件操作</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="70"/>
+        <location filename="../src/efibootdata.cpp" line="73"/>
         <source>Loading EFI Boot Manager entries…</source>
         <translation>正在加载 EFI Boot Manager 条目…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="86"/>
-        <location filename="../src/efibootdata.cpp" line="690"/>
+        <location filename="../src/efibootdata.cpp" line="89"/>
+        <location filename="../src/efibootdata.cpp" line="770"/>
         <source>Searching EFI Boot Manager entries…</source>
         <translation>正在搜索 EFI Boot Manager 条目…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="105"/>
-        <location filename="../src/efibootdata.cpp" line="263"/>
+        <location filename="../src/efibootdata.cpp" line="108"/>
+        <location filename="../src/efibootdata.cpp" line="290"/>
         <source>Processing EFI Boot Manager entries (%1)…</source>
         <translation>正在处理 EFI Boot Manager 条目 (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="279"/>
+        <location filename="../src/efibootdata.cpp" line="306"/>
         <source>Saving EFI Boot Manager entries…</source>
         <translation>正在保存 EFI Boot Manager 条目…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="301"/>
+        <location filename="../src/efibootdata.cpp" line="331"/>
         <source>Searching old EFI Boot Manager entries…</source>
         <translation>正在搜索旧的 EFI Boot Manager 条目…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="339"/>
-        <location filename="../src/efibootdata.cpp" line="377"/>
-        <location filename="../src/efibootdata.cpp" line="398"/>
-        <location filename="../src/efibootdata.cpp" line="406"/>
-        <location filename="../src/efibootdata.cpp" line="413"/>
-        <location filename="../src/efibootdata.cpp" line="435"/>
+        <location filename="../src/efibootdata.cpp" line="372"/>
+        <location filename="../src/efibootdata.cpp" line="414"/>
+        <location filename="../src/efibootdata.cpp" line="430"/>
+        <location filename="../src/efibootdata.cpp" line="459"/>
+        <location filename="../src/efibootdata.cpp" line="467"/>
+        <location filename="../src/efibootdata.cpp" line="474"/>
+        <location filename="../src/efibootdata.cpp" line="496"/>
         <source>Saving EFI Boot Manager entries (%1)…</source>
         <translation>正在保存 EFI Boot Manager 条目 (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="389"/>
+        <location filename="../src/efibootdata.cpp" line="450"/>
         <source>Removing old EFI Boot Manager entries (%1)…</source>
         <translation>正在删除旧的 EFI Boot Manager 条目 (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="365"/>
-        <location filename="../src/efibootdata.cpp" line="423"/>
+        <location filename="../src/efibootdata.cpp" line="402"/>
+        <location filename="../src/efibootdata.cpp" line="484"/>
         <source>Removing EFI Boot Manager entries (%1)…</source>
         <translation>正在删除 EFI Boot Manager entries 条目 (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="91"/>
-        <location filename="../src/efibootdata.cpp" line="306"/>
-        <location filename="../src/efibootdata.cpp" line="695"/>
+        <location filename="../src/efibootdata.cpp" line="94"/>
+        <location filename="../src/efibootdata.cpp" line="336"/>
+        <location filename="../src/efibootdata.cpp" line="775"/>
         <source>Couldn&apos;t load EFI Boot Manager variables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="97"/>
-        <location filename="../src/efibootdata.cpp" line="702"/>
+        <location filename="../src/efibootdata.cpp" line="100"/>
+        <location filename="../src/efibootdata.cpp" line="782"/>
         <source>Couldn&apos;t find any EFI Boot Manager variables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="451"/>
+        <location filename="../src/efibootdata.cpp" line="512"/>
         <source>Importing boot configuration…</source>
         <translation>正在导入引导配置…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="487"/>
-        <location filename="../src/efibootdata.cpp" line="673"/>
+        <location filename="../src/efibootdata.cpp" line="548"/>
+        <location filename="../src/efibootdata.cpp" line="753"/>
         <source>Exporting boot configuration…</source>
         <translation>正在导出引导配置…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="508"/>
-        <location filename="../src/efibootdata.cpp" line="712"/>
-        <location filename="../src/efibootdata.cpp" line="761"/>
+        <location filename="../src/efibootdata.cpp" line="570"/>
+        <location filename="../src/efibootdata.cpp" line="792"/>
+        <location filename="../src/efibootdata.cpp" line="858"/>
         <source>Exporting EFI Boot Manager entries (%1)…</source>
         <translation>正在导出 EFI Boot Manager 条目 (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="899"/>
+        <location filename="../src/efibootdata.cpp" line="996"/>
         <source>Importing boot configuration from JSON…</source>
         <translation>正在从 JSON 导入引导配置…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="918"/>
-        <location filename="../src/efibootdata.cpp" line="1213"/>
-        <location filename="../src/efibootdata.cpp" line="1324"/>
+        <location filename="../src/efibootdata.cpp" line="1015"/>
+        <location filename="../src/efibootdata.cpp" line="1348"/>
+        <location filename="../src/efibootdata.cpp" line="1459"/>
+        <location filename="../src/efibootdata.cpp" line="1513"/>
         <source>Importing EFI Boot Manager entries (%1)…</source>
         <translation>正在导入 EFI Boot Manager 条目 (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="921"/>
-        <location filename="../src/efibootdata.cpp" line="983"/>
-        <location filename="../src/efibootdata.cpp" line="1020"/>
-        <location filename="../src/efibootdata.cpp" line="1064"/>
-        <location filename="../src/efibootdata.cpp" line="1109"/>
-        <location filename="../src/efibootdata.cpp" line="1134"/>
-        <location filename="../src/efibootdata.cpp" line="1216"/>
-        <location filename="../src/efibootdata.cpp" line="1223"/>
-        <location filename="../src/efibootdata.cpp" line="1327"/>
-        <location filename="../src/efibootdata.cpp" line="1341"/>
-        <location filename="../src/efibootdata.cpp" line="1378"/>
+        <location filename="../src/efibootdata.cpp" line="1018"/>
+        <location filename="../src/efibootdata.cpp" line="1080"/>
+        <location filename="../src/efibootdata.cpp" line="1117"/>
+        <location filename="../src/efibootdata.cpp" line="1161"/>
+        <location filename="../src/efibootdata.cpp" line="1206"/>
+        <location filename="../src/efibootdata.cpp" line="1231"/>
+        <location filename="../src/efibootdata.cpp" line="1287"/>
+        <location filename="../src/efibootdata.cpp" line="1351"/>
+        <location filename="../src/efibootdata.cpp" line="1358"/>
+        <location filename="../src/efibootdata.cpp" line="1462"/>
+        <location filename="../src/efibootdata.cpp" line="1476"/>
+        <location filename="../src/efibootdata.cpp" line="1515"/>
+        <location filename="../src/efibootdata.cpp" line="1530"/>
+        <location filename="../src/efibootdata.cpp" line="1552"/>
         <source>%1: %2 expected</source>
         <translation>%1: %2 预计</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="929"/>
-        <location filename="../src/efibootdata.cpp" line="934"/>
-        <location filename="../src/efibootdata.cpp" line="939"/>
-        <location filename="../src/efibootdata.cpp" line="1109"/>
+        <location filename="../src/efibootdata.cpp" line="1026"/>
+        <location filename="../src/efibootdata.cpp" line="1031"/>
+        <location filename="../src/efibootdata.cpp" line="1036"/>
+        <location filename="../src/efibootdata.cpp" line="1206"/>
         <source>number</source>
         <translation>编号</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="944"/>
-        <location filename="../src/efibootdata.cpp" line="949"/>
-        <location filename="../src/efibootdata.cpp" line="954"/>
-        <location filename="../src/efibootdata.cpp" line="959"/>
-        <location filename="../src/efibootdata.cpp" line="964"/>
+        <location filename="../src/efibootdata.cpp" line="1041"/>
+        <location filename="../src/efibootdata.cpp" line="1046"/>
+        <location filename="../src/efibootdata.cpp" line="1051"/>
+        <location filename="../src/efibootdata.cpp" line="1056"/>
+        <location filename="../src/efibootdata.cpp" line="1061"/>
         <source>bool</source>
         <translation>布尔</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="995"/>
+        <location filename="../src/efibootdata.cpp" line="1092"/>
         <source>%1: unknown boot manager capability</source>
         <translation>%1: 未知的引导管理器能力</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1008"/>
-        <location filename="../src/efibootdata.cpp" line="1052"/>
-        <location filename="../src/efibootdata.cpp" line="1098"/>
+        <location filename="../src/efibootdata.cpp" line="1105"/>
+        <location filename="../src/efibootdata.cpp" line="1149"/>
+        <location filename="../src/efibootdata.cpp" line="1195"/>
         <source>array</source>
         <translation>数组</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="983"/>
-        <location filename="../src/efibootdata.cpp" line="1020"/>
-        <location filename="../src/efibootdata.cpp" line="1064"/>
-        <location filename="../src/efibootdata.cpp" line="1180"/>
+        <location filename="../src/efibootdata.cpp" line="1080"/>
+        <location filename="../src/efibootdata.cpp" line="1117"/>
+        <location filename="../src/efibootdata.cpp" line="1161"/>
+        <location filename="../src/efibootdata.cpp" line="1315"/>
         <source>string</source>
         <translation>字符串</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1042"/>
-        <location filename="../src/efibootdata.cpp" line="1078"/>
+        <location filename="../src/efibootdata.cpp" line="1139"/>
+        <location filename="../src/efibootdata.cpp" line="1175"/>
         <source>%1: unknown os indication</source>
         <translation>%1: 未知操作系统指示</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="969"/>
-        <location filename="../src/efibootdata.cpp" line="1121"/>
-        <location filename="../src/efibootdata.cpp" line="1150"/>
-        <location filename="../src/efibootdata.cpp" line="1175"/>
-        <location filename="../src/efibootdata.cpp" line="1216"/>
-        <location filename="../src/efibootdata.cpp" line="1327"/>
-        <location filename="../src/efibootdata.cpp" line="1378"/>
+        <location filename="../src/efibootdata.cpp" line="1066"/>
+        <location filename="../src/efibootdata.cpp" line="1218"/>
+        <location filename="../src/efibootdata.cpp" line="1247"/>
+        <location filename="../src/efibootdata.cpp" line="1273"/>
+        <location filename="../src/efibootdata.cpp" line="1292"/>
+        <location filename="../src/efibootdata.cpp" line="1310"/>
+        <location filename="../src/efibootdata.cpp" line="1351"/>
+        <location filename="../src/efibootdata.cpp" line="1462"/>
+        <location filename="../src/efibootdata.cpp" line="1515"/>
+        <location filename="../src/efibootdata.cpp" line="1552"/>
         <source>object</source>
         <translation>对象</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1134"/>
-        <location filename="../src/efibootdata.cpp" line="1341"/>
+        <location filename="../src/efibootdata.cpp" line="1231"/>
+        <location filename="../src/efibootdata.cpp" line="1287"/>
+        <location filename="../src/efibootdata.cpp" line="1476"/>
+        <location filename="../src/efibootdata.cpp" line="1530"/>
         <source>hexadecimal number</source>
         <translation>十六进制数</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1156"/>
+        <location filename="../src/efibootdata.cpp" line="1253"/>
+        <location filename="../src/efibootdata.cpp" line="1298"/>
         <source>%1: failed parsing</source>
         <translation>%1: 解析失败</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1187"/>
-        <location filename="../src/efibootdata.cpp" line="1391"/>
+        <location filename="../src/efibootdata.cpp" line="1322"/>
+        <location filename="../src/efibootdata.cpp" line="1565"/>
         <source>Failed to import some EFI Boot Manager entries:
 
   - %1</source>
@@ -683,33 +706,33 @@
   - %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1194"/>
+        <location filename="../src/efibootdata.cpp" line="1329"/>
         <source>Importing boot configuration from raw dump…</source>
         <translation>正在从原始转储导入引导配置…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1226"/>
+        <location filename="../src/efibootdata.cpp" line="1361"/>
         <source>object(raw_data: string, efi_attributes: number)</source>
         <extracomment>Expected JSON structure, thrown as error description. raw_data and efi_attributes are field names in JSON file</extracomment>
         <translation>object(raw_data: string, efi_attributes: number)</translation>
     </message>
     <message>
-        <location filename="../include/efibootdata.h" line="13"/>
+        <location filename="../include/efibootdata.h" line="15"/>
         <source>Boot</source>
         <translation>引导</translation>
     </message>
     <message>
-        <location filename="../include/efibootdata.h" line="14"/>
+        <location filename="../include/efibootdata.h" line="16"/>
         <source>Driver</source>
         <translation>设备</translation>
     </message>
     <message>
-        <location filename="../include/efibootdata.h" line="15"/>
+        <location filename="../include/efibootdata.h" line="17"/>
         <source>System Preparation</source>
         <translation>系统准备</translation>
     </message>
     <message>
-        <location filename="../include/efibootdata.h" line="16"/>
+        <location filename="../include/efibootdata.h" line="18"/>
         <source>Platform Recovery</source>
         <translation>平台恢复</translation>
     </message>
@@ -723,7 +746,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="71"/>
-        <location filename="../src/efibooteditor.cpp" line="402"/>
+        <location filename="../src/efibooteditor.cpp" line="412"/>
         <source>Boot</source>
         <translation>引导</translation>
     </message>
@@ -742,7 +765,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="133"/>
-        <location filename="../src/efibooteditor.cpp" line="405"/>
+        <location filename="../src/efibooteditor.cpp" line="415"/>
         <source>Driver</source>
         <translation>设备</translation>
     </message>
@@ -761,7 +784,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="195"/>
-        <location filename="../src/efibooteditor.cpp" line="408"/>
+        <location filename="../src/efibooteditor.cpp" line="418"/>
         <source>System Preparation</source>
         <translation>系统准备</translation>
     </message>
@@ -780,7 +803,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="257"/>
-        <location filename="../src/efibooteditor.cpp" line="411"/>
+        <location filename="../src/efibooteditor.cpp" line="421"/>
         <source>Platform Recovery</source>
         <translation>平台恢复</translation>
     </message>
@@ -1223,79 +1246,94 @@
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;帮助菜单。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1253"/>
+        <location filename="../src/form/efibooteditor.ui" line="1255"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Exit the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;退出程序。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1270"/>
+        <location filename="../src/form/efibooteditor.ui" line="1272"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apply changes to the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;对系统应用更改。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1287"/>
+        <location filename="../src/form/efibooteditor.ui" line="1289"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reloads EFI data from the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;从系统重新加载 EFI 数据。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1304"/>
+        <location filename="../src/form/efibooteditor.ui" line="1306"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show information about the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;显示有关该程序的信息。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1318"/>
+        <location filename="../src/form/efibooteditor.ui" line="1320"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Export current entries into JSON.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将当前条目导出为 JSON。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1335"/>
+        <location filename="../src/form/efibooteditor.ui" line="1337"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Import EFI data from JSON dump.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;从 JSON 转储导入 EFI 数据。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1352"/>
+        <location filename="../src/form/efibooteditor.ui" line="1354"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dumps raw EFI data for debugging purposes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;转储原始 EFI 数据以用于调试目的。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1360"/>
+        <location filename="../src/form/efibooteditor.ui" line="1362"/>
         <source>&amp;Undo</source>
         <translation>撤消(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1363"/>
+        <location filename="../src/form/efibooteditor.ui" line="1365"/>
         <source>Undo</source>
         <translation>撤消</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1366"/>
+        <location filename="../src/form/efibooteditor.ui" line="1368"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;撤消&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1369"/>
+        <location filename="../src/form/efibooteditor.ui" line="1371"/>
         <source>Ctrl+Z</source>
         <translation>Ctrl+Z</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1377"/>
+        <location filename="../src/form/efibooteditor.ui" line="1379"/>
         <source>&amp;Redo</source>
         <translation>重做(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1380"/>
+        <location filename="../src/form/efibooteditor.ui" line="1382"/>
         <source>Redo</source>
         <translation>重做</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1383"/>
+        <location filename="../src/form/efibooteditor.ui" line="1385"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Redo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;重做&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1386"/>
+        <location filename="../src/form/efibooteditor.ui" line="1388"/>
         <source>Ctrl+Shift+Z</source>
         <translation>Ctrl+Shift+Z</translation>
+    </message>
+    <message>
+        <location filename="../src/form/efibooteditor.ui" line="1396"/>
+        <source>Hot &amp;Keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/form/efibooteditor.ui" line="1399"/>
+        <source>Hot Keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/form/efibooteditor.ui" line="1402"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="593"/>
@@ -1342,103 +1380,103 @@
         <translation>编辑 (&amp;E)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1247"/>
+        <location filename="../src/form/efibooteditor.ui" line="1249"/>
         <source>&amp;Quit</source>
         <translation>退出(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1250"/>
+        <location filename="../src/form/efibooteditor.ui" line="1252"/>
         <source>Quit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1256"/>
+        <location filename="../src/form/efibooteditor.ui" line="1258"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1264"/>
+        <location filename="../src/form/efibooteditor.ui" line="1266"/>
         <source>&amp;Save</source>
         <translation>保存(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1267"/>
+        <location filename="../src/form/efibooteditor.ui" line="1269"/>
         <source>Save</source>
         <translation>保存</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1273"/>
+        <location filename="../src/form/efibooteditor.ui" line="1275"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1281"/>
+        <location filename="../src/form/efibooteditor.ui" line="1283"/>
         <source>&amp;Reload</source>
         <translation>重新加载(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1284"/>
+        <location filename="../src/form/efibooteditor.ui" line="1286"/>
         <source>Reload</source>
         <translation>重新加载</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1290"/>
+        <location filename="../src/form/efibooteditor.ui" line="1292"/>
         <source>Ctrl+R</source>
         <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1298"/>
+        <location filename="../src/form/efibooteditor.ui" line="1300"/>
         <source>About &amp;EFI Boot Editor</source>
         <translation>关于 EFI Boot Editor(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1301"/>
-        <location filename="../src/efibooteditor.cpp" line="30"/>
+        <location filename="../src/form/efibooteditor.ui" line="1303"/>
+        <location filename="../src/efibooteditor.cpp" line="29"/>
         <source>About EFI Boot Editor</source>
         <translation>关于 EFI Boot Editor</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1312"/>
+        <location filename="../src/form/efibooteditor.ui" line="1314"/>
         <source>&amp;Export</source>
         <translation>导出(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1315"/>
+        <location filename="../src/form/efibooteditor.ui" line="1317"/>
         <source>Export</source>
         <translation>导出</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1321"/>
+        <location filename="../src/form/efibooteditor.ui" line="1323"/>
         <source>Ctrl+E</source>
         <translation>Ctrl+E</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1329"/>
+        <location filename="../src/form/efibooteditor.ui" line="1331"/>
         <source>&amp;Import</source>
         <translation>导入(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1332"/>
+        <location filename="../src/form/efibooteditor.ui" line="1334"/>
         <source>Import</source>
         <translation>导入</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1338"/>
+        <location filename="../src/form/efibooteditor.ui" line="1340"/>
         <source>Ctrl+I</source>
         <translation>Ctrl+I</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1346"/>
+        <location filename="../src/form/efibooteditor.ui" line="1348"/>
         <source>&amp;Dump raw EFI data</source>
         <translation>转储原始 EFI 数据(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../src/form/efibooteditor.ui" line="1349"/>
+        <location filename="../src/form/efibooteditor.ui" line="1351"/>
         <source>Dump raw EFI data</source>
         <translation>转储原始 EFI 数据</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="27"/>
+        <location filename="../src/efibooteditor.cpp" line="26"/>
         <source>Working…</source>
         <translation>正在进行…</translation>
     </message>
@@ -1458,39 +1496,39 @@
         <translation>您确定要重新加载条目吗？&lt;br/&gt;您的所有更改都将丢失！</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="161"/>
+        <location filename="../src/efibooteditor.cpp" line="162"/>
         <source>Are you sure you want to reorder the boot entries?&lt;br/&gt;All indexes will be overwritten!</source>
         <translation>您确定要重新排序引导条目吗？&lt;br/&gt;所有索引都将被覆盖！</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="219"/>
+        <location filename="../src/efibooteditor.cpp" line="221"/>
         <source>Are you sure you want to save?&lt;br/&gt;Your EFI configuration will be overwritten!</source>
         <translation>您确定要保存吗？&lt;br/&gt;您的 EFI 配置将被覆盖！</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="228"/>
+        <location filename="../src/efibooteditor.cpp" line="230"/>
         <source>Open boot configuration dump</source>
         <translation>打开引导配置转储</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="228"/>
-        <location filename="../src/efibooteditor.cpp" line="246"/>
-        <location filename="../src/efibooteditor.cpp" line="258"/>
+        <location filename="../src/efibooteditor.cpp" line="230"/>
+        <location filename="../src/efibooteditor.cpp" line="248"/>
+        <location filename="../src/efibooteditor.cpp" line="260"/>
         <source>JSON documents (*.json)</source>
         <translation>JSON 文档 (*.json)</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="246"/>
+        <location filename="../src/efibooteditor.cpp" line="248"/>
         <source>Save boot configuration dump</source>
         <translation>保存引导配置转储</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="258"/>
+        <location filename="../src/efibooteditor.cpp" line="260"/>
         <source>Save raw EFI dump</source>
         <translation>保存原始 EFI 转储</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="32"/>
+        <location filename="../src/efibooteditor.cpp" line="31"/>
         <source>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</source>
         <extracomment>About dialog</extracomment>
         <translation>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;版本 &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</translation>
@@ -1502,12 +1540,12 @@
         <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;网站&lt;/a&gt;&lt;/p&gt;&lt;p&gt;该程序按原样提供，不提供任何形式的保证，包括设计、适销性和特定用途适用性的保证 .&lt;/p&gt;&lt;p&gt;许可证：&lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL 版本 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;在 Linux 上使用 &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; 用于 EFI 变量访问。&lt;/p&gt;&lt;p&gt;使用 Tango 图标作为后备图标。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="320"/>
+        <location filename="../src/efibooteditor.cpp" line="330"/>
         <source>Reorder %1 entries</source>
         <translation>重新排序 %1 条目</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="443"/>
+        <location filename="../src/efibooteditor.cpp" line="453"/>
         <source>Are you sure you want to quit?</source>
         <translation>你确定你要退出吗？</translation>
     </message>
@@ -1615,6 +1653,14 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/efibooteditorcli.cpp" line="106"/>
         <source>Finished</source>
         <translation>已完成</translation>
+    </message>
+</context>
+<context>
+    <name>EFIKeySequenceEdit</name>
+    <message>
+        <location filename="../src/efikeysequenceedit.cpp" line="110"/>
+        <source>Press hot key</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5304,10 +5350,80 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     </message>
 </context>
 <context>
+    <name>HotKeyListModel</name>
+    <message>
+        <location filename="../src/hotkeylistmodel.cpp" line="87"/>
+        <source>boot option</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../include/hotkeylistmodel.h" line="33"/>
+        <source>Boot option</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../include/hotkeylistmodel.h" line="33"/>
+        <source>Hot key</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>HotKeysDialog</name>
+    <message>
+        <location filename="../src/form/hotkeysdialog.ui" line="20"/>
+        <source>Hot Keys editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/form/hotkeysdialog.ui" line="41"/>
+        <location filename="../src/form/hotkeysdialog.ui" line="44"/>
+        <source>Hot Keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/form/hotkeysdialog.ui" line="47"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/form/hotkeysdialog.ui" line="125"/>
+        <location filename="../src/form/hotkeysdialog.ui" line="128"/>
+        <source>Index filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/form/hotkeysdialog.ui" line="131"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Index filter&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/form/hotkeysdialog.ui" line="163"/>
+        <location filename="../src/form/hotkeysdialog.ui" line="166"/>
+        <source>Remove hot key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/form/hotkeysdialog.ui" line="169"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove hot key&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/form/hotkeysdialog.ui" line="191"/>
+        <location filename="../src/form/hotkeysdialog.ui" line="194"/>
+        <source>Add hot key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/form/hotkeysdialog.ui" line="197"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add hot key&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
-        <location filename="../include/commands.h" line="20"/>
-        <location filename="../include/commands.h" line="65"/>
+        <location filename="../include/commands.h" line="21"/>
+        <location filename="../include/commands.h" line="66"/>
         <source>Change %1 to &quot;%2&quot;</source>
         <translation>更改 %1 为 &quot;%2&quot;</translation>
     </message>
@@ -5318,8 +5434,8 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     </message>
     <message>
         <location filename="../src/commands.cpp" line="50"/>
-        <source>Removing %1 entry &quot;%2&quot; from position %3</source>
-        <translation>正在从位置 %3 删除 %1 条目&quot;%2&quot;</translation>
+        <source>Remove %1 entry &quot;%2&quot; from position %3</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="73"/>
@@ -5329,8 +5445,8 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     </message>
     <message>
         <location filename="../src/commands.cpp" line="193"/>
-        <location filename="../include/commands.h" line="156"/>
-        <location filename="../include/commands.h" line="197"/>
+        <location filename="../include/commands.h" line="157"/>
+        <location filename="../include/commands.h" line="198"/>
         <source>Change %1 entry &quot;%2&quot; %3 to &quot;%4&quot;</source>
         <translation>更改 %1 条目&quot;%2&quot; %3 为“%4”</translation>
     </message>
@@ -5346,13 +5462,45 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     </message>
     <message>
         <location filename="../src/commands.cpp" line="242"/>
-        <source>Removing %1 entry &quot;%2&quot; file path from position %3</source>
-        <translation>正在从位置 %3 删除 %1 条目 &quot;%2&quot; 文件路径</translation>
+        <source>Remove %1 entry &quot;%2&quot; file path from position %3</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="257"/>
-        <source>Setting %1 entry &quot;%2&quot; file path at position %3</source>
-        <translation>在位置 %3 处设置 %1 条目 &quot;%2&quot; 文件路径</translation>
+        <source>Set %1 entry &quot;%2&quot; file path at position %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/commands.cpp" line="369"/>
+        <source>Insert %1 entry at position %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/commands.cpp" line="369"/>
+        <location filename="../src/commands.cpp" line="384"/>
+        <location filename="../src/commands.cpp" line="399"/>
+        <location filename="../src/commands.cpp" line="438"/>
+        <source>Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/commands.cpp" line="384"/>
+        <source>Remove %1 entry from position %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/commands.cpp" line="399"/>
+        <location filename="../src/commands.cpp" line="438"/>
+        <location filename="../include/commands.h" line="362"/>
+        <location filename="../include/commands.h" line="403"/>
+        <source>Change %1 entry at position %2 %3 to &quot;%4&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/commands.cpp" line="399"/>
+        <location filename="../src/commands.cpp" line="438"/>
+        <source>keys</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="293"/>

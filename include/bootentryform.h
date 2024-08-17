@@ -33,16 +33,21 @@ public:
 
     void setReadOnly(bool readonly);
     void showCategory(bool visible);
+    void showHotKeys(bool visible);
 
     void setBootEntryListModel(BootEntryListModel &model);
     void setItem(const QModelIndex &index, const BootEntry *item);
 
-private slots:
+Q_SIGNALS:
+    void showHotKeysDialog(int index);
+
+private Q_SLOTS:
     void setIndex(const QString &text);
     void setDescription(const QString &text);
     void setOptionalDataFormat(int format);
     void optionalDataEdited();
     void setAttribute(int state);
+    void showHotKeysDialog();
 
 private:
     EFIBoot::Load_option_attribute getAttributes() const;

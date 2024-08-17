@@ -35,6 +35,7 @@ void BootEntryForm::setReadOnly(bool readonly)
     for(auto &widget: findChildren<QLabel *>())
         widget->setDisabled(readonly);
 
+    ui->hot_keys->setDisabled(readonly);
     ui->device_path->setReadOnly(readonly);
     ui->device_path_actions->setDisabled(readonly);
     ui->optional_data_format_combo->setDisabled(false);
@@ -45,6 +46,11 @@ void BootEntryForm::showCategory(bool visible)
 {
     ui->category_label->setVisible(visible);
     ui->category_combo->setVisible(visible);
+}
+
+void BootEntryForm::showHotKeys(bool visible)
+{
+    ui->hot_keys->setVisible(visible);
 }
 
 void BootEntryForm::setBootEntryListModel(BootEntryListModel &model)
@@ -132,6 +138,20 @@ void BootEntryForm::setAttribute(int)
         return;
 
     entries_list_model->setEntryAttributes(current_index, getAttributes());
+}
+
+void BootEntryForm::showHotKeysDialog()
+{
+    if(!isEnabled())
+        return;
+
+    auto text = ui->index_text->text();
+    bool success = false;
+    uint16_t index = text.right(text.size() - 2).toUShort(&success, HEX_BASE);
+    if(!success)
+        return;
+
+    Q_EMIT showHotKeysDialog(index);
 }
 
 EFIBoot::Load_option_attribute BootEntryForm::getAttributes() const

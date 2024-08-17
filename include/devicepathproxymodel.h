@@ -17,8 +17,6 @@ public:
     void setBootEntryListModel(BootEntryListModel &model);
     void setBootEntryItem(const QModelIndex &index, const BootEntry *item);
 
-    QVariant headerData(int, Qt::Orientation, int = Qt::DisplayRole) const override { return {}; }
-
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;

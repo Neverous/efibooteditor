@@ -30,8 +30,11 @@ auto BootEntryListModel::rowCount(const QModelIndex &parent) const -> int
     return static_cast<int>(entries.count());
 }
 
-auto BootEntryListModel::data(const QModelIndex &index, int) const -> QVariant
+auto BootEntryListModel::data(const QModelIndex &index, int role) const -> QVariant
 {
+    if(role != Qt::DisplayRole)
+        return {};
+
     if(!index.isValid() || !checkIndex(index))
         return {};
 
@@ -68,7 +71,7 @@ auto BootEntryListModel::setData(const QModelIndex &index, const QVariant &value
     }
 
     auto idx = this->index(row + 1, 0);
-    emit dataChanged(idx, idx, {role});
+    Q_EMIT dataChanged(idx, idx, {role});
     return true;
 }
 
@@ -170,7 +173,7 @@ void BootEntryListModel::clearEntryDevicePath(const QModelIndex &index)
 
     // Used only internally, no undo/redo
     entries[index.row()].device_path.clear();
-    emit dataChanged(index, index, {Qt::EditRole});
+    Q_EMIT dataChanged(index, index, {Qt::EditRole});
 }
 
 void BootEntryListModel::setEntryIndex(const QModelIndex &index, uint16_t value)
@@ -178,7 +181,7 @@ void BootEntryListModel::setEntryIndex(const QModelIndex &index, uint16_t value)
     if(!index.isValid() || !checkIndex(index))
         return;
 
-    auto command = new SetBootEntryValueCommand<uint16_t>{*this, index, tr("Index"), &BootEntry::index, value};
+    auto command = new SetBootEntryValueCommand<uint16_t>{*this, index, tr("index"), &BootEntry::index, value};
     if(!undo_stack)
     {
         command->redo();
@@ -194,7 +197,7 @@ void BootEntryListModel::setEntryDescription(const QModelIndex &index, const QSt
     if(!index.isValid() || !checkIndex(index))
         return;
 
-    auto command = new SetBootEntryValueCommand<QString>{*this, index, tr("Description"), &BootEntry::description, text};
+    auto command = new SetBootEntryValueCommand<QString>{*this, index, tr("description"), &BootEntry::description, text};
     if(!undo_stack)
     {
         command->redo();
@@ -231,7 +234,7 @@ void BootEntryListModel::setEntryOptionalData(const QModelIndex &index, const QS
     if(!index.isValid() || !checkIndex(index))
         return;
 
-    auto command = new SetBootEntryValueCommand<QString>{*this, index, tr("Optional data"), &BootEntry::optional_data, text};
+    auto command = new SetBootEntryValueCommand<QString>{*this, index, tr("optional data"), &BootEntry::optional_data, text};
     if(!undo_stack)
     {
         command->redo();
@@ -247,7 +250,7 @@ void BootEntryListModel::setEntryAttributes(const QModelIndex &index, EFIBoot::L
     if(!index.isValid() || !checkIndex(index))
         return;
 
-    auto command = new SetBootEntryValueCommand<EFIBoot::Load_option_attribute>{*this, index, tr("Attributes"), &BootEntry::attributes, value};
+    auto command = new SetBootEntryValueCommand<EFIBoot::Load_option_attribute>{*this, index, tr("attributes"), &BootEntry::attributes, value};
     if(!undo_stack)
     {
         command->redo();
@@ -263,7 +266,7 @@ void BootEntryListModel::setEntryNextBoot(const QModelIndex &index, bool value)
     if(!index.isValid() || !checkIndex(index))
         return;
 
-    auto command = new SetBootEntryValueCommand<bool>{*this, index, tr("Next boot"), &BootEntry::is_next_boot, value};
+    auto command = new SetBootEntryValueCommand<bool>{*this, index, tr("next boot"), &BootEntry::is_next_boot, value};
     if(!undo_stack)
     {
         command->redo();
@@ -272,15 +275,6 @@ void BootEntryListModel::setEntryNextBoot(const QModelIndex &index, bool value)
     }
 
     undo_stack->push(command);
-}
-
-auto BootEntryListModel::flags(const QModelIndex &index) const -> Qt::ItemFlags
-{
-    auto flags = QAbstractListModel::flags(index);
-    if(index.isValid() && checkIndex(index))
-        return flags | Qt::ItemIsEditable | Qt::ItemIsDropEnabled;
-
-    return flags;
 }
 
 auto BootEntryListModel::insertRows(int row, int count, const QModelIndex &parent) -> bool

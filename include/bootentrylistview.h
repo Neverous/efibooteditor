@@ -25,10 +25,10 @@ public:
 protected:
     void selectionChanged(const QItemSelection &selection, const QItemSelection &) override;
 
-signals:
+Q_SIGNALS:
     void selected(const QModelIndex &index);
 
-public slots:
+public Q_SLOTS:
     void insertRow();
     void duplicateRow();
     void removeCurrentRow();

@@ -11,8 +11,8 @@ class DevicePathView: public QListView
 
 private:
     FilePathDelegate delegate{};
-    std::unique_ptr<FilePathDialog> dialog = nullptr;
-    bool readonly = false;
+    std::unique_ptr<FilePathDialog> dialog{nullptr};
+    bool readonly{false};
 
 public:
     explicit DevicePathView(QWidget *parent = nullptr);
@@ -21,10 +21,10 @@ public:
 
     void setReadOnly(bool readonly);
 
-public slots:
+public Q_SLOTS:
     void insertRow();
     void editCurrentRow();
-    void removeCurrentRow();
+    void removeCurrentRow() const;
     void moveCurrentRowUp();
     void moveCurrentRowDown();
 };

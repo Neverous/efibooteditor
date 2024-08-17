@@ -28,6 +28,7 @@ Options:
 ## Requirements
 
 * [Qt](//www.qt.io/) (>=5.12)
+* [zlib](//github.com/madler/zlib) (>=1.2)
 * [efivar](//github.com/rhboot/efivar) (>=37) on linux
 
 ## Installation
