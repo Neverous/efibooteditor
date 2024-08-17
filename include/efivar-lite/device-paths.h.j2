@@ -4,8 +4,6 @@
 #include <errno.h>
 #include <limits.h>
 
-#include "efivar-lite.h"
-
 #pragma pack(push, 1)
 typedef struct
 {

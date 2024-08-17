@@ -81,7 +81,7 @@ void EFIBootData::reload()
         {
             return guid == EFIBoot::efi_guid_global;
         },
-        [&](size_t step, size_t total)
+        [&, this](size_t step, size_t total)
         {
             emit progress(step, total + 1u, tr("Searching EFI Boot Manager entries…"));
         });
@@ -92,14 +92,14 @@ void EFIBootData::reload()
         return;
     }
 
-    const auto name_to_guid = *variables;
-    if(name_to_guid.size() == 0)
+    const auto &name_to_guid = *variables;
+    if(name_to_guid.empty())
         errors.push_back(tr("Couldn't find any EFI Boot Manager variables"));
 
     size_t step = 1;
     const size_t total_steps = name_to_guid.size() + 1u;
 
-    auto process_entry = [&](const auto &name, const auto &read_fn, const auto &process_fn, const auto &error_fn, bool optional = false)
+    auto process_entry = [&, this](const auto &name, const auto &read_fn, const auto &process_fn, const auto &error_fn, bool optional = false)
     {
         const auto tname = QStringToStdTString(name);
         emit progress(step++, total_steps, tr("Processing EFI Boot Manager entries (%1)…").arg(name));
@@ -296,7 +296,7 @@ void EFIBootData::save()
 
             return false;
         },
-        [&](size_t step, size_t total)
+        [&, this](size_t step, size_t total)
         {
             emit progress(step, total + 1u, tr("Searching old EFI Boot Manager entries…"));
         });
@@ -503,7 +503,7 @@ void EFIBootData::export_(const QString &file_name)
         + static_cast<size_t>(platform_recovery_entries_list_model.getEntries().size())
         + 8u + 1u;
 
-    auto progress_fn = [&](const QString &name)
+    auto progress_fn = [&, this](const QString &name)
     {
         emit progress(step++, total_steps, tr("Exporting EFI Boot Manager entries (%1)…").arg(name));
     };
@@ -685,7 +685,7 @@ void EFIBootData::dump(const QString &file_name)
         {
             return guid == EFIBoot::efi_guid_global;
         },
-        [&](size_t step, size_t total)
+        [&, this](size_t step, size_t total)
         {
             emit progress(step, total + 1u, tr("Searching EFI Boot Manager entries…"));
         });
@@ -696,14 +696,14 @@ void EFIBootData::dump(const QString &file_name)
         return;
     }
 
-    const auto name_to_guid = *variables;
+    const auto &name_to_guid = *variables;
     QStringList errors;
-    if(name_to_guid.size() == 0)
+    if(name_to_guid.empty())
         errors.push_back(tr("Couldn't find any EFI Boot Manager variables"));
 
     size_t step = 1;
     const size_t total_steps = name_to_guid.size() + 1u;
-    auto process_entry = [&](QJsonObject &root, const QString &key, tstring tname = _T(""), bool optional = false)
+    auto process_entry = [&, this](QJsonObject &root, const QString &key, tstring tname = _T(""), bool optional = false)
     {
         if(tname.empty())
             tname = QStringToStdTString(key);
@@ -904,7 +904,7 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
     size_t step = 1;
     auto total_steps = static_cast<size_t>(input.size()) + 1u;
 
-    auto process_entry = [&](const QJsonObject &root, const auto &name, const auto &type_fn, const QString &type_name, const auto &process_fn, const QString &name_prefix = "", bool optional = false)
+    auto process_entry = [&, this](const QJsonObject &root, const auto &name, const auto &type_fn, const QString &type_name, const auto &process_fn, const QString &name_prefix = "", bool optional = false)
     {
         const auto full_name = name_prefix + name;
         if(!root.contains(name))
@@ -1199,7 +1199,7 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
     size_t step = 1;
     auto total_steps = static_cast<size_t>(input.size()) + 1u;
 
-    auto process_entry = [&](const QJsonObject &root, const auto &name, const auto &deserialize_fn, const auto &process_fn, const QString &name_prefix = "", bool optional = false)
+    auto process_entry = [&, this](const QJsonObject &root, const auto &name, const auto &deserialize_fn, const auto &process_fn, const QString &name_prefix = "", bool optional = false)
     {
         const auto full_name = name_prefix + name;
         if(!root.contains(name))

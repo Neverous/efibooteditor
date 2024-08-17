@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #pragma once
 
-#include "device-paths.h"
-
 #pragma pack(push, 1)
 typedef struct efi_load_option_s
 {

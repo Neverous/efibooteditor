@@ -15,6 +15,7 @@ namespace EFIBoot
 
 extern "C"
 {
+#include "efivar-lite/device-paths.h"
 #include "efivar-lite/efivar-lite.h"
 #include "efivar-lite/load-option.h"
 }
