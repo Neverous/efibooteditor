@@ -14,7 +14,7 @@ jinja2==3.1.4
     # via codegen (pyproject.toml)
 markupsafe==2.1.5
     # via jinja2
-mypy==1.10.1
+mypy==1.11.1
     # via codegen (pyproject.toml)
 mypy-extensions==1.0.0
     # via mypy
@@ -23,22 +23,24 @@ packaging==24.1
 pip-tools==7.4.1
     # via codegen (pyproject.toml)
 pyproject-hooks==1.1.0
-    # via build
+    # via
+    #   build
+    #   pip-tools
 pyyaml==6.0.1
     # via codegen (pyproject.toml)
-ruff==0.5.0
+ruff==0.5.7
     # via codegen (pyproject.toml)
 soupsieve==2.5
     # via beautifulsoup4
 types-beautifulsoup4==4.12.0.20240511
     # via codegen (pyproject.toml)
-types-html5lib==1.1.11.20240228
+types-html5lib==1.1.11.20240806
     # via types-beautifulsoup4
-types-pyyaml==6.0.12.20240311
+types-pyyaml==6.0.12.20240808
     # via codegen (pyproject.toml)
 typing-extensions==4.12.2
     # via mypy
-wheel==0.43.0
+wheel==0.44.0
     # via pip-tools
 
 # The following packages are considered to be unsafe in a requirements file:
