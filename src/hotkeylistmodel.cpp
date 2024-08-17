@@ -81,9 +81,8 @@ auto HotKeyListModel::setData(const QModelIndex &index, const QVariant &value, i
 
     auto row = index.row();
     QUndoCommand *command = nullptr;
-    auto column = static_cast<Column>(index.column());
     // Edited BootOption
-    if(column == Column::BootOption && value.canConvert<uint16_t>() && index.data() != value)
+    if(auto column = static_cast<Column>(index.column()); column == Column::BootOption && value.canConvert<uint16_t>() && index.data() != value)
         command = new SetHotKeyValueCommand<uint16_t>{*this, index, tr("boot option"), &HotKey::boot_option, value.value<uint16_t>()};
 
     // Edited keys

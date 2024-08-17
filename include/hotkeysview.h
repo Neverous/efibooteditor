@@ -23,6 +23,6 @@ public:
 
 public Q_SLOTS:
     void insertRow();
-    void removeCurrentRow();
+    void removeCurrentRow() const;
     void setFilter(const QString &filter);
 };

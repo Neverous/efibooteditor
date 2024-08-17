@@ -72,8 +72,7 @@ void EFIKeySequenceEdit::keyPressEvent(QKeyEvent *event)
     lineEdit->setPlaceholderText({});
 
     // Clear selected
-    const auto selectedText = lineEdit->selectedText();
-    if(!selectedText.isEmpty() && selectedText == lineEdit->text())
+    if(const auto selectedText = lineEdit->selectedText(); !selectedText.isEmpty() && selectedText == lineEdit->text())
     {
         clear();
         if(key == Qt::Key_Backspace)

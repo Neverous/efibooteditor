@@ -7,10 +7,9 @@ EFIKey::EFIKey(const EFIBoot::efi_input_key &key)
 {
     if(key.scan_code)
     {
-        auto code = std::find_if(efi_scan_codes.begin(), efi_scan_codes.end(), [&](const auto &row)
-            { return std::get<uint16_t>(row) == key.scan_code; });
-
-        if(code != efi_scan_codes.end())
+        if(auto code = std::find_if(efi_scan_codes.begin(), efi_scan_codes.end(), [&](const auto &row)
+               { return std::get<uint16_t>(row) == key.scan_code; });
+            code != efi_scan_codes.end())
             scan_code = std::get<Qt::Key>(*code);
     }
     else
@@ -24,10 +23,9 @@ EFIBoot::efi_input_key EFIKey::toEFIInputKey() const
     EFIBoot::efi_input_key value;
     if(scan_code != Qt::Key_unknown)
     {
-        auto code = std::find_if(efi_scan_codes.begin(), efi_scan_codes.end(), [&](const auto &row)
-            { return std::get<Qt::Key>(row) == scan_code; });
-
-        if(code != efi_scan_codes.end())
+        if(auto code = std::find_if(efi_scan_codes.begin(), efi_scan_codes.end(), [&](const auto &row)
+               { return std::get<Qt::Key>(row) == scan_code; });
+            code != efi_scan_codes.end())
             value.scan_code = std::get<uint16_t>(*code);
     }
     else
@@ -48,10 +46,9 @@ EFIKey EFIKey::fromString(const QString &repr, bool *success)
         *success = false;
 
     EFIKey value;
-    auto code = std::find_if(efi_scan_codes.begin(), efi_scan_codes.end(), [&](const auto &row)
-        { return std::get<QString>(row) == repr; });
-
-    if(code != efi_scan_codes.end())
+    if(auto code = std::find_if(efi_scan_codes.begin(), efi_scan_codes.end(), [&](const auto &row)
+           { return std::get<QString>(row) == repr; });
+        code != efi_scan_codes.end())
     {
         value.scan_code = std::get<Qt::Key>(*code);
         if(success)
@@ -75,10 +72,9 @@ QString EFIKey::toString() const
 {
     if(scan_code != Qt::Key_unknown)
     {
-        auto repr = std::find_if(efi_scan_codes.begin(), efi_scan_codes.end(), [&](const auto &row)
-            { return std::get<Qt::Key>(row) == scan_code; });
-
-        if(repr != efi_scan_codes.end())
+        if(auto repr = std::find_if(efi_scan_codes.begin(), efi_scan_codes.end(), [&](const auto &row)
+               { return std::get<Qt::Key>(row) == scan_code; });
+            repr != efi_scan_codes.end())
             return std::get<QString>(*repr);
 
         return {};
@@ -95,10 +91,9 @@ EFIKey EFIKey::fromQKey(int keycode, const QString &text, bool *success)
     EFIKey value;
     if(keycode != Qt::Key_unknown)
     {
-        auto code = std::find_if(efi_scan_codes.begin(), efi_scan_codes.end(), [&](const auto &row)
-            { return std::get<Qt::Key>(row) == keycode; });
-
-        if(code != efi_scan_codes.end())
+        if(auto code = std::find_if(efi_scan_codes.begin(), efi_scan_codes.end(), [&](const auto &row)
+               { return std::get<Qt::Key>(row) == keycode; });
+            code != efi_scan_codes.end())
         {
             value.scan_code = std::get<Qt::Key>(*code);
             if(success)

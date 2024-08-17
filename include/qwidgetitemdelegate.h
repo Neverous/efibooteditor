@@ -92,8 +92,7 @@ QWidget *QWidgetItemDelegate<Widget, Item>::createEditor(QWidget *parent, const 
     if(!index.isValid() || !index.data().canConvert<Item>())
         return QStyledItemDelegate::createEditor(parent, option, index);
 
-    Widget *editor = new Widget{parent};
-    return editor;
+    return new Widget{parent};
 }
 
 template <class Widget, class Item>
@@ -112,7 +111,7 @@ void QWidgetItemDelegate<Widget, Item>::setModelData(QWidget *editor, QAbstractI
     if(!index.isValid() || !index.data().canConvert<Item>() || !model)
         return QStyledItemDelegate::setModelData(editor, model, index);
 
-    Item item;
+    Item item{};
     if(!setupItemFromWidget(*dynamic_cast<Widget *>(editor), item, index))
         return;
 
@@ -139,8 +138,7 @@ bool QWidgetItemDelegate<Widget, Item>::editorEvent(QEvent *event, QAbstractItem
             auto mouse_event = static_cast<QMouseEvent *>(event);
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
             auto position = event_handler.mapFromParent(mouse_event->position());
-            QWidget *child = event_handler.childAt(position.toPoint());
-            if(child)
+            if(QWidget *child = event_handler.childAt(position.toPoint()); child)
             {
                 auto child_position = child->mapFromParent(position);
                 // All I need is to set localPosition...
@@ -153,8 +151,7 @@ bool QWidgetItemDelegate<Widget, Item>::editorEvent(QEvent *event, QAbstractItem
             auto pos = event_handler.mapFromParent(mouse_event->pos());
             mouse_event->setLocalPos(pos);
 
-            QWidget *child = event_handler.childAt(pos);
-            if(child)
+            if(QWidget *child = event_handler.childAt(pos); child)
             {
                 auto child_pos = child->mapFromParent(pos);
                 mouse_event->setLocalPos(child_pos);

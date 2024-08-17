@@ -24,7 +24,7 @@ public:
 public Q_SLOTS:
     void insertRow();
     void editCurrentRow();
-    void removeCurrentRow();
+    void removeCurrentRow() const;
     void moveCurrentRowUp();
     void moveCurrentRowDown();
 };

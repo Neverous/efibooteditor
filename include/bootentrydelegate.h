@@ -23,5 +23,5 @@ protected:
     void setupWidgetFromItem(Widget &widget, const Item &item, const QModelIndex &index, int role) const override;
 
 private Q_SLOTS:
-    void setNextBoot(bool checked);
+    void setNextBoot(bool checked) const;
 };

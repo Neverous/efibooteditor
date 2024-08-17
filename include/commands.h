@@ -73,7 +73,7 @@ SetEFIBootDataValueCommand(EFIBootData &data_, const QString &name_, typename Se
 
 class InsertRemoveBootEntryCommand: public QUndoCommand
 {
-protected:
+private:
     BootEntryListModel &model;
     QModelIndex index_parent;
     BootEntry entry;
@@ -221,7 +221,7 @@ public:
 
 class InsertRemoveBootEntryFilePathCommand: public QUndoCommand
 {
-protected:
+private:
     BootEntryListModel &model;
     FilePath::ANY file_path;
     const QModelIndex index;
@@ -262,7 +262,7 @@ public:
 
 class SetBootEntryFilePathCommand: public QUndoCommand
 {
-protected:
+private:
     BootEntryListModel &model;
     QModelIndex index;
     FilePath::ANY value;
@@ -300,7 +300,7 @@ public:
 // Hot Keys
 class InsertRemoveHotKeyCommand: public QUndoCommand
 {
-protected:
+private:
     HotKeyListModel &model;
     QModelIndex index_parent;
     HotKey entry;
@@ -407,7 +407,7 @@ public:
 
 class SetHotKeyKeysCommand: public QUndoCommand
 {
-protected:
+private:
     HotKeyListModel &model;
     QModelIndex index;
     EFIKeySequence value;

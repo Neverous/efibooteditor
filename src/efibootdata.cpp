@@ -74,7 +74,7 @@ void EFIBootData::reload()
     int32_t current_boot = -1;
     int32_t next_boot = -1;
     QStringList errors;
-    auto save_error = [&](const QString &error)
+    auto save_error = [&errors](const QString &error)
     {
         errors.push_back(error);
     };
@@ -102,7 +102,7 @@ void EFIBootData::reload()
     size_t step = 1;
     const size_t total_steps = name_to_guid.size() + 1u;
 
-    auto process_entry = [&, this](const auto &name, const auto &read_fn, const auto &process_fn, const auto &error_fn, bool optional = false)
+    auto process_entry = [this, &step, &total_steps, &name_to_guid](const auto &name, const auto &read_fn, const auto &process_fn, const auto &error_fn, bool optional = false)
     {
         const auto tname = QStringToStdTString(name);
         Q_EMIT progress(step++, total_steps, tr("Processing EFI Boot Manager entries (%1)…").arg(name));
@@ -565,7 +565,7 @@ void EFIBootData::export_(const QString &file_name)
         + static_cast<size_t>(hot_keys_list_model.getEntries().size())
         + 8u + 1u;
 
-    auto progress_fn = [&, this](const QString &name)
+    auto progress_fn = [this, &step, &total_steps](const QString &name)
     {
         Q_EMIT progress(step++, total_steps, tr("Exporting EFI Boot Manager entries (%1)…").arg(name));
     };
@@ -783,7 +783,7 @@ void EFIBootData::dump(const QString &file_name)
 
     size_t step = 1;
     const size_t total_steps = name_to_guid.size() + 1u;
-    auto process_entry = [&, this](QJsonObject &root, const QString &key, tstring tname = _T(""), bool optional = false)
+    auto process_entry = [this, &step, &total_steps, &name_to_guid, &errors](QJsonObject &root, const QString &key, tstring tname = _T(""), bool optional = false)
     {
         if(tname.empty())
             tname = QStringToStdTString(key);
@@ -1001,7 +1001,7 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
     size_t step = 1;
     auto total_steps = static_cast<size_t>(input.size()) + 1u;
 
-    auto process_entry = [&, this](const QJsonObject &root, const auto &name, const auto &type_fn, const QString &type_name, const auto &process_fn, const QString &name_prefix = "", bool optional = false)
+    auto process_entry = [this, &step, &total_steps, &errors](const QJsonObject &root, const auto &name, const auto &type_fn, const QString &type_name, const auto &process_fn, const QString &name_prefix = "", bool optional = false)
     {
         const auto full_name = name_prefix + name;
         if(!root.contains(name))
@@ -1334,7 +1334,7 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
     size_t step = 1;
     auto total_steps = static_cast<size_t>(input.size()) + 1u;
 
-    auto process_entry = [&, this](const QJsonObject &root, const auto &name, const auto &deserialize_fn, const auto &process_fn, const QString &name_prefix = "", bool optional = false)
+    auto process_entry = [this, &step, &total_steps, &errors](const QJsonObject &root, const auto &name, const auto &deserialize_fn, const auto &process_fn, const QString &name_prefix = "", bool optional = false)
     {
         const auto full_name = name_prefix + name;
         if(!root.contains(name))

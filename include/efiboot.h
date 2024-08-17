@@ -3515,7 +3515,7 @@ template <>
 inline std::optional<Key_option> deserialize(const void *data, size_t data_size)
 {
     Key_option value{};
-    auto key_option = const_cast<efi_key_option *>(static_cast<const efi_key_option *>(data));
+    auto key_option = static_cast<const efi_key_option *>(data);
 
     value.boot_option = key_option->boot_option;
     value.boot_option_crc = key_option->boot_option_crc;

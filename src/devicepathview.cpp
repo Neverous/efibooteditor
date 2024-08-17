@@ -57,7 +57,7 @@ void DevicePathView::editCurrentRow()
     }
 }
 
-void DevicePathView::removeCurrentRow()
+void DevicePathView::removeCurrentRow() const
 {
     if(readonly)
         return;

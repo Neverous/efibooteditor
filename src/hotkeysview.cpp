@@ -26,12 +26,11 @@ void HotKeysView::insertRow()
 {
     auto index = currentIndex();
     auto row = index.row();
-    model()->insertRow(row + 1);
-    index = model()->index(row + 1, 0);
-    setCurrentIndex(index);
+    if(model()->insertRow(row + 1))
+        setCurrentIndex(model()->index(row + 1, 0));
 }
 
-void HotKeysView::removeCurrentRow()
+void HotKeysView::removeCurrentRow() const
 {
     auto index = currentIndex();
     if(!index.isValid() || !model()->checkIndex(index))

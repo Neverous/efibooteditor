@@ -33,7 +33,7 @@ void BootEntryDelegate::setupWidgetFromItem(Widget &widget, const Item &item, co
         currentIndex = &index;
 }
 
-void BootEntryDelegate::setNextBoot(bool checked)
+void BootEntryDelegate::setNextBoot(bool checked) const
 {
     if(!currentIndex || !currentIndex->isValid())
         return;
