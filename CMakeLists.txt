@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 string(REGEX REPLACE "^v" "" FULL_VERSION "$ENV{BUILD_VERSION}")
 if(NOT ("${FULL_VERSION}" MATCHES "[0-9]+\\.[0-9]+\\.[0-9]+"))
@@ -361,6 +362,18 @@ if(WIN32)
         BUNDLE
             DESTINATION dist
     )
+
+    if("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+        install(FILES ${ZLIB_LIBRARY_DLL_DEBUG}
+            DESTINATION .
+            COMPONENT Runtime
+        )
+    else()
+        install(FILES ${ZLIB_LIBRARY_DLL_RELEASE}
+            DESTINATION .
+            COMPONENT Runtime
+        )
+    endif()
 
     set(CMAKE_INSTALL_SYSTEM_RUNTIME_DESTINATION .)
 else()
