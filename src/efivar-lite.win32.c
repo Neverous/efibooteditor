@@ -139,7 +139,7 @@ void efi_set_get_next_variable_name_progress_cb(void (*progress_cb)(size_t, size
 static ULONG current_offset = 0u;
 static PVOID variables = nullptr;
 static ULONG variables_size = 0u;
-static efi_guid_t current_guid;
+static efi_guid_t current_guid = {0};
 
 int efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name)
 {
@@ -177,7 +177,7 @@ int efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name)
     else
         current_offset += variable->NextEntryOffset;
 
-    if(_sntprintf_s(current_guid.data, 40, 39, _T("{%08lX-%04hX-%04hX-%02hhX%02hhX-%02hhX%02hhX%02hhX%02hhX%02hhX%02hhX}"),
+    if(_sntprintf_s(current_guid.data, 39, 39, _T("{%08lX-%04hX-%04hX-%02hhX%02hhX-%02hhX%02hhX%02hhX%02hhX%02hhX%02hhX}"),
            variable->VendorGUID.Data1, variable->VendorGUID.Data2, variable->VendorGUID.Data3,
            variable->VendorGUID.Data4[0], variable->VendorGUID.Data4[1], variable->VendorGUID.Data4[2], variable->VendorGUID.Data4[3],
            variable->VendorGUID.Data4[4], variable->VendorGUID.Data4[5], variable->VendorGUID.Data4[6], variable->VendorGUID.Data4[7])
@@ -191,7 +191,7 @@ int efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name)
 
 int efi_guid_cmp(const efi_guid_t *a, const efi_guid_t *b)
 {
-    return memcmp(a, b, sizeof(efi_guid_t));
+    return _tcsncmp(a->data, b->data, sizeof(a->data) / sizeof(a->data[0]));
 }
 
 static TCHAR error_buffer[1024];
