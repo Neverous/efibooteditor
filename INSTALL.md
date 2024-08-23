@@ -16,10 +16,11 @@ Necessary tools:
 Required libraries[^1]:
 
 [^1]: Remember to install **development** files as well. For example
-  `qt6-base-dev`, `libefivar-dev`, `libefiboot-dev` on Ubuntu.
+  `qt6-base-dev`, `libefivar-dev`, `libefiboot-dev`, `zlib1g-dev` on Ubuntu.
 
 - [Qt5](//doc.qt.io/qt-5/gettingstarted.html) (>= 5.12)
   or [Qt6](//doc.qt.io/qt-6/get-and-install-qt.html) (>= 6.2)
+* [zlib](//github.com/madler/zlib) (>=1.2)
 - [efivar](//github.com/rhboot/efivar) (>= 37) on Linux
 
 ### Build steps
@@ -70,7 +71,7 @@ Required libraries[^1]:
 There is also:
 
 - a [package](//aur.archlinux.org/packages/efibooteditor) in
-the AUR for Arch Linux
+the AUR for Arch Linux ([-git variant](//aur.archlinux.org/packages/efibooteditor-git))
 - and a [SPEC file](misc/efibooteditor.spec) for RPM based
 distributions (thanks [@Justinzobel](https://github.com/Justinzobel)).
 

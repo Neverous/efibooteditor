@@ -39,6 +39,8 @@ See [INSTALL](INSTALL.md) instructions.
 
 You can help localize this project on [Weblate](https://hosted.weblate.org/engage/efibooteditor/).
 
+[![Translations](https://hosted.weblate.org/widget/efibooteditor/efibooteditor/multi-auto.svg)](//hosted.weblate.org/engage/efibooteditor/)
+
 ## License
 
 This project is licensed under the LGPLv3 License -
