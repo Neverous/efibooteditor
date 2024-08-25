@@ -188,9 +188,6 @@ EFIKeySequence EFIKeySequence::fromString(const QString &str, qsizetype maxKeys)
 
     while(k < keys.size())
     {
-        if(keys[k].size() > 1)
-            return {};
-
         bool success = false;
         auto key = EFIKey::fromString(keys[k], &success);
         if(!success)

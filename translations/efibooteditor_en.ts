@@ -1322,7 +1322,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1396"/>
-        <source>Hot &amp;Keys</source>
+        <source>Hot &amp;keys</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1658,7 +1658,7 @@ Your EFI configuration will be overwritten!</translation>
 <context>
     <name>EFIKeySequenceEdit</name>
     <message>
-        <location filename="../src/efikeysequenceedit.cpp" line="110"/>
+        <location filename="../src/efikeysequenceedit.cpp" line="109"/>
         <source>Press hot key</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5352,7 +5352,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
 <context>
     <name>HotKeyListModel</name>
     <message>
-        <location filename="../src/hotkeylistmodel.cpp" line="87"/>
+        <location filename="../src/hotkeylistmodel.cpp" line="86"/>
         <source>boot option</source>
         <translation type="unfinished"></translation>
     </message>

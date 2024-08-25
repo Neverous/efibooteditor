@@ -1393,7 +1393,7 @@
     <iconset theme="emblem-symbolic-link"/>
    </property>
    <property name="text">
-    <string>Hot &amp;Keys</string>
+    <string>Hot &amp;keys</string>
    </property>
    <property name="statusTip">
     <string>Hot Keys</string>
