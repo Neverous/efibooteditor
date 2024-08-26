@@ -14,7 +14,7 @@ jinja2==3.1.4
     # via codegen (pyproject.toml)
 markupsafe==2.1.5
     # via jinja2
-mypy==1.11.1
+mypy==1.11.2
     # via codegen (pyproject.toml)
 mypy-extensions==1.0.0
     # via mypy
