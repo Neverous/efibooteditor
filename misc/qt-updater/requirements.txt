@@ -12,7 +12,7 @@ charset-normalizer==3.3.2
     # via requests
 click==8.1.7
     # via pip-tools
-idna==3.7
+idna==3.8
     # via requests
 mypy==1.11.1
     # via qt-updater (pyproject.toml)
