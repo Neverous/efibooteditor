@@ -426,7 +426,7 @@ void EFIBootData::save()
         unsigned long long idx = 0;
         for(const auto &entry: hot_keys_list_model.getEntries())
         {
-            const auto qname = toHex(idx, 4, "Key");
+            const auto qname = toHex(idx++, 4, "Key");
             Q_EMIT progress(step++, total_steps, tr("Saving EFI Boot Manager entries (%1)…").arg(qname));
             const tstring tname = QStringToStdTString(qname);
             if(auto _entry = old_entries.find(tname); _entry != old_entries.end())

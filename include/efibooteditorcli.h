@@ -21,6 +21,7 @@ class EFIBootEditorCLI: public QObject
     QCommandLineParser parser{};
     EFIBootData data{this};
     bool efi_supported;
+    bool failed{false};
 
 public:
     explicit EFIBootEditorCLI(const std::optional<tstring> &efi_error_message, QObject *parent = nullptr);
@@ -31,7 +32,7 @@ public:
     bool process(const QCoreApplication &app);
 
 public Q_SLOTS:
-    void showError(const QString &message, const QString &details) const;
+    void showError(const QString &message, const QString &details);
     void showProgress(size_t step, size_t total, const QString &details) const;
     void hideProgress() const;
 };

@@ -1611,46 +1611,52 @@
         <translation>부팅 구성 가져오는 중…</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="69"/>
-        <location filename="../src/efibooteditorcli.cpp" line="70"/>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
+        <location filename="../src/efibooteditorcli.cpp" line="72"/>
+        <location filename="../src/efibooteditorcli.cpp" line="73"/>
+        <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Loaded %0 %1 entries</source>
         <translation>%0 %1 항목 로드됨</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="69"/>
+        <location filename="../src/efibooteditorcli.cpp" line="71"/>
         <source>Boot</source>
         <translation>부팅</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="70"/>
+        <location filename="../src/efibooteditorcli.cpp" line="72"/>
         <source>Driver</source>
         <translation>드라이버</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="71"/>
+        <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <source>System Preparation</source>
         <translation>시스템 준비</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
+        <source>Hot Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/efibooteditorcli.cpp" line="78"/>
         <source>Are you sure you want to save?
 Your EFI configuration will be overwritten!</source>
         <translation>저장하시겠습니까?
 EFI 구성을 덮어씁니다!</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="81"/>
+        <location filename="../src/efibooteditorcli.cpp" line="86"/>
         <source>Saving EFI Boot Manager entries…</source>
         <translation>EFI 부팅 관리자 항목 저장 중…</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="91"/>
+        <location filename="../src/efibooteditorcli.cpp" line="98"/>
         <source>ERROR: %0! %1</source>
         <translation>오류: %0! %1</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="106"/>
+        <location filename="../src/efibooteditorcli.cpp" line="114"/>
         <source>Finished</source>
         <translation>마침</translation>
     </message>

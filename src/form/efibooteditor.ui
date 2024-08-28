@@ -61,7 +61,7 @@
           </size>
          </property>
          <property name="tabPosition">
-          <enum>QTabWidget::South</enum>
+          <enum>QTabWidget::TabPosition::South</enum>
          </property>
          <property name="documentMode">
           <bool>true</bool>
@@ -104,22 +104,22 @@
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of Boot entries.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="editTriggers">
-              <set>QAbstractItemView::NoEditTriggers</set>
+              <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
              </property>
              <property name="alternatingRowColors">
               <bool>true</bool>
              </property>
              <property name="selectionBehavior">
-              <enum>QAbstractItemView::SelectRows</enum>
+              <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
              </property>
              <property name="horizontalScrollMode">
-              <enum>QAbstractItemView::ScrollPerPixel</enum>
+              <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
              </property>
              <property name="movement">
-              <enum>QListView::Snap</enum>
+              <enum>QListView::Movement::Snap</enum>
              </property>
              <property name="resizeMode">
-              <enum>QListView::Adjust</enum>
+              <enum>QListView::ResizeMode::Adjust</enum>
              </property>
              <property name="wordWrap">
               <bool>true</bool>
@@ -166,22 +166,22 @@
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of Driver entries.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="editTriggers">
-              <set>QAbstractItemView::NoEditTriggers</set>
+              <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
              </property>
              <property name="alternatingRowColors">
               <bool>true</bool>
              </property>
              <property name="selectionBehavior">
-              <enum>QAbstractItemView::SelectRows</enum>
+              <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
              </property>
              <property name="horizontalScrollMode">
-              <enum>QAbstractItemView::ScrollPerPixel</enum>
+              <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
              </property>
              <property name="movement">
-              <enum>QListView::Snap</enum>
+              <enum>QListView::Movement::Snap</enum>
              </property>
              <property name="resizeMode">
-              <enum>QListView::Adjust</enum>
+              <enum>QListView::ResizeMode::Adjust</enum>
              </property>
              <property name="wordWrap">
               <bool>true</bool>
@@ -228,22 +228,22 @@
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of SysPrep entries.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="editTriggers">
-              <set>QAbstractItemView::NoEditTriggers</set>
+              <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
              </property>
              <property name="alternatingRowColors">
               <bool>true</bool>
              </property>
              <property name="selectionBehavior">
-              <enum>QAbstractItemView::SelectRows</enum>
+              <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
              </property>
              <property name="horizontalScrollMode">
-              <enum>QAbstractItemView::ScrollPerPixel</enum>
+              <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
              </property>
              <property name="movement">
-              <enum>QListView::Snap</enum>
+              <enum>QListView::Movement::Snap</enum>
              </property>
              <property name="resizeMode">
-              <enum>QListView::Adjust</enum>
+              <enum>QListView::ResizeMode::Adjust</enum>
              </property>
              <property name="wordWrap">
               <bool>true</bool>
@@ -290,22 +290,22 @@
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of PlatformRecovery entries (READONLY).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="editTriggers">
-              <set>QAbstractItemView::NoEditTriggers</set>
+              <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
              </property>
              <property name="alternatingRowColors">
               <bool>true</bool>
              </property>
              <property name="selectionBehavior">
-              <enum>QAbstractItemView::SelectRows</enum>
+              <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
              </property>
              <property name="horizontalScrollMode">
-              <enum>QAbstractItemView::ScrollPerPixel</enum>
+              <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
              </property>
              <property name="movement">
-              <enum>QListView::Snap</enum>
+              <enum>QListView::Movement::Snap</enum>
              </property>
              <property name="resizeMode">
-              <enum>QListView::Adjust</enum>
+              <enum>QListView::ResizeMode::Adjust</enum>
              </property>
              <property name="wordWrap">
               <bool>true</bool>
@@ -523,7 +523,7 @@
           <item>
            <spacer name="entries_actions_spacer">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -567,7 +567,7 @@
           <item>
            <widget class="Line" name="settings_line">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
            </widget>
           </item>
@@ -583,7 +583,7 @@
              </sizepolicy>
             </property>
             <property name="tabPosition">
-             <enum>QTabWidget::South</enum>
+             <enum>QTabWidget::TabPosition::South</enum>
             </property>
             <property name="documentMode">
              <bool>true</bool>
@@ -609,10 +609,10 @@
              </attribute>
              <layout class="QFormLayout" name="global_layout">
               <property name="fieldGrowthPolicy">
-               <enum>QFormLayout::ExpandingFieldsGrow</enum>
+               <enum>QFormLayout::FieldGrowthPolicy::ExpandingFieldsGrow</enum>
               </property>
               <property name="labelAlignment">
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
               </property>
               <property name="leftMargin">
                <number>0</number>
@@ -690,10 +690,10 @@
              </attribute>
              <layout class="QFormLayout" name="firmware_layout">
               <property name="fieldGrowthPolicy">
-               <enum>QFormLayout::ExpandingFieldsGrow</enum>
+               <enum>QFormLayout::FieldGrowthPolicy::ExpandingFieldsGrow</enum>
               </property>
               <property name="labelAlignment">
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
               </property>
               <property name="leftMargin">
                <number>0</number>
@@ -810,7 +810,7 @@
                 <item row="2" column="2">
                  <spacer name="firmware_features_hspacer">
                   <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
+                   <enum>Qt::Orientation::Horizontal</enum>
                   </property>
                   <property name="sizeHint" stdset="0">
                    <size>
@@ -907,7 +907,7 @@
                 <item row="0" column="2">
                  <spacer name="firmware_actions_hspacer">
                   <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
+                   <enum>Qt::Orientation::Horizontal</enum>
                   </property>
                   <property name="sizeHint" stdset="0">
                    <size>
@@ -962,7 +962,7 @@
               <item row="1" column="3">
                <spacer name="secure_boot_hspacer">
                 <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
+                 <enum>Qt::Orientation::Horizontal</enum>
                 </property>
                 <property name="sizeHint" stdset="0">
                  <size>
@@ -1090,10 +1090,10 @@
              </attribute>
              <layout class="QFormLayout" name="apple_layout">
               <property name="fieldGrowthPolicy">
-               <enum>QFormLayout::ExpandingFieldsGrow</enum>
+               <enum>QFormLayout::FieldGrowthPolicy::ExpandingFieldsGrow</enum>
               </property>
               <property name="labelAlignment">
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
               </property>
               <property name="leftMargin">
                <number>0</number>
@@ -1152,10 +1152,10 @@
        <bool>true</bool>
       </property>
       <property name="focusPolicy">
-       <enum>Qt::NoFocus</enum>
+       <enum>Qt::FocusPolicy::NoFocus</enum>
       </property>
       <property name="contextMenuPolicy">
-       <enum>Qt::NoContextMenu</enum>
+       <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
       </property>
       <property name="toolTip">
        <string>Undo stack</string>
@@ -1167,7 +1167,7 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo stack&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="editTriggers">
-       <set>QAbstractItemView::NoEditTriggers</set>
+       <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
       </property>
       <property name="showDropIndicator" stdset="0">
        <bool>false</bool>

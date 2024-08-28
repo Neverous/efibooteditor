@@ -1611,46 +1611,52 @@
         <translation>正在导入引导配置…</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="69"/>
-        <location filename="../src/efibooteditorcli.cpp" line="70"/>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
+        <location filename="../src/efibooteditorcli.cpp" line="72"/>
+        <location filename="../src/efibooteditorcli.cpp" line="73"/>
+        <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Loaded %0 %1 entries</source>
         <translation>已加载 %0 %1 个条目</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="69"/>
+        <location filename="../src/efibooteditorcli.cpp" line="71"/>
         <source>Boot</source>
         <translation>引导</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="70"/>
+        <location filename="../src/efibooteditorcli.cpp" line="72"/>
         <source>Driver</source>
         <translation>设备</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="71"/>
+        <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <source>System Preparation</source>
         <translation>系统准备</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
+        <source>Hot Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/efibooteditorcli.cpp" line="78"/>
         <source>Are you sure you want to save?
 Your EFI configuration will be overwritten!</source>
         <translation>您确定要保存吗？
 您的 EFI 配置将被覆盖！</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="81"/>
+        <location filename="../src/efibooteditorcli.cpp" line="86"/>
         <source>Saving EFI Boot Manager entries…</source>
         <translation>正在保存 EFI Boot Manager 条目…</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="91"/>
+        <location filename="../src/efibooteditorcli.cpp" line="98"/>
         <source>ERROR: %0! %1</source>
         <translation>错误: %0! %1</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="106"/>
+        <location filename="../src/efibooteditorcli.cpp" line="114"/>
         <source>Finished</source>
         <translation>已完成</translation>
     </message>

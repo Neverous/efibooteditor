@@ -66,29 +66,37 @@ bool EFIBootEditorCLI::process(const QCoreApplication &app)
         processed = true;
         ts << tr("Importing boot configuration…") << Qt::endl;
         data.import_(parser.value("import"));
-        ts << tr("Loaded %0 %1 entries").arg(data.boot_entries_list_model.rowCount()).arg(tr("Boot")) << Qt::endl;
-        ts << tr("Loaded %0 %1 entries").arg(data.driver_entries_list_model.rowCount()).arg(tr("Driver")) << Qt::endl;
-        ts << tr("Loaded %0 %1 entries").arg(data.sysprep_entries_list_model.rowCount()).arg(tr("System Preparation")) << Qt::endl;
-        if(!parser.isSet("force"))
+        if(!failed)
         {
-            ts << tr("Are you sure you want to save?\nYour EFI configuration will be overwritten!") << " [y/N]" << Qt::endl;
-            std::string action;
-            std::cin >> action;
-            if(action != "y")
-                return true;
-        }
+            ts << tr("Loaded %0 %1 entries").arg(data.boot_entries_list_model.rowCount()).arg(tr("Boot")) << Qt::endl;
+            ts << tr("Loaded %0 %1 entries").arg(data.driver_entries_list_model.rowCount()).arg(tr("Driver")) << Qt::endl;
+            ts << tr("Loaded %0 %1 entries").arg(data.sysprep_entries_list_model.rowCount()).arg(tr("System Preparation")) << Qt::endl;
+            ts << tr("Loaded %0 %1 entries").arg(data.hot_keys_list_model.rowCount()).arg(tr("Hot Key")) << Qt::endl;
+            bool save = true;
+            if(!parser.isSet("force"))
+            {
+                ts << tr("Are you sure you want to save?\nYour EFI configuration will be overwritten!") << " [y/N]" << Qt::endl;
+                std::string action;
+                std::cin >> action;
+                save = action == "y";
+            }
 
-        ts << tr("Saving EFI Boot Manager entries…") << Qt::endl;
-        data.save();
+            if(save)
+            {
+                ts << tr("Saving EFI Boot Manager entries…") << Qt::endl;
+                data.save();
+            }
+        }
     }
 
     return processed;
 }
 
-void EFIBootEditorCLI::showError(const QString &message, const QString &details) const
+void EFIBootEditorCLI::showError(const QString &message, const QString &details)
 {
     QTextStream ts{stderr};
     ts << tr("ERROR: %0! %1").arg(message, details) << Qt::endl;
+    failed = true;
 }
 
 void EFIBootEditorCLI::showProgress(size_t step, size_t total, const QString &details) const

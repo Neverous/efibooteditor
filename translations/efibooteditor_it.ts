@@ -1611,46 +1611,52 @@
         <translation>Importazione configurazione boot…</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="69"/>
-        <location filename="../src/efibooteditorcli.cpp" line="70"/>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
+        <location filename="../src/efibooteditorcli.cpp" line="72"/>
+        <location filename="../src/efibooteditorcli.cpp" line="73"/>
+        <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Loaded %0 %1 entries</source>
         <translation>Caricate %0 %1 voci</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="69"/>
+        <location filename="../src/efibooteditorcli.cpp" line="71"/>
         <source>Boot</source>
         <translation>Boot</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="70"/>
+        <location filename="../src/efibooteditorcli.cpp" line="72"/>
         <source>Driver</source>
         <translation>Driver</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="71"/>
+        <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <source>System Preparation</source>
         <translation>Preparazione sistema</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
+        <source>Hot Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/efibooteditorcli.cpp" line="78"/>
         <source>Are you sure you want to save?
 Your EFI configuration will be overwritten!</source>
         <translation>Sei sicuro di voler salvare?
 La configurazione EFI attuale verrà sovrascritta!</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="81"/>
+        <location filename="../src/efibooteditorcli.cpp" line="86"/>
         <source>Saving EFI Boot Manager entries…</source>
         <translation>Salvataggio voci gestione boot EFI…</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="91"/>
+        <location filename="../src/efibooteditorcli.cpp" line="98"/>
         <source>ERROR: %0! %1</source>
         <translation>ERRORE: %0! %1</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditorcli.cpp" line="106"/>
+        <location filename="../src/efibooteditorcli.cpp" line="114"/>
         <source>Finished</source>
         <translation>Completato</translation>
     </message>
