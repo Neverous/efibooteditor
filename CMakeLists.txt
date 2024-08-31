@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 string(REGEX REPLACE "^v" "" FULL_VERSION "$ENV{BUILD_VERSION}")
 if(NOT ("${FULL_VERSION}" MATCHES "[0-9]+\\.[0-9]+\\.[0-9]+"))
@@ -320,6 +320,10 @@ FILE(GLOB TRANSLATIONS
     ${CMAKE_SOURCE_DIR}/translations/${PROJECT_NAME}_*.ts
 )
 
+set_source_files_properties(${TRANSLATIONS}
+    PROPERTIES OUTPUT_LOCATION "${CMAKE_BINARY_DIR}/translations"
+)
+
 qt_add_translations(${PROJECT_NAME}
     TS_FILES ${TRANSLATIONS}
     INCLUDE_DIRECTORIES "include"
@@ -526,7 +530,7 @@ elseif(APPLE)
 else()
     set(CPACK_PACKAGE_TARGET_OS_NAME "linux")
     set(CPACK_GENERATOR DEB TZST)
-    set(CPACK_PROJECT_CONFIG_FILE "${CMAKE_CURRENT_SOURCE_DIR}/cmake/CPackLinux.cmake")
+    set(CPACK_PROJECT_CONFIG_FILE "${CMAKE_SOURCE_DIR}/cmake/CPackLinux.cmake")
 
     set(CPACK_DEBIAN_PACKAGE_NAME "${PROJECT_NAME_CAPITALIZED}")
     #set(CPACK_DEBIAN_COMPRESSION_TYPE "zstd") Not supported on current Debian Bullseye
