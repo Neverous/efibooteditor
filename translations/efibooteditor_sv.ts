@@ -5514,5 +5514,20 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <source>Move %1 entry &quot;%2&quot; file path from position %3 to %4</source>
         <translation type="unfinished">Move %1 entry &quot;%2&quot; file path from position %3 to %4</translation>
     </message>
+    <message>
+        <location filename="../src/driveinfo.win32.cpp" line="55"/>
+        <source>CD-ROM %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/driveinfo.win32.cpp" line="59"/>
+        <source>Disk %1 partition %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/driveinfo.win32.cpp" line="63"/>
+        <source>Device %1 number %2 partition %3</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

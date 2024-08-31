@@ -5514,5 +5514,20 @@ Se SignatureType è 2, questo campo contiene una firma a 16 byte.&lt;/p&gt;&lt;/
         <source>Move %1 entry &quot;%2&quot; file path from position %3 to %4</source>
         <translation>Sposta percorso del file voce %1 &apos;%2&apos; dalla posizione &apos;%3&apos; alla &apos;%4&apos;</translation>
     </message>
+    <message>
+        <location filename="../src/driveinfo.win32.cpp" line="55"/>
+        <source>CD-ROM %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/driveinfo.win32.cpp" line="59"/>
+        <source>Disk %1 partition %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/driveinfo.win32.cpp" line="63"/>
+        <source>Device %1 number %2 partition %3</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
