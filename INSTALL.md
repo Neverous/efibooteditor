@@ -20,7 +20,7 @@ Required libraries[^1]:
 
 - [Qt5](//doc.qt.io/qt-5/gettingstarted.html) (>= 5.12)
   or [Qt6](//doc.qt.io/qt-6/get-and-install-qt.html) (>= 6.2)
-* [zlib](//github.com/madler/zlib) (>=1.2)
+- [zlib](//github.com/madler/zlib) (>=1.2)
 - [efivar](//github.com/rhboot/efivar) (>= 37) on Linux
 
 ### Build steps
