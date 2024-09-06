@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sl" sourcelanguage="en_US">
+<TS version="2.1" language="ar" sourcelanguage="en_US">
 <context>
     <name>BootEntryForm</name>
     <message>
@@ -10,14 +10,14 @@
         <location filename="../src/form/bootentryform.ui" line="182"/>
         <location filename="../src/form/bootentryform.ui" line="185"/>
         <source>Description</source>
-        <translation>Opis</translation>
+        <translation type="unfinished">Description</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="198"/>
         <location filename="../src/form/bootentryform.ui" line="201"/>
         <location filename="../src/form/bootentryform.ui" line="204"/>
         <source>Path</source>
-        <translation>Pot</translation>
+        <translation type="unfinished">Path</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="415"/>
@@ -25,23 +25,23 @@
         <location filename="../src/form/bootentryform.ui" line="478"/>
         <location filename="../src/form/bootentryform.ui" line="481"/>
         <source>Optional data</source>
-        <translation>Neobvezni podatki</translation>
+        <translation type="unfinished">Optional data</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="421"/>
         <source>Optional</source>
-        <translation>Neobvezno</translation>
+        <translation type="unfinished">Optional</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="434"/>
         <location filename="../src/form/bootentryform.ui" line="437"/>
         <source>Optional data format</source>
-        <translation>Format neobveznih podatkov</translation>
+        <translation type="unfinished">Optional data format</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="6"/>
         <source>Boot entry form</source>
-        <translation>Obrazec zagonskega vnosa</translation>
+        <translation type="unfinished">Boot entry form</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="24"/>
@@ -74,156 +74,156 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="188"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opis vnosa.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="222"/>
         <location filename="../src/form/bootentryform.ui" line="225"/>
         <source>Device path</source>
-        <translation>Pot naprave</translation>
+        <translation type="unfinished">Device path</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="228"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pot naprave.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="280"/>
         <location filename="../src/form/bootentryform.ui" line="283"/>
         <source>Move file path up</source>
-        <translation>Premakni pot datoteke navzgor</translation>
+        <translation type="unfinished">Move file path up</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="286"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Premakni pot datoteke navzgor.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="305"/>
         <location filename="../src/form/bootentryform.ui" line="308"/>
         <source>Move file path down</source>
-        <translation>Premakni pot datoteke navzdol</translation>
+        <translation type="unfinished">Move file path down</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="311"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Premakni pot datoteke navzdol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="330"/>
         <location filename="../src/form/bootentryform.ui" line="333"/>
         <source>Remove file path</source>
-        <translation>Odstrani pot datoteke</translation>
+        <translation type="unfinished">Remove file path</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="336"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Odstrani pot datoteke.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="355"/>
         <location filename="../src/form/bootentryform.ui" line="358"/>
         <source>Edit file path</source>
-        <translation>Uredi pot datoteke</translation>
+        <translation type="unfinished">Edit file path</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="361"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Edit file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Uredi pot datoteke.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Edit file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="380"/>
         <location filename="../src/form/bootentryform.ui" line="383"/>
         <source>Add file path</source>
-        <translation>Dodaj pot datoteke</translation>
+        <translation type="unfinished">Add file path</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="386"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dodaj pot datoteke.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="440"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Format neobveznih podatkov.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="444"/>
         <source>BASE64</source>
-        <translation>BASE64</translation>
+        <translation type="unfinished">BASE64</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="449"/>
         <source>UTF-16</source>
-        <translation>UTF-16</translation>
+        <translation type="unfinished">UTF-16</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="454"/>
         <source>UTF-8</source>
-        <translation>UTF-8</translation>
+        <translation type="unfinished">UTF-8</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="459"/>
         <source>HEX</source>
-        <translation>16-tiško</translation>
+        <translation type="unfinished">HEX</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="484"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vnos neobveznih podatkov.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="497"/>
         <location filename="../src/form/bootentryform.ui" line="500"/>
         <location filename="../src/form/bootentryform.ui" line="503"/>
         <source>Attributes</source>
-        <translation>Atributi</translation>
+        <translation type="unfinished">Attributes</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="623"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kategorija vnosa.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="122"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indeks vnosa.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="540"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Is entry considered for automatic boot?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ali se vnos upošteva za samodejni zagon?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Is entry considered for automatic boot?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="569"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hidden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Skrit.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hidden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="585"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Force reconnect.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Prisilno znova poveži.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Force reconnect.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="534"/>
         <location filename="../src/form/bootentryform.ui" line="537"/>
         <location filename="../src/form/bootentryform.ui" line="543"/>
         <source>Active</source>
-        <translation>Aktiven</translation>
+        <translation type="unfinished">Active</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="579"/>
         <location filename="../src/form/bootentryform.ui" line="582"/>
         <location filename="../src/form/bootentryform.ui" line="588"/>
         <source>Force reconnect</source>
-        <translation>Prisilno znova poveži</translation>
+        <translation type="unfinished">Force reconnect</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="563"/>
         <location filename="../src/form/bootentryform.ui" line="566"/>
         <location filename="../src/form/bootentryform.ui" line="572"/>
         <source>Hidden</source>
-        <translation>Skrit</translation>
+        <translation type="unfinished">Hidden</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="598"/>
@@ -232,17 +232,17 @@
         <location filename="../src/form/bootentryform.ui" line="617"/>
         <location filename="../src/form/bootentryform.ui" line="620"/>
         <source>Category</source>
-        <translation>Kategorija</translation>
+        <translation type="unfinished">Category</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="627"/>
         <source>Boot</source>
-        <translation>Zagon</translation>
+        <translation type="unfinished">Boot</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="632"/>
         <source>App</source>
-        <translation>Aplikacija</translation>
+        <translation type="unfinished">App</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="68"/>
@@ -251,12 +251,12 @@
         <location filename="../src/form/bootentryform.ui" line="116"/>
         <location filename="../src/form/bootentryform.ui" line="119"/>
         <source>Index</source>
-        <translation>Indeks</translation>
+        <translation type="unfinished">Index</translation>
     </message>
     <message>
         <location filename="../src/bootentryform.cpp" line="117"/>
         <source>Couldn&apos;t change optional data format!</source>
-        <translation>Formata neobveznih podatkov ni bilo mogoče spremeniti!</translation>
+        <translation type="unfinished">Couldn&apos;t change optional data format!</translation>
     </message>
 </context>
 <context>
@@ -264,7 +264,7 @@
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="88"/>
         <source>Set Next boot to &quot;%1&quot;</source>
-        <translation>Nastavi naslednji zagon na &quot;%1&quot;</translation>
+        <translation type="unfinished">Set Next boot to &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="184"/>
@@ -298,84 +298,84 @@
         <location filename="../src/form/bootentrywidget.ui" line="12"/>
         <location filename="../src/form/bootentrywidget.ui" line="221"/>
         <source>Boot entry</source>
-        <translation>Zagonski vnos</translation>
+        <translation type="unfinished">Boot entry</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="36"/>
         <source>Next boot</source>
-        <translation>Naslednji zagon</translation>
+        <translation type="unfinished">Next boot</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="39"/>
         <source>Run at next boot</source>
-        <translation>Zaženi pri naslednjem zagonu</translation>
+        <translation type="unfinished">Run at next boot</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="42"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When chosen, entry will run at next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ko je izbran, se bo vnos zagnal ob naslednjem zagonu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When chosen, entry will run at next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="140"/>
         <location filename="../src/form/bootentrywidget.ui" line="143"/>
         <source>Current boot</source>
-        <translation>Trenutni zagon</translation>
+        <translation type="unfinished">Current boot</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="146"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This entry is currently booted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ta vnos je trenutno zagnan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This entry is currently booted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="181"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indeks zagonskega vnosa.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="218"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry description, human readable name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opis zagonskega vnosa, človeku berljivo ime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry description, human readable name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="67"/>
         <location filename="../src/form/bootentrywidget.ui" line="70"/>
         <location filename="../src/form/bootentrywidget.ui" line="76"/>
         <source>Device path</source>
-        <translation>Pot naprave</translation>
+        <translation type="unfinished">Device path</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="73"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Pot zagonske naprave. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="113"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data, arguments passed to boot executable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Neobvezni podatki, posredovani argumenti za zagon izvedljive datoteke.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data, arguments passed to boot executable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="175"/>
         <location filename="../src/form/bootentrywidget.ui" line="178"/>
         <source>Boot entry index</source>
-        <translation>Indeks zagonskega vnosa</translation>
+        <translation type="unfinished">Boot entry index</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="184"/>
         <source>Index</source>
-        <translation>Indeks</translation>
+        <translation type="unfinished">Index</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="212"/>
         <location filename="../src/form/bootentrywidget.ui" line="215"/>
         <source>Boot entry description</source>
-        <translation>Opis zagonskega vnosa</translation>
+        <translation type="unfinished">Boot entry description</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="107"/>
         <location filename="../src/form/bootentrywidget.ui" line="110"/>
         <location filename="../src/form/bootentrywidget.ui" line="116"/>
         <source>Optional data</source>
-        <translation>Neobvezni podatki</translation>
+        <translation type="unfinished">Optional data</translation>
     </message>
 </context>
 <context>
@@ -387,26 +387,26 @@
         <location filename="../src/efibootdata.cpp" line="1343"/>
         <location filename="../src/efibootdata.cpp" line="1454"/>
         <source>%1: not found</source>
-        <translation>%1: ni bilo mogoče najti</translation>
+        <translation type="unfinished">%1: not found</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="120"/>
         <location filename="../src/efibootdata.cpp" line="804"/>
         <location filename="../src/efibootdata.cpp" line="1369"/>
         <source>%1: failed deserialization</source>
-        <translation>%1: neuspešna deserializacija</translation>
+        <translation type="unfinished">%1: failed deserialization</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="299"/>
         <source>Error loading entries</source>
-        <translation>Napaka pri nalaganju vnosov</translation>
+        <translation type="unfinished">Error loading entries</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="299"/>
         <source>Failed to load some EFI Boot Manager entries:
 
   - %1</source>
-        <translation>Nekaterih vnosov EFI Boot Managerja ni bilo mogoče naložiti:
+        <translation type="unfinished">Failed to load some EFI Boot Manager entries:
 
   - %1</translation>
     </message>
@@ -414,13 +414,13 @@
         <location filename="../src/efibootdata.cpp" line="367"/>
         <location filename="../src/efibootdata.cpp" line="673"/>
         <source>Error saving entries</source>
-        <translation>Napaka pri shranjevanju vnosov</translation>
+        <translation type="unfinished">Error saving entries</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="367"/>
         <location filename="../src/efibootdata.cpp" line="673"/>
         <source>Entry %1(%2): duplicated index!</source>
-        <translation>Napaka %1(%2): podvojen indeks!</translation>
+        <translation type="unfinished">Entry %1(%2): duplicated index!</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="387"/>
@@ -431,14 +431,14 @@
         <location filename="../src/efibootdata.cpp" line="477"/>
         <location filename="../src/efibootdata.cpp" line="499"/>
         <source>Error saving %1</source>
-        <translation>Napaka pri shranjevanju %1</translation>
+        <translation type="unfinished">Error saving %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="405"/>
         <location filename="../src/efibootdata.cpp" line="453"/>
         <location filename="../src/efibootdata.cpp" line="487"/>
         <source>Error removing %1</source>
-        <translation>Napaka pri odstranjevanju %1</translation>
+        <translation type="unfinished">Error removing %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="516"/>
@@ -447,13 +447,13 @@
         <location filename="../src/efibootdata.cpp" line="1322"/>
         <location filename="../src/efibootdata.cpp" line="1565"/>
         <source>Error importing boot configuration</source>
-        <translation>Napaka pri uvozu zagonskih nastavitev</translation>
+        <translation type="unfinished">Error importing boot configuration</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="516"/>
         <location filename="../src/efibootdata.cpp" line="757"/>
         <source>Couldn&apos;t open selected file (%1).</source>
-        <translation>Izbrane datoteke (%1) ni bilo mogoče odpreti.</translation>
+        <translation type="unfinished">Couldn&apos;t open selected file (%1).</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="525"/>
@@ -463,82 +463,82 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="539"/>
         <source>Invalid _Type: %1</source>
-        <translation>Neveljavna_vrsta: %1</translation>
+        <translation type="unfinished">Invalid _Type: %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="552"/>
         <location filename="../src/efibootdata.cpp" line="742"/>
         <source>Error exporting boot configuration</source>
-        <translation>Napaka pri izvozu zagonskih nastavitev</translation>
+        <translation type="unfinished">Error exporting boot configuration</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="552"/>
         <source>Couldn&apos;t open selected file (%1): %2.</source>
-        <translation>Ni bilo mogoče odpreti izbrane datoteke (%1): %2.</translation>
+        <translation type="unfinished">Couldn&apos;t open selected file (%1): %2.</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="742"/>
         <location filename="../src/efibootdata.cpp" line="872"/>
         <source>Couldn&apos;t write into file (%1): %2.</source>
-        <translation>Ni bilo mogoče pisati v datoteko (%1): %2.</translation>
+        <translation type="unfinished">Couldn&apos;t write into file (%1): %2.</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="757"/>
         <location filename="../src/efibootdata.cpp" line="872"/>
         <location filename="../src/efibootdata.cpp" line="878"/>
         <source>Error dumping raw EFI data</source>
-        <translation>Napaka pri izpisu surovih podatkov EFI</translation>
+        <translation type="unfinished">Error dumping raw EFI data</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="878"/>
         <source>Failed to dump some EFI Boot Manager entries:
 
   - %1</source>
-        <translation>Napaka pri izpisu nekaterih vnosov EFI Boot Managerja:
+        <translation type="unfinished">Failed to dump some EFI Boot Manager entries:
 
   - %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="888"/>
         <source>Timeout</source>
-        <translation>Odmor</translation>
+        <translation type="unfinished">Timeout</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="904"/>
         <source>Apple boot-args</source>
-        <translation>Apple zagonski argumenti</translation>
+        <translation type="unfinished">Apple boot-args</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="920"/>
         <source>Firmware actions</source>
-        <translation>Akcije vdelane programske opreme</translation>
+        <translation type="unfinished">Firmware actions</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="73"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation>Nalaganje vnosov EFI Boot Managerja…</translation>
+        <translation type="unfinished">Loading EFI Boot Manager entries…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="89"/>
         <location filename="../src/efibootdata.cpp" line="770"/>
         <source>Searching EFI Boot Manager entries…</source>
-        <translation>Iskanje vnosov EFI Boot Managerja…</translation>
+        <translation type="unfinished">Searching EFI Boot Manager entries…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="108"/>
         <location filename="../src/efibootdata.cpp" line="290"/>
         <source>Processing EFI Boot Manager entries (%1)…</source>
-        <translation>Obdelava vnosov EFI Boot Managerja (%1)…</translation>
+        <translation type="unfinished">Processing EFI Boot Manager entries (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="306"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation>Shranjevanje vnosov EFI Boot Managerja…</translation>
+        <translation type="unfinished">Saving EFI Boot Manager entries…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="331"/>
         <source>Searching old EFI Boot Manager entries…</source>
-        <translation>Iskanje starih vnosov EFI Boot Managerja…</translation>
+        <translation type="unfinished">Searching old EFI Boot Manager entries…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="372"/>
@@ -549,18 +549,18 @@
         <location filename="../src/efibootdata.cpp" line="474"/>
         <location filename="../src/efibootdata.cpp" line="496"/>
         <source>Saving EFI Boot Manager entries (%1)…</source>
-        <translation>Shranjevanje vnosov EFI Boot Managerja (%1)…</translation>
+        <translation type="unfinished">Saving EFI Boot Manager entries (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="450"/>
         <source>Removing old EFI Boot Manager entries (%1)…</source>
-        <translation>Odstranjevanje starih vnosov EFI Boot Managerja (%1)…</translation>
+        <translation type="unfinished">Removing old EFI Boot Manager entries (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="402"/>
         <location filename="../src/efibootdata.cpp" line="484"/>
         <source>Removing EFI Boot Manager entries (%1)…</source>
-        <translation>Odstranjevanje vnosov EFI Boot Managerja (%1)…</translation>
+        <translation type="unfinished">Removing EFI Boot Manager entries (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="94"/>
@@ -578,20 +578,20 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="512"/>
         <source>Importing boot configuration…</source>
-        <translation>Uvažanje nastavitev zagona…</translation>
+        <translation type="unfinished">Importing boot configuration…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="548"/>
         <location filename="../src/efibootdata.cpp" line="753"/>
         <source>Exporting boot configuration…</source>
-        <translation>Izvažanje nastavitev zagona…</translation>
+        <translation type="unfinished">Exporting boot configuration…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="570"/>
         <location filename="../src/efibootdata.cpp" line="792"/>
         <location filename="../src/efibootdata.cpp" line="858"/>
         <source>Exporting EFI Boot Manager entries (%1)…</source>
-        <translation>Izvažanje vnosov EFI Boot Managerja (%1)…</translation>
+        <translation type="unfinished">Exporting EFI Boot Manager entries (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="996"/>
@@ -604,7 +604,7 @@
         <location filename="../src/efibootdata.cpp" line="1459"/>
         <location filename="../src/efibootdata.cpp" line="1513"/>
         <source>Importing EFI Boot Manager entries (%1)…</source>
-        <translation>Uvažanje vnosov EFI Boot Managerja (%1)…</translation>
+        <translation type="unfinished">Importing EFI Boot Manager entries (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1018"/>
@@ -622,7 +622,7 @@
         <location filename="../src/efibootdata.cpp" line="1530"/>
         <location filename="../src/efibootdata.cpp" line="1552"/>
         <source>%1: %2 expected</source>
-        <translation>%1: %2 je pričakovano</translation>
+        <translation type="unfinished">%1: %2 expected</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1026"/>
@@ -630,7 +630,7 @@
         <location filename="../src/efibootdata.cpp" line="1036"/>
         <location filename="../src/efibootdata.cpp" line="1206"/>
         <source>number</source>
-        <translation>število</translation>
+        <translation type="unfinished">number</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1041"/>
@@ -1597,18 +1597,18 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="45"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation type="unfinished">Nalaganje vnosov EFI Boot Managerja…</translation>
+        <translation type="unfinished">Loading EFI Boot Manager entries…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="47"/>
         <location filename="../src/efibooteditorcli.cpp" line="57"/>
         <source>Exporting boot configuration…</source>
-        <translation type="unfinished">Izvažanje nastavitev zagona…</translation>
+        <translation type="unfinished">Exporting boot configuration…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="67"/>
         <source>Importing boot configuration…</source>
-        <translation type="unfinished">Uvažanje nastavitev zagona…</translation>
+        <translation type="unfinished">Importing boot configuration…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
@@ -1648,7 +1648,7 @@ Your EFI configuration will be overwritten!</translation>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="86"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation type="unfinished">Shranjevanje vnosov EFI Boot Managerja…</translation>
+        <translation type="unfinished">Saving EFI Boot Manager entries…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="98"/>
