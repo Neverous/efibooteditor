@@ -382,27 +382,27 @@
     <name>EFIBootData</name>
     <message>
         <location filename="../src/efibootdata.cpp" line="112"/>
-        <location filename="../src/efibootdata.cpp" line="796"/>
-        <location filename="../src/efibootdata.cpp" line="1010"/>
-        <location filename="../src/efibootdata.cpp" line="1343"/>
-        <location filename="../src/efibootdata.cpp" line="1454"/>
+        <location filename="../src/efibootdata.cpp" line="813"/>
+        <location filename="../src/efibootdata.cpp" line="1027"/>
+        <location filename="../src/efibootdata.cpp" line="1360"/>
+        <location filename="../src/efibootdata.cpp" line="1471"/>
         <source>%1: not found</source>
         <translation>%1: 찾을 수 없음</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="120"/>
-        <location filename="../src/efibootdata.cpp" line="804"/>
-        <location filename="../src/efibootdata.cpp" line="1369"/>
+        <location filename="../src/efibootdata.cpp" line="821"/>
+        <location filename="../src/efibootdata.cpp" line="1386"/>
         <source>%1: failed deserialization</source>
         <translation>%1: 역직렬화 실패</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="299"/>
+        <location filename="../src/efibootdata.cpp" line="301"/>
         <source>Error loading entries</source>
         <translation>항목 로드 중 오류</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="299"/>
+        <location filename="../src/efibootdata.cpp" line="301"/>
         <source>Failed to load some EFI Boot Manager entries:
 
   - %1</source>
@@ -411,86 +411,86 @@
   - %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="367"/>
-        <location filename="../src/efibootdata.cpp" line="673"/>
+        <location filename="../src/efibootdata.cpp" line="369"/>
+        <location filename="../src/efibootdata.cpp" line="690"/>
         <source>Error saving entries</source>
         <translation>항목 저장 중 오류 발생</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="367"/>
-        <location filename="../src/efibootdata.cpp" line="673"/>
+        <location filename="../src/efibootdata.cpp" line="369"/>
+        <location filename="../src/efibootdata.cpp" line="690"/>
         <source>Entry %1(%2): duplicated index!</source>
         <translation>%1(%2) 항목: 중복된 인덱스!</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="387"/>
-        <location filename="../src/efibootdata.cpp" line="417"/>
-        <location filename="../src/efibootdata.cpp" line="441"/>
-        <location filename="../src/efibootdata.cpp" line="462"/>
-        <location filename="../src/efibootdata.cpp" line="470"/>
-        <location filename="../src/efibootdata.cpp" line="477"/>
-        <location filename="../src/efibootdata.cpp" line="499"/>
+        <location filename="../src/efibootdata.cpp" line="389"/>
+        <location filename="../src/efibootdata.cpp" line="419"/>
+        <location filename="../src/efibootdata.cpp" line="458"/>
+        <location filename="../src/efibootdata.cpp" line="479"/>
+        <location filename="../src/efibootdata.cpp" line="487"/>
+        <location filename="../src/efibootdata.cpp" line="494"/>
+        <location filename="../src/efibootdata.cpp" line="516"/>
         <source>Error saving %1</source>
         <translation>%1 저장 중 오류</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="405"/>
-        <location filename="../src/efibootdata.cpp" line="453"/>
-        <location filename="../src/efibootdata.cpp" line="487"/>
+        <location filename="../src/efibootdata.cpp" line="407"/>
+        <location filename="../src/efibootdata.cpp" line="470"/>
+        <location filename="../src/efibootdata.cpp" line="504"/>
         <source>Error removing %1</source>
         <translation>%1 제거 중 오류</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="516"/>
-        <location filename="../src/efibootdata.cpp" line="525"/>
-        <location filename="../src/efibootdata.cpp" line="539"/>
-        <location filename="../src/efibootdata.cpp" line="1322"/>
-        <location filename="../src/efibootdata.cpp" line="1565"/>
+        <location filename="../src/efibootdata.cpp" line="533"/>
+        <location filename="../src/efibootdata.cpp" line="542"/>
+        <location filename="../src/efibootdata.cpp" line="556"/>
+        <location filename="../src/efibootdata.cpp" line="1339"/>
+        <location filename="../src/efibootdata.cpp" line="1582"/>
         <source>Error importing boot configuration</source>
         <translation>부팅 구성 가져오기 오류</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="516"/>
-        <location filename="../src/efibootdata.cpp" line="757"/>
+        <location filename="../src/efibootdata.cpp" line="533"/>
+        <location filename="../src/efibootdata.cpp" line="774"/>
         <source>Couldn&apos;t open selected file (%1).</source>
         <translation>선택한 파일(%1)을(를) 열 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="525"/>
+        <location filename="../src/efibootdata.cpp" line="542"/>
         <source>Parser failed: %1</source>
         <translation>파서 실패: %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="539"/>
+        <location filename="../src/efibootdata.cpp" line="556"/>
         <source>Invalid _Type: %1</source>
         <translation>잘못된 _유형: %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="552"/>
-        <location filename="../src/efibootdata.cpp" line="742"/>
+        <location filename="../src/efibootdata.cpp" line="569"/>
+        <location filename="../src/efibootdata.cpp" line="759"/>
         <source>Error exporting boot configuration</source>
         <translation>부팅 구성 내보내기 오류</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="552"/>
+        <location filename="../src/efibootdata.cpp" line="569"/>
         <source>Couldn&apos;t open selected file (%1): %2.</source>
         <translation>선택한 파일 (%1): %2을(를) 열 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="742"/>
-        <location filename="../src/efibootdata.cpp" line="872"/>
+        <location filename="../src/efibootdata.cpp" line="759"/>
+        <location filename="../src/efibootdata.cpp" line="889"/>
         <source>Couldn&apos;t write into file (%1): %2.</source>
         <translation>파일 (%1): %2에 쓸 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="757"/>
-        <location filename="../src/efibootdata.cpp" line="872"/>
-        <location filename="../src/efibootdata.cpp" line="878"/>
+        <location filename="../src/efibootdata.cpp" line="774"/>
+        <location filename="../src/efibootdata.cpp" line="889"/>
+        <location filename="../src/efibootdata.cpp" line="895"/>
         <source>Error dumping raw EFI data</source>
         <translation>원시 EFI 데이터 덤프 오류</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="878"/>
+        <location filename="../src/efibootdata.cpp" line="895"/>
         <source>Failed to dump some EFI Boot Manager entries:
 
   - %1</source>
@@ -499,17 +499,17 @@
   - %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="888"/>
+        <location filename="../src/efibootdata.cpp" line="905"/>
         <source>Timeout</source>
         <translation>시간 초과</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="904"/>
+        <location filename="../src/efibootdata.cpp" line="921"/>
         <source>Apple boot-args</source>
         <translation>Apple boot-args</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="920"/>
+        <location filename="../src/efibootdata.cpp" line="937"/>
         <source>Firmware actions</source>
         <translation>펌웨어 동작</translation>
     </message>
@@ -520,184 +520,184 @@
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="89"/>
-        <location filename="../src/efibootdata.cpp" line="770"/>
+        <location filename="../src/efibootdata.cpp" line="787"/>
         <source>Searching EFI Boot Manager entries…</source>
         <translation>EFI 부팅 관리자 항목 검색 중…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="108"/>
-        <location filename="../src/efibootdata.cpp" line="290"/>
+        <location filename="../src/efibootdata.cpp" line="292"/>
         <source>Processing EFI Boot Manager entries (%1)…</source>
         <translation>EFI 부팅 관리자 항목(%1)을(를) 처리하는 중…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="306"/>
+        <location filename="../src/efibootdata.cpp" line="308"/>
         <source>Saving EFI Boot Manager entries…</source>
         <translation>EFI 부팅 관리자 항목 저장 중…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="331"/>
+        <location filename="../src/efibootdata.cpp" line="333"/>
         <source>Searching old EFI Boot Manager entries…</source>
         <translation>이전 EFI 부팅 관리자 항목 검색 중…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="372"/>
-        <location filename="../src/efibootdata.cpp" line="414"/>
-        <location filename="../src/efibootdata.cpp" line="430"/>
-        <location filename="../src/efibootdata.cpp" line="459"/>
-        <location filename="../src/efibootdata.cpp" line="467"/>
-        <location filename="../src/efibootdata.cpp" line="474"/>
-        <location filename="../src/efibootdata.cpp" line="496"/>
+        <location filename="../src/efibootdata.cpp" line="374"/>
+        <location filename="../src/efibootdata.cpp" line="416"/>
+        <location filename="../src/efibootdata.cpp" line="447"/>
+        <location filename="../src/efibootdata.cpp" line="476"/>
+        <location filename="../src/efibootdata.cpp" line="484"/>
+        <location filename="../src/efibootdata.cpp" line="491"/>
+        <location filename="../src/efibootdata.cpp" line="513"/>
         <source>Saving EFI Boot Manager entries (%1)…</source>
         <translation>EFI 부팅 관리자 항목 저장 중(%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="450"/>
+        <location filename="../src/efibootdata.cpp" line="467"/>
         <source>Removing old EFI Boot Manager entries (%1)…</source>
         <translation>이전 EFI 부팅 관리자 항목(%1)을(를) 제거하는 중…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="402"/>
-        <location filename="../src/efibootdata.cpp" line="484"/>
+        <location filename="../src/efibootdata.cpp" line="404"/>
+        <location filename="../src/efibootdata.cpp" line="501"/>
         <source>Removing EFI Boot Manager entries (%1)…</source>
         <translation>EFI 부팅 관리자 항목(%1)을(를) 제거하는 중…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="94"/>
-        <location filename="../src/efibootdata.cpp" line="336"/>
-        <location filename="../src/efibootdata.cpp" line="775"/>
+        <location filename="../src/efibootdata.cpp" line="338"/>
+        <location filename="../src/efibootdata.cpp" line="792"/>
         <source>Couldn&apos;t load EFI Boot Manager variables</source>
         <translation>EFI Boot Manager 변수를 로드할 수 없습니다</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="100"/>
-        <location filename="../src/efibootdata.cpp" line="782"/>
+        <location filename="../src/efibootdata.cpp" line="799"/>
         <source>Couldn&apos;t find any EFI Boot Manager variables</source>
         <translation>EFI Boot Manager 변수를 찾을 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="512"/>
+        <location filename="../src/efibootdata.cpp" line="529"/>
         <source>Importing boot configuration…</source>
         <translation>부팅 구성을 가져오는 중…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="548"/>
-        <location filename="../src/efibootdata.cpp" line="753"/>
+        <location filename="../src/efibootdata.cpp" line="565"/>
+        <location filename="../src/efibootdata.cpp" line="770"/>
         <source>Exporting boot configuration…</source>
         <translation>부팅 구성을 내보내는 중…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="570"/>
-        <location filename="../src/efibootdata.cpp" line="792"/>
-        <location filename="../src/efibootdata.cpp" line="858"/>
+        <location filename="../src/efibootdata.cpp" line="587"/>
+        <location filename="../src/efibootdata.cpp" line="809"/>
+        <location filename="../src/efibootdata.cpp" line="875"/>
         <source>Exporting EFI Boot Manager entries (%1)…</source>
         <translation>EFI 부팅 관리자 항목 내보내기 (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="996"/>
+        <location filename="../src/efibootdata.cpp" line="1013"/>
         <source>Importing boot configuration from JSON…</source>
         <translation>JSON에서 부팅 구성을 가져오는 중…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1015"/>
-        <location filename="../src/efibootdata.cpp" line="1348"/>
-        <location filename="../src/efibootdata.cpp" line="1459"/>
-        <location filename="../src/efibootdata.cpp" line="1513"/>
+        <location filename="../src/efibootdata.cpp" line="1032"/>
+        <location filename="../src/efibootdata.cpp" line="1365"/>
+        <location filename="../src/efibootdata.cpp" line="1476"/>
+        <location filename="../src/efibootdata.cpp" line="1530"/>
         <source>Importing EFI Boot Manager entries (%1)…</source>
         <translation>EFI 부팅 관리자 항목을 가져오는 중 (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1018"/>
-        <location filename="../src/efibootdata.cpp" line="1080"/>
-        <location filename="../src/efibootdata.cpp" line="1117"/>
-        <location filename="../src/efibootdata.cpp" line="1161"/>
-        <location filename="../src/efibootdata.cpp" line="1206"/>
-        <location filename="../src/efibootdata.cpp" line="1231"/>
-        <location filename="../src/efibootdata.cpp" line="1287"/>
-        <location filename="../src/efibootdata.cpp" line="1351"/>
-        <location filename="../src/efibootdata.cpp" line="1358"/>
-        <location filename="../src/efibootdata.cpp" line="1462"/>
-        <location filename="../src/efibootdata.cpp" line="1476"/>
-        <location filename="../src/efibootdata.cpp" line="1515"/>
-        <location filename="../src/efibootdata.cpp" line="1530"/>
-        <location filename="../src/efibootdata.cpp" line="1552"/>
+        <location filename="../src/efibootdata.cpp" line="1035"/>
+        <location filename="../src/efibootdata.cpp" line="1097"/>
+        <location filename="../src/efibootdata.cpp" line="1134"/>
+        <location filename="../src/efibootdata.cpp" line="1178"/>
+        <location filename="../src/efibootdata.cpp" line="1223"/>
+        <location filename="../src/efibootdata.cpp" line="1248"/>
+        <location filename="../src/efibootdata.cpp" line="1304"/>
+        <location filename="../src/efibootdata.cpp" line="1368"/>
+        <location filename="../src/efibootdata.cpp" line="1375"/>
+        <location filename="../src/efibootdata.cpp" line="1479"/>
+        <location filename="../src/efibootdata.cpp" line="1493"/>
+        <location filename="../src/efibootdata.cpp" line="1532"/>
+        <location filename="../src/efibootdata.cpp" line="1547"/>
+        <location filename="../src/efibootdata.cpp" line="1569"/>
         <source>%1: %2 expected</source>
         <translation>%1: %2 예상됨</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1026"/>
-        <location filename="../src/efibootdata.cpp" line="1031"/>
-        <location filename="../src/efibootdata.cpp" line="1036"/>
-        <location filename="../src/efibootdata.cpp" line="1206"/>
+        <location filename="../src/efibootdata.cpp" line="1043"/>
+        <location filename="../src/efibootdata.cpp" line="1048"/>
+        <location filename="../src/efibootdata.cpp" line="1053"/>
+        <location filename="../src/efibootdata.cpp" line="1223"/>
         <source>number</source>
         <translation>번호</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1041"/>
-        <location filename="../src/efibootdata.cpp" line="1046"/>
-        <location filename="../src/efibootdata.cpp" line="1051"/>
-        <location filename="../src/efibootdata.cpp" line="1056"/>
-        <location filename="../src/efibootdata.cpp" line="1061"/>
+        <location filename="../src/efibootdata.cpp" line="1058"/>
+        <location filename="../src/efibootdata.cpp" line="1063"/>
+        <location filename="../src/efibootdata.cpp" line="1068"/>
+        <location filename="../src/efibootdata.cpp" line="1073"/>
+        <location filename="../src/efibootdata.cpp" line="1078"/>
         <source>bool</source>
         <translation>bool</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1092"/>
+        <location filename="../src/efibootdata.cpp" line="1109"/>
         <source>%1: unknown boot manager capability</source>
         <translation>%1: 알 수 없는 부팅 관리자 기능</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1105"/>
-        <location filename="../src/efibootdata.cpp" line="1149"/>
-        <location filename="../src/efibootdata.cpp" line="1195"/>
+        <location filename="../src/efibootdata.cpp" line="1122"/>
+        <location filename="../src/efibootdata.cpp" line="1166"/>
+        <location filename="../src/efibootdata.cpp" line="1212"/>
         <source>array</source>
         <translation>배열</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1080"/>
-        <location filename="../src/efibootdata.cpp" line="1117"/>
-        <location filename="../src/efibootdata.cpp" line="1161"/>
-        <location filename="../src/efibootdata.cpp" line="1315"/>
+        <location filename="../src/efibootdata.cpp" line="1097"/>
+        <location filename="../src/efibootdata.cpp" line="1134"/>
+        <location filename="../src/efibootdata.cpp" line="1178"/>
+        <location filename="../src/efibootdata.cpp" line="1332"/>
         <source>string</source>
         <translation>문자열</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1139"/>
-        <location filename="../src/efibootdata.cpp" line="1175"/>
+        <location filename="../src/efibootdata.cpp" line="1156"/>
+        <location filename="../src/efibootdata.cpp" line="1192"/>
         <source>%1: unknown os indication</source>
         <translation>%1: 알 수 없는 OS 표시</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1066"/>
-        <location filename="../src/efibootdata.cpp" line="1218"/>
-        <location filename="../src/efibootdata.cpp" line="1247"/>
-        <location filename="../src/efibootdata.cpp" line="1273"/>
-        <location filename="../src/efibootdata.cpp" line="1292"/>
-        <location filename="../src/efibootdata.cpp" line="1310"/>
-        <location filename="../src/efibootdata.cpp" line="1351"/>
-        <location filename="../src/efibootdata.cpp" line="1462"/>
-        <location filename="../src/efibootdata.cpp" line="1515"/>
-        <location filename="../src/efibootdata.cpp" line="1552"/>
+        <location filename="../src/efibootdata.cpp" line="1083"/>
+        <location filename="../src/efibootdata.cpp" line="1235"/>
+        <location filename="../src/efibootdata.cpp" line="1264"/>
+        <location filename="../src/efibootdata.cpp" line="1290"/>
+        <location filename="../src/efibootdata.cpp" line="1309"/>
+        <location filename="../src/efibootdata.cpp" line="1327"/>
+        <location filename="../src/efibootdata.cpp" line="1368"/>
+        <location filename="../src/efibootdata.cpp" line="1479"/>
+        <location filename="../src/efibootdata.cpp" line="1532"/>
+        <location filename="../src/efibootdata.cpp" line="1569"/>
         <source>object</source>
         <translation>개체</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1231"/>
-        <location filename="../src/efibootdata.cpp" line="1287"/>
-        <location filename="../src/efibootdata.cpp" line="1476"/>
-        <location filename="../src/efibootdata.cpp" line="1530"/>
+        <location filename="../src/efibootdata.cpp" line="1248"/>
+        <location filename="../src/efibootdata.cpp" line="1304"/>
+        <location filename="../src/efibootdata.cpp" line="1493"/>
+        <location filename="../src/efibootdata.cpp" line="1547"/>
         <source>hexadecimal number</source>
         <translation>16진수</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1253"/>
-        <location filename="../src/efibootdata.cpp" line="1298"/>
+        <location filename="../src/efibootdata.cpp" line="1270"/>
+        <location filename="../src/efibootdata.cpp" line="1315"/>
         <source>%1: failed parsing</source>
         <translation>%1: 구문 분석 실패</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1322"/>
-        <location filename="../src/efibootdata.cpp" line="1565"/>
+        <location filename="../src/efibootdata.cpp" line="1339"/>
+        <location filename="../src/efibootdata.cpp" line="1582"/>
         <source>Failed to import some EFI Boot Manager entries:
 
   - %1</source>
@@ -706,12 +706,12 @@
   - %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1329"/>
+        <location filename="../src/efibootdata.cpp" line="1346"/>
         <source>Importing boot configuration from raw dump…</source>
         <translation>원시 덤프에서 부팅 구성 가져오기 중…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1361"/>
+        <location filename="../src/efibootdata.cpp" line="1378"/>
         <source>object(raw_data: string, efi_attributes: number)</source>
         <extracomment>Expected JSON structure, thrown as error description. raw_data and efi_attributes are field names in JSON file</extracomment>
         <translation>object(raw_data: string, efi_attributes: number)</translation>
@@ -5358,19 +5358,24 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
 <context>
     <name>HotKeyListModel</name>
     <message>
-        <location filename="../src/hotkeylistmodel.cpp" line="86"/>
+        <location filename="../src/hotkeylistmodel.cpp" line="100"/>
         <source>boot option</source>
         <translation>부팅 옵션</translation>
     </message>
     <message>
-        <location filename="../include/hotkeylistmodel.h" line="33"/>
+        <location filename="../include/hotkeylistmodel.h" line="34"/>
         <source>Boot option</source>
         <translation>부팅 옵션</translation>
     </message>
     <message>
-        <location filename="../include/hotkeylistmodel.h" line="33"/>
+        <location filename="../include/hotkeylistmodel.h" line="34"/>
         <source>Hot key</source>
         <translation>단축키</translation>
+    </message>
+    <message>
+        <location filename="../include/hotkeylistmodel.h" line="34"/>
+        <source>Vendor data</source>
+        <translation type="unfinished">공급 업체 데이터</translation>
     </message>
 </context>
 <context>
@@ -5513,21 +5518,6 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/commands.cpp" line="333"/>
         <source>Move %1 entry &quot;%2&quot; file path from position %3 to %4</source>
         <translation>%1 항목 &quot;%2&quot; 파일 경로를 %3 위치에서 %4 위치로 이동</translation>
-    </message>
-    <message>
-        <location filename="../src/driveinfo.win32.cpp" line="55"/>
-        <source>CD-ROM %1</source>
-        <translation>CD-ROM %1</translation>
-    </message>
-    <message>
-        <location filename="../src/driveinfo.win32.cpp" line="59"/>
-        <source>Disk %1 partition %2</source>
-        <translation>디스크 %1 파티션 %2</translation>
-    </message>
-    <message>
-        <location filename="../src/driveinfo.win32.cpp" line="63"/>
-        <source>Device %1 number %2 partition %3</source>
-        <translation>장치 %1 번호 %2 파티션 %3</translation>
     </message>
 </context>
 </TS>
