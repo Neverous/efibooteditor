@@ -51,6 +51,14 @@ auto HotKeyListModel::data(const QModelIndex &index, int role) const -> QVariant
         return {};
 
     const auto &entry = entries.at(index.row());
+    if(entry.is_error)
+    {
+        if(static_cast<Column>(index.column()) == Column::Keys)
+            return {entry.error};
+
+        return {};
+    }
+
     switch(static_cast<Column>(index.column()))
     {
     case Column::BootOption:
@@ -63,6 +71,9 @@ auto HotKeyListModel::data(const QModelIndex &index, int role) const -> QVariant
         data.setValue(&keys);
         return data;
     }
+
+    case Column::VendorData:
+        return {QString("%1B").arg(entry.vendor_data.size())};
 
     case Column::Count:
         return {};
@@ -80,6 +91,9 @@ auto HotKeyListModel::setData(const QModelIndex &index, const QVariant &value, i
         return false;
 
     auto row = index.row();
+    if(const auto &entry = entries.at(row); entry.is_error)
+        return false;
+
     QUndoCommand *command = nullptr;
     // Edited BootOption
     if(auto column = static_cast<Column>(index.column()); column == Column::BootOption && value.canConvert<uint16_t>() && index.data() != value)
@@ -109,10 +123,16 @@ auto HotKeyListModel::setData(const QModelIndex &index, const QVariant &value, i
 auto HotKeyListModel::flags(const QModelIndex &index) const -> Qt::ItemFlags
 {
     auto flags = QAbstractItemModel::flags(index);
-    if(index.isValid() && checkIndex(index))
-        return flags | Qt::ItemIsEditable;
+    if(!index.isValid() || !checkIndex(index))
+        return flags;
 
-    return flags;
+    if(const auto &entry = entries.at(index.row()); entry.is_error)
+        return flags;
+
+    if(static_cast<Column>(index.column()) == Column::VendorData)
+        return flags;
+
+    return flags | Qt::ItemIsEditable;
 }
 
 auto HotKeyListModel::insertRows(int row, int count, const QModelIndex &parent) -> bool

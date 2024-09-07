@@ -9,12 +9,14 @@
 class HotKey
 {
 public:
-    uint16_t boot_option{0};
-    EFIKeySequence keys{};
-    uint32_t efi_attributes{EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS};
-    QString error{};
+    int index = -1;
+    uint16_t boot_option = 0;
+    EFIKeySequence keys = {};
+    QByteArray vendor_data = {};
+    uint32_t efi_attributes = EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS;
+    QString error = {};
 
-    bool is_error{false};
+    bool is_error = false;
 
 public:
     static HotKey fromEFIBootKeyOption(const EFIBoot::Key_option &key_option);

@@ -26,11 +26,12 @@ public:
     {
         BootOption = 0,
         Keys = 1,
-        Count = 2,
+        VendorData = 2,
+        Count = 3,
     };
 
 private:
-    QVector<QString> header{tr("Boot option"), tr("Hot key")};
+    QVector<QString> header{tr("Boot option"), tr("Hot key"), tr("Vendor data")};
     QVector<HotKey> entries{};
     QUndoStack *undo_stack{nullptr};
 
