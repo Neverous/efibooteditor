@@ -275,6 +275,7 @@ void EFIBootData::reload()
             [&](const EFIBoot::Key_option &value, const uint32_t &attributes)
             {
                 auto entry = HotKey::fromEFIBootKeyOption(value);
+                entry.index = index;
                 entry.efi_attributes = attributes;
                 hot_keys_list_model.appendRow(entry);
             },
@@ -282,6 +283,7 @@ void EFIBootData::reload()
             {
                 errors.push_back(error);
                 auto entry = HotKey::fromError(error);
+                entry.index = index;
                 hot_keys_list_model.appendRow(entry);
             });
     }
@@ -423,10 +425,25 @@ void EFIBootData::save()
     // Save Hot Keys
     if(boot_option_support & EFIBoot::EFI_BOOT_OPTION_SUPPORT_KEY)
     {
-        unsigned long long idx = 0;
+        uint16_t free_index = 0;
+        QSet<uint16_t> used;
+        for(const auto &entry: hot_keys_list_model.getEntries())
+            if(entry.index >= 0)
+                used.insert(static_cast<uint16_t>(entry.index));
+
         for(const auto &entry: hot_keys_list_model.getEntries())
         {
-            const auto qname = toHex(idx++, 4, "Key");
+            int index = entry.index;
+            if(index < 0)
+            {
+                // new entry, find free index
+                while(used.remove(free_index))
+                    ++free_index;
+
+                index = free_index++;
+            }
+
+            const auto qname = toHex(static_cast<unsigned long long>(index), 4, "Key");
             Q_EMIT progress(step++, total_steps, tr("Saving EFI Boot Manager entries (%1)…").arg(qname));
             const tstring tname = QStringToStdTString(qname);
             if(auto _entry = old_entries.find(tname); _entry != old_entries.end())

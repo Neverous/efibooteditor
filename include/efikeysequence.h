@@ -77,6 +77,7 @@ private:
 public:
     EFIKey() = default;
     explicit EFIKey(const EFIBoot::efi_input_key &key);
+    explicit EFIKey(const Qt::Key _scan_code, const QChar _unicode_char);
     EFIBoot::efi_input_key toEFIInputKey() const;
     bool operator==(const EFIKey &b) const;
     bool operator!=(const EFIKey &b) const { return !(*this == b); }
@@ -84,7 +85,11 @@ public:
     static EFIKey fromString(const QString &repr, bool *success = nullptr);
     QString toString() const;
 
-    static EFIKey fromQKey(int keycode, const QString &text, bool *success = nullptr);
+    bool isUnicode() const { return scan_code == Qt::Key_unknown; }
+    EFIKey toUpper() const;
+    bool isUpper() const;
+
+    static EFIKey fromQKey(int key, Qt::KeyboardModifiers modifiers, const QString &text, bool *success = nullptr);
 };
 
 class EFIKeySequence
@@ -102,14 +107,17 @@ public:
     bool toEFIKeyOption(EFIBoot::efi_boot_key_data &key_data, std::vector<EFIBoot::efi_input_key> &keys_) const;
 
     static EFIKeySequence fromString(const QString &str, qsizetype maxKeys);
-    QString toString() const;
+    QString toString(bool escaped = false) const;
 
     bool isEmpty() const;
 
     bool operator==(const EFIKeySequence &b) const;
     bool operator!=(const EFIKeySequence &b) const { return !(*this == b); }
 
-    bool addKey(int key, const QString &text, qsizetype maxKeys);
+    bool addKey(int key, Qt::KeyboardModifiers modifiers, const QString &text, qsizetype maxKeys);
+
+private:
+    void fixShiftState();
 };
 
 Q_DECLARE_METATYPE(const EFIKeySequence *)

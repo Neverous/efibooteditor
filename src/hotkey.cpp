@@ -21,6 +21,8 @@ auto HotKey::fromEFIBootKeyOption(
     HotKey value{};
     value.boot_option = key_option.boot_option;
     value.keys = {key_option.key_data, key_option.keys};
+    value.vendor_data = QByteArray::fromRawData(reinterpret_cast<const char *>(key_option.vendor_data.data()), static_cast<int>(key_option.vendor_data.size()));
+    value.vendor_data.detach();
     return value;
 }
 
@@ -45,6 +47,8 @@ auto HotKey::toEFIBootKeyOption(const std::unordered_map<uint16_t, uint32_t> &cr
     if(!keys.toEFIKeyOption(key_option.key_data, key_option.keys))
         return {};
 
+    auto begin = reinterpret_cast<const EFIBoot::Raw_data::value_type *>(vendor_data.constData());
+    std::copy(begin, std::next(begin, vendor_data.size()), std::back_inserter(key_option.vendor_data));
     return key_option;
 }
 
@@ -58,6 +62,8 @@ auto HotKey::fromJSON(const QJsonObject &obj, qsizetype maxKeys) -> std::optiona
     if(value.keys.isEmpty())
         return {};
 
+    check_type(vendor_data, String);
+    value.vendor_data = QByteArray::fromBase64(obj["vendor_data"].toString().toUtf8());
     return {value};
 }
 
@@ -69,6 +75,7 @@ auto HotKey::toJSON() const -> QJsonObject
     QJsonObject key_option;
     key_option["boot_option"] = boot_option;
     key_option["keys"] = keys.toString();
+    key_option["vendor_data"] = QString{vendor_data.toBase64()};
     return key_option;
 }
 

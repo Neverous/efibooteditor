@@ -30,6 +30,7 @@ typedef struct efi_key_option_s
     efi_boot_key_data key_data;
     uint32_t boot_option_crc;
     uint16_t boot_option;
-    efi_boot_key_data keys[ANYSIZE_ARRAY];
+    efi_input_key keys[ANYSIZE_ARRAY];
+    // uint8_t vendor_data[ANYSIZE_ARRAY];
 } efi_key_option;
 #pragma pack(pop)

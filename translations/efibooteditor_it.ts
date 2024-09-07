@@ -382,27 +382,27 @@
     <name>EFIBootData</name>
     <message>
         <location filename="../src/efibootdata.cpp" line="112"/>
-        <location filename="../src/efibootdata.cpp" line="796"/>
-        <location filename="../src/efibootdata.cpp" line="1010"/>
-        <location filename="../src/efibootdata.cpp" line="1343"/>
-        <location filename="../src/efibootdata.cpp" line="1454"/>
+        <location filename="../src/efibootdata.cpp" line="813"/>
+        <location filename="../src/efibootdata.cpp" line="1027"/>
+        <location filename="../src/efibootdata.cpp" line="1360"/>
+        <location filename="../src/efibootdata.cpp" line="1471"/>
         <source>%1: not found</source>
         <translation>%1: non trovato</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="120"/>
-        <location filename="../src/efibootdata.cpp" line="804"/>
-        <location filename="../src/efibootdata.cpp" line="1369"/>
+        <location filename="../src/efibootdata.cpp" line="821"/>
+        <location filename="../src/efibootdata.cpp" line="1386"/>
         <source>%1: failed deserialization</source>
         <translation>%1: deserializzazione fallita</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="299"/>
+        <location filename="../src/efibootdata.cpp" line="301"/>
         <source>Error loading entries</source>
         <translation>Errore durante il caricamento delle voci</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="299"/>
+        <location filename="../src/efibootdata.cpp" line="301"/>
         <source>Failed to load some EFI Boot Manager entries:
 
   - %1</source>
@@ -411,86 +411,86 @@
   - %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="367"/>
-        <location filename="../src/efibootdata.cpp" line="673"/>
+        <location filename="../src/efibootdata.cpp" line="369"/>
+        <location filename="../src/efibootdata.cpp" line="690"/>
         <source>Error saving entries</source>
         <translation>Errore durante il salvataggio delle voci</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="367"/>
-        <location filename="../src/efibootdata.cpp" line="673"/>
+        <location filename="../src/efibootdata.cpp" line="369"/>
+        <location filename="../src/efibootdata.cpp" line="690"/>
         <source>Entry %1(%2): duplicated index!</source>
         <translation>Voce %1(%2): indice duplicato!</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="387"/>
-        <location filename="../src/efibootdata.cpp" line="417"/>
-        <location filename="../src/efibootdata.cpp" line="441"/>
-        <location filename="../src/efibootdata.cpp" line="462"/>
-        <location filename="../src/efibootdata.cpp" line="470"/>
-        <location filename="../src/efibootdata.cpp" line="477"/>
-        <location filename="../src/efibootdata.cpp" line="499"/>
+        <location filename="../src/efibootdata.cpp" line="389"/>
+        <location filename="../src/efibootdata.cpp" line="419"/>
+        <location filename="../src/efibootdata.cpp" line="458"/>
+        <location filename="../src/efibootdata.cpp" line="479"/>
+        <location filename="../src/efibootdata.cpp" line="487"/>
+        <location filename="../src/efibootdata.cpp" line="494"/>
+        <location filename="../src/efibootdata.cpp" line="516"/>
         <source>Error saving %1</source>
         <translation>Errore durante il salvataggio di &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="405"/>
-        <location filename="../src/efibootdata.cpp" line="453"/>
-        <location filename="../src/efibootdata.cpp" line="487"/>
+        <location filename="../src/efibootdata.cpp" line="407"/>
+        <location filename="../src/efibootdata.cpp" line="470"/>
+        <location filename="../src/efibootdata.cpp" line="504"/>
         <source>Error removing %1</source>
         <translation>Errore durante la rimozione di &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="516"/>
-        <location filename="../src/efibootdata.cpp" line="525"/>
-        <location filename="../src/efibootdata.cpp" line="539"/>
-        <location filename="../src/efibootdata.cpp" line="1322"/>
-        <location filename="../src/efibootdata.cpp" line="1565"/>
+        <location filename="../src/efibootdata.cpp" line="533"/>
+        <location filename="../src/efibootdata.cpp" line="542"/>
+        <location filename="../src/efibootdata.cpp" line="556"/>
+        <location filename="../src/efibootdata.cpp" line="1339"/>
+        <location filename="../src/efibootdata.cpp" line="1582"/>
         <source>Error importing boot configuration</source>
         <translation>Errore durante l&apos;importazione della configurazione di boot</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="516"/>
-        <location filename="../src/efibootdata.cpp" line="757"/>
+        <location filename="../src/efibootdata.cpp" line="533"/>
+        <location filename="../src/efibootdata.cpp" line="774"/>
         <source>Couldn&apos;t open selected file (%1).</source>
         <translation>Impossibile aprire il file selezionato (%1).</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="525"/>
+        <location filename="../src/efibootdata.cpp" line="542"/>
         <source>Parser failed: %1</source>
         <translation>Analisi fallita: %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="539"/>
+        <location filename="../src/efibootdata.cpp" line="556"/>
         <source>Invalid _Type: %1</source>
         <translation>_Tipo non valido: %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="552"/>
-        <location filename="../src/efibootdata.cpp" line="742"/>
+        <location filename="../src/efibootdata.cpp" line="569"/>
+        <location filename="../src/efibootdata.cpp" line="759"/>
         <source>Error exporting boot configuration</source>
         <translation>Errore durante l&apos;esportazione della configurazione di boot</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="552"/>
+        <location filename="../src/efibootdata.cpp" line="569"/>
         <source>Couldn&apos;t open selected file (%1): %2.</source>
         <translation>Impossibile aprire il file selezionato (%1): %2.</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="742"/>
-        <location filename="../src/efibootdata.cpp" line="872"/>
+        <location filename="../src/efibootdata.cpp" line="759"/>
+        <location filename="../src/efibootdata.cpp" line="889"/>
         <source>Couldn&apos;t write into file (%1): %2.</source>
         <translation>Impossibile scrivere nel file (%1): %2.</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="757"/>
-        <location filename="../src/efibootdata.cpp" line="872"/>
-        <location filename="../src/efibootdata.cpp" line="878"/>
+        <location filename="../src/efibootdata.cpp" line="774"/>
+        <location filename="../src/efibootdata.cpp" line="889"/>
+        <location filename="../src/efibootdata.cpp" line="895"/>
         <source>Error dumping raw EFI data</source>
         <translation>Errore durante il dump dei dati EFI non elaborati</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="878"/>
+        <location filename="../src/efibootdata.cpp" line="895"/>
         <source>Failed to dump some EFI Boot Manager entries:
 
   - %1</source>
@@ -499,17 +499,17 @@
   - %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="888"/>
+        <location filename="../src/efibootdata.cpp" line="905"/>
         <source>Timeout</source>
         <translation>Timeout</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="904"/>
+        <location filename="../src/efibootdata.cpp" line="921"/>
         <source>Apple boot-args</source>
         <translation>Argomenti boot Apple</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="920"/>
+        <location filename="../src/efibootdata.cpp" line="937"/>
         <source>Firmware actions</source>
         <translation>Azioni firmware</translation>
     </message>
@@ -520,184 +520,184 @@
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="89"/>
-        <location filename="../src/efibootdata.cpp" line="770"/>
+        <location filename="../src/efibootdata.cpp" line="787"/>
         <source>Searching EFI Boot Manager entries…</source>
         <translation>Ricerca voci EFI Boot Manager…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="108"/>
-        <location filename="../src/efibootdata.cpp" line="290"/>
+        <location filename="../src/efibootdata.cpp" line="292"/>
         <source>Processing EFI Boot Manager entries (%1)…</source>
         <translation>Elaborazione voci EFI Boot Manager (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="306"/>
+        <location filename="../src/efibootdata.cpp" line="308"/>
         <source>Saving EFI Boot Manager entries…</source>
         <translation>Salvataggio voci EFI Boot Manager…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="331"/>
+        <location filename="../src/efibootdata.cpp" line="333"/>
         <source>Searching old EFI Boot Manager entries…</source>
         <translation>Ricerca vecchie voci EFI Boot Manager…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="372"/>
-        <location filename="../src/efibootdata.cpp" line="414"/>
-        <location filename="../src/efibootdata.cpp" line="430"/>
-        <location filename="../src/efibootdata.cpp" line="459"/>
-        <location filename="../src/efibootdata.cpp" line="467"/>
-        <location filename="../src/efibootdata.cpp" line="474"/>
-        <location filename="../src/efibootdata.cpp" line="496"/>
+        <location filename="../src/efibootdata.cpp" line="374"/>
+        <location filename="../src/efibootdata.cpp" line="416"/>
+        <location filename="../src/efibootdata.cpp" line="447"/>
+        <location filename="../src/efibootdata.cpp" line="476"/>
+        <location filename="../src/efibootdata.cpp" line="484"/>
+        <location filename="../src/efibootdata.cpp" line="491"/>
+        <location filename="../src/efibootdata.cpp" line="513"/>
         <source>Saving EFI Boot Manager entries (%1)…</source>
         <translation>Salvataggio voci EFI Boot Manager (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="450"/>
+        <location filename="../src/efibootdata.cpp" line="467"/>
         <source>Removing old EFI Boot Manager entries (%1)…</source>
         <translation>Rimozione vecchie voci EFI Boot Manager (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="402"/>
-        <location filename="../src/efibootdata.cpp" line="484"/>
+        <location filename="../src/efibootdata.cpp" line="404"/>
+        <location filename="../src/efibootdata.cpp" line="501"/>
         <source>Removing EFI Boot Manager entries (%1)…</source>
         <translation>Rimozione voci EFI Boot Manager (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="94"/>
-        <location filename="../src/efibootdata.cpp" line="336"/>
-        <location filename="../src/efibootdata.cpp" line="775"/>
+        <location filename="../src/efibootdata.cpp" line="338"/>
+        <location filename="../src/efibootdata.cpp" line="792"/>
         <source>Couldn&apos;t load EFI Boot Manager variables</source>
         <translation type="unfinished">Impossibile caricare variabili EFI Boot Manager</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="100"/>
-        <location filename="../src/efibootdata.cpp" line="782"/>
+        <location filename="../src/efibootdata.cpp" line="799"/>
         <source>Couldn&apos;t find any EFI Boot Manager variables</source>
         <translation type="unfinished">Impossibile trovare variabili EFI Boot Manager</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="512"/>
+        <location filename="../src/efibootdata.cpp" line="529"/>
         <source>Importing boot configuration…</source>
         <translation>Importazione configurazione di boot…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="548"/>
-        <location filename="../src/efibootdata.cpp" line="753"/>
+        <location filename="../src/efibootdata.cpp" line="565"/>
+        <location filename="../src/efibootdata.cpp" line="770"/>
         <source>Exporting boot configuration…</source>
         <translation>Esportazione configurazione di boot…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="570"/>
-        <location filename="../src/efibootdata.cpp" line="792"/>
-        <location filename="../src/efibootdata.cpp" line="858"/>
+        <location filename="../src/efibootdata.cpp" line="587"/>
+        <location filename="../src/efibootdata.cpp" line="809"/>
+        <location filename="../src/efibootdata.cpp" line="875"/>
         <source>Exporting EFI Boot Manager entries (%1)…</source>
         <translation>Esportazione voci EFI Boot Manager (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="996"/>
+        <location filename="../src/efibootdata.cpp" line="1013"/>
         <source>Importing boot configuration from JSON…</source>
         <translation>Importazione configurazione boot da JSON…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1015"/>
-        <location filename="../src/efibootdata.cpp" line="1348"/>
-        <location filename="../src/efibootdata.cpp" line="1459"/>
-        <location filename="../src/efibootdata.cpp" line="1513"/>
+        <location filename="../src/efibootdata.cpp" line="1032"/>
+        <location filename="../src/efibootdata.cpp" line="1365"/>
+        <location filename="../src/efibootdata.cpp" line="1476"/>
+        <location filename="../src/efibootdata.cpp" line="1530"/>
         <source>Importing EFI Boot Manager entries (%1)…</source>
         <translation>Importazione voci EFI Boot Manager (%1)…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1018"/>
-        <location filename="../src/efibootdata.cpp" line="1080"/>
-        <location filename="../src/efibootdata.cpp" line="1117"/>
-        <location filename="../src/efibootdata.cpp" line="1161"/>
-        <location filename="../src/efibootdata.cpp" line="1206"/>
-        <location filename="../src/efibootdata.cpp" line="1231"/>
-        <location filename="../src/efibootdata.cpp" line="1287"/>
-        <location filename="../src/efibootdata.cpp" line="1351"/>
-        <location filename="../src/efibootdata.cpp" line="1358"/>
-        <location filename="../src/efibootdata.cpp" line="1462"/>
-        <location filename="../src/efibootdata.cpp" line="1476"/>
-        <location filename="../src/efibootdata.cpp" line="1515"/>
-        <location filename="../src/efibootdata.cpp" line="1530"/>
-        <location filename="../src/efibootdata.cpp" line="1552"/>
+        <location filename="../src/efibootdata.cpp" line="1035"/>
+        <location filename="../src/efibootdata.cpp" line="1097"/>
+        <location filename="../src/efibootdata.cpp" line="1134"/>
+        <location filename="../src/efibootdata.cpp" line="1178"/>
+        <location filename="../src/efibootdata.cpp" line="1223"/>
+        <location filename="../src/efibootdata.cpp" line="1248"/>
+        <location filename="../src/efibootdata.cpp" line="1304"/>
+        <location filename="../src/efibootdata.cpp" line="1368"/>
+        <location filename="../src/efibootdata.cpp" line="1375"/>
+        <location filename="../src/efibootdata.cpp" line="1479"/>
+        <location filename="../src/efibootdata.cpp" line="1493"/>
+        <location filename="../src/efibootdata.cpp" line="1532"/>
+        <location filename="../src/efibootdata.cpp" line="1547"/>
+        <location filename="../src/efibootdata.cpp" line="1569"/>
         <source>%1: %2 expected</source>
         <translation>%1: previsto %2</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1026"/>
-        <location filename="../src/efibootdata.cpp" line="1031"/>
-        <location filename="../src/efibootdata.cpp" line="1036"/>
-        <location filename="../src/efibootdata.cpp" line="1206"/>
+        <location filename="../src/efibootdata.cpp" line="1043"/>
+        <location filename="../src/efibootdata.cpp" line="1048"/>
+        <location filename="../src/efibootdata.cpp" line="1053"/>
+        <location filename="../src/efibootdata.cpp" line="1223"/>
         <source>number</source>
         <translation>numero</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1041"/>
-        <location filename="../src/efibootdata.cpp" line="1046"/>
-        <location filename="../src/efibootdata.cpp" line="1051"/>
-        <location filename="../src/efibootdata.cpp" line="1056"/>
-        <location filename="../src/efibootdata.cpp" line="1061"/>
+        <location filename="../src/efibootdata.cpp" line="1058"/>
+        <location filename="../src/efibootdata.cpp" line="1063"/>
+        <location filename="../src/efibootdata.cpp" line="1068"/>
+        <location filename="../src/efibootdata.cpp" line="1073"/>
+        <location filename="../src/efibootdata.cpp" line="1078"/>
         <source>bool</source>
         <translation>bool</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1092"/>
+        <location filename="../src/efibootdata.cpp" line="1109"/>
         <source>%1: unknown boot manager capability</source>
         <translation>%1: funzionalità gestione boot sconosciuta</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1105"/>
-        <location filename="../src/efibootdata.cpp" line="1149"/>
-        <location filename="../src/efibootdata.cpp" line="1195"/>
+        <location filename="../src/efibootdata.cpp" line="1122"/>
+        <location filename="../src/efibootdata.cpp" line="1166"/>
+        <location filename="../src/efibootdata.cpp" line="1212"/>
         <source>array</source>
         <translation>matrice</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1080"/>
-        <location filename="../src/efibootdata.cpp" line="1117"/>
-        <location filename="../src/efibootdata.cpp" line="1161"/>
-        <location filename="../src/efibootdata.cpp" line="1315"/>
+        <location filename="../src/efibootdata.cpp" line="1097"/>
+        <location filename="../src/efibootdata.cpp" line="1134"/>
+        <location filename="../src/efibootdata.cpp" line="1178"/>
+        <location filename="../src/efibootdata.cpp" line="1332"/>
         <source>string</source>
         <translation>stringa</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1139"/>
-        <location filename="../src/efibootdata.cpp" line="1175"/>
+        <location filename="../src/efibootdata.cpp" line="1156"/>
+        <location filename="../src/efibootdata.cpp" line="1192"/>
         <source>%1: unknown os indication</source>
         <translation>%1: indicazione s.o. sconosciuto</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1066"/>
-        <location filename="../src/efibootdata.cpp" line="1218"/>
-        <location filename="../src/efibootdata.cpp" line="1247"/>
-        <location filename="../src/efibootdata.cpp" line="1273"/>
-        <location filename="../src/efibootdata.cpp" line="1292"/>
-        <location filename="../src/efibootdata.cpp" line="1310"/>
-        <location filename="../src/efibootdata.cpp" line="1351"/>
-        <location filename="../src/efibootdata.cpp" line="1462"/>
-        <location filename="../src/efibootdata.cpp" line="1515"/>
-        <location filename="../src/efibootdata.cpp" line="1552"/>
+        <location filename="../src/efibootdata.cpp" line="1083"/>
+        <location filename="../src/efibootdata.cpp" line="1235"/>
+        <location filename="../src/efibootdata.cpp" line="1264"/>
+        <location filename="../src/efibootdata.cpp" line="1290"/>
+        <location filename="../src/efibootdata.cpp" line="1309"/>
+        <location filename="../src/efibootdata.cpp" line="1327"/>
+        <location filename="../src/efibootdata.cpp" line="1368"/>
+        <location filename="../src/efibootdata.cpp" line="1479"/>
+        <location filename="../src/efibootdata.cpp" line="1532"/>
+        <location filename="../src/efibootdata.cpp" line="1569"/>
         <source>object</source>
         <translation>oggetto</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1231"/>
-        <location filename="../src/efibootdata.cpp" line="1287"/>
-        <location filename="../src/efibootdata.cpp" line="1476"/>
-        <location filename="../src/efibootdata.cpp" line="1530"/>
+        <location filename="../src/efibootdata.cpp" line="1248"/>
+        <location filename="../src/efibootdata.cpp" line="1304"/>
+        <location filename="../src/efibootdata.cpp" line="1493"/>
+        <location filename="../src/efibootdata.cpp" line="1547"/>
         <source>hexadecimal number</source>
         <translation>numero esadecimale</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1253"/>
-        <location filename="../src/efibootdata.cpp" line="1298"/>
+        <location filename="../src/efibootdata.cpp" line="1270"/>
+        <location filename="../src/efibootdata.cpp" line="1315"/>
         <source>%1: failed parsing</source>
         <translation>%1: analisi fallita</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1322"/>
-        <location filename="../src/efibootdata.cpp" line="1565"/>
+        <location filename="../src/efibootdata.cpp" line="1339"/>
+        <location filename="../src/efibootdata.cpp" line="1582"/>
         <source>Failed to import some EFI Boot Manager entries:
 
   - %1</source>
@@ -706,12 +706,12 @@
   - %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1329"/>
+        <location filename="../src/efibootdata.cpp" line="1346"/>
         <source>Importing boot configuration from raw dump…</source>
         <translation>Importazione configurazione boot dal dump non elaborato…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1361"/>
+        <location filename="../src/efibootdata.cpp" line="1378"/>
         <source>object(raw_data: string, efi_attributes: number)</source>
         <extracomment>Expected JSON structure, thrown as error description. raw_data and efi_attributes are field names in JSON file</extracomment>
         <translation>object(raw_data: string, efi_attributes: number)</translation>
@@ -5358,19 +5358,24 @@ Se SignatureType è 2, questo campo contiene una firma a 16 byte.&lt;/p&gt;&lt;/
 <context>
     <name>HotKeyListModel</name>
     <message>
-        <location filename="../src/hotkeylistmodel.cpp" line="86"/>
+        <location filename="../src/hotkeylistmodel.cpp" line="100"/>
         <source>boot option</source>
         <translation type="unfinished">opzione boot</translation>
     </message>
     <message>
-        <location filename="../include/hotkeylistmodel.h" line="33"/>
+        <location filename="../include/hotkeylistmodel.h" line="34"/>
         <source>Boot option</source>
         <translation type="unfinished">Opzione boot</translation>
     </message>
     <message>
-        <location filename="../include/hotkeylistmodel.h" line="33"/>
+        <location filename="../include/hotkeylistmodel.h" line="34"/>
         <source>Hot key</source>
         <translation type="unfinished">Tasto rapido</translation>
+    </message>
+    <message>
+        <location filename="../include/hotkeylistmodel.h" line="34"/>
+        <source>Vendor data</source>
+        <translation type="unfinished">Dati produttore</translation>
     </message>
 </context>
 <context>
@@ -5513,21 +5518,6 @@ Se SignatureType è 2, questo campo contiene una firma a 16 byte.&lt;/p&gt;&lt;/
         <location filename="../src/commands.cpp" line="333"/>
         <source>Move %1 entry &quot;%2&quot; file path from position %3 to %4</source>
         <translation>Sposta percorso del file voce %1 &apos;%2&apos; dalla posizione &apos;%3&apos; alla &apos;%4&apos;</translation>
-    </message>
-    <message>
-        <location filename="../src/driveinfo.win32.cpp" line="55"/>
-        <source>CD-ROM %1</source>
-        <translation>CD-ROM %1</translation>
-    </message>
-    <message>
-        <location filename="../src/driveinfo.win32.cpp" line="59"/>
-        <source>Disk %1 partition %2</source>
-        <translation type="unfinished">Disco %1 partizione %2</translation>
-    </message>
-    <message>
-        <location filename="../src/driveinfo.win32.cpp" line="63"/>
-        <source>Device %1 number %2 partition %3</source>
-        <translation type="unfinished">Dispositivo %1 numero %2 partizione %3</translation>
     </message>
 </context>
 </TS>

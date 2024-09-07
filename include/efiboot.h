@@ -1011,6 +1011,7 @@ struct Key_option
     uint16_t boot_option = 0u;
     uint32_t boot_option_crc = 9u;
     std::vector<efi_input_key> keys = {};
+    Raw_data vendor_data = {};
 };
 
 using Progress_fn = std::function<void(size_t, size_t)>;
@@ -3521,11 +3522,25 @@ inline std::optional<Key_option> deserialize(const void *data, size_t data_size)
     value.boot_option_crc = key_option->boot_option_crc;
     value.key_data = key_option->key_data;
 
-    auto keys = deserialize_list<efi_input_key>(key_option->keys, data_size - offsetof(efi_key_option, keys));
-    if(!keys || keys->empty())
-        return std::nullopt;
+    auto keys_size = key_option->key_data.options.input_key_count * sizeof(efi_input_key);
+    if(keys_size)
+    {
+        auto keys = deserialize_list<efi_input_key>(key_option->keys, keys_size);
+        if(!keys || keys->empty())
+            return std::nullopt;
 
-    value.keys = *keys;
+        value.keys = *keys;
+    }
+
+    if(keys_size != data_size - offsetof(efi_key_option, keys))
+    {
+        auto vendor_data = deserialize<Raw_data>(advance_bytes(key_option->keys, keys_size), data_size - offsetof(efi_key_option, keys) - keys_size);
+        if(!vendor_data)
+            return std::nullopt;
+
+        value.vendor_data = *vendor_data;
+    }
+
     return {value};
 }
 
@@ -3537,6 +3552,7 @@ inline size_t serialize(Raw_data &output, const Key_option &key_option)
     size += serialize(output, key_option.boot_option_crc);
     size += serialize(output, key_option.boot_option);
     size += serialize_list(output, key_option.keys);
+    size += serialize(output, key_option.vendor_data);
     return size;
 }
 
