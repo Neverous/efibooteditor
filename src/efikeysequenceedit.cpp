@@ -45,7 +45,7 @@ void EFIKeySequenceEdit::setKeySequence(const EFIKeySequence &keySequence)
         return;
 
     _keySequence = keySequence;
-    lineEdit->setText(_keySequence.toString());
+    lineEdit->setText(_keySequence.toString(true));
     Q_EMIT keySequenceChanged(_keySequence);
 }
 
@@ -79,10 +79,10 @@ void EFIKeySequenceEdit::keyPressEvent(QKeyEvent *event)
             return;
     }
 
-    if(!_keySequence.addKey(key, event->text(), _maximumSequenceLength))
+    if(!_keySequence.addKey(event->key(), event->modifiers(), event->text(), _maximumSequenceLength))
         return;
 
-    lineEdit->setText(_keySequence.toString() + "...");
+    lineEdit->setText(_keySequence.toString(true) + "...");
     event->accept();
 }
 
@@ -105,7 +105,7 @@ void EFIKeySequenceEdit::focusOutEvent(QFocusEvent *event)
 void EFIKeySequenceEdit::resetState()
 {
     startKey = -1;
-    lineEdit->setText(_keySequence.toString());
+    lineEdit->setText(_keySequence.toString(true));
     lineEdit->setPlaceholderText(tr("Press hot key"));
 }
 

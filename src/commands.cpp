@@ -396,7 +396,7 @@ void RemoveHotKeyCommand::redo()
 }
 
 SetHotKeyKeysCommand::SetHotKeyKeysCommand(HotKeyListModel &model_, const QModelIndex &index_, const EFIKeySequence &value_, QUndoCommand *parent)
-    : QUndoCommand(QObject::tr("Change %1 entry at position %2 %3 to \"%4\"").arg(QObject::tr("Key")).arg(index_.row()).arg(QObject::tr("keys"), value_.toString()), parent)
+    : QUndoCommand(QObject::tr("Change %1 entry at position %2 %3 to \"%4\"").arg(QObject::tr("Key")).arg(index_.row()).arg(QObject::tr("keys"), value_.toString(true)), parent)
     , model{model_}
     , index{index_}
     , value{value_}
@@ -435,6 +435,6 @@ bool SetHotKeyKeysCommand::mergeWith(const QUndoCommand *command)
     if(value == entry.keys)
         setObsolete(true);
 
-    setText(QObject::tr("Change %1 entry at position %2 %3 to \"%4\"").arg(QObject::tr("Key")).arg(index.row()).arg(QObject::tr("keys"), entry.keys.toString()));
+    setText(QObject::tr("Change %1 entry at position %2 %3 to \"%4\"").arg(QObject::tr("Key")).arg(index.row()).arg(QObject::tr("keys"), entry.keys.toString(true)));
     return true;
 }

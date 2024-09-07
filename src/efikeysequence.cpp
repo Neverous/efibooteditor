@@ -3,6 +3,10 @@
 
 #include "efikeysequence.h"
 
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QKeyEvent>
+
 EFIKey::EFIKey(const EFIBoot::efi_input_key &key)
 {
     if(key.scan_code)
@@ -16,6 +20,12 @@ EFIKey::EFIKey(const EFIBoot::efi_input_key &key)
         scan_code = Qt::Key_unknown;
 
     unicode_char = key.unicode_char;
+}
+
+EFIKey::EFIKey(const Qt::Key _scan_code, const QChar _unicode_char)
+    : scan_code{_scan_code}
+    , unicode_char{_unicode_char}
+{
 }
 
 EFIBoot::efi_input_key EFIKey::toEFIInputKey() const
@@ -83,16 +93,26 @@ QString EFIKey::toString() const
     return unicode_char;
 }
 
-EFIKey EFIKey::fromQKey(int keycode, const QString &text, bool *success)
+EFIKey EFIKey::toUpper() const
+{
+    return EFIKey{scan_code, unicode_char.toUpper()};
+}
+
+bool EFIKey::isUpper() const
+{
+    return unicode_char.toLower() != unicode_char;
+}
+
+EFIKey EFIKey::fromQKey(int key, Qt::KeyboardModifiers modifiers, const QString &text, bool *success)
 {
     if(success)
         *success = false;
 
     EFIKey value;
-    if(keycode != Qt::Key_unknown)
+    if(key != Qt::Key_unknown)
     {
         if(auto code = std::find_if(efi_scan_codes.begin(), efi_scan_codes.end(), [&](const auto &row)
-               { return std::get<Qt::Key>(row) == keycode; });
+               { return std::get<Qt::Key>(row) == key; });
             code != efi_scan_codes.end())
         {
             value.scan_code = std::get<Qt::Key>(*code);
@@ -104,19 +124,26 @@ EFIKey EFIKey::fromQKey(int keycode, const QString &text, bool *success)
     }
 
     value.scan_code = Qt::Key_unknown;
-    if(keycode && keycode < Qt::Key_Escape && keycode != Qt::Key_Space)
+    if(modifiers)
     {
-        value.unicode_char = static_cast<char16_t>(keycode);
+        auto stripped = QKeySequence{key}.toString();
+        if(stripped.length() != 1)
+            return {};
+
+        if(!(modifiers & Qt::ShiftModifier) && Qt::Key_A <= key && key <= Qt::Key_Z)
+            stripped = stripped.toLower();
+
+        value.unicode_char = stripped[0];
         if(success)
             *success = true;
 
         return value;
     }
 
-    if(text.trimmed().length() != 1)
+    if(text.length() != 1)
         return {};
 
-    value.unicode_char = text.trimmed()[0];
+    value.unicode_char = text[0];
     if(success)
         *success = true;
 
@@ -125,7 +152,15 @@ EFIKey EFIKey::fromQKey(int keycode, const QString &text, bool *success)
 
 EFIKeySequence::EFIKeySequence(const EFIBoot::efi_boot_key_data &key_data, const std::vector<EFIBoot::efi_input_key> &keys_)
 {
-    if(key_data.options.shift_pressed)
+    bool has_upper = false;
+    for(size_t k = 0; k < key_data.options.input_key_count; ++k)
+    {
+        EFIKey key{keys_[k]};
+        keys.push_back(key);
+        has_upper |= key.isUpper();
+    }
+
+    if(key_data.options.shift_pressed || has_upper)
         shift_state.insert(Qt::Key_Shift);
 
     if(key_data.options.control_pressed)
@@ -142,9 +177,6 @@ EFIKeySequence::EFIKeySequence(const EFIBoot::efi_boot_key_data &key_data, const
 
     if(key_data.options.sys_req_pressed)
         shift_state.insert(Qt::Key_SysReq);
-
-    for(size_t k = 0; k < key_data.options.input_key_count; ++k)
-        keys.push_back(EFIKey(keys_[k]));
 }
 
 bool EFIKeySequence::toEFIKeyOption(EFIBoot::efi_boot_key_data &key_data, std::vector<EFIBoot::efi_input_key> &keys_) const
@@ -152,7 +184,11 @@ bool EFIKeySequence::toEFIKeyOption(EFIBoot::efi_boot_key_data &key_data, std::v
     if(keys.size() > 3)
         return false;
 
-    key_data.options.shift_pressed = shift_state.contains(Qt::Key_Shift);
+    bool has_unicode = false;
+    for(const auto &key: keys)
+        has_unicode |= key.isUnicode();
+
+    key_data.options.shift_pressed = shift_state.contains(Qt::Key_Shift) && !has_unicode; // If there is any unicode char in the hot key, the "Shift" state seems to be processed in there instead and doesn't work with it specified again here
     key_data.options.control_pressed = shift_state.contains(Qt::Key_Control);
     key_data.options.alt_pressed = shift_state.contains(Qt::Key_Alt);
     key_data.options.logo_pressed = shift_state.contains(Qt::Key_Meta);
@@ -200,7 +236,7 @@ EFIKeySequence EFIKeySequence::fromString(const QString &str, qsizetype maxKeys)
     return value;
 }
 
-QString EFIKeySequence::toString() const
+QString EFIKeySequence::toString(bool escaped) const
 {
     QString str;
     for(const auto &[text, keycode]: efi_modifiers)
@@ -222,6 +258,13 @@ QString EFIKeySequence::toString() const
         str += key.toString();
     }
 
+    if(escaped)
+    {
+        // Simplest way to escape non-printable unicode characters in Qt?
+        auto repr = QJsonDocument{QJsonArray{str}}.toJson(QJsonDocument::JsonFormat::Compact);
+        return repr.mid(2, repr.length() - 4);
+    }
+
     return str;
 }
 
@@ -235,13 +278,17 @@ bool EFIKeySequence::operator==(const EFIKeySequence &b) const
     return shift_state == b.shift_state && keys == b.keys;
 }
 
-bool EFIKeySequence::addKey(int keycode, const QString &text, qsizetype maxKeys)
+bool EFIKeySequence::addKey(int key, Qt::KeyboardModifiers modifiers, const QString &text, qsizetype maxKeys)
 {
     if(auto modif = std::find_if(efi_modifiers.begin(), efi_modifiers.end(), [&](const auto &row)
-           { return std::get<Qt::Key>(row) == keycode; });
+           { return std::get<Qt::Key>(row) == key; });
         modif != efi_modifiers.end())
     {
-        shift_state.insert(static_cast<Qt::Key>(keycode));
+        auto mod = std::get<Qt::Key>(*modif);
+        shift_state.insert(mod);
+        if(modifiers & Qt::ShiftModifier)
+            fixShiftState();
+
         return true;
     }
 
@@ -249,13 +296,34 @@ bool EFIKeySequence::addKey(int keycode, const QString &text, qsizetype maxKeys)
         return false;
 
     bool success = false;
-    EFIKey key = EFIKey::fromQKey(keycode, text, &success);
+    EFIKey efi_key = EFIKey::fromQKey(key, modifiers, text, &success);
     if(!success)
         return false;
 
-    if(!keys.isEmpty() && keys.last() == key)
+    if(!keys.isEmpty() && keys.last() == efi_key)
         return false;
 
-    keys.push_back(key);
+    keys.push_back(efi_key);
+    if(modifiers & Qt::ShiftModifier)
+        fixShiftState();
+
     return true;
+}
+
+void EFIKeySequence::fixShiftState()
+{
+    bool has_upper = false;
+    bool has_unicode = false;
+    for(auto &key: keys)
+    {
+        has_unicode |= key.isUnicode();
+        key = key.toUpper();
+        has_upper |= key.isUpper();
+    }
+
+    if(!has_unicode || has_upper)
+        shift_state.insert(Qt::Key_Shift);
+
+    else // has unicode chars but no uppercase -> no Shift press necessary
+        shift_state.remove(Qt::Key_Shift);
 }
