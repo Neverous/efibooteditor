@@ -7,7 +7,7 @@ updates:
       day: "friday"
       time: "05:00"
     groups:
-      - dependencies
+      dependencies: {}
   - package-ecosystem: "pip"
     directory: "/misc/codegen"
     schedule:
@@ -15,7 +15,7 @@ updates:
       day: "friday"
       time: "05:00"
     groups:
-      - dependencies
+      dependencies: {}
   - package-ecosystem: "pip"
     directory: "/misc/qt-updater"
     schedule:
@@ -23,4 +23,4 @@ updates:
       day: "friday"
       time: "05:00"
     groups:
-      - dependencies
+      dependencies: {}
