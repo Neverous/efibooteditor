@@ -230,6 +230,33 @@
         1
     ],
     "DeployedMode": false,
+    "Key": {
+        "0000": {
+            "boot_option": 17,
+            "keys": "F2",
+            "vendor_data": ""
+        },
+        "0001": {
+            "boot_option": 17,
+            "keys": "Delete",
+            "vendor_data": ""
+        },
+        "0002": {
+            "boot_option": 1,
+            "keys": "a",
+            "vendor_data": ""
+        },
+        "0003": {
+            "boot_option": 0,
+            "keys": "w",
+            "vendor_data": ""
+        },
+        "0004": {
+            "boot_option": 16,
+            "keys": "Shift+Alt+S",
+            "vendor_data": ""
+        }
+    },
     "OsIndicationsSupported": [
         "BOOT_TO_FW_UI",
         "CAPSULE_RESULT_VAR_SUPPORTED"

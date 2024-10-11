@@ -6,6 +6,8 @@ Boot Editor for (U)EFI based systems.
 
 ![File path dialog](doc/filepathdialog.png)
 
+![Hot Keys dialog](doc/hotkeysdialog.png)
+
 ## Command-line interface
 
 There is also a command-line interface for quick backup/restore functionality:
