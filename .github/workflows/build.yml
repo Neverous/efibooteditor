@@ -90,8 +90,8 @@ jobs:
         run: |
           case "${{ inputs.compiler }}" in
             "Clang")
-              export CC=clang;
-              export CXX=clang++;
+              export CC=clang${{ inputs.os == 'ubuntu-20.04' && '-12' || '' }}; # Clang 11 crashes
+              export CXX=clang++${{ inputs.os == 'ubuntu-20.04' && '-12' || '' }};
             ;;
             "GCC")
               export CC=gcc
