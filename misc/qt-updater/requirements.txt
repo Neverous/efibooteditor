@@ -4,15 +4,15 @@
 #
 #    pip-compile --all-extras --output-file=requirements.txt pyproject.toml
 #
-build==1.2.1
+build==1.2.2.post1
     # via pip-tools
-certifi==2024.7.4
+certifi==2024.8.30
     # via requests
-charset-normalizer==3.3.2
+charset-normalizer==3.4.0
     # via requests
 click==8.1.7
     # via pip-tools
-idna==3.8
+idna==3.10
     # via requests
 mypy==1.11.2
     # via qt-updater (pyproject.toml)
@@ -22,7 +22,7 @@ packaging==24.1
     # via build
 pip-tools==7.4.1
     # via qt-updater (pyproject.toml)
-pyproject-hooks==1.1.0
+pyproject-hooks==1.2.0
     # via
     #   build
     #   pip-tools
@@ -32,13 +32,13 @@ ruamel-yaml==0.18.6
     # via qt-updater (pyproject.toml)
 ruamel-yaml-clib==0.2.8
     # via ruamel-yaml
-ruff==0.6.2
+ruff==0.6.9
     # via qt-updater (pyproject.toml)
-types-requests==2.32.0.20240712
+types-requests==2.32.0.20240914
     # via qt-updater (pyproject.toml)
 typing-extensions==4.12.2
     # via mypy
-urllib3==2.2.2
+urllib3==2.2.3
     # via
     #   requests
     #   types-requests
