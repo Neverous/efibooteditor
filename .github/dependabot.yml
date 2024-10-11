@@ -4,11 +4,26 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      prod-dependencies:
+        dependency-type: "production"
+      dev-dependencies:
+        dependency-type: "development"
   - package-ecosystem: "pip"
     directory: "/misc/codegen"
     schedule:
       interval: "weekly"
+    groups:
+      prod-dependencies:
+        dependency-type: "production"
+      dev-dependencies:
+        dependency-type: "development"
   - package-ecosystem: "pip"
     directory: "/misc/qt-updater"
     schedule:
       interval: "weekly"
+    groups:
+      prod-dependencies:
+        dependency-type: "production"
+      dev-dependencies:
+        dependency-type: "development"
