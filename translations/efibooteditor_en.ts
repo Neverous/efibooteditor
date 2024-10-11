@@ -5375,7 +5375,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../include/hotkeylistmodel.h" line="34"/>
         <source>Vendor data</source>
-        <translation type="unfinished">Vendor data</translation>
+        <translation>Vendor data</translation>
     </message>
 </context>
 <context>
