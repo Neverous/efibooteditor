@@ -3,7 +3,7 @@ name: Check for Qt updates
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 8 * * 5
+    - cron: 0 5 * * 5
 
 concurrency:
   group: qt-update-${{ github.ref }}

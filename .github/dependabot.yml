@@ -4,6 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "friday"
+      time: "05:00"
     groups:
       prod-dependencies:
         dependency-type: "production"
@@ -13,6 +15,8 @@ updates:
     directory: "/misc/codegen"
     schedule:
       interval: "weekly"
+      day: "friday"
+      time: "05:00"
     groups:
       prod-dependencies:
         dependency-type: "production"
@@ -22,6 +26,8 @@ updates:
     directory: "/misc/qt-updater"
     schedule:
       interval: "weekly"
+      day: "friday"
+      time: "05:00"
     groups:
       prod-dependencies:
         dependency-type: "production"
