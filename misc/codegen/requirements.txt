@@ -14,7 +14,7 @@ jinja2==3.1.4
     # via codegen (pyproject.toml)
 markupsafe==3.0.1
     # via jinja2
-mypy==1.11.2
+mypy==1.12.0
     # via codegen (pyproject.toml)
 mypy-extensions==1.0.0
     # via mypy
@@ -28,13 +28,13 @@ pyproject-hooks==1.2.0
     #   pip-tools
 pyyaml==6.0.2
     # via codegen (pyproject.toml)
-ruff==0.6.9
+ruff==0.7.0
     # via codegen (pyproject.toml)
 soupsieve==2.6
     # via beautifulsoup4
 types-beautifulsoup4==4.12.0.20240907
     # via codegen (pyproject.toml)
-types-html5lib==1.1.11.20240806
+types-html5lib==1.1.11.20241018
     # via types-beautifulsoup4
 types-pyyaml==6.0.12.20240917
     # via codegen (pyproject.toml)
