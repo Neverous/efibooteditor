@@ -58,18 +58,18 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="46"/>
         <source>This entry placeholder is shown here to indicate it&apos;s referenced in boot order. It won&apos;t be modified on save, just left as is.</source>
-        <translation type="unfinished">This entry placeholder is shown here to indicate it&apos;s referenced in boot order. It won&apos;t be modified on save, just left as is.</translation>
+        <translation>Bu giriş yer tutucusu, önyükleme sırasında başvurulduğunu göstermek için burada gösterilmiştir. Kaydetme sırasında değiştirilmeyecek, olduğu gibi bırakılacaktır.</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="147"/>
         <location filename="../src/form/bootentryform.ui" line="150"/>
         <source>Hot Keys</source>
-        <translation type="unfinished">Hot Keys</translation>
+        <translation>Kısayol Tuşları</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="153"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="188"/>
@@ -91,7 +91,7 @@
         <location filename="../src/form/bootentryform.ui" line="280"/>
         <location filename="../src/form/bootentryform.ui" line="283"/>
         <source>Move file path up</source>
-        <translation type="unfinished">Move file path up</translation>
+        <translation>Dosya yolunu yukarı taşı</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="286"/>
@@ -102,12 +102,12 @@
         <location filename="../src/form/bootentryform.ui" line="305"/>
         <location filename="../src/form/bootentryform.ui" line="308"/>
         <source>Move file path down</source>
-        <translation type="unfinished">Move file path down</translation>
+        <translation>Dosya yolunu aşağı taşı</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="311"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="330"/>
@@ -145,85 +145,85 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="440"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="444"/>
         <source>BASE64</source>
-        <translation type="unfinished">BASE64</translation>
+        <translation>BASE64</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="449"/>
         <source>UTF-16</source>
-        <translation type="unfinished">UTF-16</translation>
+        <translation>UTF-16</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="454"/>
         <source>UTF-8</source>
-        <translation type="unfinished">UTF-8</translation>
+        <translation>UTF-8</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="459"/>
         <source>HEX</source>
-        <translation type="unfinished">HEX</translation>
+        <translation>HEX</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="484"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="497"/>
         <location filename="../src/form/bootentryform.ui" line="500"/>
         <location filename="../src/form/bootentryform.ui" line="503"/>
         <source>Attributes</source>
-        <translation type="unfinished">Attributes</translation>
+        <translation>Nitelikler</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="623"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="122"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="540"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Is entry considered for automatic boot?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Is entry considered for automatic boot?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Is entry considered for automatic boot?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="569"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hidden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hidden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hidden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="585"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Force reconnect.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Force reconnect.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Force reconnect.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="534"/>
         <location filename="../src/form/bootentryform.ui" line="537"/>
         <location filename="../src/form/bootentryform.ui" line="543"/>
         <source>Active</source>
-        <translation type="unfinished">Active</translation>
+        <translation>Aktif</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="579"/>
         <location filename="../src/form/bootentryform.ui" line="582"/>
         <location filename="../src/form/bootentryform.ui" line="588"/>
         <source>Force reconnect</source>
-        <translation type="unfinished">Force reconnect</translation>
+        <translation>Yeniden bağlanmaya zorla</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="563"/>
         <location filename="../src/form/bootentryform.ui" line="566"/>
         <location filename="../src/form/bootentryform.ui" line="572"/>
         <source>Hidden</source>
-        <translation type="unfinished">Hidden</translation>
+        <translation>Gizli</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="598"/>
@@ -232,17 +232,17 @@
         <location filename="../src/form/bootentryform.ui" line="617"/>
         <location filename="../src/form/bootentryform.ui" line="620"/>
         <source>Category</source>
-        <translation type="unfinished">Category</translation>
+        <translation>Kategori</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="627"/>
         <source>Boot</source>
-        <translation type="unfinished">Boot</translation>
+        <translation>Ön Yükleme</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="632"/>
         <source>App</source>
-        <translation type="unfinished">App</translation>
+        <translation>Uygulama</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="68"/>
@@ -251,12 +251,12 @@
         <location filename="../src/form/bootentryform.ui" line="116"/>
         <location filename="../src/form/bootentryform.ui" line="119"/>
         <source>Index</source>
-        <translation type="unfinished">Index</translation>
+        <translation>Dizin</translation>
     </message>
     <message>
         <location filename="../src/bootentryform.cpp" line="117"/>
         <source>Couldn&apos;t change optional data format!</source>
-        <translation type="unfinished">Couldn&apos;t change optional data format!</translation>
+        <translation>İsteğe bağlı veri formatı değiştirilemedi!</translation>
     </message>
 </context>
 <context>
@@ -264,32 +264,32 @@
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="88"/>
         <source>Set Next boot to &quot;%1&quot;</source>
-        <translation type="unfinished">Set Next boot to &quot;%1&quot;</translation>
+        <translation>Sonraki önyüklemeyi “%1” olarak ayarla</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="184"/>
         <source>index</source>
-        <translation type="unfinished">index</translation>
+        <translation>Dizin</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="200"/>
         <source>description</source>
-        <translation type="unfinished">description</translation>
+        <translation>açıklama</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="237"/>
         <source>optional data</source>
-        <translation type="unfinished">optional data</translation>
+        <translation>isteğe bağlı veriler</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="253"/>
         <source>attributes</source>
-        <translation type="unfinished">attributes</translation>
+        <translation>nitelikler</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="269"/>
         <source>next boot</source>
-        <translation type="unfinished">next boot</translation>
+        <translation>sonraki önyükleme</translation>
     </message>
 </context>
 <context>
@@ -298,84 +298,84 @@
         <location filename="../src/form/bootentrywidget.ui" line="12"/>
         <location filename="../src/form/bootentrywidget.ui" line="221"/>
         <source>Boot entry</source>
-        <translation type="unfinished">Boot entry</translation>
+        <translation>Önyükleme girişi</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="36"/>
         <source>Next boot</source>
-        <translation type="unfinished">Next boot</translation>
+        <translation>Sonraki önyükleme</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="39"/>
         <source>Run at next boot</source>
-        <translation type="unfinished">Run at next boot</translation>
+        <translation>Sonraki önyüklemede çalıştır</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="42"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When chosen, entry will run at next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When chosen, entry will run at next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Seçildiğinde, giriş bir sonraki açılışta çalışacaktır.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="140"/>
         <location filename="../src/form/bootentrywidget.ui" line="143"/>
         <source>Current boot</source>
-        <translation type="unfinished">Current boot</translation>
+        <translation>Güncel önyükleme</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="146"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This entry is currently booted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This entry is currently booted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bu giriş şu anda önyüklenmiştir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="181"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Önyükleme giriş dizini.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="218"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry description, human readable name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry description, human readable name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Önyükleme girişi açıklaması, insan tarafından okunabilir ad.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="67"/>
         <location filename="../src/form/bootentrywidget.ui" line="70"/>
         <location filename="../src/form/bootentrywidget.ui" line="76"/>
         <source>Device path</source>
-        <translation type="unfinished">Device path</translation>
+        <translation>Cihaz yolu</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="73"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Önyükleme aygıtı yolu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="113"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data, arguments passed to boot executable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data, arguments passed to boot executable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;İsteğe bağlı veriler, önyükleme yürütülebilir dosyasına aktarılan argümanlar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="175"/>
         <location filename="../src/form/bootentrywidget.ui" line="178"/>
         <source>Boot entry index</source>
-        <translation type="unfinished">Boot entry index</translation>
+        <translation>Önyükleme giriş dizini</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="184"/>
         <source>Index</source>
-        <translation type="unfinished">Index</translation>
+        <translation>Dizin</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="212"/>
         <location filename="../src/form/bootentrywidget.ui" line="215"/>
         <source>Boot entry description</source>
-        <translation type="unfinished">Boot entry description</translation>
+        <translation>Önyükleme girişi açıklaması</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="107"/>
         <location filename="../src/form/bootentrywidget.ui" line="110"/>
         <location filename="../src/form/bootentrywidget.ui" line="116"/>
         <source>Optional data</source>
-        <translation type="unfinished">Optional data</translation>
+        <translation>İsteğe bağlı veriler</translation>
     </message>
 </context>
 <context>
@@ -387,26 +387,26 @@
         <location filename="../src/efibootdata.cpp" line="1360"/>
         <location filename="../src/efibootdata.cpp" line="1471"/>
         <source>%1: not found</source>
-        <translation type="unfinished">%1: not found</translation>
+        <translation>%1: bulunamadı</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="120"/>
         <location filename="../src/efibootdata.cpp" line="821"/>
         <location filename="../src/efibootdata.cpp" line="1386"/>
         <source>%1: failed deserialization</source>
-        <translation type="unfinished">%1: failed deserialization</translation>
+        <translation>%1: serileştirme başarısız oldu</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="301"/>
         <source>Error loading entries</source>
-        <translation type="unfinished">Error loading entries</translation>
+        <translation>Girişler yüklenirken hata oluştu</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="301"/>
         <source>Failed to load some EFI Boot Manager entries:
 
   - %1</source>
-        <translation type="unfinished">Failed to load some EFI Boot Manager entries:
+        <translation>Bazı EFI Önyükleme Yöneticisi girdileri yüklenemedi:
 
   - %1</translation>
     </message>
