@@ -14,7 +14,7 @@ click==8.1.7
     # via pip-tools
 idna==3.10
     # via requests
-mypy==1.11.2
+mypy==1.13.0
     # via qt-updater (pyproject.toml)
 mypy-extensions==1.0.0
     # via mypy
@@ -30,11 +30,11 @@ requests==2.32.3
     # via qt-updater (pyproject.toml)
 ruamel-yaml==0.18.6
     # via qt-updater (pyproject.toml)
-ruamel-yaml-clib==0.2.8
+ruamel-yaml-clib==0.2.12
     # via ruamel-yaml
-ruff==0.6.9
+ruff==0.7.1
     # via qt-updater (pyproject.toml)
-types-requests==2.32.0.20240914
+types-requests==2.32.0.20241016
     # via qt-updater (pyproject.toml)
 typing-extensions==4.12.2
     # via mypy
