@@ -98,7 +98,7 @@ jobs:
               export CXX=g++
             ;;
           esac;
-          cmake -DCMAKE_BUILD_TYPE=${{ inputs.build-config }} -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache ${{ inputs.os == 'macos-14' && startsWith(matrix.qt-version, '5') && '-DCMAKE_OSX_ARCHITECTURES="x86_64"' || '' }} ..
+          cmake -DCMAKE_BUILD_TYPE=${{ inputs.build-config }} -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache ${{ startsWith(inputs.os, 'macos') && startsWith(matrix.qt-version, '5') && '-DCMAKE_OSX_ARCHITECTURES="x86_64"' || '' }} ..
         shell: bash
         env:
           BUILD_VERSION: ${{ inputs.version }}
