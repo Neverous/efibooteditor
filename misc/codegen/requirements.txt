@@ -18,7 +18,7 @@ mypy==1.13.0
     # via codegen (pyproject.toml)
 mypy-extensions==1.0.0
     # via mypy
-packaging==24.1
+packaging==24.2
     # via build
 pip-tools==7.4.1
     # via codegen (pyproject.toml)
@@ -28,7 +28,7 @@ pyproject-hooks==1.2.0
     #   pip-tools
 pyyaml==6.0.2
     # via codegen (pyproject.toml)
-ruff==0.7.1
+ruff==0.7.3
     # via codegen (pyproject.toml)
 soupsieve==2.6
     # via beautifulsoup4
@@ -40,7 +40,7 @@ types-pyyaml==6.0.12.20240917
     # via codegen (pyproject.toml)
 typing-extensions==4.12.2
     # via mypy
-wheel==0.44.0
+wheel==0.45.0
     # via pip-tools
 
 # The following packages are considered to be unsafe in a requirements file:
