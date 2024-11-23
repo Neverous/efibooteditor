@@ -18,7 +18,7 @@ mypy==1.13.0
     # via qt-updater (pyproject.toml)
 mypy-extensions==1.0.0
     # via mypy
-packaging==24.1
+packaging==24.2
     # via build
 pip-tools==7.4.1
     # via qt-updater (pyproject.toml)
@@ -32,7 +32,7 @@ ruamel-yaml==0.18.6
     # via qt-updater (pyproject.toml)
 ruamel-yaml-clib==0.2.12
     # via ruamel-yaml
-ruff==0.7.1
+ruff==0.7.4
     # via qt-updater (pyproject.toml)
 types-requests==2.32.0.20241016
     # via qt-updater (pyproject.toml)
@@ -42,7 +42,7 @@ urllib3==2.2.3
     # via
     #   requests
     #   types-requests
-wheel==0.44.0
+wheel==0.45.0
     # via pip-tools
 
 # The following packages are considered to be unsafe in a requirements file:
