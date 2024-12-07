@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="6"/>
         <source>Boot entry form</source>
-        <translation>Форма заявки на участие в конкурсе</translation>
+        <translation>Форма записей загрузки</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="24"/>
@@ -150,22 +150,22 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="444"/>
         <source>BASE64</source>
-        <translation type="unfinished">BASE64</translation>
+        <translation>BASE64</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="449"/>
         <source>UTF-16</source>
-        <translation type="unfinished">UTF-16</translation>
+        <translation>UTF-16</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="454"/>
         <source>UTF-8</source>
-        <translation type="unfinished">UTF-8</translation>
+        <translation>UTF-8</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="459"/>
         <source>HEX</source>
-        <translation type="unfinished">HEX</translation>
+        <translation>HEX</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="484"/>
@@ -334,48 +334,48 @@
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="218"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry description, human readable name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry description, human readable name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Описания записи загрузки, читабельное название.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="67"/>
         <location filename="../src/form/bootentrywidget.ui" line="70"/>
         <location filename="../src/form/bootentrywidget.ui" line="76"/>
         <source>Device path</source>
-        <translation type="unfinished">Device path</translation>
+        <translation>Путь устройства</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="73"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Путь загрузочного устройства.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="113"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data, arguments passed to boot executable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data, arguments passed to boot executable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Необязательные данные, аргументы передаваемые загрузочному исполняемому.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="175"/>
         <location filename="../src/form/bootentrywidget.ui" line="178"/>
         <source>Boot entry index</source>
-        <translation type="unfinished">Boot entry index</translation>
+        <translation>Индекс записи загрузки</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="184"/>
         <source>Index</source>
-        <translation type="unfinished">Index</translation>
+        <translation>Индекс</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="212"/>
         <location filename="../src/form/bootentrywidget.ui" line="215"/>
         <source>Boot entry description</source>
-        <translation type="unfinished">Boot entry description</translation>
+        <translation>Описание записи загрузки</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="107"/>
         <location filename="../src/form/bootentrywidget.ui" line="110"/>
         <location filename="../src/form/bootentrywidget.ui" line="116"/>
         <source>Optional data</source>
-        <translation type="unfinished">Optional data</translation>
+        <translation>Необязательные данные</translation>
     </message>
 </context>
 <context>
@@ -387,26 +387,26 @@
         <location filename="../src/efibootdata.cpp" line="1360"/>
         <location filename="../src/efibootdata.cpp" line="1471"/>
         <source>%1: not found</source>
-        <translation type="unfinished">%1: not found</translation>
+        <translation>%1: не найдено</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="120"/>
         <location filename="../src/efibootdata.cpp" line="821"/>
         <location filename="../src/efibootdata.cpp" line="1386"/>
         <source>%1: failed deserialization</source>
-        <translation type="unfinished">%1: failed deserialization</translation>
+        <translation>%1: неудачная десериализация</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="301"/>
         <source>Error loading entries</source>
-        <translation type="unfinished">Error loading entries</translation>
+        <translation>Ошибка загрузки записей</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="301"/>
         <source>Failed to load some EFI Boot Manager entries:
 
   - %1</source>
-        <translation type="unfinished">Failed to load some EFI Boot Manager entries:
+        <translation>Не удалось загрузить некоторые записи EFI Boot Manager entries:
 
   - %1</translation>
     </message>
@@ -414,13 +414,13 @@
         <location filename="../src/efibootdata.cpp" line="369"/>
         <location filename="../src/efibootdata.cpp" line="690"/>
         <source>Error saving entries</source>
-        <translation type="unfinished">Error saving entries</translation>
+        <translation>Ошибка сохранения записей</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="369"/>
         <location filename="../src/efibootdata.cpp" line="690"/>
         <source>Entry %1(%2): duplicated index!</source>
-        <translation type="unfinished">Entry %1(%2): duplicated index!</translation>
+        <translation>Запись %1(%2): дублированный индекс!</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="389"/>
@@ -431,14 +431,14 @@
         <location filename="../src/efibootdata.cpp" line="494"/>
         <location filename="../src/efibootdata.cpp" line="516"/>
         <source>Error saving %1</source>
-        <translation type="unfinished">Error saving %1</translation>
+        <translation>Ошибка сохранения %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="407"/>
         <location filename="../src/efibootdata.cpp" line="470"/>
         <location filename="../src/efibootdata.cpp" line="504"/>
         <source>Error removing %1</source>
-        <translation type="unfinished">Error removing %1</translation>
+        <translation>Ошибка удаления %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="533"/>
@@ -447,98 +447,98 @@
         <location filename="../src/efibootdata.cpp" line="1339"/>
         <location filename="../src/efibootdata.cpp" line="1582"/>
         <source>Error importing boot configuration</source>
-        <translation type="unfinished">Error importing boot configuration</translation>
+        <translation>Ошибка импорта конфигурации загрузки</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="533"/>
         <location filename="../src/efibootdata.cpp" line="774"/>
         <source>Couldn&apos;t open selected file (%1).</source>
-        <translation type="unfinished">Couldn&apos;t open selected file (%1).</translation>
+        <translation>Не удалось открыть выбранный файл (%1.</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="542"/>
         <source>Parser failed: %1</source>
-        <translation type="unfinished">Parser failed: %1</translation>
+        <translation>Ошибка парсера: %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="556"/>
         <source>Invalid _Type: %1</source>
-        <translation type="unfinished">Invalid _Type: %1</translation>
+        <translation>Неверный _Тип: %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="569"/>
         <location filename="../src/efibootdata.cpp" line="759"/>
         <source>Error exporting boot configuration</source>
-        <translation type="unfinished">Error exporting boot configuration</translation>
+        <translation>Ошибка экспорта конфигурации загрузки</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="569"/>
         <source>Couldn&apos;t open selected file (%1): %2.</source>
-        <translation type="unfinished">Couldn&apos;t open selected file (%1): %2.</translation>
+        <translation>Не удалось открыть выбранный файл (%1): %2.</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="759"/>
         <location filename="../src/efibootdata.cpp" line="889"/>
         <source>Couldn&apos;t write into file (%1): %2.</source>
-        <translation type="unfinished">Couldn&apos;t write into file (%1): %2.</translation>
+        <translation>Невозможно записать в файл (%1): %2.</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="774"/>
         <location filename="../src/efibootdata.cpp" line="889"/>
         <location filename="../src/efibootdata.cpp" line="895"/>
         <source>Error dumping raw EFI data</source>
-        <translation type="unfinished">Error dumping raw EFI data</translation>
+        <translation>Ошибка выгрузки необработанных данных EFI</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="895"/>
         <source>Failed to dump some EFI Boot Manager entries:
 
   - %1</source>
-        <translation type="unfinished">Failed to dump some EFI Boot Manager entries:
+        <translation>Не удалось выгрузить некоторые записи EFI Boot Manager:
 
-  - %1</translation>
+- %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="905"/>
         <source>Timeout</source>
-        <translation type="unfinished">Timeout</translation>
+        <translation>Задержка</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="921"/>
         <source>Apple boot-args</source>
-        <translation type="unfinished">Apple boot-args</translation>
+        <translation>Аргументы загрузки Apple</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="937"/>
         <source>Firmware actions</source>
-        <translation type="unfinished">Firmware actions</translation>
+        <translation>Действия прошивки</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="73"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation type="unfinished">Loading EFI Boot Manager entries…</translation>
+        <translation>Загрузка записей EFI Boot Manager…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="89"/>
         <location filename="../src/efibootdata.cpp" line="787"/>
         <source>Searching EFI Boot Manager entries…</source>
-        <translation type="unfinished">Searching EFI Boot Manager entries…</translation>
+        <translation>Поиск записей EFI Boot Manager…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="108"/>
         <location filename="../src/efibootdata.cpp" line="292"/>
         <source>Processing EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Processing EFI Boot Manager entries (%1)…</translation>
+        <translation>Обработка записей EFI Boot Manager (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="308"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation type="unfinished">Saving EFI Boot Manager entries…</translation>
+        <translation>Сохранение записей EFI Boot Manager…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="333"/>
         <source>Searching old EFI Boot Manager entries…</source>
-        <translation type="unfinished">Searching old EFI Boot Manager entries…</translation>
+        <translation>Поиск старых записей EFI Boot Manager…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="374"/>
@@ -549,54 +549,54 @@
         <location filename="../src/efibootdata.cpp" line="491"/>
         <location filename="../src/efibootdata.cpp" line="513"/>
         <source>Saving EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Saving EFI Boot Manager entries (%1)…</translation>
+        <translation>Сохранение записей EFI Boot Manager (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="467"/>
         <source>Removing old EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Removing old EFI Boot Manager entries (%1)…</translation>
+        <translation>Удаление старых записей EFI Boot Manager (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="404"/>
         <location filename="../src/efibootdata.cpp" line="501"/>
         <source>Removing EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Removing EFI Boot Manager entries (%1)…</translation>
+        <translation>Удаление записей EFI Boot Manager (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="94"/>
         <location filename="../src/efibootdata.cpp" line="338"/>
         <location filename="../src/efibootdata.cpp" line="792"/>
         <source>Couldn&apos;t load EFI Boot Manager variables</source>
-        <translation type="unfinished">Couldn&apos;t load EFI Boot Manager variables</translation>
+        <translation>Невозможно загрузить переменные EFI Boot Manager</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="100"/>
         <location filename="../src/efibootdata.cpp" line="799"/>
         <source>Couldn&apos;t find any EFI Boot Manager variables</source>
-        <translation type="unfinished">Couldn&apos;t find any EFI Boot Manager variables</translation>
+        <translation>Не удалось найти переменные EFI Boot Manager</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="529"/>
         <source>Importing boot configuration…</source>
-        <translation type="unfinished">Importing boot configuration…</translation>
+        <translation>Импорт конфигурации загрузки…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="565"/>
         <location filename="../src/efibootdata.cpp" line="770"/>
         <source>Exporting boot configuration…</source>
-        <translation type="unfinished">Exporting boot configuration…</translation>
+        <translation>Экспорт конфигурации загрузки…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="587"/>
         <location filename="../src/efibootdata.cpp" line="809"/>
         <location filename="../src/efibootdata.cpp" line="875"/>
         <source>Exporting EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Exporting EFI Boot Manager entries (%1)…</translation>
+        <translation>Экспорт записей EFI Boot Manager (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1013"/>
         <source>Importing boot configuration from JSON…</source>
-        <translation type="unfinished">Importing boot configuration from JSON…</translation>
+        <translation>Импорт конфигурации загрузки из JSON…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1032"/>
@@ -604,7 +604,7 @@
         <location filename="../src/efibootdata.cpp" line="1476"/>
         <location filename="../src/efibootdata.cpp" line="1530"/>
         <source>Importing EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Importing EFI Boot Manager entries (%1)…</translation>
+        <translation>Импорт записей EFI Boot Manager (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1035"/>
@@ -622,7 +622,7 @@
         <location filename="../src/efibootdata.cpp" line="1547"/>
         <location filename="../src/efibootdata.cpp" line="1569"/>
         <source>%1: %2 expected</source>
-        <translation type="unfinished">%1: %2 expected</translation>
+        <translation>%1: %2 ожидалось</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1043"/>
@@ -630,7 +630,7 @@
         <location filename="../src/efibootdata.cpp" line="1053"/>
         <location filename="../src/efibootdata.cpp" line="1223"/>
         <source>number</source>
-        <translation type="unfinished">number</translation>
+        <translation>номер</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1058"/>
@@ -639,7 +639,7 @@
         <location filename="../src/efibootdata.cpp" line="1073"/>
         <location filename="../src/efibootdata.cpp" line="1078"/>
         <source>bool</source>
-        <translation type="unfinished">bool</translation>
+        <translation>логическое значение</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1109"/>
