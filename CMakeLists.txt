@@ -89,12 +89,12 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 if(${QT_VERSION_MAJOR} LESS_EQUAL 5)
     if(NOT COMMAND qt_add_translations)
         function(qt_add_translations TARGET)
-            cmake_parse_arguments(arg "" "" "TS_FILES;INCLUDE_DIRECTORIES" ${ARGN})
+            cmake_parse_arguments(arg "" "" "TS_FILES;RESOURCE_PREFIX;INCLUDE_DIRECTORIES;LUPDATE_OPTIONS" ${ARGN})
             qt5_add_translation(QM_FILES ${arg_TS_FILES})
 
             get_target_property(BINARY_DIR ${TARGET} BINARY_DIR)
             set(QRC ${BINARY_DIR}/translations.qrc)
-            file(WRITE ${QRC} "<RCC><qresource prefix=\"/i18n\">\n")
+            file(WRITE ${QRC} "<RCC><qresource prefix=\"${arg_RESOURCE_PREFIX}\">\n")
             foreach (QM_PATH ${QM_FILES})
                 file(RELATIVE_PATH QM_FILE ${BINARY_DIR} ${QM_PATH})
                 file(APPEND ${QRC} "<file>${QM_FILE}</file>\n")
@@ -325,6 +325,7 @@ set_source_files_properties(${TRANSLATIONS}
 
 qt_add_translations(${PROJECT_NAME}
     TS_FILES ${TRANSLATIONS}
+    RESOURCE_PREFIX "/"
     INCLUDE_DIRECTORIES "include"
     LUPDATE_OPTIONS "-no-obsolete")
 

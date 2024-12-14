@@ -33,7 +33,7 @@ auto main(int argc, char *argv[]) -> int
     {
         auto &translator = translators.emplace_back();
         if(!translator.load(QLocale::system(), module, "_", "translations/")
-            && !translator.load(QLocale::system(), module, "_", ":/i18n")
+            && !translator.load(QLocale::system(), module, "_", ":/translations/")
             && !translator.load(QLocale::system(), module, "_", translations_path))
         {
             translators.pop_back();
