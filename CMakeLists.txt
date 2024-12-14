@@ -265,7 +265,6 @@ endif()
 
 if(WIN32)
     target_compile_options(${PROJECT_NAME} PRIVATE
-        $<$<COMPILE_LANGUAGE:CXX>:/std:c++latest>
         # Ignore warnings in external includes
         /external:anglebrackets /external:W0
     )
