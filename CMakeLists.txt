@@ -70,7 +70,7 @@ find_package(Qt${QT_VERSION_MAJOR}
     REQUIRED)
 
 find_package(ZLIB REQUIRED)
-message(STATUS "ZLIB: ${ZLIB_VERSION}")
+message(STATUS "ZLIB: ${ZLIB_VERSION_STRING}")
 
 add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE
     src/main.cpp

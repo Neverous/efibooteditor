@@ -86,9 +86,6 @@ module where to look.
 
 #]=======================================================================]
 
-cmake_policy(PUSH)
-cmake_policy(SET CMP0159 NEW) # file(STRINGS) with REGEX updates CMAKE_MATCH_<n>
-
 if(ZLIB_FIND_COMPONENTS AND NOT ZLIB_FIND_QUIETLY)
   message(AUTHOR_WARNING
     "ZLIB does not provide any COMPONENTS.  Calling\n"
@@ -211,23 +208,21 @@ mark_as_advanced(ZLIB_INCLUDE_DIR)
 
 if(ZLIB_INCLUDE_DIR AND EXISTS "${ZLIB_INCLUDE_DIR}/zlib.h")
   file(STRINGS "${ZLIB_INCLUDE_DIR}/zlib.h" ZLIB_H REGEX "^#define ZLIB_VERSION \"[^\"]*\"$")
-  if(ZLIB_H MATCHES "ZLIB_VERSION \"(([0-9]+)\\.([0-9]+)(\\.([0-9]+)(\\.([0-9]+))?)?)")
-    set(ZLIB_VERSION_STRING "${CMAKE_MATCH_1}")
-    set(ZLIB_VERSION_MAJOR "${CMAKE_MATCH_2}")
-    set(ZLIB_VERSION_MINOR "${CMAKE_MATCH_3}")
-    set(ZLIB_VERSION_PATCH "${CMAKE_MATCH_5}")
-    set(ZLIB_VERSION_TWEAK "${CMAKE_MATCH_7}")
-  else()
-    set(ZLIB_VERSION_STRING "")
-    set(ZLIB_VERSION_MAJOR "")
-    set(ZLIB_VERSION_MINOR "")
-    set(ZLIB_VERSION_PATCH "")
-    set(ZLIB_VERSION_TWEAK "")
+  string(REGEX REPLACE "^.*ZLIB_VERSION \"([0-9]+).*$" "\\1" ZLIB_VERSION_MAJOR "${ZLIB_H}")
+  string(REGEX REPLACE "^.*ZLIB_VERSION \"[0-9]+\\.([0-9]+).*$" "\\1" ZLIB_VERSION_MINOR  "${ZLIB_H}")
+  string(REGEX REPLACE "^.*ZLIB_VERSION \"[0-9]+\\.[0-9]+\\.([0-9]+).*$" "\\1" ZLIB_VERSION_PATCH "${ZLIB_H}")
+  set(ZLIB_VERSION_STRING "${ZLIB_VERSION_MAJOR}.${ZLIB_VERSION_MINOR}.${ZLIB_VERSION_PATCH}")
+
+  # only append a TWEAK version if it exists:
+  set(ZLIB_VERSION_TWEAK "")
+  if( "${ZLIB_H}" MATCHES "ZLIB_VERSION \"[0-9]+\\.[0-9]+\\.[0-9]+\\.([0-9]+)")
+    set(ZLIB_VERSION_TWEAK "${CMAKE_MATCH_1}")
+    string(APPEND ZLIB_VERSION_STRING ".${ZLIB_VERSION_TWEAK}")
   endif()
+
   set(ZLIB_MAJOR_VERSION "${ZLIB_VERSION_MAJOR}")
   set(ZLIB_MINOR_VERSION "${ZLIB_VERSION_MINOR}")
   set(ZLIB_PATCH_VERSION "${ZLIB_VERSION_PATCH}")
-  set(ZLIB_VERSION "${ZLIB_VERSION_STRING}")
 endif()
 
 include(FindPackageHandleStandardArgs)
@@ -295,5 +290,3 @@ if(ZLIB_FOUND)
       endif()
     endif()
 endif()
-
-cmake_policy(POP)
