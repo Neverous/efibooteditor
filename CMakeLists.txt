@@ -70,7 +70,7 @@ find_package(Qt${QT_VERSION_MAJOR}
     REQUIRED)
 
 find_package(ZLIB REQUIRED)
-message(STATUS "ZLIB: ${ZLIB_VERSION}")
+message(STATUS "ZLIB: ${ZLIB_VERSION_STRING}")
 
 add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE
     src/main.cpp
@@ -368,12 +368,12 @@ if(WIN32)
     )
 
     if("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
-        install(FILES ${ZLIB_LIBRARY_DEBUG}
+        install(FILES ${ZLIB_LIBRARY_DLL_DEBUG}
             DESTINATION .
             COMPONENT Runtime
         )
     else()
-        install(FILES ${ZLIB_LIBRARY_RELEASE}
+        install(FILES ${ZLIB_LIBRARY_DLL_RELEASE}
             DESTINATION .
             COMPONENT Runtime
         )
