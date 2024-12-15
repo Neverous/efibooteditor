@@ -368,12 +368,12 @@ if(WIN32)
     )
 
     if("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
-        install(FILES ${ZLIB_LIBRARY_DEBUG}
+        install(FILES ${ZLIB_LIBRARY_DLL_DEBUG}
             DESTINATION .
             COMPONENT Runtime
         )
     else()
-        install(FILES ${ZLIB_LIBRARY_RELEASE}
+        install(FILES ${ZLIB_LIBRARY_DLL_RELEASE}
             DESTINATION .
             COMPONENT Runtime
         )
