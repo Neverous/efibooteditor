@@ -8,13 +8,13 @@ build==1.2.2.post1
     # via pip-tools
 certifi==2024.12.14
     # via requests
-charset-normalizer==3.4.0
+charset-normalizer==3.4.1
     # via requests
-click==8.1.7
+click==8.1.8
     # via pip-tools
 idna==3.10
     # via requests
-mypy==1.13.0
+mypy==1.14.0
     # via qt-updater (pyproject.toml)
 mypy-extensions==1.0.0
     # via mypy
@@ -38,7 +38,7 @@ types-requests==2.32.0.20241016
     # via qt-updater (pyproject.toml)
 typing-extensions==4.12.2
     # via mypy
-urllib3==2.2.3
+urllib3==2.3.0
     # via
     #   requests
     #   types-requests
