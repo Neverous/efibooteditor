@@ -269,22 +269,22 @@
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="184"/>
         <source>index</source>
-        <translation type="unfinished">index</translation>
+        <translation>Index</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="200"/>
         <source>description</source>
-        <translation type="unfinished">description</translation>
+        <translation>Beschreibung</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="237"/>
         <source>optional data</source>
-        <translation type="unfinished">optional data</translation>
+        <translation>optionale Daten</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="253"/>
         <source>attributes</source>
-        <translation type="unfinished">attributes</translation>
+        <translation>Attribute</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="269"/>
