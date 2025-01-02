@@ -69,7 +69,7 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="153"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tasti rapidi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tasti rapidi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="188"/>
@@ -269,27 +269,27 @@
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="184"/>
         <source>index</source>
-        <translation type="unfinished">indice</translation>
+        <translation>indice</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="200"/>
         <source>description</source>
-        <translation type="unfinished">descrizione</translation>
+        <translation>descrizione</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="237"/>
         <source>optional data</source>
-        <translation type="unfinished">dati opzionali</translation>
+        <translation>dati opzionali</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="253"/>
         <source>attributes</source>
-        <translation type="unfinished">attributi</translation>
+        <translation>attributi</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="269"/>
         <source>next boot</source>
-        <translation type="unfinished">prossimo boot</translation>
+        <translation>prossimo boot</translation>
     </message>
 </context>
 <context>
@@ -567,13 +567,13 @@
         <location filename="../src/efibootdata.cpp" line="338"/>
         <location filename="../src/efibootdata.cpp" line="792"/>
         <source>Couldn&apos;t load EFI Boot Manager variables</source>
-        <translation type="unfinished">Impossibile caricare variabili EFI Boot Manager</translation>
+        <translation>Impossibile caricare variabili EFI Boot Manager</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="100"/>
         <location filename="../src/efibootdata.cpp" line="799"/>
         <source>Couldn&apos;t find any EFI Boot Manager variables</source>
-        <translation type="unfinished">Impossibile trovare variabili EFI Boot Manager</translation>
+        <translation>Impossibile trovare variabili EFI Boot Manager</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="529"/>
@@ -1323,17 +1323,17 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1396"/>
         <source>Hot &amp;keys</source>
-        <translation type="unfinished">Tasti &amp;rapidi</translation>
+        <translation>Tasti &amp;rapidi</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1399"/>
         <source>Hot Keys</source>
-        <translation type="unfinished">Tasti rapidi</translation>
+        <translation>Tasti rapidi</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1402"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tasti rapidi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tasti rapidi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="593"/>
@@ -1636,7 +1636,7 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Hot Key</source>
-        <translation type="unfinished">Tasto rapido</translation>
+        <translation>Tasto rapido</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="78"/>
@@ -1666,7 +1666,7 @@ La configurazione EFI attuale verrà sovrascritta!</translation>
     <message>
         <location filename="../src/efikeysequenceedit.cpp" line="109"/>
         <source>Press hot key</source>
-        <translation type="unfinished">Premi tasto rapido</translation>
+        <translation>Premi tasto rapido</translation>
     </message>
 </context>
 <context>
@@ -5360,22 +5360,22 @@ Se SignatureType è 2, questo campo contiene una firma a 16 byte.&lt;/p&gt;&lt;/
     <message>
         <location filename="../src/hotkeylistmodel.cpp" line="100"/>
         <source>boot option</source>
-        <translation type="unfinished">opzione boot</translation>
+        <translation>opzione boot</translation>
     </message>
     <message>
         <location filename="../include/hotkeylistmodel.h" line="34"/>
         <source>Boot option</source>
-        <translation type="unfinished">Opzione boot</translation>
+        <translation>Opzione boot</translation>
     </message>
     <message>
         <location filename="../include/hotkeylistmodel.h" line="34"/>
         <source>Hot key</source>
-        <translation type="unfinished">Tasto rapido</translation>
+        <translation>Tasto rapido</translation>
     </message>
     <message>
         <location filename="../include/hotkeylistmodel.h" line="34"/>
         <source>Vendor data</source>
-        <translation type="unfinished">Dati produttore</translation>
+        <translation>Dati produttore</translation>
     </message>
 </context>
 <context>
@@ -5383,51 +5383,51 @@ Se SignatureType è 2, questo campo contiene una firma a 16 byte.&lt;/p&gt;&lt;/
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="20"/>
         <source>Hot Keys editor</source>
-        <translation type="unfinished">Editor tasti rapidi</translation>
+        <translation>Editor tasti rapidi</translation>
     </message>
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="41"/>
         <location filename="../src/form/hotkeysdialog.ui" line="44"/>
         <source>Hot Keys</source>
-        <translation type="unfinished">Tasti rapidi</translation>
+        <translation>Tasti rapidi</translation>
     </message>
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="47"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tasti rapidi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tasti rapidi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="125"/>
         <location filename="../src/form/hotkeysdialog.ui" line="128"/>
         <source>Index filter</source>
-        <translation type="unfinished">Filtro indice</translation>
+        <translation>Filtro indice</translation>
     </message>
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="131"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Index filter&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Filtro indice&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Filtro indice&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="163"/>
         <location filename="../src/form/hotkeysdialog.ui" line="166"/>
         <source>Remove hot key</source>
-        <translation type="unfinished">Rimuovi tasto rapido</translation>
+        <translation>Rimuovi tasto rapido</translation>
     </message>
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="169"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove hot key&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Rimuovi tasto rapido&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Rimuovi tasto rapido&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="191"/>
         <location filename="../src/form/hotkeysdialog.ui" line="194"/>
         <source>Add hot key</source>
-        <translation type="unfinished">Aggiungi tasto rapido</translation>
+        <translation>Aggiungi tasto rapido</translation>
     </message>
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="197"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add hot key&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aggiungi tasto rapido&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aggiungi tasto rapido&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -5446,7 +5446,7 @@ Se SignatureType è 2, questo campo contiene una firma a 16 byte.&lt;/p&gt;&lt;/
     <message>
         <location filename="../src/commands.cpp" line="50"/>
         <source>Remove %1 entry &quot;%2&quot; from position %3</source>
-        <translation type="unfinished">Rimuovi %1 voce &quot;%2&quot; dalla posizione %3</translation>
+        <translation>Rimuovi %1 voce &quot;%2&quot; dalla posizione %3</translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="73"/>
@@ -5474,17 +5474,17 @@ Se SignatureType è 2, questo campo contiene una firma a 16 byte.&lt;/p&gt;&lt;/
     <message>
         <location filename="../src/commands.cpp" line="242"/>
         <source>Remove %1 entry &quot;%2&quot; file path from position %3</source>
-        <translation type="unfinished">Rimuovi voce %1 percorso file &quot;%2&quot; dalla posizione %3</translation>
+        <translation>Rimuovi voce %1 percorso file &quot;%2&quot; dalla posizione %3</translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="257"/>
         <source>Set %1 entry &quot;%2&quot; file path at position %3</source>
-        <translation type="unfinished">Imposta percorso file voce %1 &quot;%2&quot; alla posizione %3</translation>
+        <translation>Imposta percorso file &quot;%2&quot; voce %1 alla posizione %3</translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="369"/>
         <source>Insert %1 entry at position %2</source>
-        <translation type="unfinished">Inserisci voce %1 nella posizione %2</translation>
+        <translation>Inserisci voce %1 nella posizione %2</translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="369"/>
@@ -5492,12 +5492,12 @@ Se SignatureType è 2, questo campo contiene una firma a 16 byte.&lt;/p&gt;&lt;/
         <location filename="../src/commands.cpp" line="399"/>
         <location filename="../src/commands.cpp" line="438"/>
         <source>Key</source>
-        <translation type="unfinished">Tasto</translation>
+        <translation>Tasto</translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="384"/>
         <source>Remove %1 entry from position %2</source>
-        <translation type="unfinished">Rimuovi voce %1 dalla posizione %2</translation>
+        <translation>Rimuovi voce %1 dalla posizione %2</translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="399"/>
@@ -5505,13 +5505,13 @@ Se SignatureType è 2, questo campo contiene una firma a 16 byte.&lt;/p&gt;&lt;/
         <location filename="../include/commands.h" line="362"/>
         <location filename="../include/commands.h" line="403"/>
         <source>Change %1 entry at position %2 %3 to &quot;%4&quot;</source>
-        <translation type="unfinished">Modifica voce %1 nella posizione %2 %3 in &quot;%4&quot;</translation>
+        <translation>Modifica voce %1 nella posizione %2 %3 in &quot;%4&quot;</translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="399"/>
         <location filename="../src/commands.cpp" line="438"/>
         <source>keys</source>
-        <translation type="unfinished">tasti</translation>
+        <translation>tasti</translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="293"/>
