@@ -53,6 +53,9 @@ jobs:
         compiler:
           - Clang
           - MSVC
+        include:
+          - os: windows-2019
+            compiler: MSVC32
 
     permissions:
       actions: read
@@ -125,6 +128,13 @@ jobs:
         extension:
           - .zip
           - .msi
+        include:
+          - os: windows-2019
+            compiler: MSVC32
+            extension: .zip
+          - os: windows-2019
+            compiler: MSVC32
+            extension: .msi
 
     permissions:
       contents: write

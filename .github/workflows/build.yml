@@ -31,6 +31,9 @@ jobs:
           - 5.15.2 # Supported in Ubuntu Noble Numbat until 2029-04-25
           - 6.2.4 # Supported in Ubuntu Jammy Jellyfish until 2027-04-01
           - 6.8.1 # Supported until 2025-04-08
+        exclude:
+          - qt-version: ${{ inputs.compiler == 'MSVC32' && '6.2.4' || 'none' }}
+          - qt-version: ${{ inputs.compiler == 'MSVC32' && '6.8.1' || 'none' }}
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
@@ -55,6 +58,7 @@ jobs:
         with:
           cache: true
           version: ${{ matrix.qt-version }}
+          arch: ${{ inputs.compiler == 'MSVC32' && (matrix.qt-version == '5.12.12' && 'win32_msvc2017' || 'win32_msvc2019') || '' }}
 
       - name: Install libfuse2
         run: sudo apt-get install libfuse2
@@ -78,7 +82,7 @@ jobs:
         if: startsWith(inputs.os, 'ubuntu')
 
       - name: Install zlib
-        run: vcpkg install zlib
+        run: ${{ inputs.compiler == 'MSVC32' && 'VCPKG_DEFAULT_TRIPLET=x86-windows' || '' }} vcpkg install zlib
         shell: bash
         if: startsWith(inputs.os, 'windows')
 
@@ -108,8 +112,8 @@ jobs:
 
       - name: Configure build with ${{ inputs.compiler }}
         run: |
-          call "${{ endsWith(inputs.os, '2019') && '%programfiles(x86)%\Microsoft Visual Studio\2019' || '%programfiles%\Microsoft Visual Studio\2022' }}\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64 || exit /b
-          cmake -DCMAKE_TOOLCHAIN_FILE=%VCPKG_INSTALLATION_ROOT%\scripts\buildsystems\vcpkg.cmake -DCMAKE_BUILD_TYPE=${{ inputs.build-config }} ${{ endsWith(inputs.os, '2019') && '-DCMAKE_SYSTEM_VERSION=10.0.18362.0' || ''}} -DCMAKE_VERBOSE_MAKEFILE=ON ${{ inputs.compiler == 'Clang' && '-T ClangCL' || '' }} -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache .. || exit /b
+          call "${{ endsWith(inputs.os, '2019') && '%programfiles(x86)%\Microsoft Visual Studio\2019' || '%programfiles%\Microsoft Visual Studio\2022' }}\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ inputs.compiler == 'MSVC32' && 'x86' || 'x64' }} || exit /b
+          cmake ${{ inputs.compiler == 'MSVC32' && '-A Win32' || '' }} -DCMAKE_TOOLCHAIN_FILE=%VCPKG_INSTALLATION_ROOT%\scripts\buildsystems\vcpkg.cmake -DCMAKE_BUILD_TYPE=${{ inputs.build-config }} ${{ endsWith(inputs.os, '2019') && '-DCMAKE_SYSTEM_VERSION=10.0.18362.0' || '' }} -DCMAKE_VERBOSE_MAKEFILE=ON ${{ inputs.compiler == 'Clang' && '-T ClangCL' || '' }} -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache .. || exit /b
         shell: cmd
         env:
           BUILD_VERSION: ${{ inputs.version }}
@@ -151,12 +155,12 @@ jobs:
           cmakeBuildDirectory: ${{ github.workspace }}/build
           buildConfiguration: ${{ inputs.build-config }}
           ruleset: NativeRecommendedRules.ruleset
-        if: inputs.build-config == 'Debug' && inputs.compiler == 'MSVC'
+        if: inputs.build-config == 'Debug' && startsWith(inputs.compiler, 'MSVC')
         continue-on-error: true
 
       - name: Upload MSVC Code Analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: ${{ steps.msvc-analysis.outputs.sarif }}
-        if: inputs.build-config == 'Debug' && inputs.compiler == 'MSVC'
+        if: inputs.build-config == 'Debug' && startsWith(inputs.compiler, 'MSVC')
         continue-on-error: true
