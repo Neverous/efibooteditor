@@ -31,6 +31,9 @@ jobs:
         exclude:
           - qt-version: ${{ inputs.compiler == 'MSVC32' && '6.2.4' || 'none' }}
           - qt-version: ${{ inputs.compiler == 'MSVC32' && '6.8.1' || 'none' }}
+          - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.12.12' || 'none' }}
+          - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.15.2' || 'none' }}
+          - qt-version: ${{ endsWith(inputs.os, 'arm') && '6.2.4' || 'none' }}
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v4

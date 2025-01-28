@@ -467,7 +467,7 @@ elseif(APPLE)
     )
 else()
     if(NOT LINUXDEPLOY_EXECUTABLE)
-        find_program(LINUXDEPLOY_EXECUTABLE NAMES linuxdeploy linuxdeploy-x86_64.AppImage)
+        find_program(LINUXDEPLOY_EXECUTABLE NAMES linuxdeploy linuxdeploy.AppImage linuxdeploy-x86_64.AppImage linuxdeploy-aarch64.AppImage)
     endif()
 
     if(LINUXDEPLOY_EXECUTABLE)
