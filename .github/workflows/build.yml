@@ -34,6 +34,9 @@ jobs:
         exclude:
           - qt-version: ${{ inputs.compiler == 'MSVC32' && '6.2.4' || 'none' }}
           - qt-version: ${{ inputs.compiler == 'MSVC32' && '6.8.1' || 'none' }}
+          - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.12.12' || 'none' }}
+          - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.15.2' || 'none' }}
+          - qt-version: ${{ endsWith(inputs.os, 'arm') && '6.2.4' || 'none' }}
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
@@ -54,7 +57,7 @@ jobs:
         continue-on-error: true
 
       - name: Set up Qt environment
-        uses: jurplel/install-qt-action@v4
+        uses: jdpurcell/install-qt-action@v4
         with:
           cache: true
           version: ${{ matrix.qt-version }}
@@ -66,9 +69,14 @@ jobs:
         if: startsWith(inputs.os, 'ubuntu')
 
       - name: Install linuxdeploy
-        uses: miurahr/install-linuxdeploy-action@v1
-        with:
-          plugins: qt
+        run: |
+          DIR=$(mktemp -d)
+          echo "${DIR}" >> ${GITHUB_PATH}
+          ARCH=${{ endsWith(inputs.os, 'arm') && 'aarch64' || 'x86_64' }}
+          wget -c -nv https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-${ARCH}.AppImage -O ${DIR}/linuxdeploy.AppImage
+          wget -c -nv https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-${ARCH}.AppImage -O ${DIR}/linuxdeploy-plugin-qt.AppImage
+          chmod +x ${DIR}/*.AppImage
+        shell: bash
         if: startsWith(inputs.os, 'ubuntu')
 
       - name: Install efivar
