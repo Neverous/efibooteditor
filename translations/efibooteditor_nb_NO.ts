@@ -36,7 +36,7 @@
         <location filename="../src/form/bootentryform.ui" line="434"/>
         <location filename="../src/form/bootentryform.ui" line="437"/>
         <source>Optional data format</source>
-        <translation>Valgfritt datoformat</translation>
+        <translation>Valgfritt dataformat</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="6"/>
@@ -47,29 +47,29 @@
         <location filename="../src/form/bootentryform.ui" line="24"/>
         <location filename="../src/form/bootentryform.ui" line="27"/>
         <source>Error</source>
-        <translation type="unfinished">Error</translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="40"/>
         <location filename="../src/form/bootentryform.ui" line="43"/>
         <source>Error note</source>
-        <translation type="unfinished">Error note</translation>
+        <translation>Feilmelding</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="46"/>
         <source>This entry placeholder is shown here to indicate it&apos;s referenced in boot order. It won&apos;t be modified on save, just left as is.</source>
-        <translation type="unfinished">This entry placeholder is shown here to indicate it&apos;s referenced in boot order. It won&apos;t be modified on save, just left as is.</translation>
+        <translation>Denne oppføringsplassholderen vises her for å indikere at det refereres til den i oppstartsrekkefølge. Den vil ikke bli endret ved lagring, bare la den være som den er.</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="147"/>
         <location filename="../src/form/bootentryform.ui" line="150"/>
         <source>Hot Keys</source>
-        <translation type="unfinished">Hot Keys</translation>
+        <translation>Hurtigtaster</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="153"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hurtigtaster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="188"/>
@@ -145,7 +145,7 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="440"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Valgfritt datoformat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Valgfritt dataformat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="444"/>
@@ -170,60 +170,60 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="484"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Valgfri data for oppføring.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="497"/>
         <location filename="../src/form/bootentryform.ui" line="500"/>
         <location filename="../src/form/bootentryform.ui" line="503"/>
         <source>Attributes</source>
-        <translation type="unfinished">Attributes</translation>
+        <translation>Attributter</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="623"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Oppføringskategori.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="122"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Oppføringsindeks.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="540"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Is entry considered for automatic boot?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Is entry considered for automatic boot?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vurderes oppføring for automatisk oppstart?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="569"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hidden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hidden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Skjult.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="585"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Force reconnect.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Force reconnect.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tving å koble til på nytt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="534"/>
         <location filename="../src/form/bootentryform.ui" line="537"/>
         <location filename="../src/form/bootentryform.ui" line="543"/>
         <source>Active</source>
-        <translation type="unfinished">Active</translation>
+        <translation>Aktiv</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="579"/>
         <location filename="../src/form/bootentryform.ui" line="582"/>
         <location filename="../src/form/bootentryform.ui" line="588"/>
         <source>Force reconnect</source>
-        <translation type="unfinished">Force reconnect</translation>
+        <translation>Tving å koble til på nytt</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="563"/>
         <location filename="../src/form/bootentryform.ui" line="566"/>
         <location filename="../src/form/bootentryform.ui" line="572"/>
         <source>Hidden</source>
-        <translation type="unfinished">Hidden</translation>
+        <translation>Skjult</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="598"/>
@@ -232,12 +232,12 @@
         <location filename="../src/form/bootentryform.ui" line="617"/>
         <location filename="../src/form/bootentryform.ui" line="620"/>
         <source>Category</source>
-        <translation type="unfinished">Category</translation>
+        <translation>Kategori</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="627"/>
         <source>Boot</source>
-        <translation type="unfinished">Boot</translation>
+        <translation>Oppstart</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="632"/>
@@ -251,12 +251,12 @@
         <location filename="../src/form/bootentryform.ui" line="116"/>
         <location filename="../src/form/bootentryform.ui" line="119"/>
         <source>Index</source>
-        <translation type="unfinished">Index</translation>
+        <translation>Indeks</translation>
     </message>
     <message>
         <location filename="../src/bootentryform.cpp" line="117"/>
         <source>Couldn&apos;t change optional data format!</source>
-        <translation type="unfinished">Couldn&apos;t change optional data format!</translation>
+        <translation>Kan ikke endre valgfritt dataformat!</translation>
     </message>
 </context>
 <context>
@@ -264,32 +264,32 @@
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="88"/>
         <source>Set Next boot to &quot;%1&quot;</source>
-        <translation type="unfinished">Set Next boot to &quot;%1&quot;</translation>
+        <translation>Sett neste oppstart til &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="184"/>
         <source>index</source>
-        <translation type="unfinished">index</translation>
+        <translation>indeks</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="200"/>
         <source>description</source>
-        <translation type="unfinished">description</translation>
+        <translation>beskrivelse</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="237"/>
         <source>optional data</source>
-        <translation type="unfinished">optional data</translation>
+        <translation>valgfri data</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="253"/>
         <source>attributes</source>
-        <translation type="unfinished">attributes</translation>
+        <translation>attributter</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="269"/>
         <source>next boot</source>
-        <translation type="unfinished">next boot</translation>
+        <translation>neste oppstart</translation>
     </message>
 </context>
 <context>
@@ -298,84 +298,84 @@
         <location filename="../src/form/bootentrywidget.ui" line="12"/>
         <location filename="../src/form/bootentrywidget.ui" line="221"/>
         <source>Boot entry</source>
-        <translation type="unfinished">Boot entry</translation>
+        <translation>Oppstartsoppføring</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="36"/>
         <source>Next boot</source>
-        <translation type="unfinished">Next boot</translation>
+        <translation>Neste oppstart</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="39"/>
         <source>Run at next boot</source>
-        <translation type="unfinished">Run at next boot</translation>
+        <translation>Kjør ved neste oppstart</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="42"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When chosen, entry will run at next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When chosen, entry will run at next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Når det er valgt, vil oppføringen kjøre ved neste oppstart.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="140"/>
         <location filename="../src/form/bootentrywidget.ui" line="143"/>
         <source>Current boot</source>
-        <translation type="unfinished">Current boot</translation>
+        <translation>Nåværende oppstart</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="146"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This entry is currently booted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This entry is currently booted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Denne oppføringen er for øyeblikket oppstartet.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="181"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indeks for oppstartsoppføring.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="218"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry description, human readable name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry description, human readable name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Beskrivelse av oppstartsoppføring, navn som kan leses av mennesker.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="67"/>
         <location filename="../src/form/bootentrywidget.ui" line="70"/>
         <location filename="../src/form/bootentrywidget.ui" line="76"/>
         <source>Device path</source>
-        <translation type="unfinished">Device path</translation>
+        <translation>Enhetssti</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="73"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enhetssti for oppstart.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="113"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data, arguments passed to boot executable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data, arguments passed to boot executable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Valgfrie data, argumenter sendt til oppstartskjørbar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="175"/>
         <location filename="../src/form/bootentrywidget.ui" line="178"/>
         <source>Boot entry index</source>
-        <translation type="unfinished">Boot entry index</translation>
+        <translation>Indeks for oppstartsoppføring</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="184"/>
         <source>Index</source>
-        <translation type="unfinished">Index</translation>
+        <translation>Indeks</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="212"/>
         <location filename="../src/form/bootentrywidget.ui" line="215"/>
         <source>Boot entry description</source>
-        <translation type="unfinished">Boot entry description</translation>
+        <translation>Beskrivelse av oppstartsoppføring</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="107"/>
         <location filename="../src/form/bootentrywidget.ui" line="110"/>
         <location filename="../src/form/bootentrywidget.ui" line="116"/>
         <source>Optional data</source>
-        <translation type="unfinished">Optional data</translation>
+        <translation>Valgfri data</translation>
     </message>
 </context>
 <context>
@@ -387,26 +387,26 @@
         <location filename="../src/efibootdata.cpp" line="1360"/>
         <location filename="../src/efibootdata.cpp" line="1471"/>
         <source>%1: not found</source>
-        <translation type="unfinished">%1: not found</translation>
+        <translation>%1: ikke funnet</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="120"/>
         <location filename="../src/efibootdata.cpp" line="821"/>
         <location filename="../src/efibootdata.cpp" line="1386"/>
         <source>%1: failed deserialization</source>
-        <translation type="unfinished">%1: failed deserialization</translation>
+        <translation>%1: mislykket deserialisering</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="301"/>
         <source>Error loading entries</source>
-        <translation type="unfinished">Error loading entries</translation>
+        <translation>Feil ved lasting av oppføringer</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="301"/>
         <source>Failed to load some EFI Boot Manager entries:
 
   - %1</source>
-        <translation type="unfinished">Failed to load some EFI Boot Manager entries:
+        <translation>Kunne ikke laste inn noen EFI Boot Manager-oppføringer:
 
   - %1</translation>
     </message>
@@ -414,13 +414,13 @@
         <location filename="../src/efibootdata.cpp" line="369"/>
         <location filename="../src/efibootdata.cpp" line="690"/>
         <source>Error saving entries</source>
-        <translation type="unfinished">Error saving entries</translation>
+        <translation>Feil under lagring av oppføringer</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="369"/>
         <location filename="../src/efibootdata.cpp" line="690"/>
         <source>Entry %1(%2): duplicated index!</source>
-        <translation type="unfinished">Entry %1(%2): duplicated index!</translation>
+        <translation>Oppføring %1(%2): duplisert indeks!</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="389"/>
@@ -431,14 +431,14 @@
         <location filename="../src/efibootdata.cpp" line="494"/>
         <location filename="../src/efibootdata.cpp" line="516"/>
         <source>Error saving %1</source>
-        <translation type="unfinished">Error saving %1</translation>
+        <translation>Feil ved å lagre %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="407"/>
         <location filename="../src/efibootdata.cpp" line="470"/>
         <location filename="../src/efibootdata.cpp" line="504"/>
         <source>Error removing %1</source>
-        <translation type="unfinished">Error removing %1</translation>
+        <translation>Feil ved å fjerne %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="533"/>
@@ -447,98 +447,98 @@
         <location filename="../src/efibootdata.cpp" line="1339"/>
         <location filename="../src/efibootdata.cpp" line="1582"/>
         <source>Error importing boot configuration</source>
-        <translation type="unfinished">Error importing boot configuration</translation>
+        <translation>Feil ved import av oppstartskonfigurasjon</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="533"/>
         <location filename="../src/efibootdata.cpp" line="774"/>
         <source>Couldn&apos;t open selected file (%1).</source>
-        <translation type="unfinished">Couldn&apos;t open selected file (%1).</translation>
+        <translation>Kunne ikke åpne valgt fil (%1).</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="542"/>
         <source>Parser failed: %1</source>
-        <translation type="unfinished">Parser failed: %1</translation>
+        <translation>Tolker mislyktes: %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="556"/>
         <source>Invalid _Type: %1</source>
-        <translation type="unfinished">Invalid _Type: %1</translation>
+        <translation>Ugyldig _Type: %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="569"/>
         <location filename="../src/efibootdata.cpp" line="759"/>
         <source>Error exporting boot configuration</source>
-        <translation type="unfinished">Error exporting boot configuration</translation>
+        <translation>Feil ved eksport av oppstartskonfigurasjon</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="569"/>
         <source>Couldn&apos;t open selected file (%1): %2.</source>
-        <translation type="unfinished">Couldn&apos;t open selected file (%1): %2.</translation>
+        <translation>Kunne ikke åpne valgt fil (%1): %2.</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="759"/>
         <location filename="../src/efibootdata.cpp" line="889"/>
         <source>Couldn&apos;t write into file (%1): %2.</source>
-        <translation type="unfinished">Couldn&apos;t write into file (%1): %2.</translation>
+        <translation>Kunne ikke skrive inn i filen (%1): %2.</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="774"/>
         <location filename="../src/efibootdata.cpp" line="889"/>
         <location filename="../src/efibootdata.cpp" line="895"/>
         <source>Error dumping raw EFI data</source>
-        <translation type="unfinished">Error dumping raw EFI data</translation>
+        <translation>Feil ved dumping av rå EFI-data</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="895"/>
         <source>Failed to dump some EFI Boot Manager entries:
 
   - %1</source>
-        <translation type="unfinished">Failed to dump some EFI Boot Manager entries:
+        <translation>Kunne ikke dumpe noen EFI Boot Manager-oppføringer:
 
   - %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="905"/>
         <source>Timeout</source>
-        <translation type="unfinished">Timeout</translation>
+        <translation>Tidsavbrudd</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="921"/>
         <source>Apple boot-args</source>
-        <translation type="unfinished">Apple boot-args</translation>
+        <translation>Argumenter for Apple-oppstart</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="937"/>
         <source>Firmware actions</source>
-        <translation type="unfinished">Firmware actions</translation>
+        <translation>Fastvarehandlinger</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="73"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation type="unfinished">Loading EFI Boot Manager entries…</translation>
+        <translation>Laster inn EFI Boot Manager-oppføringer…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="89"/>
         <location filename="../src/efibootdata.cpp" line="787"/>
         <source>Searching EFI Boot Manager entries…</source>
-        <translation type="unfinished">Searching EFI Boot Manager entries…</translation>
+        <translation>Søker EFI Boot Manager-oppføringer…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="108"/>
         <location filename="../src/efibootdata.cpp" line="292"/>
         <source>Processing EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Processing EFI Boot Manager entries (%1)…</translation>
+        <translation>Behandler EFI Boot Manager-oppføringer (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="308"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation type="unfinished">Saving EFI Boot Manager entries…</translation>
+        <translation>Lagrer EFI Boot Manager-oppføringer…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="333"/>
         <source>Searching old EFI Boot Manager entries…</source>
-        <translation type="unfinished">Searching old EFI Boot Manager entries…</translation>
+        <translation>Søker gamle EFI Boot Manager-oppføringer…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="374"/>
@@ -549,54 +549,54 @@
         <location filename="../src/efibootdata.cpp" line="491"/>
         <location filename="../src/efibootdata.cpp" line="513"/>
         <source>Saving EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Saving EFI Boot Manager entries (%1)…</translation>
+        <translation>Lagrer EFI Boot Manager-oppføringer (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="467"/>
         <source>Removing old EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Removing old EFI Boot Manager entries (%1)…</translation>
+        <translation>Fjerner gamle EFI Boot Manager-oppføringer (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="404"/>
         <location filename="../src/efibootdata.cpp" line="501"/>
         <source>Removing EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Removing EFI Boot Manager entries (%1)…</translation>
+        <translation>Fjerner EFI Boot Manager-oppføringer (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="94"/>
         <location filename="../src/efibootdata.cpp" line="338"/>
         <location filename="../src/efibootdata.cpp" line="792"/>
         <source>Couldn&apos;t load EFI Boot Manager variables</source>
-        <translation type="unfinished">Couldn&apos;t load EFI Boot Manager variables</translation>
+        <translation>Kunne ikke laste inn EFI Boot Manager-variabler</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="100"/>
         <location filename="../src/efibootdata.cpp" line="799"/>
         <source>Couldn&apos;t find any EFI Boot Manager variables</source>
-        <translation type="unfinished">Couldn&apos;t find any EFI Boot Manager variables</translation>
+        <translation>Kunne ikke finne EFI Boot Manager-variabler</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="529"/>
         <source>Importing boot configuration…</source>
-        <translation type="unfinished">Importing boot configuration…</translation>
+        <translation>Importerer oppstartskonfigurasjon…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="565"/>
         <location filename="../src/efibootdata.cpp" line="770"/>
         <source>Exporting boot configuration…</source>
-        <translation type="unfinished">Exporting boot configuration…</translation>
+        <translation>Eksporterer oppstartskonfigurasjon…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="587"/>
         <location filename="../src/efibootdata.cpp" line="809"/>
         <location filename="../src/efibootdata.cpp" line="875"/>
         <source>Exporting EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Exporting EFI Boot Manager entries (%1)…</translation>
+        <translation>Eksporterer EFI Boot Manager-oppføringer (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1013"/>
         <source>Importing boot configuration from JSON…</source>
-        <translation type="unfinished">Importing boot configuration from JSON…</translation>
+        <translation>Importerer oppstartskonfigurasjon fra JSON…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1032"/>
@@ -604,7 +604,7 @@
         <location filename="../src/efibootdata.cpp" line="1476"/>
         <location filename="../src/efibootdata.cpp" line="1530"/>
         <source>Importing EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Importing EFI Boot Manager entries (%1)…</translation>
+        <translation>Importerer EFI Boot Manager-oppføringer (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1035"/>
@@ -622,7 +622,7 @@
         <location filename="../src/efibootdata.cpp" line="1547"/>
         <location filename="../src/efibootdata.cpp" line="1569"/>
         <source>%1: %2 expected</source>
-        <translation type="unfinished">%1: %2 expected</translation>
+        <translation>%1: %2 forventet</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1043"/>
@@ -630,7 +630,7 @@
         <location filename="../src/efibootdata.cpp" line="1053"/>
         <location filename="../src/efibootdata.cpp" line="1223"/>
         <source>number</source>
-        <translation type="unfinished">number</translation>
+        <translation>nummer</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1058"/>
@@ -639,19 +639,19 @@
         <location filename="../src/efibootdata.cpp" line="1073"/>
         <location filename="../src/efibootdata.cpp" line="1078"/>
         <source>bool</source>
-        <translation type="unfinished">bool</translation>
+        <translation>boolsk</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1109"/>
         <source>%1: unknown boot manager capability</source>
-        <translation type="unfinished">%1: unknown boot manager capability</translation>
+        <translation>%1: ukjent boot manager-evne</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1122"/>
         <location filename="../src/efibootdata.cpp" line="1166"/>
         <location filename="../src/efibootdata.cpp" line="1212"/>
         <source>array</source>
-        <translation type="unfinished">array</translation>
+        <translation>tabell</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1097"/>
@@ -659,13 +659,13 @@
         <location filename="../src/efibootdata.cpp" line="1178"/>
         <location filename="../src/efibootdata.cpp" line="1332"/>
         <source>string</source>
-        <translation type="unfinished">string</translation>
+        <translation>streng</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1156"/>
         <location filename="../src/efibootdata.cpp" line="1192"/>
         <source>%1: unknown os indication</source>
-        <translation type="unfinished">%1: unknown os indication</translation>
+        <translation>%1: ukjent os-indikasjon</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1083"/>
@@ -679,7 +679,7 @@
         <location filename="../src/efibootdata.cpp" line="1532"/>
         <location filename="../src/efibootdata.cpp" line="1569"/>
         <source>object</source>
-        <translation type="unfinished">object</translation>
+        <translation>objekt</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1248"/>
@@ -687,13 +687,13 @@
         <location filename="../src/efibootdata.cpp" line="1493"/>
         <location filename="../src/efibootdata.cpp" line="1547"/>
         <source>hexadecimal number</source>
-        <translation type="unfinished">hexadecimal number</translation>
+        <translation>heksadesimalt tall</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1270"/>
         <location filename="../src/efibootdata.cpp" line="1315"/>
         <source>%1: failed parsing</source>
-        <translation type="unfinished">%1: failed parsing</translation>
+        <translation>%1: mislykket tolkning</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1339"/>
@@ -701,25 +701,25 @@
         <source>Failed to import some EFI Boot Manager entries:
 
   - %1</source>
-        <translation type="unfinished">Failed to import some EFI Boot Manager entries:
+        <translation>Kunne ikke importere noen EFI Boot Manager-oppføringer:
 
   - %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1346"/>
         <source>Importing boot configuration from raw dump…</source>
-        <translation type="unfinished">Importing boot configuration from raw dump…</translation>
+        <translation>Importerer oppstartskonfigurasjon fra rådump…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1378"/>
         <source>object(raw_data: string, efi_attributes: number)</source>
         <extracomment>Expected JSON structure, thrown as error description. raw_data and efi_attributes are field names in JSON file</extracomment>
-        <translation type="unfinished">object(raw_data: string, efi_attributes: number)</translation>
+        <translation>objekt(rå_data: streng, efi_attributter: nummer)</translation>
     </message>
     <message>
         <location filename="../include/efibootdata.h" line="15"/>
         <source>Boot</source>
-        <translation type="unfinished">Boot</translation>
+        <translation>Oppstart</translation>
     </message>
     <message>
         <location filename="../include/efibootdata.h" line="16"/>
@@ -729,12 +729,12 @@
     <message>
         <location filename="../include/efibootdata.h" line="17"/>
         <source>System Preparation</source>
-        <translation type="unfinished">System Preparation</translation>
+        <translation>Systemforberedelse</translation>
     </message>
     <message>
         <location filename="../include/efibootdata.h" line="18"/>
         <source>Platform Recovery</source>
-        <translation type="unfinished">Platform Recovery</translation>
+        <translation>Plattformgjenoppretting</translation>
     </message>
 </context>
 <context>
@@ -748,20 +748,20 @@
         <location filename="../src/form/efibooteditor.ui" line="71"/>
         <location filename="../src/efibooteditor.cpp" line="412"/>
         <source>Boot</source>
-        <translation type="unfinished">Boot</translation>
+        <translation>Oppstart</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="74"/>
         <location filename="../src/form/efibooteditor.ui" line="98"/>
         <location filename="../src/form/efibooteditor.ui" line="101"/>
         <source>Boot entries</source>
-        <translation type="unfinished">Boot entries</translation>
+        <translation>Oppstartsoppføringer</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="77"/>
         <location filename="../src/form/efibooteditor.ui" line="104"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of Boot entries.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of Boot entries.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Liste over oppstartsoppføringer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="133"/>
@@ -774,19 +774,19 @@
         <location filename="../src/form/efibooteditor.ui" line="160"/>
         <location filename="../src/form/efibooteditor.ui" line="163"/>
         <source>Driver entries</source>
-        <translation type="unfinished">Driver entries</translation>
+        <translation>Driveroppføringer</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="139"/>
         <location filename="../src/form/efibooteditor.ui" line="166"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of Driver entries.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of Driver entries.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Liste over driveroppføringer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="195"/>
         <location filename="../src/efibooteditor.cpp" line="418"/>
         <source>System Preparation</source>
-        <translation type="unfinished">System Preparation</translation>
+        <translation>Systemforberedelse</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="198"/>
