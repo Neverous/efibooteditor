@@ -4,7 +4,7 @@
 #
 #    pip-compile --all-extras --output-file=requirements.txt pyproject.toml
 #
-beautifulsoup4==4.12.3
+beautifulsoup4==4.13.3
     # via codegen (pyproject.toml)
 build==1.2.2.post1
     # via pip-tools
@@ -14,7 +14,7 @@ jinja2==3.1.5
     # via codegen (pyproject.toml)
 markupsafe==3.0.2
     # via jinja2
-mypy==1.14.1
+mypy==1.15.0
     # via codegen (pyproject.toml)
 mypy-extensions==1.0.0
     # via mypy
@@ -28,11 +28,11 @@ pyproject-hooks==1.2.0
     #   pip-tools
 pyyaml==6.0.2
     # via codegen (pyproject.toml)
-ruff==0.9.3
+ruff==0.9.7
     # via codegen (pyproject.toml)
 soupsieve==2.6
     # via beautifulsoup4
-types-beautifulsoup4==4.12.0.20241020
+types-beautifulsoup4==4.12.0.20250204
     # via codegen (pyproject.toml)
 types-html5lib==1.1.11.20241018
     # via types-beautifulsoup4
