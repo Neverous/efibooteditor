@@ -894,12 +894,12 @@
         <location filename="../src/form/efibooteditor.ui" line="599"/>
         <location filename="../src/form/efibooteditor.ui" line="608"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Global settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Global settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Globális beállítások.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="602"/>
         <source>Global</source>
-        <translation type="unfinished">Global</translation>
+        <translation>Globális</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="632"/>
@@ -907,13 +907,13 @@
         <location filename="../src/form/efibooteditor.ui" line="654"/>
         <location filename="../src/form/efibooteditor.ui" line="657"/>
         <source>Boot manager timeout</source>
-        <translation type="unfinished">Boot manager timeout</translation>
+        <translation>Boot manager időtúllépés</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="638"/>
         <location filename="../src/form/efibooteditor.ui" line="660"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot manager timeout.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot manager timeout.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot manager időtúllépés.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="663"/>
@@ -925,13 +925,13 @@
         <location filename="../src/form/efibooteditor.ui" line="677"/>
         <location filename="../src/form/efibooteditor.ui" line="686"/>
         <source>Firmware details</source>
-        <translation type="unfinished">Firmware details</translation>
+        <translation>Firmware részletek</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="680"/>
         <location filename="../src/form/efibooteditor.ui" line="689"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware részletek.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="683"/>
@@ -942,17 +942,17 @@
         <location filename="../src/form/efibooteditor.ui" line="719"/>
         <location filename="../src/form/efibooteditor.ui" line="722"/>
         <source>Available firmware features</source>
-        <translation type="unfinished">Available firmware features</translation>
+        <translation>Elérhető firmware funkciók</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="725"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware features.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware features.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Elérhető firmware funkciók.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="728"/>
         <source>Features</source>
-        <translation type="unfinished">Features</translation>
+        <translation>Funkciók</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="737"/>
@@ -974,17 +974,17 @@
         <location filename="../src/form/efibooteditor.ui" line="756"/>
         <location filename="../src/form/efibooteditor.ui" line="759"/>
         <source>Firmware supports timestamp based revocation</source>
-        <translation type="unfinished">Firmware supports timestamp based revocation</translation>
+        <translation>A Firmware támogatja az időbélyeg alapú visszavonást</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="762"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware supports timestamp based revocation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware supports timestamp based revocation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A Firmware támogatja az időbélyeg alapú visszavonást.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="765"/>
         <source>Timestamp based revocation</source>
-        <translation type="unfinished">Timestamp based revocation</translation>
+        <translation>Időbélyeg alapú visszavonás</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="775"/>
