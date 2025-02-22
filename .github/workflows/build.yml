@@ -33,7 +33,7 @@ jobs:
           - 6.8.2 # Supported until 2025-04-08
         exclude:
           - qt-version: ${{ inputs.compiler == 'MSVC32' && '6.2.4' || 'none' }}
-          - qt-version: ${{ inputs.compiler == 'MSVC32' && '6.8.1' || 'none' }}
+          - qt-version: ${{ inputs.compiler == 'MSVC32' && '6.8.2' || 'none' }}
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.12.12' || 'none' }}
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.15.2' || 'none' }}
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '6.2.4' || 'none' }}
