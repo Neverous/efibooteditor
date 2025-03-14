@@ -57,7 +57,7 @@ jobs:
         continue-on-error: true
 
       - name: Set up Qt environment
-        uses: jdpurcell/install-qt-action@v4
+        uses: jdpurcell/install-qt-action@v5
         with:
           cache: true
           version: ${{ matrix.qt-version }}
