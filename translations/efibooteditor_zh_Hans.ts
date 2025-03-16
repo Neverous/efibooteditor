@@ -269,27 +269,27 @@
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="184"/>
         <source>index</source>
-        <translation type="unfinished">index</translation>
+        <translation>索引</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="200"/>
         <source>description</source>
-        <translation type="unfinished">description</translation>
+        <translation>描述</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="237"/>
         <source>optional data</source>
-        <translation type="unfinished">optional data</translation>
+        <translation>可选数据</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="253"/>
         <source>attributes</source>
-        <translation type="unfinished">attributes</translation>
+        <translation>属性</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="269"/>
         <source>next boot</source>
-        <translation type="unfinished">next boot</translation>
+        <translation>下次启动</translation>
     </message>
 </context>
 <context>
@@ -567,13 +567,13 @@
         <location filename="../src/efibootdata.cpp" line="338"/>
         <location filename="../src/efibootdata.cpp" line="792"/>
         <source>Couldn&apos;t load EFI Boot Manager variables</source>
-        <translation type="unfinished">Couldn&apos;t load EFI Boot Manager variables</translation>
+        <translation>无法加载 EFI Boot Manager 变量</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="100"/>
         <location filename="../src/efibootdata.cpp" line="799"/>
         <source>Couldn&apos;t find any EFI Boot Manager variables</source>
-        <translation type="unfinished">Couldn&apos;t find any EFI Boot Manager variables</translation>
+        <translation>找不到任何 EFI Boot Manager 变量</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="529"/>
@@ -1323,17 +1323,17 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1396"/>
         <source>Hot &amp;keys</source>
-        <translation type="unfinished">Hot &amp;keys</translation>
+        <translation>热键(&amp;K)</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1399"/>
         <source>Hot Keys</source>
-        <translation type="unfinished">Hot Keys</translation>
+        <translation>热键</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1402"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;热键&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="593"/>
@@ -1636,7 +1636,7 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Hot Key</source>
-        <translation type="unfinished">Hot Key</translation>
+        <translation>热键</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="78"/>
@@ -1666,7 +1666,7 @@ Your EFI configuration will be overwritten!</source>
     <message>
         <location filename="../src/efikeysequenceedit.cpp" line="109"/>
         <source>Press hot key</source>
-        <translation type="unfinished">Press hot key</translation>
+        <translation>按热键</translation>
     </message>
 </context>
 <context>
@@ -3809,7 +3809,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="3950"/>
         <location filename="../src/form/filepathdialog.ui" line="3972"/>
         <source>The HBA port number that facilitates the connection to the device or a port multiplier. The value 0xFFFF is reserved.</source>
-        <translation type="unfinished">The HBA port number that facilitates the connection to the device or a port multiplier. The value 0xFFFF is reserved.</translation>
+        <translation>便于连接到设备或端口倍增器的 HBA 端口号。值 0xFFFF 为保留值。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3953"/>
@@ -3822,13 +3822,13 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="3956"/>
         <location filename="../src/form/filepathdialog.ui" line="3978"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The HBA port number that facilitates the connection to the device or a port multiplier. The value 0xFFFF is reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The HBA port number that facilitates the connection to the device or a port multiplier. The value 0xFFFF is reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于连接设备或端口倍增器的 HBA 端口号。值 0xFFFF 为保留值。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3991"/>
         <location filename="../src/form/filepathdialog.ui" line="4013"/>
         <source>The Port multiplier port number that facilitates the connection to the device. Must be set to 0xFFFF if the device is directly connected to the HBA.</source>
-        <translation type="unfinished">The Port multiplier port number that facilitates the connection to the device. Must be set to 0xFFFF if the device is directly connected to the HBA.</translation>
+        <translation>端口倍增器端口号，用于方便连接到设备。如果设备直接连接到 HBA，则必须设置为 0xFFFF。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3994"/>
@@ -3841,7 +3841,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="3997"/>
         <location filename="../src/form/filepathdialog.ui" line="4019"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Port multiplier port number that facilitates the connection to the device. Must be set to 0xFFFF if the device is directly connected to the HBA.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Port multiplier port number that facilitates the connection to the device. Must be set to 0xFFFF if the device is directly connected to the HBA.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;端口倍增器端口号，用于连接设备。如果设备直接连接到 HBA，则必须设置为 0xFFFF。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4077"/>
@@ -3862,13 +3862,13 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4107"/>
         <location filename="../src/form/filepathdialog.ui" line="4129"/>
         <source>Network Protocol (0 = TCP, 1+ = reserved).</source>
-        <translation type="unfinished">Network Protocol (0 = TCP, 1+ = reserved).</translation>
+        <translation>网络协议（0 = TCP，1+ = 保留）。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4113"/>
         <location filename="../src/form/filepathdialog.ui" line="4135"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Network Protocol (0 = TCP, 1+ = reserved).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Network Protocol (0 = TCP, 1+ = reserved).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;网络协议（0 = TCP，1+ = 保留）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4148"/>
@@ -3893,38 +3893,38 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4188"/>
         <location filename="../src/form/filepathdialog.ui" line="4209"/>
         <source>8 byte array containing the iSCSI Logical Unit Number.</source>
-        <translation type="unfinished">8 byte array containing the iSCSI Logical Unit Number.</translation>
+        <translation>包含 iSCSI 逻辑单元号的 8 字节数组。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4194"/>
         <location filename="../src/form/filepathdialog.ui" line="4215"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8 byte array containing the iSCSI Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8 byte array containing the iSCSI Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;包含 iSCSI 逻辑单元号的 8 字节数组。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4228"/>
         <location filename="../src/form/filepathdialog.ui" line="4250"/>
         <source>iSCSI Target Portal group tag the initiator intends to establish a session with.</source>
-        <translation type="unfinished">iSCSI Target Portal group tag the initiator intends to establish a session with.</translation>
+        <translation>启动器想要与之建立会话的 iSCSI 目标门户组标签。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4231"/>
         <location filename="../src/form/filepathdialog.ui" line="4237"/>
         <location filename="../src/form/filepathdialog.ui" line="4253"/>
         <source>Target Portal Group</source>
-        <translation type="unfinished">Target Portal Group</translation>
+        <translation>目标门户组</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4234"/>
         <location filename="../src/form/filepathdialog.ui" line="4256"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI Target Portal group tag the initiator intends to establish a session with.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI Target Portal group tag the initiator intends to establish a session with.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;启动器打算与其建立会话的 iSCSI 目标门户组标签。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4269"/>
         <location filename="../src/form/filepathdialog.ui" line="4291"/>
         <source>iSCSI NodeTarget Name.</source>
-        <translation type="unfinished">iSCSI NodeTarget Name.</translation>
+        <translation>iSCSI 节点目标名称。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4272"/>
@@ -3937,7 +3937,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4275"/>
         <location filename="../src/form/filepathdialog.ui" line="4297"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI NodeTarget Name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI NodeTarget Name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI 节点目标名称。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4308"/>
@@ -3958,7 +3958,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4338"/>
         <location filename="../src/form/filepathdialog.ui" line="4360"/>
         <source>VLAN identifier (0-4094).</source>
-        <translation type="unfinished">VLAN identifier (0-4094).</translation>
+        <translation>VLAN 标识符（0-4094）。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4341"/>
@@ -3971,67 +3971,67 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4344"/>
         <location filename="../src/form/filepathdialog.ui" line="4366"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VLAN identifier (0-4094).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VLAN identifier (0-4094).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VLAN 标识符 (0-4094)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4383"/>
         <source>Fibre Channel Ex</source>
-        <translation type="unfinished">Fibre Channel Ex</translation>
+        <translation>光纤通道扩展</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4386"/>
         <source>The Fibre Channel Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.</source>
-        <translation type="unfinished">The Fibre Channel Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.</translation>
+        <translation>光纤通道 Ex 设备路径阐明了逻辑单元号字段的定义，以符合 T-10 SCSI 架构模型 4 规范。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4389"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Fibre Channel Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Fibre Channel Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;光纤通道 Ex 设备路径阐明了逻辑单元号字段的定义，以符合 T-10 SCSI 架构模型 4 规范。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4453"/>
         <location filename="../src/form/filepathdialog.ui" line="4474"/>
         <source>8 byte array containing Fibre Channel End Device Port Name (a.k.a., World Wide Name).</source>
-        <translation type="unfinished">8 byte array containing Fibre Channel End Device Port Name (a.k.a., World Wide Name).</translation>
+        <translation>包含光纤通道终端设备端口名称（又称全球名称）的 8 字节数组。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4459"/>
         <location filename="../src/form/filepathdialog.ui" line="4480"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8 byte array containing Fibre Channel End Device Port Name (a.k.a., World Wide Name).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8 byte array containing Fibre Channel End Device Port Name (a.k.a., World Wide Name).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;包含光纤通道终端设备端口名称（又称全球名称）的 8 字节数组。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4493"/>
         <location filename="../src/form/filepathdialog.ui" line="4514"/>
         <source>8 byte array containing Fibre Channel Logical Unit Number.</source>
-        <translation type="unfinished">8 byte array containing Fibre Channel Logical Unit Number.</translation>
+        <translation>包含光纤通道逻辑单元号的 8 字节数组。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4499"/>
         <location filename="../src/form/filepathdialog.ui" line="4520"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8 byte array containing Fibre Channel Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8 byte array containing Fibre Channel Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;包含光纤通道逻辑单元号的 8 字节数组。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4537"/>
         <source>SAS Extended Messaging</source>
-        <translation type="unfinished">SAS Extended Messaging</translation>
+        <translation>SAS 扩展消息传递</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4540"/>
         <source>The SAS Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.</source>
-        <translation type="unfinished">The SAS Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.</translation>
+        <translation>SAS Ex 设备路径明确了逻辑单元号字段的定义，以符合 T-10 SCSI 架构模型 4 规范。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4543"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The SAS Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The SAS Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SAS Ex 设备路径阐明了逻辑单元号字段的定义，以符合 T-10 SCSI 架构模型 4 规范。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4567"/>
         <location filename="../src/form/filepathdialog.ui" line="4588"/>
         <source>8-byte array of the SAS Address for Serial Attached SCSI Target Port.</source>
-        <translation type="unfinished">8-byte array of the SAS Address for Serial Attached SCSI Target Port.</translation>
+        <translation>串行连接 SCSI 目标端口的 SAS 地址的 8 字节数组。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4570"/>
@@ -4044,78 +4044,78 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4573"/>
         <location filename="../src/form/filepathdialog.ui" line="4594"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8-byte array of the SAS Address for Serial Attached SCSI Target Port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8-byte array of the SAS Address for Serial Attached SCSI Target Port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;串行连接 SCSI 目标端口的 SAS 地址的 8 字节数组。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4607"/>
         <location filename="../src/form/filepathdialog.ui" line="4628"/>
         <source>8-byte array of the SAS Logical Unit Number.</source>
-        <translation type="unfinished">8-byte array of the SAS Logical Unit Number.</translation>
+        <translation>SAS 逻辑单元号的 8 字节数组。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4613"/>
         <location filename="../src/form/filepathdialog.ui" line="4634"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8-byte array of the SAS Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8-byte array of the SAS Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SAS 逻辑单元号的 8 字节数组。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4647"/>
         <location filename="../src/form/filepathdialog.ui" line="4668"/>
         <source>More Information about the device and its interconnect.</source>
-        <translation type="unfinished">More Information about the device and its interconnect.</translation>
+        <translation>有关该设备及其互连的更多信息。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4650"/>
         <location filename="../src/form/filepathdialog.ui" line="4656"/>
         <location filename="../src/form/filepathdialog.ui" line="4671"/>
         <source>Device and Topology Info</source>
-        <translation type="unfinished">Device and Topology Info</translation>
+        <translation>设备和拓扑信息</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4653"/>
         <location filename="../src/form/filepathdialog.ui" line="4674"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;More Information about the device and its interconnect.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;More Information about the device and its interconnect.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;有关该设备及其互连的更多信息。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4687"/>
         <location filename="../src/form/filepathdialog.ui" line="4709"/>
         <source>Relative Target Port (RTP).</source>
-        <translation type="unfinished">Relative Target Port (RTP).</translation>
+        <translation>相对目标端口 (RTP)。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4690"/>
         <location filename="../src/form/filepathdialog.ui" line="4696"/>
         <location filename="../src/form/filepathdialog.ui" line="4712"/>
         <source>Relative Target Port</source>
-        <translation type="unfinished">Relative Target Port</translation>
+        <translation>相对目标端口</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4693"/>
         <location filename="../src/form/filepathdialog.ui" line="4715"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Relative Target Port (RTP).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Relative Target Port (RTP).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;相对目标端口 (RTP)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4732"/>
         <source>NVM Express NS</source>
-        <translation type="unfinished">NVM Express NS</translation>
+        <translation>NVM Express NS</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4735"/>
         <source>NVM Express Namespace Settings.</source>
-        <translation type="unfinished">NVM Express Namespace Settings.</translation>
+        <translation>NVM Express 命名空间设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4738"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NVM Express Namespace Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NVM Express Namespace Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NVM Express 命名空间设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4762"/>
         <location filename="../src/form/filepathdialog.ui" line="4783"/>
         <source>Namespace identifier (NSID). The values of 0 and 0xFFFFFFFF are invalid.</source>
-        <translation type="unfinished">Namespace identifier (NSID). The values of 0 and 0xFFFFFFFF are invalid.</translation>
+        <translation>命名空间标识符 (NSID)。0 和 0xFFFFFFFF 的值无效。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4765"/>
@@ -4128,13 +4128,13 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4768"/>
         <location filename="../src/form/filepathdialog.ui" line="4789"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Namespace identifier (NSID). The values of 0 and 0xFFFFFFFF are invalid.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Namespace identifier (NSID). The values of 0 and 0xFFFFFFFF are invalid.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;命名空间标识符 (NSID)。0 和 0xFFFFFFFF 的值无效。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4802"/>
         <location filename="../src/form/filepathdialog.ui" line="4823"/>
         <source>This field contains the IEEE Extended Unique Identifier (EUI-64). Devices without an EUI-64 value must initialize this field with a value of 0.</source>
-        <translation type="unfinished">This field contains the IEEE Extended Unique Identifier (EUI-64). Devices without an EUI-64 value must initialize this field with a value of 0.</translation>
+        <translation>此字段包含 IEEE 扩展唯一标识符 (EUI-64)。没有 EUI-64 值的设备必须用 0 值初始化此字段。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4805"/>
@@ -4147,29 +4147,29 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4808"/>
         <location filename="../src/form/filepathdialog.ui" line="4829"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This field contains the IEEE Extended Unique Identifier (EUI-64). Devices without an EUI-64 value must initialize this field with a value of 0.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This field contains the IEEE Extended Unique Identifier (EUI-64). Devices without an EUI-64 value must initialize this field with a value of 0.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;此字段包含 IEEE 扩展唯一标识符 (EUI-64)。没有 EUI-64 值的设备必须将此字段初始化为 0。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4849"/>
         <source>Refer to RFC 3986 for details on the URI contents.</source>
-        <translation type="unfinished">Refer to RFC 3986 for details on the URI contents.</translation>
+        <translation>有关 URI 内容的详细信息，请参阅 RFC 3986。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4852"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Refer to RFC 3986 for details on the URI contents.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Refer to RFC 3986 for details on the URI contents.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;有关 URI 内容的详细信息，请参阅 RFC 3986。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4876"/>
         <location filename="../src/form/filepathdialog.ui" line="4898"/>
         <source>Instance of the URI pursuant to RFC 3986.</source>
-        <translation type="unfinished">Instance of the URI pursuant to RFC 3986.</translation>
+        <translation>符合 RFC 3986 的 URI 实例。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4882"/>
         <location filename="../src/form/filepathdialog.ui" line="4904"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Instance of the URI pursuant to RFC 3986.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Instance of the URI pursuant to RFC 3986.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;符合 RFC 3986 的 URI 实例。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4915"/>
@@ -4190,13 +4190,13 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4945"/>
         <location filename="../src/form/filepathdialog.ui" line="4966"/>
         <source>Target ID on the UFS interface (PUN).</source>
-        <translation type="unfinished">Target ID on the UFS interface (PUN).</translation>
+        <translation>UFS 接口上的目标 ID (PUN)。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4951"/>
         <location filename="../src/form/filepathdialog.ui" line="4972"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Target ID on the UFS interface (PUN).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Target ID on the UFS interface (PUN).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UFS 接口上的目标 ID (PUN)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5029"/>
@@ -4247,12 +4247,12 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5107"/>
         <source>EFI Bluetooth Settings.</source>
-        <translation type="unfinished">EFI Bluetooth Settings.</translation>
+        <translation>EFI 蓝牙设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5110"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;EFI Bluetooth Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;EFI Bluetooth Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;EFI 蓝牙设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5134"/>
@@ -4260,7 +4260,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5352"/>
         <location filename="../src/form/filepathdialog.ui" line="5373"/>
         <source>48-bit Bluetooth device address.</source>
-        <translation type="unfinished">48-bit Bluetooth device address.</translation>
+        <translation>48 位蓝牙设备地址。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5137"/>
@@ -4278,7 +4278,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5358"/>
         <location filename="../src/form/filepathdialog.ui" line="5379"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;48-bit Bluetooth device address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;48-bit Bluetooth device address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;48 位蓝牙设备地址。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5178"/>
@@ -4299,7 +4299,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5208"/>
         <location filename="../src/form/filepathdialog.ui" line="5230"/>
         <source>SSID in octet string.</source>
-        <translation type="unfinished">SSID in octet string.</translation>
+        <translation>八位字节字符串中的 SSID。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5211"/>
@@ -4312,7 +4312,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5214"/>
         <location filename="../src/form/filepathdialog.ui" line="5236"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SSID in octet string.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SSID in octet string.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;八位字节字符串中的 SSID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5247"/>
@@ -4322,12 +4322,12 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5250"/>
         <source>Embedded Multi-Media Card Settings.</source>
-        <translation type="unfinished">Embedded Multi-Media Card Settings.</translation>
+        <translation>嵌入式多媒体卡设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5253"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Embedded Multi-Media Card Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Embedded Multi-Media Card Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;嵌入式多媒体卡设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5322"/>
@@ -4337,20 +4337,20 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5325"/>
         <source>EFI BluetoothLE Settings.</source>
-        <translation type="unfinished">EFI BluetoothLE Settings.</translation>
+        <translation>EFI BluetoothLE 设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5328"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;EFI BluetoothLE Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;EFI BluetoothLE Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;EFI BluetoothLE 设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5392"/>
         <location filename="../src/form/filepathdialog.ui" line="5416"/>
         <source>0x00 - Public Device Address.
 0x01 - Random Device Address.</source>
-        <translation type="unfinished">0x00 - Public Device Address.
-0x01 - Random Device Address.</translation>
+        <translation>0x00 - 公共设备地址。
+0x01 - 随机设备地址。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5396"/>
@@ -4364,8 +4364,8 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5423"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - Public Device Address.
 0x01 - Random Device Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - Public Device Address.
-0x01 - Random Device Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - 公共设备地址。
+0x01 - 随机设备地址。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5428"/>
@@ -4397,28 +4397,28 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5499"/>
         <source>0x00 - The DNS server address is IPv4 address.
 0x01 - The DNS server address is IPv6 address.</source>
-        <translation type="unfinished">0x00 - The DNS server address is IPv4 address.
-0x01 - The DNS server address is IPv6 address.</translation>
+        <translation>0x00 - DNS 服务器地址为 IPv4 地址。
+0x01 - DNS 服务器地址为 IPv6 地址。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5482"/>
         <location filename="../src/form/filepathdialog.ui" line="5506"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - The DNS server address is IPv4 address.
 0x01 - The DNS server address is IPv6 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - The DNS server address is IPv4 address.
-0x01 - The DNS server address is IPv6 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - DNS 服务器地址为 IPv4 地址。
+0x01 - DNS 服务器地址为 IPv6 地址。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5514"/>
         <location filename="../src/form/filepathdialog.ui" line="5575"/>
         <source>One or more instances of the DNS server address in EFI_IP_ADDRESS.</source>
-        <translation type="unfinished">One or more instances of the DNS server address in EFI_IP_ADDRESS.</translation>
+        <translation>EFI_IP_ADDRESS 中的 DNS 服务器地址的一个或多个实例。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5520"/>
         <location filename="../src/form/filepathdialog.ui" line="5581"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;One or more instances of the DNS server address in EFI_IP_ADDRESS.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;One or more instances of the DNS server address in EFI_IP_ADDRESS.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;EFI_IP_ADDRESS 中的一个或多个 DNS 服务器地址实例。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5536"/>
@@ -4435,18 +4435,18 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5595"/>
         <source>This device path describes a bootable NVDIMM namespace that is defined by a namespace label.</source>
-        <translation type="unfinished">This device path describes a bootable NVDIMM namespace that is defined by a namespace label.</translation>
+        <translation>该设备路径描述了由命名空间标签定义的可启动 NVDIMM 命名空间。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5598"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path describes a bootable NVDIMM namespace that is defined by a namespace label.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path describes a bootable NVDIMM namespace that is defined by a namespace label.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;此设备路径描述了由命名空间标签定义的可启动 NVDIMM 命名空间。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5622"/>
         <location filename="../src/form/filepathdialog.ui" line="5643"/>
         <source>Namespace unique label identifier UUID. See the Uuid description in the NVDIMM Label Protocol - Label definitions section for details on this field.</source>
-        <translation type="unfinished">Namespace unique label identifier UUID. See the Uuid description in the NVDIMM Label Protocol - Label definitions section for details on this field.</translation>
+        <translation>命名空间唯一标签标识符 UUID。有关此字段的详细信息，请参阅 NVDIMM 标签协议 - 标签定义部分中的 Uuid 描述。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5625"/>
@@ -4459,7 +4459,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5628"/>
         <location filename="../src/form/filepathdialog.ui" line="5649"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Namespace unique label identifier UUID. See the Uuid description in the NVDIMM Label Protocol - Label definitions section for details on this field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Namespace unique label identifier UUID. See the Uuid description in the NVDIMM Label Protocol - Label definitions section for details on this field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;命名空间唯一标签标识符 UUID。有关此字段的详细信息，请参阅 NVDIMM 标签协议 - 标签定义部分中的 Uuid 描述。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5663"/>
@@ -4472,12 +4472,12 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5666"/>
         <source>REST Service Settings.</source>
-        <translation type="unfinished">REST Service Settings.</translation>
+        <translation>重置服务设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5669"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;REST Service Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;REST Service Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;重置服务设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5693"/>
@@ -4485,9 +4485,9 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <source>0x01 - Redfish REST Service.
 0x02 - OData REST Service.
 0xFF - Vendor specific REST Service.</source>
-        <translation type="unfinished">0x01 - Redfish REST Service.
-0x02 - OData REST Service.
-0xFF - Vendor specific REST Service.</translation>
+        <translation>0x01 - Redfish REST 服务。
+0x02 - OData REST 服务。
+0xFF - 供应商特定的 REST 服务。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5701"/>
@@ -4495,9 +4495,9 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x01 - Redfish REST Service.
 0x02 - OData REST Service.
 0xFF - Vendor specific REST Service.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x01 - Redfish REST Service.
-0x02 - OData REST Service.
-0xFF - Vendor specific REST Service.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x01 - Redfish REST 服务。
+0x02 - OData REST 服务。
+0xFF - 供应商特定的 REST 服务。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5733"/>
@@ -4519,8 +4519,8 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5775"/>
         <source>0x01 - In-Band REST Service.
 0x02 - Out-of-band REST Service.</source>
-        <translation type="unfinished">0x01 - In-Band REST Service.
-0x02 - Out-of-band REST Service.</translation>
+        <translation>0x01 - 带内 REST 服务。
+0x02 - 带外 REST 服务。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5755"/>
@@ -4534,8 +4534,8 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5782"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x01 - In-Band REST Service.
 0x02 - Out-of-band REST Service.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x01 - In-Band REST Service.
-0x02 - Out-of-band REST Service.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x01 - 带内 REST 服务。
+0x02 - 带外 REST 服务。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5787"/>
@@ -4551,13 +4551,13 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5800"/>
         <location filename="../src/form/filepathdialog.ui" line="5821"/>
         <source>GUID of vendor specific REST service.</source>
-        <translation type="unfinished">GUID of vendor specific REST service.</translation>
+        <translation>供应商特定 REST 服务的 GUID。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5806"/>
         <location filename="../src/form/filepathdialog.ui" line="5827"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GUID of vendor specific REST service.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GUID of vendor specific REST service.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;供应商特定 REST 服务的 GUID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5837"/>
@@ -4579,18 +4579,18 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5918"/>
         <source>This device path describes a bootable NVMe over Fiber namespace that is defined by a unique Namespace and Subsystem NQN identity.</source>
-        <translation type="unfinished">This device path describes a bootable NVMe over Fiber namespace that is defined by a unique Namespace and Subsystem NQN identity.</translation>
+        <translation>该设备路径描述了由唯一的命名空间和子系统 NQN 标识定义的可启动 NVMe over Fiber 命名空间。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5921"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path describes a bootable NVMe over Fiber namespace that is defined by a unique Namespace and Subsystem NQN identity.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path describes a bootable NVMe over Fiber namespace that is defined by a unique Namespace and Subsystem NQN identity.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;此设备路径描述了由唯一命名空间和子系统 NQN 标识定义的可启动 NVMe over Fiber 命名空间。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5945"/>
         <location filename="../src/form/filepathdialog.ui" line="5967"/>
         <source>Namespace Identifier Type (NIDT), for globally unique type values defined in the CNS 03h NIDT field (1h, 2h, or 3h) by the NVM Express Base Specification.</source>
-        <translation type="unfinished">Namespace Identifier Type (NIDT), for globally unique type values defined in the CNS 03h NIDT field (1h, 2h, or 3h) by the NVM Express Base Specification.</translation>
+        <translation>命名空间标识符类型 (NIDT)，用于 NVM Express 基本规范在 CNS 03h NIDT 字段（1h、2h 或 3h）中定义的全局唯一类型值。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5948"/>
@@ -4603,13 +4603,13 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5951"/>
         <location filename="../src/form/filepathdialog.ui" line="5973"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Namespace Identifier Type (NIDT), for globally unique type values defined in the CNS 03h NIDT field (1h, 2h, or 3h) by the NVM Express Base Specification.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Namespace Identifier Type (NIDT), for globally unique type values defined in the CNS 03h NIDT field (1h, 2h, or 3h) by the NVM Express Base Specification.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;命名空间标识符类型 (NIDT)，用于 NVM Express 基本规范在 CNS 03h NIDT 字段（1h、2h 或 3h）中定义的全局唯一类型值。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5986"/>
         <location filename="../src/form/filepathdialog.ui" line="6007"/>
         <source>Namespace Identifier (NID), a globally unique value defined in the Namespace Identification De-scriptor list (CNS 03h) by the NVM Express Base Specification in big endian format.</source>
-        <translation type="unfinished">Namespace Identifier (NID), a globally unique value defined in the Namespace Identification De-scriptor list (CNS 03h) by the NVM Express Base Specification in big endian format.</translation>
+        <translation>命名空间标识符 (NID)，NVM Express 基本规范以大端格式在命名空间标识描述符列表 (CNS 03h) 中定义的全局唯一值。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5989"/>
@@ -4622,13 +4622,13 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5992"/>
         <location filename="../src/form/filepathdialog.ui" line="6013"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Namespace Identifier (NID), a globally unique value defined in the Namespace Identification De-scriptor list (CNS 03h) by the NVM Express Base Specification in big endian format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Namespace Identifier (NID), a globally unique value defined in the Namespace Identification De-scriptor list (CNS 03h) by the NVM Express Base Specification in big endian format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;命名空间标识符（NID），是 NVM Express 基本规范在命名空间标识描述符列表（CNS 03h）中以大端格式定义的全局唯一值。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6023"/>
         <location filename="../src/form/filepathdialog.ui" line="6045"/>
         <source>Unique identifier of an NVM subsystem stored as UTF-8 string of n-bytes in compliance with the NVMe Qualified Name in the NVM Express Base Specification. Subsystem NQN is used for purposes of identification and authentication. Maximum length of 224 bytes.</source>
-        <translation type="unfinished">Unique identifier of an NVM subsystem stored as UTF-8 string of n-bytes in compliance with the NVMe Qualified Name in the NVM Express Base Specification. Subsystem NQN is used for purposes of identification and authentication. Maximum length of 224 bytes.</translation>
+        <translation>NVM 子系统的唯一标识符，以 n 字节的 UTF-8 字符串形式存储，符合 NVM Express 基本规范中的 NVMe 限定名称。子系统 NQN 用于识别和身份验证。最大长度为 224 字节。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6026"/>
@@ -4641,7 +4641,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="6029"/>
         <location filename="../src/form/filepathdialog.ui" line="6051"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique identifier of an NVM subsystem stored as UTF-8 string of n-bytes in compliance with the NVMe Qualified Name in the NVM Express Base Specification. Subsystem NQN is used for purposes of identification and authentication. Maximum length of 224 bytes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique identifier of an NVM subsystem stored as UTF-8 string of n-bytes in compliance with the NVMe Qualified Name in the NVM Express Base Specification. Subsystem NQN is used for purposes of identification and authentication. Maximum length of 224 bytes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NVM 子系统的唯一标识符，以 n 字节的 UTF-8 字符串形式存储，符合 NVM Express 基本规范中的 NVMe 限定名称。子系统 NQN 用于识别和身份验证。最大长度为 224 字节。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6066"/>
@@ -4651,30 +4651,30 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6069"/>
         <source>The Hard Drive Media Device Path is used to represent a partition on a hard drive.</source>
-        <translation type="unfinished">The Hard Drive Media Device Path is used to represent a partition on a hard drive.</translation>
+        <translation>硬盘媒体设备路径用于表示硬盘上的分区。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6072"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Hard Drive Media Device Path is used to represent a partition on a hard drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Hard Drive Media Device Path is used to represent a partition on a hard drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;硬盘媒体设备路径用于表示硬盘上的分区。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6174"/>
         <location filename="../src/form/filepathdialog.ui" line="6196"/>
         <source>Describes the entry in a partition table, starting with entry 1. Partition number zero represents the entire device. Valid partition numbers for a MBR partition are [1, 4]. Valid partition numbers for a GPT partition are [1, NumberOfPartitionEntries].</source>
-        <translation type="unfinished">Describes the entry in a partition table, starting with entry 1. Partition number zero represents the entire device. Valid partition numbers for a MBR partition are [1, 4]. Valid partition numbers for a GPT partition are [1, NumberOfPartitionEntries].</translation>
+        <translation>描述分区表中的条目，从条目 1 开始。分区号 0 代表整个设备。MBR 分区的有效分区号为 [1, 4]。GPT 分区的有效分区号为 [1, NumberOfPartitionEntries]。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6180"/>
         <location filename="../src/form/filepathdialog.ui" line="6202"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Describes the entry in a partition table, starting with entry 1. Partition number zero represents the entire device. Valid partition numbers for a MBR partition are [1, 4]. Valid partition numbers for a GPT partition are [1, NumberOfPartitionEntries].&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Describes the entry in a partition table, starting with entry 1. Partition number zero represents the entire device. Valid partition numbers for a MBR partition are [1, 4]. Valid partition numbers for a GPT partition are [1, NumberOfPartitionEntries].&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;描述分区表中的条目，从条目 1 开始。分区号 0 代表整个设备。MBR 分区的有效分区号为 [1, 4]。GPT 分区的有效分区号为 [1, NumberOfPartitionEntries]。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6215"/>
         <location filename="../src/form/filepathdialog.ui" line="6236"/>
         <source>Starting LBA of the partition on the hard drive.</source>
-        <translation type="unfinished">Starting LBA of the partition on the hard drive.</translation>
+        <translation>硬盘驱动器上分区的起始 LBA。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6218"/>
@@ -4690,13 +4690,13 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="6221"/>
         <location filename="../src/form/filepathdialog.ui" line="6242"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starting LBA of the partition on the hard drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starting LBA of the partition on the hard drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;硬盘上分区的起始 LBA。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6255"/>
         <location filename="../src/form/filepathdialog.ui" line="6276"/>
         <source>Size of the partition in units of Logical Blocks.</source>
-        <translation type="unfinished">Size of the partition in units of Logical Blocks.</translation>
+        <translation>以逻辑块为单位的分区大小。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6258"/>
@@ -4712,7 +4712,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="6261"/>
         <location filename="../src/form/filepathdialog.ui" line="6282"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Size of the partition in units of Logical Blocks.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Size of the partition in units of Logical Blocks.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;以逻辑块为单位的分区大小。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6295"/>
@@ -4720,10 +4720,10 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
 If SignatureType is 0, this field has to be initialized with 16 zeroes.
 If SignatureType is 1, the MBR signature is stored in the first 4 bytes of this field. The other 12 bytes are initialized with zeroes.
 If SignatureType is 2, this field contains a 16 byte signature.</source>
-        <translation type="unfinished">Signature unique to this partition:
-If SignatureType is 0, this field has to be initialized with 16 zeroes.
-If SignatureType is 1, the MBR signature is stored in the first 4 bytes of this field. The other 12 bytes are initialized with zeroes.
-If SignatureType is 2, this field contains a 16 byte signature.</translation>
+        <translation>此分区独有的签名：
+如果 SignatureType 为 0，则必须用 16 个零初始化此字段。
+如果 SignatureType 为 1，则 MBR 签名存储在此字段的前 4 个字节中。其他 12 个字节用零初始化。
+如果 SignatureType 为 2，则此字段包含 16 字节签名。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6301"/>
@@ -4738,10 +4738,10 @@ If SignatureType is 2, this field contains a 16 byte signature.</translation>
 If SignatureType is 0, this field has to be initialized with 16 zeroes.
 If SignatureType is 1, the MBR signature is stored in the first 4 bytes of this field. The other 12 bytes are initialized with zeroes.
 If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Signature unique to this partition:
-If SignatureType is 0, this field has to be initialized with 16 zeroes.
-If SignatureType is 1, the MBR signature is stored in the first 4 bytes of this field. The other 12 bytes are initialized with zeroes.
-If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;此分区独有的签名：
+如果 SignatureType 为 0，则必须用 16 个零初始化此字段。
+如果 SignatureType 为 1，则 MBR 签名存储在此字段的前 4 个字节中。其他 12 个字节用零初始化。
+如果 SignatureType 为 2，则此字段包含 16 字节签名。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6322"/>
@@ -4749,10 +4749,10 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
             0x00 - No Disk Signature.
             0x01 - 32-bit signature from address 0x1b8 of the type 0x01 MBR.
             0x02 - GUID signature.</source>
-        <translation type="unfinished">PartType of Disk Signature(Unused values reserved):
-            0x00 - No Disk Signature.
-            0x01 - 32-bit signature from address 0x1b8 of the type 0x01 MBR.
-            0x02 - GUID signature.</translation>
+        <translation>磁盘签名的部分类型（保留未使用的值）：
+            0x00 - 无磁盘签名。
+            0x01 - 来自地址 0x1b8 的 32 位签名，类型为 0x01 MBR。
+            0x02 - GUID 签名。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6328"/>
@@ -4765,10 +4765,10 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
             0x00 - No Disk Signature.
             0x01 - 32-bit signature from address 0x1b8 of the type 0x01 MBR.
             0x02 - GUID signature.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PartType of Disk Signature(Unused values reserved):
-            0x00 - No Disk Signature.
-            0x01 - 32-bit signature from address 0x1b8 of the type 0x01 MBR.
-            0x02 - GUID signature.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;磁盘签名的部分类型（保留未使用的值）：
+            0x00 - 无磁盘签名。
+            0x01 - 来自地址 0x1b8 的 32 位签名，类型为 0x01 MBR。
+            0x02 - GUID 签名。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6338"/>
@@ -4781,10 +4781,10 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
             If SignatureType is 0, this field has to be initialized with 16 zeroes.
             If SignatureType is 1, the MBR signature is stored in the first 4 bytes of this field. The other 12 bytes are initialized with zeroes.
             If SignatureType is 2, this field contains a 16 byte signature.</source>
-        <translation type="unfinished">Signature unique to this partition:
-            If SignatureType is 0, this field has to be initialized with 16 zeroes.
-            If SignatureType is 1, the MBR signature is stored in the first 4 bytes of this field. The other 12 bytes are initialized with zeroes.
-            If SignatureType is 2, this field contains a 16 byte signature.</translation>
+        <translation>此分区独有的签名：
+           如果 SignatureType 为 0，则必须用 16 个零初始化此字段。
+            如果 SignatureType 为 1，则 MBR 签名存储在此字段的前 4 个字节中。其他 12 个字节用零初始化。
+            如果 SignatureType 为 2，则此字段包含 16 字节签名。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6370"/>
@@ -4792,10 +4792,10 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
             If SignatureType is 0, this field has to be initialized with 16 zeroes.
             If SignatureType is 1, the MBR signature is stored in the first 4 bytes of this field. The other 12 bytes are initialized with zeroes.
             If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Signature unique to this partition:
-            If SignatureType is 0, this field has to be initialized with 16 zeroes.
-            If SignatureType is 1, the MBR signature is stored in the first 4 bytes of this field. The other 12 bytes are initialized with zeroes.
-            If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;此分区独有的签名：
+            如果 SignatureType 为 0，则必须用 16 个零初始化此字段。
+            如果 SignatureType 为 1，则 MBR 签名存储在此字段的前 4 个字节中。其他 12 个字节用零初始化。
+            如果 SignatureType 为 2，则此字段包含 16 字节签名。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6392"/>
@@ -4805,18 +4805,18 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6395"/>
         <source>The CD-ROM Media Device Path is used to define a system partition that exists on a CD-ROM.</source>
-        <translation type="unfinished">The CD-ROM Media Device Path is used to define a system partition that exists on a CD-ROM.</translation>
+        <translation>CD-ROM 媒体设备路径用于定义 CD-ROM 上存在的系统分区。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6398"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The CD-ROM Media Device Path is used to define a system partition that exists on a CD-ROM.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The CD-ROM Media Device Path is used to define a system partition that exists on a CD-ROM.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;CD-ROM 媒体设备路径用于定义 CD-ROM 上存在的系统分区。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6422"/>
         <location filename="../src/form/filepathdialog.ui" line="6444"/>
         <source>Boot Entry number from the Boot Catalog. The Initial/Default entry is defined as zero.</source>
-        <translation type="unfinished">Boot Entry number from the Boot Catalog. The Initial/Default entry is defined as zero.</translation>
+        <translation>引导目录中的引导条目号。初始/默认条目定义为零。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6425"/>
@@ -4829,31 +4829,31 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="6428"/>
         <location filename="../src/form/filepathdialog.ui" line="6450"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot Entry number from the Boot Catalog. The Initial/Default entry is defined as zero.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot Entry number from the Boot Catalog. The Initial/Default entry is defined as zero.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;来自引导目录的引导条目编号。初始/默认条目定义为零。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6463"/>
         <location filename="../src/form/filepathdialog.ui" line="6484"/>
         <source>Starting RBA of the partition on the medium. CD-ROMs use Relative logical Block Addressing.</source>
-        <translation type="unfinished">Starting RBA of the partition on the medium. CD-ROMs use Relative logical Block Addressing.</translation>
+        <translation>介质上分区的起始 RBA。CD-ROM 使用相对逻辑块寻址。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6469"/>
         <location filename="../src/form/filepathdialog.ui" line="6490"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starting RBA of the partition on the medium. CD-ROMs use Relative logical Block Addressing.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starting RBA of the partition on the medium. CD-ROMs use Relative logical Block Addressing.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;介质上分区的起始 RBA。CD-ROM 使用相对逻辑块寻址。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6503"/>
         <location filename="../src/form/filepathdialog.ui" line="6524"/>
         <source>Size of the partition in units of Blocks, also called Sectors.</source>
-        <translation type="unfinished">Size of the partition in units of Blocks, also called Sectors.</translation>
+        <translation>分区的大小以块（也称为扇区）为单位。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6509"/>
         <location filename="../src/form/filepathdialog.ui" line="6530"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Size of the partition in units of Blocks, also called Sectors.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Size of the partition in units of Blocks, also called Sectors.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;以块（也称为扇区）为单位的分区大小。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6547"/>
@@ -4863,18 +4863,18 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6550"/>
         <source>File Path settings.</source>
-        <translation type="unfinished">File Path settings.</translation>
+        <translation>文件路径设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6553"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File Path settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File Path settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;文件路径设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6577"/>
         <location filename="../src/form/filepathdialog.ui" line="6599"/>
         <source>Path including directory and file names.</source>
-        <translation type="unfinished">Path including directory and file names.</translation>
+        <translation>路径包括目录和文件名。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6580"/>
@@ -4887,29 +4887,29 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="6583"/>
         <location filename="../src/form/filepathdialog.ui" line="6605"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Path including directory and file names.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Path including directory and file names.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;包含目录和文件名的路径。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6619"/>
         <source>The Media Protocol Device Path is used to denote the protocol that is being used in a device path at the location of the path specified.</source>
-        <translation type="unfinished">The Media Protocol Device Path is used to denote the protocol that is being used in a device path at the location of the path specified.</translation>
+        <translation>媒体协议设备路径用于表示在指定路径位置的设备路径中使用的协议。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6622"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Media Protocol Device Path is used to denote the protocol that is being used in a device path at the location of the path specified.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Media Protocol Device Path is used to denote the protocol that is being used in a device path at the location of the path specified.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;媒体协议设备路径用于表示在指定路径位置的设备路径中使用的协议。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6646"/>
         <location filename="../src/form/filepathdialog.ui" line="6667"/>
         <source>The ID of the protocol.</source>
-        <translation type="unfinished">The ID of the protocol.</translation>
+        <translation>协议 ID。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6652"/>
         <location filename="../src/form/filepathdialog.ui" line="6673"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The ID of the protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The ID of the protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;协议 ID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6687"/>
@@ -4919,24 +4919,24 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6690"/>
         <source>Describes a firmware file in a firmware volume.</source>
-        <translation type="unfinished">Describes a firmware file in a firmware volume.</translation>
+        <translation>描述固件卷中的固件文件。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6693"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Describes a firmware file in a firmware volume.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Describes a firmware file in a firmware volume.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;描述固件卷中的固件文件。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6717"/>
         <location filename="../src/form/filepathdialog.ui" line="6738"/>
         <source>Firmware file name GUID.</source>
-        <translation type="unfinished">Firmware file name GUID.</translation>
+        <translation>固件文件名 GUID。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6723"/>
         <location filename="../src/form/filepathdialog.ui" line="6744"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file name GUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware file name GUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;固件文件名 GUID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6758"/>
@@ -4946,57 +4946,57 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6761"/>
         <source>Describes a firmware volume.</source>
-        <translation type="unfinished">Describes a firmware volume.</translation>
+        <translation>描述固件卷。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6764"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Describes a firmware volume.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Describes a firmware volume.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;描述固件卷。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6788"/>
         <location filename="../src/form/filepathdialog.ui" line="6809"/>
         <source>Firmware volume name GUID.</source>
-        <translation type="unfinished">Firmware volume name GUID.</translation>
+        <translation>固件卷名 GUID。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6794"/>
         <location filename="../src/form/filepathdialog.ui" line="6815"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware volume name GUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware volume name GUID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;固件卷名称 GUID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6829"/>
         <source>Relative Offset Range</source>
-        <translation type="unfinished">Relative Offset Range</translation>
+        <translation>相对偏移范围</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6832"/>
         <source>This device path node specifies a range of offsets relative to the first byte available on the device.</source>
-        <translation type="unfinished">This device path node specifies a range of offsets relative to the first byte available on the device.</translation>
+        <translation>此设备路径节点指定相对于设备上可用的第一个字节的偏移范围。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6835"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path node specifies a range of offsets relative to the first byte available on the device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path node specifies a range of offsets relative to the first byte available on the device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;此设备路径节点指定相对于设备上可用的第一个字节的偏移范围。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6859"/>
         <location filename="../src/form/filepathdialog.ui" line="6880"/>
         <source>Reserved for future use.</source>
-        <translation type="unfinished">Reserved for future use.</translation>
+        <translation>保留以供将来使用。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6865"/>
         <location filename="../src/form/filepathdialog.ui" line="6886"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reserved for future use.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reserved for future use.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;保留以供将来使用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6899"/>
         <location filename="../src/form/filepathdialog.ui" line="6920"/>
         <source>Offset of the first byte, relative to the parent device node.</source>
-        <translation type="unfinished">Offset of the first byte, relative to the parent device node.</translation>
+        <translation>相对于父设备节点的第一个字节的偏移量。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6902"/>
@@ -5009,13 +5009,13 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="6905"/>
         <location filename="../src/form/filepathdialog.ui" line="6926"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Offset of the first byte, relative to the parent device node.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Offset of the first byte, relative to the parent device node.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;相对于父设备节点的第一个字节的偏移量。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6939"/>
         <location filename="../src/form/filepathdialog.ui" line="6960"/>
         <source>Offset of the last byte, relative to the parent device node.</source>
-        <translation type="unfinished">Offset of the last byte, relative to the parent device node.</translation>
+        <translation>相对于父设备节点的最后一个字节的偏移量。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6942"/>
@@ -5028,7 +5028,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="6945"/>
         <location filename="../src/form/filepathdialog.ui" line="6966"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Offset of the last byte, relative to the parent device node.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Offset of the last byte, relative to the parent device node.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最后一个字节的偏移量，相对于父设备节点。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6983"/>
@@ -5038,12 +5038,12 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6986"/>
         <source>RAM Disk Settings.</source>
-        <translation type="unfinished">RAM Disk Settings.</translation>
+        <translation>RAM 磁盘设置。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6989"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RAM Disk Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RAM Disk Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RAM 磁盘设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7016"/>
@@ -5063,19 +5063,19 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="7093"/>
         <location filename="../src/form/filepathdialog.ui" line="7114"/>
         <source>GUID that defines the type of the RAM Disk.</source>
-        <translation type="unfinished">GUID that defines the type of the RAM Disk.</translation>
+        <translation>定义 RAM 磁盘类型的 GUID。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7099"/>
         <location filename="../src/form/filepathdialog.ui" line="7120"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GUID that defines the type of the RAM Disk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GUID that defines the type of the RAM Disk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;定义 RAM 磁盘类型的 GUID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7130"/>
         <location filename="../src/form/filepathdialog.ui" line="7152"/>
         <source>RAM Disk instance number, if supported.</source>
-        <translation type="unfinished">RAM Disk instance number, if supported.</translation>
+        <translation>RAM 磁盘实例号（如果支持）。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7133"/>
@@ -5088,17 +5088,17 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="7136"/>
         <location filename="../src/form/filepathdialog.ui" line="7158"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RAM Disk instance number, if supported.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RAM Disk instance number, if supported.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RAM 磁盘实例号（如果支持）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7179"/>
         <source>This Device Path is used to describe the booting of non-EFI-aware operating systems.</source>
-        <translation type="unfinished">This Device Path is used to describe the booting of non-EFI-aware operating systems.</translation>
+        <translation>此设备路径用于描述非 EFI 感知操作系统的启动。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7182"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This Device Path is used to describe the booting of non-EFI-aware operating systems.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This Device Path is used to describe the booting of non-EFI-aware operating systems.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;此设备路径用于描述非 EFI 感知操作系统的启动。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7206"/>
@@ -5115,18 +5115,18 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
   0x80 - BEV device.
   0x81..0xFE - Reserved.
   0xFF - Unknown.</source>
-        <translation type="unfinished">An identification number that describes what type of device this is:
-  0x00 - Reserved.
-  0x01 - Floppy.
-  0x02 - Hard disk.
+        <translation>描述设备类型的标识号：
+  0x00 - 保留。
+  0x01 - 软盘。
+  0x02 - 硬盘。
   0x03 - CD-ROM.
   0x04 - PCMCIA.
-  0x05 - USB device.
-  0x06 - Embedded network.
-  0x07..0x7F - Reserved.
-  0x80 - BEV device.
-  0x81..0xFE - Reserved.
-  0xFF - Unknown.</translation>
+  0x05 - USB 设备。
+  0x06 - 嵌入式网络。
+  0x07..0x7F - 保留。
+  0x80 - BEV 设备。
+  0x81..0xFE - 保留。
+  0xFF - 未知。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7220"/>
@@ -5150,18 +5150,18 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
   0x80 - BEV device.
   0x81..0xFE - Reserved.
   0xFF - Unknown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An identification number that describes what type of device this is:
-  0x00 - Reserved.
-  0x01 - Floppy.
-  0x02 - Hard disk.
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;描述设备类型的标识号：
+  0x00 - 保留。
+  0x01 - 软盘。
+  0x02 - 硬盘。
   0x03 - CD-ROM.
   0x04 - PCMCIA.
-  0x05 - USB device.
-  0x06 - Embedded network.
-  0x07..0x7F - Reserved.
-  0x80 - BEV device.
-  0x81..0xFE - Reserved.
-  0xFF - Unknown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+  0x05 - USB 设备。
+  0x06 - 嵌入式网络。
+  0x07..0x7F - 保留。
+  0x80 - BEV 设备。
+  0x81..0xFE - 保留。
+  0xFF - 未知。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7290"/>
@@ -5185,25 +5185,25 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
 |        |               |       | 3 = Reserved for future use.
 |--------|---------------|-------|-------------
 | 15..12 |  (Reserved)   |   0   | Reserved for future use, must be zero</source>
-        <translation type="unfinished">Status Flags as defined by the BIOS Boot Specification:
-|  Bits  |     Field     | Value | Description
+        <translation>BIOS 启动规范定义的状态标志：
+|  位|     字段     | 值 | 描述
 |========|===============|=======|=============
-|  3..0  | Old Position  | 0..15 | This entry’s index in the table at the last boot. For updating the IPL or BCV Priority if individual device detection is done.
+|  3..0  | 旧位置  | 0..15 | 上次启动时此条目在表中的索引。用于在完成单个设备检测后更新 IPL 或 BCV 优先级。
 |--------|-------------- |-------|-------------
-|  7..4  |  (Reserved)   |   0   | Reserved for future use, must be zero.
+|  7..4  |  (保留)   |   0   | 保留以备将来使用，必须为零。
 |--------|-------------- |-------|-------------
-|   8    |    Enabled    | 0..1  | 0 = Entry will be ignored for booting (IPL); entry will not be called for boot connection (BCV).
-|        |               |       | 1 = Entry will be attempted for booting (IPL); entry will be called for boot connection (BCV).
+|   8    |    已启用    | 0..1  | 0 = 启动 (IPL) 时将忽略条目；启动连接 (BCV) 时将不调用条目。
+|        |               |       | 1 = 将尝试启动条目 (IPL)；将调用条目进行启动连接 (BCV)。
 |--------|---------------|-------|-------------
-|    9   |    Failed     | 0..1  | 0 = Has not been attempted for boot, or it is unknown if boot failure occurred (IPL); entry connected successfully (BCV).
-|        |               |       | 1 = Failed boot attempt (IPL); failed connection attempt (BCV).
+|    9   |    失败     | 0..1  | 0 = 未尝试启动，或者不知道是否发生启动失败 (IPL)；条目连接成功 (BCV)。
+|        |               |       | 1 = 启动尝试失败 (IPL)；连接尝试失败 (BCV)。
 |--------|---------------|-------|-------------
-| 11..10 | Media Present | 0..3  | 0 = No bootable media present in the device.
-|        |               |       | 1 = Unknown if bootable media present.
-|        |               |       | 2 = Media present and appears bootable.
-|        |               |       | 3 = Reserved for future use.
+| 11..10 | 介质存在 | 0..3  | 0 = 设备中没有可启动介质。
+|        |               |       | 1 = 不知道是否存在可启动介质。
+|        |               |       | 2 = 介质存在且似乎可启动。
+|        |               |       | 3 = 保留以备将来使用。
 |--------|---------------|-------|-------------
-| 15..12 |  (Reserved)   |   0   | Reserved for future use, must be zero</translation>
+| 15..12 |  (保留)   |   0   | 保留以供将来使用，必须为零</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7311"/>
@@ -5234,71 +5234,71 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
 |        |               |       | 3 = Reserved for future use.
 |--------|---------------|-------|-------------
 | 15..12 |  (Reserved)   |   0   | Reserved for future use, must be zero&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Status Flags as defined by the BIOS Boot Specification:
-|  Bits  |     Field     | Value | Description
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;BIOS 启动规范定义的状态标志：
+|  位|     字段     | 值 | 描述
 |========|===============|=======|=============
-|  3..0  | Old Position  | 0..15 | This entry’s index in the table at the last boot. For updating the IPL or BCV Priority if individual device detection is done.
+|  3..0  | 旧位置  | 0..15 | 上次启动时此条目在表中的索引。用于在完成单个设备检测后更新 IPL 或 BCV 优先级。
 |--------|-------------- |-------|-------------
-|  7..4  |  (Reserved)   |   0   | Reserved for future use, must be zero.
+|  7..4  |  (保留)   |   0   | 保留以备将来使用，必须为零。
 |--------|-------------- |-------|-------------
-|   8    |    Enabled    | 0..1  | 0 = Entry will be ignored for booting (IPL); entry will not be called for boot connection (BCV).
-|        |               |       | 1 = Entry will be attempted for booting (IPL); entry will be called for boot connection (BCV).
+|   8    |    已启用    | 0..1  | 0 = 启动 (IPL) 时将忽略条目；启动连接 (BCV) 时将不调用条目。
+|        |               |       | 1 = 将尝试启动条目 (IPL)；将调用条目进行启动连接 (BCV)。
 |--------|---------------|-------|-------------
-|    9   |    Failed     | 0..1  | 0 = Has not been attempted for boot, or it is unknown if boot failure occurred (IPL); entry connected successfully (BCV).
-|        |               |       | 1 = Failed boot attempt (IPL); failed connection attempt (BCV).
+|    9   |    失败     | 0..1  | 0 = 未尝试启动，或者不知道是否发生启动失败 (IPL)；条目连接成功 (BCV)。
+|        |               |       | 1 = 启动尝试失败 (IPL)；连接尝试失败 (BCV)。
 |--------|---------------|-------|-------------
-| 11..10 | Media Present | 0..3  | 0 = No bootable media present in the device.
-|        |               |       | 1 = Unknown if bootable media present.
-|        |               |       | 2 = Media present and appears bootable.
-|        |               |       | 3 = Reserved for future use.
+| 11..10 | 介质存在 | 0..3  | 0 = 设备中没有可启动介质。
+|        |               |       | 1 = 不知道是否存在可启动介质。
+|        |               |       | 2 = 介质存在且似乎可启动。
+|        |               |       | 3 = 保留以备将来使用。
 |--------|---------------|-------|-------------
-| 15..12 |  (Reserved)   |   0   | Reserved for future use, must be zero&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+| 15..12 |  (保留)   |   0   | 保留以供将来使用，必须为零&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7402"/>
         <location filename="../src/form/filepathdialog.ui" line="7424"/>
         <source>String that describes the boot device to a user.</source>
-        <translation type="unfinished">String that describes the boot device to a user.</translation>
+        <translation>向用户描述启动设备的字符串。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7408"/>
         <location filename="../src/form/filepathdialog.ui" line="7430"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;String that describes the boot device to a user.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;String that describes the boot device to a user.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;向用户描述启动设备的字符串。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7522"/>
         <location filename="../src/form/filepathdialog.ui" line="7543"/>
         <source>Vendor-assigned GUID that defines the data that follows.</source>
-        <translation type="unfinished">Vendor-assigned GUID that defines the data that follows.</translation>
+        <translation>供应商分配的 GUID，定义后续数据。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7528"/>
         <location filename="../src/form/filepathdialog.ui" line="7549"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor-assigned GUID that defines the data that follows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor-assigned GUID that defines the data that follows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;供应商分配的 GUID，定义后续数据。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7562"/>
         <location filename="../src/form/filepathdialog.ui" line="7622"/>
         <source>Vendor-defined variable size data.</source>
-        <translation type="unfinished">Vendor-defined variable size data.</translation>
+        <translation>供应商定义的可变大小数据。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7568"/>
         <location filename="../src/form/filepathdialog.ui" line="7628"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor-defined variable size data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor-defined variable size data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;供应商定义的可变大小数据。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7642"/>
         <source>Depending on the Sub-Type, this Device Path node is used to indicate the end of the Device Path instance or Device Path structure.</source>
-        <translation type="unfinished">Depending on the Sub-Type, this Device Path node is used to indicate the end of the Device Path instance or Device Path structure.</translation>
+        <translation>根据子类型，此设备路径节点用于指示设备路径实例或设备路径结构的结束。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7645"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Depending on the Sub-Type, this Device Path node is used to indicate the end of the Device Path instance or Device Path structure.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Depending on the Sub-Type, this Device Path node is used to indicate the end of the Device Path instance or Device Path structure.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;根据子类型，此设备路径节点用于指示设备路径实例或设备路径结构的结束。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7721"/>
@@ -5352,7 +5352,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/filepathdialog.cpp" line="1569"/>
         <source>Couldn&apos;t change data format!</source>
-        <translation type="unfinished">Couldn&apos;t change data format!</translation>
+        <translation>无法更改数据格式！</translation>
     </message>
 </context>
 <context>
@@ -5360,22 +5360,22 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/hotkeylistmodel.cpp" line="100"/>
         <source>boot option</source>
-        <translation type="unfinished">boot option</translation>
+        <translation>引导选项</translation>
     </message>
     <message>
         <location filename="../include/hotkeylistmodel.h" line="34"/>
         <source>Boot option</source>
-        <translation type="unfinished">Boot option</translation>
+        <translation>引导选项</translation>
     </message>
     <message>
         <location filename="../include/hotkeylistmodel.h" line="34"/>
         <source>Hot key</source>
-        <translation type="unfinished">Hot key</translation>
+        <translation>热键</translation>
     </message>
     <message>
         <location filename="../include/hotkeylistmodel.h" line="34"/>
         <source>Vendor data</source>
-        <translation type="unfinished">供应商数据</translation>
+        <translation>供应商数据</translation>
     </message>
 </context>
 <context>
@@ -5383,51 +5383,51 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="20"/>
         <source>Hot Keys editor</source>
-        <translation type="unfinished">Hot Keys editor</translation>
+        <translation>热键编辑器</translation>
     </message>
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="41"/>
         <location filename="../src/form/hotkeysdialog.ui" line="44"/>
         <source>Hot Keys</source>
-        <translation type="unfinished">Hot Keys</translation>
+        <translation>热键</translation>
     </message>
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="47"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;热键&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="125"/>
         <location filename="../src/form/hotkeysdialog.ui" line="128"/>
         <source>Index filter</source>
-        <translation type="unfinished">Index filter</translation>
+        <translation>索引过滤器</translation>
     </message>
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="131"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Index filter&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Index filter&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;索引过滤器&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="163"/>
         <location filename="../src/form/hotkeysdialog.ui" line="166"/>
         <source>Remove hot key</source>
-        <translation type="unfinished">Remove hot key</translation>
+        <translation>移除热键</translation>
     </message>
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="169"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove hot key&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove hot key&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;删除热键&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="191"/>
         <location filename="../src/form/hotkeysdialog.ui" line="194"/>
         <source>Add hot key</source>
-        <translation type="unfinished">Add hot key</translation>
+        <translation>添加热键</translation>
     </message>
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="197"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add hot key&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add hot key&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;添加热键&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -5446,7 +5446,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/commands.cpp" line="50"/>
         <source>Remove %1 entry &quot;%2&quot; from position %3</source>
-        <translation type="unfinished">Remove %1 entry &quot;%2&quot; from position %3</translation>
+        <translation>从位置 %3 删除 %1 条目“%2”</translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="73"/>
@@ -5474,17 +5474,17 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/commands.cpp" line="242"/>
         <source>Remove %1 entry &quot;%2&quot; file path from position %3</source>
-        <translation type="unfinished">Remove %1 entry &quot;%2&quot; file path from position %3</translation>
+        <translation>从位置 %3 删除文件路径“%2”中的 %1 个条目</translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="257"/>
         <source>Set %1 entry &quot;%2&quot; file path at position %3</source>
-        <translation type="unfinished">Set %1 entry &quot;%2&quot; file path at position %3</translation>
+        <translation>在位置 %3 设置 %1 条目“%2”文件路径</translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="369"/>
         <source>Insert %1 entry at position %2</source>
-        <translation type="unfinished">Insert %1 entry at position %2</translation>
+        <translation>在位置 %2 处插入 %1 条目</translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="369"/>
@@ -5492,12 +5492,12 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/commands.cpp" line="399"/>
         <location filename="../src/commands.cpp" line="438"/>
         <source>Key</source>
-        <translation type="unfinished">Key</translation>
+        <translation>键</translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="384"/>
         <source>Remove %1 entry from position %2</source>
-        <translation type="unfinished">Remove %1 entry from position %2</translation>
+        <translation>从位置 %2 删除 %1 条目</translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="399"/>
@@ -5505,13 +5505,13 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../include/commands.h" line="362"/>
         <location filename="../include/commands.h" line="403"/>
         <source>Change %1 entry at position %2 %3 to &quot;%4&quot;</source>
-        <translation type="unfinished">Change %1 entry at position %2 %3 to &quot;%4&quot;</translation>
+        <translation>将位置 %2 %3 处的 %1 条目更改为“%4”</translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="399"/>
         <location filename="../src/commands.cpp" line="438"/>
         <source>keys</source>
-        <translation type="unfinished">keys</translation>
+        <translation>键</translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="293"/>
