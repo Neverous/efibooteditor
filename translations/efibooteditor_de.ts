@@ -5492,7 +5492,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/commands.cpp" line="399"/>
         <location filename="../src/commands.cpp" line="438"/>
         <source>Key</source>
-        <translation type="unfinished">Key</translation>
+        <translation>Schlüssel</translation>
     </message>
     <message>
         <location filename="../src/commands.cpp" line="384"/>
