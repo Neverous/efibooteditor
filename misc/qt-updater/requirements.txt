@@ -32,7 +32,7 @@ ruamel-yaml==0.18.10
     # via qt-updater (pyproject.toml)
 ruamel-yaml-clib==0.2.12
     # via ruamel-yaml
-ruff==0.9.9
+ruff==0.11.1
     # via qt-updater (pyproject.toml)
 types-requests==2.32.0.20250306
     # via qt-updater (pyproject.toml)
