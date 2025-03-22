@@ -3,7 +3,7 @@ name = "qt-updater"
 version = "1.0.0"
 description = "Script for updating EFI Boot Editor CI with latest Qt versions"
 
-requires-python = ">=3.11"
+requires-python = ">=3.13"
 
 dependencies = [
     "requests",

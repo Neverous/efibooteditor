@@ -39,17 +39,17 @@ jobs:
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '6.2.4' || 'none' }}
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
       - name: Set up ccache
-        uses: hendrikmuhs/ccache-action@v1
+        uses: hendrikmuhs/ccache-action@a1209f81afb8c005c13b4296c32e363431bffea5
         with:
           key: ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}-${{ matrix.qt-version }}
           restore-keys: |
             ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}-
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+        uses: github/codeql-action/init@5f8171a638ada777af81d42b55959a643bb29017
         with:
           languages: cpp
           queries: security-and-quality
@@ -57,7 +57,7 @@ jobs:
         continue-on-error: true
 
       - name: Set up Qt environment
-        uses: jdpurcell/install-qt-action@v5
+        uses: jdpurcell/install-qt-action@ebdf7dca0e4b4000b6c98c745326d1aa8715b14f
         with:
           cache: true
           version: ${{ matrix.qt-version }}
@@ -145,14 +145,14 @@ jobs:
         working-directory: build
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: EFIBootEditor-${{ github.sha }}-${{ inputs.os }}-qt-${{ matrix.qt-version }}-${{ inputs.compiler }}
           if-no-files-found: error
           path: build/dist/EFIBootEditor-*
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
+        uses: github/codeql-action/analyze@5f8171a638ada777af81d42b55959a643bb29017
         if: inputs.build-config == 'Debug'
         continue-on-error: true
 
@@ -167,7 +167,7 @@ jobs:
         continue-on-error: true
 
       - name: Upload MSVC Code Analysis results to GitHub
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@5f8171a638ada777af81d42b55959a643bb29017
         with:
           sarif_file: ${{ steps.msvc-analysis.outputs.sarif }}
         if: inputs.build-config == 'Debug' && startsWith(inputs.compiler, 'MSVC')
