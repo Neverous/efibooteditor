@@ -33,6 +33,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
+set(CMAKE_C_STANDARD_REQUIRED TRUE)
 set(CMAKE_DEBUG_POSTFIX "d")
 
 set(CMAKE_INSTALL_DEFAULT_COMPONENT_NAME Program)
@@ -258,15 +259,16 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     set(CMAKE_INCLUDE_SYSTEM_FLAG_C /external:I)
 
     target_compile_options(${PROJECT_NAME} PRIVATE
+        /Z7
         # Ignore warnings in external includes
-        /experimental:external
+        /experimental:external /external:anglebrackets
     )
 endif()
 
 if(WIN32)
     target_compile_options(${PROJECT_NAME} PRIVATE
         # Ignore warnings in external includes
-        /external:anglebrackets /external:W0
+        /external:W0
     )
 
     # Enable all warnings only in application code
