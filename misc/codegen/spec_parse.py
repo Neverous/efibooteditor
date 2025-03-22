@@ -104,7 +104,7 @@ re_node_name = re.compile(r" device paths?.*$", re.IGNORECASE)
 re_slug = re.compile(r"\W+")
 re_description = re.compile(r"\n\W+")
 
-SPEC_URL = "https://uefi.org/specs/UEFI/2.10/10_Protocols_Device_Path_Protocol.html"
+SPEC_URL = "https://uefi.org/specs/UEFI/2.11/10_Protocols_Device_Path_Protocol.html"
 
 log = logging.getLogger("spec_parse")
 
@@ -141,12 +141,18 @@ if __name__ == "__main__":
         SPEC_URL = sys.argv[1]
 
     log.info("Parsing Device Path nodes from %s into yaml", SPEC_URL)
+    req = urllib.request.Request(SPEC_URL, headers = {
+        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:136.0) Gecko/20100101 Firefox/136.0',
+        })
     soup = bs4.BeautifulSoup(
-        urllib.request.urlopen(SPEC_URL).read().decode("utf-8").encode("ascii", "ignore"), features="html.parser"
+        urllib.request.urlopen(req).read().decode("utf-8").encode("ascii", "ignore"), features="html.parser"
     )
 
     device_paths = DevicePaths()
     nodes_tag = soup.find("div", id="device-path-nodes")
+    if not nodes_tag:
+        nodes_tag = soup.find("section", id="device-path-nodes")
+
     assert isinstance(nodes_tag, bs4.Tag)
     for table in nodes_tag.find_all("table")[2:]:
         caption = table.caption("span")[1].text.strip()
