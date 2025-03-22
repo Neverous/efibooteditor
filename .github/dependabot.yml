@@ -10,7 +10,7 @@ updates:
       dependencies:
         patterns:
           - "*"
-  - package-ecosystem: "pip"
+  - package-ecosystem: "uv"
     directory: "/misc/codegen"
     schedule:
       interval: "weekly"
@@ -20,7 +20,7 @@ updates:
       dependencies:
         patterns:
           - "*"
-  - package-ecosystem: "pip"
+  - package-ecosystem: "uv"
     directory: "/misc/qt-updater"
     schedule:
       interval: "weekly"

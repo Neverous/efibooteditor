@@ -141,9 +141,12 @@ if __name__ == "__main__":
         SPEC_URL = sys.argv[1]
 
     log.info("Parsing Device Path nodes from %s into yaml", SPEC_URL)
-    req = urllib.request.Request(SPEC_URL, headers = {
-        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:136.0) Gecko/20100101 Firefox/136.0',
-        })
+    req = urllib.request.Request(
+        SPEC_URL,
+        headers={
+            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:136.0) Gecko/20100101 Firefox/136.0",
+        },
+    )
     soup = bs4.BeautifulSoup(
         urllib.request.urlopen(req).read().decode("utf-8").encode("ascii", "ignore"), features="html.parser"
     )

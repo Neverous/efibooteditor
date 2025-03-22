@@ -24,20 +24,24 @@ jobs:
         with:
           token: ${{ secrets.BOT_ACCESS_TOKEN }}
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
       - name: Install python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          cache: pip
 
       - name: Install dependencies
-        run: python3 -m pip install -c requirements.txt .
+        run: uv sync
         working-directory: misc/qt-updater
 
       - name: Run the updater
         id: diff
         run: |
-          python3 -m main ../../.github/workflows/*.yml
+          uv run -m main ../../.github/workflows/*.yml
           if git diff --exit-code; then
             echo "changed=false" >> "${GITHUB_OUTPUT}"
           else
