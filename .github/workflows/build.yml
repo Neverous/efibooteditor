@@ -159,20 +159,3 @@ jobs:
         uses: github/codeql-action/analyze@5f8171a638ada777af81d42b55959a643bb29017
         if: inputs.build-config == 'Debug'
         continue-on-error: true
-
-      - name: Perform MSVC Code Analysis
-        uses: microsoft/msvc-code-analysis-action@96315324a485db21449515180214ecb78c16a1c5
-        id: msvc-analysis
-        with:
-          cmakeBuildDirectory: ${{ github.workspace }}/build
-          buildConfiguration: ${{ inputs.build-config }}
-          ruleset: NativeRecommendedRules.ruleset
-        if: inputs.build-config == 'Debug' && startsWith(inputs.compiler, 'MSVC')
-        continue-on-error: true
-
-      - name: Upload MSVC Code Analysis results to GitHub
-        uses: github/codeql-action/upload-sarif@5f8171a638ada777af81d42b55959a643bb29017
-        with:
-          sarif_file: ${{ steps.msvc-analysis.outputs.sarif }}
-        if: inputs.build-config == 'Debug' && startsWith(inputs.compiler, 'MSVC')
-        continue-on-error: true
