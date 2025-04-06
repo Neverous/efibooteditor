@@ -31,6 +31,7 @@ jobs:
         exclude:
           - qt-version: ${{ inputs.compiler == 'MSVC32' && '6.2.4' || 'none' }}
           - qt-version: ${{ inputs.compiler == 'MSVC32' && '6.9.0' || 'none' }}
+          - qt-version: ${{ inputs.os == 'windows-2019' && '6.9.0' || 'none' }}
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.12.12' || 'none' }}
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.15.2' || 'none' }}
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '6.2.4' || 'none' }}
