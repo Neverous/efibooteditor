@@ -1298,7 +1298,7 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
             for(const auto &qname: keys)
             {
                 bool success = false;
-                qname.toULong(&success, HEX_BASE);
+                const auto index = static_cast<uint16_t>(qname.toULong(&success, HEX_BASE));
                 if(!success)
                 {
                     errors.push_back(tr("%1: %2 expected").arg(full_prefix + qname, tr("hexadecimal number")));
@@ -1316,6 +1316,7 @@ void EFIBootData::importJSONEFIData(const QJsonObject &input)
                             return;
                         }
 
+                        entry->index = index;
                         hot_keys_list_model.appendRow(*entry);
                     },
                     full_prefix);
@@ -1541,7 +1542,7 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
             for(const auto &qname: keys)
             {
                 bool success = false;
-                qname.toULong(&success, HEX_BASE);
+                const auto index = static_cast<uint16_t>(qname.toULong(&success, HEX_BASE));
                 if(!success)
                 {
                     errors.push_back(tr("%1: %2 expected").arg(full_prefix + qname, tr("hexadecimal number")));
@@ -1554,6 +1555,7 @@ void EFIBootData::importRawEFIData(const QJsonObject &input)
                     {
                         // Translate STL to QTL
                         auto entry = HotKey::fromEFIBootKeyOption(value);
+                        entry.index = index;
                         entry.efi_attributes = efi_attributes;
                         hot_keys_list_model.appendRow(entry);
                     },
