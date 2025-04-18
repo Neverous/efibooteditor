@@ -289,7 +289,7 @@
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="269"/>
         <source>next boot</source>
-        <translation type="unfinished">next boot</translation>
+        <translation>nächster Bootvorgang</translation>
     </message>
 </context>
 <context>
