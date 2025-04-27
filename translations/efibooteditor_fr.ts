@@ -10,7 +10,7 @@
         <location filename="../src/form/bootentryform.ui" line="182"/>
         <location filename="../src/form/bootentryform.ui" line="185"/>
         <source>Description</source>
-        <translation type="unfinished">Description</translation>
+        <translation>Description</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="198"/>
@@ -135,12 +135,12 @@
         <location filename="../src/form/bootentryform.ui" line="380"/>
         <location filename="../src/form/bootentryform.ui" line="383"/>
         <source>Add file path</source>
-        <translation>Ajouter le chemin de fichier</translation>
+        <translation>Ajouter le chemin du fichier</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="386"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajouter le chemin du fichier.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="440"/>
@@ -177,7 +177,7 @@
         <location filename="../src/form/bootentryform.ui" line="500"/>
         <location filename="../src/form/bootentryform.ui" line="503"/>
         <source>Attributes</source>
-        <translation type="unfinished">Attributes</translation>
+        <translation>Attributs</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="623"/>
