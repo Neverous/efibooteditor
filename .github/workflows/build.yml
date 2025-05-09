@@ -45,7 +45,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
       - name: Set up ccache
-        uses: hendrikmuhs/ccache-action@a1209f81afb8c005c13b4296c32e363431bffea5
+        uses: hendrikmuhs/ccache-action@63069e3931dedbf3b63792097479563182fe70d1
         with:
           key: ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}-${{ matrix.qt-version }}
           restore-keys: |
@@ -54,7 +54,7 @@ jobs:
             ${{ inputs.os }}
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@28deaeda66b76a05916b6923827895f2b14ab387
+        uses: github/codeql-action/init@60168efe1c415ce0f5521ea06d5c2062adbeed1b
         with:
           languages: cpp
           queries: security-and-quality
@@ -159,6 +159,6 @@ jobs:
           path: build/dist/EFIBootEditor-*
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@28deaeda66b76a05916b6923827895f2b14ab387
+        uses: github/codeql-action/analyze@60168efe1c415ce0f5521ea06d5c2062adbeed1b
         if: inputs.build-config == 'Debug'
         continue-on-error: true
