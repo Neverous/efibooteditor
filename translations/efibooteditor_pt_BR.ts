@@ -10,14 +10,14 @@
         <location filename="../src/form/bootentryform.ui" line="182"/>
         <location filename="../src/form/bootentryform.ui" line="185"/>
         <source>Description</source>
-        <translation type="unfinished">Description</translation>
+        <translation>Descrição</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="198"/>
         <location filename="../src/form/bootentryform.ui" line="201"/>
         <location filename="../src/form/bootentryform.ui" line="204"/>
         <source>Path</source>
-        <translation type="unfinished">Path</translation>
+        <translation>Caminho</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="415"/>
@@ -25,35 +25,35 @@
         <location filename="../src/form/bootentryform.ui" line="478"/>
         <location filename="../src/form/bootentryform.ui" line="481"/>
         <source>Optional data</source>
-        <translation type="unfinished">Optional data</translation>
+        <translation>Dados opcionais</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="421"/>
         <source>Optional</source>
-        <translation type="unfinished">Optional</translation>
+        <translation>Opcional</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="434"/>
         <location filename="../src/form/bootentryform.ui" line="437"/>
         <source>Optional data format</source>
-        <translation type="unfinished">Optional data format</translation>
+        <translation>Formato de dados opcional</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="6"/>
         <source>Boot entry form</source>
-        <translation type="unfinished">Boot entry form</translation>
+        <translation>Menu de inicialização</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="24"/>
         <location filename="../src/form/bootentryform.ui" line="27"/>
         <source>Error</source>
-        <translation type="unfinished">Error</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="40"/>
         <location filename="../src/form/bootentryform.ui" line="43"/>
         <source>Error note</source>
-        <translation type="unfinished">Error note</translation>
+        <translation>Mensagem de erro</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="46"/>
@@ -64,108 +64,108 @@
         <location filename="../src/form/bootentryform.ui" line="147"/>
         <location filename="../src/form/bootentryform.ui" line="150"/>
         <source>Hot Keys</source>
-        <translation type="unfinished">Hot Keys</translation>
+        <translation>Teclas de Atalho</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="153"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Teclas de Atalhos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="188"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Descrição da Entrada.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="222"/>
         <location filename="../src/form/bootentryform.ui" line="225"/>
         <source>Device path</source>
-        <translation type="unfinished">Device path</translation>
+        <translation>Caminho do dispositivo</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="228"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Caminho do Dispositivo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="280"/>
         <location filename="../src/form/bootentryform.ui" line="283"/>
         <source>Move file path up</source>
-        <translation type="unfinished">Move file path up</translation>
+        <translation>Mover o caminho do arquivo para cima</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="286"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mover o caminho do arquivo para cima.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="305"/>
         <location filename="../src/form/bootentryform.ui" line="308"/>
         <source>Move file path down</source>
-        <translation type="unfinished">Move file path down</translation>
+        <translation>Mover o caminho do arquivo para baixo</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="311"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mover o caminho do arquivo para baixo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="330"/>
         <location filename="../src/form/bootentryform.ui" line="333"/>
         <source>Remove file path</source>
-        <translation type="unfinished">Remove file path</translation>
+        <translation>Remover caminho do arquivo</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="336"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remover caminho do arquivo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="355"/>
         <location filename="../src/form/bootentryform.ui" line="358"/>
         <source>Edit file path</source>
-        <translation type="unfinished">Edit file path</translation>
+        <translation>Editar caminho do arquivo</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="361"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Edit file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Edit file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Editar caminho do arquivo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="380"/>
         <location filename="../src/form/bootentryform.ui" line="383"/>
         <source>Add file path</source>
-        <translation type="unfinished">Add file path</translation>
+        <translation>Adicionar caminho do arquivo</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="386"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adicionar caminho do arquivo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="440"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Formato de dados opcional.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="444"/>
         <source>BASE64</source>
-        <translation type="unfinished">BASE64</translation>
+        <translation>BASE64</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="449"/>
         <source>UTF-16</source>
-        <translation type="unfinished">UTF-16</translation>
+        <translation>UTF-16</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="454"/>
         <source>UTF-8</source>
-        <translation type="unfinished">UTF-8</translation>
+        <translation>UTF-8</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="459"/>
         <source>HEX</source>
-        <translation type="unfinished">HEX</translation>
+        <translation>HEX</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="484"/>
