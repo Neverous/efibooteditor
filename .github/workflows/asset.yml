@@ -24,17 +24,15 @@ jobs:
       fail-fast: false
       matrix:
         qt-version:
-          - 5.12.12 # Supported in Ubuntu Focal Fossa until 2025-05-31
           - 5.15.2 # Supported in Ubuntu Noble Numbat until 2029-04-25
           - 6.2.4 # Supported in Ubuntu Jammy Jellyfish until 2027-04-01
           - 6.8.3 # Supported in Ubuntu Plucky Puffin until 2026-01-17
-          - 6.9.0 # Supported until 2025-10-02
+          - 6.9.1 # Supported until 2025-10-02
         exclude:
           - qt-version: ${{ inputs.compiler == 'MSVC32' && '6.2.4' || 'none' }}
           - qt-version: ${{ inputs.compiler == 'MSVC32' && '6.8.3' || 'none' }}
-          - qt-version: ${{ inputs.compiler == 'MSVC32' && '6.9.0' || 'none' }}
-          - qt-version: ${{ inputs.os == 'windows-2019' && '6.9.0' || 'none' }}
-          - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.12.12' || 'none' }}
+          - qt-version: ${{ inputs.compiler == 'MSVC32' && '6.9.1' || 'none' }}
+          - qt-version: ${{ inputs.os == 'windows-2019' && '6.9.1' || 'none' }}
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.15.2' || 'none' }}
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '6.2.4' || 'none' }}
     steps:
