@@ -39,7 +39,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
       - name: Set up ccache
-        uses: hendrikmuhs/ccache-action@a1209f81afb8c005c13b4296c32e363431bffea5
+        uses: hendrikmuhs/ccache-action@63069e3931dedbf3b63792097479563182fe70d1
         with:
           key: ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}-${{ matrix.qt-version }}
           restore-keys: |
@@ -48,7 +48,7 @@ jobs:
             ${{ inputs.os }}
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@28deaeda66b76a05916b6923827895f2b14ab387
+        uses: github/codeql-action/init@ce28f5bb42b7a9f2c824e633a3f6ee835bab6858
         with:
           languages: cpp
           queries: security-and-quality
@@ -56,7 +56,7 @@ jobs:
         continue-on-error: true
 
       - name: Set up Qt environment
-        uses: jdpurcell/install-qt-action@ebdf7dca0e4b4000b6c98c745326d1aa8715b14f
+        uses: jurplel/install-qt-action@d325aaf2a8baeeda41ad0b5d39f84a6af9bcf005
         with:
           cache: true
           version: ${{ matrix.qt-version }}
@@ -152,6 +152,6 @@ jobs:
           path: build/dist/EFIBootEditor-*
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@28deaeda66b76a05916b6923827895f2b14ab387
+        uses: github/codeql-action/analyze@ce28f5bb42b7a9f2c824e633a3f6ee835bab6858
         if: inputs.build-config == 'Debug'
         continue-on-error: true
