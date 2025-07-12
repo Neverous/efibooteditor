@@ -1209,7 +1209,7 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1083"/>
         <source>Apple</source>
-        <translation type="unfinished">Apple</translation>
+        <translation>Apple</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1113"/>

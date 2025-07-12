@@ -888,7 +888,7 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="507"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to adjust the order of all entries based on their position on the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;Html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; பட்டியலில் அவற்றின் நிலையின் அடிப்படையில் அனைத்து உள்ளீடுகளின் வரிசையையும் சரிசெய்ய இங்கே சொடுக்கு செய்க. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt; &lt;body&gt; &lt;p&gt; பட்டியலில் அவற்றின் நிலையின் அடிப்படையில் அனைத்து உள்ளீடுகளின் வரிசையையும் சரிசெய்ய இங்கே சொடுக்கு செய்க. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="599"/>
@@ -1185,7 +1185,7 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1060"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the Security Boot Policy Variables have been modified by anyone other than the platform vendor or a holder of the vendor-provided keys.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; பாதுகாப்பு துவக்க கொள்கை மாறிகள் இயங்குதள விற்பனையாளர் அல்லது விற்பனையாளர் வழங்கிய விசைகளை வைத்திருப்பவர் தவிர வேறு யாராலும் மாற்றியமைக்கப்பட்டுள்ளதா என்பதை வரையறுக்கிறது. &lt;/p&gt; &lt;/body&gt; &lt;/ html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; பாதுகாப்பு துவக்க கொள்கை மாறிகள் இயங்குதள விற்பனையாளர் அல்லது விற்பனையாளர் வழங்கிய விசைகளை வைத்திருப்பவர் தவிர வேறு யாராலும் மாற்றியமைக்கப்பட்டுள்ளதா என்பதை வரையறுக்கிறது. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1063"/>
@@ -1412,12 +1412,12 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1283"/>
         <source>&amp;Reload</source>
-        <translation>&amp; மீண்டும் ஏற்றவும்</translation>
+        <translation>மீண்டும் ஏற்றவும்</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1286"/>
         <source>Reload</source>
-        <translation>ஏற்றவும்</translation>
+        <translation>மறுஏற்றம்</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1292"/>
@@ -1427,13 +1427,13 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1300"/>
         <source>About &amp;EFI Boot Editor</source>
-        <translation>EFI துவக்க எடிட்டர் பற்றி</translation>
+        <translation>இஎப்ஐ துவக்க திருத்திப் பற்றி</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1303"/>
         <location filename="../src/efibooteditor.cpp" line="29"/>
         <source>About EFI Boot Editor</source>
-        <translation>EFI துவக்க எடிட்டர் பற்றி</translation>
+        <translation>இஎப்ஐ துவக்க திருத்திப் பற்றி</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1314"/>
@@ -1478,7 +1478,7 @@
     <message>
         <location filename="../src/efibooteditor.cpp" line="26"/>
         <source>Working…</source>
-        <translation>வேலை…</translation>
+        <translation>பணிபுரிகிறது…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="92"/>
@@ -1531,13 +1531,13 @@
         <location filename="../src/efibooteditor.cpp" line="31"/>
         <source>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</source>
         <extracomment>About dialog</extracomment>
-        <translation>&lt;H1&gt; EFI துவக்க எடிட்டர் &lt;/H1&gt; &lt;p&gt; பதிப்பு &lt;b&gt;%1 &lt;/b&gt; &lt;/p&gt; &lt;p&gt; (U) EFI அடிப்படையிலான அமைப்புகளுக்கான துவக்க எடிட்டர். &lt;/p&gt;</translation>
+        <translation>&lt;h1&gt;இஎப்ஐ துவக்க திருத்தி&lt;/h1&gt;&lt;p&gt; பதிப்பு &lt;b&gt;%1 &lt;/b&gt; &lt;/p&gt; &lt;p&gt; (U) EFI அடிப்படையிலான அமைப்புகளுக்கான துவக்க திருத்தி. &lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="45"/>
         <source>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; for EFI variables access.&lt;/p&gt;&lt;p&gt;Uses Tango Icons as fallback icons.&lt;/p&gt;</source>
         <extracomment>About dialog details</extracomment>
-        <translation>&lt;p&gt; &lt;a href = &apos;%1&apos;&gt; வலைத்தளம் &lt;/a&gt; &lt;/p&gt; &lt;p&gt; ஒரு குறிப்பிட்ட நோக்கத்திற்காக வடிவமைப்பு, வணிகத்தன்மை மற்றும் உடற்தகுதி உள்ளிட்ட எந்தவொரு உத்தரவாதமும் இல்லாமல் நிரல் வழங்கப்படுகிறது .&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href = &apos;https: //github.com/rhboot/efivar&apos;&gt; efivar &lt;/a&gt; EFI மாறிகள் அணுகலுக்காக.</translation>
+        <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;வலைத்தளம் &lt;/a&gt; &lt;/p&gt; &lt;p&gt; ஒரு குறிப்பிட்ட நோக்கத்திற்காக வடிவமைப்பு, வணிகத்தன்மை மற்றும் உடற்தகுதி உள்ளிட்ட எந்தவொரு உத்தரவாதமும் இல்லாமல் நிரல் வழங்கப்படுகிறது .&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar &lt;/a&gt; EFI மாறிகள் அணுகலுக்காக.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="330"/>
@@ -1689,7 +1689,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="202"/>
         <location filename="../src/form/filepathdialog.ui" line="218"/>
         <source>Function</source>
-        <translation>சார்பு</translation>
+        <translation>செயல்பாடு</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="121"/>
@@ -1935,7 +1935,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="5486"/>
         <location filename="../src/form/filepathdialog.ui" line="5503"/>
         <source>IPv6</source>
-        <translation>Ipvsh</translation>
+        <translation>ஐபிவி 6</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2736"/>
@@ -2143,7 +2143,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="124"/>
         <location filename="../src/form/filepathdialog.ui" line="146"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Device Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; பிசிஐ சாதன எண்</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; பிசிஐ சாதன எண்&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="163"/>
@@ -2428,7 +2428,7 @@ Your EFI configuration will be overwritten!</source>
  0x00 - தெரியவில்லை.
  0x01 - KCS: விசைப்பலகை கட்டுப்படுத்தி பாணி.
  0x02 - SMIC: சேவையக மேலாண்மை இடைமுக சிப்.
- 0x03 - BT: தொகுதி பரிமாற்றம். &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+ 0x03 - BT: தொகுதி பரிமாற்றம்.&lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="625"/>
@@ -2462,7 +2462,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="649"/>
         <location filename="../src/form/filepathdialog.ui" line="670"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Base address (either memory-mapped or I/O) of the BMC. If the least-significant bit of the field is a 1, the address is in I/O space; otherwise, the address is memory-mapped. Refer to the IPMI Interface Specification for usage details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; BMC இன் அடிப்படை முகவரி (நினைவகம்-வரைபட அல்லது I/O). புலத்தின் மிகக் குறைவான பிட் 1 ஆக இருந்தால், முகவரி I/O இடத்தில் உள்ளது; இல்லையெனில், முகவரி நினைவகம்-வரைபடமானது. பயன்பாட்டு விவரங்களுக்கான ஐபிஎம்ஐ இடைமுக விவரக்குறிப்பைப் பார்க்கவும். &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; BMC இன் அடிப்படை முகவரி (நினைவகம்-வரைபட அல்லது I/O). புலத்தின் மிகக் குறைவான பிட் 1 ஆக இருந்தால், முகவரி I/O இடத்தில் உள்ளது; இல்லையெனில், முகவரி நினைவகம்-வரைபடமானது. பயன்பாட்டு விவரங்களுக்கான ஐபிஎம்ஐ இடைமுக விவரக்குறிப்பைப் பார்க்கவும்.&lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="688"/>
@@ -2495,7 +2495,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="838"/>
         <location filename="../src/form/filepathdialog.ui" line="859"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match the corresponding HID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; சாதனங்கள் PNP வன்பொருள் ஐடி ஒரு எண் 32-பிட் சுருக்கப்பட்ட EISA- வகை ஐடியில் சேமிக்கப்பட்டுள்ளது. இந்த மதிப்பு ACPI பெயர் இடத்தில் தொடர்புடைய மறுத்தத்துடன் பொருந்த வேண்டும். &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; சாதனங்கள் PNP வன்பொருள் ஐடி ஒரு எண் 32-பிட் சுருக்கப்பட்ட EISA- வகை ஐடியில் சேமிக்கப்பட்டுள்ளது. இந்த மதிப்பு ACPI பெயர் இடத்தில் தொடர்புடைய மறுத்தத்துடன் பொருந்த வேண்டும்.&lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="758"/>
