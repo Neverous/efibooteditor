@@ -14,12 +14,12 @@ import yaml
 @dataclasses.dataclass
 class DevicePathNodeField:
     name: str
-    slug: str = dataclasses.field(init=False)
     description: str
     offset: int | str
     size: int | str
     # For CodeGen
     type: str = "int"
+    slug: str = dataclasses.field(init=False)
 
     def __post_init__(self) -> None:
         self.slug = slugify(self.name)
@@ -28,10 +28,10 @@ class DevicePathNodeField:
 @dataclasses.dataclass
 class DevicePathNode:
     name: str
-    slug: str = dataclasses.field(init=False)
     description: str
     type: int
     subtype: int
+    slug: str = dataclasses.field(init=False)
     fields: list[DevicePathNodeField] = dataclasses.field(default_factory=list)
 
     def __post_init__(self) -> None:
@@ -41,10 +41,10 @@ class DevicePathNode:
 @dataclasses.dataclass
 class DevicePathCategory:
     name: str
-    slug: str = dataclasses.field(init=False)
     description: str
     type: int
     nodes: list[DevicePathNode] = dataclasses.field(default_factory=list)
+    slug: str = dataclasses.field(init=False)
 
     def __post_init__(self) -> None:
         self.slug = slugify(self.name)

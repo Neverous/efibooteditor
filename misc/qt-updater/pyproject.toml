@@ -4,19 +4,16 @@ version = "1.0.0"
 description = "Script for updating EFI Boot Editor CI with latest Qt versions"
 
 requires-python = ">=3.13"
-
 dependencies = [
-    "requests",
-    "ruamel.yaml",
+    "requests>=2.32.4",
+    "ruamel-yaml>=0.18.14",
 ]
 
 [project.optional-dependencies]
-
 dev = [
-    "mypy",
-    "pip-tools",
-    "ruff",
-    "types-requests",
+    "ruff>=0.12.3",
+    "ty>=0.0.1a14",
+    "types-requests>=2.32.4.20250611",
 ]
 
 [tool.ruff]

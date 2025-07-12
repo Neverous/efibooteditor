@@ -4,21 +4,18 @@ version = "1.0.0"
 description = "Scripts for generating Device Path Nodes related code for EFI Boot Editor"
 
 requires-python = ">=3.13"
-
 dependencies = [
-    "beautifulsoup4",
-    "jinja2",
-    "pyyaml",
+    "beautifulsoup4>=4.13.4",
+    "jinja2>=3.1.6",
+    "pyyaml>=6.0.2",
 ]
 
 [project.optional-dependencies]
-
 dev = [
-    "mypy",
-    "pip-tools",
-    "ruff",
-    "types-pyyaml",
-    "types-beautifulsoup4",
+    "ruff>=0.12.3",
+    "ty>=0.0.1a14",
+    "types-beautifulsoup4>=4.12.0.20250516",
+    "types-pyyaml>=6.0.12.20250516",
 ]
 
 [tool.setuptools.packages.find]

@@ -81,15 +81,23 @@ def fetch_ubuntu_package_versions(series_slug: str, name: str) -> set[Version]:
             "status": "Published",
         },
     ).json()["entries"]
-    return {Version(*map(int, package["binary_package_version"].split(".")[:2])) for package in packages}
+    versions = set()
+    for package in packages:
+        major, minor = map(int, package["binary_package_version"].split(".")[:2])
+        versions.add(Version(major, minor))
+
+    return versions
 
 
 def fetch_installable_qt_versions() -> set[Version]:
     log.debug("Fetching installable Qt versions")
     listing = api.get("https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/").text
-    return {
-        Version(*map(int, filter(None, version))) for version in re.findall(r'href="qt(\d)_\1(\d{0,2})(\d+)/"', listing)
-    }
+    versions = set()
+    for version in re.findall(r'href="qt(\d)_\1(\d{0,2})(\d+)/"', listing):
+        major, minor, *patch = map(int, filter(None, version))
+        versions.add(Version(major, minor, *patch))
+
+    return versions
 
 
 def get_supported_qt_versions(supported_date: date) -> tuple[dict[Version, QtVersion], set[Version]]:
@@ -99,7 +107,8 @@ def get_supported_qt_versions(supported_date: date) -> tuple[dict[Version, QtVer
 
     for cycle in fetch_eoldate_info("qt"):
         eol = date.fromisoformat(cycle["eol"])
-        version = Version(*map(int, cycle["cycle"].split(".")))
+        major, minor, *patch = map(int, cycle["cycle"].split("."))
+        version = Version(major, minor, *patch)
         if cycle["lts"]:
             log.debug("Adding %s to LTS versions", version)
             lts_releases.add(version)
