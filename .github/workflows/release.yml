@@ -49,13 +49,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-2019, windows-2022, windows-2025]
+        os: [windows-2022, windows-2025]
         compiler:
           - Clang
           - MSVC
-        include:
-          - os: windows-2019
-            compiler: MSVC32
 
     permissions:
       actions: read
@@ -121,20 +118,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-2019, windows-2022, windows-2025]
+        os: [windows-2022, windows-2025]
         compiler:
           - Clang
           - MSVC
         extension:
           - .zip
           - .msi
-        include:
-          - os: windows-2019
-            compiler: MSVC32
-            extension: .zip
-          - os: windows-2019
-            compiler: MSVC32
-            extension: .msi
 
     permissions:
       contents: write
@@ -177,9 +167,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-2022]
+        os: [windows-2025]
         qt-version:
-          - 6.9.0  # Supported until 2025-10-02
+          - 6.9.1  # Supported until 2025-10-02
         compiler:
           - MSVC
     steps:
