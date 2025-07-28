@@ -242,7 +242,7 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="632"/>
         <source>App</source>
-        <translation>பயன்பாடு</translation>
+        <translation>செயலி</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="68"/>
@@ -839,7 +839,7 @@
         <location filename="../src/form/efibooteditor.ui" line="377"/>
         <location filename="../src/form/efibooteditor.ui" line="380"/>
         <source>Duplicate entry</source>
-        <translation>நகல் நுழைவு</translation>
+        <translation>உள்ளீடு நகல்</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="383"/>
@@ -1412,12 +1412,12 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1283"/>
         <source>&amp;Reload</source>
-        <translation>மீண்டும் ஏற்றவும்</translation>
+        <translation>மீளேற்று</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1286"/>
         <source>Reload</source>
-        <translation>மறுஏற்றம்</translation>
+        <translation>மீளேற்று</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1292"/>
@@ -1483,7 +1483,7 @@
     <message>
         <location filename="../src/efibooteditor.cpp" line="92"/>
         <source>Undo %1</source>
-        <translation>%1 ஐ செயல்தவிர்க்கவும்</translation>
+        <translation>%1 ஐ செயல்தவிர்</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="95"/>
@@ -1537,7 +1537,7 @@
         <location filename="../src/efibooteditor.cpp" line="45"/>
         <source>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; for EFI variables access.&lt;/p&gt;&lt;p&gt;Uses Tango Icons as fallback icons.&lt;/p&gt;</source>
         <extracomment>About dialog details</extracomment>
-        <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;வலைத்தளம் &lt;/a&gt; &lt;/p&gt; &lt;p&gt; ஒரு குறிப்பிட்ட நோக்கத்திற்காக வடிவமைப்பு, வணிகத்தன்மை மற்றும் உடற்தகுதி உள்ளிட்ட எந்தவொரு உத்தரவாதமும் இல்லாமல் நிரல் வழங்கப்படுகிறது .&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar &lt;/a&gt; EFI மாறிகள் அணுகலுக்காக.</translation>
+        <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;வலைத்தளம்&lt;/a&gt;&lt;/p&gt;&lt;p&gt;குறிப்பிட்ட நோக்கத்திற்காக வடிவமைப்பு, வணிகத்தன்மை மற்றும் பொருத்தம் ஆகியவற்றின் உத்தரவாதம் உட்பட, எந்தவொரு உத்தரவாதமும் இல்லாமல் நிரல் வழங்கப்படுகிறது.&lt;/p&gt;&lt;p&gt;உரிமம்: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL பதிப்பு 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;லினக்ஸில் EFI மாறிகள் அணுகலுக்காக &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; ஐப் பயன்படுத்துகிறது.&lt;/p&gt;&lt;p&gt;டேங்கோ ஐகான்களை ஃபால்பேக் ஐகான்களாகப் பயன்படுத்துகிறது.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="330"/>
@@ -1547,7 +1547,7 @@
     <message>
         <location filename="../src/efibooteditor.cpp" line="453"/>
         <source>Are you sure you want to quit?</source>
-        <translation>நீங்கள் நிச்சயமாக வெளியேற விரும்புகிறீர்களா?</translation>
+        <translation>நிச்சயமாக நீங்கள் வெளியேற வேண்டுமா?</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="123"/>
@@ -2535,7 +2535,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="918"/>
         <location filename="../src/form/filepathdialog.ui" line="939"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices compatible PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; சாதனங்கள் இணக்கமான PNP வன்பொருள் ஐடி ஒரு எண் 32-பிட் சுருக்கப்பட்ட EISA- வகை ஐடியில் சேமிக்கப்பட்டுள்ளது. இந்த மதிப்பு ACPI பெயர் இடத்தில் தொடர்புடைய CID ஆல் திருப்பி அனுப்பப்பட்ட இணக்கமான சாதன ஐடிகளில் குறைந்தபட்சம் பொருந்த வேண்டும். &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; சாதனங்கள் இணக்கமான PNP வன்பொருள் ஐடி ஒரு எண் 32-பிட் சுருக்கப்பட்ட EISA- வகை ஐடியில் சேமிக்கப்பட்டுள்ளது. இந்த மதிப்பு ACPI பெயர் இடத்தில் தொடர்புடைய CID ஆல் திருப்பி அனுப்பப்பட்ட இணக்கமான சாதன ஐடிகளில் குறைந்தபட்சம் பொருந்த வேண்டும். &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="952"/>
@@ -2554,7 +2554,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="958"/>
         <location filename="../src/form/filepathdialog.ui" line="980"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored as a string. This value must match the corresponding HID in the ACPI name space. If the length of this string is 0, then the HID field is used. If the length of this string is greater than 0, then this field supersedes the HID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; சாதனங்கள் PNP வன்பொருள் ஐடி ஒரு சரமாக சேமிக்கப்பட்டுள்ளன. இந்த மதிப்பு ACPI பெயர் இடத்தில் தொடர்புடைய மறுத்தத்துடன் பொருந்த வேண்டும். இந்த சரத்தின் நீளம் 0 ஆக இருந்தால், HID புலம் பயன்படுத்தப்படுகிறது. இந்த சரத்தின் நீளம் 0 ஐ விட அதிகமாக இருந்தால், இந்த புலம் HID புலத்தை மீறுகிறது. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; சாதனங்கள் PNP வன்பொருள் ஐடி ஒரு சரமாகச் சேமிக்கப்பட்டுள்ளன. இந்த மதிப்பு ACPI பெயர் இடத்தில் தொடர்புடைய மறுத்தத்துடன் பொருந்த வேண்டும். இந்தச் சரத்தின் நீளம் 0 ஆக இருந்தால், HID புலம் பயன்படுத்தப்படுகிறது. இந்தச் சரத்தின் நீளம் 0 ஐ விட அதிகமாக இருந்தால், இந்தப் புலம் HID புலத்தை மீறுகிறது. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="987"/>
@@ -2573,7 +2573,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="993"/>
         <location filename="../src/form/filepathdialog.ui" line="1015"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. This value is stored as a string. If the length of this string is 0, then the UID field is used. If the length of this string is greater than 0, then this field supersedes the UID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; இரண்டு சாதனங்களில் ஒரே மறைக்கப்பட்டிருந்தால் ACPI க்கு தேவைப்படும் தனித்துவமான ஐடி. இந்த மதிப்பு ACPI பெயர் இடத்தில் தொடர்புடைய UID/HID சோடியுடன் பொருந்த வேண்டும். இந்த மதிப்பு ஒரு சரமாக சேமிக்கப்படுகிறது. இந்த சரத்தின் நீளம் 0 என்றால், UID புலம் பயன்படுத்தப்படுகிறது. இந்த சரத்தின் நீளம் 0 ஐ விட அதிகமாக இருந்தால், இந்த புலம் UID புலத்தை மீறுகிறது. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; இரண்டு சாதனங்களில் ஒரே மறைக்கப்பட்டிருந்தால் ACPI க்கு தேவைப்படும் தனித்துவமான ஐடி. இந்த மதிப்பு ACPI பெயர் இடத்தில் தொடர்புடைய UID/HID சோடியுடன் பொருந்த வேண்டும். இந்த மதிப்பு ஒரு சரமாகச் சேமிக்கப்படுகிறது. இந்தச் சரத்தின் நீளம் 0 என்றால், UID புலம் பயன்படுத்தப்படுகிறது. இந்தச் சரத்தின் நீளம் 0 ஐ விட அதிகமாக இருந்தால், இந்தப் புலம் UID புலத்தை மீறுகிறது. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1022"/>
@@ -2592,7 +2592,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="1028"/>
         <location filename="../src/form/filepathdialog.ui" line="1050"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices compatible PnP hardware ID stored as a string. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI namespace. If the length of this string is 0, then the CID field is used. If the length of this string is greater than 0, then this field supersedes the CID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; சாதனங்கள் இணக்கமான PNP வன்பொருள் ஐடி ஒரு சரமாக சேமிக்கப்படுகிறது. இந்த மதிப்பு ACPI பெயர்வெளியில் தொடர்புடைய CID ஆல் திருப்பி அனுப்பப்பட்ட இணக்கமான சாதன ஐடிகளில் குறைந்தபட்சம் பொருந்த வேண்டும். இந்த சரத்தின் நீளம் 0 ஆக இருந்தால், சிஐடி புலம் பயன்படுத்தப்படுகிறது. இந்த சரத்தின் நீளம் 0 ஐ விட அதிகமாக இருந்தால், இந்த புலம் சிஐடி புலத்தை மீறுகிறது. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; சாதனங்கள் இணக்கமான PNP வன்பொருள் ஐடி ஒரு சரமாகச் சேமிக்கப்படுகிறது. இந்த மதிப்பு ACPI பெயர்வெளியில் தொடர்புடைய CID ஆல் திருப்பி அனுப்பப்பட்ட இணக்கமான சாதன ஐடிகளில் குறைந்தபட்சம் பொருந்த வேண்டும். இந்தச் சரத்தின் நீளம் 0 ஆக இருந்தால், சிஐடி புலம் பயன்படுத்தப்படுகிறது. இந்தச் சரத்தின் நீளம் 0 ஐ விட அதிகமாக இருந்தால், இந்தப் புலம் சிஐடி புலத்தை மீறுகிறது. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1061"/>
@@ -2641,7 +2641,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="1137"/>
         <location filename="../src/form/filepathdialog.ui" line="1198"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path may optionally contain more than one ADR entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; இந்த சாதனப் பாதையில் ஒன்றுக்கு மேற்பட்ட ADR உள்ளீடு இருக்கலாம்.</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; இந்தச் சாதனப் பாதையில் ஒன்றுக்கு மேற்பட்ட ADR உள்ளீடு இருக்கலாம்.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1153"/>
@@ -2690,7 +2690,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="1245"/>
         <location filename="../src/form/filepathdialog.ui" line="1266"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NFIT Device Handle - Unique physical identifier. See ACPI Defined Devices and Device Specific Objects section, NVDIMM Devices sub-chapter for the specific definition of the fields utilized for this handle.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; NFIT சாதன கைப்பிடி - தனித்துவமான உடல் அடையாளங்காட்டி. இந்த கைப்பிடிக்கு பயன்படுத்தப்படும் புலங்களின் குறிப்பிட்ட வரையறைக்கு ACPI வரையறுக்கப்பட்ட சாதனங்கள் மற்றும் சாதன குறிப்பிட்ட பொருள்கள் பிரிவு, NVDIMM சாதனங்கள் துணை அத்தியாயத்தைப் பார்க்கவும். &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; NFIT சாதன கைப்பிடி - தனித்துவமான உடல் அடையாளங்காட்டி. இந்தக் கைப்பிடிக்கு பயன்படுத்தப்படும் புலங்களின் குறிப்பிட்ட வரையறைக்கு ACPI வரையறுக்கப்பட்ட சாதனங்கள் மற்றும் சாதன குறிப்பிட்ட பொருள்கள் பிரிவு, NVDIMM சாதனங்கள் துணை அத்தியாயத்தைப் பார்க்கவும்.&lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1284"/>
@@ -2951,7 +2951,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="1890"/>
         <location filename="../src/form/filepathdialog.ui" line="1912"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB Interface Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; யூ.எச்.பி இடைமுக எண்</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; யூ.எச்.பி இடைமுக எண்.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1929"/>
@@ -3036,7 +3036,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
  பிட் 2 - கன்சோல் நெறிமுறை.
  பிட் 3 - சேமிப்பக நெறிமுறை.
  பிட் 4 - பிணைய நெறிமுறை.
- மற்ற எல்லா பிட்களும் ஒதுக்கப்பட்டுள்ளன</translation>
+ மற்ற எல்லா பிட்களும் ஒதுக்கப்பட்டுள்ளன.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2098"/>
@@ -3093,7 +3093,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="2181"/>
         <location filename="../src/form/filepathdialog.ui" line="2202"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;64-bit persistent ID of remote IOC port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; ரிமோட் ஐஓசி போர்ட்டின் 64-பிட் தொடர்ச்சியான ஐடி</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; ரிமோட் ஐஓசி போர்ட்டின் 64-பிட் தொடர்ச்சியான ஐடி.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2215"/>
@@ -3106,13 +3106,13 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="2224"/>
         <location filename="../src/form/filepathdialog.ui" line="2239"/>
         <source>Device ID</source>
-        <translation>சாதன ஐடி</translation>
+        <translation>கருவி அடையாளம்</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2221"/>
         <location filename="../src/form/filepathdialog.ui" line="2242"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;64-bit persistent ID of remote device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; தொலைநிலை சாதனத்தின் 64-பிட் தொடர்ச்சியான ஐடி</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; தொலைநிலை சாதனத்தின் 64-பிட் தொடர்ச்சியான ஐடி.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2259"/>
@@ -3146,7 +3146,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="2335"/>
         <location filename="../src/form/filepathdialog.ui" line="2357"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Network interface type (i.e., 802.3, FDDI). See RFC 3232.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; பிணைய இடைமுக வகை (அதாவது, 802.3, FDDI). RFC 3232 ஐக் காண்க. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; பிணைய இடைமுக வகை (அதாவது, 802.3, FDDI). RFC 3232 ஐக் காண்க. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2377"/>
@@ -3263,7 +3263,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="2928"/>
         <location filename="../src/form/filepathdialog.ui" line="2950"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The network protocol (i.e., UDP, TCP). See RFC 3232.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; பிணைய நெறிமுறை (அதாவது, UDP, TCP). RFC 3232 ஐக் காண்க. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; பிணைய நெறிமுறை (அதாவது, UDP, TCP). RFC 3232 ஐக் காண்க. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2607"/>
@@ -3286,7 +3286,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - The Source IP Address was assigned though DHCP.
 0x01 - The Source IP Address is statically bound.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; 0x00 - மூல ஐபி முகவரி DHCP என்றாலும் ஒதுக்கப்பட்டது.
- 0x01 - மூல ஐபி முகவரி நிலையான முறையில் பிணைக்கப்பட்டுள்ளது. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+ 0x01 - மூல ஐபி முகவரி நிலையான முறையில் பிணைக்கப்பட்டுள்ளது. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2646"/>
@@ -3379,9 +3379,9 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - The Local IP Address was manually configured.
 0x01 - The Local IP Address is assigned through IPv6 stateless auto-configuration.
 0x02 - The Local IP Address is assigned through IPv6 stateful configuration.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; 0x00 - உள்ளக ஐபி முகவரி கைமுறையாக கட்டமைக்கப்பட்டது.
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; 0x00 - உள்ளக ஐபி முகவரி கைமுறையாகக் கட்டமைக்கப்பட்டது.
  0x01 - உள்ளக ஐபி முகவரி ஐபிவி 6 நிலையற்ற ஆட்டோ -உள்ளமைவு மூலம் ஒதுக்கப்படுகிறது.
- 0x02 - உள்ளக ஐபி முகவரி ஐபிவி 6 மாநில உள்ளமைவு மூலம் ஒதுக்கப்படுகிறது. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+ 0x02 - உள்ளக ஐபி முகவரி ஐபிவி 6 மாநில உள்ளமைவு மூலம் ஒதுக்கப்படுகிறது. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3021"/>
@@ -3434,7 +3434,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="3182"/>
         <location filename="../src/form/filepathdialog.ui" line="3203"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The baud rate setting for the UART style device. A value of 0 means that the devices default baud rate will be used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; UART பாணி சாதனத்திற்கான பாட் வீத அமைப்பு. 0 இன் மதிப்பு என்பது சாதனங்களின் இயல்புநிலை பாட் வீதம் பயன்படுத்தப்படும் என்பதாகும். &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; UART பாணி சாதனத்திற்கான பாட் வீத அமைப்பு. 0 இன் மதிப்பு என்பது சாதனங்களின் இயல்புநிலை பாட் வீதம் பயன்படுத்தப்படும் என்பதாகும். &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3216"/>
@@ -3453,7 +3453,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="3222"/>
         <location filename="../src/form/filepathdialog.ui" line="3244"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The number of data bits for the UART style device. A value of 0 means that the devices default number of data bits will be used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; UART பாணி சாதனத்திற்கான தரவு பிட்களின் எண்ணிக்கை. 0 இன் மதிப்பு என்பது சாதனங்களின் இயல்புநிலை தரவு பிட்களின் எண்ணிக்கை பயன்படுத்தப்படும். &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; UART பாணி சாதனத்திற்கான தரவு பிட்களின் எண்ணிக்கை. 0 இன் மதிப்பு என்பது சாதனங்களின் இயல்புநிலை தரவு பிட்களின் எண்ணிக்கை பயன்படுத்தப்படும்.&lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3257"/>
@@ -3496,7 +3496,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
  0x02 - ஒரு நிகர் கூட.
  0x03 - ஒற்றைப்படை சமநிலை.
  0x04 - மார்க் சமநிலை.
- 0x05 - விண்வெளி சமநிலை. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+ 0x05 - விண்வெளி சமநிலை. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3313"/>
@@ -3558,11 +3558,11 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
 0x01 - 1 Stop Bit.
 0x02 - 1.5 Stop Bits.
 0x03 - 2 Stop Bits.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; UART பாணி சாதனத்திற்கான நிறுத்த பிட்களின் எண்ணிக்கை:
- 0x00 - இயல்புநிலை நிறுத்த பிட்கள்.
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; UART பாணி சாதனத்திற்கான நிறுத்தப் பிட்களின் எண்ணிக்கை:
+ 0x00 - இயல்புநிலை நிறுத்தப் பிட்கள்.
  0x01 - 1 ச்டாப் பிட்.
- 0x02 - 1.5 நிறுத்த பிட்கள்.
- 0x03 - 2 ச்டாப் பிட்கள். &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+ 0x02 - 1.5 நிறுத்தப் பிட்கள்.
+ 0x03 - 2 ச்டாப் பிட்கள். &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3399"/>
@@ -3611,7 +3611,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="3457"/>
         <location filename="../src/form/filepathdialog.ui" line="3478"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor ID assigned by USB-IF. A value of 0xFFFF will match any Vendor ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; USB-IF ஆல் ஒதுக்கப்பட்ட விற்பனையாளர் ஐடி. 0xffff இன் மதிப்பு எந்த விற்பனையாளர் ஐடியையும் பொருத்தும். &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; USB-IF ஆல் ஒதுக்கப்பட்ட விற்பனையாளர் ஐடி. 0xffff இன் மதிப்பு எந்த விற்பனையாளர் ஐடியையும் பொருத்தும். &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3491"/>
@@ -3649,7 +3649,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="3537"/>
         <location filename="../src/form/filepathdialog.ui" line="3558"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The class code assigned by the USB-IF. A value of 0xFF will match any class code.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; யூ.எச்.பி-ஐஎஃப் ஒதுக்கிய வகுப்புக் குறியீடு. 0xFF இன் மதிப்பு எந்த வகுப்புக் குறியீட்டையும் பொருத்துகிறது. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; யூ.எச்.பி-ஐஎஃப் ஒதுக்கிய வகுப்புக் குறியீடு. 0xFF இன் மதிப்பு எந்த வகுப்புக் குறியீட்டையும் பொருத்துகிறது. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3571"/>
@@ -3668,7 +3668,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="3577"/>
         <location filename="../src/form/filepathdialog.ui" line="3598"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The subclass code assigned by the USB-IF. A value of 0xFF will match any subclass code.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; யூ.எச்.பி-ஐஎஃப் ஒதுக்கிய துணைப்பிரிவு குறியீடு. 0xFF இன் மதிப்பு எந்த துணைப்பிரிவு குறியீட்டையும் பொருத்துகிறது. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; யூ.எச்.பி-ஐஎஃப் ஒதுக்கிய துணைப்பிரிவு குறியீடு. 0xFF இன் மதிப்பு எந்தத் துணைப்பிரிவு குறியீட்டையும் பொருத்துகிறது. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3611"/>
@@ -3687,7 +3687,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="3617"/>
         <location filename="../src/form/filepathdialog.ui" line="3638"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The protocol code assigned by the USB-IF. A value of 0xFF will match any protocol code.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; யூ.எச்.பி-ஐஎஃப் ஒதுக்கிய நெறிமுறை குறியீடு. 0xFF இன் மதிப்பு எந்த நெறிமுறை குறியீட்டையும் பொருத்துகிறது. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; யூ.எச்.பி-ஐஎஃப் ஒதுக்கிய நெறிமுறை குறியீடு. 0xFF இன் மதிப்பு எந்த நெறிமுறை குறியீட்டையும் பொருத்துகிறது. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3655"/>
@@ -3702,7 +3702,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3661"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path describes a USB device using its serial number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; இந்த சாதன பாதை அதன் வரிசை எண்ணைப் பயன்படுத்தி ஒரு யூ.எச்.பி சாதனத்தை விவரிக்கிறது.</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; இந்தச் சாதன பாதை அதன் வரிசை எண்ணைப் பயன்படுத்தி ஒரு யூ.எச்.பி சாதனத்தை விவரிக்கிறது.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3685"/>
@@ -3771,7 +3771,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="3812"/>
         <location filename="../src/form/filepathdialog.ui" line="3834"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Last 64-or-fewer UTF-16 characters of the USB serial number. The length of the string is determined by the Length field less the offset of the Serial Number field (10).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; யூ.எச்.பி வரிசை எண்ணின் கடைசி 64 அல்லது-ஃபெவர் யுடிஎஃப் -16 எழுத்துக்கள். சரத்தின் நீளம் நீள புலத்தால் தீர்மானிக்கப்படுகிறது வரிசை எண் புலத்தின் ஆஃப்செட் (10). &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; யூ.எச்.பி வரிசை எண்ணின் கடைசி 64 அல்லது-ஃபெவர் யுடிஎஃப் -16 எழுத்துக்கள். சரத்தின் நீளம் நீளப் புலத்தால் தீர்மானிக்கப்படுகிறது வரிசை எண் புலத்தின் ஆஃப்செட் (10).&lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3845"/>
@@ -3822,7 +3822,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="3956"/>
         <location filename="../src/form/filepathdialog.ui" line="3978"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The HBA port number that facilitates the connection to the device or a port multiplier. The value 0xFFFF is reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; சாதனம் அல்லது துறைமுகம் பெருக்கி இணைப்பை எளிதாக்கும் HBA துறைமுகம் எண். 0xffff மதிப்பு ஒதுக்கப்பட்டுள்ளது. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; சாதனம் அல்லது துறைமுகம் பெருக்கி இணைப்பை எளிதாக்கும் HBA துறைமுகம் எண். 0xffff மதிப்பு ஒதுக்கப்பட்டுள்ளது. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3991"/>
@@ -3841,7 +3841,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="3997"/>
         <location filename="../src/form/filepathdialog.ui" line="4019"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Port multiplier port number that facilitates the connection to the device. Must be set to 0xFFFF if the device is directly connected to the HBA.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; சாதனத்திற்கான இணைப்பை எளிதாக்கும் துறைமுகம் பெருக்கி துறைமுகம் எண். சாதனம் நேரடியாக HBA உடன் இணைக்கப்பட்டிருந்தால் 0xffff ஆக அமைக்கப்பட வேண்டும். &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; சாதனத்திற்கான இணைப்பை எளிதாக்கும் துறைமுகம் பெருக்கி துறைமுகம் எண். சாதனம் நேரடியாக HBA உடன் இணைக்கப்பட்டிருந்தால் 0xffff ஆக அமைக்கப்பட வேண்டும். &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4077"/>
@@ -3868,7 +3868,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4113"/>
         <location filename="../src/form/filepathdialog.ui" line="4135"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Network Protocol (0 = TCP, 1+ = reserved).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; பிணையம் நெறிமுறை (0 = TCP, 1+ = ஒதுக்கப்பட்டுள்ளது)</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; பிணையம் நெறிமுறை (0 = TCP, 1+ = ஒதுக்கப்பட்டுள்ளது).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4148"/>
@@ -3899,7 +3899,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4194"/>
         <location filename="../src/form/filepathdialog.ui" line="4215"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8 byte array containing the iSCSI Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; 8 ISCSI தருக்க அலகு எண்ணைக் கொண்ட 8 பைட் வரிசை</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; 8 ISCSI தருக்க அலகு எண்ணைக் கொண்ட 8 பைட் வரிசை.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4228"/>
@@ -3918,7 +3918,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4234"/>
         <location filename="../src/form/filepathdialog.ui" line="4256"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI Target Portal group tag the initiator intends to establish a session with.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>இப்போது</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ஐ.எஸ்.சி.எஸ்.ஐ இலக்கு போர்ட்டல் குழு குறிச்சொல் ஒரு அமர்வை நிறுவ துவக்கி விரும்புகிறது.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4269"/>
@@ -3937,7 +3937,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4275"/>
         <location filename="../src/form/filepathdialog.ui" line="4297"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI NodeTarget Name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; iscsi nodetarget பெயர்</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; iscsi nodetarget பெயர்.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4308"/>
@@ -3986,7 +3986,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4389"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Fibre Channel Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;Html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; ஃபைபர் சேனல் ஃச் சாதன பாதை தருக்க அலகு எண் புலத்தின் வரையறையை டி -10 எச்சிஎச்ஐ கட்டமைப்பு மாதிரி 4 விவரக்குறிப்புடன் இணங்க தெளிவுபடுத்துகிறது. &lt;/p&gt; &lt;/body&gt; &lt; /html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt; &lt;body&gt; &lt;p&gt; ஃபைபர் சேனல் ஃச் சாதன பாதை தருக்க அலகு எண் புலத்தின் வரையறையை டி -10 எச்சிஎச்ஐ கட்டமைப்பு மாதிரி 4 விவரக்குறிப்புடன் இணங்கத் தெளிவுபடுத்துகிறது. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4453"/>
@@ -4025,7 +4025,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4543"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The SAS Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; SAS EX சாதன பாதை T-10 SCSI கட்டமைப்பு மாதிரி 4 விவரக்குறிப்புடன் ஒத்துப்போக தருக்க அலகு எண் புலத்தின் வரையறையை தெளிவுபடுத்துகிறது. &lt;/p&gt; &lt;/body&gt; &lt;/ html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; SAS EX சாதன பாதை T-10 SCSI கட்டமைப்பு மாதிரி 4 விவரக்குறிப்புடன் ஒத்துப்போகத் தருக்க அலகு எண் புலத்தின் வரையறையைத் தெளிவுபடுத்துகிறது. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4567"/>
@@ -4128,7 +4128,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4768"/>
         <location filename="../src/form/filepathdialog.ui" line="4789"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Namespace identifier (NSID). The values of 0 and 0xFFFFFFFF are invalid.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; பெயர்வெளி அடையாளங்காட்டி (NSID). 0 மற்றும் 0xffffffff இன் மதிப்புகள் தவறானவை. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; பெயர்வெளி அடையாளங்காட்டி (NSID). 0 மற்றும் 0xffffffff இன் மதிப்புகள் தவறானவை. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4802"/>
@@ -4147,7 +4147,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4808"/>
         <location filename="../src/form/filepathdialog.ui" line="4829"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This field contains the IEEE Extended Unique Identifier (EUI-64). Devices without an EUI-64 value must initialize this field with a value of 0.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; இந்தத் துறையில் IEEE விரிவாக்கப்பட்ட தனித்துவமான அடையாளங்காட்டி (EUI-64) உள்ளது. EUI-64 மதிப்பு இல்லாத சாதனங்கள் இந்த புலத்தை 0 மதிப்புடன் துவக்க வேண்டும். &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; இந்தத் துறையில் IEEE விரிவாக்கப்பட்ட தனித்துவமான அடையாளங்காட்டி (EUI-64) உள்ளது. EUI-64 மதிப்பு இல்லாத சாதனங்கள் இந்தப் புலத்தை 0 மதிப்புடன் துவக்க வேண்டும். &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4849"/>
@@ -4247,7 +4247,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5107"/>
         <source>EFI Bluetooth Settings.</source>
-        <translation>EFI ஊடலை அமைப்புகள்.</translation>
+        <translation>இஃஐ ஊடலை அமைப்புகள்.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5110"/>
@@ -4332,17 +4332,17 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5322"/>
         <source>BluetoothLE</source>
-        <translation>புளூடூதி</translation>
+        <translation>ஊடலைஎல்இ</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5325"/>
         <source>EFI BluetoothLE Settings.</source>
-        <translation>EFI ஊடலை அமைப்புகள்.</translation>
+        <translation>இஃஐ ஊடலைஎல்இ அமைப்புகள்.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5328"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;EFI BluetoothLE Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; EFI ஊடலை அமைப்புகள்</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; EFI ஊடலை அமைப்புகள்.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5392"/>
@@ -4365,7 +4365,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - Public Device Address.
 0x01 - Random Device Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; 0x00 - பொது சாதன முகவரி.
- 0x01 - சீரற்ற சாதன முகவரி. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+ 0x01 - சீரற்ற சாதன முகவரி. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5428"/>
@@ -4380,12 +4380,12 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5445"/>
         <source>DNS</source>
-        <translation>டி.என்.எச்</translation>
+        <translation>டிஎன்எச்</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5448"/>
         <source>DNS Settings.</source>
-        <translation>டி.என்.எச் அமைப்புகள்.</translation>
+        <translation>டிஎன்எச் அமைப்புகள்.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5451"/>
@@ -4406,7 +4406,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - The DNS server address is IPv4 address.
 0x01 - The DNS server address is IPv6 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; 0x00 - DNS சேவையக முகவரி IPv4 முகவரி.
- 0x01 - DNS சேவையக முகவரி IPv6 முகவரி. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+ 0x01 - DNS சேவையக முகவரி IPv6 முகவரி. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5514"/>
@@ -4459,7 +4459,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="5628"/>
         <location filename="../src/form/filepathdialog.ui" line="5649"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Namespace unique label identifier UUID. See the Uuid description in the NVDIMM Label Protocol - Label definitions section for details on this field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; பெயர்வெளி தனித்துவமான சிட்டை அடையாளங்காட்டி uuid. இந்த புலத்தின் விவரங்களுக்கு NVDIMM சிட்டை நெறிமுறையில் - சிட்டை வரையறைகள் பிரிவில் UUID விளக்கத்தைக் காண்க. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; பெயர்வெளி தனித்துவமான சிட்டை அடையாளங்காட்டி uuid. இந்தப் புலத்தின் விவரங்களுக்கு NVDIMM சிட்டை நெறிமுறையில் - சிட்டை வரையறைகள் பிரிவில் UUID விளக்கத்தைக் காண்க. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5663"/>
@@ -4497,7 +4497,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
 0xFF - Vendor specific REST Service.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; 0x01 - ரெட்ஃபிச் ஓய்வு சேவை.
  0x02 - ஓடாட்டா ஓய்வு சேவை.
- 0xff - விற்பனையாளர் குறிப்பிட்ட ஓய்வு பணி. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+ 0xff - விற்பனையாளர் குறிப்பிட்ட ஓய்வு பணி. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5733"/>
@@ -4535,7 +4535,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x01 - In-Band REST Service.
 0x02 - Out-of-band REST Service.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; 0x01 - -பேண்ட் ஓய்வு சேவை.
- 0x02-பேண்ட்-க்கு வெளியே ஓய்வு பணி. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+ 0x02-பேண்ட்-க்கு வெளியே ஓய்வு பணி. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5787"/>
@@ -4641,7 +4641,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="6029"/>
         <location filename="../src/form/filepathdialog.ui" line="6051"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique identifier of an NVM subsystem stored as UTF-8 string of n-bytes in compliance with the NVMe Qualified Name in the NVM Express Base Specification. Subsystem NQN is used for purposes of identification and authentication. Maximum length of 224 bytes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; என்விஎம் எக்ச்பிரச் அடிப்படை விவரக்குறிப்பில் என்விஎம் தகுதிவாய்ந்த பெயருக்கு இணங்க, என்.வி.எம் -8 சரம் என்-பைட்டுகளாக சேமிக்கப்பட்ட ஒரு என்விஎம் துணை அமைப்பின் தனித்துவமான அடையாளங்காட்டி. அடையாளம் மற்றும் அங்கீகார நோக்கங்களுக்காக துணை அமைப்பு NQN பயன்படுத்தப்படுகிறது. அதிகபட்ச நீளம் 224 பைட்டுகள். &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; என்விஎம் எக்ச்பிரச் அடிப்படை விவரக்குறிப்பில் என்விஎம் தகுதிவாய்ந்த பெயருக்கு இணங்க, என்.வி.எம் -8 சரம் என்-பைட்டுகளாக சேமிக்கப்பட்ட ஒரு என்விஎம் துணை அமைப்பின் தனித்துவமான அடையாளங்காட்டி. அடையாளம் மற்றும் அங்கீகார நோக்கங்களுக்காகத் துணை அமைப்பு NQN பயன்படுத்தப்படுகிறது. அதிகபட்ச நீளம் 224 பைட்டுகள். &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6066"/>
@@ -4668,7 +4668,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="6180"/>
         <location filename="../src/form/filepathdialog.ui" line="6202"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Describes the entry in a partition table, starting with entry 1. Partition number zero represents the entire device. Valid partition numbers for a MBR partition are [1, 4]. Valid partition numbers for a GPT partition are [1, NumberOfPartitionEntries].&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; நுழைவு 1 உடன் தொடங்கி ஒரு பகிர்வு அட்டவணையில் உள்ளீட்டை விவரிக்கிறது. பகிர்வு எண் பூச்சியம் முழு சாதனத்தையும் குறிக்கிறது. ஒரு MBR பகிர்வுக்கான செல்லுபடியாகும் பகிர்வு எண்கள் [1, 4]. ஒரு சிபிடி பகிர்வுக்கான செல்லுபடியாகும் பகிர்வு எண்கள் [1, numberofpartitionenties]. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; நுழைவு 1 உடன் தொடங்கி ஒரு பகிர்வு அட்டவணையில் உள்ளீட்டை விவரிக்கிறது. பகிர்வு எண் பூச்சியம் முழு சாதனத்தையும் குறிக்கிறது. ஒரு MBR பகிர்வுக்கான செல்லுபடியாகும் பகிர்வு எண்கள் [1, 4]. ஒரு சிபிடி பகிர்வுக்கான செல்லுபடியாகும் பகிர்வு எண்கள் [1, numberofpartitionenties]. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6215"/>
@@ -4738,10 +4738,10 @@ If SignatureType is 2, this field contains a 16 byte signature.</source>
 If SignatureType is 0, this field has to be initialized with 16 zeroes.
 If SignatureType is 1, the MBR signature is stored in the first 4 bytes of this field. The other 12 bytes are initialized with zeroes.
 If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; இந்த பகிர்வுக்கு தனித்துவமான கையொப்பம்:
- கையொப்பம் 0 ஆக இருந்தால், இந்த புலம் 16 பூச்சியங்களுடன் துவக்கப்பட வேண்டும்.
- கையொப்பம் 1 ஆக இருந்தால், MBR கையொப்பம் இந்த புலத்தின் முதல் 4 பைட்டுகளில் சேமிக்கப்படுகிறது. மற்ற 12 பைட்டுகள் பூச்சியங்களுடன் தொடங்கப்படுகின்றன.
- கையொப்பம் 2 ஆக இருந்தால், இந்த புலத்தில் 16 பைட் கையொப்பம் உள்ளது. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; இந்தப் பகிர்வுக்குத் தனித்துவமான கையொப்பம்:
+ கையொப்பம் 0 ஆக இருந்தால், இந்தப் புலம் 16 பூச்சியங்களுடன் துவக்கப்பட வேண்டும்.
+ கையொப்பம் 1 ஆக இருந்தால், MBR கையொப்பம் இந்தப் புலத்தின் முதல் 4 பைட்டுகளில் சேமிக்கப்படுகிறது. மற்ற 12 பைட்டுகள் பூச்சியங்களுடன் தொடங்கப்படுகின்றன.
+ கையொப்பம் 2 ஆக இருந்தால், இந்தப் புலத்தில் 16 பைட் கையொப்பம் உள்ளது.&lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6322"/>
@@ -4765,10 +4765,10 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
             0x00 - No Disk Signature.
             0x01 - 32-bit signature from address 0x1b8 of the type 0x01 MBR.
             0x02 - GUID signature.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;Html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; வட்டு கையொப்பத்தின் பகுதி வகை (பயன்படுத்தப்படாத மதிப்புகள் ஒதுக்கப்பட்டவை):
+        <translation>&lt;html&gt;&lt;head/&gt; &lt;body&gt; &lt;p&gt; வட்டு கையொப்பத்தின் பகுதி வகை (பயன்படுத்தப்படாத மதிப்புகள் ஒதுக்கப்பட்டவை):
  0x00 - வட்டு கையொப்பம் இல்லை.
  0x01 - 0x01 Mbr வகை 0x1b8 முகவரியிலிருந்து 32 -பிட் கையொப்பம்.
- 0x02 - கைட் கையொப்பம். &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+ 0x02 - கைட் கையொப்பம். &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6338"/>
@@ -4792,10 +4792,10 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
             If SignatureType is 0, this field has to be initialized with 16 zeroes.
             If SignatureType is 1, the MBR signature is stored in the first 4 bytes of this field. The other 12 bytes are initialized with zeroes.
             If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; இந்த பகிர்வுக்கு தனித்துவமான கையொப்பம்:
- கையொப்பம் 0 ஆக இருந்தால், இந்த புலம் 16 பூச்சியங்களுடன் துவக்கப்பட வேண்டும்.
- கையொப்பம் 1 ஆக இருந்தால், MBR கையொப்பம் இந்த புலத்தின் முதல் 4 பைட்டுகளில் சேமிக்கப்படுகிறது. மற்ற 12 பைட்டுகள் பூச்சியங்களுடன் தொடங்கப்படுகின்றன.
- கையொப்பம் 2 ஆக இருந்தால், இந்த புலத்தில் 16 பைட் கையொப்பம் உள்ளது. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; இந்தப் பகிர்வுக்குத் தனித்துவமான கையொப்பம்:
+ கையொப்பம் 0 ஆக இருந்தால், இந்தப் புலம் 16 பூச்சியங்களுடன் துவக்கப்பட வேண்டும்.
+ கையொப்பம் 1 ஆக இருந்தால், MBR கையொப்பம் இந்தப் புலத்தின் முதல் 4 பைட்டுகளில் சேமிக்கப்படுகிறது. மற்ற 12 பைட்டுகள் பூச்சியங்களுடன் தொடங்கப்படுகின்றன.
+ கையொப்பம் 2 ஆக இருந்தால், இந்தப் புலத்தில் 16 பைட் கையொப்பம் உள்ளது. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6392"/>
@@ -4829,7 +4829,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="6428"/>
         <location filename="../src/form/filepathdialog.ui" line="6450"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot Entry number from the Boot Catalog. The Initial/Default entry is defined as zero.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; துவக்க பட்டியலிலிருந்து துவக்க நுழைவு எண். ஆரம்ப/இயல்புநிலை நுழைவு பூச்சியமாக வரையறுக்கப்படுகிறது. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; துவக்க பட்டியலிலிருந்து துவக்க நுழைவு எண். ஆரம்ப/இயல்புநிலை நுழைவு பூச்சியமாக வரையறுக்கப்படுகிறது. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6463"/>
@@ -4841,7 +4841,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/filepathdialog.ui" line="6469"/>
         <location filename="../src/form/filepathdialog.ui" line="6490"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starting RBA of the partition on the medium. CD-ROMs use Relative logical Block Addressing.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; நடுத்தரத்தில் பகிர்வின் RBA ஐத் தொடங்குகிறது. குறுவட்டு-ரோம்கள் உறவினர் தருக்க தொகுதி முகவரியைப் பயன்படுத்துகின்றன. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; நடுத்தரத்தில் பகிர்வின் RBA ஐத் தொடங்குகிறது. குறுவட்டு-ரோம்கள் உறவினர் தருக்க தொகுதி முகவரியைப் பயன்படுத்துகின்றன. &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6503"/>
@@ -4897,7 +4897,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6622"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Media Protocol Device Path is used to denote the protocol that is being used in a device path at the location of the path specified.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; குறிப்பிடப்பட்ட பாதையின் இடத்தில் சாதனப் பாதையில் பயன்படுத்தப்படும் நெறிமுறையைக் குறிக்க மீடியா நெறிமுறை சாதன பாதை பயன்படுத்தப்படுகிறது. &lt;/p&gt; &lt;/body&gt; &lt;/ html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; குறிப்பிடப்பட்ட பாதையின் இடத்தில் சாதனப் பாதையில் பயன்படுத்தப்படும் நெறிமுறையைக் குறிக்க மீடியா நெறிமுறை சாதன பாதை பயன்படுத்தப்படுகிறது. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6646"/>
@@ -5161,7 +5161,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
  0x07..0x7f - ஒதுக்கப்பட்டுள்ளது.
  0x80 - பெவ் சாதனம்.
  0x81..0xfe - ஒதுக்கப்பட்டுள்ளது.
- 0xff - தெரியவில்லை. &lt;/P&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+ 0xff - தெரியவில்லை. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7290"/>
@@ -5298,7 +5298,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7645"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Depending on the Sub-Type, this Device Path node is used to indicate the end of the Device Path instance or Device Path structure.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;Html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; துணை வகையைப் பொறுத்து, இந்த சாதன பாதை முனை சாதன பாதை நிகழ்வு அல்லது சாதன பாதை கட்டமைப்பின் முடிவைக் குறிக்கப் பயன்படுகிறது. &lt;/p&gt; &lt;/body&gt; &lt;/ html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt; &lt;body&gt; &lt;p&gt; துணை வகையைப் பொறுத்து, இந்தச் சாதன பாதை முனை சாதன பாதை நிகழ்வு அல்லது சாதன பாதை கட்டமைப்பின் முடிவைக் குறிக்கப் பயன்படுகிறது. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7721"/>
@@ -5422,7 +5422,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
         <location filename="../src/form/hotkeysdialog.ui" line="191"/>
         <location filename="../src/form/hotkeysdialog.ui" line="194"/>
         <source>Add hot key</source>
-        <translation>சூடான விசையைச் சேர்க்கவும்</translation>
+        <translation>சூடான விசையைச் சேர்</translation>
     </message>
     <message>
         <location filename="../src/form/hotkeysdialog.ui" line="197"/>
