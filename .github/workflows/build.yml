@@ -48,7 +48,7 @@ jobs:
             ${{ inputs.os }}
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@181d5eefc20863364f96762470ba6f862bdef56b
+        uses: github/codeql-action/init@51f77329afa6477de8c49fc9c7046c15b9a4e79d
         with:
           languages: cpp
           queries: security-and-quality
@@ -152,6 +152,6 @@ jobs:
           path: build/dist/EFIBootEditor-*
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@181d5eefc20863364f96762470ba6f862bdef56b
+        uses: github/codeql-action/analyze@51f77329afa6477de8c49fc9c7046c15b9a4e79d
         if: inputs.build-config == 'Debug'
         continue-on-error: true
