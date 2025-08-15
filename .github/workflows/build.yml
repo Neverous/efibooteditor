@@ -36,7 +36,7 @@ jobs:
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '6.2.4' || 'none' }}
     steps:
       - name: Checkout source code
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
 
       - name: Set up ccache
         uses: hendrikmuhs/ccache-action@63069e3931dedbf3b63792097479563182fe70d1
@@ -48,7 +48,7 @@ jobs:
             ${{ inputs.os }}
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@181d5eefc20863364f96762470ba6f862bdef56b
+        uses: github/codeql-action/init@df559355d593797519d70b90fc8edd5db049e7a2
         with:
           languages: cpp
           queries: security-and-quality
@@ -152,6 +152,6 @@ jobs:
           path: build/dist/EFIBootEditor-*
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@181d5eefc20863364f96762470ba6f862bdef56b
+        uses: github/codeql-action/analyze@df559355d593797519d70b90fc8edd5db049e7a2
         if: inputs.build-config == 'Debug'
         continue-on-error: true
