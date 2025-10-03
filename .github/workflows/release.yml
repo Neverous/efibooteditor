@@ -169,7 +169,7 @@ jobs:
       matrix:
         os: [windows-2025]
         qt-version:
-          - 6.9.2  # Supported until 2025-10-02
+          - 6.8.3  # Supported in Ubuntu Plucky Puffin until 2026-01-17
         compiler:
           - MSVC
     steps:
