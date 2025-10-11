@@ -31,7 +31,7 @@ int efi_variables_supported(void)
 
 static uint8_t *variable_data_buffer = nullptr;
 
-static CFStringRef _get_nvram_variable_name(const efi_guid_t *guid, const char *name)
+static CFStringRef get_nvram_variable_name(const efi_guid_t *guid, const char *name)
 {
     CFMutableStringRef name_cf = CFStringCreateMutable(kCFAllocatorDefault, 0);
     if(name_cf == nullptr)
@@ -48,7 +48,7 @@ static CFStringRef _get_nvram_variable_name(const efi_guid_t *guid, const char *
 
 int efi_get_variable(efi_guid_t guid, const char *name, uint8_t **data, size_t *data_size, uint32_t *attributes)
 {
-    CFStringRef name_cf = _get_nvram_variable_name(&guid, name);
+    CFStringRef name_cf = get_nvram_variable_name(&guid, name);
     if(name_cf == nullptr)
         return -1;
 
@@ -93,7 +93,7 @@ int efi_set_variable(efi_guid_t guid, const char *name, uint8_t *data, size_t da
     (void)attributes;
     (void)mode;
 
-    CFStringRef name_cf = _get_nvram_variable_name(&guid, name);
+    CFStringRef name_cf = get_nvram_variable_name(&guid, name);
     if(name_cf == nullptr)
         return -1;
 
@@ -140,7 +140,7 @@ int efi_get_next_variable_name(efi_guid_t **guid, char **name)
             return ret;
         }
 
-        CFStringRef name_cf = _get_nvram_variable_name(*guid, *name);
+        CFStringRef name_cf = get_nvram_variable_name(*guid, *name);
         if(name_cf == nullptr)
             return -1;
 

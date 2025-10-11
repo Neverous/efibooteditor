@@ -249,6 +249,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
         -Wno-switch-default
         -Wno-unknown-warning-option
         -Wno-unsafe-buffer-usage
+        -Wno-poison-system-directories
     )
 endif()
 
