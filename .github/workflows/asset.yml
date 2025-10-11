@@ -31,6 +31,8 @@ jobs:
         exclude:
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.15.2' || 'none' }}
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '6.2.4' || 'none' }}
+          - qt-version: ${{ inputs.os == 'macos-26' && '6.2.4' || 'none' }}
+          - qt-version: ${{ inputs.os == 'macos-26' && '6.8.3' || 'none' }}
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0

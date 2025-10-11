@@ -34,6 +34,8 @@ jobs:
         exclude:
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.15.2' || 'none' }}
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '6.2.4' || 'none' }}
+          - qt-version: ${{ inputs.os == 'macos-26' && '6.2.4' || 'none' }}
+          - qt-version: ${{ inputs.os == 'macos-26' && '6.8.3' || 'none' }}
     steps:
       - name: Checkout source code
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
