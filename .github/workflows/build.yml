@@ -30,7 +30,7 @@ jobs:
           - 5.15.2 # Supported in Ubuntu Noble Numbat until 2029-04-25
           - 6.2.4 # Supported in Ubuntu Jammy Jellyfish until 2027-04-01
           - 6.8.3 # Supported in Ubuntu Plucky Puffin until 2026-01-17
-          - 6.9.2 # Supported until 2025-10-02
+          - 6.10.0 # Supported until 2026-04-07
         exclude:
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.15.2' || 'none' }}
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '6.2.4' || 'none' }}
