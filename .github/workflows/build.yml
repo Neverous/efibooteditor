@@ -139,7 +139,7 @@ jobs:
 
       - name: Run tests
         env:
-          TEST_ARGUMENTS: ${{ startsWith(inputs.os, 'macos') && '--allow-no-entries' || '' }}
+          TEST_ALLOW_NO_EFI_ENTRIES: ${{ startsWith(inputs.os, 'macos') && 'true' || '' }}
         run: ctest -VV --output-on-failure --build-config ${{ inputs.build-config }}
         shell: bash
         working-directory: build

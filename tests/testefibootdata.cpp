@@ -13,7 +13,7 @@ class TestEFIBootData: public QObject
 public:
     TestEFIBootData();
 
-    void setRequireEntries(bool value) { this->require_entries = value; }
+    void setRequireEFIEntries(bool value) { this->require_efi_entries = value; }
 
 private Q_SLOTS:
     void testReload() const;
@@ -23,7 +23,7 @@ private Q_SLOTS:
 
 private:
     bool efi_supported = true;
-    bool require_entries = true;
+    bool require_efi_entries = true;
 };
 
 TestEFIBootData::TestEFIBootData()
@@ -62,7 +62,7 @@ void TestEFIBootData::testReload() const
     (void)connect(&data, &EFIBootData::progress, this, &TestEFIBootData::showProgress);
     (void)connect(&data, &EFIBootData::error, this, &TestEFIBootData::showError);
 
-    data.reload(require_entries);
+    data.reload(require_efi_entries);
 
     QCOMPARE(spy.count(), 0);
 }
@@ -71,8 +71,8 @@ auto main(int argc, char *argv[]) -> int
 {
     QCoreApplication app(argc, argv);
     TestEFIBootData test;
-    if(QCoreApplication::arguments().contains("--allow-no-entries"))
-        test.setRequireEntries(false);
+    if(qgetenv("TEST_ALLOW_NO_EFI_ENTRIES") == "true")
+        test.setRequireEFIEntries(false);
 
     return QTest::qExec(&test, argc, argv);
 }

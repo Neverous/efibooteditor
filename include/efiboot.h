@@ -3724,17 +3724,30 @@ inline tstring get_error_trace()
         if(_tcserror_s(error_str, ERROR_STR_BUFFER_SIZE - 1, error) != 0)
             output += _T("error translating error code to string\n");
 
-        output += filename;
-        output += _T(":");
-        output += to_tstring(line);
-        output += _T(" ");
-        output += function;
-        output += _T("(): \n    ");
+        if(filename)
+            output += filename;
+
+        if(line >= 0)
+        {
+            output += _T(":");
+            output += to_tstring(line);
+        }
+
+        if(function)
+        {
+            output += _T(" ");
+            output += function;
+            output += _T("()");
+        }
+
+        output += _T(": \n    ");
         output += error_str;
         output += _T("[");
         output += to_tstring(error);
         output += _T("]: ");
-        output += message;
+        if(message)
+            output += message;
+
         output += _T("\n");
     }
 

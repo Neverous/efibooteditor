@@ -68,7 +68,7 @@ void EFIBootData::clear()
         undo_stack->clear();
 }
 
-void EFIBootData::reload(bool require_entries)
+void EFIBootData::reload(bool require_efi_entries)
 {
     Q_EMIT progress(0, 1, tr("Loading EFI Boot Manager entries…"));
     int32_t current_boot = -1;
@@ -96,7 +96,7 @@ void EFIBootData::reload(bool require_entries)
     }
 
     const auto &name_to_guid = *variables;
-    if(require_entries && name_to_guid.empty())
+    if(require_efi_entries && name_to_guid.empty())
         save_error(tr("Couldn't find any EFI Boot Manager variables"));
 
     size_t step = 1;
