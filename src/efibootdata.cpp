@@ -68,7 +68,7 @@ void EFIBootData::clear()
         undo_stack->clear();
 }
 
-void EFIBootData::reload()
+void EFIBootData::reload(bool require_entries)
 {
     Q_EMIT progress(0, 1, tr("Loading EFI Boot Manager entries…"));
     int32_t current_boot = -1;
@@ -96,8 +96,8 @@ void EFIBootData::reload()
     }
 
     const auto &name_to_guid = *variables;
-    if(name_to_guid.empty())
-        errors.push_back(tr("Couldn't find any EFI Boot Manager variables"));
+    if(require_entries && name_to_guid.empty())
+        save_error(tr("Couldn't find any EFI Boot Manager variables"));
 
     size_t step = 1;
     const size_t total_steps = name_to_guid.size() + 1u;
@@ -105,7 +105,6 @@ void EFIBootData::reload()
     auto process_entry = [this, &step, &total_steps, &name_to_guid](const auto &name, const auto &read_fn, const auto &process_fn, const auto &error_fn, bool optional = false)
     {
         const auto tname = QStringToStdTString(name);
-        Q_EMIT progress(step++, total_steps, tr("Processing EFI Boot Manager entries (%1)…").arg(name));
         if(!name_to_guid.count(tname))
         {
             if(!optional)
@@ -114,6 +113,7 @@ void EFIBootData::reload()
             return;
         }
 
+        Q_EMIT progress(step++, total_steps, tr("Processing EFI Boot Manager entries (%1)…").arg(name));
         const auto variable = read_fn(name_to_guid.at(tname), tname);
         if(!variable)
         {

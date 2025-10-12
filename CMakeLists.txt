@@ -73,13 +73,11 @@ find_package(Qt${QT_VERSION_MAJOR}
 find_package(ZLIB REQUIRED)
 message(STATUS "ZLIB: ${ZLIB_VERSION_STRING}")
 
-add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE
-    src/main.cpp
-)
+add_library(${PROJECT_NAME}-core)
 
-target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_SOURCE_DIR}/include")
+target_include_directories(${PROJECT_NAME}-core PUBLIC "${CMAKE_SOURCE_DIR}/include")
 
-target_link_libraries(${PROJECT_NAME} PRIVATE
+target_link_libraries(${PROJECT_NAME}-core PUBLIC
     Qt${QT_VERSION_MAJOR}::Core
     Qt${QT_VERSION_MAJOR}::Gui
     Qt${QT_VERSION_MAJOR}::Network
@@ -107,12 +105,12 @@ if(${QT_VERSION_MAJOR} LESS_EQUAL 5)
             else()
                 qt_add_resources(RESOURCES ${QRC})
             endif()
-            target_sources(${PROJECT_NAME} PRIVATE ${RESOURCES})
+            target_sources(${PROJECT_NAME}-core PRIVATE ${RESOURCES})
         endfunction()
     endif()
 endif()
 
-target_compile_definitions(${PROJECT_NAME} PRIVATE
+target_compile_definitions(${PROJECT_NAME}-core PUBLIC
     APPLICATION_NAME="${APPLICATION_NAME}"
     VERSION="${FULL_VERSION}"
     VERSION_MAJOR=${VERSION_MAJOR}
@@ -128,7 +126,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
 )
 
 # Sources:
-target_sources(${PROJECT_NAME} PRIVATE
+target_sources(${PROJECT_NAME}-core PRIVATE
     src/bootentry.cpp
     src/bootentrydelegate.cpp
     src/bootentryform.cpp
@@ -154,14 +152,14 @@ target_sources(${PROJECT_NAME} PRIVATE
 )
 
 if(UNIX AND NOT APPLE)
-    target_sources(${PROJECT_NAME} PRIVATE
+    target_sources(${PROJECT_NAME}-core PRIVATE
         src/driveinfo.linux.cpp
         src/efivar-lite.linux.c
     )
 endif()
 
 if(WIN32)
-    target_sources(${PROJECT_NAME} PRIVATE
+    target_sources(${PROJECT_NAME}-core PRIVATE
         src/driveinfo.win32.cpp
         src/efivar-lite.c
         src/efivar-lite.common.h
@@ -170,7 +168,7 @@ if(WIN32)
 endif()
 
 if(APPLE)
-    target_sources(${PROJECT_NAME} PRIVATE
+    target_sources(${PROJECT_NAME}-core PRIVATE
         src/driveinfo.darwin.cpp
         src/efivar-lite.c
         src/efivar-lite.common.h
@@ -179,7 +177,7 @@ if(APPLE)
 endif()
 
 # Headers:
-target_sources(${PROJECT_NAME} PRIVATE
+target_sources(${PROJECT_NAME}-core PRIVATE
     include/bootentry.h
     include/bootentrydelegate.h
     include/bootentryform.h
@@ -215,8 +213,13 @@ target_sources(${PROJECT_NAME} PRIVATE
     include/qwidgetitemdelegate.h
 )
 
+add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE
+    src/main.cpp
+)
+target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_NAME}-core)
+
 # Compile options
-get_target_property(SOURCES ${PROJECT_NAME} SOURCES)
+get_target_property(SOURCES ${PROJECT_NAME}-core SOURCES)
 
 ## GCC
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
@@ -236,7 +239,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     endif()
 
     # Disable some compatibility warnings
-    target_compile_options(${PROJECT_NAME} PRIVATE
+    target_compile_options(${PROJECT_NAME}-core PUBLIC
         -Wno-c++20-compat
         -Wno-c++98-compat
         -Wno-c++98-compat-pedantic
@@ -259,7 +262,7 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     set(CMAKE_INCLUDE_SYSTEM_FLAG_CXX /external:I)
     set(CMAKE_INCLUDE_SYSTEM_FLAG_C /external:I)
 
-    target_compile_options(${PROJECT_NAME} PRIVATE
+    target_compile_options(${PROJECT_NAME}-core PUBLIC
         /Z7
         # Ignore warnings in external includes
         /experimental:external /external:anglebrackets
@@ -267,7 +270,7 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 endif()
 
 if(WIN32)
-    target_compile_options(${PROJECT_NAME} PRIVATE
+    target_compile_options(${PROJECT_NAME}-core PUBLIC
         # Ignore warnings in external includes
         /external:W0
     )
@@ -276,7 +279,7 @@ if(WIN32)
     set_source_files_properties(${SOURCES} PROPERTIES COMPILE_OPTIONS "/Wall;/permissive-;/WX")
 
     # Disable some warnings
-    target_compile_options(${PROJECT_NAME} PRIVATE
+    target_compile_options(${PROJECT_NAME}-core PUBLIC
         # C4371: 'classname': layout of class may have changed from a previous version of the compiler due to better packing of member 'member'
         /wd4371
         # C4710: 'function' : function not inlined
@@ -295,7 +298,7 @@ if(WIN32)
 endif()
 
 # Forms:
-target_sources(${PROJECT_NAME} PRIVATE
+target_sources(${PROJECT_NAME}-core PRIVATE
     src/form/bootentryform.ui
     src/form/bootentrywidget.ui
     src/form/efibooteditor.ui
@@ -309,10 +312,10 @@ if(${QT_VERSION} VERSION_GREATER_EQUAL 5.15)
 else()
     qt5_add_resources(RESOURCES icons.qrc)
 endif()
-target_sources(${PROJECT_NAME} PRIVATE ${RESOURCES})
+target_sources(${PROJECT_NAME}-core PRIVATE ${RESOURCES})
 
 if(WIN32)
-    target_sources(${PROJECT_NAME} PRIVATE
+    target_sources(${PROJECT_NAME}-core PRIVATE
         windows.rc
     )
 endif()
@@ -326,7 +329,7 @@ set_source_files_properties(${TRANSLATIONS}
     PROPERTIES OUTPUT_LOCATION "${CMAKE_BINARY_DIR}/translations"
 )
 
-qt_add_translations(${PROJECT_NAME}
+qt_add_translations(${PROJECT_NAME}-core
     TS_FILES ${TRANSLATIONS}
     RESOURCE_PREFIX "/"
     INCLUDE_DIRECTORIES "include"
@@ -334,7 +337,7 @@ qt_add_translations(${PROJECT_NAME}
 
 # Libraries
 if(APPLE)
-    target_link_libraries(${PROJECT_NAME} PRIVATE
+    target_link_libraries(${PROJECT_NAME}-core PUBLIC
         "-framework CoreFoundation"
         "-framework DiskArbitration"
         "-framework IOKit"
@@ -344,7 +347,7 @@ elseif(UNIX)
     find_package(PkgConfig REQUIRED)
     pkg_check_modules(EFIVAR REQUIRED efivar efiboot)
 
-    target_link_libraries(${PROJECT_NAME} PRIVATE ${EFIVAR_LIBRARIES})
+    target_link_libraries(${PROJECT_NAME}-core PUBLIC ${EFIVAR_LIBRARIES})
 endif()
 
 if(WIN32)
@@ -356,6 +359,10 @@ endif()
 if(("${CMAKE_BUILD_TYPE}" STREQUAL "Release") AND UNIX)
     set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_RELEASE -s)
 endif()
+
+# Testing
+enable_testing()
+add_subdirectory(tests)
 
 # Packaging
 if(WIN32)

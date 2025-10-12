@@ -47,7 +47,7 @@ EFIBootEditor::EFIBootEditor(const std::optional<tstring> &efi_error_message, QW
                                  "<p>License: <a href='https://www.gnu.org/licenses/lgpl.html'>GNU LGPL Version 3</a></p>"
                                  "<p>On Linux uses <a href='https://github.com/rhboot/efivar'>efivar</a> for EFI variables access.</p>"
                                  "<p>Uses Tango Icons as fallback icons.</p>")
-                                  .arg(PROJECT_HOMEPAGE_URL));
+            .arg(PROJECT_HOMEPAGE_URL));
 
     ui->boot_entries_list->setModel(&data.boot_entries_list_model);
     ui->driver_entries_list->setModel(&data.driver_entries_list_model);
