@@ -16,6 +16,12 @@ on:
         required: true
         type: string
 
+env:
+  INPUT_OS: ${{ inputs.os }}
+  INPUT_COMPILER: ${{ inputs.compiler }}
+  INPUT_VERSION: ${{ inputs.version }}
+  INPUT_EXTENSION: ${{ inputs.extension }}
+
 jobs:
   upload-asset:
     name: Upload release asset ${{ inputs.os }} Qt ${{ matrix.qt-version }} with ${{ inputs.compiler }} ${{ inputs.extension }}
@@ -41,7 +47,7 @@ jobs:
           path: .
 
       - name: Rename artifact for release upload
-        run: mv EFIBootEditor-*-${{ inputs.os }}-qt-${{ matrix.qt-version }}${{ inputs.extension }} EFIBootEditor-${{ inputs.version }}-${{ inputs.os }}-qt-${{ matrix.qt-version }}-${{ inputs.compiler }}${{ inputs.extension }}
+        run: mv EFIBootEditor-*-${INPUT_OS}-qt-${{ matrix.qt-version }}${INPUT_EXTENSION} EFIBootEditor-${INPUT_VERSION}-${INPUT_OS}-qt-${{ matrix.qt-version }}-${INPUT_COMPILER}${INPUT_EXTENSION}
         shell: bash
 
       - name: Upload ${{ inputs.extension }}
