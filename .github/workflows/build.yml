@@ -18,6 +18,7 @@ on:
 
 env:
   CMAKE_BUILD_PARALLEL_LEVEL: 4
+  INPUT_COMPILER: ${{ inputs.compiler }}
 
 jobs:
   build:
@@ -100,7 +101,7 @@ jobs:
 
       - name: Configure with ${{ inputs.compiler }}
         run: |
-          case "${{ inputs.compiler }}" in
+          case "${INPUT_COMPILER}" in
             "Clang")
               export CC=clang
               export CXX=clang++
