@@ -50,7 +50,7 @@ public:
 
 public Q_SLOTS:
     void clear();
-    void reload();
+    void reload(bool require_efi_entries = true);
     void save();
     void import_(const QString &file_name);
     void export_(const QString &file_name);

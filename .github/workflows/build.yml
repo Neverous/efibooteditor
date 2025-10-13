@@ -137,6 +137,13 @@ jobs:
         working-directory: build
         if: startsWith(inputs.os, 'windows')
 
+      - name: Run tests
+        env:
+          TEST_ALLOW_NO_EFI_ENTRIES: ${{ startsWith(inputs.os, 'macos') && 'true' || '' }}
+        run: ctest -VV --output-on-failure --build-config ${{ inputs.build-config }}
+        shell: bash
+        working-directory: build
+
       - name: Package
         run: |
           for t in $(seq 1 20); do # FIXME: macOS has random hdiutil errors because of some protection mechanisms, just retry few times https://github.com/actions/runner-images/issues/7522#issuecomment-1556766641
