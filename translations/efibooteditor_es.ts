@@ -170,7 +170,7 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="484"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apunte de datos opcionales.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="497"/>
@@ -182,12 +182,12 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="623"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apunte de categoría.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="122"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apunte índice.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="540"/>
@@ -463,7 +463,7 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="556"/>
         <source>Invalid _Type: %1</source>
-        <translation>Inválido _Type: %1</translation>
+        <translation>_Tipo Inválido: %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="569"/>
@@ -501,7 +501,7 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="905"/>
         <source>Timeout</source>
-        <translation type="unfinished">Timeout</translation>
+        <translation>Vencimiento</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="921"/>
@@ -724,7 +724,7 @@
     <message>
         <location filename="../include/efibootdata.h" line="16"/>
         <source>Driver</source>
-        <translation>Controlador</translation>
+        <translation>Unidad</translation>
     </message>
     <message>
         <location filename="../include/efibootdata.h" line="17"/>
@@ -767,7 +767,7 @@
         <location filename="../src/form/efibooteditor.ui" line="133"/>
         <location filename="../src/efibooteditor.cpp" line="415"/>
         <source>Driver</source>
-        <translation>Controlador</translation>
+        <translation>Unidad</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="136"/>
@@ -828,78 +828,78 @@
         <location filename="../src/form/efibooteditor.ui" line="346"/>
         <location filename="../src/form/efibooteditor.ui" line="349"/>
         <source>Add new entry</source>
-        <translation type="unfinished">Add new entry</translation>
+        <translation>Añadir apunte nuevo</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="352"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to add new boot entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to add new boot entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Haga clic en esto para añadir nueva entrada de arranque.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="377"/>
         <location filename="../src/form/efibooteditor.ui" line="380"/>
         <source>Duplicate entry</source>
-        <translation type="unfinished">Duplicate entry</translation>
+        <translation>Apunte duplicado</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="383"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duplicate entry&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duplicate entry&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duplicar apunte&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="408"/>
         <location filename="../src/form/efibooteditor.ui" line="411"/>
         <source>Remove entry</source>
-        <translation type="unfinished">Remove entry</translation>
+        <translation>Eliminar entrada</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="414"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to remove currently selected entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to remove currently selected entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Haga clic en esto para eliminar la entrada seleccionada.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="439"/>
         <location filename="../src/form/efibooteditor.ui" line="442"/>
         <source>Move entry up</source>
-        <translation type="unfinished">Move entry up</translation>
+        <translation>Mover entrada hacia arriba</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="445"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Haga clic en esto para mover la entrada seleccionada.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="470"/>
         <location filename="../src/form/efibooteditor.ui" line="473"/>
         <source>Move entry down</source>
-        <translation type="unfinished">Move entry down</translation>
+        <translation>Mover entrada hacia abajo</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="476"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Haga clic en esto para mover la entrada seleccionada.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="501"/>
         <location filename="../src/form/efibooteditor.ui" line="504"/>
         <source>Reorder entries</source>
-        <translation type="unfinished">Reorder entries</translation>
+        <translation>Entradas reordenadas</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="507"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to adjust the order of all entries based on their position on the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to adjust the order of all entries based on their position on the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Haga clic aquí para ajustar el orden de todas las entradas basadas en su posición en la lista.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="599"/>
         <location filename="../src/form/efibooteditor.ui" line="608"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Global settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Global settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Configuración global.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="602"/>
         <source>Global</source>
-        <translation type="unfinished">Global</translation>
+        <translation>Global</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="632"/>
@@ -907,308 +907,308 @@
         <location filename="../src/form/efibooteditor.ui" line="654"/>
         <location filename="../src/form/efibooteditor.ui" line="657"/>
         <source>Boot manager timeout</source>
-        <translation type="unfinished">Boot manager timeout</translation>
+        <translation>Hora de la gestión de arranque</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="638"/>
         <location filename="../src/form/efibooteditor.ui" line="660"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot manager timeout.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot manager timeout.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El tiempo de gestión de boot &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="663"/>
         <source>s</source>
-        <translation type="unfinished">s</translation>
+        <translation>s</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="674"/>
         <location filename="../src/form/efibooteditor.ui" line="677"/>
         <location filename="../src/form/efibooteditor.ui" line="686"/>
         <source>Firmware details</source>
-        <translation type="unfinished">Firmware details</translation>
+        <translation>Detalles del firmware</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="680"/>
         <location filename="../src/form/efibooteditor.ui" line="689"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Detalles de Firmware.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="683"/>
         <source>Firmware</source>
-        <translation type="unfinished">Firmware</translation>
+        <translation>Firmware</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="719"/>
         <location filename="../src/form/efibooteditor.ui" line="722"/>
         <source>Available firmware features</source>
-        <translation type="unfinished">Available firmware features</translation>
+        <translation>Características de firmware disponibles</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="725"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware features.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware features.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Características disponibles de firmware.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="728"/>
         <source>Features</source>
-        <translation type="unfinished">Features</translation>
+        <translation>Características</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="737"/>
         <location filename="../src/form/efibooteditor.ui" line="740"/>
         <source>Platform supports reporting of deferred capsule processing by creation of result variable</source>
-        <translation type="unfinished">Platform supports reporting of deferred capsule processing by creation of result variable</translation>
+        <translation>Plataforma apoya la presentación de informes sobre el procesamiento de cápsulas diferidas mediante la creación de la variable resultado</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="743"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports reporting of deferred capsule processing by creation of result variable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports reporting of deferred capsule processing by creation of result variable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform soporta la notificación del procesamiento de cápsulas diferidas mediante la creación de la variable resultado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="746"/>
         <source>Capsule Reporting</source>
-        <translation type="unfinished">Capsule Reporting</translation>
+        <translation>Capsule Reporting</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="756"/>
         <location filename="../src/form/efibooteditor.ui" line="759"/>
         <source>Firmware supports timestamp based revocation</source>
-        <translation type="unfinished">Firmware supports timestamp based revocation</translation>
+        <translation>Firmware apoya la revocación basada en tiempostamp</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="762"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware supports timestamp based revocation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware supports timestamp based revocation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware soporta la revocación basada en el timetamp.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="765"/>
         <source>Timestamp based revocation</source>
-        <translation type="unfinished">Timestamp based revocation</translation>
+        <translation>Revocación basada en Timestamp</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="775"/>
         <location filename="../src/form/efibooteditor.ui" line="778"/>
         <source>Platform supports processing of Firmware Management Protocol update capsule</source>
-        <translation type="unfinished">Platform supports processing of Firmware Management Protocol update capsule</translation>
+        <translation>Plataforma es compatible con el procesamiento de cápsulas de actualización de protocolo de gestión de firmware</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="781"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports processing of Firmware Management Protocol update capsule.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports processing of Firmware Management Protocol update capsule.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform admite el procesamiento de la cápsula de actualización del Protocolo de Gestión de Firmware.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="784"/>
         <source>FMP Capsule</source>
-        <translation type="unfinished">FMP Capsule</translation>
+        <translation>Cápsula FMP</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="794"/>
         <location filename="../src/form/efibooteditor.ui" line="797"/>
         <source>Platform supports processing of file capsules</source>
-        <translation type="unfinished">Platform supports processing of file capsules</translation>
+        <translation>Plataforma soporta el procesamiento de cápsulas de archivos</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="800"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports processing of file capsules.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports processing of file capsules.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Plataforma admite el procesamiento de cápsulas de archivos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="803"/>
         <source>File Capsule</source>
-        <translation type="unfinished">File Capsule</translation>
+        <translation>Cápsula de archivo</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="828"/>
         <location filename="../src/form/efibooteditor.ui" line="831"/>
         <source>Available firmware actions</source>
-        <translation type="unfinished">Available firmware actions</translation>
+        <translation>Acciones de firmware disponibles</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="834"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware actions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware actions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Acciones de firmware disponibles.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="837"/>
         <source>Actions</source>
-        <translation type="unfinished">Actions</translation>
+        <translation>Acciones</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="846"/>
         <location filename="../src/form/efibooteditor.ui" line="849"/>
         <source>Stop at a firmware user interface on the next boot</source>
-        <translation type="unfinished">Stop at a firmware user interface on the next boot</translation>
+        <translation>Parar en una interfaz de usuario de firmware en la siguiente arranque</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="852"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Stop at a firmware user interface on the next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Stop at a firmware user interface on the next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Detener en una interfaz de usuario de firmware en la siguiente arranque.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="855"/>
         <source>Boot to firmware UI</source>
-        <translation type="unfinished">Boot to firmware UI</translation>
+        <translation>Arranque para firmware UI</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="862"/>
         <location filename="../src/form/efibooteditor.ui" line="865"/>
         <source>Trigger collecting current configuration and reporting the refreshed data to EFI System Configuration Table on next boot</source>
-        <translation type="unfinished">Trigger collecting current configuration and reporting the refreshed data to EFI System Configuration Table on next boot</translation>
+        <translation>Disparador recopilando la configuración actual y reportando los datos actualizados a la tabla de configuración del sistema EFI en la siguiente arranque</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="868"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Trigger collecting current configuration and reporting the refreshed data to EFI System Configuration Table on next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Trigger collecting current configuration and reporting the refreshed data to EFI System Configuration Table on next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disparador recopilando la configuración actual y reportando los datos actualizados a la tabla de configuración del sistema de EFI en el siguiente arranque.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="871"/>
         <source>Collect current config</source>
-        <translation type="unfinished">Collect current config</translation>
+        <translation>Recoge el config actual</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="878"/>
         <location filename="../src/form/efibooteditor.ui" line="881"/>
         <source>Indicate that Platform-defined recovery should commence upon reboot</source>
-        <translation type="unfinished">Indicate that Platform-defined recovery should commence upon reboot</translation>
+        <translation>Indicar que la recuperación definida por la Plataforma debe comenzar al rearranque</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="884"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that Platform-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that Platform-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indica que la recuperación de Plataforma-definida comenzaría al rearrancar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="887"/>
         <source>Start Platform recovery</source>
-        <translation type="unfinished">Start Platform recovery</translation>
+        <translation>Recuperación de plataforma inicial</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="894"/>
         <location filename="../src/form/efibooteditor.ui" line="897"/>
         <source>Indicate that OS-defined recovery should commence upon reboot</source>
-        <translation type="unfinished">Indicate that OS-defined recovery should commence upon reboot</translation>
+        <translation>Indicar que la recuperación definida por el sistema operativo debe comenzar al reinicio</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="900"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that OS-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that OS-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicar que la recuperación definida por el sistema operativo debe comenzar al reiniciar. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="903"/>
         <source>Start OS recovery</source>
-        <translation type="unfinished">Start OS recovery</translation>
+        <translation>Inicio Recuperación del SO</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="932"/>
         <location filename="../src/form/efibooteditor.ui" line="935"/>
         <location filename="../src/form/efibooteditor.ui" line="944"/>
         <source>Secure boot settings</source>
-        <translation type="unfinished">Secure boot settings</translation>
+        <translation>Ajustes de arranque seguros</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="938"/>
         <location filename="../src/form/efibooteditor.ui" line="947"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Secure boot settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Secure boot settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajustes de arranque seguro.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="941"/>
         <location filename="../src/form/efibooteditor.ui" line="1025"/>
         <source>Secure Boot</source>
-        <translation type="unfinished">Secure Boot</translation>
+        <translation>Secure Boot</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="978"/>
         <location filename="../src/form/efibooteditor.ui" line="981"/>
         <source>Defines whether the system is currently operating in Audit Mode</source>
-        <translation type="unfinished">Defines whether the system is currently operating in Audit Mode</translation>
+        <translation>Define si el sistema funciona actualmente está operando en Modo Auditoría</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="984"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system is currently operating in Audit Mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system is currently operating in Audit Mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define si el sistema está funcionando actualmente en Modo Auditoría.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="987"/>
         <source>Audit Mode</source>
-        <translation type="unfinished">Audit Mode</translation>
+        <translation>Modo Auditoría</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="997"/>
         <location filename="../src/form/efibooteditor.ui" line="1000"/>
         <source>Defines whether the system is currently operating in Deployed Mode</source>
-        <translation type="unfinished">Defines whether the system is currently operating in Deployed Mode</translation>
+        <translation>Define si el sistema está operando actualmente en Modo Desplegado</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1003"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system is currently operating in Deployed Mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system is currently operating in Deployed Mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define si el sistema está operando actualmente en Modo Desplegado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1006"/>
         <source>Deployed Mode</source>
-        <translation type="unfinished">Deployed Mode</translation>
+        <translation>Modo Desplegado</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1016"/>
         <location filename="../src/form/efibooteditor.ui" line="1019"/>
         <source>Defines whether the platform firmware is operating with Secure Boot enabled</source>
-        <translation type="unfinished">Defines whether the platform firmware is operating with Secure Boot enabled</translation>
+        <translation>Define si el firmware de la plataforma está operando con Secure Boot habilitado</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1022"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the platform firmware is operating with Secure Boot enabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the platform firmware is operating with Secure Boot enabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define si el firmware de la plataforma está operando con Secure Boot habilitado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1035"/>
         <location filename="../src/form/efibooteditor.ui" line="1038"/>
         <source>Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables</source>
-        <translation type="unfinished">Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables</translation>
+        <translation>Define si el sistema debe requerir autenticación o no en solicitudes de Variables de Normativa de Arranque Segura</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1041"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define si el sistema tendría que requerir autentificación o no en peticiones para Variables de Normativa de Secure Boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1044"/>
         <source>Setup Mode</source>
-        <translation type="unfinished">Setup Mode</translation>
+        <translation>Modo Configuración</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1054"/>
         <location filename="../src/form/efibooteditor.ui" line="1057"/>
         <source>Defines whether the Security Boot Policy Variables have been modified by anyone other than the platform vendor or a holder of the vendor-provided keys</source>
-        <translation type="unfinished">Defines whether the Security Boot Policy Variables have been modified by anyone other than the platform vendor or a holder of the vendor-provided keys</translation>
+        <translation>Define si las variables de la política de botadura de seguridad han sido modificadas por cualquiera que no sea el proveedor de la plataforma o un titular de las claves proporcionadas por el proveedor</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1060"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the Security Boot Policy Variables have been modified by anyone other than the platform vendor or a holder of the vendor-provided keys.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the Security Boot Policy Variables have been modified by anyone other than the platform vendor or a holder of the vendor-provided keys.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define si las Variables de Normativa de Boot Security han sido modificadas por cualquiera otro que el vendedor de programa o un titular de claves del proveedor-proporcionado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1063"/>
         <source>Vendor Keys</source>
-        <translation type="unfinished">Vendor Keys</translation>
+        <translation>Claves de Proveedor</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1074"/>
         <location filename="../src/form/efibooteditor.ui" line="1077"/>
         <location filename="../src/form/efibooteditor.ui" line="1086"/>
         <source>Apple settings</source>
-        <translation type="unfinished">Apple settings</translation>
+        <translation>Parámetros de Apple</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1080"/>
         <location filename="../src/form/efibooteditor.ui" line="1089"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apple settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apple settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Parámetros de Apple.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1083"/>
         <source>Apple</source>
-        <translation type="unfinished">Apple</translation>
+        <translation>Apple</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1113"/>
@@ -1216,343 +1216,343 @@
         <location filename="../src/form/efibooteditor.ui" line="1129"/>
         <location filename="../src/form/efibooteditor.ui" line="1132"/>
         <source>macOS boot arguments</source>
-        <translation type="unfinished">macOS boot arguments</translation>
+        <translation>Argumento de arranque de macOS</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1119"/>
         <location filename="../src/form/efibooteditor.ui" line="1135"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;macOS boot arguments.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;macOS boot arguments.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Argumentos de arranque de macOS.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1161"/>
         <location filename="../src/form/efibooteditor.ui" line="1164"/>
         <source>Undo stack</source>
-        <translation type="unfinished">Undo stack</translation>
+        <translation>Deshacer pila</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1167"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo stack&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo stack&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Deshace pila&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1194"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Menú de archivo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1214"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Help menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Help menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Menú de ayuda.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1255"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Exit the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Exit the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sale del programa.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1272"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apply changes to the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apply changes to the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aplicar cambios al sistema.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1289"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reloads EFI data from the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reloads EFI data from the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recargar datos EFI desde el sistema&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1306"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show information about the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show information about the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar información sobre el programa.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1320"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Export current entries into JSON.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Export current entries into JSON.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Exportar apuntes actuales en JSON.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1337"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Import EFI data from JSON dump.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Import EFI data from JSON dump.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Importa volcado de datos EFI de JSON.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1354"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dumps raw EFI data for debugging purposes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dumps raw EFI data for debugging purposes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Volcado de datos EFI en crudo para propósito de depuración.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1362"/>
         <source>&amp;Undo</source>
-        <translation type="unfinished">&amp;Undo</translation>
+        <translation>&amp;Deshacer</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1365"/>
         <source>Undo</source>
-        <translation type="unfinished">Undo</translation>
+        <translation>Deshacer</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1368"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Deshacer&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1371"/>
         <source>Ctrl+Z</source>
-        <translation type="unfinished">Ctrl+Z</translation>
+        <translation>Ctrl+Z</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1379"/>
         <source>&amp;Redo</source>
-        <translation type="unfinished">&amp;Redo</translation>
+        <translation>&amp;Rehacer</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1382"/>
         <source>Redo</source>
-        <translation type="unfinished">Redo</translation>
+        <translation>Rehacer</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1385"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Redo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Redo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Rehacer&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1388"/>
         <source>Ctrl+Shift+Z</source>
-        <translation type="unfinished">Ctrl+Shift+Z</translation>
+        <translation>Ctrl+Mayús+Z</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1396"/>
         <source>Hot &amp;keys</source>
-        <translation type="unfinished">Hot &amp;keys</translation>
+        <translation>&amp;Teclas rápidas</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1399"/>
         <source>Hot Keys</source>
-        <translation type="unfinished">Hot Keys</translation>
+        <translation>Teclas Rápidas</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1402"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Teclas Rápidas&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="593"/>
         <location filename="../src/form/efibooteditor.ui" line="596"/>
         <location filename="../src/form/efibooteditor.ui" line="605"/>
         <source>Global settings</source>
-        <translation type="unfinished">Global settings</translation>
+        <translation>Ajustes globales</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="641"/>
         <source>Timeout</source>
-        <translation type="unfinished">Timeout</translation>
+        <translation>Vencimiento</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1122"/>
         <source>Boot args</source>
-        <translation type="unfinished">Boot args</translation>
+        <translation>Arg arranque</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1188"/>
         <location filename="../src/form/efibooteditor.ui" line="1191"/>
         <source>File</source>
-        <translation type="unfinished">File</translation>
+        <translation>Archivo</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1197"/>
         <source>&amp;File</source>
-        <translation type="unfinished">&amp;File</translation>
+        <translation>&amp;Archivo</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1208"/>
         <location filename="../src/form/efibooteditor.ui" line="1211"/>
         <source>Help</source>
-        <translation type="unfinished">Help</translation>
+        <translation>Ayuda</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1217"/>
         <source>&amp;Help</source>
-        <translation type="unfinished">&amp;Help</translation>
+        <translation>Ay&amp;uda</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1225"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished">&amp;Edit</translation>
+        <translation>&amp;Editar</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1249"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Quit</translation>
+        <translation>&amp;Salir</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1252"/>
         <source>Quit</source>
-        <translation type="unfinished">Quit</translation>
+        <translation>Salir</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1258"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1266"/>
         <source>&amp;Save</source>
-        <translation type="unfinished">&amp;Save</translation>
+        <translation>&amp;Guardar</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1269"/>
         <source>Save</source>
-        <translation type="unfinished">Save</translation>
+        <translation>Guardar</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1275"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished">Ctrl+S</translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1283"/>
         <source>&amp;Reload</source>
-        <translation type="unfinished">&amp;Reload</translation>
+        <translation>&amp;Recargar</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1286"/>
         <source>Reload</source>
-        <translation type="unfinished">Reload</translation>
+        <translation>Recargar</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1292"/>
         <source>Ctrl+R</source>
-        <translation type="unfinished">Ctrl+R</translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1300"/>
         <source>About &amp;EFI Boot Editor</source>
-        <translation type="unfinished">About &amp;EFI Boot Editor</translation>
+        <translation>Acerca de &amp;EFI Boot Editor</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1303"/>
         <location filename="../src/efibooteditor.cpp" line="29"/>
         <source>About EFI Boot Editor</source>
-        <translation type="unfinished">About EFI Boot Editor</translation>
+        <translation>Acerca de EFI Boot Editor</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1314"/>
         <source>&amp;Export</source>
-        <translation type="unfinished">&amp;Export</translation>
+        <translation>&amp;Exportar</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1317"/>
         <source>Export</source>
-        <translation type="unfinished">Export</translation>
+        <translation>Exportar</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1323"/>
         <source>Ctrl+E</source>
-        <translation type="unfinished">Ctrl+E</translation>
+        <translation>Ctrl+E</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1331"/>
         <source>&amp;Import</source>
-        <translation type="unfinished">&amp;Import</translation>
+        <translation>&amp;Importar</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1334"/>
         <source>Import</source>
-        <translation type="unfinished">Import</translation>
+        <translation>Importar</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1340"/>
         <source>Ctrl+I</source>
-        <translation type="unfinished">Ctrl+I</translation>
+        <translation>Ctrl+I</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1348"/>
         <source>&amp;Dump raw EFI data</source>
-        <translation type="unfinished">&amp;Dump raw EFI data</translation>
+        <translation>&amp;Volcado de datos EFI en crudo</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1351"/>
         <source>Dump raw EFI data</source>
-        <translation type="unfinished">Dump raw EFI data</translation>
+        <translation>Volcado de datos de EFI sin formato</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="26"/>
         <source>Working…</source>
-        <translation type="unfinished">Working…</translation>
+        <translation>Trabajando…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="92"/>
         <source>Undo %1</source>
-        <translation type="unfinished">Undo %1</translation>
+        <translation>Deshacer %1</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="95"/>
         <source>Redo %1</source>
-        <translation type="unfinished">Redo %1</translation>
+        <translation>Rehacer %1</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="137"/>
         <source>Are you sure you want to reload the entries?&lt;br/&gt;ALL of your changes will be lost!</source>
-        <translation type="unfinished">Are you sure you want to reload the entries?&lt;br/&gt;ALL of your changes will be lost!</translation>
+        <translation>¿Seguro que quieres volver a cargar los apuntes?&lt;br/&gt;¡TODOS sus cambios se perderán!</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="162"/>
         <source>Are you sure you want to reorder the boot entries?&lt;br/&gt;All indexes will be overwritten!</source>
-        <translation type="unfinished">Are you sure you want to reorder the boot entries?&lt;br/&gt;All indexes will be overwritten!</translation>
+        <translation>¿Seguro que quieres reordenar los apuntes de arranque? &lt;br/&gt;¡Todos los índices serán sobrescritos!</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="221"/>
         <source>Are you sure you want to save?&lt;br/&gt;Your EFI configuration will be overwritten!</source>
-        <translation type="unfinished">Are you sure you want to save?&lt;br/&gt;Your EFI configuration will be overwritten!</translation>
+        <translation>¿Seguro que quieres guardar? &lt;br/&gt;¡Su configuración de EFI será sobrescrita!</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="230"/>
         <source>Open boot configuration dump</source>
-        <translation type="unfinished">Open boot configuration dump</translation>
+        <translation>Abre el volcado de configuración de arranque</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="230"/>
         <location filename="../src/efibooteditor.cpp" line="248"/>
         <location filename="../src/efibooteditor.cpp" line="260"/>
         <source>JSON documents (*.json)</source>
-        <translation type="unfinished">JSON documents (*.json)</translation>
+        <translation>Documentos JSON (*.json)</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="248"/>
         <source>Save boot configuration dump</source>
-        <translation type="unfinished">Save boot configuration dump</translation>
+        <translation>Guardar volcado de configuración de arranque</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="260"/>
         <source>Save raw EFI dump</source>
-        <translation type="unfinished">Save raw EFI dump</translation>
+        <translation>Guardar volcado EFI sin formato</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="31"/>
         <source>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</source>
         <extracomment>About dialog</extracomment>
-        <translation type="unfinished">&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</translation>
+        <translation>&lt;h1&gt;Editor de arranque EFI&lt;/h1&gt;&lt;p&gt;Versión &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor para (U)EFI basado en los sistemas.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="45"/>
         <source>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; for EFI variables access.&lt;/p&gt;&lt;p&gt;Uses Tango Icons as fallback icons.&lt;/p&gt;</source>
         <extracomment>About dialog details</extracomment>
-        <translation type="unfinished">&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; for EFI variables access.&lt;/p&gt;&lt;p&gt;Uses Tango Icons as fallback icons.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Sitio web&lt;/a&gt;&lt;/p&gt;&lt;p&gt;El programa se proporciona COMO TAL SIN NINGUNA GARANTÍA DE NINGÚN TIPO, INCLUSO CON LA GARANTÍA DE DISEÑO, MERCANTIBILIDAD Y PROPÓSITO.&lt;/p&gt; &lt;p&gt;Licencia: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Versión 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;En Linux emplea &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;eefivar&lt;/a&gt; para variables de acceso EFI.&lt;/p&gt;&lt;p&gt;Emplea Iconos Tango como iconos en caso de no haber ninguno otro.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="330"/>
         <source>Reorder %1 entries</source>
-        <translation type="unfinished">Reorder %1 entries</translation>
+        <translation>Reordenar %1 apuntes</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="453"/>
         <source>Are you sure you want to quit?</source>
-        <translation type="unfinished">Are you sure you want to quit?</translation>
+        <translation>¿Seguro que quieres salir?</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="123"/>
         <source>EFI support required</source>
-        <translation type="unfinished">EFI support required</translation>
+        <translation>Apoyo EFI requerido</translation>
     </message>
 </context>
 <context>
@@ -1560,55 +1560,55 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="13"/>
         <source>Boot Editor for (U)EFI based systems.</source>
-        <translation type="unfinished">Boot Editor for (U)EFI based systems.</translation>
+        <translation>Editor de de arranque para sistemas basados en (U)EFI.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <source>Export configuration.</source>
-        <translation type="unfinished">Export configuration.</translation>
+        <translation>Configuración de exportación.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>FILE</source>
-        <translation type="unfinished">FILE</translation>
+        <translation>ARCHIVO</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <source>Dump raw EFI data.</source>
-        <translation type="unfinished">Dump raw EFI data.</translation>
+        <translation>Volcado de datos EFI en crudo.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>Import configuration from JSON (either from export or raw dump).</source>
-        <translation type="unfinished">Import configuration from JSON (either from export or raw dump).</translation>
+        <translation>Configuración de importación de JSON (ya sea de exportación o de volcado en crudo).</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="19"/>
         <source>Force import, don&apos;t ask for confirmation.</source>
-        <translation type="unfinished">Force import, don&apos;t ask for confirmation.</translation>
+        <translation>Importación forzada, no solicite confirmación.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="26"/>
         <source>EFI support required</source>
-        <translation type="unfinished">EFI support required</translation>
+        <translation>Mantenimiento EFI requerido</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="45"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation type="unfinished">Loading EFI Boot Manager entries…</translation>
+        <translation>Cargando apuntes de Gestor de Arranque EFI…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="47"/>
         <location filename="../src/efibooteditorcli.cpp" line="57"/>
         <source>Exporting boot configuration…</source>
-        <translation type="unfinished">Exporting boot configuration…</translation>
+        <translation>Exportando configuración de arranque…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="67"/>
         <source>Importing boot configuration…</source>
-        <translation type="unfinished">Importing boot configuration…</translation>
+        <translation>Importando configuración de arranque…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
@@ -1616,49 +1616,49 @@
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Loaded %0 %1 entries</source>
-        <translation type="unfinished">Loaded %0 %1 entries</translation>
+        <translation>Cargado %0 %1 apuntes</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
         <source>Boot</source>
-        <translation type="unfinished">Boot</translation>
+        <translation>Arranque</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="72"/>
         <source>Driver</source>
-        <translation type="unfinished">Driver</translation>
+        <translation>Unidad</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <source>System Preparation</source>
-        <translation type="unfinished">System Preparation</translation>
+        <translation>Preparación de Sistema</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Hot Key</source>
-        <translation type="unfinished">Hot Key</translation>
+        <translation>Tecla de acceso rápido</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="78"/>
         <source>Are you sure you want to save?
 Your EFI configuration will be overwritten!</source>
-        <translation type="unfinished">Are you sure you want to save?
-Your EFI configuration will be overwritten!</translation>
+        <translation>¿Seguro que quieres salvar?
+Su configuración de EFI será sobrescrito!</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="86"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation type="unfinished">Saving EFI Boot Manager entries…</translation>
+        <translation>Guardando entradas del Gestor de Arranque EFI…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="98"/>
         <source>ERROR: %0! %1</source>
-        <translation type="unfinished">ERROR: %0! %1</translation>
+        <translation>ERROR: %0! %1</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="114"/>
         <source>Finished</source>
-        <translation type="unfinished">Finished</translation>
+        <translation>Finalizado</translation>
     </message>
 </context>
 <context>
@@ -1666,7 +1666,7 @@ Your EFI configuration will be overwritten!</translation>
     <message>
         <location filename="../src/efikeysequenceedit.cpp" line="109"/>
         <source>Press hot key</source>
-        <translation type="unfinished">Press hot key</translation>
+        <translation>Presione tecla empleada</translation>
     </message>
 </context>
 <context>
@@ -1674,12 +1674,12 @@ Your EFI configuration will be overwritten!</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="12"/>
         <source>File path editor</source>
-        <translation type="unfinished">File path editor</translation>
+        <translation>Editor de ruta de archivo</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="47"/>
         <source>PCI</source>
-        <translation type="unfinished">PCI</translation>
+        <translation>PCI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="80"/>
@@ -1689,14 +1689,14 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="202"/>
         <location filename="../src/form/filepathdialog.ui" line="218"/>
         <source>Function</source>
-        <translation type="unfinished">Function</translation>
+        <translation>Función</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="121"/>
         <location filename="../src/form/filepathdialog.ui" line="127"/>
         <location filename="../src/form/filepathdialog.ui" line="143"/>
         <source>Device</source>
-        <translation type="unfinished">Device</translation>
+        <translation>Dispositivo</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="721"/>
@@ -1706,7 +1706,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="841"/>
         <location filename="../src/form/filepathdialog.ui" line="856"/>
         <source>HID</source>
-        <translation type="unfinished">HID</translation>
+        <translation>HID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="761"/>
@@ -1716,17 +1716,17 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="881"/>
         <location filename="../src/form/filepathdialog.ui" line="896"/>
         <source>UID</source>
-        <translation type="unfinished">UID</translation>
+        <translation>UID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1813"/>
         <source>USB</source>
-        <translation type="unfinished">USB</translation>
+        <translation>USB</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1819"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Configuración de USB.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1887"/>
@@ -1736,22 +1736,22 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="3694"/>
         <location filename="../src/form/filepathdialog.ui" line="3710"/>
         <source>Interface</source>
-        <translation type="unfinished">Interface</translation>
+        <translation>Interfaz</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7442"/>
         <source>Vendor</source>
-        <translation type="unfinished">Vendor</translation>
+        <translation>Proveedor</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7445"/>
         <source>Vendor settings</source>
-        <translation type="unfinished">Vendor settings</translation>
+        <translation>Ajustes de los proveedores</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7448"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Configuración de proveedores.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1772"/>
@@ -1771,7 +1771,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7531"/>
         <location filename="../src/form/filepathdialog.ui" line="7546"/>
         <source>GUID</source>
-        <translation type="unfinished">GUID</translation>
+        <translation>GUID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5539"/>
@@ -1780,7 +1780,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7850"/>
         <location filename="../src/form/filepathdialog.ui" line="7853"/>
         <source>Data format</source>
-        <translation type="unfinished">Data format</translation>
+        <translation>Formato de datos</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5542"/>
@@ -1788,7 +1788,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7590"/>
         <location filename="../src/form/filepathdialog.ui" line="7856"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Formato de datos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1163"/>
@@ -1797,7 +1797,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7594"/>
         <location filename="../src/form/filepathdialog.ui" line="7860"/>
         <source>BASE64</source>
-        <translation type="unfinished">BASE64</translation>
+        <translation>BASE64</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1168"/>
@@ -1806,7 +1806,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7599"/>
         <location filename="../src/form/filepathdialog.ui" line="7865"/>
         <source>UTF-16</source>
-        <translation type="unfinished">UTF-16</translation>
+        <translation>UTF-16</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1173"/>
@@ -1815,7 +1815,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7604"/>
         <location filename="../src/form/filepathdialog.ui" line="7870"/>
         <source>UTF-8</source>
-        <translation type="unfinished">UTF-8</translation>
+        <translation>UTF-8</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1178"/>
@@ -1824,7 +1824,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7609"/>
         <location filename="../src/form/filepathdialog.ui" line="7875"/>
         <source>HEX</source>
-        <translation type="unfinished">HEX</translation>
+        <translation>HEX</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5517"/>
@@ -1839,17 +1839,17 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7888"/>
         <location filename="../src/form/filepathdialog.ui" line="7891"/>
         <source>Data</source>
-        <translation type="unfinished">Data</translation>
+        <translation>Datos</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7894"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Datos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7565"/>
         <source>Vendor data</source>
-        <translation type="unfinished">Vendor data</translation>
+        <translation>Datos sobre proveedores</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7472"/>
@@ -1859,50 +1859,50 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7497"/>
         <location filename="../src/form/filepathdialog.ui" line="7757"/>
         <source>Type</source>
-        <translation type="unfinished">Type</translation>
+        <translation>Tipo</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7478"/>
         <location filename="../src/form/filepathdialog.ui" line="7500"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tipo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7504"/>
         <source>HW</source>
-        <translation type="unfinished">HW</translation>
+        <translation>HW</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7509"/>
         <source>MSG</source>
-        <translation type="unfinished">MSG</translation>
+        <translation>MSG</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7514"/>
         <source>MEDIA</source>
-        <translation type="unfinished">MEDIA</translation>
+        <translation>MEDIA</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2292"/>
         <location filename="../src/form/filepathdialog.ui" line="2298"/>
         <location filename="../src/form/filepathdialog.ui" line="2313"/>
         <source>MAC</source>
-        <translation type="unfinished">MAC</translation>
+        <translation>MAC</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2265"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Ajustes de MAC.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2374"/>
         <source>IPv4</source>
-        <translation type="unfinished">IPv4</translation>
+        <translation>IPv4</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2380"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv4 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv4 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Ajustes IPv4.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2569"/>
@@ -1916,18 +1916,18 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4132"/>
         <location filename="../src/form/filepathdialog.ui" line="6616"/>
         <source>Protocol</source>
-        <translation type="unfinished">Protocol</translation>
+        <translation>Protocolo</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3003"/>
         <source>Static</source>
-        <translation type="unfinished">Static</translation>
+        <translation>Estática</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2692"/>
         <location filename="../src/form/filepathdialog.ui" line="2713"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnet mask.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnet mask.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Máscara de subnet.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2730"/>
@@ -1935,32 +1935,32 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="5486"/>
         <location filename="../src/form/filepathdialog.ui" line="5503"/>
         <source>IPv6</source>
-        <translation type="unfinished">IPv6</translation>
+        <translation>IPv6</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2736"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv6 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv6 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Ajustes IPv6.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3008"/>
         <source>Stateless auto-configuration</source>
-        <translation type="unfinished">Stateless auto-configuration</translation>
+        <translation>Autoconfiguración apátrida</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3013"/>
         <source>Stateful auto-configuration</source>
-        <translation type="unfinished">Stateful auto-configuration</translation>
+        <translation>Autoconfiguración estatal</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3920"/>
         <source>SATA</source>
-        <translation type="unfinished">SATA</translation>
+        <translation>SATA</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3926"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SATA settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SATA settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajustes de SATA.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1387"/>
@@ -1991,7 +1991,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4994"/>
         <location filename="../src/form/filepathdialog.ui" line="5009"/>
         <source>LUN</source>
-        <translation type="unfinished">LUN</translation>
+        <translation>LUN</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4846"/>
@@ -1999,58 +1999,58 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4885"/>
         <location filename="../src/form/filepathdialog.ui" line="4901"/>
         <source>URI</source>
-        <translation type="unfinished">URI</translation>
+        <translation>URI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6096"/>
         <location filename="../src/form/filepathdialog.ui" line="6099"/>
         <location filename="../src/form/filepathdialog.ui" line="6105"/>
         <source>Disk</source>
-        <translation type="unfinished">Disk</translation>
+        <translation>Disco</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6102"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disco.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6123"/>
         <location filename="../src/form/filepathdialog.ui" line="6126"/>
         <source>Choose disk</source>
-        <translation type="unfinished">Choose disk</translation>
+        <translation>Elija el disco</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6129"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Choose disk from discovered in the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Choose disk from discovered in the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Elige el disco descubierta en el sistema.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6133"/>
         <source>Custom</source>
-        <translation type="unfinished">Custom</translation>
+        <translation>Personalizado</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6147"/>
         <location filename="../src/form/filepathdialog.ui" line="6150"/>
         <source>Reload drives</source>
-        <translation type="unfinished">Reload drives</translation>
+        <translation>Recargar controladores</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6153"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reload system drives list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reload system drives list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recargar listado de unidades.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6343"/>
         <source>MBR</source>
-        <translation type="unfinished">MBR</translation>
+        <translation>MBR</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6177"/>
         <location filename="../src/form/filepathdialog.ui" line="6183"/>
         <location filename="../src/form/filepathdialog.ui" line="6199"/>
         <source>Partition</source>
-        <translation type="unfinished">Partition</translation>
+        <translation>Partición</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6720"/>
@@ -2060,24 +2060,24 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="6797"/>
         <location filename="../src/form/filepathdialog.ui" line="6812"/>
         <source>Name</source>
-        <translation type="unfinished">Name</translation>
+        <translation>Nombre</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7176"/>
         <source>BIOS Boot Specification</source>
-        <translation type="unfinished">BIOS Boot Specification</translation>
+        <translation>Especificación de BIOS Boot</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7405"/>
         <location filename="../src/form/filepathdialog.ui" line="7411"/>
         <location filename="../src/form/filepathdialog.ui" line="7427"/>
         <source>Description</source>
-        <translation type="unfinished">Description</translation>
+        <translation>Descripción</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7639"/>
         <source>End</source>
-        <translation type="unfinished">End</translation>
+        <translation>Final</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7669"/>
@@ -2087,124 +2087,124 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7694"/>
         <location filename="../src/form/filepathdialog.ui" line="7797"/>
         <source>Sub-Type</source>
-        <translation type="unfinished">Sub-Type</translation>
+        <translation>Sub-Tipo</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7675"/>
         <location filename="../src/form/filepathdialog.ui" line="7697"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sub-Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sub-Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sub-Tipo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7701"/>
         <source>End This Instance</source>
-        <translation type="unfinished">End This Instance</translation>
+        <translation>Final Esta inestabilidad</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7706"/>
         <source>End Entire</source>
-        <translation type="unfinished">End Entire</translation>
+        <translation>Final Completo</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="620"/>
         <location filename="../src/form/filepathdialog.ui" line="7718"/>
         <source>Unknown</source>
-        <translation type="unfinished">Unknown</translation>
+        <translation>Desconocido</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="50"/>
         <source>The Device Path for PCI defines the path to the PCI configuration space address for a PCI device.</source>
-        <translation type="unfinished">The Device Path for PCI defines the path to the PCI configuration space address for a PCI device.</translation>
+        <translation>El Device Path for PCI define la ruta a la dirección del espacio de configuración PCI para un dispositivo PCI.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="53"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Device Path for PCI defines the path to the PCI configuration space address for a PCI device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Device Path for PCI defines the path to the PCI configuration space address for a PCI device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El Device Path for PCI define el camino hacia la dirección del espacio de configuración PCI para un dispositivo PCI.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="77"/>
         <location filename="../src/form/filepathdialog.ui" line="99"/>
         <source>PCI Function Number.</source>
-        <translation type="unfinished">PCI Function Number.</translation>
+        <translation>Número de función PCI.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="83"/>
         <location filename="../src/form/filepathdialog.ui" line="105"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Function Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Function Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Número de Función PCI.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="118"/>
         <location filename="../src/form/filepathdialog.ui" line="140"/>
         <source>PCI Device Number.</source>
-        <translation type="unfinished">PCI Device Number.</translation>
+        <translation>Número de dispositivo PCI.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="124"/>
         <location filename="../src/form/filepathdialog.ui" line="146"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Device Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Device Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Número de dispositivo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="163"/>
         <source>PCCARD</source>
-        <translation type="unfinished">PCCARD</translation>
+        <translation>PCCARD</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="166"/>
         <source>PCCARD Settings.</source>
-        <translation type="unfinished">PCCARD Settings.</translation>
+        <translation>Ajustes de PCCARD.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="169"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCCARD Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCCARD Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajuste de PCCARD.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="193"/>
         <location filename="../src/form/filepathdialog.ui" line="215"/>
         <source>Function Number (0 = First Function).</source>
-        <translation type="unfinished">Function Number (0 = First Function).</translation>
+        <translation>Número de función (0 = función primera).</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="199"/>
         <location filename="../src/form/filepathdialog.ui" line="221"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Function Number (0 = First Function).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Function Number (0 = First Function).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Número de movimiento (0 = Primera función).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="238"/>
         <source>Memory Mapped</source>
-        <translation type="unfinished">Memory Mapped</translation>
+        <translation>Memoria Asignada</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="241"/>
         <source>Memory Mapped Settings.</source>
-        <translation type="unfinished">Memory Mapped Settings.</translation>
+        <translation>Ajuste de Memoria Asignada.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="244"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Memory Mapped Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Memory Mapped Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajuste de Memoria Asignada.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="268"/>
         <location filename="../src/form/filepathdialog.ui" line="290"/>
         <source>The type of memory to allocate.</source>
-        <translation type="unfinished">The type of memory to allocate.</translation>
+        <translation>El tipo de memoria a asignar.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="271"/>
         <location filename="../src/form/filepathdialog.ui" line="277"/>
         <location filename="../src/form/filepathdialog.ui" line="293"/>
         <source>Memory Type</source>
-        <translation type="unfinished">Memory Type</translation>
+        <translation>Tipo de memoria</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="274"/>
         <location filename="../src/form/filepathdialog.ui" line="296"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The type of memory to allocate.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The type of memory to allocate.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El tipo de memoria a asignar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="300"/>
@@ -2224,82 +2224,82 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="6868"/>
         <location filename="../src/form/filepathdialog.ui" line="6883"/>
         <source>Reserved</source>
-        <translation type="unfinished">Reserved</translation>
+        <translation>Reservado</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="305"/>
         <source>Loader Code</source>
-        <translation type="unfinished">Loader Code</translation>
+        <translation>Código del Cargador</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="310"/>
         <source>Loader Data</source>
-        <translation type="unfinished">Loader Data</translation>
+        <translation>Datos del Cargador</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="315"/>
         <source>Boot Services Code</source>
-        <translation type="unfinished">Boot Services Code</translation>
+        <translation>Código de Servicios de Arranque</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="320"/>
         <source>Boot Services Data</source>
-        <translation type="unfinished">Boot Services Data</translation>
+        <translation>Datos de Servicios de Arranque</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="325"/>
         <source>Runtime Services Code</source>
-        <translation type="unfinished">Runtime Services Code</translation>
+        <translation>Código de servicios de tiempo de ejecución</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="330"/>
         <source>Runtime Services Data</source>
-        <translation type="unfinished">Runtime Services Data</translation>
+        <translation>Datos de servicios de tiempo de ejecución</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="335"/>
         <source>Conventional</source>
-        <translation type="unfinished">Conventional</translation>
+        <translation>Convencionales</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="340"/>
         <source>Unusable</source>
-        <translation type="unfinished">Unusable</translation>
+        <translation>No se puede usar</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="345"/>
         <source>ACPI Reclaim</source>
-        <translation type="unfinished">ACPI Reclaim</translation>
+        <translation>ACPI Reclama</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="350"/>
         <source>ACPI Memory NVS</source>
-        <translation type="unfinished">ACPI Memory NVS</translation>
+        <translation>Memoria ACPI NVS</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="355"/>
         <source>Memory Mapped IO</source>
-        <translation type="unfinished">Memory Mapped IO</translation>
+        <translation>E/S de Memoria Asignada</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="360"/>
         <source>Memory Mapped IO Port Space</source>
-        <translation type="unfinished">Memory Mapped IO Port Space</translation>
+        <translation>E/S de Memoria Asignada en Espacio de Puerto</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="365"/>
         <source>Pal Code</source>
-        <translation type="unfinished">Pal Code</translation>
+        <translation>Código Pal</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="370"/>
         <source>Persistent</source>
-        <translation type="unfinished">Persistent</translation>
+        <translation>Permanente</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="375"/>
         <source>Unaccepted</source>
-        <translation type="unfinished">Unaccepted</translation>
+        <translation>No aceptada</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="383"/>
@@ -2307,14 +2307,14 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7013"/>
         <location filename="../src/form/filepathdialog.ui" line="7034"/>
         <source>Starting Memory Address.</source>
-        <translation type="unfinished">Starting Memory Address.</translation>
+        <translation>Dirección de memoria inicial.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="386"/>
         <location filename="../src/form/filepathdialog.ui" line="392"/>
         <location filename="../src/form/filepathdialog.ui" line="407"/>
         <source>Start Address</source>
-        <translation type="unfinished">Start Address</translation>
+        <translation>Dirección de inicio</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="389"/>
@@ -2322,7 +2322,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7019"/>
         <location filename="../src/form/filepathdialog.ui" line="7040"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starting Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starting Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dirección de Inicio de Memoria.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="423"/>
@@ -2330,14 +2330,14 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7053"/>
         <location filename="../src/form/filepathdialog.ui" line="7074"/>
         <source>Ending Memory Address.</source>
-        <translation type="unfinished">Ending Memory Address.</translation>
+        <translation>Final de Dirección de Memoria.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="426"/>
         <location filename="../src/form/filepathdialog.ui" line="432"/>
         <location filename="../src/form/filepathdialog.ui" line="447"/>
         <source>End Address</source>
-        <translation type="unfinished">End Address</translation>
+        <translation>Dirección final</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="429"/>
@@ -2345,7 +2345,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7059"/>
         <location filename="../src/form/filepathdialog.ui" line="7080"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ending Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ending Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Finalizando Dirección de Memoria.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="467"/>
@@ -2353,44 +2353,44 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="506"/>
         <location filename="../src/form/filepathdialog.ui" line="522"/>
         <source>Controller</source>
-        <translation type="unfinished">Controller</translation>
+        <translation>Controlador</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="470"/>
         <source>Controller settings.</source>
-        <translation type="unfinished">Controller settings.</translation>
+        <translation>Opciones de controlador.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="473"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controller settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controller settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opciones del controlador.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="497"/>
         <location filename="../src/form/filepathdialog.ui" line="519"/>
         <source>Controller number.</source>
-        <translation type="unfinished">Controller number.</translation>
+        <translation>Número de controlador.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="503"/>
         <location filename="../src/form/filepathdialog.ui" line="525"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controller number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controller number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Número de controlador.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="542"/>
         <source>BMC</source>
-        <translation type="unfinished">BMC</translation>
+        <translation>BMC</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="545"/>
         <source>The Device Path for a Baseboard Management Controller (BMC) host interface.</source>
-        <translation type="unfinished">The Device Path for a Baseboard Management Controller (BMC) host interface.</translation>
+        <translation>La Ruta del Dispositivo para un host de Controlador de Gestión de Placa Base (BMC)host de interfaz.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="548"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Device Path for a Baseboard Management Controller (BMC) host interface.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Device Path for a Baseboard Management Controller (BMC) host interface.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La Ruta de Dispositivo para un host de Controlador de Gestión de Placa base (BMC) de interfaz.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="572"/>
@@ -2400,11 +2400,11 @@ Your EFI configuration will be overwritten!</translation>
 0x01 - KCS: Keyboard Controller Style.
 0x02 - SMIC: Server Management Interface Chip.
 0x03 - BT: Block Transfer.</source>
-        <translation type="unfinished">The Baseboard Management Controller (BMC) host interface type:
-0x00 - Unknown.
-0x01 - KCS: Keyboard Controller Style.
-0x02 - SMIC: Server Management Interface Chip.
-0x03 - BT: Block Transfer.</translation>
+        <translation>El tipo de interfaz host de controlador de Gestión de Placa base (BMC).
+0x00 - Desconocido.
+0x01 - KCS: Estilo de Controlador de Teclado.
+0x02 - SMIC: Chip de Interfaz de Gestión del Servidor.
+0x03 - BT: Transferencia de bloque.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="579"/>
@@ -2414,7 +2414,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="2338"/>
         <location filename="../src/form/filepathdialog.ui" line="2354"/>
         <source>Interface Type</source>
-        <translation type="unfinished">Interface Type</translation>
+        <translation>Tipo de interfaz</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="582"/>
@@ -2424,62 +2424,62 @@ Your EFI configuration will be overwritten!</translation>
 0x01 - KCS: Keyboard Controller Style.
 0x02 - SMIC: Server Management Interface Chip.
 0x03 - BT: Block Transfer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Baseboard Management Controller (BMC) host interface type:
-0x00 - Unknown.
-0x01 - KCS: Keyboard Controller Style.
-0x02 - SMIC: Server Management Interface Chip.
-0x03 - BT: Block Transfer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El Controlador de Gestión de Placa base (BMC) tipo de interfaz de host:
+0x00 - Desconocido.
+0x01 - KCS: Estilo de Controlador de Teclado.
+0x02 - SMIC: Interfaz Chip de administración de servidores.
+0x03 - BT: Transferencia de bloques.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="625"/>
         <source>Keyboard Controller Style</source>
-        <translation type="unfinished">Keyboard Controller Style</translation>
+        <translation>Estilo del controlador de teclado</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="630"/>
         <source>Server Management Interface Chip</source>
-        <translation type="unfinished">Server Management Interface Chip</translation>
+        <translation>Chip de Interfaz de Gestión de Servidor</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="635"/>
         <source>Block Transfer</source>
-        <translation type="unfinished">Block Transfer</translation>
+        <translation>Transferencia de Bloque</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="643"/>
         <location filename="../src/form/filepathdialog.ui" line="664"/>
         <source>Base address (either memory-mapped or I/O) of the BMC. If the least-significant bit of the field is a 1, the address is in I/O space; otherwise, the address is memory-mapped. Refer to the IPMI Interface Specification for usage details.</source>
-        <translation type="unfinished">Base address (either memory-mapped or I/O) of the BMC. If the least-significant bit of the field is a 1, the address is in I/O space; otherwise, the address is memory-mapped. Refer to the IPMI Interface Specification for usage details.</translation>
+        <translation>Dirección de base (ya sea de memoria o I/O) del BMC. Si el bit menos significativo del campo es un 1, la dirección está en el espacio I/O; de lo contrario, la dirección es de memoria. Consulte la Especificación de Interfaz IPMI para detalles de uso.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="646"/>
         <location filename="../src/form/filepathdialog.ui" line="652"/>
         <location filename="../src/form/filepathdialog.ui" line="667"/>
         <source>Base Address</source>
-        <translation type="unfinished">Base Address</translation>
+        <translation>Dirección Base</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="649"/>
         <location filename="../src/form/filepathdialog.ui" line="670"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Base address (either memory-mapped or I/O) of the BMC. If the least-significant bit of the field is a 1, the address is in I/O space; otherwise, the address is memory-mapped. Refer to the IPMI Interface Specification for usage details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Base address (either memory-mapped or I/O) of the BMC. If the least-significant bit of the field is a 1, the address is in I/O space; otherwise, the address is memory-mapped. Refer to the IPMI Interface Specification for usage details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dirección de base (ya sea de memoria o E/S) del BMC. Si el bit menos significativo del campo es un 1, la dirección está en el espacio E/S; de otro caso, la dirección es de memoria asignada. Refiérase a la Especificación de Interfaz IPMI para detalles de uso.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="688"/>
         <source>ACPI</source>
-        <translation type="unfinished">ACPI</translation>
+        <translation>ACPI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="691"/>
         <location filename="../src/form/filepathdialog.ui" line="805"/>
         <source>This Device Path contains ACPI Device IDs that represent a device’s Plug and Play Hardware ID and its corresponding unique persistent ID.</source>
-        <translation type="unfinished">This Device Path contains ACPI Device IDs that represent a device’s Plug and Play Hardware ID and its corresponding unique persistent ID.</translation>
+        <translation>Esta Ruta de Dispositivo contiene los ID de Dispositivo ACPI que representan el ID de Hardware Plug and Play de un dispositivo y su correspondiente único ID persistente.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="694"/>
         <location filename="../src/form/filepathdialog.ui" line="808"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This Device Path contains ACPI Device IDs that represent a device’s Plug and Play Hardware ID and its corresponding unique persistent ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This Device Path contains ACPI Device IDs that represent a device’s Plug and Play Hardware ID and its corresponding unique persistent ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Esta Ruta de Dispositivo contiene los ID de Dispositivo ACPI que representan el ID de Hardware Plug and Play de un dispositivo y su ID persistente único correspondiente.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="718"/>
@@ -2487,7 +2487,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="832"/>
         <location filename="../src/form/filepathdialog.ui" line="853"/>
         <source>Devices PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match the corresponding HID in the ACPI name space.</source>
-        <translation type="unfinished">Devices PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match the corresponding HID in the ACPI name space.</translation>
+        <translation>ID de hardware PnP almacenado dentro de un ID de tipo EISA comprimido en un número de 32-bit. Este valor debe coincidir con el HID correspondiente en el espacio del nombre ACPI.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="724"/>
@@ -2495,7 +2495,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="838"/>
         <location filename="../src/form/filepathdialog.ui" line="859"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match the corresponding HID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match the corresponding HID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ID del hardware PnP almacenado en un ID numérico de 32-bit comprimido de tipo EISA. Este valor debe coincidir con el HID correspondiente en el espacio de nombre ACPI.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="758"/>
@@ -2503,7 +2503,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="872"/>
         <location filename="../src/form/filepathdialog.ui" line="893"/>
         <source>Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. Only the 32-bit numeric value type of UID is supported; thus strings must not be used for the UID in the ACPI name space.</source>
-        <translation type="unfinished">Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. Only the 32-bit numeric value type of UID is supported; thus strings must not be used for the UID in the ACPI name space.</translation>
+        <translation>ID único que es requerido por ACPI si dos dispositivos tienen el mismo HID. Este valor debe además coincidir con la pareja UID/HID correspondiente dentro del espacio de nombre ACPI. Solo se admite el tipo del valor numérico de 32-bit de UID; por tanto las cadenas deben no ser utilizadas para el UID dentro del espacio de nombre ACPI.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="764"/>
@@ -2511,37 +2511,37 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="878"/>
         <location filename="../src/form/filepathdialog.ui" line="899"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. Only the 32-bit numeric value type of UID is supported; thus strings must not be used for the UID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. Only the 32-bit numeric value type of UID is supported; thus strings must not be used for the UID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ID único que es requerido por ACPI si dos dispositivos tienen el mismo HID. Este valor debe ser además coincidente con la pareja UID/HID correspondiente en el espacio de nombre ACPI. Solo está admitido el tipo de valor numérico de 32-bit de UID; por tanto las cadenas no deben ser utilizadas para el UID en el espacio de nombre ACPI.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="802"/>
         <source>Expanded</source>
-        <translation type="unfinished">Expanded</translation>
+        <translation>Expandida</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="912"/>
         <location filename="../src/form/filepathdialog.ui" line="933"/>
         <source>Devices compatible PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI name space.</source>
-        <translation type="unfinished">Devices compatible PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI name space.</translation>
+        <translation>ID de dispositivo hardware PnP compatible almacenado en un ID de tipo EISA numérico de 32-bit comprimido. Este valor debe coincidir en al menos uno de los ID de dispositivo compatible devuelto por el CID correspondiente en el espacio de nombre ACPI.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="915"/>
         <location filename="../src/form/filepathdialog.ui" line="921"/>
         <location filename="../src/form/filepathdialog.ui" line="936"/>
         <source>CID</source>
-        <translation type="unfinished">CID</translation>
+        <translation>CID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="918"/>
         <location filename="../src/form/filepathdialog.ui" line="939"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices compatible PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices compatible PnP hardware ID stored in a numeric 32-bit compressed EISA-type ID. This value must match at least one of the compatible device IDs returned by the corresponding CID in the ACPI name space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dispositivos de hardware PnP compatible almacenado en un ID de tipo EISA numérico de 32-bit. Este valor debe coincidir en al menos uno de los ID de dispositivo compatible devueltos por el CID correspondiente en el espacio de nombre ACPI.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="952"/>
         <location filename="../src/form/filepathdialog.ui" line="974"/>
         <source>Devices PnP hardware ID stored as a string. This value must match the corresponding HID in the ACPI name space. If the length of this string is 0, then the HID field is used. If the length of this string is greater than 0, then this field supersedes the HID field.</source>
-        <translation type="unfinished">Devices PnP hardware ID stored as a string. This value must match the corresponding HID in the ACPI name space. If the length of this string is 0, then the HID field is used. If the length of this string is greater than 0, then this field supersedes the HID field.</translation>
+        <translation>El ID de hardware PnP del dispositivo se almacena como una cadena. Este valor debe coincidir con el HID correspondiente en el espacio de nombres ACPI. Si la longitud de esta cadena es cero, se utiliza el campo HID. Si la longitud de esta cadena es mayor que cero, este campo reemplaza al campo HID.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="955"/>
@@ -2554,26 +2554,26 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="958"/>
         <location filename="../src/form/filepathdialog.ui" line="980"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored as a string. This value must match the corresponding HID in the ACPI name space. If the length of this string is 0, then the HID field is used. If the length of this string is greater than 0, then this field supersedes the HID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Devices PnP hardware ID stored as a string. This value must match the corresponding HID in the ACPI name space. If the length of this string is 0, then the HID field is used. If the length of this string is greater than 0, then this field supersedes the HID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El ID de hardware PnP del dispositivo se almacena como una cadena. Este valor debe coincidir con el HID correspondiente en el espacio de nombres ACPI. Si la longitud de esta cadena es cero, se utiliza el campo HID. Si la longitud de esta cadena es mayor que cero, este campo reemplaza al campo HID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="987"/>
         <location filename="../src/form/filepathdialog.ui" line="1009"/>
         <source>Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. This value is stored as a string. If the length of this string is 0, then the UID field is used. If the length of this string is greater than 0, then this field supersedes the UID field.</source>
-        <translation type="unfinished">Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. This value is stored as a string. If the length of this string is 0, then the UID field is used. If the length of this string is greater than 0, then this field supersedes the UID field.</translation>
+        <translation>Identificador único requerido por ACPI si dos dispositivos tienen el mismo HID. Este valor también debe coincidir con el par UID/HID correspondiente en el espacio de nombres ACPI. Se almacena como una cadena de texto. Si la longitud de esta cadena es cero, se utiliza el campo UID. Si la longitud de esta cadena es mayor que cero, este campo reemplaza al campo UID.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="990"/>
         <location filename="../src/form/filepathdialog.ui" line="996"/>
         <location filename="../src/form/filepathdialog.ui" line="1012"/>
         <source>UIDSTR</source>
-        <translation type="unfinished">UIDSTR</translation>
+        <translation>UIDSTR</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="993"/>
         <location filename="../src/form/filepathdialog.ui" line="1015"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. This value is stored as a string. If the length of this string is 0, then the UID field is used. If the length of this string is greater than 0, then this field supersedes the UID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unique ID that is required by ACPI if two devices have the same HID. This value must also match the corresponding UID/HID pair in the ACPI name space. This value is stored as a string. If the length of this string is 0, then the UID field is used. If the length of this string is greater than 0, then this field supersedes the UID field.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Identificador único requerido por ACPI si dos dispositivos tienen el mismo HID. Este valor también debe coincidir con el par UID/HID correspondiente en el espacio de nombres ACPI. Este valor se almacena como una cadena de texto. Si la longitud de esta cadena es cero, se utiliza el campo UID. Si la longitud de esta cadena es mayor que cero, este campo reemplaza al campo UID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1022"/>
@@ -2605,145 +2605,145 @@ Your EFI configuration will be overwritten!</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1064"/>
         <source>The ADR device path is used to contain video output device attributes to support the Graphics Output Protocol.</source>
-        <translation type="unfinished">The ADR device path is used to contain video output device attributes to support the Graphics Output Protocol.</translation>
+        <translation>La ruta del dispositivo ADR se utiliza para contener los atributos del dispositivo de salida de vídeo para admitir el protocolo de salida de gráficos.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1067"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The ADR device path is used to contain video output device attributes to support the Graphics Output Protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The ADR device path is used to contain video output device attributes to support the Graphics Output Protocol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La ruta del dispositivo ADR se utiliza para contener los atributos del dispositivo de salida de vídeo para admitir el protocolo de salida de gráficos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1091"/>
         <location filename="../src/form/filepathdialog.ui" line="1112"/>
         <source>ADR value. For video output devices the value of this field comes from Table B-2 ACPI 3.0 specification. At least one ADR value is required</source>
-        <translation type="unfinished">ADR value. For video output devices the value of this field comes from Table B-2 ACPI 3.0 specification. At least one ADR value is required</translation>
+        <translation>Valor ADR. Para los dispositivos de salida de vídeo el valor de este campo viene de la especificación Tabla B-2 ACPI 3.0. Se requiere al menos un valor ADR</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1097"/>
         <location filename="../src/form/filepathdialog.ui" line="1118"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ADR value. For video output devices the value of this field comes from Table B-2 ACPI 3.0 specification. At least one ADR value is required&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ADR value. For video output devices the value of this field comes from Table B-2 ACPI 3.0 specification. At least one ADR value is required&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Valor ADR. Para los dispositivos de salida de vídeo el valor de este campo viene de la especificación Tabla B-2 ACPI 3.0. Se requiere al menos un valor ADR&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1131"/>
         <location filename="../src/form/filepathdialog.ui" line="1192"/>
         <source>This device path may optionally contain more than one ADR entry.</source>
-        <translation type="unfinished">This device path may optionally contain more than one ADR entry.</translation>
+        <translation>Esta ruta del dispositivo puede contener opcionalmente más de una entrada ADR.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1134"/>
         <location filename="../src/form/filepathdialog.ui" line="1140"/>
         <location filename="../src/form/filepathdialog.ui" line="1195"/>
         <source>Additional ADR</source>
-        <translation type="unfinished">Additional ADR</translation>
+        <translation>Dirección ADR adicional</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1137"/>
         <location filename="../src/form/filepathdialog.ui" line="1198"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path may optionally contain more than one ADR entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path may optionally contain more than one ADR entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Este dispositivo puede contener opcionalmente más de una dirección del apunte ADR.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1153"/>
         <source>Additional ADR format.</source>
-        <translation type="unfinished">Additional ADR format.</translation>
+        <translation>Formato de dirección ADR adicional.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1156"/>
         <source>Additional ADR format</source>
-        <translation type="unfinished">Additional ADR format</translation>
+        <translation>Formato de dirección ADR adicional</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1159"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Additional ADR format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Additional ADR format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Formato de dirección ADR adicional.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1209"/>
         <source>NVDIMM</source>
-        <translation type="unfinished">NVDIMM</translation>
+        <translation>NVDIMM</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1212"/>
         <source>This device path describes an NVDIMM device using the ACPI 6.0 specification defined NFIT Device Handle as the identifier.</source>
-        <translation type="unfinished">This device path describes an NVDIMM device using the ACPI 6.0 specification defined NFIT Device Handle as the identifier.</translation>
+        <translation>Esta ruta del dispositivo describe un dispositivo NVDIMM usando la especificación ACPI 6.0 definida NFIT Device Handle como el identificador.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1215"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path describes an NVDIMM device using the ACPI 6.0 specification defined NFIT Device Handle as the identifier.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path describes an NVDIMM device using the ACPI 6.0 specification defined NFIT Device Handle as the identifier.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Esta ruta de dispositivo describe un dispositivo NVDIMM usando la especificación ACPI 6.0 definida NFIT Device Handle como el identificador.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1239"/>
         <location filename="../src/form/filepathdialog.ui" line="1260"/>
         <source>NFIT Device Handle - Unique physical identifier. See ACPI Defined Devices and Device Specific Objects section, NVDIMM Devices sub-chapter for the specific definition of the fields utilized for this handle.</source>
-        <translation type="unfinished">NFIT Device Handle - Unique physical identifier. See ACPI Defined Devices and Device Specific Objects section, NVDIMM Devices sub-chapter for the specific definition of the fields utilized for this handle.</translation>
+        <translation>Manipulador de dispositivo NFIT; Único identificador físico. Consulte la sección de Dispositivos Definidos ACPI y Objetos Específicos de Dispositivo, sub-capítulo de Dispositivos NVDIMM para la definición específica de los campos utilizados para este manipulador.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1242"/>
         <location filename="../src/form/filepathdialog.ui" line="1248"/>
         <location filename="../src/form/filepathdialog.ui" line="1263"/>
         <source>NFIT Device Handle</source>
-        <translation type="unfinished">NFIT Device Handle</translation>
+        <translation>Manipulador de Dispositivo NFIT</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1245"/>
         <location filename="../src/form/filepathdialog.ui" line="1266"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NFIT Device Handle - Unique physical identifier. See ACPI Defined Devices and Device Specific Objects section, NVDIMM Devices sub-chapter for the specific definition of the fields utilized for this handle.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NFIT Device Handle - Unique physical identifier. See ACPI Defined Devices and Device Specific Objects section, NVDIMM Devices sub-chapter for the specific definition of the fields utilized for this handle.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Manipulador de Dispositivo NFIT: Identificador físico único. Consulte la sección de Dispositivos Definidos ACPI y Objetos Específicos de Dispositivo, sub-carpeta de Dispositivos NVDIMM para la definición específica de los campos utilizados para este manipulador.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1284"/>
         <source>ATAPI</source>
-        <translation type="unfinished">ATAPI</translation>
+        <translation>ATAPI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1287"/>
         <source>ATAPI Settings.</source>
-        <translation type="unfinished">ATAPI Settings.</translation>
+        <translation>Ajustes ATAPI.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1290"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ATAPI Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ATAPI Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Configuración ATAPI.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1314"/>
         <location filename="../src/form/filepathdialog.ui" line="1336"/>
         <source>Set to zero for primary or one for secondary.</source>
-        <translation type="unfinished">Set to zero for primary or one for secondary.</translation>
+        <translation>Se establece a cero para primaria o a uno para secundaria.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1317"/>
         <location filename="../src/form/filepathdialog.ui" line="1323"/>
         <location filename="../src/form/filepathdialog.ui" line="1339"/>
         <source>Primary</source>
-        <translation type="unfinished">Primary</translation>
+        <translation>Primaria</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1320"/>
         <location filename="../src/form/filepathdialog.ui" line="1342"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set to zero for primary or one for secondary.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set to zero for primary or one for secondary.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Establece a cero para primaria o uno para secundaria.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1349"/>
         <location filename="../src/form/filepathdialog.ui" line="1371"/>
         <source>Set to zero for master or one for slave mode.</source>
-        <translation type="unfinished">Set to zero for master or one for slave mode.</translation>
+        <translation>Se establece a cero para el maestro o uno para el modo esclavo.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1352"/>
         <location filename="../src/form/filepathdialog.ui" line="1358"/>
         <location filename="../src/form/filepathdialog.ui" line="1374"/>
         <source>Slave</source>
-        <translation type="unfinished">Slave</translation>
+        <translation>Esclavo</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1355"/>
         <location filename="../src/form/filepathdialog.ui" line="1377"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set to zero for master or one for slave mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set to zero for master or one for slave mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Establece a cero para modo maestro y uno para modo esclavo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1384"/>
@@ -2751,7 +2751,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4032"/>
         <location filename="../src/form/filepathdialog.ui" line="4054"/>
         <source>Logical Unit Number.</source>
-        <translation type="unfinished">Logical Unit Number.</translation>
+        <translation>Número de unidad lógica.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1390"/>
@@ -2759,28 +2759,28 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4038"/>
         <location filename="../src/form/filepathdialog.ui" line="4060"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Número de Unidad Lógica.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1429"/>
         <source>SCSI</source>
-        <translation type="unfinished">SCSI</translation>
+        <translation>SCSI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1432"/>
         <source>SCSI Settings.</source>
-        <translation type="unfinished">SCSI Settings.</translation>
+        <translation>Configuración SCSI.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1435"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SCSI Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SCSI Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Configuración SCSI.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1459"/>
         <location filename="../src/form/filepathdialog.ui" line="1481"/>
         <source>Target ID on the SCSI bus (PUN).</source>
-        <translation type="unfinished">Target ID on the SCSI bus (PUN).</translation>
+        <translation>ID de destino en el bus SCSI (PUN).</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1462"/>
@@ -2793,13 +2793,13 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4954"/>
         <location filename="../src/form/filepathdialog.ui" line="4969"/>
         <source>Target ID</source>
-        <translation type="unfinished">Target ID</translation>
+        <translation>ID destino</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1465"/>
         <location filename="../src/form/filepathdialog.ui" line="1487"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Target ID on the SCSI bus (PUN).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Target ID on the SCSI bus (PUN).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ID destino en el bus SCSI (PUN).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1500"/>
@@ -2807,7 +2807,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4985"/>
         <location filename="../src/form/filepathdialog.ui" line="5006"/>
         <source>Logical Unit Number (LUN).</source>
-        <translation type="unfinished">Logical Unit Number (LUN).</translation>
+        <translation>Número de Unidad Logística (LUN).</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1506"/>
@@ -2815,22 +2815,22 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4991"/>
         <location filename="../src/form/filepathdialog.ui" line="5012"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Logical Unit Number (LUN).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Logical Unit Number (LUN).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Número de Unidad Lógica (LUN).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1545"/>
         <source>Fibre Channel</source>
-        <translation type="unfinished">Fibre Channel</translation>
+        <translation>Canal de fibra</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1548"/>
         <source>Fibre Channel Settings</source>
-        <translation type="unfinished">Fibre Channel Settings</translation>
+        <translation>Ajustes del canal de fibra</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1551"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fibre Channel Settings&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fibre Channel Settings&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajustes del Canal de Fibra&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1575"/>
@@ -2842,7 +2842,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4413"/>
         <location filename="../src/form/filepathdialog.ui" line="4434"/>
         <source>Reserved.</source>
-        <translation type="unfinished">Reserved.</translation>
+        <translation>Reservado.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1581"/>
@@ -2854,13 +2854,13 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4419"/>
         <location filename="../src/form/filepathdialog.ui" line="4440"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reservado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1615"/>
         <location filename="../src/form/filepathdialog.ui" line="1636"/>
         <source>Fibre Channel World Wide Name.</source>
-        <translation type="unfinished">Fibre Channel World Wide Name.</translation>
+        <translation>Nombre de Canal de Fibra Mundial.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1618"/>
@@ -2870,130 +2870,130 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4462"/>
         <location filename="../src/form/filepathdialog.ui" line="4477"/>
         <source>World Wide Name</source>
-        <translation type="unfinished">World Wide Name</translation>
+        <translation>Nombre de Anchura Mundial</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1621"/>
         <location filename="../src/form/filepathdialog.ui" line="1642"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fibre Channel World Wide Name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fibre Channel World Wide Name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nombre de Canal de Fibra de Ancho Mundial.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1655"/>
         <location filename="../src/form/filepathdialog.ui" line="1676"/>
         <source>Fibre Channel Logical Unit Number.</source>
-        <translation type="unfinished">Fibre Channel Logical Unit Number.</translation>
+        <translation>Número de Unidad de Canal de Fibra Mundial.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1661"/>
         <location filename="../src/form/filepathdialog.ui" line="1682"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fibre Channel Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fibre Channel Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Número de Unidad de Canal de Fibra Lógica.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1699"/>
         <source>Firewire</source>
-        <translation type="unfinished">Firewire</translation>
+        <translation>Cortafuegos</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1702"/>
         <source>Firewire Settings.</source>
-        <translation type="unfinished">Firewire Settings.</translation>
+        <translation>Ajustes de Cortafuegos</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1705"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firewire Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firewire Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajustes de Cortafuegos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1769"/>
         <location filename="../src/form/filepathdialog.ui" line="1790"/>
         <source>1394 Global Unique ID (GUID)</source>
-        <translation type="unfinished">1394 Global Unique ID (GUID)</translation>
+        <translation>ID Único Global de 1394 (GUID)</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1775"/>
         <location filename="../src/form/filepathdialog.ui" line="1796"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1394 Global Unique ID (GUID)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1394 Global Unique ID (GUID)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ID Único Global de 1394 (GUID) (GUID)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1816"/>
         <source>USB settings.</source>
-        <translation type="unfinished">USB settings.</translation>
+        <translation>Ajustes de USB.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1843"/>
         <location filename="../src/form/filepathdialog.ui" line="1865"/>
         <source>USB Parent Port Number.</source>
-        <translation type="unfinished">USB Parent Port Number.</translation>
+        <translation>Número de Puerto Antecesor de USB.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1846"/>
         <location filename="../src/form/filepathdialog.ui" line="1852"/>
         <location filename="../src/form/filepathdialog.ui" line="1868"/>
         <source>Parent Port</source>
-        <translation type="unfinished">Parent Port</translation>
+        <translation>Puerto Antecesor</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1849"/>
         <location filename="../src/form/filepathdialog.ui" line="1871"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB Parent Port Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB Parent Port Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Número de Puerto USB Antecesor.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1884"/>
         <location filename="../src/form/filepathdialog.ui" line="1906"/>
         <source>USB Interface Number.</source>
-        <translation type="unfinished">USB Interface Number.</translation>
+        <translation>Número de Interfaz USB.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1890"/>
         <location filename="../src/form/filepathdialog.ui" line="1912"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB Interface Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB Interface Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Número de Interfaz USB.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1929"/>
         <source>I2O</source>
-        <translation type="unfinished">I2O</translation>
+        <translation>I2O</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1932"/>
         <source>I2O Settings</source>
-        <translation type="unfinished">I2O Settings</translation>
+        <translation>Ajustes de I2O</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1935"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I2O Settings&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I2O Settings&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajustes de I2O&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1959"/>
         <location filename="../src/form/filepathdialog.ui" line="1981"/>
         <source>Target ID (TID) for a device.</source>
-        <translation type="unfinished">Target ID (TID) for a device.</translation>
+        <translation>ID Destino (TID) para un dispositivo.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1965"/>
         <location filename="../src/form/filepathdialog.ui" line="1987"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Target ID (TID) for a device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Target ID (TID) for a device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ID destino (TID) para un dispositivo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2004"/>
         <source>InfiniBand</source>
-        <translation type="unfinished">InfiniBand</translation>
+        <translation>InfiniBand</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2007"/>
         <source>InfiniBand Settings.</source>
-        <translation type="unfinished">InfiniBand Settings.</translation>
+        <translation>Ajustes de InfiniBand.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2010"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;InfiniBand Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;InfiniBand Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajustes de InfiniBand.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2034"/>
@@ -3005,20 +3005,20 @@ Bit 2 - Console Protocol.
 Bit 3 - Storage Protocol.
 Bit 4 - Network Protocol.
 All other bits are reserved.</source>
-        <translation type="unfinished">Flags to help identify/manage InfiniBand device path elements:
-Bit 0 - IOC/Service (0b = IOC, 1b = Service).
-Bit 1 - Extend Boot Environment.
-Bit 2 - Console Protocol.
-Bit 3 - Storage Protocol.
-Bit 4 - Network Protocol.
-All other bits are reserved.</translation>
+        <translation>Indicadores para ayudar a identificar/gestionar elementos de ruta del dispositivo InfiniBand:
+Bit 0 - IOC/Servicio (0b = IOC, 1b = Servicio).
+Bit 1 - Entorno de Arranque Extendido.
+Bit 2 - Protocolo de consola.
+Bit 3 - Protocolo de almacenamiento.
+Bit 4 - Protocolo de red.
+Todos los demás bit están reservados.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2043"/>
         <location filename="../src/form/filepathdialog.ui" line="2055"/>
         <location filename="../src/form/filepathdialog.ui" line="2076"/>
         <source>Resource Flags</source>
-        <translation type="unfinished">Resource Flags</translation>
+        <translation>Indicadores de Recurso</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2046"/>
@@ -3030,134 +3030,134 @@ Bit 2 - Console Protocol.
 Bit 3 - Storage Protocol.
 Bit 4 - Network Protocol.
 All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Flags to help identify/manage InfiniBand device path elements:
-Bit 0 - IOC/Service (0b = IOC, 1b = Service).
-Bit 1 - Extend Boot Environment.
-Bit 2 - Console Protocol.
-Bit 3 - Storage Protocol.
-Bit 4 - Network Protocol.
-All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicadores para ayuda de identificador/gestión de elementos de ruta de dispositivo InfiniBand:
+Bit 0 - IOC/Servicio (0b = IOC, 1b = Servicio).
+Bit 1 - Extensión de Entorno de Arranque.
+Bit 2 - Protocolo de Consola.
+Bit 3 - Protocolo de Almacén.
+Bit 4 - Protocolo de Red.
+Están reservados todos los demás bit.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2098"/>
         <location filename="../src/form/filepathdialog.ui" line="2119"/>
         <source>128-bit Global Identifier for remote fabric port</source>
-        <translation type="unfinished">128-bit Global Identifier for remote fabric port</translation>
+        <translation>Identificador Global de 128-bit para puerto de fábrica remota</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2101"/>
         <location filename="../src/form/filepathdialog.ui" line="2107"/>
         <location filename="../src/form/filepathdialog.ui" line="2122"/>
         <source>PORT GID</source>
-        <translation type="unfinished">PORT GID</translation>
+        <translation>PUERTO GID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2104"/>
         <location filename="../src/form/filepathdialog.ui" line="2125"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;128-bit Global Identifier for remote fabric port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;128-bit Global Identifier for remote fabric port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Identificador Global de 128-bit para puerto de fábrica remota&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2135"/>
         <location filename="../src/form/filepathdialog.ui" line="2156"/>
         <source>64-bit unique identifier to remote IOC or server process. Interpretation of field specified by Resource Flags (bit 0)</source>
-        <translation type="unfinished">64-bit unique identifier to remote IOC or server process. Interpretation of field specified by Resource Flags (bit 0)</translation>
+        <translation>Identificador único de 64-bit para IOC remoto o proceso de servidor. Interpretación de campo especificado por Indicador de Recurso (bit 0)</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2138"/>
         <location filename="../src/form/filepathdialog.ui" line="2144"/>
         <location filename="../src/form/filepathdialog.ui" line="2159"/>
         <source>IOC GUID/Service ID</source>
-        <translation type="unfinished">IOC GUID/Service ID</translation>
+        <translation>GUID IOC/ID de Servicio</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2141"/>
         <location filename="../src/form/filepathdialog.ui" line="2162"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;64-bit unique identifier to remote IOC or server process. Interpretation of field specified by Resource Flags (bit 0)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;64-bit unique identifier to remote IOC or server process. Interpretation of field specified by Resource Flags (bit 0)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Identificador único de 64-bit para IOC remoto o proceso de servidor. Interpretacion del campo específico por Indicadores de Recurso (bit 0)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2175"/>
         <location filename="../src/form/filepathdialog.ui" line="2196"/>
         <source>64-bit persistent ID of remote IOC port.</source>
-        <translation type="unfinished">64-bit persistent ID of remote IOC port.</translation>
+        <translation>ID persistente de 64-bit de puerto IOC remoto.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2178"/>
         <location filename="../src/form/filepathdialog.ui" line="2184"/>
         <location filename="../src/form/filepathdialog.ui" line="2199"/>
         <source>Target Port ID</source>
-        <translation type="unfinished">Target Port ID</translation>
+        <translation>ID de Puerto Destino</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2181"/>
         <location filename="../src/form/filepathdialog.ui" line="2202"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;64-bit persistent ID of remote IOC port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;64-bit persistent ID of remote IOC port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ID persistente de 64-bit de puerto IOC remoto.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2215"/>
         <location filename="../src/form/filepathdialog.ui" line="2236"/>
         <source>64-bit persistent ID of remote device.</source>
-        <translation type="unfinished">64-bit persistent ID of remote device.</translation>
+        <translation>ID persistente de 64-bit de dispositivo remoto.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2218"/>
         <location filename="../src/form/filepathdialog.ui" line="2224"/>
         <location filename="../src/form/filepathdialog.ui" line="2239"/>
         <source>Device ID</source>
-        <translation type="unfinished">Device ID</translation>
+        <translation>ID de dispositivo</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2221"/>
         <location filename="../src/form/filepathdialog.ui" line="2242"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;64-bit persistent ID of remote device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;64-bit persistent ID of remote device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ID persistente de 64-bit de dispositivo remoto.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2259"/>
         <source>MAC Address</source>
-        <translation type="unfinished">MAC Address</translation>
+        <translation>Dirección MAC</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2262"/>
         <source>MAC settings.</source>
-        <translation type="unfinished">MAC settings.</translation>
+        <translation>Ajustes MAC.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2289"/>
         <location filename="../src/form/filepathdialog.ui" line="2310"/>
         <source>The MAC address for a network interface padded with 0s.</source>
-        <translation type="unfinished">The MAC address for a network interface padded with 0s.</translation>
+        <translation>La dirección MAC para una interfaz de red rellenada con 0s.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2295"/>
         <location filename="../src/form/filepathdialog.ui" line="2316"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The MAC address for a network interface padded with 0s.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The MAC address for a network interface padded with 0s.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La dirección MAC para una interfaz de red rellenada con 0s.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2329"/>
         <location filename="../src/form/filepathdialog.ui" line="2351"/>
         <source>Network interface type (i.e., 802.3, FDDI). See RFC 3232.</source>
-        <translation type="unfinished">Network interface type (i.e., 802.3, FDDI). See RFC 3232.</translation>
+        <translation>Tipo de interfaz de red (i.e., 802.3, FDDI). Consulte RFC 3232.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2335"/>
         <location filename="../src/form/filepathdialog.ui" line="2357"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Network interface type (i.e., 802.3, FDDI). See RFC 3232.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Network interface type (i.e., 802.3, FDDI). See RFC 3232.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tipo de interfaz de red (p.e., 802.3, FDDI). Consulte RFC 3232.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2377"/>
         <source>IPv4 settings.</source>
-        <translation type="unfinished">IPv4 settings.</translation>
+        <translation>Ajustes de IPv4.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2404"/>
         <location filename="../src/form/filepathdialog.ui" line="2425"/>
         <source>The local IPv4 address.</source>
-        <translation type="unfinished">The local IPv4 address.</translation>
+        <translation>La dirección local de IPv4.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2407"/>
@@ -3167,19 +3167,19 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2769"/>
         <location filename="../src/form/filepathdialog.ui" line="2784"/>
         <source>Local IP Address</source>
-        <translation type="unfinished">Local IP Address</translation>
+        <translation>Dirección IP local</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2410"/>
         <location filename="../src/form/filepathdialog.ui" line="2431"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The local IPv4 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The local IPv4 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La dirección IPv4 local.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2444"/>
         <location filename="../src/form/filepathdialog.ui" line="2465"/>
         <source>The remote IPv4 address.</source>
-        <translation type="unfinished">The remote IPv4 address.</translation>
+        <translation>La dirección IPv4 remota.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2447"/>
@@ -3189,13 +3189,13 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2809"/>
         <location filename="../src/form/filepathdialog.ui" line="2824"/>
         <source>Remote IP Address</source>
-        <translation type="unfinished">Remote IP Address</translation>
+        <translation>Dirección IP remota</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2450"/>
         <location filename="../src/form/filepathdialog.ui" line="2471"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The remote IPv4 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The remote IPv4 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La dirección IPv4 remota.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2484"/>
@@ -3203,7 +3203,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2840"/>
         <location filename="../src/form/filepathdialog.ui" line="2862"/>
         <source>The local port number.</source>
-        <translation type="unfinished">The local port number.</translation>
+        <translation>El número de puerto local.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2487"/>
@@ -3213,7 +3213,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2849"/>
         <location filename="../src/form/filepathdialog.ui" line="2865"/>
         <source>Local Port</source>
-        <translation type="unfinished">Local Port</translation>
+        <translation>Puerto local</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2490"/>
@@ -3221,7 +3221,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2846"/>
         <location filename="../src/form/filepathdialog.ui" line="2868"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The local port number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The local port number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El número de puerto local.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2525"/>
@@ -3229,7 +3229,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2881"/>
         <location filename="../src/form/filepathdialog.ui" line="2903"/>
         <source>The remote port number.</source>
-        <translation type="unfinished">The remote port number.</translation>
+        <translation>El número de puerto remoto.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2528"/>
@@ -3239,7 +3239,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2890"/>
         <location filename="../src/form/filepathdialog.ui" line="2906"/>
         <source>Remote Port</source>
-        <translation type="unfinished">Remote Port</translation>
+        <translation>Puerto remoto</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2531"/>
@@ -3247,7 +3247,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2887"/>
         <location filename="../src/form/filepathdialog.ui" line="2909"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The remote port number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The remote port number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El número de puerto remoto.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2566"/>
@@ -3255,7 +3255,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2922"/>
         <location filename="../src/form/filepathdialog.ui" line="2944"/>
         <source>The network protocol (i.e., UDP, TCP). See RFC 3232.</source>
-        <translation type="unfinished">The network protocol (i.e., UDP, TCP). See RFC 3232.</translation>
+        <translation>El protocolo de red (e.d., UDP, TCP). Consulte RFC 3232.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2572"/>
@@ -3263,30 +3263,30 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="2928"/>
         <location filename="../src/form/filepathdialog.ui" line="2950"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The network protocol (i.e., UDP, TCP). See RFC 3232.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The network protocol (i.e., UDP, TCP). See RFC 3232.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El protocolo de red (e.d., UDP, TCP). Consulte RFC 3232.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2607"/>
         <location filename="../src/form/filepathdialog.ui" line="2631"/>
         <source>0x00 - The Source IP Address was assigned though DHCP.
 0x01 - The Source IP Address is statically bound.</source>
-        <translation type="unfinished">0x00 - The Source IP Address was assigned though DHCP.
-0x01 - The Source IP Address is statically bound.</translation>
+        <translation>0x00 - La Dirección IP Origen fue asignada a pesar de DHCP.
+0x01 - La Dirección IP de origen está vinculada estáticamente.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2611"/>
         <location filename="../src/form/filepathdialog.ui" line="2618"/>
         <location filename="../src/form/filepathdialog.ui" line="2635"/>
         <source>Static IP Address</source>
-        <translation type="unfinished">Static IP Address</translation>
+        <translation>Dirección IP Estática</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2614"/>
         <location filename="../src/form/filepathdialog.ui" line="2638"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - The Source IP Address was assigned though DHCP.
 0x01 - The Source IP Address is statically bound.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - The Source IP Address was assigned though DHCP.
-0x01 - The Source IP Address is statically bound.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - La Dirección IP Fuente fue asignada a través de DHCP.
+0x01 - La dirección IP de origen está vinculada estáticamente..&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2646"/>
@@ -3294,7 +3294,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="3062"/>
         <location filename="../src/form/filepathdialog.ui" line="3083"/>
         <source>The Gateway IP Address.</source>
-        <translation type="unfinished">The Gateway IP Address.</translation>
+        <translation>La Dirección de Puerta IP.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2649"/>
@@ -3304,7 +3304,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="3071"/>
         <location filename="../src/form/filepathdialog.ui" line="3086"/>
         <source>Gateway IP Address</source>
-        <translation type="unfinished">Gateway IP Address</translation>
+        <translation>Dirección IP de puerta</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2652"/>
@@ -3312,49 +3312,49 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <location filename="../src/form/filepathdialog.ui" line="3068"/>
         <location filename="../src/form/filepathdialog.ui" line="3089"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Gateway IP Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Gateway IP Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La dirección IP de puerta de enlace.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2686"/>
         <location filename="../src/form/filepathdialog.ui" line="2707"/>
         <source>Subnet mask.</source>
-        <translation type="unfinished">Subnet mask.</translation>
+        <translation>Máscara de subred.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2689"/>
         <location filename="../src/form/filepathdialog.ui" line="2695"/>
         <location filename="../src/form/filepathdialog.ui" line="2710"/>
         <source>Subnet Mask</source>
-        <translation type="unfinished">Subnet Mask</translation>
+        <translation>Máscara Subred</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2733"/>
         <source>IPv6 settings.</source>
-        <translation type="unfinished">IPv6 settings.</translation>
+        <translation>Ajustes IPv6.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2760"/>
         <location filename="../src/form/filepathdialog.ui" line="2781"/>
         <source>The local IPv6 address.</source>
-        <translation type="unfinished">The local IPv6 address.</translation>
+        <translation>La dirección local de IPv6.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2766"/>
         <location filename="../src/form/filepathdialog.ui" line="2787"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The local IPv6 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The local IPv6 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La dirección local IPv6.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2800"/>
         <location filename="../src/form/filepathdialog.ui" line="2821"/>
         <source>The remote IPv6 address.</source>
-        <translation type="unfinished">The remote IPv6 address.</translation>
+        <translation>La dirección remota IPv6.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2806"/>
         <location filename="../src/form/filepathdialog.ui" line="2827"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The remote IPv6 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The remote IPv6 address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La dirección IPv6 remota.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2963"/>
@@ -3362,16 +3362,16 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <source>0x00 - The Local IP Address was manually configured.
 0x01 - The Local IP Address is assigned through IPv6 stateless auto-configuration.
 0x02 - The Local IP Address is assigned through IPv6 stateful configuration.</source>
-        <translation type="unfinished">0x00 - The Local IP Address was manually configured.
-0x01 - The Local IP Address is assigned through IPv6 stateless auto-configuration.
-0x02 - The Local IP Address is assigned through IPv6 stateful configuration.</translation>
+        <translation>0x00 - La dirección IP local fue configurada manualmente.
+0x01 - La dirección IP local está asignada a través de la autoconfiguración IPv6 no estática.
+0x02 - La dirección IP local está signada a través de la configuración IPv6 estática.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2968"/>
         <location filename="../src/form/filepathdialog.ui" line="2976"/>
         <location filename="../src/form/filepathdialog.ui" line="2994"/>
         <source>IP Address Origin</source>
-        <translation type="unfinished">IP Address Origin</translation>
+        <translation>Dirección IP Origen</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2971"/>
@@ -3379,81 +3379,81 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - The Local IP Address was manually configured.
 0x01 - The Local IP Address is assigned through IPv6 stateless auto-configuration.
 0x02 - The Local IP Address is assigned through IPv6 stateful configuration.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - The Local IP Address was manually configured.
-0x01 - The Local IP Address is assigned through IPv6 stateless auto-configuration.
-0x02 - The Local IP Address is assigned through IPv6 stateful configuration.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0x00 - La dirección IP local fue configurada manualmente.
+0x01 - La dirección IP local se asigna a través de la autoconfiguración IPv6 dinámica.
+0x02 - La dirección IP local se asigna a través de la configuración IPv6 estática.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3021"/>
         <location filename="../src/form/filepathdialog.ui" line="3043"/>
         <source>The Prefix Length.</source>
-        <translation type="unfinished">The Prefix Length.</translation>
+        <translation>La longitud del prefijo.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3024"/>
         <location filename="../src/form/filepathdialog.ui" line="3030"/>
         <location filename="../src/form/filepathdialog.ui" line="3046"/>
         <source>Prefix Length</source>
-        <translation type="unfinished">Prefix Length</translation>
+        <translation>Longitud del prefijo</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3027"/>
         <location filename="../src/form/filepathdialog.ui" line="3049"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Prefix Length.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Prefix Length.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La longitud del prefijo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3106"/>
         <source>UART</source>
-        <translation type="unfinished">UART</translation>
+        <translation>UART</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3109"/>
         <source>UART Settings.</source>
-        <translation type="unfinished">UART Settings.</translation>
+        <translation>Ajustes UART.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3112"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UART Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UART Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajustes UART.&lt;p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3176"/>
         <location filename="../src/form/filepathdialog.ui" line="3197"/>
         <source>The baud rate setting for the UART style device. A value of 0 means that the devices default baud rate will be used.</source>
-        <translation type="unfinished">The baud rate setting for the UART style device. A value of 0 means that the devices default baud rate will be used.</translation>
+        <translation>Los ajustes del tipo de transmisión para el dispositivo de estilo UART. Un valor de 0 significa que se utilizará el tipo de transmisión predeterminado del dispositivo.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3179"/>
         <location filename="../src/form/filepathdialog.ui" line="3185"/>
         <location filename="../src/form/filepathdialog.ui" line="3200"/>
         <source>Baud Rate</source>
-        <translation type="unfinished">Baud Rate</translation>
+        <translation>Tipo de Transmisión</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3182"/>
         <location filename="../src/form/filepathdialog.ui" line="3203"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The baud rate setting for the UART style device. A value of 0 means that the devices default baud rate will be used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The baud rate setting for the UART style device. A value of 0 means that the devices default baud rate will be used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La tipo de transmisión para el dispositivo de estilo UART. Un valor de 0 significa que el tipo de transmisión será utilizada por defecto.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3216"/>
         <location filename="../src/form/filepathdialog.ui" line="3238"/>
         <source>The number of data bits for the UART style device. A value of 0 means that the devices default number of data bits will be used.</source>
-        <translation type="unfinished">The number of data bits for the UART style device. A value of 0 means that the devices default number of data bits will be used.</translation>
+        <translation>El número de bit de datos para el estilo de dispositivo UART. Un valor de 0 significa que se utilizará el número predeterminado de los dispositivos de bits de datos.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3219"/>
         <location filename="../src/form/filepathdialog.ui" line="3225"/>
         <location filename="../src/form/filepathdialog.ui" line="3241"/>
         <source>Data Bits</source>
-        <translation type="unfinished">Data Bits</translation>
+        <translation>Los Bit de Datos</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3222"/>
         <location filename="../src/form/filepathdialog.ui" line="3244"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The number of data bits for the UART style device. A value of 0 means that the devices default number of data bits will be used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The number of data bits for the UART style device. A value of 0 means that the devices default number of data bits will be used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El número de bit de datos para el dispositivo de estilo UART. Un valor de 0 significa que se utilizará el número predeterminado de los dispositivos de los bit de datos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3257"/>
@@ -3465,20 +3465,20 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 0x03 - Odd Parity.
 0x04 - Mark Parity.
 0x05 - Space Parity.</source>
-        <translation type="unfinished">The parity setting for the UART style device:
-0x00 - Default Parity.
-0x01 - No Parity.
-0x02 - Even Parity.
-0x03 - Odd Parity.
-0x04 - Mark Parity.
-0x05 - Space Parity.</translation>
+        <translation>El ajuste de paridad para el dispositivo de estilo UART:
+0x00 - Paridad predeterminada.
+0x01 - Sin paridad.
+0x02 - Paridad par
+0x03 - Paridad impar
+0x04 - Marcar paridad.
+0x05 - Paridad espacial.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3266"/>
         <location filename="../src/form/filepathdialog.ui" line="3278"/>
         <location filename="../src/form/filepathdialog.ui" line="3300"/>
         <source>Parity</source>
-        <translation type="unfinished">Parity</translation>
+        <translation>Paridad</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3269"/>
@@ -3490,44 +3490,44 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 0x03 - Odd Parity.
 0x04 - Mark Parity.
 0x05 - Space Parity.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The parity setting for the UART style device:
-0x00 - Default Parity.
-0x01 - No Parity.
-0x02 - Even Parity.
-0x03 - Odd Parity.
-0x04 - Mark Parity.
-0x05 - Space Parity.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El ajuste de paridad para el dispositivo de estilo UART:
+0x00 - Paridad Predeterminada.
+0x01 - Sin Paridad.
+0x02 - Paridad Par.
+0x03 - Paridad Impar.
+0x04 - Paridad de Marca.
+0x05 - Paridad Espacial.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3313"/>
         <location filename="../src/form/filepathdialog.ui" line="3394"/>
         <source>Default</source>
-        <translation type="unfinished">Default</translation>
+        <translation>Por defecto</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3318"/>
         <source>No</source>
-        <translation type="unfinished">No</translation>
+        <translation>No</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3323"/>
         <source>Even</source>
-        <translation type="unfinished">Even</translation>
+        <translation>Par</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3328"/>
         <source>Odd</source>
-        <translation type="unfinished">Odd</translation>
+        <translation>Impar</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3333"/>
         <source>Mark</source>
-        <translation type="unfinished">Mark</translation>
+        <translation>Marcar</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3338"/>
         <source>Space</source>
-        <translation type="unfinished">Space</translation>
+        <translation>Espacio</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3346"/>
@@ -3537,18 +3537,18 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 0x01 - 1 Stop Bit.
 0x02 - 1.5 Stop Bits.
 0x03 - 2 Stop Bits.</source>
-        <translation type="unfinished">The number of stop bits for the UART style device:
-0x00 - Default Stop Bits.
-0x01 - 1 Stop Bit.
-0x02 - 1.5 Stop Bits.
-0x03 - 2 Stop Bits.</translation>
+        <translation>El número de los bit de parada para el dispositivo de estilo UART:
+0x00 - Los bit de parada.
+0x01 - 1 bit de parada.
+0x02 - 1&apos;5 bit de parada.
+0x03 - 2 bit de parada.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3353"/>
         <location filename="../src/form/filepathdialog.ui" line="3363"/>
         <location filename="../src/form/filepathdialog.ui" line="3383"/>
         <source>Stop Bits</source>
-        <translation type="unfinished">Stop Bits</translation>
+        <translation>Los bit de parada</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3356"/>
@@ -3558,447 +3558,447 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 0x01 - 1 Stop Bit.
 0x02 - 1.5 Stop Bits.
 0x03 - 2 Stop Bits.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The number of stop bits for the UART style device:
-0x00 - Default Stop Bits.
-0x01 - 1 Stop Bit.
-0x02 - 1.5 Stop Bits.
-0x03 - 2 Stop Bits.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El número de bit de parada para el dispositivo de estilo UART:
+0x00 - Los bit de parada por omisión.
+0x01 - 1 bit de parada.
+0x02 - 1&apos;5 bit de parada.
+0x03 - 2 bit de parada.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3399"/>
         <source>1</source>
-        <translation type="unfinished">1</translation>
+        <translation>1</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3404"/>
         <source>1.5</source>
-        <translation type="unfinished">1.5</translation>
+        <translation>1&apos;5</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3409"/>
         <source>2</source>
-        <translation type="unfinished">2</translation>
+        <translation>2</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3421"/>
         <source>USB Class</source>
-        <translation type="unfinished">USB Class</translation>
+        <translation>Clase USB</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3424"/>
         <source>USB Class Settings.</source>
-        <translation type="unfinished">USB Class Settings.</translation>
+        <translation>Ajustes de Clase USB.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3427"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB Class Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB Class Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajuste de Clase USB.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3451"/>
         <location filename="../src/form/filepathdialog.ui" line="3472"/>
         <source>Vendor ID assigned by USB-IF. A value of 0xFFFF will match any Vendor ID.</source>
-        <translation type="unfinished">Vendor ID assigned by USB-IF. A value of 0xFFFF will match any Vendor ID.</translation>
+        <translation>ID de proveedor asignado por USB-IF. Un valor de 0xFFFF coincidirá cualquier ID de Proveedor.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3454"/>
         <location filename="../src/form/filepathdialog.ui" line="3460"/>
         <location filename="../src/form/filepathdialog.ui" line="3475"/>
         <source>Vendor ID</source>
-        <translation type="unfinished">Vendor ID</translation>
+        <translation>ID Proveedor</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3457"/>
         <location filename="../src/form/filepathdialog.ui" line="3478"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor ID assigned by USB-IF. A value of 0xFFFF will match any Vendor ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor ID assigned by USB-IF. A value of 0xFFFF will match any Vendor ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ID Proveedor por USB-IF. Un valor de 0xFFFF coincidirá cualquier ID Proveedor.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3491"/>
         <location filename="../src/form/filepathdialog.ui" line="3512"/>
         <source>Product ID assigned by USB-IF. A value of 0xFFFF will match any Product ID.</source>
-        <translation type="unfinished">Product ID assigned by USB-IF. A value of 0xFFFF will match any Product ID.</translation>
+        <translation>ID de producto asignado por USB-IF. Un valor de 0xFFFF coincidirá con cualquier ID de producto.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3494"/>
         <location filename="../src/form/filepathdialog.ui" line="3500"/>
         <location filename="../src/form/filepathdialog.ui" line="3515"/>
         <source>Product ID</source>
-        <translation type="unfinished">Product ID</translation>
+        <translation>ID de producto</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3497"/>
         <location filename="../src/form/filepathdialog.ui" line="3518"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Product ID assigned by USB-IF. A value of 0xFFFF will match any Product ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Product ID assigned by USB-IF. A value of 0xFFFF will match any Product ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; ID de producto asignado por USB-IF. Un valor de 0xFFFF coincidirá con cualquier ID de producto.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3531"/>
         <location filename="../src/form/filepathdialog.ui" line="3552"/>
         <source>The class code assigned by the USB-IF. A value of 0xFF will match any class code.</source>
-        <translation type="unfinished">The class code assigned by the USB-IF. A value of 0xFF will match any class code.</translation>
+        <translation>El código de clase asignado por el USB-IF. Un valor de 0xFF coincidirá con cualquier código de clase.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3534"/>
         <location filename="../src/form/filepathdialog.ui" line="3540"/>
         <location filename="../src/form/filepathdialog.ui" line="3555"/>
         <source>Device Class</source>
-        <translation type="unfinished">Device Class</translation>
+        <translation>Clase de dispositivo</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3537"/>
         <location filename="../src/form/filepathdialog.ui" line="3558"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The class code assigned by the USB-IF. A value of 0xFF will match any class code.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The class code assigned by the USB-IF. A value of 0xFF will match any class code.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El código de clase asignado por el USB-IF. Un valor de 0xFF coincidirá con cualquier código de clase.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3571"/>
         <location filename="../src/form/filepathdialog.ui" line="3592"/>
         <source>The subclass code assigned by the USB-IF. A value of 0xFF will match any subclass code.</source>
-        <translation type="unfinished">The subclass code assigned by the USB-IF. A value of 0xFF will match any subclass code.</translation>
+        <translation>El código subclase asignado por el USB-IF. Un valor de 0xFF coincidirá con cualquier código subclase.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3574"/>
         <location filename="../src/form/filepathdialog.ui" line="3580"/>
         <location filename="../src/form/filepathdialog.ui" line="3595"/>
         <source>Device Subclass</source>
-        <translation type="unfinished">Device Subclass</translation>
+        <translation>Subclase de dispositivo</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3577"/>
         <location filename="../src/form/filepathdialog.ui" line="3598"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The subclass code assigned by the USB-IF. A value of 0xFF will match any subclass code.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The subclass code assigned by the USB-IF. A value of 0xFF will match any subclass code.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El código de subclase asignado por el USB-IF. Un valor de 0xFF coincidirá con cualquier código subclase.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3611"/>
         <location filename="../src/form/filepathdialog.ui" line="3632"/>
         <source>The protocol code assigned by the USB-IF. A value of 0xFF will match any protocol code.</source>
-        <translation type="unfinished">The protocol code assigned by the USB-IF. A value of 0xFF will match any protocol code.</translation>
+        <translation>El código de protocolo asignado por el USB-IF. Un valor de 0xFF coincidirá con cualquier código de protocolo.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3614"/>
         <location filename="../src/form/filepathdialog.ui" line="3620"/>
         <location filename="../src/form/filepathdialog.ui" line="3635"/>
         <source>Device Protocol</source>
-        <translation type="unfinished">Device Protocol</translation>
+        <translation>Protocolo de dispositivos</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3617"/>
         <location filename="../src/form/filepathdialog.ui" line="3638"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The protocol code assigned by the USB-IF. A value of 0xFF will match any protocol code.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The protocol code assigned by the USB-IF. A value of 0xFF will match any protocol code.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El código de protocolo asignado por el USB-IF. Un valor de 0xFF coincidirá con cualquier código de protocolo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3655"/>
         <source>USB WWID</source>
-        <translation type="unfinished">USB WWID</translation>
+        <translation>USB WWID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3658"/>
         <source>This device path describes a USB device using its serial number.</source>
-        <translation type="unfinished">This device path describes a USB device using its serial number.</translation>
+        <translation>Esta ruta del dispositivo describe un dispositivo USB usando su número de serie.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3661"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path describes a USB device using its serial number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This device path describes a USB device using its serial number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Este dispositivo describe un dispositivo USB utilizando su número de serie.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3685"/>
         <location filename="../src/form/filepathdialog.ui" line="3707"/>
         <source>USB interface Number.</source>
-        <translation type="unfinished">USB interface Number.</translation>
+        <translation>Interfaz USB Número.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3691"/>
         <location filename="../src/form/filepathdialog.ui" line="3713"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB interface Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB interface Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Número de interfaz de USB.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3726"/>
         <location filename="../src/form/filepathdialog.ui" line="3747"/>
         <source>USB vendor id of the device.</source>
-        <translation type="unfinished">USB vendor id of the device.</translation>
+        <translation>ID de proveedor USB del dispositivo.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3729"/>
         <location filename="../src/form/filepathdialog.ui" line="3735"/>
         <location filename="../src/form/filepathdialog.ui" line="3750"/>
         <source>Device Vendor Id</source>
-        <translation type="unfinished">Device Vendor Id</translation>
+        <translation>ID del Proveedor de Dispositivo</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3732"/>
         <location filename="../src/form/filepathdialog.ui" line="3753"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB vendor id of the device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB vendor id of the device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Id de Proveedor de dispositivo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3766"/>
         <location filename="../src/form/filepathdialog.ui" line="3787"/>
         <source>USB product id of the device.</source>
-        <translation type="unfinished">USB product id of the device.</translation>
+        <translation>ID de producto USB del dispositivo.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3769"/>
         <location filename="../src/form/filepathdialog.ui" line="3775"/>
         <location filename="../src/form/filepathdialog.ui" line="3790"/>
         <source>Device Product Id</source>
-        <translation type="unfinished">Device Product Id</translation>
+        <translation>ID del producto del dispositivo</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3772"/>
         <location filename="../src/form/filepathdialog.ui" line="3793"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB product id of the device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB product id of the device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ID del producto USB del dispositivo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3806"/>
         <location filename="../src/form/filepathdialog.ui" line="3828"/>
         <source>Last 64-or-fewer UTF-16 characters of the USB serial number. The length of the string is determined by the Length field less the offset of the Serial Number field (10).</source>
-        <translation type="unfinished">Last 64-or-fewer UTF-16 characters of the USB serial number. The length of the string is determined by the Length field less the offset of the Serial Number field (10).</translation>
+        <translation>Últimos 64 caracteres (o menos) de UTF-16 del número de serie USB. La longitud de la cadena se determina por el campo de longitud Length menos el desplazamiento del campo Serial Number (10).</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3809"/>
         <location filename="../src/form/filepathdialog.ui" line="3815"/>
         <location filename="../src/form/filepathdialog.ui" line="3831"/>
         <source>Serial Number</source>
-        <translation type="unfinished">Serial Number</translation>
+        <translation>Número de Serie</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3812"/>
         <location filename="../src/form/filepathdialog.ui" line="3834"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Last 64-or-fewer UTF-16 characters of the USB serial number. The length of the string is determined by the Length field less the offset of the Serial Number field (10).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Last 64-or-fewer UTF-16 characters of the USB serial number. The length of the string is determined by the Length field less the offset of the Serial Number field (10).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Últimos 64 caracteres UTF-16 (o menos) del número de serie USB. La longitud de la cadena se determina por el campo de longitud Length menos el desplazamiento del campo Number Serial (10).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3845"/>
         <source>Device Logical Unit</source>
-        <translation type="unfinished">Device Logical Unit</translation>
+        <translation>Unidad lógica de dispositivo</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3848"/>
         <source>Device Logical Unit Settings.</source>
-        <translation type="unfinished">Device Logical Unit Settings.</translation>
+        <translation>Ajustes de Unidad Lógica de Dispositivo.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3851"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device Logical Unit Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device Logical Unit Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajustes de Unidad de Dispositivo Lógico.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3875"/>
         <location filename="../src/form/filepathdialog.ui" line="3897"/>
         <source>Logical Unit Number for the interface.</source>
-        <translation type="unfinished">Logical Unit Number for the interface.</translation>
+        <translation>Número de unidad lógica para la interfaz.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3881"/>
         <location filename="../src/form/filepathdialog.ui" line="3903"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Logical Unit Number for the interface.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Logical Unit Number for the interface.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Número de unidad Lógica para la interfaz.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3923"/>
         <source>SATA settings.</source>
-        <translation type="unfinished">SATA settings.</translation>
+        <translation>Ajustes SATA.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3950"/>
         <location filename="../src/form/filepathdialog.ui" line="3972"/>
         <source>The HBA port number that facilitates the connection to the device or a port multiplier. The value 0xFFFF is reserved.</source>
-        <translation type="unfinished">The HBA port number that facilitates the connection to the device or a port multiplier. The value 0xFFFF is reserved.</translation>
+        <translation>El número de puerto HBA que facilita la conexión con el dispositivo o un multiplicador de puerto. El valor 0xFFFF está reservado.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3953"/>
         <location filename="../src/form/filepathdialog.ui" line="3959"/>
         <location filename="../src/form/filepathdialog.ui" line="3975"/>
         <source>HBA Port</source>
-        <translation type="unfinished">HBA Port</translation>
+        <translation>Puerto HBA</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3956"/>
         <location filename="../src/form/filepathdialog.ui" line="3978"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The HBA port number that facilitates the connection to the device or a port multiplier. The value 0xFFFF is reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The HBA port number that facilitates the connection to the device or a port multiplier. The value 0xFFFF is reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El número de puerto HBA que facilita la conexión al dispositivo o un multiplicador de puerto. El valor 0xFFFF está reservado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3991"/>
         <location filename="../src/form/filepathdialog.ui" line="4013"/>
         <source>The Port multiplier port number that facilitates the connection to the device. Must be set to 0xFFFF if the device is directly connected to the HBA.</source>
-        <translation type="unfinished">The Port multiplier port number that facilitates the connection to the device. Must be set to 0xFFFF if the device is directly connected to the HBA.</translation>
+        <translation>El número de puerto multiplicador de puerto que facilita la conexión con el dispositivo. Debe configurarse en 0xFFFF si el dispositivo está conectado directamente al HBA.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3994"/>
         <location filename="../src/form/filepathdialog.ui" line="4000"/>
         <location filename="../src/form/filepathdialog.ui" line="4016"/>
         <source>Port Multiplier Port</source>
-        <translation type="unfinished">Port Multiplier Port</translation>
+        <translation>Multiplicador de Puerto</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3997"/>
         <location filename="../src/form/filepathdialog.ui" line="4019"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Port multiplier port number that facilitates the connection to the device. Must be set to 0xFFFF if the device is directly connected to the HBA.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Port multiplier port number that facilitates the connection to the device. Must be set to 0xFFFF if the device is directly connected to the HBA.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El número de puerto multiplicador de puerto que facilita la conexión al dispositivo. Debe configurarse en 0xFFFF si el dispositivo está conectado directamente al HBA.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4077"/>
         <source>iSCSI</source>
-        <translation type="unfinished">iSCSI</translation>
+        <translation>iSCSI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4080"/>
         <source>iSCSI Settings.</source>
-        <translation type="unfinished">iSCSI Settings.</translation>
+        <translation>Ajustes iSCSI.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4083"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajustes iSCSI.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4107"/>
         <location filename="../src/form/filepathdialog.ui" line="4129"/>
         <source>Network Protocol (0 = TCP, 1+ = reserved).</source>
-        <translation type="unfinished">Network Protocol (0 = TCP, 1+ = reserved).</translation>
+        <translation>Protocolo de red (0 = TCP, 1+ = reservado).</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4113"/>
         <location filename="../src/form/filepathdialog.ui" line="4135"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Network Protocol (0 = TCP, 1+ = reserved).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Network Protocol (0 = TCP, 1+ = reserved).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protocolo de red (0 = TCP, 1+ = reservado).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4148"/>
         <location filename="../src/form/filepathdialog.ui" line="4169"/>
         <source>iSCSI Login Options.</source>
-        <translation type="unfinished">iSCSI Login Options.</translation>
+        <translation>Opciones iSCSI de Inicio de Sesión.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4151"/>
         <location filename="../src/form/filepathdialog.ui" line="4157"/>
         <location filename="../src/form/filepathdialog.ui" line="4172"/>
         <source>Options</source>
-        <translation type="unfinished">Options</translation>
+        <translation>Opciones</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4154"/>
         <location filename="../src/form/filepathdialog.ui" line="4175"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI Login Options.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI Login Options.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opciones iSCSI de Inicio de Sesión.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4188"/>
         <location filename="../src/form/filepathdialog.ui" line="4209"/>
         <source>8 byte array containing the iSCSI Logical Unit Number.</source>
-        <translation type="unfinished">8 byte array containing the iSCSI Logical Unit Number.</translation>
+        <translation>Repertorio de 8 byte que contiene el Número de Unidad Lógica iSCSI.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4194"/>
         <location filename="../src/form/filepathdialog.ui" line="4215"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8 byte array containing the iSCSI Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8 byte array containing the iSCSI Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Repertorio 8 byte conteniendo el Número de Unidad Lógica iSCSI.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4228"/>
         <location filename="../src/form/filepathdialog.ui" line="4250"/>
         <source>iSCSI Target Portal group tag the initiator intends to establish a session with.</source>
-        <translation type="unfinished">iSCSI Target Portal group tag the initiator intends to establish a session with.</translation>
+        <translation>Grupo de Portal Destino iSCSI etiqueta el iniciador con el que intenta establecer una sesión.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4231"/>
         <location filename="../src/form/filepathdialog.ui" line="4237"/>
         <location filename="../src/form/filepathdialog.ui" line="4253"/>
         <source>Target Portal Group</source>
-        <translation type="unfinished">Target Portal Group</translation>
+        <translation>Grupo Portal Destino</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4234"/>
         <location filename="../src/form/filepathdialog.ui" line="4256"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI Target Portal group tag the initiator intends to establish a session with.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI Target Portal group tag the initiator intends to establish a session with.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI Grupo Target Portal etiqueta el iniciador tiene la intención de establecer una sesión con.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4269"/>
         <location filename="../src/form/filepathdialog.ui" line="4291"/>
         <source>iSCSI NodeTarget Name.</source>
-        <translation type="unfinished">iSCSI NodeTarget Name.</translation>
+        <translation>Nombre NodeTarget de iSCSI.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4272"/>
         <location filename="../src/form/filepathdialog.ui" line="4278"/>
         <location filename="../src/form/filepathdialog.ui" line="4294"/>
         <source>Target Name</source>
-        <translation type="unfinished">Target Name</translation>
+        <translation>Nombre Destino</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4275"/>
         <location filename="../src/form/filepathdialog.ui" line="4297"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI NodeTarget Name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;iSCSI NodeTarget Name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nombre NodeTarget iSCSI.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4308"/>
         <source>VLAN</source>
-        <translation type="unfinished">VLAN</translation>
+        <translation>VLAN</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4311"/>
         <source>VLAN Settings.</source>
-        <translation type="unfinished">VLAN Settings.</translation>
+        <translation>Ajustes VLAN.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4314"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VLAN Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VLAN Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajustes VLAN.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4338"/>
         <location filename="../src/form/filepathdialog.ui" line="4360"/>
         <source>VLAN identifier (0-4094).</source>
-        <translation type="unfinished">VLAN identifier (0-4094).</translation>
+        <translation>Identificador VLAN (0-4.094).</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4341"/>
         <location filename="../src/form/filepathdialog.ui" line="4347"/>
         <location filename="../src/form/filepathdialog.ui" line="4363"/>
         <source>Vlan ID</source>
-        <translation type="unfinished">Vlan ID</translation>
+        <translation>ID VLAN</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4344"/>
         <location filename="../src/form/filepathdialog.ui" line="4366"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VLAN identifier (0-4094).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VLAN identifier (0-4094).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Identificador VLAN (0-4.094).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4383"/>
         <source>Fibre Channel Ex</source>
-        <translation type="unfinished">Fibre Channel Ex</translation>
+        <translation>Canal Fibra Ex</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4386"/>
         <source>The Fibre Channel Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.</source>
-        <translation type="unfinished">The Fibre Channel Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.</translation>
+        <translation>La ruta destino del Canal de la Fibra Ex clarifica la definición del campo Número de Unidad Lógica para conformar con la especificación del Modelo d4 de Arquitectura T-10 SCSI.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4389"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Fibre Channel Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Fibre Channel Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La ruta del Canal de Fibra Ex clarifica la definición del campo Número de Unidad Lógica para ajustarse a la especificación de Modelo 4 de Arquitectura T-10 SCSI.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4453"/>
         <location filename="../src/form/filepathdialog.ui" line="4474"/>
         <source>8 byte array containing Fibre Channel End Device Port Name (a.k.a., World Wide Name).</source>
-        <translation type="unfinished">8 byte array containing Fibre Channel End Device Port Name (a.k.a., World Wide Name).</translation>
+        <translation>Repertorio de 8 byte que contiene Nombre de Puerto Final del Canal de Fibra (o.l.q.., Nombre de Todo el Mundo).</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4459"/>
         <location filename="../src/form/filepathdialog.ui" line="4480"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8 byte array containing Fibre Channel End Device Port Name (a.k.a., World Wide Name).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8 byte array containing Fibre Channel End Device Port Name (a.k.a., World Wide Name).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Repertorio 8 byte conteniendo Nombre de Puerto de Dispositivo de Canal Final de Fibra (a.k.a., World Wide Name).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4493"/>
@@ -4015,42 +4015,42 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4537"/>
         <source>SAS Extended Messaging</source>
-        <translation type="unfinished">SAS Extended Messaging</translation>
+        <translation>Mensajería SAS Extendida</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4540"/>
         <source>The SAS Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.</source>
-        <translation type="unfinished">The SAS Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.</translation>
+        <translation>La ruta de dispositivo SAS Ex clarifica la definición del campo Logical Unit Number a conforme con la especificación del Modelo 4 de Arquitectura T-10 SCSI.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4543"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The SAS Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The SAS Ex device path clarifies the definition of the Logical Unit Number field to conform with the T-10 SCSI Architecture Model 4 specification.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La ruta SAS Ex clarifica la definición del campo número de unidad lógica para ajustarse a la especificación T-10 SCSI Architecture Model 4.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4567"/>
         <location filename="../src/form/filepathdialog.ui" line="4588"/>
         <source>8-byte array of the SAS Address for Serial Attached SCSI Target Port.</source>
-        <translation type="unfinished">8-byte array of the SAS Address for Serial Attached SCSI Target Port.</translation>
+        <translation type="unfinished">Colección de 8-byte para la Dirección SAS para Puerto de Destino SCSI Serial Adjuntado.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4570"/>
         <location filename="../src/form/filepathdialog.ui" line="4576"/>
         <location filename="../src/form/filepathdialog.ui" line="4591"/>
         <source>SAS Address</source>
-        <translation type="unfinished">SAS Address</translation>
+        <translation type="unfinished">Dirección SAS</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4573"/>
         <location filename="../src/form/filepathdialog.ui" line="4594"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8-byte array of the SAS Address for Serial Attached SCSI Target Port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8-byte array of the SAS Address for Serial Attached SCSI Target Port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;colección de 8-byte para la Dirección SAS para Puerto Destino SCSI Adjunto de Serie.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4607"/>
         <location filename="../src/form/filepathdialog.ui" line="4628"/>
         <source>8-byte array of the SAS Logical Unit Number.</source>
-        <translation type="unfinished">8-byte array of the SAS Logical Unit Number.</translation>
+        <translation type="unfinished">Conjunto de 8-byte para el Número de Unidad Lógica SAS.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4613"/>
