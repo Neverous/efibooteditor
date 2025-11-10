@@ -51,7 +51,7 @@ jobs:
             ${{ inputs.os }}
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@e296a935590eb16afc0c0108289f68c87e2a89a5
+        uses: github/codeql-action/init@0499de31b99561a6d14a36a5f662c2a54f91beee
         with:
           languages: cpp
           queries: security-and-quality
@@ -155,13 +155,13 @@ jobs:
         working-directory: build
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
         with:
           name: EFIBootEditor-${{ github.sha }}-${{ inputs.os }}-qt-${{ matrix.qt-version }}-${{ inputs.compiler }}
           if-no-files-found: error
           path: build/dist/EFIBootEditor-*
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@e296a935590eb16afc0c0108289f68c87e2a89a5
+        uses: github/codeql-action/analyze@0499de31b99561a6d14a36a5f662c2a54f91beee
         if: inputs.build-config == 'Debug'
         continue-on-error: true
