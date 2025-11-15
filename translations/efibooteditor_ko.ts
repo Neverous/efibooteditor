@@ -1537,7 +1537,7 @@
         <location filename="../src/efibooteditor.cpp" line="45"/>
         <source>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; for EFI variables access.&lt;/p&gt;&lt;p&gt;Uses Tango Icons as fallback icons.&lt;/p&gt;</source>
         <extracomment>About dialog details</extracomment>
-        <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;웹사이트&lt;/a&gt;&lt;/p&gt;&lt;p&gt;이 프로그램은 디자인, 상품성 및 특정 목적에 대한 적합성에 대한 보증을 포함하여 어떤 종류의 보증도 없이 그대로 제공됩니다.&lt;/p&gt;&lt;p&gt;라이선스: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL 버전 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Linux에서는 EFI 변수 액세스를 위해 &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt;를 사용합니다.&lt;/p&gt;&lt;p&gt;아이콘을 폴백 아이콘으로 사용합니다.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;웹사이트&lt;/a&gt;&lt;/p&gt;&lt;p&gt;이 프로그램은 디자인, 상품성 및 특정 목적에 대한 적합성에 대한 보증을 포함하여 어떤 종류의 보증도 없이 그대로 제공됩니다.&lt;/p&gt;&lt;p&gt;라이선스: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL 버전 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Linux에서는 EFI 변수 액세스를 위해 &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt;를 사용합니다.&lt;/p&gt;&lt;p&gt;Tango 아이콘을 대체 아이콘으로 사용합니다.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="330"/>
