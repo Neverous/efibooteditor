@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Checkout source code
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
 
       - name: Run Codacy Code Analysis
         uses: codacy/codacy-analysis-cli-action@562ee3e92b8e92df8b67e0a5ff8aa8e261919c08
@@ -30,6 +30,6 @@ jobs:
           gh-code-scanning-compat: true
 
       - name: Upload Codacy Code Analysis results to GitHub
-        uses: github/codeql-action/upload-sarif@0499de31b99561a6d14a36a5f662c2a54f91beee
+        uses: github/codeql-action/upload-sarif@fdbfb4d2750291e159f0156def62b853c2798ca2
         with:
           sarif_file: codacy.sarif
