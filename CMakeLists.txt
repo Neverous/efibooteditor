@@ -100,12 +100,12 @@ if(${QT_VERSION_MAJOR} LESS_EQUAL 5)
             endforeach ()
             file(APPEND ${QRC} "</qresource></RCC>")
             qt_add_resources(RESOURCES ${QRC})
-            target_sources(${PROJECT_NAME}-core PRIVATE ${RESOURCES})
+            target_sources(${PROJECT_NAME} PRIVATE ${RESOURCES})
         endfunction()
     endif()
 endif()
 
-target_compile_definitions(${PROJECT_NAME}-core PUBLIC
+add_compile_definitions(
     APPLICATION_NAME="${APPLICATION_NAME}"
     VERSION="${FULL_VERSION}"
     VERSION_MAJOR=${VERSION_MAJOR}
@@ -303,10 +303,10 @@ target_sources(${PROJECT_NAME}-core PRIVATE
 
 # Resources:
 qt_add_resources(RESOURCES icons.qrc)
-target_sources(${PROJECT_NAME}-core PRIVATE ${RESOURCES})
+target_sources(${PROJECT_NAME} PRIVATE ${RESOURCES})
 
 if(WIN32)
-    target_sources(${PROJECT_NAME}-core PRIVATE
+    target_sources(${PROJECT_NAME} PRIVATE
         windows.rc
     )
 endif()
@@ -320,7 +320,7 @@ set_source_files_properties(${TRANSLATIONS}
     PROPERTIES OUTPUT_LOCATION "${CMAKE_BINARY_DIR}/translations"
 )
 
-qt_add_translations(${PROJECT_NAME}-core
+qt_add_translations(${PROJECT_NAME}
     TS_FILES ${TRANSLATIONS}
     RESOURCE_PREFIX "/"
     INCLUDE_DIRECTORIES "include"

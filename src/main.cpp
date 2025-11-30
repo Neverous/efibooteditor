@@ -66,8 +66,6 @@ auto main(int argc, char *argv[]) -> int
     // Setup GUI style
     QApplication::setStyle(QStyleFactory::create("Fusion"));
     QIcon::setFallbackThemeName("Tango");
-    if(QIcon::themeName().isEmpty())
-        QIcon::setThemeName("Tango");
 
     // Show window and then force reload boot entries
     EFIBootEditor gui{efi_error_message};
