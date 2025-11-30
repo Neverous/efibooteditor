@@ -43,7 +43,7 @@
      {% for node in category.nodes if node.slug not in ("vendor", "instance", "entire") %}
      <widget class="QWidget" name="{{ node.slug }}_tab">
       <attribute name="icon">
-       <iconset theme="{{ node.icon|default("system") }}"/>
+       <iconset theme="{{ node.icon|default("computer") }}"/>
       </attribute>
       <attribute name="title">
        <string>{{ node.name }}</string>
@@ -234,7 +234,7 @@
      {% endfor %}{% endfor %}
      <widget class="QWidget" name="vendor_tab">
       <attribute name="icon">
-       <iconset theme="document"/>
+       <iconset theme="document-properties"/>
       </attribute>
       <attribute name="title">
        <string>Vendor</string>
@@ -431,7 +431,7 @@
      </widget>
      <widget class="QWidget" name="end_tab">
       <attribute name="icon">
-       <iconset theme="stop"/>
+       <iconset theme="process-stop"/>
       </attribute>
       <attribute name="title">
        <string>End</string>

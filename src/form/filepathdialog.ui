@@ -6156,7 +6156,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             <string/>
            </property>
            <property name="icon">
-            <iconset theme="reload"/>
+            <iconset theme="view-refresh"/>
            </property>
            <property name="iconSize">
             <size>
@@ -6541,7 +6541,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
      </widget>
      <widget class="QWidget" name="file_path_tab">
       <attribute name="icon">
-       <iconset theme="document"/>
+       <iconset theme="document-properties"/>
       </attribute>
       <attribute name="title">
        <string>File Path</string>
@@ -6681,7 +6681,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
      </widget>
      <widget class="QWidget" name="firmware_file_tab">
       <attribute name="icon">
-       <iconset theme="document"/>
+       <iconset theme="document-properties"/>
       </attribute>
       <attribute name="title">
        <string>Firmware File</string>
@@ -6752,7 +6752,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
      </widget>
      <widget class="QWidget" name="firmware_volume_tab">
       <attribute name="icon">
-       <iconset theme="document"/>
+       <iconset theme="document-properties"/>
       </attribute>
       <attribute name="title">
        <string>Firmware Volume</string>
@@ -7436,7 +7436,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
      <!-- End -->
      <widget class="QWidget" name="vendor_tab">
       <attribute name="icon">
-       <iconset theme="document"/>
+       <iconset theme="document-properties"/>
       </attribute>
       <attribute name="title">
        <string>Vendor</string>
@@ -7633,7 +7633,7 @@ If SignatureType is 2, this field contains a 16 byte signature.&lt;/p&gt;&lt;/bo
      </widget>
      <widget class="QWidget" name="end_tab">
       <attribute name="icon">
-       <iconset theme="stop"/>
+       <iconset theme="process-stop"/>
       </attribute>
       <attribute name="title">
        <string>End</string>

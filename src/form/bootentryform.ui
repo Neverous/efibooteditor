@@ -289,7 +289,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset theme="up"/>
+            <iconset theme="go-up"/>
            </property>
           </widget>
          </item>
@@ -314,7 +314,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset theme="down"/>
+            <iconset theme="go-down"/>
            </property>
           </widget>
          </item>
@@ -339,7 +339,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset theme="remove"/>
+            <iconset theme="list-remove"/>
            </property>
           </widget>
          </item>
@@ -364,7 +364,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset theme="edit"/>
+            <iconset theme="document-properties"/>
            </property>
           </widget>
          </item>
@@ -389,7 +389,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset theme="add"/>
+            <iconset theme="list-add"/>
            </property>
           </widget>
          </item>
