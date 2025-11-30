@@ -30,7 +30,7 @@
       <string notr="true"/>
      </property>
      <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
    </item>
@@ -46,7 +46,7 @@
       <string>This entry placeholder is shown here to indicate it's referenced in boot order. It won't be modified on save, just left as is.</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -57,10 +57,10 @@
     <widget class="QWidget" name="form_fields" native="true">
      <layout class="QFormLayout" name="form_fields_layout">
       <property name="fieldGrowthPolicy">
-       <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       <enum>QFormLayout::FieldGrowthPolicy::ExpandingFieldsGrow</enum>
       </property>
       <property name="labelAlignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
       </property>
       <item row="0" column="0">
        <widget class="QLabel" name="index_label">
@@ -188,7 +188,7 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="inputMethodHints">
-         <set>Qt::ImhLatinOnly|Qt::ImhNoPredictiveText</set>
+         <set>Qt::InputMethodHint::ImhLatinOnly|Qt::InputMethodHint::ImhNoPredictiveText</set>
         </property>
        </widget>
       </item>
@@ -228,19 +228,19 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="sizeAdjustPolicy">
-         <enum>QAbstractScrollArea::AdjustToContents</enum>
+         <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
         </property>
         <property name="alternatingRowColors">
          <bool>true</bool>
         </property>
         <property name="horizontalScrollMode">
-         <enum>QAbstractItemView::ScrollPerPixel</enum>
+         <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
         </property>
         <property name="movement">
-         <enum>QListView::Snap</enum>
+         <enum>QListView::Movement::Snap</enum>
         </property>
         <property name="resizeMode">
-         <enum>QListView::Adjust</enum>
+         <enum>QListView::ResizeMode::Adjust</enum>
         </property>
        </widget>
       </item>
@@ -396,7 +396,7 @@
          <item>
           <spacer name="paths_actions_spacer">
            <property name="orientation">
-            <enum>Qt::Horizontal</enum>
+            <enum>Qt::Orientation::Horizontal</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
@@ -484,7 +484,7 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="sizeAdjustPolicy">
-         <enum>QAbstractScrollArea::AdjustToContents</enum>
+         <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
         </property>
         <property name="undoRedoEnabled">
          <bool>false</bool>
@@ -547,7 +547,7 @@
          <item row="0" column="3">
           <spacer name="attribute_box_spacer">
            <property name="orientation">
-            <enum>Qt::Horizontal</enum>
+            <enum>Qt::Orientation::Horizontal</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
@@ -640,7 +640,7 @@
    <item>
     <spacer name="vertical_spacer">
      <property name="orientation">
-      <enum>Qt::Vertical</enum>
+      <enum>Qt::Orientation::Vertical</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
