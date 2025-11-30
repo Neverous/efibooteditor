@@ -127,20 +127,6 @@ inline tstring to_tstring(const Type &value)
 
 const int HEX_BASE = 16;
 
-/* Qt compatibility */
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-namespace std
-{
-
-template <>
-struct hash<QString>
-{
-    size_t operator()(const QString &s) const noexcept { return static_cast<size_t>(qHash(s)); }
-};
-
-}
-#endif
-
 /* QString helpers */
 inline tstring QStringToStdTString(const QString &string)
 {
