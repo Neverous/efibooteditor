@@ -6,14 +6,6 @@
 
 #include "efibootdata.h"
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
-#include <QtGlobal>
-namespace Qt
-{
-static const auto endl = ::endl;
-}
-#endif
-
 class EFIBootEditorCLI: public QObject
 {
     Q_OBJECT

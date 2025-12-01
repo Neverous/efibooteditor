@@ -355,7 +355,7 @@
              <string/>
             </property>
             <property name="icon">
-             <iconset theme="add"/>
+             <iconset theme="list-add"/>
             </property>
             <property name="iconSize">
              <size>
@@ -417,7 +417,7 @@
              <string/>
             </property>
             <property name="icon">
-             <iconset theme="remove"/>
+             <iconset theme="list-remove"/>
             </property>
             <property name="iconSize">
              <size>
@@ -448,7 +448,7 @@
              <string/>
             </property>
             <property name="icon">
-             <iconset theme="up"/>
+             <iconset theme="go-up"/>
             </property>
             <property name="iconSize">
              <size>
@@ -479,7 +479,7 @@
              <string/>
             </property>
             <property name="icon">
-             <iconset theme="down"/>
+             <iconset theme="go-down"/>
             </property>
             <property name="iconSize">
              <size>
@@ -1176,7 +1176,7 @@
        <bool>true</bool>
       </property>
       <property name="selectionMode">
-       <enum>QAbstractItemView::NoSelection</enum>
+       <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
       </property>
      </widget>
     </item>
@@ -1243,7 +1243,7 @@
   </widget>
   <action name="exit">
    <property name="icon">
-    <iconset theme="exit"/>
+    <iconset theme="application-exit"/>
    </property>
    <property name="text">
     <string>&amp;Quit</string>
@@ -1277,7 +1277,7 @@
   </action>
   <action name="reload">
    <property name="icon">
-    <iconset theme="reload"/>
+    <iconset theme="document-revert"/>
    </property>
    <property name="text">
     <string>&amp;Reload</string>
@@ -1294,7 +1294,7 @@
   </action>
   <action name="about">
    <property name="icon">
-    <iconset theme="help"/>
+    <iconset theme="help-browser"/>
    </property>
    <property name="text">
     <string>About &amp;EFI Boot Editor</string>
@@ -1308,7 +1308,7 @@
   </action>
   <action name="export_">
    <property name="icon">
-    <iconset theme="document-export"/>
+    <iconset theme="document-save-as"/>
    </property>
    <property name="text">
     <string>&amp;Export</string>
@@ -1325,7 +1325,7 @@
   </action>
   <action name="import_">
    <property name="icon">
-    <iconset theme="document-import"/>
+    <iconset theme="document-open"/>
    </property>
    <property name="text">
     <string>&amp;Import</string>
@@ -1342,7 +1342,7 @@
   </action>
   <action name="dump_raw_efi_data">
    <property name="icon">
-    <iconset theme="document-export"/>
+    <iconset theme="document-save-as"/>
    </property>
    <property name="text">
     <string>&amp;Dump raw EFI data</string>
@@ -1356,7 +1356,7 @@
   </action>
   <action name="undo">
    <property name="icon">
-    <iconset theme="undo"/>
+    <iconset theme="edit-undo"/>
    </property>
    <property name="text">
     <string>&amp;Undo</string>
@@ -1373,7 +1373,7 @@
   </action>
   <action name="redo">
    <property name="icon">
-    <iconset theme="redo"/>
+    <iconset theme="edit-redo"/>
    </property>
    <property name="text">
     <string>&amp;Redo</string>

@@ -1434,7 +1434,7 @@ media:
     - name: File Path
       slug: file_path
       description: File Path settings.
-      icon: document
+      icon: document-properties
       type: 4
       subtype: 4
       fields:
@@ -1462,7 +1462,7 @@ media:
     - name: Firmware File
       slug: firmware_file
       description: Describes a firmware file in a firmware volume.
-      icon: document
+      icon: document-properties
       type: 4
       subtype: 6
       fields:
@@ -1475,7 +1475,7 @@ media:
     - name: Firmware Volume
       slug: firmware_volume
       description: Describes a firmware volume.
-      icon: document
+      icon: document-properties
       type: 4
       subtype: 7
       fields:
@@ -1620,7 +1620,7 @@ end:
       description: This type of node terminates one Device Path instance and
         denotes the start of another. This is only required when an environment
         variable represents multiple devices.
-      icon: stop
+      icon: process-stop
       type: 127
       subtype: 1
       fields: []
@@ -1629,7 +1629,7 @@ end:
       description: This type of node terminates an entire Device Path. Software
         searches for this sub-type to find the end of a Device Path. All Device
         Paths must end with this sub-type.
-      icon: stop
+      icon: process-stop
       type: 127
       subtype: 255
       fields: []

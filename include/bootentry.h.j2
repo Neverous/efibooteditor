@@ -213,6 +213,7 @@ public:
     QString optional_data = {};
     EFIBoot::Load_option_attribute attributes = EFIBoot::Load_option_attribute::EMPTY;
     uint32_t efi_attributes = EFIBoot::EFI_VARIABLE_ATTRIBUTE_DEFAULTS;
+    uint32_t crc32 = 0;
     uint16_t index = 0;
     OptionalDataFormat optional_data_format = OptionalDataFormat::Base64;
 

@@ -33,13 +33,13 @@ TestEFIBootData::TestEFIBootData()
     if(efi_error_message)
     {
         this->efi_supported = false;
-        showError(tr("EFI support required"), QStringFromStdTString(*efi_error_message));
+        showError("EFI support required", QStringFromStdTString(*efi_error_message));
     }
 }
 
 void TestEFIBootData::showError(const QString &message, const QString &details) const
 {
-    qWarning() << tr("ERROR: %0! %1").arg(message, details) << Qt::endl;
+    qWarning() << QString("ERROR: %0! %1").arg(message, details) << Qt::endl;
 }
 
 void TestEFIBootData::showProgress(size_t step, size_t total, const QString &details) const

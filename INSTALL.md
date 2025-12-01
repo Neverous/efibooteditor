@@ -9,16 +9,16 @@ Necessary tools:
 - [CMake](//cmake.org) (>= 3.16)
 - [pkg-config](//www.freedesktop.org/wiki/Software/pkg-config/)
 - recent C/C++ compiler with C++17 support,
-  recommended [GCC](//gcc.gnu.org/) (>= 7.5.0)
-  or [Clang](//clang.llvm.org/) (>= 9.0.0),
-  or [MSVC](//learn.microsoft.com/en-us/cpp/) (>= 19.29.30146.0) on Windows
+  recommended [GCC](//gcc.gnu.org/) (>= 11.4.0)
+  or [Clang](//clang.llvm.org/) (>= 14.0.0),
+  or [MSVC](//learn.microsoft.com/en-us/cpp/) (>= 19.44.35219.0) on Windows
 
 Required libraries[^1]:
 
 [^1]: Remember to install **development** files as well. For example
   `qt6-base-dev`, `libefivar-dev`, `libefiboot-dev`, `zlib1g-dev` on Ubuntu.
 
-- [Qt5](//doc.qt.io/qt-5/gettingstarted.html) (>= 5.12)
+- [Qt5](//doc.qt.io/qt-5/gettingstarted.html) (>= 5.15)
   or [Qt6](//doc.qt.io/qt-6/get-and-install-qt.html) (>= 6.2)
 - [zlib](//github.com/madler/zlib) (>=1.2)
 - [efivar](//github.com/rhboot/efivar) (>= 37) on Linux

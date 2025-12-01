@@ -381,18 +381,18 @@
 <context>
     <name>EFIBootData</name>
     <message>
-        <location filename="../src/efibootdata.cpp" line="112"/>
+        <location filename="../src/efibootdata.cpp" line="111"/>
         <location filename="../src/efibootdata.cpp" line="813"/>
         <location filename="../src/efibootdata.cpp" line="1027"/>
-        <location filename="../src/efibootdata.cpp" line="1360"/>
-        <location filename="../src/efibootdata.cpp" line="1471"/>
+        <location filename="../src/efibootdata.cpp" line="1361"/>
+        <location filename="../src/efibootdata.cpp" line="1472"/>
         <source>%1: not found</source>
         <translation>%1: 未找到</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="120"/>
         <location filename="../src/efibootdata.cpp" line="821"/>
-        <location filename="../src/efibootdata.cpp" line="1386"/>
+        <location filename="../src/efibootdata.cpp" line="1387"/>
         <source>%1: failed deserialization</source>
         <translation>%1: 反序列化失败</translation>
     </message>
@@ -444,8 +444,8 @@
         <location filename="../src/efibootdata.cpp" line="533"/>
         <location filename="../src/efibootdata.cpp" line="542"/>
         <location filename="../src/efibootdata.cpp" line="556"/>
-        <location filename="../src/efibootdata.cpp" line="1339"/>
-        <location filename="../src/efibootdata.cpp" line="1582"/>
+        <location filename="../src/efibootdata.cpp" line="1340"/>
+        <location filename="../src/efibootdata.cpp" line="1584"/>
         <source>Error importing boot configuration</source>
         <translation>导入引导配置时出错</translation>
     </message>
@@ -525,7 +525,7 @@
         <translation>正在搜索 EFI Boot Manager 条目…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="108"/>
+        <location filename="../src/efibootdata.cpp" line="116"/>
         <location filename="../src/efibootdata.cpp" line="292"/>
         <source>Processing EFI Boot Manager entries (%1)…</source>
         <translation>正在处理 EFI Boot Manager 条目 (%1)…</translation>
@@ -600,9 +600,9 @@
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1032"/>
-        <location filename="../src/efibootdata.cpp" line="1365"/>
-        <location filename="../src/efibootdata.cpp" line="1476"/>
-        <location filename="../src/efibootdata.cpp" line="1530"/>
+        <location filename="../src/efibootdata.cpp" line="1366"/>
+        <location filename="../src/efibootdata.cpp" line="1477"/>
+        <location filename="../src/efibootdata.cpp" line="1531"/>
         <source>Importing EFI Boot Manager entries (%1)…</source>
         <translation>正在导入 EFI Boot Manager 条目 (%1)…</translation>
     </message>
@@ -614,13 +614,13 @@
         <location filename="../src/efibootdata.cpp" line="1223"/>
         <location filename="../src/efibootdata.cpp" line="1248"/>
         <location filename="../src/efibootdata.cpp" line="1304"/>
-        <location filename="../src/efibootdata.cpp" line="1368"/>
-        <location filename="../src/efibootdata.cpp" line="1375"/>
-        <location filename="../src/efibootdata.cpp" line="1479"/>
-        <location filename="../src/efibootdata.cpp" line="1493"/>
-        <location filename="../src/efibootdata.cpp" line="1532"/>
-        <location filename="../src/efibootdata.cpp" line="1547"/>
-        <location filename="../src/efibootdata.cpp" line="1569"/>
+        <location filename="../src/efibootdata.cpp" line="1369"/>
+        <location filename="../src/efibootdata.cpp" line="1376"/>
+        <location filename="../src/efibootdata.cpp" line="1480"/>
+        <location filename="../src/efibootdata.cpp" line="1494"/>
+        <location filename="../src/efibootdata.cpp" line="1533"/>
+        <location filename="../src/efibootdata.cpp" line="1548"/>
+        <location filename="../src/efibootdata.cpp" line="1571"/>
         <source>%1: %2 expected</source>
         <translation>%1: %2 预计</translation>
     </message>
@@ -657,7 +657,7 @@
         <location filename="../src/efibootdata.cpp" line="1097"/>
         <location filename="../src/efibootdata.cpp" line="1134"/>
         <location filename="../src/efibootdata.cpp" line="1178"/>
-        <location filename="../src/efibootdata.cpp" line="1332"/>
+        <location filename="../src/efibootdata.cpp" line="1333"/>
         <source>string</source>
         <translation>字符串</translation>
     </message>
@@ -673,19 +673,19 @@
         <location filename="../src/efibootdata.cpp" line="1264"/>
         <location filename="../src/efibootdata.cpp" line="1290"/>
         <location filename="../src/efibootdata.cpp" line="1309"/>
-        <location filename="../src/efibootdata.cpp" line="1327"/>
-        <location filename="../src/efibootdata.cpp" line="1368"/>
-        <location filename="../src/efibootdata.cpp" line="1479"/>
-        <location filename="../src/efibootdata.cpp" line="1532"/>
-        <location filename="../src/efibootdata.cpp" line="1569"/>
+        <location filename="../src/efibootdata.cpp" line="1328"/>
+        <location filename="../src/efibootdata.cpp" line="1369"/>
+        <location filename="../src/efibootdata.cpp" line="1480"/>
+        <location filename="../src/efibootdata.cpp" line="1533"/>
+        <location filename="../src/efibootdata.cpp" line="1571"/>
         <source>object</source>
         <translation>对象</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1248"/>
         <location filename="../src/efibootdata.cpp" line="1304"/>
-        <location filename="../src/efibootdata.cpp" line="1493"/>
-        <location filename="../src/efibootdata.cpp" line="1547"/>
+        <location filename="../src/efibootdata.cpp" line="1494"/>
+        <location filename="../src/efibootdata.cpp" line="1548"/>
         <source>hexadecimal number</source>
         <translation>十六进制数</translation>
     </message>
@@ -696,8 +696,8 @@
         <translation>%1: 解析失败</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1339"/>
-        <location filename="../src/efibootdata.cpp" line="1582"/>
+        <location filename="../src/efibootdata.cpp" line="1340"/>
+        <location filename="../src/efibootdata.cpp" line="1584"/>
         <source>Failed to import some EFI Boot Manager entries:
 
   - %1</source>
@@ -706,12 +706,12 @@
   - %1</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1346"/>
+        <location filename="../src/efibootdata.cpp" line="1347"/>
         <source>Importing boot configuration from raw dump…</source>
         <translation>正在从原始转储导入引导配置…</translation>
     </message>
     <message>
-        <location filename="../src/efibootdata.cpp" line="1378"/>
+        <location filename="../src/efibootdata.cpp" line="1379"/>
         <source>object(raw_data: string, efi_attributes: number)</source>
         <extracomment>Expected JSON structure, thrown as error description. raw_data and efi_attributes are field names in JSON file</extracomment>
         <translation>object(raw_data: string, efi_attributes: number)</translation>

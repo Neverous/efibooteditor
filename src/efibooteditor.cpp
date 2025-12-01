@@ -312,11 +312,7 @@ void EFIBootEditor::updateBootOptionSupport(uint32_t flags)
     ui->hot_keys->setDisabled(!(flags & EFIBoot::EFI_BOOT_OPTION_SUPPORT_KEY));
     ui->entry_form->showCategory(flags & EFIBoot::EFI_BOOT_OPTION_SUPPORT_APP);
     ui->entry_form->showHotKeys((flags & EFIBoot::EFI_BOOT_OPTION_SUPPORT_KEY) && (std::get<2>(currentBootEntryList()).options & BootEntryListModel::Option::IsBoot));
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    ui->entries->setTabEnabled(ui->entries->indexOf(ui->sysprep_tab), flags & EFIBoot::EFI_BOOT_OPTION_SUPPORT_SYSPREP);
-#else
     ui->entries->setTabVisible(ui->entries->indexOf(ui->sysprep_tab), flags & EFIBoot::EFI_BOOT_OPTION_SUPPORT_SYSPREP);
-#endif
 }
 
 void EFIBootEditor::reorderBootEntries()

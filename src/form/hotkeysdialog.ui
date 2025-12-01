@@ -172,7 +172,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset theme="remove"/>
+         <iconset theme="list-remove"/>
         </property>
         <property name="autoDefault">
          <bool>false</bool>
@@ -200,7 +200,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset theme="add"/>
+         <iconset theme="list-add"/>
         </property>
         <property name="autoDefault">
          <bool>false</bool>
