@@ -49,7 +49,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-2022, windows-2025]
+        os: [windows-2022, windows-2025, windows-11-arm]
         compiler:
           - Clang
           - MSVC
@@ -118,13 +118,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-2022, windows-2025]
+        os: [windows-2022, windows-2025, windows-11-arm]
         compiler:
           - Clang
           - MSVC
         extension:
           - .zip
           - .msi
+        exclude:
+          - extension: ${{ endsWith(inputs.os, 'arm') && '.msi' || 'none' }}
 
     permissions:
       contents: write
