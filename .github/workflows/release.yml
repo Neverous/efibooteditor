@@ -126,7 +126,8 @@ jobs:
           - .zip
           - .msi
         exclude:
-          - extension: ${{ endsWith(inputs.os, 'arm') && '.msi' || 'none' }}
+          - os: windows-11-arm
+            extension: .msi
 
     permissions:
       contents: write
