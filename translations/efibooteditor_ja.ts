@@ -10,14 +10,14 @@
         <location filename="../src/form/bootentryform.ui" line="182"/>
         <location filename="../src/form/bootentryform.ui" line="185"/>
         <source>Description</source>
-        <translation type="unfinished">Description</translation>
+        <translation>説明</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="198"/>
         <location filename="../src/form/bootentryform.ui" line="201"/>
         <location filename="../src/form/bootentryform.ui" line="204"/>
         <source>Path</source>
-        <translation type="unfinished">Path</translation>
+        <translation>パス</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="415"/>
@@ -25,205 +25,205 @@
         <location filename="../src/form/bootentryform.ui" line="478"/>
         <location filename="../src/form/bootentryform.ui" line="481"/>
         <source>Optional data</source>
-        <translation type="unfinished">Optional data</translation>
+        <translation>エンコード方式</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="421"/>
         <source>Optional</source>
-        <translation type="unfinished">Optional</translation>
+        <translation>エンコード</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="434"/>
         <location filename="../src/form/bootentryform.ui" line="437"/>
         <source>Optional data format</source>
-        <translation type="unfinished">Optional data format</translation>
+        <translation>エンコード方式</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="6"/>
         <source>Boot entry form</source>
-        <translation type="unfinished">Boot entry form</translation>
+        <translation>ブートエントリ設定</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="24"/>
         <location filename="../src/form/bootentryform.ui" line="27"/>
         <source>Error</source>
-        <translation type="unfinished">Error</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="40"/>
         <location filename="../src/form/bootentryform.ui" line="43"/>
         <source>Error note</source>
-        <translation type="unfinished">Error note</translation>
+        <translation>エラー通知</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="46"/>
         <source>This entry placeholder is shown here to indicate it&apos;s referenced in boot order. It won&apos;t be modified on save, just left as is.</source>
-        <translation type="unfinished">This entry placeholder is shown here to indicate it&apos;s referenced in boot order. It won&apos;t be modified on save, just left as is.</translation>
+        <translation>このエントリはブート順で参照されていることを示すためのプレースホルダーです。保存しても変更されず、そのままになります。</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="147"/>
         <location filename="../src/form/bootentryform.ui" line="150"/>
         <source>Hot Keys</source>
-        <translation type="unfinished">Hot Keys</translation>
+        <translation>ホットキー</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="153"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ホットキー&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="188"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry description.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エントリの説明。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="222"/>
         <location filename="../src/form/bootentryform.ui" line="225"/>
         <source>Device path</source>
-        <translation type="unfinished">Device path</translation>
+        <translation>デバイスのパス</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="228"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;デバイスのパス。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="280"/>
         <location filename="../src/form/bootentryform.ui" line="283"/>
         <source>Move file path up</source>
-        <translation type="unfinished">Move file path up</translation>
+        <translation>パスを上へ移動</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="286"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;パスを上へ移動。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="305"/>
         <location filename="../src/form/bootentryform.ui" line="308"/>
         <source>Move file path down</source>
-        <translation type="unfinished">Move file path down</translation>
+        <translation>パスを下へ移動</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="311"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;パスを下へ移動。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="330"/>
         <location filename="../src/form/bootentryform.ui" line="333"/>
         <source>Remove file path</source>
-        <translation type="unfinished">Remove file path</translation>
+        <translation>パスを削除</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="336"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;パスを削除。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="355"/>
         <location filename="../src/form/bootentryform.ui" line="358"/>
         <source>Edit file path</source>
-        <translation type="unfinished">Edit file path</translation>
+        <translation>パスを編集</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="361"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Edit file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Edit file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;パスを編集。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="380"/>
         <location filename="../src/form/bootentryform.ui" line="383"/>
         <source>Add file path</source>
-        <translation type="unfinished">Add file path</translation>
+        <translation>パスを追加</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="386"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add file path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;パスを追加。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="440"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エンコード方式。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="444"/>
         <source>BASE64</source>
-        <translation type="unfinished">BASE64</translation>
+        <translation>BASE64</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="449"/>
         <source>UTF-16</source>
-        <translation type="unfinished">UTF-16</translation>
+        <translation>UTF-16</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="454"/>
         <source>UTF-8</source>
-        <translation type="unfinished">UTF-8</translation>
+        <translation>UTF-8</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="459"/>
         <source>HEX</source>
-        <translation type="unfinished">HEX</translation>
+        <translation>HEX</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="484"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry optional data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エントリのオプションデータ。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="497"/>
         <location filename="../src/form/bootentryform.ui" line="500"/>
         <location filename="../src/form/bootentryform.ui" line="503"/>
         <source>Attributes</source>
-        <translation type="unfinished">Attributes</translation>
+        <translation>属性</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="623"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エントリのカテゴリ。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="122"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エントリのインデックス。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="540"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Is entry considered for automatic boot?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Is entry considered for automatic boot?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エントリは自動ブートの対象になりますか?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="569"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hidden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hidden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;非表示。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="585"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Force reconnect.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Force reconnect.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;強制再接続。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="534"/>
         <location filename="../src/form/bootentryform.ui" line="537"/>
         <location filename="../src/form/bootentryform.ui" line="543"/>
         <source>Active</source>
-        <translation type="unfinished">Active</translation>
+        <translation>アクティブ</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="579"/>
         <location filename="../src/form/bootentryform.ui" line="582"/>
         <location filename="../src/form/bootentryform.ui" line="588"/>
         <source>Force reconnect</source>
-        <translation type="unfinished">Force reconnect</translation>
+        <translation>強制再接続</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="563"/>
         <location filename="../src/form/bootentryform.ui" line="566"/>
         <location filename="../src/form/bootentryform.ui" line="572"/>
         <source>Hidden</source>
-        <translation type="unfinished">Hidden</translation>
+        <translation>非表示</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="598"/>
@@ -232,17 +232,17 @@
         <location filename="../src/form/bootentryform.ui" line="617"/>
         <location filename="../src/form/bootentryform.ui" line="620"/>
         <source>Category</source>
-        <translation type="unfinished">Category</translation>
+        <translation>カテゴリ</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="627"/>
         <source>Boot</source>
-        <translation type="unfinished">Boot</translation>
+        <translation>ブート</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="632"/>
         <source>App</source>
-        <translation type="unfinished">App</translation>
+        <translation>アプリ</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="68"/>
@@ -251,12 +251,12 @@
         <location filename="../src/form/bootentryform.ui" line="116"/>
         <location filename="../src/form/bootentryform.ui" line="119"/>
         <source>Index</source>
-        <translation type="unfinished">Index</translation>
+        <translation>インデックス</translation>
     </message>
     <message>
         <location filename="../src/bootentryform.cpp" line="117"/>
         <source>Couldn&apos;t change optional data format!</source>
-        <translation type="unfinished">Couldn&apos;t change optional data format!</translation>
+        <translation>オプションのデータ形式を変更できませんでした!</translation>
     </message>
 </context>
 <context>
@@ -264,32 +264,32 @@
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="88"/>
         <source>Set Next boot to &quot;%1&quot;</source>
-        <translation type="unfinished">Set Next boot to &quot;%1&quot;</translation>
+        <translation>次のブートを &quot;%1&quot; に設定</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="184"/>
         <source>index</source>
-        <translation type="unfinished">index</translation>
+        <translation>インデックス</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="200"/>
         <source>description</source>
-        <translation type="unfinished">description</translation>
+        <translation>説明</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="237"/>
         <source>optional data</source>
-        <translation type="unfinished">optional data</translation>
+        <translation>オプション データ</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="253"/>
         <source>attributes</source>
-        <translation type="unfinished">attributes</translation>
+        <translation>属性</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="269"/>
         <source>next boot</source>
-        <translation type="unfinished">next boot</translation>
+        <translation>次のブート</translation>
     </message>
 </context>
 <context>
@@ -298,84 +298,84 @@
         <location filename="../src/form/bootentrywidget.ui" line="12"/>
         <location filename="../src/form/bootentrywidget.ui" line="221"/>
         <source>Boot entry</source>
-        <translation type="unfinished">Boot entry</translation>
+        <translation>ブートエントリ</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="36"/>
         <source>Next boot</source>
-        <translation type="unfinished">Next boot</translation>
+        <translation>次のブート</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="39"/>
         <source>Run at next boot</source>
-        <translation type="unfinished">Run at next boot</translation>
+        <translation>次のブート時に実行</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="42"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When chosen, entry will run at next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When chosen, entry will run at next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;選択すると、エントリは次のブート時に実行されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="140"/>
         <location filename="../src/form/bootentrywidget.ui" line="143"/>
         <source>Current boot</source>
-        <translation type="unfinished">Current boot</translation>
+        <translation>現在のブート</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="146"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This entry is currently booted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This entry is currently booted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;このエントリは現在のブートです。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="181"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry index.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ブートエントリのインデックス。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="218"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry description, human readable name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry description, human readable name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ブート エントリの説明、人間が判読できる名前。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="67"/>
         <location filename="../src/form/bootentrywidget.ui" line="70"/>
         <location filename="../src/form/bootentrywidget.ui" line="76"/>
         <source>Device path</source>
-        <translation type="unfinished">Device path</translation>
+        <translation>デバイスのパス</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="73"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ブートデバイスのパス。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="113"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data, arguments passed to boot executable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data, arguments passed to boot executable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ブート実行ファイルに渡されるオプションのデータ、引数。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="175"/>
         <location filename="../src/form/bootentrywidget.ui" line="178"/>
         <source>Boot entry index</source>
-        <translation type="unfinished">Boot entry index</translation>
+        <translation>ブートエントリのインデックス</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="184"/>
         <source>Index</source>
-        <translation type="unfinished">Index</translation>
+        <translation>インデックス</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="212"/>
         <location filename="../src/form/bootentrywidget.ui" line="215"/>
         <source>Boot entry description</source>
-        <translation type="unfinished">Boot entry description</translation>
+        <translation>ブートエントリの説明</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="107"/>
         <location filename="../src/form/bootentrywidget.ui" line="110"/>
         <location filename="../src/form/bootentrywidget.ui" line="116"/>
         <source>Optional data</source>
-        <translation type="unfinished">Optional data</translation>
+        <translation>オプション データ</translation>
     </message>
 </context>
 <context>
@@ -387,26 +387,26 @@
         <location filename="../src/efibootdata.cpp" line="1361"/>
         <location filename="../src/efibootdata.cpp" line="1472"/>
         <source>%1: not found</source>
-        <translation type="unfinished">%1: not found</translation>
+        <translation>%1 : 見つかりません</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="120"/>
         <location filename="../src/efibootdata.cpp" line="821"/>
         <location filename="../src/efibootdata.cpp" line="1387"/>
         <source>%1: failed deserialization</source>
-        <translation type="unfinished">%1: failed deserialization</translation>
+        <translation>%1 : デシリアライズに失敗しました</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="301"/>
         <source>Error loading entries</source>
-        <translation type="unfinished">Error loading entries</translation>
+        <translation>エントリの読み込みエラー</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="301"/>
         <source>Failed to load some EFI Boot Manager entries:
 
   - %1</source>
-        <translation type="unfinished">Failed to load some EFI Boot Manager entries:
+        <translation>一部のEFIブートマネージャーエントリの読み込みに失敗しました :
 
   - %1</translation>
     </message>
@@ -414,13 +414,13 @@
         <location filename="../src/efibootdata.cpp" line="369"/>
         <location filename="../src/efibootdata.cpp" line="690"/>
         <source>Error saving entries</source>
-        <translation type="unfinished">Error saving entries</translation>
+        <translation>エントリの保存エラー</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="369"/>
         <location filename="../src/efibootdata.cpp" line="690"/>
         <source>Entry %1(%2): duplicated index!</source>
-        <translation type="unfinished">Entry %1(%2): duplicated index!</translation>
+        <translation>エントリ %1(%2) : 重複したインデックス!</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="389"/>
@@ -431,14 +431,14 @@
         <location filename="../src/efibootdata.cpp" line="494"/>
         <location filename="../src/efibootdata.cpp" line="516"/>
         <source>Error saving %1</source>
-        <translation type="unfinished">Error saving %1</translation>
+        <translation>保存エラー %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="407"/>
         <location filename="../src/efibootdata.cpp" line="470"/>
         <location filename="../src/efibootdata.cpp" line="504"/>
         <source>Error removing %1</source>
-        <translation type="unfinished">Error removing %1</translation>
+        <translation>削除エラー %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="533"/>
@@ -447,98 +447,98 @@
         <location filename="../src/efibootdata.cpp" line="1340"/>
         <location filename="../src/efibootdata.cpp" line="1584"/>
         <source>Error importing boot configuration</source>
-        <translation type="unfinished">Error importing boot configuration</translation>
+        <translation>ブート構成のインポートエラー</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="533"/>
         <location filename="../src/efibootdata.cpp" line="774"/>
         <source>Couldn&apos;t open selected file (%1).</source>
-        <translation type="unfinished">Couldn&apos;t open selected file (%1).</translation>
+        <translation>選択したファイルを開けませんでした (%1)。</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="542"/>
         <source>Parser failed: %1</source>
-        <translation type="unfinished">Parser failed: %1</translation>
+        <translation>解析失敗 : %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="556"/>
         <source>Invalid _Type: %1</source>
-        <translation type="unfinished">Invalid _Type: %1</translation>
+        <translation>無効な _Type : %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="569"/>
         <location filename="../src/efibootdata.cpp" line="759"/>
         <source>Error exporting boot configuration</source>
-        <translation type="unfinished">Error exporting boot configuration</translation>
+        <translation>ブート構成のエクスポートエラー</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="569"/>
         <source>Couldn&apos;t open selected file (%1): %2.</source>
-        <translation type="unfinished">Couldn&apos;t open selected file (%1): %2.</translation>
+        <translation>選択したファイルを開けませんでした (%1) : %2.</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="759"/>
         <location filename="../src/efibootdata.cpp" line="889"/>
         <source>Couldn&apos;t write into file (%1): %2.</source>
-        <translation type="unfinished">Couldn&apos;t write into file (%1): %2.</translation>
+        <translation>ファイルに書き込めませんでした (%1) : %2.</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="774"/>
         <location filename="../src/efibootdata.cpp" line="889"/>
         <location filename="../src/efibootdata.cpp" line="895"/>
         <source>Error dumping raw EFI data</source>
-        <translation type="unfinished">Error dumping raw EFI data</translation>
+        <translation>RAW EFIデータのダンプエラー</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="895"/>
         <source>Failed to dump some EFI Boot Manager entries:
 
   - %1</source>
-        <translation type="unfinished">Failed to dump some EFI Boot Manager entries:
+        <translation>一部のEFIブートマネージャエントリのダンプに失敗しました :
 
   - %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="905"/>
         <source>Timeout</source>
-        <translation type="unfinished">Timeout</translation>
+        <translation>タイムアウト</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="921"/>
         <source>Apple boot-args</source>
-        <translation type="unfinished">Apple boot-args</translation>
+        <translation>Apple ブート引数</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="937"/>
         <source>Firmware actions</source>
-        <translation type="unfinished">Firmware actions</translation>
+        <translation>ファームウェア操作</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="73"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation type="unfinished">Loading EFI Boot Manager entries…</translation>
+        <translation>EFIブートマネージャーのエントリの読み込み…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="89"/>
         <location filename="../src/efibootdata.cpp" line="787"/>
         <source>Searching EFI Boot Manager entries…</source>
-        <translation type="unfinished">Searching EFI Boot Manager entries…</translation>
+        <translation>EFIブートマネージャーのエントリの検索…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="116"/>
         <location filename="../src/efibootdata.cpp" line="292"/>
         <source>Processing EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Processing EFI Boot Manager entries (%1)…</translation>
+        <translation>EFIブートマネージャーのエントリの処理 (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="308"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation type="unfinished">Saving EFI Boot Manager entries…</translation>
+        <translation>EFIブートマネージャーのエントリの保存…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="333"/>
         <source>Searching old EFI Boot Manager entries…</source>
-        <translation type="unfinished">Searching old EFI Boot Manager entries…</translation>
+        <translation>古いEFIブートマネージャーのエントリの検索…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="374"/>
@@ -549,54 +549,54 @@
         <location filename="../src/efibootdata.cpp" line="491"/>
         <location filename="../src/efibootdata.cpp" line="513"/>
         <source>Saving EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Saving EFI Boot Manager entries (%1)…</translation>
+        <translation>EFIブートマネージャーのエントリの保存 (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="467"/>
         <source>Removing old EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Removing old EFI Boot Manager entries (%1)…</translation>
+        <translation>古いEFIブートマネージャーのエントリの削除 (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="404"/>
         <location filename="../src/efibootdata.cpp" line="501"/>
         <source>Removing EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Removing EFI Boot Manager entries (%1)…</translation>
+        <translation>EFIブートマネージャーのエントリの削除 (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="94"/>
         <location filename="../src/efibootdata.cpp" line="338"/>
         <location filename="../src/efibootdata.cpp" line="792"/>
         <source>Couldn&apos;t load EFI Boot Manager variables</source>
-        <translation type="unfinished">Couldn&apos;t load EFI Boot Manager variables</translation>
+        <translation>EFIブートマネージャー変数を読み込めませんでした</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="100"/>
         <location filename="../src/efibootdata.cpp" line="799"/>
         <source>Couldn&apos;t find any EFI Boot Manager variables</source>
-        <translation type="unfinished">Couldn&apos;t find any EFI Boot Manager variables</translation>
+        <translation>EFIブートマネージャー変数が見つかりませんでした</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="529"/>
         <source>Importing boot configuration…</source>
-        <translation type="unfinished">Importing boot configuration…</translation>
+        <translation>ブート構成のインポート…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="565"/>
         <location filename="../src/efibootdata.cpp" line="770"/>
         <source>Exporting boot configuration…</source>
-        <translation type="unfinished">Exporting boot configuration…</translation>
+        <translation>ブート構成のエクスポート…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="587"/>
         <location filename="../src/efibootdata.cpp" line="809"/>
         <location filename="../src/efibootdata.cpp" line="875"/>
         <source>Exporting EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Exporting EFI Boot Manager entries (%1)…</translation>
+        <translation>EFIブートマネージャーのエントリのエクスポート (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1013"/>
         <source>Importing boot configuration from JSON…</source>
-        <translation type="unfinished">Importing boot configuration from JSON…</translation>
+        <translation>JSONからブート構成をインポート…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1032"/>
@@ -604,7 +604,7 @@
         <location filename="../src/efibootdata.cpp" line="1477"/>
         <location filename="../src/efibootdata.cpp" line="1531"/>
         <source>Importing EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Importing EFI Boot Manager entries (%1)…</translation>
+        <translation>EFIブートマネージャーエントリのインポート (%1)…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1035"/>
@@ -622,7 +622,7 @@
         <location filename="../src/efibootdata.cpp" line="1548"/>
         <location filename="../src/efibootdata.cpp" line="1571"/>
         <source>%1: %2 expected</source>
-        <translation type="unfinished">%1: %2 expected</translation>
+        <translation>%1 : %2 が必要です</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1043"/>
@@ -630,7 +630,7 @@
         <location filename="../src/efibootdata.cpp" line="1053"/>
         <location filename="../src/efibootdata.cpp" line="1223"/>
         <source>number</source>
-        <translation type="unfinished">number</translation>
+        <translation>番号</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1058"/>
@@ -639,19 +639,19 @@
         <location filename="../src/efibootdata.cpp" line="1073"/>
         <location filename="../src/efibootdata.cpp" line="1078"/>
         <source>bool</source>
-        <translation type="unfinished">bool</translation>
+        <translation>bool</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1109"/>
         <source>%1: unknown boot manager capability</source>
-        <translation type="unfinished">%1: unknown boot manager capability</translation>
+        <translation>%1 : 不明なブートマネージャー機能</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1122"/>
         <location filename="../src/efibootdata.cpp" line="1166"/>
         <location filename="../src/efibootdata.cpp" line="1212"/>
         <source>array</source>
-        <translation type="unfinished">array</translation>
+        <translation>配列</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1097"/>
@@ -659,13 +659,13 @@
         <location filename="../src/efibootdata.cpp" line="1178"/>
         <location filename="../src/efibootdata.cpp" line="1333"/>
         <source>string</source>
-        <translation type="unfinished">string</translation>
+        <translation>文字列</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1156"/>
         <location filename="../src/efibootdata.cpp" line="1192"/>
         <source>%1: unknown os indication</source>
-        <translation type="unfinished">%1: unknown os indication</translation>
+        <translation>%1 : 不明なOS表示</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1083"/>
@@ -679,7 +679,7 @@
         <location filename="../src/efibootdata.cpp" line="1533"/>
         <location filename="../src/efibootdata.cpp" line="1571"/>
         <source>object</source>
-        <translation type="unfinished">object</translation>
+        <translation>オブジェクト</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1248"/>
@@ -687,13 +687,13 @@
         <location filename="../src/efibootdata.cpp" line="1494"/>
         <location filename="../src/efibootdata.cpp" line="1548"/>
         <source>hexadecimal number</source>
-        <translation type="unfinished">hexadecimal number</translation>
+        <translation>16進数</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1270"/>
         <location filename="../src/efibootdata.cpp" line="1315"/>
         <source>%1: failed parsing</source>
-        <translation type="unfinished">%1: failed parsing</translation>
+        <translation>%1 : 解析に失敗</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1340"/>
@@ -701,40 +701,40 @@
         <source>Failed to import some EFI Boot Manager entries:
 
   - %1</source>
-        <translation type="unfinished">Failed to import some EFI Boot Manager entries:
+        <translation>一部のEFIブートマネージャーエントリのインポートに失敗 :
 
   - %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1347"/>
         <source>Importing boot configuration from raw dump…</source>
-        <translation type="unfinished">Importing boot configuration from raw dump…</translation>
+        <translation>RAWダンプからブート構成をインポート…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1379"/>
         <source>object(raw_data: string, efi_attributes: number)</source>
         <extracomment>Expected JSON structure, thrown as error description. raw_data and efi_attributes are field names in JSON file</extracomment>
-        <translation type="unfinished">object(raw_data: string, efi_attributes: number)</translation>
+        <translation>オブジェクト(RAWデータ : 文字列, efi_属性 : 番号)</translation>
     </message>
     <message>
         <location filename="../include/efibootdata.h" line="15"/>
         <source>Boot</source>
-        <translation type="unfinished">Boot</translation>
+        <translation>ブート</translation>
     </message>
     <message>
         <location filename="../include/efibootdata.h" line="16"/>
         <source>Driver</source>
-        <translation type="unfinished">Driver</translation>
+        <translation>ドライバ</translation>
     </message>
     <message>
         <location filename="../include/efibootdata.h" line="17"/>
         <source>System Preparation</source>
-        <translation type="unfinished">System Preparation</translation>
+        <translation>システムの準備</translation>
     </message>
     <message>
         <location filename="../include/efibootdata.h" line="18"/>
         <source>Platform Recovery</source>
-        <translation type="unfinished">Platform Recovery</translation>
+        <translation>プラットフォームの回復</translation>
     </message>
 </context>
 <context>
@@ -742,164 +742,164 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="18"/>
         <source>EFI Boot Editor</source>
-        <translation type="unfinished">EFI Boot Editor</translation>
+        <translation>EFI Boot Editor</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="71"/>
         <location filename="../src/efibooteditor.cpp" line="412"/>
         <source>Boot</source>
-        <translation type="unfinished">Boot</translation>
+        <translation>ブート</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="74"/>
         <location filename="../src/form/efibooteditor.ui" line="98"/>
         <location filename="../src/form/efibooteditor.ui" line="101"/>
         <source>Boot entries</source>
-        <translation type="unfinished">Boot entries</translation>
+        <translation>ブートエントリ</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="77"/>
         <location filename="../src/form/efibooteditor.ui" line="104"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of Boot entries.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of Boot entries.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ブートエントリの一覧。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="133"/>
         <location filename="../src/efibooteditor.cpp" line="415"/>
         <source>Driver</source>
-        <translation type="unfinished">Driver</translation>
+        <translation>ドライバ</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="136"/>
         <location filename="../src/form/efibooteditor.ui" line="160"/>
         <location filename="../src/form/efibooteditor.ui" line="163"/>
         <source>Driver entries</source>
-        <translation type="unfinished">Driver entries</translation>
+        <translation>ドライバエントリ</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="139"/>
         <location filename="../src/form/efibooteditor.ui" line="166"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of Driver entries.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of Driver entries.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ドライバエントリの一覧。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="195"/>
         <location filename="../src/efibooteditor.cpp" line="418"/>
         <source>System Preparation</source>
-        <translation type="unfinished">System Preparation</translation>
+        <translation>システムの準備</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="198"/>
         <location filename="../src/form/efibooteditor.ui" line="222"/>
         <location filename="../src/form/efibooteditor.ui" line="225"/>
         <source>SysPrep entries</source>
-        <translation type="unfinished">SysPrep entries</translation>
+        <translation>SysPrepエントリ</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="201"/>
         <location filename="../src/form/efibooteditor.ui" line="228"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of SysPrep entries.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of SysPrep entries.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SysPrepエントリの一覧。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="257"/>
         <location filename="../src/efibooteditor.cpp" line="421"/>
         <source>Platform Recovery</source>
-        <translation type="unfinished">Platform Recovery</translation>
+        <translation>プラットフォームの回復</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="260"/>
         <source>PlatformRecovery entries</source>
-        <translation type="unfinished">PlatformRecovery entries</translation>
+        <translation>プラットフォームの回復エントリ</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="263"/>
         <location filename="../src/form/efibooteditor.ui" line="290"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of PlatformRecovery entries (READONLY).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of PlatformRecovery entries (READONLY).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;プラットフォームの回復エントリの一覧 (読み取り専用)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="284"/>
         <location filename="../src/form/efibooteditor.ui" line="287"/>
         <source>PlatformRecovery entries (READONLY)</source>
-        <translation type="unfinished">PlatformRecovery entries (READONLY)</translation>
+        <translation>プラットフォームの回復エントリ (読み取り専用)</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="346"/>
         <location filename="../src/form/efibooteditor.ui" line="349"/>
         <source>Add new entry</source>
-        <translation type="unfinished">Add new entry</translation>
+        <translation>新しいエントリの追加</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="352"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to add new boot entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to add new boot entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;新しいブート エントリを追加するには、これをクリック。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="377"/>
         <location filename="../src/form/efibooteditor.ui" line="380"/>
         <source>Duplicate entry</source>
-        <translation type="unfinished">Duplicate entry</translation>
+        <translation>エントリを複製</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="383"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duplicate entry&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Duplicate entry&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エントリを複製&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="408"/>
         <location filename="../src/form/efibooteditor.ui" line="411"/>
         <source>Remove entry</source>
-        <translation type="unfinished">Remove entry</translation>
+        <translation>エントリを削除</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="414"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to remove currently selected entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to remove currently selected entry.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;現在選択されているエントリを削除するには、これをクリック。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="439"/>
         <location filename="../src/form/efibooteditor.ui" line="442"/>
         <source>Move entry up</source>
-        <translation type="unfinished">Move entry up</translation>
+        <translation>エントリを上へ移動</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="445"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;現在選択されているエントリを上に移動するには、ここをクリック。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="470"/>
         <location filename="../src/form/efibooteditor.ui" line="473"/>
         <source>Move entry down</source>
-        <translation type="unfinished">Move entry down</translation>
+        <translation>エントリを下へ移動</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="476"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;現在選択されているエントリを下に移動するには、ここをクリック。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="501"/>
         <location filename="../src/form/efibooteditor.ui" line="504"/>
         <source>Reorder entries</source>
-        <translation type="unfinished">Reorder entries</translation>
+        <translation>エントリを並べ替え</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="507"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to adjust the order of all entries based on their position on the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to adjust the order of all entries based on their position on the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;リスト上の位置に基づいてすべてのエントリの順序を調整するには、ここをクリック。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="599"/>
         <location filename="../src/form/efibooteditor.ui" line="608"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Global settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Global settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;全般設定。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="602"/>
         <source>Global</source>
-        <translation type="unfinished">Global</translation>
+        <translation>全般</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="632"/>
@@ -907,308 +907,308 @@
         <location filename="../src/form/efibooteditor.ui" line="654"/>
         <location filename="../src/form/efibooteditor.ui" line="657"/>
         <source>Boot manager timeout</source>
-        <translation type="unfinished">Boot manager timeout</translation>
+        <translation>ブートマネージャーのタイムアウト</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="638"/>
         <location filename="../src/form/efibooteditor.ui" line="660"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot manager timeout.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot manager timeout.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ブートマネージャーのタイムアウト。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="663"/>
         <source>s</source>
-        <translation type="unfinished">s</translation>
+        <translation>秒</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="674"/>
         <location filename="../src/form/efibooteditor.ui" line="677"/>
         <location filename="../src/form/efibooteditor.ui" line="686"/>
         <source>Firmware details</source>
-        <translation type="unfinished">Firmware details</translation>
+        <translation>ファームウェアの詳細</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="680"/>
         <location filename="../src/form/efibooteditor.ui" line="689"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ファームウェアの詳細。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="683"/>
         <source>Firmware</source>
-        <translation type="unfinished">Firmware</translation>
+        <translation>ファームウェア</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="719"/>
         <location filename="../src/form/efibooteditor.ui" line="722"/>
         <source>Available firmware features</source>
-        <translation type="unfinished">Available firmware features</translation>
+        <translation>利用可能なファームウェア機能</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="725"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware features.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware features.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;利用可能なファームウェア機能。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="728"/>
         <source>Features</source>
-        <translation type="unfinished">Features</translation>
+        <translation>機能</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="737"/>
         <location filename="../src/form/efibooteditor.ui" line="740"/>
         <source>Platform supports reporting of deferred capsule processing by creation of result variable</source>
-        <translation type="unfinished">Platform supports reporting of deferred capsule processing by creation of result variable</translation>
+        <translation>プラットフォームは、遅延カプセル処理の結果を示す変数の作成による報告に対応しています</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="743"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports reporting of deferred capsule processing by creation of result variable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports reporting of deferred capsule processing by creation of result variable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;プラットフォームは、遅延カプセル処理の結果を示す変数の作成による報告に対応しています。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="746"/>
         <source>Capsule Reporting</source>
-        <translation type="unfinished">Capsule Reporting</translation>
+        <translation>カプセル報告</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="756"/>
         <location filename="../src/form/efibooteditor.ui" line="759"/>
         <source>Firmware supports timestamp based revocation</source>
-        <translation type="unfinished">Firmware supports timestamp based revocation</translation>
+        <translation>ファームウェアは、タイムスタンプに基づく失効に対応しています</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="762"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware supports timestamp based revocation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Firmware supports timestamp based revocation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ファームウェアは、タイムスタンプに基づく失効に対応しています。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="765"/>
         <source>Timestamp based revocation</source>
-        <translation type="unfinished">Timestamp based revocation</translation>
+        <translation>タイムスタンプに基づく失効</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="775"/>
         <location filename="../src/form/efibooteditor.ui" line="778"/>
         <source>Platform supports processing of Firmware Management Protocol update capsule</source>
-        <translation type="unfinished">Platform supports processing of Firmware Management Protocol update capsule</translation>
+        <translation>プラットフォームは、ファームウェア管理プロトコルのアップデートカプセルの処理に対応しています</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="781"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports processing of Firmware Management Protocol update capsule.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports processing of Firmware Management Protocol update capsule.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;プラットフォームは、ファームウェア管理プロトコルのアップデートカプセルの処理に対応しています。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="784"/>
         <source>FMP Capsule</source>
-        <translation type="unfinished">FMP Capsule</translation>
+        <translation>FMP カプセル</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="794"/>
         <location filename="../src/form/efibooteditor.ui" line="797"/>
         <source>Platform supports processing of file capsules</source>
-        <translation type="unfinished">Platform supports processing of file capsules</translation>
+        <translation>プラットフォームは、ファイルカプセルの処理に対応しています</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="800"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports processing of file capsules.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports processing of file capsules.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;プラットフォームは、ファイルカプセルの処理に対応しています。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="803"/>
         <source>File Capsule</source>
-        <translation type="unfinished">File Capsule</translation>
+        <translation>ファイルカプセル</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="828"/>
         <location filename="../src/form/efibooteditor.ui" line="831"/>
         <source>Available firmware actions</source>
-        <translation type="unfinished">Available firmware actions</translation>
+        <translation>利用可能なファームウェア操作</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="834"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware actions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware actions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;利用可能なファームウェア操作。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="837"/>
         <source>Actions</source>
-        <translation type="unfinished">Actions</translation>
+        <translation>操作</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="846"/>
         <location filename="../src/form/efibooteditor.ui" line="849"/>
         <source>Stop at a firmware user interface on the next boot</source>
-        <translation type="unfinished">Stop at a firmware user interface on the next boot</translation>
+        <translation>次回の起動時にファームウェアのユーザーインターフェースで停止</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="852"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Stop at a firmware user interface on the next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Stop at a firmware user interface on the next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;次回の起動時にファームウェアのユーザーインターフェースで停止。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="855"/>
         <source>Boot to firmware UI</source>
-        <translation type="unfinished">Boot to firmware UI</translation>
+        <translation>ファームウェアUIをブート</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="862"/>
         <location filename="../src/form/efibooteditor.ui" line="865"/>
         <source>Trigger collecting current configuration and reporting the refreshed data to EFI System Configuration Table on next boot</source>
-        <translation type="unfinished">Trigger collecting current configuration and reporting the refreshed data to EFI System Configuration Table on next boot</translation>
+        <translation>現在の構成を収集し、次回の起動時に更新されたデータをEFIシステム構成テーブルに報告するトリガー</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="868"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Trigger collecting current configuration and reporting the refreshed data to EFI System Configuration Table on next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Trigger collecting current configuration and reporting the refreshed data to EFI System Configuration Table on next boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;現在の構成を収集し、次回の起動時に更新されたデータをEFIシステム構成テーブルに報告するトリガー。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="871"/>
         <source>Collect current config</source>
-        <translation type="unfinished">Collect current config</translation>
+        <translation>現在の構成を取得</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="878"/>
         <location filename="../src/form/efibooteditor.ui" line="881"/>
         <source>Indicate that Platform-defined recovery should commence upon reboot</source>
-        <translation type="unfinished">Indicate that Platform-defined recovery should commence upon reboot</translation>
+        <translation>再起動時にプラットフォーム定義の回復を開始するように指定します</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="884"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that Platform-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that Platform-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;再起動時にプラットフォーム定義の回復を開始するように指定します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="887"/>
         <source>Start Platform recovery</source>
-        <translation type="unfinished">Start Platform recovery</translation>
+        <translation>プラットフォームの回復を開始</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="894"/>
         <location filename="../src/form/efibooteditor.ui" line="897"/>
         <source>Indicate that OS-defined recovery should commence upon reboot</source>
-        <translation type="unfinished">Indicate that OS-defined recovery should commence upon reboot</translation>
+        <translation>再起動時にOS定義のリカバリを開始するように指示する</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="900"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that OS-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Indicate that OS-defined recovery should commence upon reboot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;再起動時にOS定義のリカバリを開始するように指示する。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="903"/>
         <source>Start OS recovery</source>
-        <translation type="unfinished">Start OS recovery</translation>
+        <translation>OS の回復を開始</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="932"/>
         <location filename="../src/form/efibooteditor.ui" line="935"/>
         <location filename="../src/form/efibooteditor.ui" line="944"/>
         <source>Secure boot settings</source>
-        <translation type="unfinished">Secure boot settings</translation>
+        <translation>セキュアブートの設定</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="938"/>
         <location filename="../src/form/efibooteditor.ui" line="947"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Secure boot settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Secure boot settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;セキュアブートの設定。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="941"/>
         <location filename="../src/form/efibooteditor.ui" line="1025"/>
         <source>Secure Boot</source>
-        <translation type="unfinished">Secure Boot</translation>
+        <translation>セキュアブート</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="978"/>
         <location filename="../src/form/efibooteditor.ui" line="981"/>
         <source>Defines whether the system is currently operating in Audit Mode</source>
-        <translation type="unfinished">Defines whether the system is currently operating in Audit Mode</translation>
+        <translation>システムが現在監査モードで動作しているかどうかを定義します</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="984"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system is currently operating in Audit Mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system is currently operating in Audit Mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;システムが現在監査モードで動作しているかどうかを定義します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="987"/>
         <source>Audit Mode</source>
-        <translation type="unfinished">Audit Mode</translation>
+        <translation>監査モード</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="997"/>
         <location filename="../src/form/efibooteditor.ui" line="1000"/>
         <source>Defines whether the system is currently operating in Deployed Mode</source>
-        <translation type="unfinished">Defines whether the system is currently operating in Deployed Mode</translation>
+        <translation>システムが現在デプロイモードで動作しているかどうかを定義します</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1003"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system is currently operating in Deployed Mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system is currently operating in Deployed Mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;システムが現在デプロイモードで動作しているかどうかを定義します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1006"/>
         <source>Deployed Mode</source>
-        <translation type="unfinished">Deployed Mode</translation>
+        <translation>デプロイモード</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1016"/>
         <location filename="../src/form/efibooteditor.ui" line="1019"/>
         <source>Defines whether the platform firmware is operating with Secure Boot enabled</source>
-        <translation type="unfinished">Defines whether the platform firmware is operating with Secure Boot enabled</translation>
+        <translation>プラットフォームファームウェアがセキュアブートを有効にして動作しているかどうかを定義します</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1022"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the platform firmware is operating with Secure Boot enabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the platform firmware is operating with Secure Boot enabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;プラットフォームファームウェアがセキュアブートを有効にして動作しているかどうかを定義します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1035"/>
         <location filename="../src/form/efibooteditor.ui" line="1038"/>
         <source>Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables</source>
-        <translation type="unfinished">Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables</translation>
+        <translation>セキュアブートポリシー変数への要求時にシステムが認証を必要とするかどうかを定義します</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1041"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;セキュアブートポリシー変数への要求時にシステムが認証を必要とするかどうかを定義します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1044"/>
         <source>Setup Mode</source>
-        <translation type="unfinished">Setup Mode</translation>
+        <translation>セットアップモード</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1054"/>
         <location filename="../src/form/efibooteditor.ui" line="1057"/>
         <source>Defines whether the Security Boot Policy Variables have been modified by anyone other than the platform vendor or a holder of the vendor-provided keys</source>
-        <translation type="unfinished">Defines whether the Security Boot Policy Variables have been modified by anyone other than the platform vendor or a holder of the vendor-provided keys</translation>
+        <translation>セキュリティブートポリシー変数がプラットフォームベンダーまたはベンダー提供のキーの所有者以外の誰かによって変更されたかどうかを定義します</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1060"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the Security Boot Policy Variables have been modified by anyone other than the platform vendor or a holder of the vendor-provided keys.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the Security Boot Policy Variables have been modified by anyone other than the platform vendor or a holder of the vendor-provided keys.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;セキュリティブートポリシー変数がプラットフォームベンダーまたはベンダー提供のキーの所有者以外の誰かによって変更されたかどうかを定義します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1063"/>
         <source>Vendor Keys</source>
-        <translation type="unfinished">Vendor Keys</translation>
+        <translation>ベンダーキー</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1074"/>
         <location filename="../src/form/efibooteditor.ui" line="1077"/>
         <location filename="../src/form/efibooteditor.ui" line="1086"/>
         <source>Apple settings</source>
-        <translation type="unfinished">Apple settings</translation>
+        <translation>Apple の設定</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1080"/>
         <location filename="../src/form/efibooteditor.ui" line="1089"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apple settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apple settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apple の設定。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1083"/>
         <source>Apple</source>
-        <translation type="unfinished">Apple</translation>
+        <translation>Apple</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1113"/>
@@ -1216,343 +1216,343 @@
         <location filename="../src/form/efibooteditor.ui" line="1129"/>
         <location filename="../src/form/efibooteditor.ui" line="1132"/>
         <source>macOS boot arguments</source>
-        <translation type="unfinished">macOS boot arguments</translation>
+        <translation>macOS ブート引数</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1119"/>
         <location filename="../src/form/efibooteditor.ui" line="1135"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;macOS boot arguments.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;macOS boot arguments.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;macOS ブート引数。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1161"/>
         <location filename="../src/form/efibooteditor.ui" line="1164"/>
         <source>Undo stack</source>
-        <translation type="unfinished">Undo stack</translation>
+        <translation>元に戻すスタック</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1167"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo stack&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo stack&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;元に戻すスタック&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1194"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ファイルメニュー。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1214"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Help menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Help menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ヘルプメニュー。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1255"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Exit the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Exit the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;プログラムを終了。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1272"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apply changes to the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Apply changes to the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;システムに変更を適用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1289"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reloads EFI data from the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reloads EFI data from the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;システムから EFI データを再読み込み。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1306"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show information about the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show information about the program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;プログラムに関する情報を表示。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1320"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Export current entries into JSON.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Export current entries into JSON.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;現在のエントリを JSON にエクスポート。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1337"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Import EFI data from JSON dump.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Import EFI data from JSON dump.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JSON ダンプから EFI データをインポート。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1354"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dumps raw EFI data for debugging purposes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dumps raw EFI data for debugging purposes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;デバッグの目的でRAW EFI データをダンプ。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1362"/>
         <source>&amp;Undo</source>
-        <translation type="unfinished">&amp;Undo</translation>
+        <translation>取り消し(&amp;U)</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1365"/>
         <source>Undo</source>
-        <translation type="unfinished">Undo</translation>
+        <translation>取り消し</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1368"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Undo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;取り消し&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1371"/>
         <source>Ctrl+Z</source>
-        <translation type="unfinished">Ctrl+Z</translation>
+        <translation>Ctrl+Z</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1379"/>
         <source>&amp;Redo</source>
-        <translation type="unfinished">&amp;Redo</translation>
+        <translation>やり直し(&amp;R)</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1382"/>
         <source>Redo</source>
-        <translation type="unfinished">Redo</translation>
+        <translation>やり直し</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1385"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Redo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Redo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;やり直し&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1388"/>
         <source>Ctrl+Shift+Z</source>
-        <translation type="unfinished">Ctrl+Shift+Z</translation>
+        <translation>Ctrl+Shift+Z</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1396"/>
         <source>Hot &amp;keys</source>
-        <translation type="unfinished">Hot &amp;keys</translation>
+        <translation>ホットキー(&amp;K)</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1399"/>
         <source>Hot Keys</source>
-        <translation type="unfinished">Hot Keys</translation>
+        <translation>ホットキー</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1402"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ホットキー&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="593"/>
         <location filename="../src/form/efibooteditor.ui" line="596"/>
         <location filename="../src/form/efibooteditor.ui" line="605"/>
         <source>Global settings</source>
-        <translation type="unfinished">Global settings</translation>
+        <translation>全般設定</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="641"/>
         <source>Timeout</source>
-        <translation type="unfinished">Timeout</translation>
+        <translation>タイムアウト</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1122"/>
         <source>Boot args</source>
-        <translation type="unfinished">Boot args</translation>
+        <translation>ブート引数</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1188"/>
         <location filename="../src/form/efibooteditor.ui" line="1191"/>
         <source>File</source>
-        <translation type="unfinished">File</translation>
+        <translation>ファイル</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1197"/>
         <source>&amp;File</source>
-        <translation type="unfinished">&amp;File</translation>
+        <translation>ファイル(&amp;F)</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1208"/>
         <location filename="../src/form/efibooteditor.ui" line="1211"/>
         <source>Help</source>
-        <translation type="unfinished">Help</translation>
+        <translation>ヘルプ</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1217"/>
         <source>&amp;Help</source>
-        <translation type="unfinished">&amp;Help</translation>
+        <translation>ヘルプ(&amp;H)</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1225"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished">&amp;Edit</translation>
+        <translation>編集(&amp;E)</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1249"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Quit</translation>
+        <translation>終了(&amp;Q)</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1252"/>
         <source>Quit</source>
-        <translation type="unfinished">Quit</translation>
+        <translation>終了</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1258"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1266"/>
         <source>&amp;Save</source>
-        <translation type="unfinished">&amp;Save</translation>
+        <translation>保存(&amp;S)</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1269"/>
         <source>Save</source>
-        <translation type="unfinished">Save</translation>
+        <translation>保存</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1275"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished">Ctrl+S</translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1283"/>
         <source>&amp;Reload</source>
-        <translation type="unfinished">&amp;Reload</translation>
+        <translation>再読み込み(&amp;R)</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1286"/>
         <source>Reload</source>
-        <translation type="unfinished">Reload</translation>
+        <translation>再読み込み</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1292"/>
         <source>Ctrl+R</source>
-        <translation type="unfinished">Ctrl+R</translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1300"/>
         <source>About &amp;EFI Boot Editor</source>
-        <translation type="unfinished">About &amp;EFI Boot Editor</translation>
+        <translation>EFI Boot Editor について(&amp;E)</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1303"/>
         <location filename="../src/efibooteditor.cpp" line="29"/>
         <source>About EFI Boot Editor</source>
-        <translation type="unfinished">About EFI Boot Editor</translation>
+        <translation>EFI Boot Editor について</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1314"/>
         <source>&amp;Export</source>
-        <translation type="unfinished">&amp;Export</translation>
+        <translation>エクスポート(&amp;E)</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1317"/>
         <source>Export</source>
-        <translation type="unfinished">Export</translation>
+        <translation>エクスポート</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1323"/>
         <source>Ctrl+E</source>
-        <translation type="unfinished">Ctrl+E</translation>
+        <translation>Ctrl+E</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1331"/>
         <source>&amp;Import</source>
-        <translation type="unfinished">&amp;Import</translation>
+        <translation>インポート(&amp;I)</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1334"/>
         <source>Import</source>
-        <translation type="unfinished">Import</translation>
+        <translation>インポート</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1340"/>
         <source>Ctrl+I</source>
-        <translation type="unfinished">Ctrl+I</translation>
+        <translation>Ctrl+I</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1348"/>
         <source>&amp;Dump raw EFI data</source>
-        <translation type="unfinished">&amp;Dump raw EFI data</translation>
+        <translation>RAW EFIデータをダンプ(&amp;D)</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1351"/>
         <source>Dump raw EFI data</source>
-        <translation type="unfinished">Dump raw EFI data</translation>
+        <translation>RAW EFIデータをダンプ</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="26"/>
         <source>Working…</source>
-        <translation type="unfinished">Working…</translation>
+        <translation>処理中…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="92"/>
         <source>Undo %1</source>
-        <translation type="unfinished">Undo %1</translation>
+        <translation>取り消し %1</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="95"/>
         <source>Redo %1</source>
-        <translation type="unfinished">Redo %1</translation>
+        <translation>やり直し %1</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="137"/>
         <source>Are you sure you want to reload the entries?&lt;br/&gt;ALL of your changes will be lost!</source>
-        <translation type="unfinished">Are you sure you want to reload the entries?&lt;br/&gt;ALL of your changes will be lost!</translation>
+        <translation>エントリを再読み込みしますか?&lt;br/&gt;すべての変更が失われます!</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="162"/>
         <source>Are you sure you want to reorder the boot entries?&lt;br/&gt;All indexes will be overwritten!</source>
-        <translation type="unfinished">Are you sure you want to reorder the boot entries?&lt;br/&gt;All indexes will be overwritten!</translation>
+        <translation>ブートエントリの順序を変更しますか?&lt;br/&gt;すべてのインデックスが上書きされます!</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="221"/>
         <source>Are you sure you want to save?&lt;br/&gt;Your EFI configuration will be overwritten!</source>
-        <translation type="unfinished">Are you sure you want to save?&lt;br/&gt;Your EFI configuration will be overwritten!</translation>
+        <translation>本当に保存しますか?&lt;br/&gt;EFI 構成が上書きされます!</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="230"/>
         <source>Open boot configuration dump</source>
-        <translation type="unfinished">Open boot configuration dump</translation>
+        <translation>ブート構成ダンプを開く</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="230"/>
         <location filename="../src/efibooteditor.cpp" line="248"/>
         <location filename="../src/efibooteditor.cpp" line="260"/>
         <source>JSON documents (*.json)</source>
-        <translation type="unfinished">JSON documents (*.json)</translation>
+        <translation>JSON ドキュメント (*.json)</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="248"/>
         <source>Save boot configuration dump</source>
-        <translation type="unfinished">Save boot configuration dump</translation>
+        <translation>ブート構成ダンプを保存</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="260"/>
         <source>Save raw EFI dump</source>
-        <translation type="unfinished">Save raw EFI dump</translation>
+        <translation>RAW EFIダンプを保存</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="31"/>
         <source>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</source>
         <extracomment>About dialog</extracomment>
-        <translation type="unfinished">&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</translation>
+        <translation>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;(U)EFI ベースシステムのブートエディタ。&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="45"/>
         <source>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; for EFI variables access.&lt;/p&gt;&lt;p&gt;Uses Tango Icons as fallback icons.&lt;/p&gt;</source>
         <extracomment>About dialog details</extracomment>
-        <translation type="unfinished">&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; for EFI variables access.&lt;/p&gt;&lt;p&gt;Uses Tango Icons as fallback icons.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;このプログラムは現状のまま提供され、デザイン、商品性、特定目的への適合性に対する保証を含め、いかなる種類の保証も行われません。&lt;/p&gt;&lt;p&gt;ライセンス : &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Linux では、EFI 変数アクセスに &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; を使用します。&lt;/p&gt;&lt;p&gt;フォールバック アイコンとして Tango アイコンを使用します。&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="330"/>
         <source>Reorder %1 entries</source>
-        <translation type="unfinished">Reorder %1 entries</translation>
+        <translation>%1 エントリを並べ替え</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="453"/>
         <source>Are you sure you want to quit?</source>
-        <translation type="unfinished">Are you sure you want to quit?</translation>
+        <translation>本当に終了しますか?</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="123"/>
         <source>EFI support required</source>
-        <translation type="unfinished">EFI support required</translation>
+        <translation>EFIサポートが必要</translation>
     </message>
 </context>
 <context>
@@ -1560,55 +1560,55 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="13"/>
         <source>Boot Editor for (U)EFI based systems.</source>
-        <translation type="unfinished">Boot Editor for (U)EFI based systems.</translation>
+        <translation>(U)EFI ベースシステムのブートエディタ。</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <source>Export configuration.</source>
-        <translation type="unfinished">Export configuration.</translation>
+        <translation>構成のエクスポート。</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>FILE</source>
-        <translation type="unfinished">FILE</translation>
+        <translation>FILE</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <source>Dump raw EFI data.</source>
-        <translation type="unfinished">Dump raw EFI data.</translation>
+        <translation>RAW EFI データをダンプ。</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>Import configuration from JSON (either from export or raw dump).</source>
-        <translation type="unfinished">Import configuration from JSON (either from export or raw dump).</translation>
+        <translation>JSONから構成をインポート (エクスポートまたはRAWダンプから)。</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="19"/>
         <source>Force import, don&apos;t ask for confirmation.</source>
-        <translation type="unfinished">Force import, don&apos;t ask for confirmation.</translation>
+        <translation>強制的にインポートし、確認を求めません。</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="26"/>
         <source>EFI support required</source>
-        <translation type="unfinished">EFI support required</translation>
+        <translation>EFIサポートが必要</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="45"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation type="unfinished">Loading EFI Boot Manager entries…</translation>
+        <translation>EFI ブート マネージャーのエントリを読み込んでいます…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="47"/>
         <location filename="../src/efibooteditorcli.cpp" line="57"/>
         <source>Exporting boot configuration…</source>
-        <translation type="unfinished">Exporting boot configuration…</translation>
+        <translation>ブート構成をエクスポートしています…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="67"/>
         <source>Importing boot configuration…</source>
-        <translation type="unfinished">Importing boot configuration…</translation>
+        <translation>ブート構成をインポートしています…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
@@ -1616,49 +1616,49 @@
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Loaded %0 %1 entries</source>
-        <translation type="unfinished">Loaded %0 %1 entries</translation>
+        <translation>%0 %1 エントリを読み込みました</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
         <source>Boot</source>
-        <translation type="unfinished">Boot</translation>
+        <translation>ブート</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="72"/>
         <source>Driver</source>
-        <translation type="unfinished">Driver</translation>
+        <translation>ドライバ</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <source>System Preparation</source>
-        <translation type="unfinished">System Preparation</translation>
+        <translation>システムの準備</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Hot Key</source>
-        <translation type="unfinished">Hot Key</translation>
+        <translation>ホットキー</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="78"/>
         <source>Are you sure you want to save?
 Your EFI configuration will be overwritten!</source>
-        <translation type="unfinished">Are you sure you want to save?
-Your EFI configuration will be overwritten!</translation>
+        <translation>本当に保存しますか?
+EFI 構成が上書きされます!</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="86"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation type="unfinished">Saving EFI Boot Manager entries…</translation>
+        <translation>EFI ブート マネージャーのエントリを保存しています…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="98"/>
         <source>ERROR: %0! %1</source>
-        <translation type="unfinished">ERROR: %0! %1</translation>
+        <translation>エラー : %0! %1</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="114"/>
         <source>Finished</source>
-        <translation type="unfinished">Finished</translation>
+        <translation>完了</translation>
     </message>
 </context>
 <context>
@@ -1666,7 +1666,7 @@ Your EFI configuration will be overwritten!</translation>
     <message>
         <location filename="../src/efikeysequenceedit.cpp" line="109"/>
         <source>Press hot key</source>
-        <translation type="unfinished">Press hot key</translation>
+        <translation>ホットキーを押す</translation>
     </message>
 </context>
 <context>
@@ -1674,12 +1674,12 @@ Your EFI configuration will be overwritten!</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="12"/>
         <source>File path editor</source>
-        <translation type="unfinished">File path editor</translation>
+        <translation>ファイルパス エディタ</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="47"/>
         <source>PCI</source>
-        <translation type="unfinished">PCI</translation>
+        <translation>PCI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="80"/>
@@ -1689,14 +1689,14 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="202"/>
         <location filename="../src/form/filepathdialog.ui" line="218"/>
         <source>Function</source>
-        <translation type="unfinished">Function</translation>
+        <translation>機能</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="121"/>
         <location filename="../src/form/filepathdialog.ui" line="127"/>
         <location filename="../src/form/filepathdialog.ui" line="143"/>
         <source>Device</source>
-        <translation type="unfinished">Device</translation>
+        <translation>デバイス</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="721"/>
@@ -1706,7 +1706,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="841"/>
         <location filename="../src/form/filepathdialog.ui" line="856"/>
         <source>HID</source>
-        <translation type="unfinished">HID</translation>
+        <translation>HID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="761"/>
@@ -1716,17 +1716,17 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="881"/>
         <location filename="../src/form/filepathdialog.ui" line="896"/>
         <source>UID</source>
-        <translation type="unfinished">UID</translation>
+        <translation>UID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1813"/>
         <source>USB</source>
-        <translation type="unfinished">USB</translation>
+        <translation>USB</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1819"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;USB の設定。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1887"/>
@@ -1736,22 +1736,22 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="3694"/>
         <location filename="../src/form/filepathdialog.ui" line="3710"/>
         <source>Interface</source>
-        <translation type="unfinished">Interface</translation>
+        <translation>インタフェース</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7442"/>
         <source>Vendor</source>
-        <translation type="unfinished">Vendor</translation>
+        <translation>ベンダー</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7445"/>
         <source>Vendor settings</source>
-        <translation type="unfinished">Vendor settings</translation>
+        <translation>ベンダー設定</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7448"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vendor settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ベンダー設定。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1772"/>
@@ -1771,7 +1771,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7531"/>
         <location filename="../src/form/filepathdialog.ui" line="7546"/>
         <source>GUID</source>
-        <translation type="unfinished">GUID</translation>
+        <translation>GUID</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5539"/>
@@ -1780,7 +1780,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7850"/>
         <location filename="../src/form/filepathdialog.ui" line="7853"/>
         <source>Data format</source>
-        <translation type="unfinished">Data format</translation>
+        <translation>データ形式</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5542"/>
@@ -1788,7 +1788,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7590"/>
         <location filename="../src/form/filepathdialog.ui" line="7856"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;データ形式。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1163"/>
@@ -1797,7 +1797,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7594"/>
         <location filename="../src/form/filepathdialog.ui" line="7860"/>
         <source>BASE64</source>
-        <translation type="unfinished">BASE64</translation>
+        <translation>BASE64</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1168"/>
@@ -1806,7 +1806,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7599"/>
         <location filename="../src/form/filepathdialog.ui" line="7865"/>
         <source>UTF-16</source>
-        <translation type="unfinished">UTF-16</translation>
+        <translation>UTF-16</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1173"/>
@@ -1815,7 +1815,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7604"/>
         <location filename="../src/form/filepathdialog.ui" line="7870"/>
         <source>UTF-8</source>
-        <translation type="unfinished">UTF-8</translation>
+        <translation>UTF-8</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1178"/>
@@ -1824,7 +1824,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7609"/>
         <location filename="../src/form/filepathdialog.ui" line="7875"/>
         <source>HEX</source>
-        <translation type="unfinished">HEX</translation>
+        <translation>HEX</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5517"/>
@@ -1839,17 +1839,17 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7888"/>
         <location filename="../src/form/filepathdialog.ui" line="7891"/>
         <source>Data</source>
-        <translation type="unfinished">Data</translation>
+        <translation>データ</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7894"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;データ。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7565"/>
         <source>Vendor data</source>
-        <translation type="unfinished">Vendor data</translation>
+        <translation>ベンダー データ</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7472"/>
@@ -1859,50 +1859,50 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7497"/>
         <location filename="../src/form/filepathdialog.ui" line="7757"/>
         <source>Type</source>
-        <translation type="unfinished">Type</translation>
+        <translation>種類</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7478"/>
         <location filename="../src/form/filepathdialog.ui" line="7500"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;種類。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7504"/>
         <source>HW</source>
-        <translation type="unfinished">HW</translation>
+        <translation>HW</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7509"/>
         <source>MSG</source>
-        <translation type="unfinished">MSG</translation>
+        <translation>MSG</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7514"/>
         <source>MEDIA</source>
-        <translation type="unfinished">MEDIA</translation>
+        <translation>MEDIA</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2292"/>
         <location filename="../src/form/filepathdialog.ui" line="2298"/>
         <location filename="../src/form/filepathdialog.ui" line="2313"/>
         <source>MAC</source>
-        <translation type="unfinished">MAC</translation>
+        <translation>MAC</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2265"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC 設定。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2374"/>
         <source>IPv4</source>
-        <translation type="unfinished">IPv4</translation>
+        <translation>IPv4</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2380"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv4 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv4 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv4 設定。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2569"/>
@@ -1916,18 +1916,18 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4132"/>
         <location filename="../src/form/filepathdialog.ui" line="6616"/>
         <source>Protocol</source>
-        <translation type="unfinished">Protocol</translation>
+        <translation>プロトコル</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3003"/>
         <source>Static</source>
-        <translation type="unfinished">Static</translation>
+        <translation>静的</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2692"/>
         <location filename="../src/form/filepathdialog.ui" line="2713"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnet mask.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subnet mask.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;サブネットマスク。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2730"/>
@@ -1935,32 +1935,32 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="5486"/>
         <location filename="../src/form/filepathdialog.ui" line="5503"/>
         <source>IPv6</source>
-        <translation type="unfinished">IPv6</translation>
+        <translation>IPv6</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2736"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv6 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv6 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv6 設定。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3008"/>
         <source>Stateless auto-configuration</source>
-        <translation type="unfinished">Stateless auto-configuration</translation>
+        <translation>ステートレス自動構成</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3013"/>
         <source>Stateful auto-configuration</source>
-        <translation type="unfinished">Stateful auto-configuration</translation>
+        <translation>ステートフル自動構成</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3920"/>
         <source>SATA</source>
-        <translation type="unfinished">SATA</translation>
+        <translation>SATA</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3926"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SATA settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SATA settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SATA 設定。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1387"/>
@@ -1991,7 +1991,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4994"/>
         <location filename="../src/form/filepathdialog.ui" line="5009"/>
         <source>LUN</source>
-        <translation type="unfinished">LUN</translation>
+        <translation>LUN</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4846"/>
@@ -1999,58 +1999,58 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="4885"/>
         <location filename="../src/form/filepathdialog.ui" line="4901"/>
         <source>URI</source>
-        <translation type="unfinished">URI</translation>
+        <translation>URI</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6096"/>
         <location filename="../src/form/filepathdialog.ui" line="6099"/>
         <location filename="../src/form/filepathdialog.ui" line="6105"/>
         <source>Disk</source>
-        <translation type="unfinished">Disk</translation>
+        <translation>ディスク</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6102"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ディスク。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6123"/>
         <location filename="../src/form/filepathdialog.ui" line="6126"/>
         <source>Choose disk</source>
-        <translation type="unfinished">Choose disk</translation>
+        <translation>ディスクの選択</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6129"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Choose disk from discovered in the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Choose disk from discovered in the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;システムで検出されたディスクを選択。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6133"/>
         <source>Custom</source>
-        <translation type="unfinished">Custom</translation>
+        <translation>カスタム</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6147"/>
         <location filename="../src/form/filepathdialog.ui" line="6150"/>
         <source>Reload drives</source>
-        <translation type="unfinished">Reload drives</translation>
+        <translation>ドライブの再読み込み</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6153"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reload system drives list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reload system drives list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;システム ドライブ リストを再読み込み。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6343"/>
         <source>MBR</source>
-        <translation type="unfinished">MBR</translation>
+        <translation>MBR</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6177"/>
         <location filename="../src/form/filepathdialog.ui" line="6183"/>
         <location filename="../src/form/filepathdialog.ui" line="6199"/>
         <source>Partition</source>
-        <translation type="unfinished">Partition</translation>
+        <translation>パーティション</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="6720"/>
@@ -2060,24 +2060,24 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="6797"/>
         <location filename="../src/form/filepathdialog.ui" line="6812"/>
         <source>Name</source>
-        <translation type="unfinished">Name</translation>
+        <translation>名前</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7176"/>
         <source>BIOS Boot Specification</source>
-        <translation type="unfinished">BIOS Boot Specification</translation>
+        <translation>BIOS ブート仕様</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7405"/>
         <location filename="../src/form/filepathdialog.ui" line="7411"/>
         <location filename="../src/form/filepathdialog.ui" line="7427"/>
         <source>Description</source>
-        <translation type="unfinished">Description</translation>
+        <translation>説明</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7639"/>
         <source>End</source>
-        <translation type="unfinished">End</translation>
+        <translation>終了</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7669"/>
@@ -2087,124 +2087,124 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7694"/>
         <location filename="../src/form/filepathdialog.ui" line="7797"/>
         <source>Sub-Type</source>
-        <translation type="unfinished">Sub-Type</translation>
+        <translation>サブタイプ</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7675"/>
         <location filename="../src/form/filepathdialog.ui" line="7697"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sub-Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sub-Type.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;サブタイプ。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7701"/>
         <source>End This Instance</source>
-        <translation type="unfinished">End This Instance</translation>
+        <translation>このインスタンスを終了</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="7706"/>
         <source>End Entire</source>
-        <translation type="unfinished">End Entire</translation>
+        <translation>全体終了</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="620"/>
         <location filename="../src/form/filepathdialog.ui" line="7718"/>
         <source>Unknown</source>
-        <translation type="unfinished">Unknown</translation>
+        <translation>不明</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="50"/>
         <source>The Device Path for PCI defines the path to the PCI configuration space address for a PCI device.</source>
-        <translation type="unfinished">The Device Path for PCI defines the path to the PCI configuration space address for a PCI device.</translation>
+        <translation>PCI のデバイス パスは、PCI デバイスの PCI 構成空間アドレスへのパスを定義します。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="53"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Device Path for PCI defines the path to the PCI configuration space address for a PCI device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Device Path for PCI defines the path to the PCI configuration space address for a PCI device.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI のデバイス パスは、PCI デバイスの PCI 構成空間アドレスへのパスを定義します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="77"/>
         <location filename="../src/form/filepathdialog.ui" line="99"/>
         <source>PCI Function Number.</source>
-        <translation type="unfinished">PCI Function Number.</translation>
+        <translation>PCI 機能番号。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="83"/>
         <location filename="../src/form/filepathdialog.ui" line="105"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Function Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Function Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI 機能番号。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="118"/>
         <location filename="../src/form/filepathdialog.ui" line="140"/>
         <source>PCI Device Number.</source>
-        <translation type="unfinished">PCI Device Number.</translation>
+        <translation>PCI デバイス番号。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="124"/>
         <location filename="../src/form/filepathdialog.ui" line="146"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Device Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI Device Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCI デバイス番号。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="163"/>
         <source>PCCARD</source>
-        <translation type="unfinished">PCCARD</translation>
+        <translation>PCCARD</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="166"/>
         <source>PCCARD Settings.</source>
-        <translation type="unfinished">PCCARD Settings.</translation>
+        <translation>PCCARD 設定。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="169"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCCARD Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCCARD Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PCCARD 設定。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="193"/>
         <location filename="../src/form/filepathdialog.ui" line="215"/>
         <source>Function Number (0 = First Function).</source>
-        <translation type="unfinished">Function Number (0 = First Function).</translation>
+        <translation>機能番号 (0 = 最初の機能).</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="199"/>
         <location filename="../src/form/filepathdialog.ui" line="221"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Function Number (0 = First Function).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Function Number (0 = First Function).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;機能番号 (0 = 最初の機能)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="238"/>
         <source>Memory Mapped</source>
-        <translation type="unfinished">Memory Mapped</translation>
+        <translation>メモリマップ</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="241"/>
         <source>Memory Mapped Settings.</source>
-        <translation type="unfinished">Memory Mapped Settings.</translation>
+        <translation>メモリマップ設定。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="244"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Memory Mapped Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Memory Mapped Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;メモリマップ設定。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="268"/>
         <location filename="../src/form/filepathdialog.ui" line="290"/>
         <source>The type of memory to allocate.</source>
-        <translation type="unfinished">The type of memory to allocate.</translation>
+        <translation>割り当てるメモリのタイプ。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="271"/>
         <location filename="../src/form/filepathdialog.ui" line="277"/>
         <location filename="../src/form/filepathdialog.ui" line="293"/>
         <source>Memory Type</source>
-        <translation type="unfinished">Memory Type</translation>
+        <translation>メモリのタイプ</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="274"/>
         <location filename="../src/form/filepathdialog.ui" line="296"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The type of memory to allocate.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The type of memory to allocate.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;割り当てるメモリのタイプ。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="300"/>
@@ -2224,82 +2224,82 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="6868"/>
         <location filename="../src/form/filepathdialog.ui" line="6883"/>
         <source>Reserved</source>
-        <translation type="unfinished">Reserved</translation>
+        <translation>予約済み</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="305"/>
         <source>Loader Code</source>
-        <translation type="unfinished">Loader Code</translation>
+        <translation>ローダーコード</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="310"/>
         <source>Loader Data</source>
-        <translation type="unfinished">Loader Data</translation>
+        <translation>ローダーデータ</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="315"/>
         <source>Boot Services Code</source>
-        <translation type="unfinished">Boot Services Code</translation>
+        <translation>ブートサービスコード</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="320"/>
         <source>Boot Services Data</source>
-        <translation type="unfinished">Boot Services Data</translation>
+        <translation>ブートサービスデータ</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="325"/>
         <source>Runtime Services Code</source>
-        <translation type="unfinished">Runtime Services Code</translation>
+        <translation>ランタイムサービスコード</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="330"/>
         <source>Runtime Services Data</source>
-        <translation type="unfinished">Runtime Services Data</translation>
+        <translation>ランタイムサービスデータ</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="335"/>
         <source>Conventional</source>
-        <translation type="unfinished">Conventional</translation>
+        <translation>従来</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="340"/>
         <source>Unusable</source>
-        <translation type="unfinished">Unusable</translation>
+        <translation>使用不可</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="345"/>
         <source>ACPI Reclaim</source>
-        <translation type="unfinished">ACPI Reclaim</translation>
+        <translation>ACPI 再利用</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="350"/>
         <source>ACPI Memory NVS</source>
-        <translation type="unfinished">ACPI Memory NVS</translation>
+        <translation>ACPI メモリ NVS</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="355"/>
         <source>Memory Mapped IO</source>
-        <translation type="unfinished">Memory Mapped IO</translation>
+        <translation>メモリマップ IO</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="360"/>
         <source>Memory Mapped IO Port Space</source>
-        <translation type="unfinished">Memory Mapped IO Port Space</translation>
+        <translation>メモリマップ IO ポート空間</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="365"/>
         <source>Pal Code</source>
-        <translation type="unfinished">Pal Code</translation>
+        <translation>PAL コード</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="370"/>
         <source>Persistent</source>
-        <translation type="unfinished">Persistent</translation>
+        <translation>永続</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="375"/>
         <source>Unaccepted</source>
-        <translation type="unfinished">Unaccepted</translation>
+        <translation>未承認</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="383"/>
@@ -2307,14 +2307,14 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7013"/>
         <location filename="../src/form/filepathdialog.ui" line="7034"/>
         <source>Starting Memory Address.</source>
-        <translation type="unfinished">Starting Memory Address.</translation>
+        <translation>開始メモリ アドレス。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="386"/>
         <location filename="../src/form/filepathdialog.ui" line="392"/>
         <location filename="../src/form/filepathdialog.ui" line="407"/>
         <source>Start Address</source>
-        <translation type="unfinished">Start Address</translation>
+        <translation>開始アドレス</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="389"/>
@@ -2322,7 +2322,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7019"/>
         <location filename="../src/form/filepathdialog.ui" line="7040"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starting Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starting Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;開始メモリ アドレス。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="423"/>
@@ -2330,14 +2330,14 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7053"/>
         <location filename="../src/form/filepathdialog.ui" line="7074"/>
         <source>Ending Memory Address.</source>
-        <translation type="unfinished">Ending Memory Address.</translation>
+        <translation>終了メモリアドレス。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="426"/>
         <location filename="../src/form/filepathdialog.ui" line="432"/>
         <location filename="../src/form/filepathdialog.ui" line="447"/>
         <source>End Address</source>
-        <translation type="unfinished">End Address</translation>
+        <translation>終了アドレス</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="429"/>
@@ -2345,7 +2345,7 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="7059"/>
         <location filename="../src/form/filepathdialog.ui" line="7080"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ending Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ending Memory Address.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;終了メモリアドレス。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="467"/>
@@ -2353,39 +2353,39 @@ Your EFI configuration will be overwritten!</translation>
         <location filename="../src/form/filepathdialog.ui" line="506"/>
         <location filename="../src/form/filepathdialog.ui" line="522"/>
         <source>Controller</source>
-        <translation type="unfinished">Controller</translation>
+        <translation>コントローラ</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="470"/>
         <source>Controller settings.</source>
-        <translation type="unfinished">Controller settings.</translation>
+        <translation>コントローラ設定。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="473"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controller settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controller settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;コントローラ設定。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="497"/>
         <location filename="../src/form/filepathdialog.ui" line="519"/>
         <source>Controller number.</source>
-        <translation type="unfinished">Controller number.</translation>
+        <translation>コントローラ番号。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="503"/>
         <location filename="../src/form/filepathdialog.ui" line="525"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controller number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controller number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;コントローラ番号。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="542"/>
         <source>BMC</source>
-        <translation type="unfinished">BMC</translation>
+        <translation>BMC</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="545"/>
         <source>The Device Path for a Baseboard Management Controller (BMC) host interface.</source>
-        <translation type="unfinished">The Device Path for a Baseboard Management Controller (BMC) host interface.</translation>
+        <translation>ベースボード管理コントローラ (BMC) ホスト インターフェイスのデバイス パス。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="548"/>
