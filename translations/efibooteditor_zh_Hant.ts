@@ -64,12 +64,12 @@
         <location filename="../src/form/bootentryform.ui" line="147"/>
         <location filename="../src/form/bootentryform.ui" line="150"/>
         <source>Hot Keys</source>
-        <translation type="unfinished">Hot Keys</translation>
+        <translation>熱鍵</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="153"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hot Keys&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;熱鍵&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="188"/>
@@ -192,7 +192,7 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="540"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Is entry considered for automatic boot?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Is entry considered for automatic boot?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;自動啟動時是否考慮此條目？&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="569"/>
@@ -209,7 +209,7 @@
         <location filename="../src/form/bootentryform.ui" line="537"/>
         <location filename="../src/form/bootentryform.ui" line="543"/>
         <source>Active</source>
-        <translation type="unfinished">Active</translation>
+        <translation>啟用</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="579"/>
@@ -269,27 +269,27 @@
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="184"/>
         <source>index</source>
-        <translation type="unfinished">index</translation>
+        <translation>索引</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="200"/>
         <source>description</source>
-        <translation type="unfinished">description</translation>
+        <translation>描述</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="237"/>
         <source>optional data</source>
-        <translation type="unfinished">optional data</translation>
+        <translation>選擇性資料</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="253"/>
         <source>attributes</source>
-        <translation type="unfinished">attributes</translation>
+        <translation>屬性</translation>
     </message>
     <message>
         <location filename="../src/bootentrylistmodel.cpp" line="269"/>
         <source>next boot</source>
-        <translation type="unfinished">next boot</translation>
+        <translation>下次啟動</translation>
     </message>
 </context>
 <context>
@@ -334,7 +334,7 @@
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="218"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry description, human readable name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot entry description, human readable name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;啟動條目描述，人類可理解的名稱。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="67"/>
@@ -346,18 +346,18 @@
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="73"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot device path.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;啟動裝置路徑。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="113"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data, arguments passed to boot executable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Optional data, arguments passed to boot executable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;選擇性資料，傳送到啟動執行檔的參數。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="175"/>
         <location filename="../src/form/bootentrywidget.ui" line="178"/>
         <source>Boot entry index</source>
-        <translation type="unfinished">Boot entry index</translation>
+        <translation>啟動條目索引</translation>
     </message>
     <message>
         <location filename="../src/form/bootentrywidget.ui" line="184"/>
@@ -406,7 +406,7 @@
         <source>Failed to load some EFI Boot Manager entries:
 
   - %1</source>
-        <translation type="unfinished">Failed to load some EFI Boot Manager entries:
+        <translation>某些 EFI Boot Manager 條目載入失敗：
 
   - %1</translation>
     </message>
@@ -447,7 +447,7 @@
         <location filename="../src/efibootdata.cpp" line="1340"/>
         <location filename="../src/efibootdata.cpp" line="1584"/>
         <source>Error importing boot configuration</source>
-        <translation type="unfinished">Error importing boot configuration</translation>
+        <translation>匯入啟動設定時發生錯誤</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="533"/>
@@ -469,7 +469,7 @@
         <location filename="../src/efibootdata.cpp" line="569"/>
         <location filename="../src/efibootdata.cpp" line="759"/>
         <source>Error exporting boot configuration</source>
-        <translation type="unfinished">Error exporting boot configuration</translation>
+        <translation>匯出啟動設定時發生錯誤</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="569"/>
@@ -494,7 +494,7 @@
         <source>Failed to dump some EFI Boot Manager entries:
 
   - %1</source>
-        <translation type="unfinished">Failed to dump some EFI Boot Manager entries:
+        <translation>傾印某些 EFI Boot Manager 條目時發生錯誤：
 
   - %1</translation>
     </message>
@@ -516,29 +516,29 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="73"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation type="unfinished">Loading EFI Boot Manager entries…</translation>
+        <translation>正在載入 EFI Boot Manager 條目…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="89"/>
         <location filename="../src/efibootdata.cpp" line="787"/>
         <source>Searching EFI Boot Manager entries…</source>
-        <translation type="unfinished">Searching EFI Boot Manager entries…</translation>
+        <translation>正在搜尋 EFI Boot Manager 條目…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="116"/>
         <location filename="../src/efibootdata.cpp" line="292"/>
         <source>Processing EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Processing EFI Boot Manager entries (%1)…</translation>
+        <translation>正在處理 EFI Boot Manager 條目（%1）…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="308"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation type="unfinished">Saving EFI Boot Manager entries…</translation>
+        <translation>正在儲存 EFI Boot Manager 條目…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="333"/>
         <source>Searching old EFI Boot Manager entries…</source>
-        <translation type="unfinished">Searching old EFI Boot Manager entries…</translation>
+        <translation>正在搜尋舊的 EFI Boot Manager 條目…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="374"/>
@@ -549,54 +549,54 @@
         <location filename="../src/efibootdata.cpp" line="491"/>
         <location filename="../src/efibootdata.cpp" line="513"/>
         <source>Saving EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Saving EFI Boot Manager entries (%1)…</translation>
+        <translation>正在儲存 EFI Boot Manager 條目（%1）…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="467"/>
         <source>Removing old EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Removing old EFI Boot Manager entries (%1)…</translation>
+        <translation>正在移除舊的 EFI Boot Manager 條目（%1）…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="404"/>
         <location filename="../src/efibootdata.cpp" line="501"/>
         <source>Removing EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Removing EFI Boot Manager entries (%1)…</translation>
+        <translation>正在移除 EFI Boot Manager 條目（%1）…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="94"/>
         <location filename="../src/efibootdata.cpp" line="338"/>
         <location filename="../src/efibootdata.cpp" line="792"/>
         <source>Couldn&apos;t load EFI Boot Manager variables</source>
-        <translation type="unfinished">Couldn&apos;t load EFI Boot Manager variables</translation>
+        <translation>無法載入 EFI Boot Manager 變數</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="100"/>
         <location filename="../src/efibootdata.cpp" line="799"/>
         <source>Couldn&apos;t find any EFI Boot Manager variables</source>
-        <translation type="unfinished">Couldn&apos;t find any EFI Boot Manager variables</translation>
+        <translation>找不到任何 EFI Boot Manager 變數</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="529"/>
         <source>Importing boot configuration…</source>
-        <translation type="unfinished">Importing boot configuration…</translation>
+        <translation>正在匯入啟動設定…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="565"/>
         <location filename="../src/efibootdata.cpp" line="770"/>
         <source>Exporting boot configuration…</source>
-        <translation type="unfinished">Exporting boot configuration…</translation>
+        <translation>正在匯出啟動設定…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="587"/>
         <location filename="../src/efibootdata.cpp" line="809"/>
         <location filename="../src/efibootdata.cpp" line="875"/>
         <source>Exporting EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Exporting EFI Boot Manager entries (%1)…</translation>
+        <translation>正在匯出 EFI Boot Manager 條目（%1）…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1013"/>
         <source>Importing boot configuration from JSON…</source>
-        <translation type="unfinished">Importing boot configuration from JSON…</translation>
+        <translation>正在從 JSON 檔匯入啟動設定…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1032"/>
@@ -604,7 +604,7 @@
         <location filename="../src/efibootdata.cpp" line="1477"/>
         <location filename="../src/efibootdata.cpp" line="1531"/>
         <source>Importing EFI Boot Manager entries (%1)…</source>
-        <translation type="unfinished">Importing EFI Boot Manager entries (%1)…</translation>
+        <translation>正在匯入 EFI Boot Manager 條目（%1）…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1035"/>
@@ -644,7 +644,7 @@
     <message>
         <location filename="../src/efibootdata.cpp" line="1109"/>
         <source>%1: unknown boot manager capability</source>
-        <translation type="unfinished">%1: unknown boot manager capability</translation>
+        <translation>%1：啟動管理員功能未知</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1122"/>
@@ -701,14 +701,14 @@
         <source>Failed to import some EFI Boot Manager entries:
 
   - %1</source>
-        <translation type="unfinished">Failed to import some EFI Boot Manager entries:
+        <translation>某些 EFI Boot Manager 條目匯入失敗：
 
   - %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1347"/>
         <source>Importing boot configuration from raw dump…</source>
-        <translation type="unfinished">Importing boot configuration from raw dump…</translation>
+        <translation>正在從原始傾印檔匯入啟動設定…</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1379"/>
@@ -866,7 +866,7 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="445"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;點擊此處將選擇的條目向上移動。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="470"/>
@@ -877,7 +877,7 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="476"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to move currently selected entry down.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;點擊此處將選擇的條目向下移動。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="501"/>
@@ -907,13 +907,13 @@
         <location filename="../src/form/efibooteditor.ui" line="654"/>
         <location filename="../src/form/efibooteditor.ui" line="657"/>
         <source>Boot manager timeout</source>
-        <translation type="unfinished">Boot manager timeout</translation>
+        <translation>啟動管理員逾時時間</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="638"/>
         <location filename="../src/form/efibooteditor.ui" line="660"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot manager timeout.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boot manager timeout.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;啟動管理員逾時時間。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="663"/>
@@ -942,12 +942,12 @@
         <location filename="../src/form/efibooteditor.ui" line="719"/>
         <location filename="../src/form/efibooteditor.ui" line="722"/>
         <source>Available firmware features</source>
-        <translation type="unfinished">Available firmware features</translation>
+        <translation>可用的韌體功能</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="725"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware features.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Available firmware features.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;可用的韌體功能。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="728"/>
@@ -3803,7 +3803,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3923"/>
         <source>SATA settings.</source>
-        <translation type="unfinished">SATA 設定。</translation>
+        <translation>SATA 設定。</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3950"/>
