@@ -54,7 +54,7 @@
       }
     },
     {
-      "name": "relwithdebinfo",
+      "name": "RelWithDebInfo",
       "displayName": "Optimized Release",
       "configurePreset": "RelWithDebInfo",
       "output": {
