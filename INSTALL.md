@@ -25,20 +25,40 @@ Required libraries[^1]:
 
 ### Build steps
 
+You can list the available configure and build presets with:
+
+```shell
+cmake --list-presets
+```
+
 1. Configure:
 
     ```shell
-    cmake -B build . \
+    cmake --preset <preset-name> \
           -DCMAKE_INSTALL_PREFIX=/usr \
           [-Dparameter=value ...]
 
     -- The C compiler identification is GNU 12.2.0
     -- The CXX compiler identification is GNU 12.2.0
     ...
-    -- Build files have been written to: /efibooteditor/build
+    -- Build files have been written to: /efibooteditor/build/<preset-name>
     ```
 
-    Available parameters:
+    Choose a preset from the list (`cmake --list-presets`). For example, to
+    configure a debug build:
+
+    ```shell
+    cmake --preset Debug
+    ```
+
+    You can still pass additional CMake cache variables using the `-D` flag.
+    For example, to set the install prefix:
+
+    ```shell
+    cmake --preset Debug -DCMAKE_INSTALL_PREFIX=/usr
+    ```
+
+    Available general parameters that can be passed with `-D`:
 
     - `CMAKE_BUILD_TYPE=Debug,Release,RelWithDebInfo,MinSizeRel` - specifies
       the build type, can be used to overwrite custom/default C/C++ compiler
@@ -48,6 +68,16 @@ Required libraries[^1]:
 
 2. Build
 
+    You can build using the configured preset:
+    ```shell
+    cmake --build --preset <preset-name>
+    ```
+    For example, to build the `Debug` preset:
+    ```shell
+    cmake --build --preset Debug
+    ```
+    Alternatively, if you configured without a build preset, you can build
+    directly from the build directory:
     ```shell
     cmake --build build --config Release
 
@@ -71,7 +101,8 @@ Required libraries[^1]:
 There is also:
 
 - a [package](//aur.archlinux.org/packages/efibooteditor) in
-the AUR for Arch Linux ([-git variant](//aur.archlinux.org/packages/efibooteditor-git))
+the AUR for Arch Linux
+([-git variant](//aur.archlinux.org/packages/efibooteditor-git))
 - and a [SPEC file](misc/efibooteditor.spec) for RPM based
 distributions (thanks [@Justinzobel](https://github.com/Justinzobel)).
 
@@ -85,7 +116,8 @@ requirements inherited from the build environment.
 
 ### Winget
 
-Latest releases are also available for download with [Windows Package Manager](https://github.com/microsoft/winget-pkgs/tree/master/manifests/e/EFIBootEditor/EFIBootEditor).
+Latest releases are also available for download with
+[Windows Package Manager](https://github.com/microsoft/winget-pkgs/tree/master/manifests/e/EFIBootEditor/EFIBootEditor).
 
 ### Assets
 
@@ -119,7 +151,8 @@ Assets are delivered in various formats:
 - `.dmg` - macOS App Bundle.
 - `.deb` - Debian package - should also work on any Debian derivative as long
   as dependencies are met.[^2]
-- `.ddeb` - Debian debug symbol package - primarily useful during troubleshooting.
+- `.ddeb` - Debian debug symbol package - primarily useful during
+  troubleshooting.
 - `.msi` - Windows installer.
 - `.zip`, `.tar.zst` - simple archive files, should contain all necessary files,
   ready to use in-place after decompression (`.zip` is for Windows

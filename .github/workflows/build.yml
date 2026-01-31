@@ -95,71 +95,52 @@ jobs:
         shell: bash
         if: startsWith(inputs.os, 'windows')
 
-      - name: Create build directory
-        run: mkdir -p build
-        shell: bash
-
       - name: Configure with ${{ inputs.compiler }}
         run: |
-          case "${INPUT_COMPILER}" in
-            "Clang")
-              export CC=clang
-              export CXX=clang++
-            ;;
-            "GCC")
-              export CC=gcc
-              export CXX=g++
-            ;;
-          esac;
-          cmake -DCMAKE_BUILD_TYPE=${{ inputs.build-config }} -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache ${{ startsWith(inputs.os, 'macos') && startsWith(matrix.qt-version, '5') && '-DCMAKE_OSX_ARCHITECTURES="x86_64"' || '' }} ..
+          cmake --preset ${{ inputs.build-config }} -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER=${{ inputs.compiler == 'Clang' && 'clang' || 'gcc' }} -DCMAKE_CXX_COMPILER=${{ inputs.compiler == 'Clang' && 'clang++' || 'g++' }} ${{ startsWith(inputs.os, 'macos') && startsWith(matrix.qt-version, '5') && '-DCMAKE_OSX_ARCHITECTURES="x86_64"' || '' }}
         shell: bash
         env:
           BUILD_VERSION: ${{ inputs.version }}
           BUILD_OS: ${{ inputs.os }}
-        working-directory: build
         if: ${{ !startsWith(inputs.os, 'windows') }}
 
       - name: Build
-        run: cmake --build . --config ${{ inputs.build-config }}
+        run: cmake --build --preset ${{ inputs.build-config }}
         shell: bash
-        working-directory: build
         if: ${{ !startsWith(inputs.os, 'windows') }}
 
       - name: Configure and build with ${{ inputs.compiler }}
         run: |
           call "%programfiles%\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ endsWith(inputs.os, 'arm') && 'arm64' || 'x64' }} || exit /b
-          cmake -G Ninja -DCMAKE_TOOLCHAIN_FILE=%VCPKG_INSTALLATION_ROOT%\scripts\buildsystems\vcpkg.cmake -DCMAKE_BUILD_TYPE=${{ inputs.build-config }} -DCMAKE_VERBOSE_MAKEFILE=ON ${{ inputs.compiler == 'Clang' && '-DCMAKE_C_COMPILER=clang-cl.exe -DCMAKE_CXX_COMPILER=clang-cl.exe' || '' }} -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache .. || exit /b
-          cmake --build . --config ${{ inputs.build-config }}
+          cmake --preset ${{ inputs.build-config }} -DCMAKE_TOOLCHAIN_FILE=%VCPKG_INSTALLATION_ROOT%\scripts\buildsystems\vcpkg.cmake -DCMAKE_VERBOSE_MAKEFILE=ON ${{ inputs.compiler == 'Clang' && '-DCMAKE_C_COMPILER=clang-cl.exe -DCMAKE_CXX_COMPILER=clang-cl.exe' || '' }} -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache || exit /b
+          cmake --build --preset ${{ inputs.build-config }}
         shell: cmd
         env:
           BUILD_VERSION: ${{ inputs.version }}
           BUILD_OS: ${{ inputs.os }}
-        working-directory: build
         if: startsWith(inputs.os, 'windows')
 
       - name: Run tests
         env:
           TEST_ALLOW_NO_EFI_ENTRIES: ${{ startsWith(inputs.os, 'macos') && 'true' || '' }}
-        run: ctest -VV --output-on-failure --build-config ${{ inputs.build-config }}
+        run: ctest --preset ${{ inputs.build-config }} --build-config ${{ inputs.build-config }} -VV
         shell: bash
-        working-directory: build
 
       - name: Package
         run: |
           for t in $(seq 1 20); do # FIXME: macOS has random hdiutil errors because of some protection mechanisms, just retry few times https://github.com/actions/runner-images/issues/7522#issuecomment-1556766641
-            cmake --build . --config ${{ inputs.build-config }} --target package && exit 0
-            rm -rf dist/
+            cmake --build --preset ${{ inputs.build-config }} --target package && exit 0
+            rm -rf build/${{ inputs.build-config }}/dist/
           done
           exit 255
         shell: bash
-        working-directory: build
 
       - name: Upload artifacts
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: EFIBootEditor-${{ github.sha }}-${{ inputs.os }}-qt-${{ matrix.qt-version }}-${{ inputs.compiler }}
           if-no-files-found: error
-          path: build/dist/EFIBootEditor-*
+          path: build/${{ inputs.build-config }}/dist/EFIBootEditor-*
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@cdefb33c0f6224e58673d9004f47f7cb3e328b89
