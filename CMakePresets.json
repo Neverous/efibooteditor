@@ -1,0 +1,65 @@
+{
+  "version": 10,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 16,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base-os",
+      "displayName": "Base OS Config",
+      "description": "Shared foundation for all OS configurations.",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/build/${presetName}"
+    },
+    {
+      "name": "Debug",
+      "displayName": "Debug Build",
+      "description": "Main config for local development and debugging. Provides full debug symbols.",
+      "inherits": ["base-os"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "RelWithDebInfo",
+      "displayName": "Optimized Release",
+      "description": "Optimized for release performance with debug info for profiling.",
+      "inherits": ["base-os"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Debug",
+      "displayName": "Debug",
+      "configurePreset": "Debug"
+    },
+    {
+      "name": "RelWithDebInfo",
+      "displayName": "Optimized Release",
+      "configurePreset": "RelWithDebInfo"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "Debug",
+      "displayName": "Debug",
+      "configurePreset": "Debug",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "relwithdebinfo",
+      "displayName": "Optimized Release",
+      "configurePreset": "RelWithDebInfo",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}
