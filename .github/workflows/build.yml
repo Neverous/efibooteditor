@@ -137,7 +137,7 @@ jobs:
       - name: Run tests
         env:
           TEST_ALLOW_NO_EFI_ENTRIES: ${{ startsWith(inputs.os, 'macos') && 'true' || '' }}
-        run: ctest --preset ${{ inputs.build-config }} --build-config ${{ inputs.build-config }} -VV
+        run: ctest --preset ${{ inputs.build-config }} -VV
         shell: bash
 
       - name: Package

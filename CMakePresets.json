@@ -36,12 +36,14 @@
     {
       "name": "Debug",
       "displayName": "Debug",
-      "configurePreset": "Debug"
+      "configurePreset": "Debug",
+      "configuration": "Debug"
     },
     {
       "name": "RelWithDebInfo",
       "displayName": "Optimized Release",
-      "configurePreset": "RelWithDebInfo"
+      "configurePreset": "RelWithDebInfo",
+      "configuration": "RelWithDebInfo"
     }
   ],
   "testPresets": [
@@ -49,6 +51,7 @@
       "name": "Debug",
       "displayName": "Debug",
       "configurePreset": "Debug",
+      "configuration": "Debug",
       "output": {
         "outputOnFailure": true
       }
@@ -57,6 +60,7 @@
       "name": "RelWithDebInfo",
       "displayName": "Optimized Release",
       "configurePreset": "RelWithDebInfo",
+      "configuration": "RelWithDebInfo",
       "output": {
         "outputOnFailure": true
       }
