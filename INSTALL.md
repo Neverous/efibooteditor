@@ -157,6 +157,8 @@ Assets are delivered in various formats:
 - `.zip`, `.tar.zst` - simple archive files, should contain all necessary files,
   ready to use in-place after decompression (`.zip` is for Windows
   and `.tar.zst` is for macOS and Linux).
+- `.AppImage` - [AppImage](https://appimage.org/) portable Linux application
+  format.
 
 [^2]: Using `.deb` packages on old Ubuntu (< 21.10) or Debian (< bullseye)
   releases might require manual Qt installation as versions in the official

@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
+SCRIPT_DIR="$(readlink -f "$(dirname "$0")")"
+
+if [ -f "${SCRIPT_DIR}/efibooteditor" ]; then
+    BINARY_DIR=${SCRIPT_DIR}/efibooteditor
+elif [ -f "${SCRIPT_DIR}/bin/efibooteditor" ]; then
+    BINARY_DIR=${SCRIPT_DIR}/bin/efibooteditor
+else
+    BINARY_DIR=efibooteditor
+fi
+
+# For non-root users try to get authorisation to run as root.
+if [ "$(id -u)" != "0" ]; then
+    # Wayland workaround
+    if xhost 1> /dev/null 2>&1 && ! xhost | grep -qi 'SI:localuser:root$'; then
+        xhost +SI:localuser:root
+        trap "xhost -SI:localuser:root" EXIT
+    fi
+
+    # No exec so trap works
+    if [ -n "${APPIMAGE}" ]; then
+        pkexec env DISPLAY="$DISPLAY" XAUTHORITY="$XAUTHORITY" APPIMAGE_EXTRACT_AND_RUN=1 "$APPIMAGE" "$@"
+        exit $?
+
+    else
+        pkexec env DISPLAY="$DISPLAY" XAUTHORITY="$XAUTHORITY" "${BINARY_DIR}" "$@"
+        exit $?
+    fi
+fi
+
+exec "${BINARY_DIR}" "$@"
