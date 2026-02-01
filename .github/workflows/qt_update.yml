@@ -19,10 +19,20 @@ jobs:
       contents: read
 
     steps:
+      - name: Sync fork
+        env:
+          GITHUB_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
+        run: |
+          gh repo sync EFIBootEditorBot/efibooteditor \
+            --source ${{ github.repository }} \
+            --branch master \
+            --force
+
       - name: Checkout source code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           token: ${{ secrets.BOT_ACCESS_TOKEN }}
+          repository: EFIBootEditorBot/efibooteditor
 
       - name: Install uv
         uses: astral-sh/setup-uv@61cb8a9741eeb8a550a1b8544337180c0fc8476b
@@ -32,7 +42,7 @@ jobs:
       - name: Install python
         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
-          python-version: '3.13'
+          python-version: '3.14'
 
       - name: Install dependencies
         run: uv sync
@@ -51,20 +61,37 @@ jobs:
 
       - name: Create pull request
         run: |
-          # Configure git user
-          git config user.email "EFIBootEditorBot@users.noreply.github.com"
-          git config user.name "EFIBootEditor (Bot)"
+          CURRENT_SHA=$(gh api repos/EFIBootEditorBot/efibooteditor/git/ref/heads/master --jq '.object.sha')
+          if ! gh api repos/EFIBootEditorBot/efibooteditor/git/refs -f ref="refs/heads/qt-update" -f sha="${CURRENT_SHA}" 2>/dev/null; then
+            CURRENT_SHA=$(gh api repos/EFIBootEditorBot/efibooteditor/git/ref/heads/qt-update --jq '.object.sha')
+          fi
 
-          # Create branch with changes
-          git checkout -b qt-update
-          git commit -am "ci: update Qt versions in CI"
-          git push --force --set-upstream origin qt-update
+          gh api graphql -f query='
+            mutation($repo: String!, $branch: String!, $oid: GitObjectID!, $msg: String!, $files: [FileAddition!]!) {
+              createCommitOnBranch(input: {
+                branch: { repositoryNameWithOwner: $repo, branchName: $branch },
+                expectedHeadOid: $oid,
+                message: { headline: $msg },
+                fileChanges: { additions: $files }
+              }) { commit { url } }
+            }' \
+            -f repo="EFIBootEditorBot/efibooteditor" \
+            -f branch="qt-update" \
+            -f oid="${CURRENT_SHA}" \
+            -f msg="Update Qt dependencies" \
+            -f files[][path]=".github/workflows/asset.yml" \
+            -f files[][contents]=$(base64 -w 0 .github/workflows/asset.yml) \
+            -f files[][path]=".github/workflows/build.yml" \
+            -f files[][contents]=$(base64 -w 0 .github/workflows/build.yml) \
+            -f files[][path]=".github/workflows/release.yml" \
+            -f files[][contents]=$(base64 -w 0 .github/workflows/release.yml)
 
           gh pr create \
+            --repo "${{ github.repository }}" \
             --title 'ci: update Qt versions in CI' \
             --body 'Updates Qt versions in CI to newest ones.' \
-            --base master \
-            --head qt-update
+            --head "EFIBootEditorBot:qt-update" \
+            --base master || echo "PR already exists"
 
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}

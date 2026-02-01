@@ -11,7 +11,7 @@ jobs:
         id: linter
         with:
           version: 21
-          style: 'file'
+          style: file
       - name: Fail fast
         if: steps.linter.outputs.checks-failed > 0
         run: exit 1
