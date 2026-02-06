@@ -101,6 +101,7 @@ jobs:
           - .tar.zst
           - .deb
           - -dbgsym.ddeb
+          - .AppImage
 
     permissions:
       contents: write

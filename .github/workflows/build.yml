@@ -63,6 +63,19 @@ jobs:
           cache: true
           version: ${{ matrix.qt-version }}
 
+      - name: Install CMake
+        run: |
+          wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
+          sudo apt-add-repository "deb https://apt.kitware.com/ubuntu/ $(lsb_release -cs) main"
+          sudo apt-get update
+          sudo apt-get install cmake
+          mv /usr/local/bin/cmake /usr/local/bin/cmake3
+          mv /usr/local/bin/cpack /usr/local/bin/cpack3
+
+          cmake --version
+        shell: bash
+        if: startsWith(inputs.os, 'ubuntu')
+
       - name: Install libfuse2
         run: sudo apt-get install libfuse2
         shell: bash
@@ -73,9 +86,10 @@ jobs:
           DIR=$(mktemp -d)
           echo "${DIR}" >> ${GITHUB_PATH}
           ARCH=${{ endsWith(inputs.os, 'arm') && 'aarch64' || 'x86_64' }}
-          wget -c -nv https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-${ARCH}.AppImage -O ${DIR}/linuxdeploy.AppImage
-          wget -c -nv https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-${ARCH}.AppImage -O ${DIR}/linuxdeploy-plugin-qt.AppImage
-          chmod +x ${DIR}/*.AppImage
+          wget -c -nv https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-${ARCH}.AppImage -O ${DIR}/linuxdeploy
+          wget -c -nv https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-${ARCH}.AppImage -O ${DIR}/linuxdeploy-plugin-qt
+          wget -c -nv https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${{ endsWith(inputs.os, 'arm') && 'aarch64' || 'x86_64' }}.AppImage -O ${DIR}/appimagetool
+          chmod +x ${DIR}/*
         shell: bash
         if: startsWith(inputs.os, 'ubuntu')
 
@@ -122,7 +136,7 @@ jobs:
       - name: Run tests
         env:
           TEST_ALLOW_NO_EFI_ENTRIES: ${{ startsWith(inputs.os, 'macos') && 'true' || '' }}
-        run: ctest --preset ${{ inputs.build-config }} --build-config ${{ inputs.build-config }} -VV
+        run: ctest --preset ${{ inputs.build-config }} -VV
         shell: bash
 
       - name: Package
