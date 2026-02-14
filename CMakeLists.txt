@@ -65,6 +65,7 @@ find_package(Qt${QT_VERSION_MAJOR}
         Core
         Gui
         Network
+        Svg
         Widgets
         LinguistTools
     REQUIRED)
@@ -80,6 +81,7 @@ target_link_libraries(${PROJECT_NAME}-core PUBLIC
     Qt${QT_VERSION_MAJOR}::Core
     Qt${QT_VERSION_MAJOR}::Gui
     Qt${QT_VERSION_MAJOR}::Network
+    Qt${QT_VERSION_MAJOR}::Svg
     Qt${QT_VERSION_MAJOR}::Widgets
     ZLIB::ZLIB
 )

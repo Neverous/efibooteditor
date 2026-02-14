@@ -2,6 +2,7 @@
 #include "compat.h"
 
 #include <QApplication>
+#include <QIcon>
 #include <QLibraryInfo>
 #include <QMessageBox>
 #include <QStyleFactory>
@@ -64,7 +65,10 @@ auto main(int argc, char *argv[]) -> int
         QCoreApplication::installTranslator(&translator);
 
     // Setup GUI style
+#if defined(_WIN32)
     QApplication::setStyle(QStyleFactory::create("Fusion"));
+#endif
+    QIcon::setThemeSearchPaths(QIcon::themeSearchPaths() << ":/icons");
     QIcon::setFallbackThemeName("Tango");
 
     // Show window and then force reload boot entries
