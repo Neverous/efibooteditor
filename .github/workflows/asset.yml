@@ -49,6 +49,11 @@ jobs:
         run: mv EFIBootEditor-*-${INPUT_OS}-qt-${{ matrix.qt-version }}${INPUT_EXTENSION} EFIBootEditor-${INPUT_VERSION}-${INPUT_OS}-qt-${{ matrix.qt-version }}-${INPUT_COMPILER}${INPUT_EXTENSION}
         shell: bash
 
+      - name: Attest release asset
+        uses: actions/attest-build-provenance@96278af6caaf10aea03fd8d33a09a777ca52d62f
+        with:
+          subject-path: EFIBootEditor-${{ inputs.version }}-${{ inputs.os }}-qt-${{ matrix.qt-version }}-${{ inputs.compiler }}${{ inputs.extension }}
+
       - name: Upload ${{ inputs.extension }}
         uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b
         with:
