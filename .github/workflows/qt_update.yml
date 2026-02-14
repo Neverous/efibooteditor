@@ -52,7 +52,7 @@ jobs:
         id: diff
         run: |
           uv run -m main ../../.github/workflows/*.yml
-          if git diff --exit-code; then
+          if git diff ../../.github/workflows/ --exit-code; then
             echo "changed=false" >> "${GITHUB_OUTPUT}"
           else
             echo "changed=true" >> "${GITHUB_OUTPUT}"

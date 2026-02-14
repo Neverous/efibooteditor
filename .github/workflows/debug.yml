@@ -45,7 +45,10 @@ jobs:
 
     permissions:
       actions: read
+      artifact-metadata: write
+      attestations: write
       contents: read
+      id-token: write
       security-events: write
 
     uses: ./.github/workflows/build.yml
@@ -67,7 +70,10 @@ jobs:
 
     permissions:
       actions: read
+      artifact-metadata: write
+      attestations: write
       contents: read
+      id-token: write
       security-events: write
 
     uses: ./.github/workflows/build.yml
@@ -88,7 +94,10 @@ jobs:
 
     permissions:
       actions: read
+      artifact-metadata: write
+      attestations: write
       contents: read
+      id-token: write
       security-events: write
 
     uses: ./.github/workflows/build.yml

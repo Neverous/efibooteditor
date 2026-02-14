@@ -34,7 +34,10 @@ jobs:
 
     permissions:
       actions: read
+      artifact-metadata: write
+      attestations: write
       contents: read
+      id-token: write
       security-events: write
 
     uses: ./.github/workflows/build.yml
@@ -56,7 +59,10 @@ jobs:
 
     permissions:
       actions: read
+      artifact-metadata: write
+      attestations: write
       contents: read
+      id-token: write
       security-events: write
 
     uses: ./.github/workflows/build.yml
@@ -77,7 +83,10 @@ jobs:
 
     permissions:
       actions: read
+      artifact-metadata: write
+      attestations: write
       contents: read
+      id-token: write
       security-events: write
 
     uses: ./.github/workflows/build.yml
@@ -102,9 +111,12 @@ jobs:
           - .deb
           - -dbgsym.ddeb
           - .AppImage
+          - .spdx
 
     permissions:
+      attestations: write
       contents: write
+      id-token: write
 
     uses: ./.github/workflows/asset.yml
     with:
@@ -126,12 +138,15 @@ jobs:
         extension:
           - .zip
           - .msi
+          - .spdx
         exclude:
           - os: windows-11-arm
             extension: .msi
 
     permissions:
+      attestations: write
       contents: write
+      id-token: write
 
     uses: ./.github/workflows/asset.yml
     with:
@@ -152,9 +167,12 @@ jobs:
         extension:
           - .tar.zst
           - .dmg
+          - .spdx
 
     permissions:
+      attestations: write
       contents: write
+      id-token: write
 
     uses: ./.github/workflows/asset.yml
     with:
