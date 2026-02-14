@@ -79,8 +79,6 @@ jobs:
             -f branch="qt-update" \
             -f oid="${CURRENT_SHA}" \
             -f msg="Update Qt dependencies" \
-            -f files[][path]=".github/workflows/asset.yml" \
-            -f files[][contents]=$(base64 -w 0 .github/workflows/asset.yml) \
             -f files[][path]=".github/workflows/build.yml" \
             -f files[][contents]=$(base64 -w 0 .github/workflows/build.yml) \
             -f files[][path]=".github/workflows/release.yml" \
