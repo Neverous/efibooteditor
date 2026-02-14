@@ -14,7 +14,7 @@ on:
       - src/**
       - translations/**
       - windows.rc
-  tags: [v*]
+    tags: [v*]
 
 concurrency:
   group: release-${{ github.ref }}
