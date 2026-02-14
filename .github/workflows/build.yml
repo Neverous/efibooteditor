@@ -155,17 +155,17 @@ jobs:
           upload-artifact: false
           upload-release-assets: false
 
+      - name: Attest artifacts
+        uses: actions/attest-build-provenance@96278af6caaf10aea03fd8d33a09a777ca52d62f
+        with:
+          subject-path: build/${{ inputs.build-config }}/dist/EFIBootEditor-*
+
       - name: Upload artifacts
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: EFIBootEditor-${{ github.sha }}-${{ inputs.os }}-qt-${{ matrix.qt-version }}-${{ inputs.compiler }}
           if-no-files-found: error
           path: build/${{ inputs.build-config }}/dist/EFIBootEditor-*
-
-      - name: Attest artifacts
-        uses: actions/attest-build-provenance@96278af6caaf10aea03fd8d33a09a777ca52d62f
-        with:
-          subject-path: build/${{ inputs.build-config }}/dist/EFIBootEditor-*
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@45cbd0c69e560cd9e7cd7f8c32362050c9b7ded2
