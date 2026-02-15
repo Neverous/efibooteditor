@@ -114,6 +114,18 @@ that the code compiles correctly on various environments, but they should also
 work just fine for normal usage. Just keep in mind they might have some specific
 requirements inherited from the build environment.
 
+### Rolling development builds (Latest master)
+
+For the absolute latest builds, you can download automated artifacts from GitHub Actions: **[Latest successful builds](https://github.com/Neverous/efibooteditor/actions/workflows/release.yml?query=is%3Asuccess)**
+
+**How to download:**
+
+1. Click the link above and select the **most recent** run
+2. Scroll down to the **Artifacts** section at the bottom of the page
+3. Download the package specific to your operating system
+
+*Note: You must be logged into a GitHub account to download artifacts from the Actions tab.*
+
 ### Winget
 
 Latest releases are also available for download with
