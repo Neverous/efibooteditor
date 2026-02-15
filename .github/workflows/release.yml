@@ -97,6 +97,7 @@ jobs:
 
   upload-assets:
     name: Upload release assets
+    if: github.ref_type == 'tag'
     needs: [build-linux, build-windows, build-macos]
     runs-on: ubuntu-slim
     permissions:
@@ -114,16 +115,14 @@ jobs:
         id: prepare
         run: |
           mkdir -p dist
-          VERSION="${{ github.ref_type == 'tag' && github.ref_name || github.sha }}"
 
           find artifacts -type f -name "EFIBootEditor-*" | while read -r file; do
             filename=$(basename "$file")
             dir_name=$(basename "$(dirname "$file")")
-            compiler="${dir_name##*-}"
-            metadata=$(echo "$dir_name" | sed -E 's/EFIBootEditor-[^-]+-(.*)-[^-]+$/\1/')
-            ext=$(echo "$filename" | sed -E "s/EFIBootEditor-[^-]+-.*-qt-[0-9.]+ //; s/EFIBootEditor-[^-]+-.*-qt-[0-9.]+//")
+            metadata=$(echo "$dir_name" | sed -E 's/EFIBootEditor-[^-]+-(.*)+$/\1/')
+            ext=$(echo "$filename" | sed -E "s/EFIBootEditor-.+[0-9]//")
 
-            new_name="EFIBootEditor-${VERSION}-${metadata}-${compiler}${ext}"
+            new_name="EFIBootEditor-${{ github.ref_name }}-${metadata}${ext}"
             echo "Renaming $filename to $new_name"
             mv -v "$file" "dist/$new_name"
           done
@@ -137,10 +136,9 @@ jobs:
       - name: Upload assets to release
         uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b
         with:
-          draft: ${{ github.ref_type == 'tag' }}
-          prerelease: ${{ github.ref_type != 'tag' }}
+          draft: true
           files: dist/EFIBootEditor-*
-          tag_name: ${{ github.ref_type == 'tag' && github.ref_name || 'latest' }}
+          tag_name: ${{ github.ref_name }}
 
   winget-update:
     name: Update version in winget

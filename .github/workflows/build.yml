@@ -151,7 +151,7 @@ jobs:
       - name: Generate SBOM
         uses: anchore/sbom-action@28d71544de8eaf1b958d335707167c5f783590ad
         with:
-          output-file: build/${{ inputs.build-config }}/dist/EFIBootEditor-${{ github.sha }}-${{ inputs.os }}-qt-${{ matrix.qt-version }}-${{ inputs.compiler }}.spdx
+          output-file: build/${{ inputs.build-config }}/dist/EFIBootEditor-${{ github.sha }}-${{ inputs.os }}-qt-${{ matrix.qt-version }}.spdx
           upload-artifact: false
           upload-release-assets: false
 
