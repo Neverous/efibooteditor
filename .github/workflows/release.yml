@@ -14,8 +14,7 @@ on:
       - src/**
       - translations/**
       - windows.rc
-  release:
-    types: [published]
+    tags: [v*]
 
 concurrency:
   group: release-${{ github.ref }}
@@ -34,7 +33,10 @@ jobs:
 
     permissions:
       actions: read
+      artifact-metadata: write
+      attestations: write
       contents: read
+      id-token: write
       security-events: write
 
     uses: ./.github/workflows/build.yml
@@ -56,7 +58,10 @@ jobs:
 
     permissions:
       actions: read
+      artifact-metadata: write
+      attestations: write
       contents: read
+      id-token: write
       security-events: write
 
     uses: ./.github/workflows/build.yml
@@ -77,7 +82,10 @@ jobs:
 
     permissions:
       actions: read
+      artifact-metadata: write
+      attestations: write
       contents: read
+      id-token: write
       security-events: write
 
     uses: ./.github/workflows/build.yml
@@ -87,86 +95,54 @@ jobs:
       build-config: RelWithDebInfo
       version: ${{ github.ref_type == 'tag' && github.ref_name || github.sha }}
 
-  upload-linux-asset:
-    name: Upload Linux release asset ${{ matrix.os }} with ${{ matrix.compiler }} ${{ matrix.extension }}
-    needs: build-linux
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-22.04, ubuntu-24.04, ubuntu-24.04-arm]
-        compiler:
-          - Clang
-          - GCC
-        extension:
-          - .tar.zst
-          - .deb
-          - -dbgsym.ddeb
-          - .AppImage
-
+  upload-assets:
+    name: Upload release assets
+    if: github.ref_type == 'tag'
+    needs: [build-linux, build-windows, build-macos]
+    runs-on: ubuntu-slim
     permissions:
+      attestations: write
       contents: write
+      id-token: write
 
-    uses: ./.github/workflows/asset.yml
-    with:
-      os: ${{ matrix.os }}
-      compiler: ${{ matrix.compiler }}
-      version: ${{ github.ref_name }}
-      extension: ${{ matrix.extension }}
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
+        with:
+          path: artifacts
 
-  upload-windows-asset:
-    name: Upload Windows release asset ${{ matrix.os }} with ${{ matrix.compiler }} ${{ matrix.extension }}
-    needs: build-windows
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [windows-2022, windows-2025, windows-11-arm]
-        compiler:
-          - Clang
-          - MSVC
-        extension:
-          - .zip
-          - .msi
-        exclude:
-          - os: windows-11-arm
-            extension: .msi
+      - name: Prepare assets for release
+        id: prepare
+        run: |
+          mkdir -p dist
 
-    permissions:
-      contents: write
+          find artifacts -type f -name "EFIBootEditor-*" | while read -r file; do
+            filename=$(basename "$file")
+            dir_name=$(basename "$(dirname "$file")")
+            metadata=$(echo "$dir_name" | sed -E 's/EFIBootEditor-[^-]+-(.*)+$/\1/')
+            ext=$(echo "$filename" | sed -E "s/EFIBootEditor-.+[0-9]//")
 
-    uses: ./.github/workflows/asset.yml
-    with:
-      os: ${{ matrix.os }}
-      compiler: ${{ matrix.compiler }}
-      version: ${{ github.ref_name }}
-      extension: ${{ matrix.extension }}
+            new_name="EFIBootEditor-${{ github.ref_name }}-${metadata}${ext}"
+            echo "Renaming $filename to $new_name"
+            mv -v "$file" "dist/$new_name"
+          done
+        shell: bash
 
-  upload-macos-asset:
-    name: Upload macOS release asset ${{ matrix.os }} with ${{ matrix.compiler }} ${{ matrix.extension }}
-    needs: build-macos
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [macos-14, macos-15, macos-26]
-        compiler:
-          - Clang
-        extension:
-          - .tar.zst
-          - .dmg
+      - name: Attest release assets
+        uses: actions/attest-build-provenance@96278af6caaf10aea03fd8d33a09a777ca52d62f
+        with:
+          subject-path: dist/EFIBootEditor-*
 
-    permissions:
-      contents: write
-
-    uses: ./.github/workflows/asset.yml
-    with:
-      os: ${{ matrix.os }}
-      compiler: ${{ matrix.compiler }}
-      version: ${{ github.ref_name }}
-      extension: ${{ matrix.extension }}
+      - name: Upload assets to release
+        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b
+        with:
+          files: dist/EFIBootEditor-*
+          tag_name: ${{ github.ref_name }}
 
   winget-update:
     name: Update version in winget
     if: github.ref_type == 'tag'
-    needs: upload-windows-asset
+    needs: upload-assets
     runs-on: windows-latest
     strategy:
       fail-fast: false
