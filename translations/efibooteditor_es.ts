@@ -1258,7 +1258,7 @@
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1289"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reloads EFI data from the system.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recargar datos EFI desde el sistema&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recargar datos EFI desde el sistema.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1306"/>
@@ -1498,12 +1498,12 @@
     <message>
         <location filename="../src/efibooteditor.cpp" line="162"/>
         <source>Are you sure you want to reorder the boot entries?&lt;br/&gt;All indexes will be overwritten!</source>
-        <translation>¿Seguro que quieres reordenar los apuntes de arranque? &lt;br/&gt;¡Todos los índices serán sobrescritos!</translation>
+        <translation>¿Seguro que quieres reordenar los apuntes de arranque?&lt;br/&gt;¡Todos los índices serán sobrescritos!</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="221"/>
         <source>Are you sure you want to save?&lt;br/&gt;Your EFI configuration will be overwritten!</source>
-        <translation>¿Seguro que quieres guardar? &lt;br/&gt;¡Su configuración de EFI será sobrescrita!</translation>
+        <translation>¿Seguro que quieres guardar?&lt;br/&gt;¡Su configuración de EFI será sobrescrita!</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="230"/>
@@ -1892,7 +1892,7 @@ Su configuración de EFI será sobrescrito!</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2265"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MAC settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Ajustes de MAC.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajustes de MAC.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2374"/>
@@ -1902,7 +1902,7 @@ Su configuración de EFI será sobrescrito!</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2380"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv4 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Ajustes IPv4.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajustes IPv4.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2569"/>
@@ -1940,7 +1940,7 @@ Su configuración de EFI será sobrescrito!</translation>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2736"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv6 settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Ajustes IPv6.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajustes IPv6.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3008"/>
@@ -2622,7 +2622,7 @@ Su configuración de EFI será sobrescrito!</translation>
         <location filename="../src/form/filepathdialog.ui" line="1097"/>
         <location filename="../src/form/filepathdialog.ui" line="1118"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ADR value. For video output devices the value of this field comes from Table B-2 ACPI 3.0 specification. At least one ADR value is required&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Valor ADR. Para los dispositivos de salida de vídeo el valor de este campo viene de la especificación Tabla B-2 ACPI 3.0. Se requiere al menos un valor ADR&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Valor ADR. Para los dispositivos de salida de vídeo el valor de este campo viene de la especificación Tabla B-2 ACPI 3.0. Se requiere al menos un valor ADR&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="1131"/>
@@ -3630,7 +3630,7 @@ Están reservados todos los demás bit.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tra
         <location filename="../src/form/filepathdialog.ui" line="3497"/>
         <location filename="../src/form/filepathdialog.ui" line="3518"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Product ID assigned by USB-IF. A value of 0xFFFF will match any Product ID.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; ID de producto asignado por USB-IF. Un valor de 0xFFFF coincidirá con cualquier ID de producto.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ID de producto asignado por USB-IF. Un valor de 0xFFFF coincidirá con cualquier ID de producto.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3531"/>
@@ -4044,7 +4044,7 @@ Están reservados todos los demás bit.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tra
         <location filename="../src/form/filepathdialog.ui" line="4573"/>
         <location filename="../src/form/filepathdialog.ui" line="4594"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8-byte array of the SAS Address for Serial Attached SCSI Target Port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;colección de 8-byte para la Dirección SAS para Puerto Destino SCSI Adjunto de Serie.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Colección de 8-byte para la Dirección SAS para Puerto Destino SCSI Adjunto de Serie.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4607"/>
@@ -4094,7 +4094,7 @@ Están reservados todos los demás bit.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tra
         <location filename="../src/form/filepathdialog.ui" line="4693"/>
         <location filename="../src/form/filepathdialog.ui" line="4715"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Relative Target Port (RTP).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Puerto Objetivo Relativo (RTP).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puerto Objetivo Relativo (RTP).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4732"/>
