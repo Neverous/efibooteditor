@@ -30,7 +30,6 @@ jobs:
         qt-version:
           - 5.15.2 # Supported in Ubuntu Noble Numbat until 2029-05-31
           - 6.2.4  # Supported in Ubuntu Jammy Jellyfish until 2027-04-01
-          - 6.10.3 # Supported until 2026-04-07
           - 6.11.0 # Supported until 2026-09-22
         exclude:
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.15.2' || 'none' }}
