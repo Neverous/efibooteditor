@@ -28,7 +28,7 @@ jobs:
       fail-fast: false
       matrix:
         qt-version:
-          - 5.15.2 # Supported in Ubuntu Noble Numbat until 2029-05-31
+          - 5.15.2 # Supported in Ubuntu Resolute Raccoon until 2031-05-31
           - 6.2.4  # Supported in Ubuntu Jammy Jellyfish until 2027-04-01
           - 6.11.0 # Supported until 2026-09-22
         exclude:
