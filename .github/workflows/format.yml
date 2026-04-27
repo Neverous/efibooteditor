@@ -10,7 +10,7 @@ jobs:
       - uses: cpp-linter/cpp-linter-action@77c390c5ba9c947ebc185a3e49cc754f1558abb5
         id: linter
         with:
-          version: 21
+          version: 22
           style: file
       - name: Fail fast
         if: steps.linter.outputs.checks-failed > 0
