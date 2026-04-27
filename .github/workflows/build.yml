@@ -106,6 +106,21 @@ jobs:
         shell: bash
         if: startsWith(inputs.os, 'ubuntu')
 
+      - name: Install xvfb imagemagick
+        run: sudo apt-get install xvfb imagemagick
+        shell: bash
+        if: startsWith(inputs.os, 'ubuntu')
+
+      - name: Install imagemagick
+        run: arch -arm64 brew install imagemagick
+        shell: bash
+        if: startsWith(inputs.os, 'macos')
+
+      - name: Install imagemagick
+        run: winget install --accept-source-agreements ImageMagick.ImageMagick
+        shell: bash
+        if: startsWith(inputs.os, 'windows-2025')
+
       - name: Install zlib
         run: vcpkg install zlib
         shell: bash
@@ -139,8 +154,24 @@ jobs:
       - name: Run tests
         env:
           TEST_ALLOW_NO_EFI_ENTRIES: ${{ startsWith(inputs.os, 'macos') && 'true' || '' }}
-        run: ctest --preset ${{ inputs.build-config }} -VV
+        run: ${{ startsWith(inputs.os, 'ubuntu') && 'xvfb-run -a' || '' }} ctest --preset ${{ inputs.build-config }} -VV
         shell: bash
+
+      - name: Check visuals
+        id: visual
+        continue-on-error: true
+        run: ${{ startsWith(inputs.os, 'windows') && 'magick' || '' }} compare -metric RMSE -fuzz 2% build/${{ inputs.build-config }}/tests/screenshot.png tests/screenshots/${{ inputs.os }}.png diff.png
+        shell: bash
+
+      - name: Upload visual diff
+        if: steps.visual.outcome == 'failure'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: visual-diff-${{ inputs.os }}-qt-${{ matrix.qt-version }}-${{ inputs.compiler }}
+          path: |
+            build/${{ inputs.build-config }}/tests/screenshot.png
+            diff.png
+          retention-days: 5
 
       - name: Package
         run: |

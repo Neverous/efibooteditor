@@ -10,6 +10,7 @@
 
 #include "efibooteditor.h"
 #include "efibooteditorcli.h"
+#include "main.h"
 
 auto main(int argc, char *argv[]) -> int
 {
@@ -18,31 +19,10 @@ auto main(int argc, char *argv[]) -> int
 
     // Set CLI application first
     auto app = std::make_unique<QCoreApplication>(argc, argv);
-    QCoreApplication::setApplicationName(APPLICATION_NAME);
-    QCoreApplication::setApplicationVersion(VERSION);
-    QCoreApplication::setOrganizationName(APPLICATION_NAME);
+    setupApplication();
 
     // Load translation
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    const auto translations_path = QLibraryInfo::path(QLibraryInfo::TranslationsPath);
-#else
-    const auto translations_path = QLibraryInfo::location(QLibraryInfo::TranslationsPath);
-#endif
-
-    std::list<QTranslator> translators;
-    for(const char *module: {"qt", "qtbase", PROJECT_NAME})
-    {
-        auto &translator = translators.emplace_back();
-        if(!translator.load(QLocale::system(), module, "_", "translations/")
-            && !translator.load(QLocale::system(), module, "_", ":/translations/")
-            && !translator.load(QLocale::system(), module, "_", translations_path))
-        {
-            translators.pop_back();
-            continue;
-        }
-
-        QCoreApplication::installTranslator(&translator);
-    }
+    auto translators = setupTranslations();
 
     // Run CLI if arguments were provided
     {
@@ -58,18 +38,12 @@ auto main(int argc, char *argv[]) -> int
     app.reset(); // need to destroy QCoreApplication first
     app = std::make_unique<QApplication>(argc, argv);
     // Need to reset the application configuration
-    QCoreApplication::setApplicationName(APPLICATION_NAME);
-    QCoreApplication::setApplicationVersion(VERSION);
-    QCoreApplication::setOrganizationName(APPLICATION_NAME);
+    setupApplication();
     for(auto &translator: translators)
         QCoreApplication::installTranslator(&translator);
 
     // Setup GUI style
-#if defined(_WIN32)
-    QApplication::setStyle(QStyleFactory::create("Fusion"));
-#endif
-    QIcon::setThemeSearchPaths(QIcon::themeSearchPaths() << ":/icons");
-    QIcon::setFallbackThemeName("Tango");
+    setupStyle();
 
     // Show window and then force reload boot entries
     EFIBootEditor gui{efi_error_message};
