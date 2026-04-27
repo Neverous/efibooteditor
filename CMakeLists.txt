@@ -405,6 +405,7 @@ else()
             DESTINATION .
             RENAME AppRun
             COMPONENT AppImage
+            EXCLUDE_FROM_ALL
         )
         install(FILES misc/${PROJECT_NAME_CAPITALIZED}.desktop
             DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications
