@@ -17,8 +17,10 @@ on:
         type: string
 
 env:
+  BUILD_CONFIG: ${{ inputs.build-config }}
+  BUILD_OS: ${{ inputs.os }}
+  BUILD_VERSION: ${{ inputs.version }}
   CMAKE_BUILD_PARALLEL_LEVEL: 4
-  INPUT_COMPILER: ${{ inputs.compiler }}
 
 jobs:
   build:
@@ -87,13 +89,15 @@ jobs:
         run: |
           DIR=$(mktemp -d)
           echo "${DIR}" >> ${GITHUB_PATH}
-          ARCH=${{ endsWith(inputs.os, 'arm') && 'aarch64' || 'x86_64' }}
           wget -c -nv https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-${ARCH}.AppImage -O ${DIR}/linuxdeploy
           wget -c -nv https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-${ARCH}.AppImage -O ${DIR}/linuxdeploy-plugin-qt
-          wget -c -nv https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${{ endsWith(inputs.os, 'arm') && 'aarch64' || 'x86_64' }}.AppImage -O ${DIR}/appimagetool
+          wget -c -nv https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${ARCH}.AppImage -O ${DIR}/appimagetool
           chmod +x ${DIR}/*
         shell: bash
         if: startsWith(inputs.os, 'ubuntu')
+        env:
+          ARCH: ${{ endsWith(inputs.os, 'arm') && 'aarch64' || 'x86_64' }}
+
 
       - name: Install efivar
         run: sudo apt-get install libefiboot1 libefiboot-dev libefivar-dev
@@ -105,47 +109,78 @@ jobs:
         shell: bash
         if: startsWith(inputs.os, 'ubuntu')
 
-      - name: Install zlib
-        run: vcpkg install zlib
+      - name: Install imagemagick
+        run: sudo apt-get install imagemagick
         shell: bash
-        if: startsWith(inputs.os, 'windows')
+        if: startsWith(inputs.os, 'ubuntu')
+
+      - name: Install imagemagick
+        run: arch -arm64 brew install imagemagick
+        shell: bash
+        if: startsWith(inputs.os, 'macos')
 
       - name: Configure with ${{ inputs.compiler }}
         run: |
-          cmake --preset ${{ inputs.build-config }} -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER=${{ inputs.compiler == 'Clang' && 'clang' || 'gcc' }} -DCMAKE_CXX_COMPILER=${{ inputs.compiler == 'Clang' && 'clang++' || 'g++' }} ${{ startsWith(inputs.os, 'macos') && startsWith(matrix.qt-version, '5') && '-DCMAKE_OSX_ARCHITECTURES="x86_64"' || '' }}
+          cmake --preset ${BUILD_CONFIG} -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER=${{ inputs.compiler == 'Clang' && 'clang' || 'gcc' }} -DCMAKE_CXX_COMPILER=${{ inputs.compiler == 'Clang' && 'clang++' || 'g++' }} ${{ startsWith(inputs.os, 'macos') && startsWith(matrix.qt-version, '5') && '-DCMAKE_OSX_ARCHITECTURES="x86_64"' || '' }}
         shell: bash
-        env:
-          BUILD_VERSION: ${{ inputs.version }}
-          BUILD_OS: ${{ inputs.os }}
         if: ${{ !startsWith(inputs.os, 'windows') }}
 
       - name: Build
-        run: cmake --build --preset ${{ inputs.build-config }}
+        run: cmake --build --preset ${BUILD_CONFIG}
         shell: bash
         if: ${{ !startsWith(inputs.os, 'windows') }}
 
       - name: Configure and build with ${{ inputs.compiler }}
         run: |
           call "%programfiles%\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ endsWith(inputs.os, 'arm') && 'arm64' || 'x64' }} || exit /b
-          cmake --preset ${{ inputs.build-config }} -DCMAKE_TOOLCHAIN_FILE=%VCPKG_INSTALLATION_ROOT%\scripts\buildsystems\vcpkg.cmake -DCMAKE_VERBOSE_MAKEFILE=ON ${{ inputs.compiler == 'Clang' && '-DCMAKE_C_COMPILER=clang-cl.exe -DCMAKE_CXX_COMPILER=clang-cl.exe' || '' }} -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache || exit /b
-          cmake --build --preset ${{ inputs.build-config }}
+          cmake --preset %BUILD_CONFIG% -DCMAKE_TOOLCHAIN_FILE=%VCPKG_INSTALLATION_ROOT%\scripts\buildsystems\vcpkg.cmake -DCMAKE_VERBOSE_MAKEFILE=ON ${{ inputs.compiler == 'Clang' && '-DCMAKE_C_COMPILER=clang-cl.exe -DCMAKE_CXX_COMPILER=clang-cl.exe' || '' }} -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache || exit /b
+          cmake --build --preset %BUILD_CONFIG%
         shell: cmd
-        env:
-          BUILD_VERSION: ${{ inputs.version }}
-          BUILD_OS: ${{ inputs.os }}
         if: startsWith(inputs.os, 'windows')
 
       - name: Run tests
-        env:
-          TEST_ALLOW_NO_EFI_ENTRIES: ${{ startsWith(inputs.os, 'macos') && 'true' || '' }}
-        run: ctest --preset ${{ inputs.build-config }} -VV
+        run: ctest --preset ${BUILD_CONFIG} -VV
         shell: bash
+        env:
+          FONTCONFIG_PATH: /etc/fonts
+          QT_FONT_DPI: 96
+          QT_LOGGING_RULES: "*.debug=false"
+          QT_QPA_PLATFORM: offscreen
+          TEST_ALLOW_NO_EFI_ENTRIES: ${{ startsWith(inputs.os, 'macos') && 'true' || '' }}
+
+      - name: Check visuals
+        id: visual
+        continue-on-error: true
+        run: |
+          if command -v magick >/dev/null 2>&1; then
+            CMP="magick compare"
+          else
+            CMP="compare"
+          fi
+
+          mv build/${BUILD_CONFIG}/tests/screenshot.png ${ARTIFACT_VERSION}-ci.png
+          ${CMP} -metric RMSE ${ARTIFACT_VERSION}-ci.png tests/screenshots/${ARTIFACT_VERSION}.png ${ARTIFACT_VERSION}-diff.png || true
+          DIFF=$(${CMP} -metric RMSE ${ARTIFACT_VERSION}-ci.png tests/screenshots/${ARTIFACT_VERSION}.png ${ARTIFACT_VERSION}-diff.png 2>&1 | awk -F'[()]' '{print ($2 > 0.02)}' || true)
+          [ "${DIFF}" = "0" ] || exit 255
+        shell: bash
+        env:
+          ARTIFACT_VERSION: ${{ inputs.os }}-qt-${{ matrix.qt-version }}
+
+      - name: Upload visual diff
+        if: steps.visual.outcome == 'failure'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: visual-diff-${{ inputs.os }}-qt-${{ matrix.qt-version }}-${{ inputs.compiler }}
+          path: |
+            ${{ inputs.os }}-qt-${{ matrix.qt-version }}-ci.png
+            ${{ inputs.os }}-qt-${{ matrix.qt-version }}-diff.png
+          retention-days: 5
 
       - name: Package
         run: |
           for t in $(seq 1 20); do # FIXME: macOS has random hdiutil errors because of some protection mechanisms, just retry few times https://github.com/actions/runner-images/issues/7522#issuecomment-1556766641
-            cmake --build --preset ${{ inputs.build-config }} --target package && exit 0
-            rm -rf build/${{ inputs.build-config }}/dist/
+            cmake --build --preset ${BUILD_CONFIG} --target package && exit 0
+            rm -rf build/${BUILD_CONFIG}/dist/
           done
           exit 255
         shell: bash

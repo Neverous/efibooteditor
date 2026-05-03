@@ -303,8 +303,8 @@ target_sources(${PROJECT_NAME}-core PRIVATE
 )
 
 # Resources:
-qt_add_resources(RESOURCES icons.qrc)
-target_sources(${PROJECT_NAME} PRIVATE ${RESOURCES})
+qt_add_resources(ICONS icons.qrc)
+target_sources(${PROJECT_NAME} PRIVATE ${ICONS})
 
 if(WIN32)
     target_sources(${PROJECT_NAME} PRIVATE
