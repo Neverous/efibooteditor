@@ -3899,7 +3899,7 @@ Están reservados todos los demás bit.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tra
         <location filename="../src/form/filepathdialog.ui" line="4194"/>
         <location filename="../src/form/filepathdialog.ui" line="4215"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8 byte array containing the iSCSI Logical Unit Number.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Repertorio 8 byte conteniendo el Número de Unidad Lógica iSCSI.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Repertorio 8‐byte conteniendo el Número de Unidad Lógica iSCSI.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4228"/>
@@ -3998,7 +3998,7 @@ Están reservados todos los demás bit.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tra
         <location filename="../src/form/filepathdialog.ui" line="4459"/>
         <location filename="../src/form/filepathdialog.ui" line="4480"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8 byte array containing Fibre Channel End Device Port Name (a.k.a., World Wide Name).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Repertorio 8 byte conteniendo Nombre de Puerto de Dispositivo de Canal Final de Fibra (a.k.a., World Wide Name).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Repertorio 8‐byte conteniendo Nombre de Puerto de Dispositivo de Canal Final de Fibra (a.k.a., World Wide Name).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4493"/>
@@ -4044,7 +4044,7 @@ Están reservados todos los demás bit.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</tra
         <location filename="../src/form/filepathdialog.ui" line="4573"/>
         <location filename="../src/form/filepathdialog.ui" line="4594"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8-byte array of the SAS Address for Serial Attached SCSI Target Port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Colección de 8-byte para la Dirección SAS para Puerto Destino SCSI Adjunto de Serie.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Colección de 8‐byte para la Dirección SAS para Puerto Destino SCSI Adjunto de Serie.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4607"/>
