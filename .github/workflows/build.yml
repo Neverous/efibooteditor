@@ -30,9 +30,9 @@ jobs:
       fail-fast: false
       matrix:
         qt-version:
-          - 5.15.2 # Supported in Ubuntu Resolute Raccoon until 2031-05-31
+          - 5.15.2 # Supported in Ubuntu Resolute Raccoon until 2031-04-30
           - 6.2.4  # Supported in Ubuntu Jammy Jellyfish until 2027-04-01
-          - 6.11.0 # Supported until 2026-09-22
+          - 6.11.1 # Supported until 2026-09-22
         exclude:
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.15.2' || 'none' }}
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '6.2.4' || 'none' }}
@@ -144,7 +144,7 @@ jobs:
         env:
           FONTCONFIG_PATH: /etc/fonts
           QT_FONT_DPI: 96
-          QT_LOGGING_RULES: "*.debug=false"
+          QT_LOGGING_RULES: '*.debug=false'
           QT_QPA_PLATFORM: offscreen
           TEST_ALLOW_NO_EFI_ENTRIES: ${{ startsWith(inputs.os, 'macos') && 'true' || '' }}
 
