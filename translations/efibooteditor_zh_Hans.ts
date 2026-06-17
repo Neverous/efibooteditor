@@ -3055,7 +3055,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="2104"/>
         <location filename="../src/form/filepathdialog.ui" line="2125"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;128-bit Global Identifier for remote fabric port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于远程结构端口的 128 位全局标识符&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;远程交换矩阵端口的 128 位全局标识符&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2135"/>
@@ -3074,7 +3074,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="2141"/>
         <location filename="../src/form/filepathdialog.ui" line="2162"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;64-bit unique identifier to remote IOC or server process. Interpretation of field specified by Resource Flags (bit 0)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;远程 IOC 或服务器进程的 64 位唯一标识符。 资源标志（位 0）指定的字段的解释&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于远程 IOC 或服务器进程的 64 位唯一标识符。该字段由资源标志（第 0 位）指定。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="2175"/>
@@ -3998,7 +3998,7 @@ All other bits are reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <location filename="../src/form/filepathdialog.ui" line="4459"/>
         <location filename="../src/form/filepathdialog.ui" line="4480"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;8 byte array containing Fibre Channel End Device Port Name (a.k.a., World Wide Name).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;包含光纤通道终端设备端口名称（又称全球名称）的 8 字节数组。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;包含光纤通道终端设备端口名称（又称全球通用名称）的 8 字节数组。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="4493"/>
