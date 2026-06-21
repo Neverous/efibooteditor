@@ -947,12 +947,12 @@
         <location filename="../src/form/efibooteditor.ui" line="737"/>
         <location filename="../src/form/efibooteditor.ui" line="740"/>
         <source>Platform supports reporting of deferred capsule processing by creation of result variable</source>
-        <translation type="unfinished">Platform supports reporting of deferred capsule processing by creation of result variable</translation>
+        <translation type="unfinished">Plattform unterstützt die Berichterstattung über die abgeleitete Kapselverarbeitung durch die Erstellung von Ergebnisvariablen</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="743"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports reporting of deferred capsule processing by creation of result variable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform supports reporting of deferred capsule processing by creation of result variable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Platform unterstützt die Berichterstattung über die abgeleitete Kapselverarbeitung durch die Erstellung von Ergebnisvariablen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="746"/>
@@ -1153,12 +1153,12 @@
         <location filename="../src/form/efibooteditor.ui" line="1035"/>
         <location filename="../src/form/efibooteditor.ui" line="1038"/>
         <source>Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables</source>
-        <translation type="unfinished">Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables</translation>
+        <translation type="unfinished">Definiert, ob das System eine Authentifizierung erfordern sollte oder nicht auf Anfragen zu Secure Boot Policy Variables</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1041"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines whether the system should require authentication or not on requests to Secure Boot Policy Variables.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Definitioniert, ob das System eine Authentifizierung erfordern sollte oder nicht auf Anfragen zu Secure Boot Policy Variablen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1044"/>
