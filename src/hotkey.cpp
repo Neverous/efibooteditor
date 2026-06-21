@@ -36,16 +36,19 @@ auto HotKey::fromError(const QString &error) -> HotKey
 
 auto HotKey::toEFIBootKeyOption(const std::unordered_map<uint16_t, uint32_t> &crc32) const -> EFIBoot::Key_option
 {
-    if(is_error)
-        return {};
-
     EFIBoot::Key_option key_option{};
+    if(is_error)
+        return key_option;
+
     key_option.boot_option = boot_option;
     if(const auto crc = crc32.find(boot_option); crc != crc32.end())
         key_option.boot_option_crc = crc->second;
 
     if(!keys.toEFIKeyOption(key_option.key_data, key_option.keys))
-        return {};
+    {
+        key_option = {};
+        return key_option;
+    }
 
     auto begin = reinterpret_cast<const EFIBoot::Raw_data::value_type *>(vendor_data.constData());
     std::copy(begin, std::next(begin, vendor_data.size()), std::back_inserter(key_option.vendor_data));
