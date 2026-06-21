@@ -12,6 +12,7 @@ on:
       - icons/**
       - include/**
       - src/**
+      - tests/**
       - translations/**
       - windows.rc
     tags: [v*]

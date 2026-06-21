@@ -12,6 +12,7 @@ on:
       - icons/**
       - include/**
       - src/**
+      - tests/**
       - windows.rc
   pull_request:
     branches: [master]
@@ -24,6 +25,7 @@ on:
       - icons/**
       - include/**
       - src/**
+      - tests/**
       - windows.rc
   schedule:
     - cron: 0 5 * * 5

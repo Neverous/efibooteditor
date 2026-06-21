@@ -99,7 +99,6 @@ jobs:
         env:
           ARCH: ${{ endsWith(inputs.os, 'arm') && 'aarch64' || 'x86_64' }}
 
-
       - name: Install efivar
         run: sudo apt-get install libefiboot1 libefiboot-dev libefivar-dev
         shell: bash
@@ -119,6 +118,16 @@ jobs:
         run: arch -arm64 brew install imagemagick
         shell: bash
         if: startsWith(inputs.os, 'macos')
+
+      - name: Install imagemagick
+        run: |
+          choco install imagemagick --force --no-progress
+
+          $MagickPath = (Get-ChildItem "C:\Program Files*\ImageMagick*")[0].FullName
+          "MAGICK_HOME=$MagickPath" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          "MAGICK_CONFIGURE_PATH=$MagickPath" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          "MAGICK_CODER_MODULE_PATH=$MagickPath\modules\coders" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+        if: startsWith(inputs.os, 'windows')
 
       - name: Configure with ${{ inputs.compiler }}
         run: |
@@ -209,3 +218,7 @@ jobs:
         uses: github/codeql-action/analyze@8aad20d150bbac5944a9f9d289da16a4b0d87c1e
         if: inputs.build-config == 'Debug'
         continue-on-error: true
+
+      - name: Check final status
+        if: steps.visual.outcome == 'failure'
+        run: exit 255
