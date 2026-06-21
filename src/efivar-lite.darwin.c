@@ -65,10 +65,10 @@ int efi_get_variable(efi_guid_t guid, const char *name, uint8_t **data, size_t *
     }
 
     if(CFGetTypeID(value_cf) == CFDataGetTypeID())
-        *data_size = (size_t)CFDataGetLength(value_cf);
+        *data_size = (size_t)CFDataGetLength((CFDataRef)value_cf);
 
     else if(CFGetTypeID(value_cf) == CFStringGetTypeID())
-        *data_size = (size_t)CFStringGetLength(value_cf) + 1;
+        *data_size = (size_t)CFStringGetLength((CFStringRef)value_cf) + 1;
 
     else if(CFGetTypeID(value_cf) == CFNumberGetTypeID())
         *data_size = sizeof(int32_t);
@@ -84,7 +84,7 @@ int efi_get_variable(efi_guid_t guid, const char *name, uint8_t **data, size_t *
     }
 
     free(variable_data_buffer);
-    variable_data_buffer = malloc(*data_size);
+    variable_data_buffer = (uint8_t *)malloc(*data_size);
     if(variable_data_buffer == nullptr)
     {
         last_iokit_function = nullptr;
@@ -94,21 +94,21 @@ int efi_get_variable(efi_guid_t guid, const char *name, uint8_t **data, size_t *
 
     const void *ret = nullptr;
     if(CFGetTypeID(value_cf) == CFDataGetTypeID())
-        ret = memcpy(variable_data_buffer, CFDataGetBytePtr(value_cf), *data_size);
+        ret = memcpy(variable_data_buffer, CFDataGetBytePtr((CFDataRef)value_cf), *data_size);
 
     else if(CFGetTypeID(value_cf) == CFStringGetTypeID())
     {
-        if(CFStringGetCString(value_cf, (char *)variable_data_buffer, (CFIndex)*data_size, kCFStringEncodingUTF8))
+        if(CFStringGetCString((CFStringRef)value_cf, (char *)variable_data_buffer, (CFIndex)*data_size, kCFStringEncodingUTF8))
             ret = variable_data_buffer;
     }
     else if(CFGetTypeID(value_cf) == CFNumberGetTypeID())
     {
-        if(CFNumberGetValue(value_cf, kCFNumberSInt32Type, variable_data_buffer))
+        if(CFNumberGetValue((CFNumberRef)value_cf, kCFNumberSInt32Type, variable_data_buffer))
             ret = variable_data_buffer;
     }
     else if(CFGetTypeID(value_cf) == CFBooleanGetTypeID())
     {
-        *variable_data_buffer = CFBooleanGetValue(value_cf);
+        *variable_data_buffer = CFBooleanGetValue((CFBooleanRef)value_cf);
         ret = variable_data_buffer;
     }
     else
@@ -236,7 +236,7 @@ int efi_get_next_variable_name(efi_guid_t **guid, char **name)
 
         total_variables = (size_t)CFDictionaryGetCount(variables_cf);
         free(variable_names);
-        variable_names = malloc(total_variables * sizeof(CFTypeRef));
+        variable_names = (CFTypeRef *)malloc(total_variables * sizeof(CFTypeRef));
         if(variable_names == nullptr)
         {
             CFRelease(variables_cf);
@@ -267,7 +267,7 @@ int efi_get_next_variable_name(efi_guid_t **guid, char **name)
     CFStringRef variable = (CFStringRef)variable_names[current_variable++];
     size_t variable_name_length = (size_t)CFStringGetLength(variable) + 1;
     free(variable_name_buffer);
-    variable_name_buffer = malloc(variable_name_length);
+    variable_name_buffer = (char *)malloc(variable_name_length);
     if(variable_name_buffer == nullptr)
     {
         CFRelease(variables_cf);
