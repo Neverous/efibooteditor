@@ -132,7 +132,8 @@ auto HotKeyListModel::flags(const QModelIndex &index) const -> Qt::ItemFlags
     if(static_cast<Column>(index.column()) == Column::VendorData)
         return flags;
 
-    return flags | Qt::ItemIsEditable;
+    flags |= Qt::ItemIsEditable;
+    return flags;
 }
 
 auto HotKeyListModel::insertRows(int row, int count, const QModelIndex &parent) -> bool

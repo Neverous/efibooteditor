@@ -67,10 +67,10 @@ EFIKey EFIKey::fromString(const QString &repr, bool *success)
         return value;
     }
 
-    value.scan_code = Qt::Key_unknown;
     if(repr.length() != 1)
-        return {};
+        return value;
 
+    value.scan_code = Qt::Key_unknown;
     value.unicode_char = repr[0];
     if(success)
         *success = true;
@@ -128,7 +128,10 @@ EFIKey EFIKey::fromQKey(int key, Qt::KeyboardModifiers modifiers, const QString 
     {
         auto stripped = QKeySequence{key}.toString();
         if(stripped.length() != 1)
-            return {};
+        {
+            value = {};
+            return value;
+        }
 
         if(!(modifiers & Qt::ShiftModifier) && Qt::Key_A <= key && key <= Qt::Key_Z)
             stripped = stripped.toLower();
@@ -141,7 +144,10 @@ EFIKey EFIKey::fromQKey(int key, Qt::KeyboardModifiers modifiers, const QString 
     }
 
     if(text.length() != 1)
-        return {};
+    {
+        value = {};
+        return value;
+    }
 
     value.unicode_char = text[0];
     if(success)
@@ -204,7 +210,7 @@ bool EFIKeySequence::toEFIKeyOption(EFIBoot::efi_boot_key_data &key_data, std::v
 
 EFIKeySequence EFIKeySequence::fromString(const QString &str, qsizetype maxKeys)
 {
-    EFIKeySequence value = {};
+    EFIKeySequence value;
     const auto keys = str.split("+");
     int k = 0;
     while(k < keys.size())
@@ -220,14 +226,20 @@ EFIKeySequence EFIKeySequence::fromString(const QString &str, qsizetype maxKeys)
     }
 
     if(keys.size() - k > maxKeys)
-        return {};
+    {
+        value = {};
+        return value;
+    }
 
     while(k < keys.size())
     {
         bool success = false;
         auto key = EFIKey::fromString(keys[k], &success);
         if(!success)
-            return {};
+        {
+            value = {};
+            return value;
+        }
 
         value.keys.push_back(key);
         ++k;
@@ -262,7 +274,8 @@ QString EFIKeySequence::toString(bool escaped) const
     {
         // Simplest way to escape non-printable unicode characters in Qt?
         auto repr = QJsonDocument{QJsonArray{str}}.toJson(QJsonDocument::JsonFormat::Compact);
-        return repr.mid(2, repr.length() - 4);
+        str = repr.mid(2, repr.length() - 4);
+        return str;
     }
 
     return str;
