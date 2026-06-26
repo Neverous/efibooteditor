@@ -41,7 +41,7 @@ jobs:
           - qt-version: ${{ inputs.os == 'windows-2025' && '6.2.4' || 'none' }} # stdext: undeclared identifier - removed in vs2026
     steps:
       - name: Checkout source code
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
 
       - name: Set up ccache
         uses: hendrikmuhs/ccache-action@d62db5f07c26379fc4b4e0916f098a92573c3b03
