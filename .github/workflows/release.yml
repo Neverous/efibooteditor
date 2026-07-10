@@ -130,12 +130,12 @@ jobs:
         shell: bash
 
       - name: Attest release assets
-        uses: actions/attest-build-provenance@a2bbfa25375fe432b6a289bc6b6cd05ecd0c4c32
+        uses: actions/attest-build-provenance@0f67c3f4856b2e3261c31976d6725780e5e4c373
         with:
           subject-path: dist/EFIBootEditor-*
 
       - name: Upload assets to release
-        uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda
+        uses: softprops/action-gh-release@718ea10b132b3b2eba29c1007bb80653f286566b
         with:
           files: dist/EFIBootEditor-*
           tag_name: ${{ github.ref_name }}
