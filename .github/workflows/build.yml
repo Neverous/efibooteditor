@@ -37,6 +37,7 @@ jobs:
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.15.2' || 'none' }}
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '6.2.4' || 'none' }}
           - qt-version: ${{ inputs.os == 'macos-26' && '6.2.4' || 'none' }}
+          - qt-version: ${{ inputs.os == 'xcode-27' && '6.2.4' || 'none' }}
           - qt-version: ${{ inputs.os == 'windows-2025' && '5.15.2' || 'none' }} # stdext: undeclared identifier - removed in vs2026
           - qt-version: ${{ inputs.os == 'windows-2025' && '6.2.4' || 'none' }} # stdext: undeclared identifier - removed in vs2026
     steps:
@@ -70,7 +71,7 @@ jobs:
 
       - name: Install CMake
         run: |
-          wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
+          curl https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
           sudo apt-add-repository "deb https://apt.kitware.com/ubuntu/ $(lsb_release -cs) main"
           sudo apt-get update
           sudo apt-get install cmake
@@ -90,9 +91,9 @@ jobs:
         run: |
           DIR=$(mktemp -d)
           echo "${DIR}" >> ${GITHUB_PATH}
-          wget -c -nv https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-${ARCH}.AppImage -O ${DIR}/linuxdeploy
-          wget -c -nv https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-${ARCH}.AppImage -O ${DIR}/linuxdeploy-plugin-qt
-          wget -c -nv https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${ARCH}.AppImage -O ${DIR}/appimagetool
+          curl --proto '=https' -sS -L -C - https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-${ARCH}.AppImage -o ${DIR}/linuxdeploy
+          curl --proto '=https' -sS -L -C - https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-${ARCH}.AppImage -o ${DIR}/linuxdeploy-plugin-qt
+          curl --proto '=https' -sS -L -C - https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${ARCH}.AppImage -o ${DIR}/appimagetool
           chmod +x ${DIR}/*
         shell: bash
         if: startsWith(inputs.os, 'ubuntu')
@@ -117,7 +118,7 @@ jobs:
       - name: Install imagemagick
         run: arch -arm64 brew install imagemagick
         shell: bash
-        if: startsWith(inputs.os, 'macos')
+        if: ${{ startsWith(inputs.os, 'macos') || startsWith(inputs.os, 'xcode') }}
 
       - name: Install imagemagick
         run: |
@@ -131,7 +132,7 @@ jobs:
 
       - name: Configure with ${{ inputs.compiler }}
         run: |
-          cmake --preset ${BUILD_CONFIG} -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER=${{ inputs.compiler == 'Clang' && 'clang' || 'gcc' }} -DCMAKE_CXX_COMPILER=${{ inputs.compiler == 'Clang' && 'clang++' || 'g++' }} ${{ startsWith(inputs.os, 'macos') && startsWith(matrix.qt-version, '5') && '-DCMAKE_OSX_ARCHITECTURES="x86_64"' || '' }}
+          cmake --preset ${BUILD_CONFIG} -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER=${{ inputs.compiler == 'Clang' && 'clang' || 'gcc' }} -DCMAKE_CXX_COMPILER=${{ inputs.compiler == 'Clang' && 'clang++' || 'g++' }} ${{ (startsWith(inputs.os, 'macos') || startsWith(inputs.os, 'xcode')) && startsWith(matrix.qt-version, '5') && '-DCMAKE_OSX_ARCHITECTURES="x86_64"' || '' }}
         shell: bash
         if: ${{ !startsWith(inputs.os, 'windows') }}
 
@@ -142,13 +143,15 @@ jobs:
 
       - name: Configure and build with ${{ inputs.compiler }}
         run: |
-          call "%programfiles%\Microsoft Visual Studio\${{ startsWith(inputs.os, 'windows-2025') && '18' || '2022' }}\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ endsWith(inputs.os, 'arm') && 'arm64' || 'x64' }} || exit /b
+          call "%programfiles%\Microsoft Visual Studio\${{ (startsWith(inputs.os, 'windows-2025') || inputs.os == 'windows-11-vs2026-arm') && '18' || '2022' }}\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ endsWith(inputs.os, 'arm') && 'arm64' || 'x64' }} || exit /b
           cmake --preset %BUILD_CONFIG% -DCMAKE_TOOLCHAIN_FILE=%VCPKG_INSTALLATION_ROOT%\scripts\buildsystems\vcpkg.cmake -DCMAKE_VERBOSE_MAKEFILE=ON ${{ inputs.compiler == 'Clang' && '-DCMAKE_C_COMPILER=clang-cl.exe -DCMAKE_CXX_COMPILER=clang-cl.exe' || '' }} -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache || exit /b
           cmake --build --preset %BUILD_CONFIG%
         shell: cmd
         if: startsWith(inputs.os, 'windows')
 
       - name: Run tests
+        id: test
+        continue-on-error: true
         run: ctest --preset ${BUILD_CONFIG} -VV
         shell: bash
         env:
@@ -156,7 +159,7 @@ jobs:
           QT_FONT_DPI: 96
           QT_LOGGING_RULES: '*.debug=false'
           QT_QPA_PLATFORM: offscreen
-          TEST_ALLOW_NO_EFI_ENTRIES: ${{ startsWith(inputs.os, 'macos') && 'true' || '' }}
+          TEST_ALLOW_NO_EFI_ENTRIES: ${{ (startsWith(inputs.os, 'macos') || startsWith(inputs.os, 'xcode')) && 'true' || '' }}
 
       - name: Check visuals
         id: visual
@@ -220,5 +223,5 @@ jobs:
         continue-on-error: true
 
       - name: Check final status
-        if: steps.visual.outcome == 'failure'
+        if: ${{ steps.visual.outcome == 'failure' || steps.test.outcome == 'failure' }}
         run: exit 255

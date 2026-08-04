@@ -52,7 +52,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-2022, windows-2025, windows-11-arm]
+        os: [windows-2022, windows-2025, windows-11-arm, windows-11-vs2026-arm]
         compiler:
           - Clang
           - MSVC
@@ -77,7 +77,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-14, macos-15, macos-26]
+        os: [macos-14, macos-15, macos-26, xcode-27]
         compiler:
           - Clang
 
