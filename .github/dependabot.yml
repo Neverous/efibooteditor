@@ -6,6 +6,8 @@ updates:
       interval: "weekly"
       day: "friday"
       time: "05:00"
+    allow:
+      - dependency-type: "all"
     groups:
       dependencies:
         patterns:
@@ -16,6 +18,8 @@ updates:
       interval: "weekly"
       day: "friday"
       time: "05:00"
+    allow:
+      - dependency-type: "all"
     groups:
       dependencies:
         patterns:
@@ -26,6 +30,8 @@ updates:
       interval: "weekly"
       day: "friday"
       time: "05:00"
+    allow:
+      - dependency-type: "all"
     groups:
       dependencies:
         patterns:
