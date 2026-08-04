@@ -149,6 +149,8 @@ jobs:
         if: startsWith(inputs.os, 'windows')
 
       - name: Run tests
+        id: test
+        continue-on-error: true
         run: ctest --preset ${BUILD_CONFIG} -VV
         shell: bash
         env:
@@ -220,5 +222,5 @@ jobs:
         continue-on-error: true
 
       - name: Check final status
-        if: steps.visual.outcome == 'failure'
+        if: ${{ steps.visual.outcome == 'failure' || steps.test.outcome == 'failure' }}
         run: exit 255
