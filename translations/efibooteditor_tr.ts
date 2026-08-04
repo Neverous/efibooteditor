@@ -96,7 +96,7 @@
     <message>
         <location filename="../src/form/bootentryform.ui" line="286"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move file path up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;dosyayı önceki konuma taşı.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/bootentryform.ui" line="305"/>
@@ -414,13 +414,13 @@
         <location filename="../src/efibootdata.cpp" line="369"/>
         <location filename="../src/efibootdata.cpp" line="690"/>
         <source>Error saving entries</source>
-        <translation type="unfinished">Error saving entries</translation>
+        <translation>Kaydedilen girdilerde hata oluştu</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="369"/>
         <location filename="../src/efibootdata.cpp" line="690"/>
         <source>Entry %1(%2): duplicated index!</source>
-        <translation type="unfinished">Entry %1(%2): duplicated index!</translation>
+        <translation>Girdi %1(%2): tekrarlanan dizin!</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="389"/>
@@ -431,14 +431,14 @@
         <location filename="../src/efibootdata.cpp" line="494"/>
         <location filename="../src/efibootdata.cpp" line="516"/>
         <source>Error saving %1</source>
-        <translation type="unfinished">Error saving %1</translation>
+        <translation>%1 kaydedilirken sorun oluştu</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="407"/>
         <location filename="../src/efibootdata.cpp" line="470"/>
         <location filename="../src/efibootdata.cpp" line="504"/>
         <source>Error removing %1</source>
-        <translation type="unfinished">Error removing %1</translation>
+        <translation>%1 kaldırılırken sorun oluştu</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="533"/>
@@ -447,40 +447,40 @@
         <location filename="../src/efibootdata.cpp" line="1340"/>
         <location filename="../src/efibootdata.cpp" line="1584"/>
         <source>Error importing boot configuration</source>
-        <translation type="unfinished">Error importing boot configuration</translation>
+        <translation>Boot konfigürasyonu içeri aktarılırken sorun oluştu</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="533"/>
         <location filename="../src/efibootdata.cpp" line="774"/>
         <source>Couldn&apos;t open selected file (%1).</source>
-        <translation type="unfinished">Couldn&apos;t open selected file (%1).</translation>
+        <translation>Seçilen dosya (%1) açılamıyor.</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="542"/>
         <source>Parser failed: %1</source>
-        <translation type="unfinished">Parser failed: %1</translation>
+        <translation>Bölümlendirme başarısız: %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="556"/>
         <source>Invalid _Type: %1</source>
-        <translation type="unfinished">Invalid _Type: %1</translation>
+        <translation>Gecersiz_deger: %1</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="569"/>
         <location filename="../src/efibootdata.cpp" line="759"/>
         <source>Error exporting boot configuration</source>
-        <translation type="unfinished">Error exporting boot configuration</translation>
+        <translation>Boot konfigürasyonunu dışarı aktarırken sorun oluştu</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="569"/>
         <source>Couldn&apos;t open selected file (%1): %2.</source>
-        <translation type="unfinished">Couldn&apos;t open selected file (%1): %2.</translation>
+        <translation>Seçilen dosya (%1)açılamadı : %2.</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="759"/>
         <location filename="../src/efibootdata.cpp" line="889"/>
         <source>Couldn&apos;t write into file (%1): %2.</source>
-        <translation type="unfinished">Couldn&apos;t write into file (%1): %2.</translation>
+        <translation>Bilgiler dosyaya(%1) yazılamadı: %2.</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="774"/>
