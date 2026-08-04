@@ -71,7 +71,7 @@ jobs:
 
       - name: Install CMake
         run: |
-          wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
+          curl https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
           sudo apt-add-repository "deb https://apt.kitware.com/ubuntu/ $(lsb_release -cs) main"
           sudo apt-get update
           sudo apt-get install cmake
@@ -91,9 +91,9 @@ jobs:
         run: |
           DIR=$(mktemp -d)
           echo "${DIR}" >> ${GITHUB_PATH}
-          wget -c -nv https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-${ARCH}.AppImage -O ${DIR}/linuxdeploy
-          wget -c -nv https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-${ARCH}.AppImage -O ${DIR}/linuxdeploy-plugin-qt
-          wget -c -nv https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${ARCH}.AppImage -O ${DIR}/appimagetool
+          curl --proto '=https' -sS -L -C - https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-${ARCH}.AppImage -o ${DIR}/linuxdeploy
+          curl --proto '=https' -sS -L -C - https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-${ARCH}.AppImage -o ${DIR}/linuxdeploy-plugin-qt
+          curl --proto '=https' -sS -L -C - https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${ARCH}.AppImage -o ${DIR}/appimagetool
           chmod +x ${DIR}/*
         shell: bash
         if: startsWith(inputs.os, 'ubuntu')
