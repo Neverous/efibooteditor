@@ -37,6 +37,7 @@ jobs:
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.15.2' || 'none' }}
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '6.2.4' || 'none' }}
           - qt-version: ${{ inputs.os == 'macos-26' && '6.2.4' || 'none' }}
+          - qt-version: ${{ inputs.os == 'xcode-27' && '6.2.4' || 'none' }}
           - qt-version: ${{ inputs.os == 'windows-2025' && '5.15.2' || 'none' }} # stdext: undeclared identifier - removed in vs2026
           - qt-version: ${{ inputs.os == 'windows-2025' && '6.2.4' || 'none' }} # stdext: undeclared identifier - removed in vs2026
     steps:
@@ -117,7 +118,7 @@ jobs:
       - name: Install imagemagick
         run: arch -arm64 brew install imagemagick
         shell: bash
-        if: startsWith(inputs.os, 'macos')
+        if: ${{ startsWith(inputs.os, 'macos') || startsWith(inputs.os, 'xcode') }}
 
       - name: Install imagemagick
         run: |
@@ -131,7 +132,7 @@ jobs:
 
       - name: Configure with ${{ inputs.compiler }}
         run: |
-          cmake --preset ${BUILD_CONFIG} -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER=${{ inputs.compiler == 'Clang' && 'clang' || 'gcc' }} -DCMAKE_CXX_COMPILER=${{ inputs.compiler == 'Clang' && 'clang++' || 'g++' }} ${{ startsWith(inputs.os, 'macos') && startsWith(matrix.qt-version, '5') && '-DCMAKE_OSX_ARCHITECTURES="x86_64"' || '' }}
+          cmake --preset ${BUILD_CONFIG} -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER=${{ inputs.compiler == 'Clang' && 'clang' || 'gcc' }} -DCMAKE_CXX_COMPILER=${{ inputs.compiler == 'Clang' && 'clang++' || 'g++' }} ${{ (startsWith(inputs.os, 'macos') || startsWith(inputs.os, 'xcode')) && startsWith(matrix.qt-version, '5') && '-DCMAKE_OSX_ARCHITECTURES="x86_64"' || '' }}
         shell: bash
         if: ${{ !startsWith(inputs.os, 'windows') }}
 
@@ -158,7 +159,7 @@ jobs:
           QT_FONT_DPI: 96
           QT_LOGGING_RULES: '*.debug=false'
           QT_QPA_PLATFORM: offscreen
-          TEST_ALLOW_NO_EFI_ENTRIES: ${{ startsWith(inputs.os, 'macos') && 'true' || '' }}
+          TEST_ALLOW_NO_EFI_ENTRIES: ${{ (startsWith(inputs.os, 'macos') || startsWith(inputs.os, 'xcode')) && 'true' || '' }}
 
       - name: Check visuals
         id: visual
