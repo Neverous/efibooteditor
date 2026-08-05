@@ -21,6 +21,9 @@ dev = [
 [tool.setuptools.packages.find]
 where = ["."]
 
+[tool.uv]
+exclude-newer = "1 week"
+
 [tool.ruff]
 lint.select = [
     "B",

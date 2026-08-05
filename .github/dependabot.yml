@@ -6,8 +6,8 @@ updates:
       interval: "weekly"
       day: "friday"
       time: "05:00"
-    allow:
-      - dependency-type: "all"
+    cooldown:
+      default-days: 7
     groups:
       dependencies:
         patterns:
@@ -18,6 +18,8 @@ updates:
       interval: "weekly"
       day: "friday"
       time: "05:00"
+    cooldown:
+      default-days: 7
     allow:
       - dependency-type: "all"
     groups:
@@ -30,6 +32,8 @@ updates:
       interval: "weekly"
       day: "friday"
       time: "05:00"
+    cooldown:
+      default-days: 7
     allow:
       - dependency-type: "all"
     groups:

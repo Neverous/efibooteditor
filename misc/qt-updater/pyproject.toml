@@ -16,6 +16,9 @@ dev = [
     "types-requests>=2.33.0.20260518",
 ]
 
+[tool.uv]
+exclude-newer = "1 week"
+
 [tool.ruff]
 lint.select = [
     "B",

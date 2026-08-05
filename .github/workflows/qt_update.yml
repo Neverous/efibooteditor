@@ -45,7 +45,7 @@ jobs:
           python-version: '3.14'
 
       - name: Install dependencies
-        run: uv sync
+        run: uv sync --no-build
         working-directory: misc/qt-updater
 
       - name: Run the updater
