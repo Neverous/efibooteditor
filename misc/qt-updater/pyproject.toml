@@ -11,9 +11,9 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "ruff>=0.15.20",
-    "ty>=0.0.54",
-    "types-requests>=2.33.0.20260518",
+    "ruff>=0.16.0",
+    "ty>=0.0.65",
+    "types-requests>=2.33.0.20260712",
 ]
 
 [tool.uv]
