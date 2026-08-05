@@ -42,7 +42,7 @@ jobs:
           - qt-version: ${{ inputs.os == 'windows-2025' && '6.2.4' || 'none' }} # stdext: undeclared identifier - removed in vs2026
     steps:
       - name: Checkout source code
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Set up ccache
         uses: hendrikmuhs/ccache-action@d62db5f07c26379fc4b4e0916f098a92573c3b03
@@ -54,7 +54,7 @@ jobs:
             ${{ inputs.os }}
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@99df26d4f13ea111d4ec1a7dddef6063f76b97e9
+        uses: github/codeql-action/init@e4fba868fa4b1b91e1fdab776edc8cfbe6e9fb81
         with:
           languages: cpp
           queries: security-and-quality
@@ -218,7 +218,7 @@ jobs:
           path: build/${{ inputs.build-config }}/dist/EFIBootEditor-*
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@99df26d4f13ea111d4ec1a7dddef6063f76b97e9
+        uses: github/codeql-action/analyze@e4fba868fa4b1b91e1fdab776edc8cfbe6e9fb81
         if: inputs.build-config == 'Debug'
         continue-on-error: true
 
