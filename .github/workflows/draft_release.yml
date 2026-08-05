@@ -11,6 +11,6 @@ jobs:
       contents: write
       pull-requests: read
     steps:
-      - uses: release-drafter/release-drafter@4d75298e00d9e34c483e5ff8c68d0ea1c1940c1e
+      - uses: release-drafter/release-drafter@34d80673e067bdc0c24568d3af899c216adcfaa9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
