@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 9,
   "cmakeMinimumRequired": {
     "major": 3,
     "minor": 16,
@@ -7,36 +7,114 @@
   },
   "configurePresets": [
     {
-      "name": "base-os",
-      "displayName": "Base OS Config",
-      "description": "Shared foundation for all OS configurations.",
+      "name": "base",
+      "displayName": "Base Config",
+      "description": "Shared foundation for all configurations.",
       "hidden": true,
       "binaryDir": "${sourceDir}/build/${presetName}"
+    },
+    {
+      "name": "vcpkg",
+      "displayName": "VCPKG Config",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+      }
+    },
+    {
+      "name": "qt6",
+      "displayName": "Qt6 Config",
+      "hidden": true,
+      "cacheVariables": {
+        "QT_VERSION_MAJOR": "6"
+      }
+    },
+    {
+      "name": "qt5",
+      "displayName": "Qt5 Config",
+      "hidden": true,
+      "cacheVariables": {
+        "QT_VERSION_MAJOR": "5"
+      }
     },
     {
       "name": "Debug",
       "displayName": "Debug Build",
       "description": "Main config for local development and debugging. Provides full debug symbols.",
-      "inherits": ["base-os"],
+      "inherits": [ "base" ],
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug"
       }
     },
     {
+      "name": "Debug-vcpkg",
+      "displayName": "Debug Build (vcpkg)",
+      "description": "Main config for local development and debugging. Provides full debug symbols.",
+      "inherits": [ "Debug", "vcpkg" ]
+    },
+    {
+      "name": "Debug-vcpkg-Qt6",
+      "displayName": "Debug Build (vcpkg, Qt6)",
+      "description": "Main config for local development and debugging. Provides full debug symbols.",
+      "inherits": [ "Debug", "vcpkg", "qt6" ]
+    },
+    {
+      "name": "Debug-vcpkg-Qt5",
+      "displayName": "Debug Build (vcpkg, Qt5)",
+      "description": "Main config for local development and debugging. Provides full debug symbols.",
+      "inherits": [ "Debug", "vcpkg", "qt5" ]
+    },
+    {
       "name": "RelWithDebInfo",
       "displayName": "Optimized Release",
       "description": "Optimized for release performance with debug info for profiling.",
-      "inherits": ["base-os"],
+      "inherits": [ "base" ],
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "RelWithDebInfo"
       }
+    },
+    {
+      "name": "RelWithDebInfo-vcpkg",
+      "displayName": "Optimized Release (vcpkg)",
+      "description": "Optimized for release performance with debug info for profiling.",
+      "inherits": [ "RelWithDebInfo", "vcpkg" ]
+    },
+    {
+      "name": "RelWithDebInfo-vcpkg-Qt6",
+      "displayName": "Optimized Release (vcpkg, Qt6)",
+      "description": "Optimized for release performance with debug info for profiling.",
+      "inherits": [ "RelWithDebInfo", "vcpkg", "qt6" ]
+    },
+    {
+      "name": "RelWithDebInfo-vcpkg-Qt5",
+      "displayName": "Optimized Release (vcpkg, Qt5)",
+      "description": "Optimized for release performance with debug info for profiling.",
+      "inherits": [ "RelWithDebInfo", "vcpkg", "qt5" ]
     }
   ],
   "buildPresets": [
     {
       "name": "Debug",
-      "displayName": "Debug",
+      "displayName": "Debug Release",
       "configurePreset": "Debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "Debug-vcpkg",
+      "displayName": "Debug Release (vcpkg)",
+      "configurePreset": "Debug-vcpkg",
+      "configuration": "Debug"
+    },
+    {
+      "name": "Debug-vcpkg-Qt6",
+      "displayName": "Debug Release (vcpkg, Qt6)",
+      "configurePreset": "Debug-vcpkg-Qt6",
+      "configuration": "Debug"
+    },
+    {
+      "name": "Debug-vcpkg-Qt5",
+      "displayName": "Debug Release (vcpkg, Qt5)",
+      "configurePreset": "Debug-vcpkg-Qt5",
       "configuration": "Debug"
     },
     {
@@ -44,13 +122,58 @@
       "displayName": "Optimized Release",
       "configurePreset": "RelWithDebInfo",
       "configuration": "RelWithDebInfo"
+    },
+    {
+      "name": "RelWithDebInfo-vcpkg",
+      "displayName": "Optimized Release (vcpkg)",
+      "configurePreset": "RelWithDebInfo-vcpkg",
+      "configuration": "RelWithDebInfo"
+    },
+    {
+      "name": "RelWithDebInfo-vcpkg-Qt6",
+      "displayName": "Optimized Release (vcpkg, Qt6)",
+      "configurePreset": "RelWithDebInfo-vcpkg-Qt6",
+      "configuration": "RelWithDebInfo"
+    },
+    {
+      "name": "RelWithDebInfo-vcpkg-Qt5",
+      "displayName": "Optimized Release (vcpkg, Qt5)",
+      "configurePreset": "RelWithDebInfo-vcpkg-Qt5",
+      "configuration": "RelWithDebInfo"
     }
   ],
   "testPresets": [
     {
       "name": "Debug",
-      "displayName": "Debug",
+      "displayName": "Debug Release",
       "configurePreset": "Debug",
+      "configuration": "Debug",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "Debug-vcpkg",
+      "displayName": "Debug Release (vcpkg)",
+      "configurePreset": "Debug-vcpkg",
+      "configuration": "Debug",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "Debug-vcpkg-Qt6",
+      "displayName": "Debug Release (vcpkg, Qt6)",
+      "configurePreset": "Debug-vcpkg-Qt6",
+      "configuration": "Debug",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "Debug-vcpkg-Qt5",
+      "displayName": "Debug Release (vcpkg, Qt5)",
+      "configurePreset": "Debug-vcpkg-Qt5",
       "configuration": "Debug",
       "output": {
         "outputOnFailure": true
@@ -60,6 +183,33 @@
       "name": "RelWithDebInfo",
       "displayName": "Optimized Release",
       "configurePreset": "RelWithDebInfo",
+      "configuration": "RelWithDebInfo",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "RelWithDebInfo-vcpkg",
+      "displayName": "Optimized Release (vcpkg)",
+      "configurePreset": "RelWithDebInfo-vcpkg",
+      "configuration": "RelWithDebInfo",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "RelWithDebInfo-vcpkg-Qt6",
+      "displayName": "Optimized Release (vcpkg, Qt6)",
+      "configurePreset": "RelWithDebInfo-vcpkg-Qt6",
+      "configuration": "RelWithDebInfo",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "RelWithDebInfo-vcpkg-Qt5",
+      "displayName": "Optimized Release (vcpkg, Qt5)",
+      "configurePreset": "RelWithDebInfo-vcpkg-Qt5",
       "configuration": "RelWithDebInfo",
       "output": {
         "outputOnFailure": true
