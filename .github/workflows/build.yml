@@ -130,6 +130,13 @@ jobs:
           "MAGICK_CODER_MODULE_PATH=$MagickPath\modules\coders" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
         if: startsWith(inputs.os, 'windows')
 
+      - name: Install WiX Toolset v4+
+        run: |
+          dotnet tool install --global wix
+          wix eula accept wix7
+          wix extension add --global WixToolset.UI.wixext
+        if: startsWith(inputs.os, 'windows')
+
       - name: Configure with ${{ inputs.compiler }}
         run: |
           cmake --preset ${BUILD_CONFIG} -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER=${{ inputs.compiler == 'Clang' && 'clang' || 'gcc' }} -DCMAKE_CXX_COMPILER=${{ inputs.compiler == 'Clang' && 'clang++' || 'g++' }} ${{ (startsWith(inputs.os, 'macos') || startsWith(inputs.os, 'xcode')) && startsWith(matrix.qt-version, '5') && '-DCMAKE_OSX_ARCHITECTURES="x86_64"' || '' }}
@@ -223,5 +230,13 @@ jobs:
         continue-on-error: true
 
       - name: Check final status
-        if: ${{ steps.visual.outcome == 'failure' || steps.test.outcome == 'failure' }}
-        run: exit 255
+        if: ${{ always() && (steps.visual.outcome == 'failure' || steps.test.outcome == 'failure') }}
+        run: |
+          echo "::error::Pipeline failed!"
+          if [ "${{ steps.visual.outcome }}" = "failure" ]; then
+            echo "FAILED: Visuals check failed."
+          fi
+          if [ "${{ steps.test.outcome }}" = "failure" ]; then
+            echo "FAILED: Tests failed."
+          fi
+          exit 255
