@@ -1,0 +1,39 @@
+name: Debug build status check
+
+on:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-slim
+    permissions:
+      actions: read
+      statuses: write
+    steps:
+      - name: Wait for event scheduler
+        run: sleep 10
+
+      - name: Check if Debug build was scheduled
+        id: check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          RUN_COUNT=$(gh api \
+            "/repos/${{ github.repository }}/actions/workflows/debug.yml/runs?head_sha=${SHA}" \
+            --jq '.total_count')
+
+          echo "Scheduled runs for debug.yml: ${RUN_COUNT}"
+          echo "count=${RUN_COUNT}" >> $GITHUB_OUTPUT
+
+      - name: Set Debug build status as skipped
+        if: steps.check.outputs.count == '0'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api \
+            --method POST \
+            /repos/${{ github.repository }}/statuses/${{ github.event.pull_request.head.sha }} \
+            -f context='Debug build' \
+            -f description='Skipped: Debug build was not scheduled' \
+            -f state='success'
