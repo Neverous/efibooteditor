@@ -71,6 +71,9 @@ jobs:
     name: Trigger Debug build status check
     needs: [uv-lock-upgrade]
     if: ${{ needs.uv-lock-upgrade.outputs.new_sha != '' }}
+    permissions:
+      actions: read
+      statuses: write
     uses: ./.github/workflows/debug_status_check.yml
     with:
       sha: ${{ needs.uv-lock-upgrade.outputs.new_sha }}
