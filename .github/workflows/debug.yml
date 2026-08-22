@@ -110,22 +110,18 @@ jobs:
       version: ${{ github.sha }}
 
   publish-status:
+    name: Debug build
     needs:
       - build-linux
       - build-windows
       - build-macos
     runs-on: ubuntu-slim
-    permissions:
-      statuses: write
     steps:
-      - name: Report debug build success
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SHA: ${{ github.event.pull_request.head.sha || github.ref }}
+      - name: Evaluate build status
         run: |
-          gh api \
-            --method POST \
-            /repos/${{ github.repository }}/statuses/${SHA} \
-            -f context='Debug build' \
-            -f description='Debug build succeeded' \
-            -f state='success'
+          if [ "${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}" == "true" ]; then
+            echo "One or more builds failed!"
+            exit 1
+          fi
+          echo "Debug build succeeded"
+    if: always()
