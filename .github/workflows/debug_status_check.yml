@@ -2,6 +2,12 @@ name: Debug build status check
 
 on:
   pull_request_target:
+  workflow_call:
+    inputs:
+      sha:
+        description: 'The newly created commit SHA'
+        required: true
+        type: string
 
 jobs:
   check:
@@ -17,7 +23,7 @@ jobs:
         id: check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SHA: ${{ github.event.pull_request.head.sha }}
+          SHA: ${{ inputs.sha || github.event.pull_request.head.sha }}
         run: |
           RUN_COUNT=$(gh api \
             "/repos/${{ github.repository }}/actions/workflows/debug.yml/runs?head_sha=${SHA}" \
@@ -30,7 +36,7 @@ jobs:
         if: steps.check.outputs.count == '0'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SHA: ${{ github.event.pull_request.head.sha }}
+          SHA: ${{ inputs.sha || github.event.pull_request.head.sha }}
         run: |
           gh api \
             --method POST \
