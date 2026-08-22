@@ -20,7 +20,6 @@ env:
   BUILD_CONFIG: ${{ inputs.build-config }}
   BUILD_OS: ${{ inputs.os }}
   BUILD_VERSION: ${{ inputs.version }}
-  CMAKE_BUILD_PARALLEL_LEVEL: 4
 
 jobs:
   build:
@@ -69,7 +68,7 @@ jobs:
       - name: Set up Qt environment
         uses: jurplel/install-qt-action@48d3ad6db93f3627c8ee7a0454bc6f3744f7e730
         with:
-          cache: true
+          cache: false
           version: ${{ matrix.qt-version }}
           setup-python: false
           # https://github.com/miurahr/aqtinstall/pull/1000
@@ -145,7 +144,7 @@ jobs:
 
       - name: Configure with ${{ inputs.compiler }}
         run: |
-          cmake --preset ${BUILD_CONFIG} -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER=${{ inputs.compiler == 'Clang' && 'clang' || 'gcc' }} -DCMAKE_CXX_COMPILER=${{ inputs.compiler == 'Clang' && 'clang++' || 'g++' }} ${{ (startsWith(inputs.os, 'macos') || startsWith(inputs.os, 'xcode')) && startsWith(matrix.qt-version, '5') && '-DCMAKE_OSX_ARCHITECTURES="x86_64"' || '' }}
+          cmake --preset ${BUILD_CONFIG} -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER=${{ inputs.compiler == 'Clang' && 'clang' || 'gcc' }} -DCMAKE_CXX_COMPILER=${{ inputs.compiler == 'Clang' && 'clang++' || 'g++' }} ${{ (startsWith(inputs.os, 'macos') || startsWith(inputs.os, 'xcode')) && startsWith(matrix.qt-version, '5') && '-DCMAKE_OSX_ARCHITECTURES="x86_64"' || '' }} -G Ninja
         shell: bash
         if: ${{ !startsWith(inputs.os, 'windows') }}
 
@@ -157,7 +156,7 @@ jobs:
       - name: Configure and build with ${{ inputs.compiler }}
         run: |
           call "%programfiles%\Microsoft Visual Studio\${{ (startsWith(inputs.os, 'windows-2025') || inputs.os == 'windows-11-vs2026-arm') && '18' || '2022' }}\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ endsWith(inputs.os, 'arm') && 'arm64' || 'x64' }} || exit /b
-          cmake --preset %BUILD_CONFIG% -DCMAKE_TOOLCHAIN_FILE=%VCPKG_INSTALLATION_ROOT%\scripts\buildsystems\vcpkg.cmake -DCMAKE_VERBOSE_MAKEFILE=ON ${{ inputs.compiler == 'Clang' && '-DCMAKE_C_COMPILER=clang-cl.exe -DCMAKE_CXX_COMPILER=clang-cl.exe' || '' }} -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache || exit /b
+          cmake --preset %BUILD_CONFIG% -DCMAKE_TOOLCHAIN_FILE=%VCPKG_INSTALLATION_ROOT%\scripts\buildsystems\vcpkg.cmake -DCMAKE_VERBOSE_MAKEFILE=ON ${{ inputs.compiler == 'Clang' && '-DCMAKE_C_COMPILER=clang-cl.exe -DCMAKE_CXX_COMPILER=clang-cl.exe' || '' }} -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -G Ninja || exit /b
           cmake --build --preset %BUILD_CONFIG%
         shell: cmd
         if: startsWith(inputs.os, 'windows')

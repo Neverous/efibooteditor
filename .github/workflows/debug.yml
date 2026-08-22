@@ -108,3 +108,24 @@ jobs:
       compiler: ${{ matrix.compiler }}
       build-config: Debug
       version: ${{ github.sha }}
+
+  publish-status:
+    needs:
+      - build-linux
+      - build-windows
+      - build-macos
+    runs-on: ubuntu-slim
+    permissions:
+      statuses: write
+    steps:
+      - name: Report debug build success
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SHA: ${{ github.event.pull_request.head.sha || github.ref }}
+        run: |
+          gh api \
+            --method POST \
+            /repos/${{ github.repository }}/statuses/${SHA} \
+            -f context='Debug build' \
+            -f description='Debug build succeeded' \
+            -f state='success'
