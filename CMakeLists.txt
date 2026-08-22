@@ -70,10 +70,16 @@ find_package(Qt${QT_VERSION_MAJOR}
         LinguistTools
     REQUIRED)
 
-find_package(ZLIB REQUIRED)
-message(STATUS "ZLIB: ${ZLIB_VERSION_STRING}")
-
 add_library(${PROJECT_NAME}-core)
+
+if(NOT EMSCRIPTEN)
+    find_package(ZLIB REQUIRED)
+    message(STATUS "ZLIB: ${ZLIB_VERSION_STRING}")
+    target_link_libraries(${PROJECT_NAME}-core PUBLIC ZLIB::ZLIB)
+else()
+    target_compile_options(${PROJECT_NAME}-core PUBLIC "-sUSE_ZLIB=1")
+    target_link_options(${PROJECT_NAME}-core PUBLIC "-sUSE_ZLIB=1" "--bind")
+endif()
 
 target_include_directories(${PROJECT_NAME}-core PUBLIC "${CMAKE_SOURCE_DIR}/include")
 
@@ -83,7 +89,6 @@ target_link_libraries(${PROJECT_NAME}-core PUBLIC
     Qt${QT_VERSION_MAJOR}::Network
     Qt${QT_VERSION_MAJOR}::Svg
     Qt${QT_VERSION_MAJOR}::Widgets
-    ZLIB::ZLIB
 )
 
 if(${QT_VERSION_MAJOR} LESS_EQUAL 5)
@@ -135,7 +140,6 @@ target_sources(${PROJECT_NAME}-core PRIVATE
     src/driveinfo.cpp
     src/efibootdata.cpp
     src/efibooteditor.cpp
-    src/efibooteditorcli.cpp
     src/efikeysequence.cpp
     src/efikeysequenceedit.cpp
     src/filepathdelegate.cpp
@@ -147,10 +151,25 @@ target_sources(${PROJECT_NAME}-core PRIVATE
     src/hotkeysview.cpp
 )
 
-if(UNIX AND NOT APPLE)
+if(NOT EMSCRIPTEN)
+    target_sources(${PROJECT_NAME}-core PRIVATE
+        src/efibooteditorcli.cpp
+    )
+endif()
+
+if(UNIX AND NOT APPLE AND NOT EMSCRIPTEN)
     target_sources(${PROJECT_NAME}-core PRIVATE
         src/driveinfo.linux.cpp
         src/efivar-lite.linux.c
+    )
+endif()
+
+if(EMSCRIPTEN)
+    target_sources(${PROJECT_NAME}-core PRIVATE
+        src/driveinfo.wasm.cpp
+        src/efivar-lite.c
+        src/efivar-lite.common.h
+        src/efivar-lite.wasm.c
     )
 endif()
 
@@ -209,7 +228,7 @@ target_sources(${PROJECT_NAME}-core PRIVATE
     include/qwidgetitemdelegate.h
 )
 
-add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE
+qt_add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE
     src/main.cpp
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_NAME}-core)
@@ -250,6 +269,20 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
         -Wno-unsafe-buffer-usage
         -Wno-poison-system-directories
     )
+
+    if(EMSCRIPTEN)
+        target_compile_options(${PROJECT_NAME}-core PUBLIC
+            -Wno-unique-object-duplication
+            -Wno-disabled-macro-expansion
+        )
+
+    target_link_options(${PROJECT_NAME} PRIVATE
+        -sASYNCIFY
+        -sASYNCIFY_STACK_SIZE=16384
+        "-sASYNCIFY_IMPORTS=['qt_asyncify_yield', 'emscripten_sleep']"
+    )
+
+    endif()
 endif()
 
 ## MSVC
@@ -335,7 +368,7 @@ if(APPLE)
         "-framework IOKit"
     )
 
-elseif(UNIX)
+elseif(UNIX AND NOT EMSCRIPTEN)
     find_package(PkgConfig REQUIRED)
     pkg_check_modules(EFIVAR REQUIRED efivar efiboot)
 
@@ -352,9 +385,11 @@ if(("${CMAKE_BUILD_TYPE}" STREQUAL "Release") AND UNIX)
     set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_RELEASE -s)
 endif()
 
-# Testing
-enable_testing()
-add_subdirectory(tests)
+if(NOT EMSCRIPTEN)
+    # Testing
+    enable_testing()
+    add_subdirectory(tests)
+endif()
 
 # Packaging
 if(WIN32)
@@ -396,7 +431,7 @@ else()
             DESTINATION dist
     )
 
-    if(UNIX AND NOT APPLE)
+    if(UNIX AND NOT APPLE AND NOT EMSCRIPTEN)
         install(PROGRAMS misc/run-${PROJECT_NAME}
             DESTINATION ${CMAKE_INSTALL_BINDIR}
             COMPONENT Desktop
@@ -422,6 +457,16 @@ else()
         install(FILES misc/${PROJECT_NAME_CAPITALIZED}.svg
             DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons
             COMPONENT Desktop
+        )
+    endif()
+
+
+    if(EMSCRIPTEN)
+        install(FILES
+            "$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.wasm"
+            "$<TARGET_FILE_DIR:${PROJECT_NAME}>/qtloader.js"
+            "$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.html"
+            DESTINATION ${CMAKE_INSTALL_BINDIR}
         )
     endif()
 endif()
@@ -553,7 +598,11 @@ elseif(APPLE)
 
 else()
     set(CPACK_PACKAGE_TARGET_OS_NAME "linux")
-    set(CPACK_GENERATOR DEB TZST AppImage)
+    if(NOT EMSCRIPTEN)
+        set(CPACK_GENERATOR DEB TZST AppImage)
+    else()
+        set(CPACK_GENERATOR TZST)
+    endif()
     set(CPACK_PROJECT_CONFIG_FILE "${CMAKE_SOURCE_DIR}/cmake/CPackLinux.cmake")
 
     set(CPACK_DEBIAN_PACKAGE_NAME ${PROJECT_NAME_CAPITALIZED})

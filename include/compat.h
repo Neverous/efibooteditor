@@ -69,7 +69,7 @@ inline int _tcsncpy_s(TCHAR *buffer, size_t size, TCHAR *src, size_t _size)
 
 inline int _tcserror_s(TCHAR *buffer, size_t size, int errnum)
 {
-#if defined(__APPLE__) || ((_POSIX_C_SOURCE >= 200112L) && !defined(_GNU_SOURCE))
+#if defined(__APPLE__) || (defined(_POSIX_C_SOURCE) && (_POSIX_C_SOURCE >= 200112L) && !defined(_GNU_SOURCE)) || defined(__EMSCRIPTEN__)
     return strerror_r(errnum, buffer, size);
 #else
     TCHAR *msg = strerror_r(errnum, buffer, size);

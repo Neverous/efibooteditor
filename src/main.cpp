@@ -9,16 +9,20 @@
 #include <QTranslator>
 
 #include "efibooteditor.h"
+#ifndef Q_OS_WASM
 #include "efibooteditorcli.h"
+#endif
 #include "main.h"
 
 auto main(int argc, char *argv[]) -> int
 {
+    std::unique_ptr<QCoreApplication> app;
+
     // Check EFI support
     auto efi_error_message = EFIBoot::init();
-
+#ifndef Q_OS_WASM
     // Set CLI application first
-    auto app = std::make_unique<QCoreApplication>(argc, argv);
+    app = std::make_unique<QCoreApplication>(argc, argv);
     setupApplication();
 
     // Load translation
@@ -34,13 +38,20 @@ auto main(int argc, char *argv[]) -> int
         }
     }
 
-    // Switch to GUI
     app.reset(); // need to destroy QCoreApplication first
+#endif
+
+    // Switch to GUI
     app = std::make_unique<QApplication>(argc, argv);
     // Need to reset the application configuration
     setupApplication();
+#ifndef Q_OS_WASM
     for(auto &translator: translators)
         QCoreApplication::installTranslator(&translator);
+#else
+    // Load translation
+    setupTranslations();
+#endif
 
     // Setup GUI style
     setupStyle();
