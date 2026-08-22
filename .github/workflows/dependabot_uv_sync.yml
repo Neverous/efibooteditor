@@ -10,10 +10,13 @@ on:
 
 jobs:
   uv-lock-upgrade:
+    name: Upgrade all versions in uv.lock
     if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' && startsWith(github.head_ref, 'dependabot/uv/') }}
     runs-on: ubuntu-slim
     permissions:
       contents: write
+    outputs:
+      new_sha: ${{ steps.commit.outputs.new_sha }}
 
     steps:
       - name: Checkout PR branch
@@ -38,8 +41,9 @@ jobs:
           done
 
       - name: Commit and push changes
+        id: commit
         run: |
-          gh api graphql -f query='
+          RESPONSE=$(gh api graphql -f query='
             mutation($repo: String!, $branch: String!, $oid: GitObjectID!, $msg: String!, $files: [FileAddition!]!) {
               createCommitOnBranch(input: {
                 branch: { repositoryNameWithOwner: $repo, branchName: $branch },
@@ -53,9 +57,20 @@ jobs:
             -f oid="${{ github.event.pull_request.head.sha }}" \
             -f msg="chore(deps): update indirect dependencies" \
             -f files[][path]="${{ steps.upgrade.outputs.changed }}" \
-            -f files[][contents]=$(base64 -w 0 ${{ steps.upgrade.outputs.changed }})
+            -f files[][contents]=$(base64 -w 0 ${{ steps.upgrade.outputs.changed }}))
+
+          NEW_SHA=$(echo "${RESPONSE}" | jq -r '.data.createCommitOnBranch.commit.oid')
+          echo "new_sha=${NEW_SHA}" >> "$GITHUB_OUTPUT"
 
         env:
           HEAD_REF: ${{ github.head_ref }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: steps.upgrade.outputs.changed != ''
+
+  trigger-status-check:
+    name: Trigger Debug build status check
+    needs: [uv-lock-upgrade]
+    if: ${{ needs.uv-lock-upgrade.outputs.new_sha != '' }}
+    uses: ./.github/workflows/debug_status_check.yml
+    with:
+      sha: ${{ needs.uv-lock-upgrade.outputs.new_sha }}
