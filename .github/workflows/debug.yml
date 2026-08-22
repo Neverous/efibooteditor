@@ -109,12 +109,30 @@ jobs:
       build-config: Debug
       version: ${{ github.sha }}
 
+  build-wasm:
+    name: WebAssembly with Emscripten
+    permissions:
+      actions: read
+      artifact-metadata: write
+      attestations: write
+      contents: read
+      id-token: write
+      security-events: write
+
+    uses: ./.github/workflows/build.yml
+    with:
+      os: ubuntu-latest
+      compiler: Emscripten
+      build-config: Debug
+      version: ${{ github.sha }}
+
   publish-status:
     name: Debug build
     needs:
       - build-linux
       - build-windows
       - build-macos
+      - build-wasm
     runs-on: ubuntu-slim
     steps:
       - name: Evaluate build status

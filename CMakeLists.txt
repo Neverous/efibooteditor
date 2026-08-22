@@ -109,6 +109,12 @@ if(${QT_VERSION_MAJOR} LESS_EQUAL 5)
             target_sources(${PROJECT_NAME} PRIVATE ${RESOURCES})
         endfunction()
     endif()
+
+    if(NOT COMMAND qt_add_executable)
+        function(qt_add_executable TARGET)
+            add_executable(${TARGET} ${ARGN})
+        endfunction()
+    endif()
 endif()
 
 add_compile_definitions(
