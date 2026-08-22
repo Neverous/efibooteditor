@@ -121,10 +121,11 @@ jobs:
       - name: Report debug build success
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SHA: ${{ github.event.pull_request.head.sha || github.ref }}
         run: |
           gh api \
             --method POST \
-            /repos/${{ github.repository }}/statuses/${{ github.event.pull_request.head.sha }} \
+            /repos/${{ github.repository }}/statuses/${SHA} \
             -f context='Debug build' \
             -f description='Debug build succeeded' \
             -f state='success'
