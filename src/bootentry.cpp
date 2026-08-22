@@ -5,6 +5,7 @@
 
 #include <QJsonArray>
 #include <QJsonObject>
+#include <QtEndian>
 
 #include "efiboot.h"
 
@@ -800,14 +801,14 @@ auto FilePath::MacAddress::toString(bool refresh) const -> QString
 
 FilePath::Ipv4::Ipv4(const EFIBoot::File_path::MSG::Ipv4 &_ipv4)
     : _string{}
-    , local_ip_address{*reinterpret_cast<const uint32_t *>(_ipv4.local_ip_address.data())}
-    , remote_ip_address{*reinterpret_cast<const uint32_t *>(_ipv4.remote_ip_address.data())}
+    , local_ip_address{qFromLittleEndian<uint32_t>(_ipv4.local_ip_address.data())}
+    , remote_ip_address{qFromLittleEndian<uint32_t>(_ipv4.remote_ip_address.data())}
     , local_port{_ipv4.local_port}
     , remote_port{_ipv4.remote_port}
     , protocol{_ipv4.protocol}
     , static_ip_address{_ipv4.static_ip_address}
-    , gateway_ip_address{*reinterpret_cast<const uint32_t *>(_ipv4.gateway_ip_address.data())}
-    , subnet_mask{*reinterpret_cast<const uint32_t *>(_ipv4.subnet_mask.data())}
+    , gateway_ip_address{qFromLittleEndian<uint32_t>(_ipv4.gateway_ip_address.data())}
+    , subnet_mask{qFromLittleEndian<uint32_t>(_ipv4.subnet_mask.data())}
 {
     static_assert(sizeof(local_ip_address.toIPv4Address()) == sizeof(_ipv4.local_ip_address));
     static_assert(sizeof(remote_ip_address.toIPv4Address()) == sizeof(_ipv4.remote_ip_address));
