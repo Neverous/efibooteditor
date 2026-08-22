@@ -50,7 +50,7 @@ jobs:
                 expectedHeadOid: $oid,
                 message: { headline: $msg },
                 fileChanges: { additions: $files }
-              }) { commit { url } }
+              }) { commit { oid } }
             }' \
             -f repo="${{ github.repository }}" \
             -f branch="${HEAD_REF}" \
