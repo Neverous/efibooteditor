@@ -747,7 +747,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="71"/>
-        <location filename="../src/efibooteditor.cpp" line="412"/>
+        <location filename="../src/efibooteditor.cpp" line="446"/>
         <source>Boot</source>
         <translation>Загрузка</translation>
     </message>
@@ -766,7 +766,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="133"/>
-        <location filename="../src/efibooteditor.cpp" line="415"/>
+        <location filename="../src/efibooteditor.cpp" line="449"/>
         <source>Driver</source>
         <translation>Драйвер</translation>
     </message>
@@ -785,7 +785,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="195"/>
-        <location filename="../src/efibooteditor.cpp" line="418"/>
+        <location filename="../src/efibooteditor.cpp" line="452"/>
         <source>System Preparation</source>
         <translation>Подготовка системы</translation>
     </message>
@@ -804,7 +804,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="257"/>
-        <location filename="../src/efibooteditor.cpp" line="421"/>
+        <location filename="../src/efibooteditor.cpp" line="455"/>
         <source>Platform Recovery</source>
         <translation>Восстановление платформы</translation>
     </message>
@@ -1432,7 +1432,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1303"/>
-        <location filename="../src/efibooteditor.cpp" line="29"/>
+        <location filename="../src/efibooteditor.cpp" line="32"/>
         <source>About EFI Boot Editor</source>
         <translation>О программе EFI Boot Editor</translation>
     </message>
@@ -1477,81 +1477,87 @@
         <translation>Дамп необработанных данных EFI</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="26"/>
+        <location filename="../src/efibooteditor.cpp" line="29"/>
         <source>Working…</source>
         <translation>Работает…</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="92"/>
+        <location filename="../src/efibooteditor.cpp" line="95"/>
         <source>Undo %1</source>
         <translation>Отменить %1</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="95"/>
+        <location filename="../src/efibooteditor.cpp" line="98"/>
         <source>Redo %1</source>
         <translation>Повторить %1</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="137"/>
+        <location filename="../src/efibooteditor.cpp" line="148"/>
         <source>Are you sure you want to reload the entries?&lt;br/&gt;ALL of your changes will be lost!</source>
         <translation>Вы уверены, что хотите перезагрузить записи? &lt;br/&gt;Все ваши изменения будут потеряны!</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="162"/>
+        <location filename="../src/efibooteditor.cpp" line="173"/>
         <source>Are you sure you want to reorder the boot entries?&lt;br/&gt;All indexes will be overwritten!</source>
         <translation>Вы уверены, что хотите изменить порядок записей в загрузке? &lt;br/&gt;Все индексы будут перезаписаны!</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="221"/>
+        <location filename="../src/efibooteditor.cpp" line="232"/>
         <source>Are you sure you want to save?&lt;br/&gt;Your EFI configuration will be overwritten!</source>
         <translation>Вы уверены, что хотите сохранить? &lt;br/&gt;Ваша конфигурация EFI будет перезаписана!</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="230"/>
+        <location filename="../src/efibooteditor.cpp" line="241"/>
         <source>Open boot configuration dump</source>
         <translation>Открыть дамп конфигурации загрузки</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="230"/>
-        <location filename="../src/efibooteditor.cpp" line="248"/>
+        <location filename="../src/efibooteditor.cpp" line="241"/>
         <location filename="../src/efibooteditor.cpp" line="260"/>
+        <location filename="../src/efibooteditor.cpp" line="298"/>
         <source>JSON documents (*.json)</source>
         <translation>Документы JSON (*.json)</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="248"/>
+        <location filename="../src/efibooteditor.cpp" line="260"/>
+        <location filename="../src/efibooteditor.cpp" line="265"/>
         <source>Save boot configuration dump</source>
         <translation>Сохранить дамп конфигурации загрузки</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="260"/>
+        <location filename="../src/efibooteditor.cpp" line="266"/>
+        <source>Enter filename:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/efibooteditor.cpp" line="298"/>
         <source>Save raw EFI dump</source>
         <translation>Сохранить необработанный дамп EFI</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="31"/>
+        <location filename="../src/efibooteditor.cpp" line="34"/>
         <source>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</source>
         <extracomment>About dialog</extracomment>
         <translation>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Версия &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Редактор загрузки для систем на базе (U)EFI.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="45"/>
+        <location filename="../src/efibooteditor.cpp" line="48"/>
         <source>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; for EFI variables access.&lt;/p&gt;&lt;p&gt;Uses Tango Icons as fallback icons.&lt;/p&gt;</source>
         <extracomment>About dialog details</extracomment>
         <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Веб-сайт&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Программа предоставляется КАК ЕСТЬ без каких-либо гарантий, включая гарантии дизайна, товарной пригодности и пригодности для определенной цели.&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;На Linux используется &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; для доступа к переменным EFI.&lt;/p&gt;&lt;p&gt;Использует иконки Tango Icons в качестве резервных иконок.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="330"/>
+        <location filename="../src/efibooteditor.cpp" line="364"/>
         <source>Reorder %1 entries</source>
         <translation>Упорядочить %1 записей</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="453"/>
+        <location filename="../src/efibooteditor.cpp" line="487"/>
         <source>Are you sure you want to quit?</source>
         <translation>Вы уверены, что хотите бросить?</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="123"/>
+        <location filename="../src/efibooteditor.cpp" line="127"/>
         <source>EFI support required</source>
         <translation>Требуется поддержка EFI</translation>
     </message>
@@ -1561,55 +1567,55 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="13"/>
         <source>Boot Editor for (U)EFI based systems.</source>
-        <translation>Редактор загрузки для систем на базе (U)EFI.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <source>Export configuration.</source>
-        <translation>Экспорт конфигурации.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>FILE</source>
-        <translation>ФАЙЛ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <source>Dump raw EFI data.</source>
-        <translation>Сброс необработанных данных EFI.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>Import configuration from JSON (either from export or raw dump).</source>
-        <translation>Импорт конфигурации из JSON (либо из экспорта, либо из необработанного дампа).</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="19"/>
         <source>Force import, don&apos;t ask for confirmation.</source>
-        <translation>Принудительный импорт, не спрашивайте подтверждения.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="26"/>
         <source>EFI support required</source>
-        <translation>Требуется поддержка EFI</translation>
+        <translation type="unfinished">Требуется поддержка EFI</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="45"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation>Загрузка записей диспетчера загрузки EFI…</translation>
+        <translation type="unfinished">Загрузка записей EFI Boot Manager…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="47"/>
         <location filename="../src/efibooteditorcli.cpp" line="57"/>
         <source>Exporting boot configuration…</source>
-        <translation>Экспорт конфигурации загрузки…</translation>
+        <translation type="unfinished">Экспорт конфигурации загрузки…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="67"/>
         <source>Importing boot configuration…</source>
-        <translation>Импорт конфигурации загрузки…</translation>
+        <translation type="unfinished">Импорт конфигурации загрузки…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
@@ -1617,50 +1623,48 @@
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Loaded %0 %1 entries</source>
-        <translation>Загружено %0 %1 записей</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
         <source>Boot</source>
-        <translation>Загрузка</translation>
+        <translation type="unfinished">Загрузка</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="72"/>
         <source>Driver</source>
-        <translation>Драйвер</translation>
+        <translation type="unfinished">Драйвер</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <source>System Preparation</source>
-        <translation>Подготовка системы</translation>
+        <translation type="unfinished">Подготовка системы</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Hot Key</source>
-        <translation>Горячая клавиша</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="78"/>
         <source>Are you sure you want to save?
 Your EFI configuration will be overwritten!</source>
-        <translation>Вы уверены, что хотите сохранить?
-
-Ваша конфигурация EFI будет перезаписана!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="86"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation>Сохранение записей менеджера загрузки EFI…</translation>
+        <translation type="unfinished">Сохранение записей EFI Boot Manager…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="98"/>
         <source>ERROR: %0! %1</source>
-        <translation>ОШИБКА: %0! %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="114"/>
         <source>Finished</source>
-        <translation>Готово</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

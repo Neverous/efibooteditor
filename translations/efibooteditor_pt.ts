@@ -746,7 +746,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="71"/>
-        <location filename="../src/efibooteditor.cpp" line="412"/>
+        <location filename="../src/efibooteditor.cpp" line="446"/>
         <source>Boot</source>
         <translation>Inicialização</translation>
     </message>
@@ -765,7 +765,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="133"/>
-        <location filename="../src/efibooteditor.cpp" line="415"/>
+        <location filename="../src/efibooteditor.cpp" line="449"/>
         <source>Driver</source>
         <translation>Driver</translation>
     </message>
@@ -784,7 +784,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="195"/>
-        <location filename="../src/efibooteditor.cpp" line="418"/>
+        <location filename="../src/efibooteditor.cpp" line="452"/>
         <source>System Preparation</source>
         <translation>Preparação do Sistema</translation>
     </message>
@@ -803,7 +803,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="257"/>
-        <location filename="../src/efibooteditor.cpp" line="421"/>
+        <location filename="../src/efibooteditor.cpp" line="455"/>
         <source>Platform Recovery</source>
         <translation>Recuperação de plataforma</translation>
     </message>
@@ -1431,7 +1431,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1303"/>
-        <location filename="../src/efibooteditor.cpp" line="29"/>
+        <location filename="../src/efibooteditor.cpp" line="32"/>
         <source>About EFI Boot Editor</source>
         <translation>Sobre o Editor de Inicialização EFI</translation>
     </message>
@@ -1476,81 +1476,87 @@
         <translation>Despejar dados EFI brutos</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="26"/>
+        <location filename="../src/efibooteditor.cpp" line="29"/>
         <source>Working…</source>
         <translation>A trabalhar…</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="92"/>
+        <location filename="../src/efibooteditor.cpp" line="95"/>
         <source>Undo %1</source>
         <translation>Desfazer %1</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="95"/>
+        <location filename="../src/efibooteditor.cpp" line="98"/>
         <source>Redo %1</source>
         <translation>Refazer %1</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="137"/>
+        <location filename="../src/efibooteditor.cpp" line="148"/>
         <source>Are you sure you want to reload the entries?&lt;br/&gt;ALL of your changes will be lost!</source>
         <translation>Tem certeza que deseja recarregar as entradas?&lt;br/&gt;Todas as suas alterações serão perdidas!</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="162"/>
+        <location filename="../src/efibooteditor.cpp" line="173"/>
         <source>Are you sure you want to reorder the boot entries?&lt;br/&gt;All indexes will be overwritten!</source>
         <translation>Tem certeza que deseja reordenar as entradas de inicialização?&lt;br/&gt;Todos os índices serão sobrescritos!</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="221"/>
+        <location filename="../src/efibooteditor.cpp" line="232"/>
         <source>Are you sure you want to save?&lt;br/&gt;Your EFI configuration will be overwritten!</source>
         <translation>Tem certeza que deseja gravar?&lt;br/&gt;A sua configuração EFI será sobrescrita!</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="230"/>
+        <location filename="../src/efibooteditor.cpp" line="241"/>
         <source>Open boot configuration dump</source>
         <translation>Abrir dump de configuração de inicialização</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="230"/>
-        <location filename="../src/efibooteditor.cpp" line="248"/>
+        <location filename="../src/efibooteditor.cpp" line="241"/>
         <location filename="../src/efibooteditor.cpp" line="260"/>
+        <location filename="../src/efibooteditor.cpp" line="298"/>
         <source>JSON documents (*.json)</source>
         <translation>Documentos JSON (*.json)</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="248"/>
+        <location filename="../src/efibooteditor.cpp" line="260"/>
+        <location filename="../src/efibooteditor.cpp" line="265"/>
         <source>Save boot configuration dump</source>
         <translation>Gravar dump de configuração de inicialização</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="260"/>
+        <location filename="../src/efibooteditor.cpp" line="266"/>
+        <source>Enter filename:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/efibooteditor.cpp" line="298"/>
         <source>Save raw EFI dump</source>
         <translation>Gravar dump EFI bruto</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="31"/>
+        <location filename="../src/efibooteditor.cpp" line="34"/>
         <source>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</source>
         <extracomment>About dialog</extracomment>
         <translation>&lt;h1&gt;Editor de Inicialização EFI&lt;/h1&gt;&lt;p&gt;Versão &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Editor de inicialização para sistemas baseados em (U)EFI.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="45"/>
+        <location filename="../src/efibooteditor.cpp" line="48"/>
         <source>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; for EFI variables access.&lt;/p&gt;&lt;p&gt;Uses Tango Icons as fallback icons.&lt;/p&gt;</source>
         <extracomment>About dialog details</extracomment>
         <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;O programa é fornecido &quot;NO ESTADO EM QUE SE ENCONTRA&quot;, SEM QUALQUER GARANTIA, INCLUINDO GARANTIAS DE DESIGN, COMERCIALIZAÇÃO E ADEQUAÇÃO A UM FIM ESPECÍFICO.&lt;/p&gt;&lt;p&gt;Licença: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Versão 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;No Linux, utiliza &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; para acesso às variáveis EFI.&lt;/p&gt;&lt;p&gt;Utiliza ícones Tango como ícones alternativos.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="330"/>
+        <location filename="../src/efibooteditor.cpp" line="364"/>
         <source>Reorder %1 entries</source>
         <translation>Reordenar %1 entradas</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="453"/>
+        <location filename="../src/efibooteditor.cpp" line="487"/>
         <source>Are you sure you want to quit?</source>
         <translation>Tem certeza que deseja sair?</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="123"/>
+        <location filename="../src/efibooteditor.cpp" line="127"/>
         <source>EFI support required</source>
         <translation>Apoio para EFI necessário</translation>
     </message>
@@ -1560,55 +1566,55 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="13"/>
         <source>Boot Editor for (U)EFI based systems.</source>
-        <translation>Editor de inicialização para sistemas baseados em (U)EFI.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <source>Export configuration.</source>
-        <translation>Exportar configuração.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>FILE</source>
-        <translation>FICHEIRO</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <source>Dump raw EFI data.</source>
-        <translation>Despejar dados EFI brutos.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>Import configuration from JSON (either from export or raw dump).</source>
-        <translation>Importar configuração de JSON (seja da exportação ou do despejo bruto).</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="19"/>
         <source>Force import, don&apos;t ask for confirmation.</source>
-        <translation>Forçar a importação, não pedir confirmação.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="26"/>
         <source>EFI support required</source>
-        <translation>Apoio de EFI necessário</translation>
+        <translation type="unfinished">Apoio para EFI necessário</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="45"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation>A carregar entradas do Gestor de Inicialização EFI…</translation>
+        <translation type="unfinished">A carregar entradas do Gestor de Inicialização EFI…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="47"/>
         <location filename="../src/efibooteditorcli.cpp" line="57"/>
         <source>Exporting boot configuration…</source>
-        <translation>A exportar a configuração de inicialização…</translation>
+        <translation type="unfinished">A exportar a configuração de inicialização…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="67"/>
         <source>Importing boot configuration…</source>
-        <translation>A importar a configuração de inicialização…</translation>
+        <translation type="unfinished">A importar a configuração de inicialização…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
@@ -1616,49 +1622,48 @@
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Loaded %0 %1 entries</source>
-        <translation>Entradas carregadas %0 %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
         <source>Boot</source>
-        <translation>Inicialização</translation>
+        <translation type="unfinished">Inicialização</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="72"/>
         <source>Driver</source>
-        <translation>Driver</translation>
+        <translation type="unfinished">Driver</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <source>System Preparation</source>
-        <translation>Preparação do Sistema</translation>
+        <translation type="unfinished">Preparação do Sistema</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Hot Key</source>
-        <translation>Tecla de atalho</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="78"/>
         <source>Are you sure you want to save?
 Your EFI configuration will be overwritten!</source>
-        <translation>Tem certeza que deseja gravar?
-A sua configuração EFI será sobrescrita!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="86"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation>A gravar entradas do Gestor de Inicialização EFI…</translation>
+        <translation type="unfinished">A gravar entradas do Gestor de Inicialização EFI…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="98"/>
         <source>ERROR: %0! %1</source>
-        <translation>ERRO: %0! %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="114"/>
         <source>Finished</source>
-        <translation>Finalizado</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

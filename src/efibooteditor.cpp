@@ -6,6 +6,9 @@
 
 #include <QButtonGroup>
 #include <QFileDialog>
+#ifdef Q_OS_WASM
+#include <QInputDialog>
+#endif
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -120,11 +123,19 @@ EFIBootEditor::EFIBootEditor(const std::optional<tstring> &efi_error_message, QW
 
     if(efi_error_message)
     {
+#ifndef Q_OS_WASM
         showError(tr("EFI support required"), QStringFromStdTString(*efi_error_message));
+#else
+        hideProgressBar();
+#endif
         ui->save->setDisabled(true);
         ui->reload->setDisabled(true);
         ui->dump_raw_efi_data->setDisabled(true);
     }
+
+#ifdef Q_OS_WASM
+    ui->exit->setDisabled(true);
+#endif
 }
 
 EFIBootEditor::~EFIBootEditor()
@@ -245,7 +256,22 @@ void EFIBootEditor::import_()
 
 void EFIBootEditor::export_()
 {
+#ifndef Q_OS_WASM
     QString file_name = QFileDialog::getSaveFileName(this, tr("Save boot configuration dump"), "", tr("JSON documents (*.json)"));
+#else
+    bool ok;
+    QString file_name = QInputDialog::getText(
+        this,
+        tr("Save boot configuration dump"),
+        tr("Enter filename:"),
+        QLineEdit::Normal,
+        "boot.json",
+        &ok);
+
+    if(!ok)
+        return;
+
+#endif
     if(file_name.isEmpty())
         return;
 
@@ -253,6 +279,18 @@ void EFIBootEditor::export_()
         file_name += ".json";
 
     data.export_(file_name);
+
+#ifdef Q_OS_WASM
+    QFile file(file_name);
+    if(!file.open(QIODevice::ReadOnly))
+        return;
+
+    QByteArray contents = file.readAll();
+    file.close();
+    file.remove();
+
+    QFileDialog::saveFileContent(contents, file_name);
+#endif
 }
 
 void EFIBootEditor::dump()

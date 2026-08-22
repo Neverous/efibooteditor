@@ -746,7 +746,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="71"/>
-        <location filename="../src/efibooteditor.cpp" line="412"/>
+        <location filename="../src/efibooteditor.cpp" line="446"/>
         <source>Boot</source>
         <translation>துவக்க</translation>
     </message>
@@ -765,7 +765,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="133"/>
-        <location filename="../src/efibooteditor.cpp" line="415"/>
+        <location filename="../src/efibooteditor.cpp" line="449"/>
         <source>Driver</source>
         <translation>இயக்கி</translation>
     </message>
@@ -784,7 +784,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="195"/>
-        <location filename="../src/efibooteditor.cpp" line="418"/>
+        <location filename="../src/efibooteditor.cpp" line="452"/>
         <source>System Preparation</source>
         <translation>கணினி தயாரிப்பு</translation>
     </message>
@@ -803,7 +803,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="257"/>
-        <location filename="../src/efibooteditor.cpp" line="421"/>
+        <location filename="../src/efibooteditor.cpp" line="455"/>
         <source>Platform Recovery</source>
         <translation>இயங்குதள மீட்பு</translation>
     </message>
@@ -1431,7 +1431,7 @@
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="1303"/>
-        <location filename="../src/efibooteditor.cpp" line="29"/>
+        <location filename="../src/efibooteditor.cpp" line="32"/>
         <source>About EFI Boot Editor</source>
         <translation>இஎப்ஐ துவக்க திருத்திப் பற்றி</translation>
     </message>
@@ -1476,81 +1476,87 @@
         <translation>மூல EFI தரவை டம்ப் செய்யுங்கள்</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="26"/>
+        <location filename="../src/efibooteditor.cpp" line="29"/>
         <source>Working…</source>
         <translation>பணிபுரிகிறது…</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="92"/>
+        <location filename="../src/efibooteditor.cpp" line="95"/>
         <source>Undo %1</source>
         <translation>%1 ஐ செயல்தவிர்</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="95"/>
+        <location filename="../src/efibooteditor.cpp" line="98"/>
         <source>Redo %1</source>
         <translation>மீண்டும் %1</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="137"/>
+        <location filename="../src/efibooteditor.cpp" line="148"/>
         <source>Are you sure you want to reload the entries?&lt;br/&gt;ALL of your changes will be lost!</source>
         <translation>உள்ளீடுகளை மீண்டும் ஏற்ற விரும்புகிறீர்களா? &lt;br/&gt; உங்கள் மாற்றங்கள் அனைத்தும் இழக்கப்படும்!</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="162"/>
+        <location filename="../src/efibooteditor.cpp" line="173"/>
         <source>Are you sure you want to reorder the boot entries?&lt;br/&gt;All indexes will be overwritten!</source>
         <translation>துவக்க உள்ளீடுகளை மறுவரிசைப்படுத்த விரும்புகிறீர்களா? &lt;br/&gt; அனைத்து குறியீடுகளும் மேலெழுதப்படும்!</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="221"/>
+        <location filename="../src/efibooteditor.cpp" line="232"/>
         <source>Are you sure you want to save?&lt;br/&gt;Your EFI configuration will be overwritten!</source>
         <translation>நீங்கள் நிச்சயமாக சேமிக்க விரும்புகிறீர்களா? &lt;br/&gt; உங்கள் EFI உள்ளமைவு மேலெழுதப்படும்!</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="230"/>
+        <location filename="../src/efibooteditor.cpp" line="241"/>
         <source>Open boot configuration dump</source>
         <translation>துவக்க கட்டமைப்பு டம்ப்</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="230"/>
-        <location filename="../src/efibooteditor.cpp" line="248"/>
+        <location filename="../src/efibooteditor.cpp" line="241"/>
         <location filename="../src/efibooteditor.cpp" line="260"/>
+        <location filename="../src/efibooteditor.cpp" line="298"/>
         <source>JSON documents (*.json)</source>
         <translation>சாதொபொகு ஆவணங்கள் (*.JSON)</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="248"/>
+        <location filename="../src/efibooteditor.cpp" line="260"/>
+        <location filename="../src/efibooteditor.cpp" line="265"/>
         <source>Save boot configuration dump</source>
         <translation>துவக்க உள்ளமைவு டம்பை சேமிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="260"/>
+        <location filename="../src/efibooteditor.cpp" line="266"/>
+        <source>Enter filename:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/efibooteditor.cpp" line="298"/>
         <source>Save raw EFI dump</source>
         <translation>மூல EFI டம்பை சேமிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="31"/>
+        <location filename="../src/efibooteditor.cpp" line="34"/>
         <source>&lt;h1&gt;EFI Boot Editor&lt;/h1&gt;&lt;p&gt;Version &lt;b&gt;%1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Boot Editor for (U)EFI based systems.&lt;/p&gt;</source>
         <extracomment>About dialog</extracomment>
         <translation>&lt;h1&gt;இஎப்ஐ துவக்க திருத்தி&lt;/h1&gt;&lt;p&gt; பதிப்பு &lt;b&gt;%1 &lt;/b&gt; &lt;/p&gt; &lt;p&gt; (U) EFI அடிப்படையிலான அமைப்புகளுக்கான துவக்க திருத்தி. &lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="45"/>
+        <location filename="../src/efibooteditor.cpp" line="48"/>
         <source>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;Website&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;License: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL Version 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;On Linux uses &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; for EFI variables access.&lt;/p&gt;&lt;p&gt;Uses Tango Icons as fallback icons.&lt;/p&gt;</source>
         <extracomment>About dialog details</extracomment>
         <translation>&lt;p&gt;&lt;a href=&apos;%1&apos;&gt;வலைத்தளம்&lt;/a&gt;&lt;/p&gt;&lt;p&gt;குறிப்பிட்ட நோக்கத்திற்காக வடிவமைப்பு, வணிகத்தன்மை மற்றும் பொருத்தம் ஆகியவற்றின் உத்தரவாதம் உட்பட, எந்தவொரு உத்தரவாதமும் இல்லாமல் நிரல் வழங்கப்படுகிறது.&lt;/p&gt;&lt;p&gt;உரிமம்: &lt;a href=&apos;https://www.gnu.org/licenses/lgpl.html&apos;&gt;GNU LGPL பதிப்பு 3&lt;/a&gt;&lt;/p&gt;&lt;p&gt;லினக்ஸில் EFI மாறிகள் அணுகலுக்காக &lt;a href=&apos;https://github.com/rhboot/efivar&apos;&gt;efivar&lt;/a&gt; ஐப் பயன்படுத்துகிறது.&lt;/p&gt;&lt;p&gt;டேங்கோ ஐகான்களை ஃபால்பேக் ஐகான்களாகப் பயன்படுத்துகிறது.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="330"/>
+        <location filename="../src/efibooteditor.cpp" line="364"/>
         <source>Reorder %1 entries</source>
         <translation>%1 உள்ளீடுகளை மறுவரிசைப்படுத்தவும்</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="453"/>
+        <location filename="../src/efibooteditor.cpp" line="487"/>
         <source>Are you sure you want to quit?</source>
         <translation>நிச்சயமாக நீங்கள் வெளியேற வேண்டுமா?</translation>
     </message>
     <message>
-        <location filename="../src/efibooteditor.cpp" line="123"/>
+        <location filename="../src/efibooteditor.cpp" line="127"/>
         <source>EFI support required</source>
         <translation>EFI உதவி தேவை</translation>
     </message>
@@ -1560,55 +1566,55 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="13"/>
         <source>Boot Editor for (U)EFI based systems.</source>
-        <translation>(U) EFI அடிப்படையிலான அமைப்புகளுக்கான துவக்க ஆசிரியர்.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <source>Export configuration.</source>
-        <translation>ஏற்றுமதி உள்ளமைவு.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>FILE</source>
-        <translation>கோப்பு</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <source>Dump raw EFI data.</source>
-        <translation>மூல EFI தரவை டம்ப் செய்யுங்கள்.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>Import configuration from JSON (either from export or raw dump).</source>
-        <translation>சாதொபொகு இலிருந்து உள்ளமைவை இறக்குமதி செய்யுங்கள் (ஏற்றுமதி அல்லது மூல டம்பிலிருந்து).</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="19"/>
         <source>Force import, don&apos;t ask for confirmation.</source>
-        <translation>இறக்குமதியை கட்டாயப்படுத்துங்கள், உறுதிப்படுத்தல் கேட்க வேண்டாம்.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="26"/>
         <source>EFI support required</source>
-        <translation>EFI உதவி தேவை</translation>
+        <translation type="unfinished">EFI உதவி தேவை</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="45"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation>EFI துவக்க மேலாளர் உள்ளீடுகளை ஏற்றுகிறது…</translation>
+        <translation type="unfinished">EFI துவக்க மேலாளர் உள்ளீடுகளை ஏற்றுகிறது…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="47"/>
         <location filename="../src/efibooteditorcli.cpp" line="57"/>
         <source>Exporting boot configuration…</source>
-        <translation>துவக்க உள்ளமைவு ஏற்றுமதி…</translation>
+        <translation type="unfinished">துவக்க உள்ளமைவு ஏற்றுமதி…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="67"/>
         <source>Importing boot configuration…</source>
-        <translation>துவக்க உள்ளமைவை இறக்குமதி செய்தல்…</translation>
+        <translation type="unfinished">துவக்க உள்ளமைவை இறக்குமதி செய்தல்…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
@@ -1616,49 +1622,48 @@
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Loaded %0 %1 entries</source>
-        <translation>ஏற்றப்பட்ட %0 %1 உள்ளீடுகள்</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
         <source>Boot</source>
-        <translation>துவக்க</translation>
+        <translation type="unfinished">துவக்க</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="72"/>
         <source>Driver</source>
-        <translation>இயக்கி</translation>
+        <translation type="unfinished">இயக்கி</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <source>System Preparation</source>
-        <translation>கணினி தயாரிப்பு</translation>
+        <translation type="unfinished">கணினி தயாரிப்பு</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Hot Key</source>
-        <translation>சூடான விசை</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="78"/>
         <source>Are you sure you want to save?
 Your EFI configuration will be overwritten!</source>
-        <translation>நீங்கள் நிச்சயமாக சேமிக்க விரும்புகிறீர்களா?
- உங்கள் EFI உள்ளமைவு மேலெழுதப்படும்!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="86"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation>EFI துவக்க மேலாளர் உள்ளீடுகளை சேமிக்கிறது…</translation>
+        <translation type="unfinished">EFI துவக்க மேலாளர் உள்ளீடுகளை சேமிக்கிறது…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="98"/>
         <source>ERROR: %0! %1</source>
-        <translation>பிழை: %0! %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="114"/>
         <source>Finished</source>
-        <translation>முடிந்தது</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
