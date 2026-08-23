@@ -1526,7 +1526,7 @@
     <message>
         <location filename="../src/efibooteditor.cpp" line="298"/>
         <source>Save raw EFI dump</source>
-        <translation>Salva dump configurazione EFI grezza</translation>
+        <translation>Salva dump EFI raw</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="48"/>
