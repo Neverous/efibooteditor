@@ -84,16 +84,24 @@ jobs:
 
       - name: Install CMake
         run: |
+          echo "::group::Install"
           curl https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
           sudo apt-add-repository "deb https://apt.kitware.com/ubuntu/ $(lsb_release -cs) main"
           sudo apt-get update
           sudo apt-get install cmake
           mv /usr/local/bin/cmake /usr/local/bin/cmake3
           mv /usr/local/bin/cpack /usr/local/bin/cpack3
-
+          echo "::endgroup::"
+          echo "::group::Version"
           cmake --version
+          echo "::endgroup::"
         shell: bash
         if: startsWith(inputs.os, 'ubuntu')
+
+      - name: Install lldb
+        run: sudo apt-get install lldb
+        shell: bash
+        if: ${{ startsWith(inputs.os, 'ubuntu') && inputs.compiler != 'Emscripten' }}
 
       - name: Install Emscripten
         uses: emscripten-core/setup-emsdk@4528d102f7230f0e7b276855c01ea1159be0e984
@@ -177,7 +185,10 @@ jobs:
 
       - name: Configure and build with ${{ inputs.compiler }}
         run: |
+          echo ::group::Setup Visual Studio
           call "%programfiles%\Microsoft Visual Studio\${{ (startsWith(inputs.os, 'windows-2025') || inputs.os == 'windows-11-vs2026-arm') && '18' || '2022' }}\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ endsWith(inputs.os, 'arm') && 'arm64' || 'x64' }} || exit /b
+          echo ::endgroup::
+          echo ::group::Configure
           cmake --preset %BUILD_CONFIG% ^
             -DCMAKE_VERBOSE_MAKEFILE=ON ^
             -DCMAKE_C_COMPILER_LAUNCHER=ccache ^
@@ -185,7 +196,10 @@ jobs:
             -DCMAKE_TOOLCHAIN_FILE=%VCPKG_INSTALLATION_ROOT%\scripts\buildsystems\vcpkg.cmake ^
             ${{ inputs.compiler == 'Clang' && '-DCMAKE_C_COMPILER=clang-cl.exe -DCMAKE_CXX_COMPILER=clang-cl.exe' || '' }} ^
             -G Ninja || exit /b
+          echo ::endgroup::
+          echo ::group::Build
           cmake --build --preset %BUILD_CONFIG%
+          echo ::endgroup::
         shell: cmd
         if: startsWith(inputs.os, 'windows')
 
@@ -201,6 +215,49 @@ jobs:
           QT_LOGGING_RULES: '*.debug=false'
           QT_QPA_PLATFORM: offscreen
           TEST_ALLOW_NO_EFI_ENTRIES: ${{ (startsWith(inputs.os, 'macos') || startsWith(inputs.os, 'xcode')) && 'true' || '' }}
+
+      - name: Run tests with debugger
+        continue-on-error: true
+        run: |
+          for exe in build/${BUILD_CONFIG}/tests/test*; do
+            [ -f "${exe}" ] || continue;
+            echo "::group::Debugging ${exe}"
+            lldb --batch \
+              -o "run" \
+              -o "thread backtrace all" \
+              -o "quit" \
+              -- "${exe}" || true
+            echo "::endgroup::"
+          done
+        shell: bash
+        if: ${{ !startsWith(inputs.os, 'windows') && inputs.compiler != 'Emscripten' && steps.test.outcome == 'failure' }}
+        env:
+          FONTCONFIG_PATH: /etc/fonts
+          QT_FONT_DPI: 96
+          QT_LOGGING_RULES: '*.debug=false'
+          QT_QPA_PLATFORM: offscreen
+          TEST_ALLOW_NO_EFI_ENTRIES: ${{ (startsWith(inputs.os, 'macos') || startsWith(inputs.os, 'xcode')) && 'true' || '' }}
+
+      - name: Run tests with debugger
+        continue-on-error: true
+        run: |
+          CDB_PATH="/c/Program Files (x86)/Windows Kits/10/Debuggers/${{ endsWith(inputs.os, 'arm') && 'arm64' || 'x64' }}/cdb.exe"
+          if [ ! -f "${CDB_PATH}" ]; then
+            CDB_PATH="cdb.exe"
+          fi
+
+          for exe in build/${BUILD_CONFIG}/tests/test*.exe; do
+            echo "::group::Debugging ${exe}"
+            "${CDB_PATH}" -g -G -c "~*k; kP; q" "${exe}" || true
+            echo "::endgroup::"
+          done
+        shell: bash
+        if: ${{ startsWith(inputs.os, 'windows') && inputs.compiler != 'Emscripten' && steps.test.outcome == 'failure' }}
+        env:
+          FONTCONFIG_PATH: /etc/fonts
+          QT_FONT_DPI: 96
+          QT_LOGGING_RULES: '*.debug=false'
+          QT_QPA_PLATFORM: offscreen
 
       - name: Check visuals
         id: visual
@@ -234,8 +291,10 @@ jobs:
       - name: Package
         run: |
           for t in $(seq 1 20); do # FIXME: macOS has random hdiutil errors because of some protection mechanisms, just retry few times https://github.com/actions/runner-images/issues/7522#issuecomment-1556766641
+            echo "::group::Try ${t}"
             cmake --build --preset ${BUILD_CONFIG} --target package && exit 0
             rm -rf build/${BUILD_CONFIG}/dist/
+            echo "::endgroup::"
           done
           exit 255
         shell: bash
@@ -270,9 +329,9 @@ jobs:
         run: |
           echo "::error::Pipeline failed!"
           if [ "${{ steps.visual.outcome }}" = "failure" ]; then
-            echo "FAILED: Visuals check failed."
+            echo "::error::Check visuals failed."
           fi
           if [ "${{ steps.test.outcome }}" = "failure" ]; then
-            echo "FAILED: Tests failed."
+            echo "::error::Tests failed."
           fi
           exit 255
