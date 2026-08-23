@@ -138,8 +138,8 @@ jobs:
       - name: Evaluate build status
         run: |
           if [ "${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}" == "true" ]; then
-            echo "One or more builds failed!"
+            echo "::error::One or more builds failed!"
             exit 1
           fi
-          echo "Debug build succeeded"
+          echo "::notice::Debug build succeeded."
     if: always()
