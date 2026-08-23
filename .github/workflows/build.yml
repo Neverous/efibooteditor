@@ -48,11 +48,14 @@ jobs:
       - name: Set up ccache
         uses: hendrikmuhs/ccache-action@d62db5f07c26379fc4b4e0916f098a92573c3b03
         with:
-          key: ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}-${{ matrix.qt-version }}
+          key: ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}-${{ matrix.qt-version }}-${{ hashFiles('**/*.c', '**/*.cpp', '**/*.h', '**/*.ui', '**/CMakeLists.txt', 'CMakePresets.json', 'icons.qrc', 'vcpkg.json', 'windows.manifest', 'windows.rc') }}
           restore-keys: |
-            ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}
-            ${{ inputs.os }}-${{ inputs.compiler }}
-            ${{ inputs.os }}
+            ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}-${{ matrix.qt-version }}-
+            ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}-
+            ${{ inputs.os }}-${{ inputs.compiler }}-
+            ${{ inputs.os }}-
+          save: ${{ github.ref == 'refs/heads/master' }}
+          append-timestamp: false
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@ff2f1c621b7f889edc0d3c761ac2e6a3f8cdb0dd
