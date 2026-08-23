@@ -67,7 +67,7 @@ auto DriveInfo::getAll(bool refresh) -> QVector<DriveInfo>
         value_cf = IORegistryEntryCreateCFProperty(disk_service_io, CFSTR(kIOMediaPartitionIDKey), kCFAllocatorDefault, 0);
         if(value_cf != nullptr)
         {
-            CFNumberGetValue(static_cast<CFNumberRef>(value_cf), CFNumberGetType(static_cast<CFNumberRef>(value_cf)), static_cast<void *>(&driveinfo.partition));
+            CFNumberGetValue(static_cast<CFNumberRef>(value_cf), kCFNumberSInt32Type, &driveinfo.partition);
             CFRelease(value_cf);
         }
 
@@ -75,14 +75,14 @@ auto DriveInfo::getAll(bool refresh) -> QVector<DriveInfo>
         value_cf = IORegistryEntryCreateCFProperty(disk_service_io, CFSTR(kIOMediaPreferredBlockSizeKey), kCFAllocatorDefault, 0);
         if(value_cf != nullptr)
         {
-            CFNumberGetValue(static_cast<CFNumberRef>(value_cf), CFNumberGetType(static_cast<CFNumberRef>(value_cf)), static_cast<void *>(&block_size));
+            CFNumberGetValue(static_cast<CFNumberRef>(value_cf), kCFNumberSInt32Type, &block_size);
             CFRelease(value_cf);
         }
 
         value_cf = IORegistryEntryCreateCFProperty(disk_service_io, CFSTR(kIOMediaBaseKey), kCFAllocatorDefault, 0);
         if(value_cf != nullptr)
         {
-            CFNumberGetValue(static_cast<CFNumberRef>(value_cf), CFNumberGetType(static_cast<CFNumberRef>(value_cf)), static_cast<void *>(&driveinfo.start));
+            CFNumberGetValue(static_cast<CFNumberRef>(value_cf), kCFNumberSInt64Type, &driveinfo.start);
             CFRelease(value_cf);
         }
 
@@ -91,7 +91,7 @@ auto DriveInfo::getAll(bool refresh) -> QVector<DriveInfo>
 
         value_cf = CFDictionaryGetValue(disk_info_cf, kDADiskDescriptionMediaSizeKey);
         if(value_cf != nullptr)
-            CFNumberGetValue(static_cast<CFNumberRef>(value_cf), kCFNumberIntType, &driveinfo.size);
+            CFNumberGetValue(static_cast<CFNumberRef>(value_cf), kCFNumberSInt64Type, &driveinfo.size);
 
         IOObjectRelease(disk_service_io);
         CFRelease(disk_info_cf);
