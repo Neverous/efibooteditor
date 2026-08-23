@@ -348,6 +348,11 @@ target_sources(${PROJECT_NAME} PRIVATE ${ICONS})
 if(WIN32)
     target_sources(${PROJECT_NAME} PRIVATE
         windows.rc
+        windows.manifest
+    )
+
+    target_link_options(${PROJECT_NAME} PRIVATE
+        /MANIFESTUAC:NO
     )
 endif()
 
@@ -379,12 +384,6 @@ elseif(UNIX AND NOT EMSCRIPTEN)
     pkg_check_modules(EFIVAR REQUIRED efivar efiboot)
 
     target_link_libraries(${PROJECT_NAME}-core PUBLIC ${EFIVAR_LIBRARIES})
-endif()
-
-if(WIN32)
-    target_link_options(${PROJECT_NAME} PRIVATE
-        /MANIFESTUAC:level=\'requireAdministrator\'
-    )
 endif()
 
 if(("${CMAKE_BUILD_TYPE}" STREQUAL "Release") AND UNIX)

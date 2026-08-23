@@ -156,7 +156,7 @@ jobs:
 
       - name: Configure with ${{ inputs.compiler }}
         run: |
-          ${{ inputs.compiler == 'Emscripten' && '${QT_ROOT_DIR}/bin/qt-cmake' || 'cmake' }} --preset ${BUILD_CONFIG} \
+          ${{ inputs.compiler == 'Emscripten' && 'bash ${QT_ROOT_DIR}/bin/qt-cmake' || 'cmake' }} --preset ${BUILD_CONFIG} \
             -DCMAKE_VERBOSE_MAKEFILE=ON \
             -DCMAKE_C_COMPILER_LAUNCHER=ccache \
             -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
