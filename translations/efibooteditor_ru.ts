@@ -1527,7 +1527,7 @@
     <message>
         <location filename="../src/efibooteditor.cpp" line="266"/>
         <source>Enter filename:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Enter filename:</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="298"/>
@@ -1567,34 +1567,34 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="13"/>
         <source>Boot Editor for (U)EFI based systems.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Boot Editor for (U)EFI based systems.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <source>Export configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Export configuration.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>FILE</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FILE</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <source>Dump raw EFI data.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dump raw EFI data.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>Import configuration from JSON (either from export or raw dump).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Import configuration from JSON (either from export or raw dump).</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="19"/>
         <source>Force import, don&apos;t ask for confirmation.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Force import, don&apos;t ask for confirmation.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="26"/>
@@ -1623,7 +1623,7 @@
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Loaded %0 %1 entries</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Loaded %0 %1 entries</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
@@ -1643,13 +1643,14 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Hot Key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hot Key</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="78"/>
         <source>Are you sure you want to save?
 Your EFI configuration will be overwritten!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Are you sure you want to save?
+Your EFI configuration will be overwritten!</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="86"/>
@@ -1659,12 +1660,12 @@ Your EFI configuration will be overwritten!</source>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="98"/>
         <source>ERROR: %0! %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ERROR: %0! %1</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="114"/>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Finished</translation>
     </message>
 </context>
 <context>
