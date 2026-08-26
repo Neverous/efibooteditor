@@ -375,7 +375,7 @@
         <location filename="../src/form/bootentrywidget.ui" line="110"/>
         <location filename="../src/form/bootentrywidget.ui" line="116"/>
         <source>Optional data</source>
-        <translation>オプション データ</translation>
+        <translation>任意データ</translation>
     </message>
 </context>
 <context>
@@ -659,13 +659,13 @@
         <location filename="../src/efibootdata.cpp" line="1178"/>
         <location filename="../src/efibootdata.cpp" line="1333"/>
         <source>string</source>
-        <translation>文字列</translation>
+        <translation>string</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1156"/>
         <location filename="../src/efibootdata.cpp" line="1192"/>
         <source>%1: unknown os indication</source>
-        <translation>%1 : 不明なOS表示</translation>
+        <translation>%1 : 不明な OS インジケータ</translation>
     </message>
     <message>
         <location filename="../src/efibootdata.cpp" line="1083"/>
@@ -714,7 +714,7 @@
         <location filename="../src/efibootdata.cpp" line="1379"/>
         <source>object(raw_data: string, efi_attributes: number)</source>
         <extracomment>Expected JSON structure, thrown as error description. raw_data and efi_attributes are field names in JSON file</extracomment>
-        <translation>オブジェクト(RAWデータ : 文字列, efi_属性 : 番号)</translation>
+        <translation>オブジェクト(raw_data: string, efi_attributes: number)</translation>
     </message>
     <message>
         <location filename="../include/efibootdata.h" line="15"/>
@@ -774,13 +774,13 @@
         <location filename="../src/form/efibooteditor.ui" line="160"/>
         <location filename="../src/form/efibooteditor.ui" line="163"/>
         <source>Driver entries</source>
-        <translation>ドライバエントリ</translation>
+        <translation>ドライバ エントリ</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="139"/>
         <location filename="../src/form/efibooteditor.ui" line="166"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of Driver entries.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ドライバエントリの一覧。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ドライバ エントリの一覧。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="195"/>
@@ -793,13 +793,13 @@
         <location filename="../src/form/efibooteditor.ui" line="222"/>
         <location filename="../src/form/efibooteditor.ui" line="225"/>
         <source>SysPrep entries</source>
-        <translation>SysPrepエントリ</translation>
+        <translation>SysPrep エントリ</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="201"/>
         <location filename="../src/form/efibooteditor.ui" line="228"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of SysPrep entries.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SysPrepエントリの一覧。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SysPrep エントリの一覧。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="257"/>
@@ -816,7 +816,7 @@
         <location filename="../src/form/efibooteditor.ui" line="263"/>
         <location filename="../src/form/efibooteditor.ui" line="290"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;List of PlatformRecovery entries (READONLY).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;プラットフォームの回復エントリの一覧 (読み取り専用)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;プラットフォーム回復エントリの一覧 (読み取り専用)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/form/efibooteditor.ui" line="284"/>
@@ -1526,7 +1526,7 @@
     <message>
         <location filename="../src/efibooteditor.cpp" line="266"/>
         <source>Enter filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイル名の入力 :</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="298"/>
@@ -1566,55 +1566,55 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="13"/>
         <source>Boot Editor for (U)EFI based systems.</source>
-        <translation type="unfinished"></translation>
+        <translation>Boot Editor for (U)EFI based systems.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <source>Export configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation>構成のエクスポート。</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>FILE</source>
-        <translation type="unfinished"></translation>
+        <translation>FILE</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <source>Dump raw EFI data.</source>
-        <translation type="unfinished"></translation>
+        <translation>RAW EFI データをダンプ。</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>Import configuration from JSON (either from export or raw dump).</source>
-        <translation type="unfinished"></translation>
+        <translation>JSON から設定をインポート (エクスポートまたはRAW ダンプから)。</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="19"/>
         <source>Force import, don&apos;t ask for confirmation.</source>
-        <translation type="unfinished"></translation>
+        <translation>確認を求めずに強制的にインポート。</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="26"/>
         <source>EFI support required</source>
-        <translation type="unfinished">EFIサポートが必要</translation>
+        <translation>EFI サポートが必要</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="45"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation type="unfinished">EFIブートマネージャーのエントリの読み込み…</translation>
+        <translation>EFI ブートマネージャーのエントリの読み込み…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="47"/>
         <location filename="../src/efibooteditorcli.cpp" line="57"/>
         <source>Exporting boot configuration…</source>
-        <translation type="unfinished">ブート構成のエクスポート…</translation>
+        <translation>ブート構成のエクスポート…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="67"/>
         <source>Importing boot configuration…</source>
-        <translation type="unfinished">ブート構成のインポート…</translation>
+        <translation>ブート構成のインポート…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
@@ -1622,48 +1622,49 @@
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Loaded %0 %1 entries</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 %1 件を項目を読み込み済み</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
         <source>Boot</source>
-        <translation type="unfinished">ブート</translation>
+        <translation>ブート</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="72"/>
         <source>Driver</source>
-        <translation type="unfinished">ドライバ</translation>
+        <translation>ドライバー</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <source>System Preparation</source>
-        <translation type="unfinished">システムの準備</translation>
+        <translation>システムの準備</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Hot Key</source>
-        <translation type="unfinished"></translation>
+        <translation>ホットキー</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="78"/>
         <source>Are you sure you want to save?
 Your EFI configuration will be overwritten!</source>
-        <translation type="unfinished"></translation>
+        <translation>本当に保存しますか？
+EFI 構成が上書きされます！</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="86"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation type="unfinished">EFIブートマネージャーのエントリの保存…</translation>
+        <translation>EFI ブートマネージャーのエントリの保存…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="98"/>
         <source>ERROR: %0! %1</source>
-        <translation type="unfinished"></translation>
+        <translation>エラー : %0! %1</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="114"/>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation>完了</translation>
     </message>
 </context>
 <context>
