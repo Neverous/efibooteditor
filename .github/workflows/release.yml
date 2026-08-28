@@ -96,10 +96,27 @@ jobs:
       build-config: RelWithDebInfo
       version: ${{ github.ref_type == 'tag' && github.ref_name || github.sha }}
 
+  build-wasm:
+    name: WebAssembly with Emscripten
+    permissions:
+      actions: read
+      artifact-metadata: write
+      attestations: write
+      contents: read
+      id-token: write
+      security-events: write
+
+    uses: ./.github/workflows/build.yml
+    with:
+      os: ubuntu-latest
+      compiler: Emscripten
+      build-config: RelWithDebInfo
+      version: ${{ github.ref_type == 'tag' && github.ref_name || github.sha }}
+
   upload-assets:
     name: Upload release assets
     if: github.ref_type == 'tag'
-    needs: [build-linux, build-windows, build-macos]
+    needs: [build-linux, build-windows, build-macos, build-wasm]
     runs-on: ubuntu-slim
     permissions:
       attestations: write
@@ -130,7 +147,7 @@ jobs:
         shell: bash
 
       - name: Attest release assets
-        uses: actions/attest-build-provenance@0f67c3f4856b2e3261c31976d6725780e5e4c373
+        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8
         with:
           subject-path: dist/EFIBootEditor-*
 

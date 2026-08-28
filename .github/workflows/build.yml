@@ -39,6 +39,8 @@ jobs:
           - qt-version: ${{ inputs.os == 'xcode-27' && '6.2.4' || 'none' }}
           - qt-version: ${{ inputs.os == 'windows-2025' && '5.15.2' || 'none' }} # stdext: undeclared identifier - removed in vs2026
           - qt-version: ${{ inputs.os == 'windows-2025' && '6.2.4' || 'none' }} # stdext: undeclared identifier - removed in vs2026
+          - qt-version: ${{ inputs.compiler == 'Emscripten' && '5.15.2' || 'none' }}
+          - qt-version: ${{ inputs.compiler == 'Emscripten' && '6.2.4' || 'none' }}
     steps:
       - name: Checkout source code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -46,14 +48,17 @@ jobs:
       - name: Set up ccache
         uses: hendrikmuhs/ccache-action@d62db5f07c26379fc4b4e0916f098a92573c3b03
         with:
-          key: ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}-${{ matrix.qt-version }}
+          key: ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}-${{ matrix.qt-version }}-${{ hashFiles('**/*.c', '**/*.cpp', '**/*.h', '**/*.ui', '**/CMakeLists.txt', 'CMakePresets.json', 'icons.qrc', 'vcpkg.json', 'windows.manifest', 'windows.rc') }}
           restore-keys: |
-            ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}
-            ${{ inputs.os }}-${{ inputs.compiler }}
-            ${{ inputs.os }}
+            ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}-${{ matrix.qt-version }}-
+            ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}-
+            ${{ inputs.os }}-${{ inputs.compiler }}-
+            ${{ inputs.os }}-
+          save: ${{ github.ref == 'refs/heads/master' }}
+          append-timestamp: false
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@e4fba868fa4b1b91e1fdab776edc8cfbe6e9fb81
+        uses: github/codeql-action/init@ff2f1c621b7f889edc0d3c761ac2e6a3f8cdb0dd
         with:
           languages: cpp
           queries: security-and-quality
@@ -71,26 +76,44 @@ jobs:
           cache: false
           version: ${{ matrix.qt-version }}
           setup-python: false
+          host: ${{ inputs.compiler == 'Emscripten' && 'all_os' || '' }}
+          target: ${{ inputs.compiler == 'Emscripten' && 'wasm' || 'desktop' }}
+          arch: ${{ inputs.compiler == 'Emscripten' && 'wasm_singlethread' || '' }}
           # https://github.com/miurahr/aqtinstall/pull/1000
           aqtsource: git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b
 
       - name: Install CMake
         run: |
+          echo "::group::Install"
           curl https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
           sudo apt-add-repository "deb https://apt.kitware.com/ubuntu/ $(lsb_release -cs) main"
           sudo apt-get update
           sudo apt-get install cmake
           mv /usr/local/bin/cmake /usr/local/bin/cmake3
           mv /usr/local/bin/cpack /usr/local/bin/cpack3
-
+          echo "::endgroup::"
+          echo "::group::Version"
           cmake --version
+          echo "::endgroup::"
         shell: bash
         if: startsWith(inputs.os, 'ubuntu')
+
+      - name: Install lldb
+        run: sudo apt-get install lldb
+        shell: bash
+        if: ${{ startsWith(inputs.os, 'ubuntu') && inputs.compiler != 'Emscripten' }}
+
+      - name: Install Emscripten
+        uses: emscripten-core/setup-emsdk@4528d102f7230f0e7b276855c01ea1159be0e984
+        with:
+          version: 4.0.7
+          no-cache: true
+        if: inputs.compiler == 'Emscripten'
 
       - name: Install libfuse2
         run: sudo apt-get install libfuse2
         shell: bash
-        if: startsWith(inputs.os, 'ubuntu')
+        if: ${{ startsWith(inputs.os, 'ubuntu') && inputs.compiler != 'Emscripten' }}
 
       - name: Install linuxdeploy
         run: |
@@ -101,24 +124,24 @@ jobs:
           curl --proto '=https' -sS -L -C - https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${ARCH}.AppImage -o ${DIR}/appimagetool
           chmod +x ${DIR}/*
         shell: bash
-        if: startsWith(inputs.os, 'ubuntu')
+        if: ${{ startsWith(inputs.os, 'ubuntu') && inputs.compiler != 'Emscripten' }}
         env:
           ARCH: ${{ endsWith(inputs.os, 'arm') && 'aarch64' || 'x86_64' }}
 
       - name: Install efivar
         run: sudo apt-get install libefiboot1 libefiboot-dev libefivar-dev
         shell: bash
-        if: startsWith(inputs.os, 'ubuntu')
+        if: ${{ startsWith(inputs.os, 'ubuntu') && inputs.compiler != 'Emscripten' }}
 
       - name: Install libxkbcommon-x11-0 and libxcb-cursor0 and zlib1g-dev
         run: sudo apt-get install libxkbcommon-x11-0 libxcb-cursor0 zlib1g-dev
         shell: bash
-        if: startsWith(inputs.os, 'ubuntu')
+        if: ${{ startsWith(inputs.os, 'ubuntu') && inputs.compiler != 'Emscripten' }}
 
       - name: Install imagemagick
         run: sudo apt-get install imagemagick
         shell: bash
-        if: startsWith(inputs.os, 'ubuntu')
+        if: ${{ startsWith(inputs.os, 'ubuntu') && inputs.compiler != 'Emscripten' }}
 
       - name: Install imagemagick
         run: arch -arm64 brew install imagemagick
@@ -144,7 +167,14 @@ jobs:
 
       - name: Configure with ${{ inputs.compiler }}
         run: |
-          cmake --preset ${BUILD_CONFIG} -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER=${{ inputs.compiler == 'Clang' && 'clang' || 'gcc' }} -DCMAKE_CXX_COMPILER=${{ inputs.compiler == 'Clang' && 'clang++' || 'g++' }} ${{ (startsWith(inputs.os, 'macos') || startsWith(inputs.os, 'xcode')) && startsWith(matrix.qt-version, '5') && '-DCMAKE_OSX_ARCHITECTURES="x86_64"' || '' }} -G Ninja
+          ${{ inputs.compiler == 'Emscripten' && 'bash ${QT_ROOT_DIR}/bin/qt-cmake' || 'cmake' }} --preset ${BUILD_CONFIG} \
+            -DCMAKE_VERBOSE_MAKEFILE=ON \
+            -DCMAKE_C_COMPILER_LAUNCHER=ccache \
+            -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
+            -DCMAKE_C_COMPILER=${{ inputs.compiler == 'Clang' && 'clang' || 'gcc' }} \
+            -DCMAKE_CXX_COMPILER=${{ inputs.compiler == 'Clang' && 'clang++' || 'g++' }} \
+            ${{ (startsWith(inputs.os, 'macos') || startsWith(inputs.os, 'xcode')) && startsWith(matrix.qt-version, '5') && '-DCMAKE_OSX_ARCHITECTURES="x86_64"' || '' }} \
+            -G Ninja
         shell: bash
         if: ${{ !startsWith(inputs.os, 'windows') }}
 
@@ -155,9 +185,21 @@ jobs:
 
       - name: Configure and build with ${{ inputs.compiler }}
         run: |
+          echo ::group::Setup Visual Studio
           call "%programfiles%\Microsoft Visual Studio\${{ (startsWith(inputs.os, 'windows-2025') || inputs.os == 'windows-11-vs2026-arm') && '18' || '2022' }}\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ endsWith(inputs.os, 'arm') && 'arm64' || 'x64' }} || exit /b
-          cmake --preset %BUILD_CONFIG% -DCMAKE_TOOLCHAIN_FILE=%VCPKG_INSTALLATION_ROOT%\scripts\buildsystems\vcpkg.cmake -DCMAKE_VERBOSE_MAKEFILE=ON ${{ inputs.compiler == 'Clang' && '-DCMAKE_C_COMPILER=clang-cl.exe -DCMAKE_CXX_COMPILER=clang-cl.exe' || '' }} -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -G Ninja || exit /b
+          echo ::endgroup::
+          echo ::group::Configure
+          cmake --preset %BUILD_CONFIG% ^
+            -DCMAKE_VERBOSE_MAKEFILE=ON ^
+            -DCMAKE_C_COMPILER_LAUNCHER=ccache ^
+            -DCMAKE_CXX_COMPILER_LAUNCHER=ccache ^
+            -DCMAKE_TOOLCHAIN_FILE=%VCPKG_INSTALLATION_ROOT%\scripts\buildsystems\vcpkg.cmake ^
+            ${{ inputs.compiler == 'Clang' && '-DCMAKE_C_COMPILER=clang-cl.exe -DCMAKE_CXX_COMPILER=clang-cl.exe' || '' }} ^
+            -G Ninja || exit /b
+          echo ::endgroup::
+          echo ::group::Build
           cmake --build --preset %BUILD_CONFIG%
+          echo ::endgroup::
         shell: cmd
         if: startsWith(inputs.os, 'windows')
 
@@ -166,12 +208,56 @@ jobs:
         continue-on-error: true
         run: ctest --preset ${BUILD_CONFIG} -VV
         shell: bash
+        if: inputs.compiler != 'Emscripten'
         env:
           FONTCONFIG_PATH: /etc/fonts
           QT_FONT_DPI: 96
           QT_LOGGING_RULES: '*.debug=false'
           QT_QPA_PLATFORM: offscreen
           TEST_ALLOW_NO_EFI_ENTRIES: ${{ (startsWith(inputs.os, 'macos') || startsWith(inputs.os, 'xcode')) && 'true' || '' }}
+
+      - name: Run tests with debugger
+        continue-on-error: true
+        run: |
+          for exe in build/${BUILD_CONFIG}/tests/test*; do
+            [ -f "${exe}" ] || continue;
+            echo "::group::Debugging ${exe}"
+            lldb --batch \
+              -o "run" \
+              -o "thread backtrace all" \
+              -o "quit" \
+              -- "${exe}" || true
+            echo "::endgroup::"
+          done
+        shell: bash
+        if: ${{ !startsWith(inputs.os, 'windows') && inputs.compiler != 'Emscripten' && steps.test.outcome == 'failure' }}
+        env:
+          FONTCONFIG_PATH: /etc/fonts
+          QT_FONT_DPI: 96
+          QT_LOGGING_RULES: '*.debug=false'
+          QT_QPA_PLATFORM: offscreen
+          TEST_ALLOW_NO_EFI_ENTRIES: ${{ (startsWith(inputs.os, 'macos') || startsWith(inputs.os, 'xcode')) && 'true' || '' }}
+
+      - name: Run tests with debugger
+        continue-on-error: true
+        run: |
+          CDB_PATH="/c/Program Files (x86)/Windows Kits/10/Debuggers/${{ endsWith(inputs.os, 'arm') && 'arm64' || 'x64' }}/cdb.exe"
+          if [ ! -f "${CDB_PATH}" ]; then
+            CDB_PATH="cdb.exe"
+          fi
+
+          for exe in build/${BUILD_CONFIG}/tests/test*.exe; do
+            echo "::group::Debugging ${exe}"
+            "${CDB_PATH}" -g -G -c "~*k; kP; q" "${exe}" || true
+            echo "::endgroup::"
+          done
+        shell: bash
+        if: ${{ startsWith(inputs.os, 'windows') && inputs.compiler != 'Emscripten' && steps.test.outcome == 'failure' }}
+        env:
+          FONTCONFIG_PATH: /etc/fonts
+          QT_FONT_DPI: 96
+          QT_LOGGING_RULES: '*.debug=false'
+          QT_QPA_PLATFORM: offscreen
 
       - name: Check visuals
         id: visual
@@ -188,11 +274,12 @@ jobs:
           DIFF=$(${CMP} -metric RMSE ${ARTIFACT_VERSION}-ci.png tests/screenshots/${ARTIFACT_VERSION}.png ${ARTIFACT_VERSION}-diff.png 2>&1 | awk -F'[()]' '{print ($2 > 0.02)}' || true)
           [ "${DIFF}" = "0" ] || exit 255
         shell: bash
+        if: inputs.compiler != 'Emscripten'
         env:
           ARTIFACT_VERSION: ${{ inputs.os }}-qt-${{ matrix.qt-version }}
 
       - name: Upload visual diff
-        if: steps.visual.outcome == 'failure'
+        if: ${{ inputs.compiler != 'Emscripten' && steps.visual.outcome == 'failure' }}
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: visual-diff-${{ inputs.os }}-qt-${{ matrix.qt-version }}-${{ inputs.compiler }}
@@ -204,8 +291,10 @@ jobs:
       - name: Package
         run: |
           for t in $(seq 1 20); do # FIXME: macOS has random hdiutil errors because of some protection mechanisms, just retry few times https://github.com/actions/runner-images/issues/7522#issuecomment-1556766641
+            echo "::group::Try ${t}"
             cmake --build --preset ${BUILD_CONFIG} --target package && exit 0
             rm -rf build/${BUILD_CONFIG}/dist/
+            echo "::endgroup::"
           done
           exit 255
         shell: bash
@@ -219,7 +308,7 @@ jobs:
 
       - name: Attest artifacts
         if: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository }}
-        uses: actions/attest-build-provenance@0f67c3f4856b2e3261c31976d6725780e5e4c373
+        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8
         with:
           subject-path: build/${{ inputs.build-config }}/dist/EFIBootEditor-*
 
@@ -231,18 +320,18 @@ jobs:
           path: build/${{ inputs.build-config }}/dist/EFIBootEditor-*
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@e4fba868fa4b1b91e1fdab776edc8cfbe6e9fb81
-        if: inputs.build-config == 'Debug'
+        uses: github/codeql-action/analyze@ff2f1c621b7f889edc0d3c761ac2e6a3f8cdb0dd
+        if: ${{ inputs.build-config == 'Debug' && inputs.compiler != 'Emscripten' }}
         continue-on-error: true
 
       - name: Check final status
-        if: ${{ always() && (steps.visual.outcome == 'failure' || steps.test.outcome == 'failure') }}
+        if: ${{ always() && (steps.visual.outcome == 'failure' || steps.test.outcome == 'failure') && inputs.compiler != 'Emscripten' }}
         run: |
           echo "::error::Pipeline failed!"
           if [ "${{ steps.visual.outcome }}" = "failure" ]; then
-            echo "FAILED: Visuals check failed."
+            echo "::error::Check visuals failed."
           fi
           if [ "${{ steps.test.outcome }}" = "failure" ]; then
-            echo "FAILED: Tests failed."
+            echo "::error::Tests failed."
           fi
           exit 255
