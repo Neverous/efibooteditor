@@ -29,8 +29,8 @@ jobs:
       fail-fast: false
       matrix:
         qt-version:
-          - 5.15.2 # Supported in Ubuntu Resolute Raccoon until 2031-04-30
-          - 6.2.4  # Supported in Ubuntu Jammy Jellyfish until 2027-04-01
+          - 5.15.2 # Supported in Ubuntu Resolute Raccoon until 2031-05-29
+          - 6.2.4  # Supported in Ubuntu Jammy Jellyfish until 2027-06-01
           - 6.11.2 # Supported until 2026-09-22
         exclude:
           - qt-version: ${{ endsWith(inputs.os, 'arm') && '5.15.2' || 'none' }}
