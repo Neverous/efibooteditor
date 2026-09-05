@@ -1526,7 +1526,7 @@
     <message>
         <location filename="../src/efibooteditor.cpp" line="266"/>
         <source>Enter filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>请输入文件名：</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="298"/>
@@ -1566,55 +1566,55 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="13"/>
         <source>Boot Editor for (U)EFI based systems.</source>
-        <translation type="unfinished"></translation>
+        <translation>基于  (U)EFI  的系统启动编辑器。</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <source>Export configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation>导出配置。</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>FILE</source>
-        <translation type="unfinished"></translation>
+        <translation>文件</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <source>Dump raw EFI data.</source>
-        <translation type="unfinished"></translation>
+        <translation>转储原始 EFI 数据。</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>Import configuration from JSON (either from export or raw dump).</source>
-        <translation type="unfinished"></translation>
+        <translation>从 JSON 中导入配置（可来自导出文件或原始转储）。</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="19"/>
         <source>Force import, don&apos;t ask for confirmation.</source>
-        <translation type="unfinished"></translation>
+        <translation>强制导入，无需确认。</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="26"/>
         <source>EFI support required</source>
-        <translation type="unfinished">需要 EFI 支持</translation>
+        <translation>需要 EFI 支持</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="45"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation type="unfinished">正在加载 EFI Boot Manager 条目…</translation>
+        <translation>正在加载 EFI Boot Manager 条目…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="47"/>
         <location filename="../src/efibooteditorcli.cpp" line="57"/>
         <source>Exporting boot configuration…</source>
-        <translation type="unfinished">正在导出引导配置…</translation>
+        <translation>正在导出引导配置…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="67"/>
         <source>Importing boot configuration…</source>
-        <translation type="unfinished">正在导入引导配置…</translation>
+        <translation>正在导入引导配置…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
@@ -1622,48 +1622,49 @@
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Loaded %0 %1 entries</source>
-        <translation type="unfinished"></translation>
+        <translation>已加载 %0 %1 个条目</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
         <source>Boot</source>
-        <translation type="unfinished">引导</translation>
+        <translation>引导</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="72"/>
         <source>Driver</source>
-        <translation type="unfinished">设备</translation>
+        <translation>设备</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <source>System Preparation</source>
-        <translation type="unfinished">系统准备</translation>
+        <translation>系统准备</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Hot Key</source>
-        <translation type="unfinished"></translation>
+        <translation>热键</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="78"/>
         <source>Are you sure you want to save?
 Your EFI configuration will be overwritten!</source>
-        <translation type="unfinished"></translation>
+        <translation>确定要保存吗？  
+您的 EFI 配置将被覆盖！</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="86"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation type="unfinished">正在保存 EFI Boot Manager 条目…</translation>
+        <translation>正在保存 EFI Boot Manager 条目…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="98"/>
         <source>ERROR: %0! %1</source>
-        <translation type="unfinished"></translation>
+        <translation>错误：%0! %1</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="114"/>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation>已完成</translation>
     </message>
 </context>
 <context>

@@ -1526,7 +1526,7 @@
     <message>
         <location filename="../src/efibooteditor.cpp" line="266"/>
         <source>Enter filename:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Enter filename:</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="298"/>
@@ -1566,55 +1566,55 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="13"/>
         <source>Boot Editor for (U)EFI based systems.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Boot Editor for (U)EFI based systems.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <source>Export configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Export configuration.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>FILE</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FILE</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <source>Dump raw EFI data.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dump raw EFI data.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>Import configuration from JSON (either from export or raw dump).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Import configuration from JSON (either from export or raw dump).</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="19"/>
         <source>Force import, don&apos;t ask for confirmation.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Force import, don&apos;t ask for confirmation.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="26"/>
         <source>EFI support required</source>
-        <translation type="unfinished">Wymagane wsparcie EFI</translation>
+        <translation>Wymagane wsparcie EFI</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="45"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation type="unfinished">Ładowanie wpisów Menedżera rozruchu EFI…</translation>
+        <translation>Ładowanie wpisów Menedżera rozruchu EFI…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="47"/>
         <location filename="../src/efibooteditorcli.cpp" line="57"/>
         <source>Exporting boot configuration…</source>
-        <translation type="unfinished">Eksportowanie konfiguracji rozruchu…</translation>
+        <translation>Eksportowanie konfiguracji rozruchu…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="67"/>
         <source>Importing boot configuration…</source>
-        <translation type="unfinished">Importowanie konfiguracji rozruchu…</translation>
+        <translation>Importowanie konfiguracji rozruchu…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
@@ -1622,48 +1622,49 @@
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Loaded %0 %1 entries</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Loaded %0 %1 entries</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
         <source>Boot</source>
-        <translation type="unfinished">Rozruch</translation>
+        <translation>Rozruch</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="72"/>
         <source>Driver</source>
-        <translation type="unfinished">Sterownik</translation>
+        <translation>Sterownik</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <source>System Preparation</source>
-        <translation type="unfinished">Przygotowanie systemu</translation>
+        <translation>Przygotowanie systemu</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Hot Key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hot Key</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="78"/>
         <source>Are you sure you want to save?
 Your EFI configuration will be overwritten!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Are you sure you want to save?
+Your EFI configuration will be overwritten!</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="86"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation type="unfinished">Zapisywanie wpisów Menedżera rozruchu EFI…</translation>
+        <translation>Zapisywanie wpisów Menedżera rozruchu EFI…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="98"/>
         <source>ERROR: %0! %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ERROR: %0! %1</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="114"/>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Finished</translation>
     </message>
 </context>
 <context>
@@ -2130,7 +2131,7 @@ Your EFI configuration will be overwritten!</source>
         <location filename="../src/form/filepathdialog.ui" line="77"/>
         <location filename="../src/form/filepathdialog.ui" line="99"/>
         <source>PCI Function Number.</source>
-        <translation type="unfinished">PCI Function Number.</translation>
+        <translation>PCI Function Number.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="83"/>

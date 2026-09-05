@@ -1521,7 +1521,7 @@
     <message>
         <location filename="../src/efibooteditor.cpp" line="266"/>
         <source>Enter filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserisci nome file:</translation>
     </message>
     <message>
         <location filename="../src/efibooteditor.cpp" line="298"/>
@@ -1566,55 +1566,55 @@
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="13"/>
         <source>Boot Editor for (U)EFI based systems.</source>
-        <translation type="unfinished"></translation>
+        <translation>Editor boot per sistemi basati su (U)EFI.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <source>Export configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esporta configurazione.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="16"/>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>FILE</source>
-        <translation type="unfinished"></translation>
+        <translation>FILE</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="17"/>
         <source>Dump raw EFI data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dump dati EFI non elaborati.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="18"/>
         <source>Import configuration from JSON (either from export or raw dump).</source>
-        <translation type="unfinished"></translation>
+        <translation>Importa configurazione da JSON (dall&apos;esportazione o dal dump non elaborato).</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="19"/>
         <source>Force import, don&apos;t ask for confirmation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Forza importazione, non chiedere conferma.</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="26"/>
         <source>EFI support required</source>
-        <translation type="unfinished">È richiesto il supporto EFI</translation>
+        <translation>È richiesto il supporto EFI</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="45"/>
         <source>Loading EFI Boot Manager entries…</source>
-        <translation type="unfinished">Caricamento voci EFI Boot Manager…</translation>
+        <translation>Caricamento voci EFI Boot Manager…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="47"/>
         <location filename="../src/efibooteditorcli.cpp" line="57"/>
         <source>Exporting boot configuration…</source>
-        <translation type="unfinished">Esportazione configurazione di boot…</translation>
+        <translation>Esportazione configurazione di boot…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="67"/>
         <source>Importing boot configuration…</source>
-        <translation type="unfinished">Importazione configurazione di boot…</translation>
+        <translation>Importazione configurazione boot…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
@@ -1622,48 +1622,49 @@
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Loaded %0 %1 entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Caricate %0 %1 voci</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="71"/>
         <source>Boot</source>
-        <translation type="unfinished">Boot</translation>
+        <translation>Boot</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="72"/>
         <source>Driver</source>
-        <translation type="unfinished">Driver</translation>
+        <translation>Driver</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="73"/>
         <source>System Preparation</source>
-        <translation type="unfinished">Preparazione sistema</translation>
+        <translation>Preparazione sistema</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="74"/>
         <source>Hot Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Tasto rapido</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="78"/>
         <source>Are you sure you want to save?
 Your EFI configuration will be overwritten!</source>
-        <translation type="unfinished"></translation>
+        <translation>Vuoi salvare la configurazione?
+La configurazione EFI verrà sovrascritta!</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="86"/>
         <source>Saving EFI Boot Manager entries…</source>
-        <translation type="unfinished">Salvataggio voci EFI Boot Manager…</translation>
+        <translation>Salvataggio voci manager boot EFI…</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="98"/>
         <source>ERROR: %0! %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ERRORE: %0! %1</translation>
     </message>
     <message>
         <location filename="../src/efibooteditorcli.cpp" line="114"/>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Completata</translation>
     </message>
 </context>
 <context>
@@ -3732,7 +3733,7 @@ Tutti gli altri bit sono riservati.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</transla
         <location filename="../src/form/filepathdialog.ui" line="3735"/>
         <location filename="../src/form/filepathdialog.ui" line="3750"/>
         <source>Device Vendor Id</source>
-        <translation>ID venditore dispositivo</translation>
+        <translation>Id produttore dispositivo</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3732"/>
@@ -3751,7 +3752,7 @@ Tutti gli altri bit sono riservati.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</transla
         <location filename="../src/form/filepathdialog.ui" line="3775"/>
         <location filename="../src/form/filepathdialog.ui" line="3790"/>
         <source>Device Product Id</source>
-        <translation>ID prodotto dispositivo</translation>
+        <translation>Id prodotto dispositivo</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="3772"/>
@@ -4327,7 +4328,7 @@ Tutti gli altri bit sono riservati.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</transla
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5250"/>
         <source>Embedded Multi-Media Card Settings.</source>
-        <translation>Impostazioni eMMC.</translation>
+        <translation>Impostazioni scheda eMMC.</translation>
     </message>
     <message>
         <location filename="../src/form/filepathdialog.ui" line="5253"/>
