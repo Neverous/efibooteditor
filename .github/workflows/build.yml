@@ -46,7 +46,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Set up ccache
-        uses: hendrikmuhs/ccache-action@d62db5f07c26379fc4b4e0916f098a92573c3b03
+        uses: hendrikmuhs/ccache-action@f09c25b45002a07be2955cbe52e8cee55643f89d
         with:
           key: ${{ inputs.os }}-${{ inputs.compiler }}-${{ inputs.build-config }}-${{ matrix.qt-version }}-${{ hashFiles('**/*.c', '**/*.cpp', '**/*.h', '**/*.ui', '**/CMakeLists.txt', 'CMakePresets.json', 'icons.qrc', 'vcpkg.json', 'windows.manifest', 'windows.rc') }}
           restore-keys: |
@@ -58,7 +58,7 @@ jobs:
           append-timestamp: false
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@cdf488f595d80d6e07e03d4674febd5ab45fa938
+        uses: github/codeql-action/init@1c5b675653bb5c22dbe9b12b556ec555138e09fd
         with:
           languages: cpp
           queries: security-and-quality
@@ -71,7 +71,7 @@ jobs:
           python-version: '3.14'
 
       - name: Set up Qt environment
-        uses: jurplel/install-qt-action@48d3ad6db93f3627c8ee7a0454bc6f3744f7e730
+        uses: jurplel/install-qt-action@bcb88e3bed2e992f5f9e24c0f9e364a231d278eb
         with:
           cache: false
           version: ${{ matrix.qt-version }}
@@ -320,7 +320,7 @@ jobs:
           path: build/${{ inputs.build-config }}/dist/EFIBootEditor-*
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@cdf488f595d80d6e07e03d4674febd5ab45fa938
+        uses: github/codeql-action/analyze@1c5b675653bb5c22dbe9b12b556ec555138e09fd
         if: ${{ inputs.build-config == 'Debug' && inputs.compiler != 'Emscripten' }}
         continue-on-error: true
 
