@@ -167,7 +167,7 @@ jobs:
       matrix:
         os: [windows-2025]
         qt-version:
-          - 6.11.2  # Supported until 2026-09-22
+          - 6.2.4  # Supported in Ubuntu Jammy Jellyfish until 2027-06-01
         compiler:
           - MSVC
     steps:
