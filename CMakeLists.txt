@@ -269,16 +269,16 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
         -Wno-exit-time-destructors
         -Wno-global-constructors
         -Wno-padded
+        -Wno-poison-system-directories
         -Wno-return-std-move-in-c++11
         -Wno-switch-default
+        -Wno-unique-object-duplication
         -Wno-unknown-warning-option
         -Wno-unsafe-buffer-usage
-        -Wno-poison-system-directories
     )
 
     if(EMSCRIPTEN)
         target_compile_options(${PROJECT_NAME}-core PUBLIC
-            -Wno-unique-object-duplication
             -Wno-disabled-macro-expansion
         )
 
