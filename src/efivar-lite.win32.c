@@ -95,7 +95,7 @@ int efi_get_variable(efi_guid_t guid, const TCHAR *name, uint8_t **data, size_t 
     {
         *data_size *= 2;
         free(variable_data_buffer);
-        variable_data_buffer = malloc(*data_size);
+        variable_data_buffer = (uint8_t *)malloc(*data_size);
         if(!variable_data_buffer)
             return -1;
 
@@ -171,7 +171,7 @@ int efi_get_next_variable_name(efi_guid_t **guid, TCHAR **name)
         return 0;
     }
 
-    const variable_info_t *variable = advance_bytes(variables, current_offset);
+    const variable_info_t *variable = (const variable_info_t *)advance_bytes(variables, current_offset);
     if(!variable->NextEntryOffset)
         current_offset = variables_size;
     else
