@@ -3,7 +3,6 @@
 
 #include "driveinfo.h"
 
-#include <QObject>
 #include <Windows.h>
 #include <array>
 
@@ -52,15 +51,15 @@ QVector<DriveInfo> DriveInfo::getAll(bool refresh)
         switch(device_number.DeviceType)
         {
         case FILE_DEVICE_CD_ROM:
-            driveinfo.name = QObject::tr("CD-ROM %1").arg(device_number.DeviceNumber);
+            driveinfo.name = tr("CD-ROM %1").arg(device_number.DeviceNumber);
             break;
 
         case FILE_DEVICE_DISK:
-            driveinfo.name = QObject::tr("Disk %1 partition %2").arg(device_number.DeviceNumber).arg(partition_info.PartitionNumber);
+            driveinfo.name = tr("Disk %1 partition %2").arg(device_number.DeviceNumber).arg(partition_info.PartitionNumber);
             break;
 
         default:
-            driveinfo.name = QObject::tr("Device %1 number %2 partition %3").arg(toHex(device_number.DeviceType)).arg(device_number.DeviceNumber).arg(partition_info.PartitionNumber);
+            driveinfo.name = tr("Device %1 number %2 partition %3").arg(toHex(device_number.DeviceType)).arg(device_number.DeviceNumber).arg(partition_info.PartitionNumber);
             break;
         }
 

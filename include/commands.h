@@ -1,13 +1,17 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #pragma once
 
-#include "efibootdata.h"
+#include <QCoreApplication>
 #include <QUndoCommand>
+
+#include "efibootdata.h"
 
 // BootEntry
 template <class Type, class SignalPtr>
 class SetEFIBootDataValueCommand: public QUndoCommand
 {
+    Q_DECLARE_TR_FUNCTIONS(SetEFIBootDataValueCommand)
+
     using PropertyPtr = Type EFIBootData::*;
 
     EFIBootData &data;
@@ -18,7 +22,7 @@ class SetEFIBootDataValueCommand: public QUndoCommand
 
 public:
     SetEFIBootDataValueCommand(EFIBootData &data_, const QString &name_, PropertyPtr property_, SignalPtr signal_, const Type &value_, QUndoCommand *parent = nullptr)
-        : QUndoCommand(QObject::tr("Change %1 to \"%2\"").arg(name_).arg(value_), parent)
+        : QUndoCommand(tr("Change %1 to \"%2\"").arg(name_).arg(value_), parent)
         , data{data_}
         , name{name_}
         , property{property_}
@@ -63,7 +67,7 @@ public:
         if(value == data.*property)
             setObsolete(true);
 
-        setText(QObject::tr("Change %1 to \"%2\"").arg(name).arg(data.*property));
+        setText(tr("Change %1 to \"%2\"").arg(name).arg(data.*property));
         return true;
     }
 };
@@ -92,6 +96,8 @@ protected:
 
 class InsertBootEntryCommand: public InsertRemoveBootEntryCommand
 {
+    Q_DECLARE_TR_FUNCTIONS(InsertBootEntryCommand)
+
 public:
     InsertBootEntryCommand(BootEntryListModel &model_, const QModelIndex &index_parent_, int index_, const BootEntry &entry_, QUndoCommand *parent = nullptr);
     InsertBootEntryCommand(const InsertBootEntryCommand &) = delete;
@@ -103,6 +109,8 @@ public:
 
 class RemoveBootEntryCommand: public InsertRemoveBootEntryCommand
 {
+    Q_DECLARE_TR_FUNCTIONS(RemoveBootEntryCommand)
+
 public:
     RemoveBootEntryCommand(BootEntryListModel &model_, const QModelIndex &index_parent_, int index_, QUndoCommand *parent = nullptr);
     RemoveBootEntryCommand(const RemoveBootEntryCommand &) = delete;
@@ -114,6 +122,8 @@ public:
 
 class MoveBootEntryCommand: public QUndoCommand
 {
+    Q_DECLARE_TR_FUNCTIONS(MoveBootEntryCommand)
+
     BootEntryListModel &model;
     const QString title;
     QModelIndex source_parent;
@@ -135,6 +145,8 @@ public:
 template <class Type>
 class SetBootEntryValueCommand: public QUndoCommand
 {
+    Q_DECLARE_TR_FUNCTIONS(SetEFIBootEntryValueCommand)
+
     using PropertyPtr = Type BootEntry::*;
 
     BootEntryListModel &model;
@@ -154,7 +166,7 @@ public:
         , property{property_}
         , value{value_}
     {
-        setText(QObject::tr("Change %1 entry \"%2\" %3 to \"%4\"").arg(model.name, title, name).arg(static_cast<underlying_type_t<Type>>(value)));
+        setText(tr("Change %1 entry \"%2\" %3 to \"%4\"").arg(model.name, title, name).arg(static_cast<underlying_type_t<Type>>(value)));
     }
 
     SetBootEntryValueCommand(const SetBootEntryValueCommand &) = delete;
@@ -195,13 +207,15 @@ public:
         if(value == entry.*property)
             setObsolete(true);
 
-        setText(QObject::tr("Change %1 entry \"%2\" %3 to \"%4\"").arg(model.name, title, name).arg(static_cast<underlying_type_t<Type>>(entry.*property)));
+        setText(tr("Change %1 entry \"%2\" %3 to \"%4\"").arg(model.name, title, name).arg(static_cast<underlying_type_t<Type>>(entry.*property)));
         return true;
     }
 };
 
 class ChangeOptionalDataFormatCommand: public QUndoCommand
 {
+    Q_DECLARE_TR_FUNCTIONS(ChangeOptionalDataFormatCommand)
+
     BootEntryListModel &model;
     const QString title;
     const QModelIndex index;
@@ -221,6 +235,8 @@ public:
 
 class InsertRemoveBootEntryFilePathCommand: public QUndoCommand
 {
+    Q_DECLARE_TR_FUNCTIONS(InsertRemoveBootEntryFilePathCommand)
+
 private:
     BootEntryListModel &model;
     FilePath::ANY file_path;
@@ -240,6 +256,8 @@ protected:
 
 class InsertBootEntryFilePathCommand: public InsertRemoveBootEntryFilePathCommand
 {
+    Q_DECLARE_TR_FUNCTIONS(InsertBootEntryFilePathCommand)
+
 public:
     InsertBootEntryFilePathCommand(BootEntryListModel &model_, const QModelIndex &index_, int row_, const FilePath::ANY &file_path_, QUndoCommand *parent = nullptr);
     InsertBootEntryFilePathCommand(const InsertBootEntryFilePathCommand &) = delete;
@@ -262,6 +280,8 @@ public:
 
 class SetBootEntryFilePathCommand: public QUndoCommand
 {
+    Q_DECLARE_TR_FUNCTIONS(SetBootEntryFilePathCommand)
+
 private:
     BootEntryListModel &model;
     QModelIndex index;
@@ -280,6 +300,8 @@ public:
 
 class MoveBootEntryFilePathCommand: public QUndoCommand
 {
+    Q_DECLARE_TR_FUNCTIONS(MoveBootEntryFilePathCommand)
+
     BootEntryListModel &model;
     const QString title;
     QModelIndex index;
@@ -319,6 +341,8 @@ protected:
 
 class InsertHotKeyCommand: public InsertRemoveHotKeyCommand
 {
+    Q_DECLARE_TR_FUNCTIONS(InsertHotKeyCommand)
+
 public:
     InsertHotKeyCommand(HotKeyListModel &model_, const QModelIndex &index_parent_, int index_, const HotKey &entry_, QUndoCommand *parent = nullptr);
     InsertHotKeyCommand(const InsertHotKeyCommand &) = delete;
@@ -330,6 +354,8 @@ public:
 
 class RemoveHotKeyCommand: public InsertRemoveHotKeyCommand
 {
+    Q_DECLARE_TR_FUNCTIONS(RemoveHotKeyCommand)
+
 public:
     RemoveHotKeyCommand(HotKeyListModel &model_, const QModelIndex &index_parent_, int index_, QUndoCommand *parent = nullptr);
     RemoveHotKeyCommand(const RemoveHotKeyCommand &) = delete;
@@ -342,6 +368,8 @@ public:
 template <class Type>
 class SetHotKeyValueCommand: public QUndoCommand
 {
+    Q_DECLARE_TR_FUNCTIONS(SetHotKeyValueCommand)
+
     using PropertyPtr = Type HotKey::*;
 
     HotKeyListModel &model;
@@ -359,7 +387,7 @@ public:
         , property{property_}
         , value{value_}
     {
-        setText(QObject::tr("Change %1 entry at position %2 %3 to \"%4\"").arg("Key").arg(index.row()).arg(name).arg(static_cast<underlying_type_t<Type>>(value)));
+        setText(tr("Change %1 entry at position %2 %3 to \"%4\"").arg("Key").arg(index.row()).arg(name).arg(static_cast<underlying_type_t<Type>>(value)));
     }
 
     SetHotKeyValueCommand(const SetHotKeyValueCommand &) = delete;
@@ -400,13 +428,15 @@ public:
         if(value == entry.*property)
             setObsolete(true);
 
-        setText(QObject::tr("Change %1 entry at position %2 %3 to \"%4\"").arg("Key").arg(index.row()).arg(name).arg(static_cast<underlying_type_t<Type>>(entry.*property)));
+        setText(tr("Change %1 entry at position %2 %3 to \"%4\"").arg("Key").arg(index.row()).arg(name).arg(static_cast<underlying_type_t<Type>>(entry.*property)));
         return true;
     }
 };
 
 class SetHotKeyKeysCommand: public QUndoCommand
 {
+    Q_DECLARE_TR_FUNCTIONS(SetHotKeyKeysCommand)
+
 private:
     HotKeyListModel &model;
     QModelIndex index;

@@ -1,12 +1,15 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 #pragma once
 
+#include <QCoreApplication>
 #include <QMetaType>
 #include <QUuid>
 #include <QVector>
 
 class DriveInfo
 {
+    Q_DECLARE_TR_FUNCTIONS(DriveInfo)
+
     static QVector<DriveInfo> all;
 
 public:
