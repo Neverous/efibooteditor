@@ -269,7 +269,7 @@ jobs:
             CMP="compare"
           fi
 
-          mv build/${BUILD_CONFIG}/tests/screenshot.png ${ARTIFACT_VERSION}-ci.png
+          mv tests/screenshot.png ${ARTIFACT_VERSION}-ci.png
           ${CMP} -metric RMSE ${ARTIFACT_VERSION}-ci.png tests/screenshots/${ARTIFACT_VERSION}.png ${ARTIFACT_VERSION}-diff.png || true
           DIFF=$(${CMP} -metric RMSE ${ARTIFACT_VERSION}-ci.png tests/screenshots/${ARTIFACT_VERSION}.png ${ARTIFACT_VERSION}-diff.png 2>&1 | awk -F'[()]' '{print ($2 > 0.02)}' || true)
           [ "${DIFF}" = "0" ] || exit 255

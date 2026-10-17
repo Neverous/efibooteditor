@@ -67,6 +67,7 @@ auto HotKey::fromJSON(const QJsonObject &obj, qsizetype maxKeys) -> std::optiona
 
     check_type(vendor_data, String);
     value.vendor_data = QByteArray::fromBase64(obj["vendor_data"].toString().toUtf8());
+    try_read_3(efi_attributes, Double, Int);
     return {value};
 }
 
@@ -79,6 +80,7 @@ auto HotKey::toJSON() const -> QJsonObject
     key_option["boot_option"] = boot_option;
     key_option["keys"] = keys.toString();
     key_option["vendor_data"] = QString{vendor_data.toBase64()};
+    key_option["efi_attributes"] = static_cast<int>(efi_attributes);
     return key_option;
 }
 
