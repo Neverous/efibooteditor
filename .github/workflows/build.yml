@@ -186,7 +186,7 @@ jobs:
       - name: Configure and build with ${{ inputs.compiler }}
         run: |
           echo ::group::Setup Visual Studio
-          call "%programfiles%\Microsoft Visual Studio\${{ (startsWith(inputs.os, 'windows-2025') || inputs.os == 'windows-11-vs2026-arm') && '18' || '2022' }}\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ endsWith(inputs.os, 'arm') && 'arm64' || 'x64' }} || exit /b
+          call "%programfiles%\Microsoft Visual Studio\${{ (startsWith(inputs.os, 'windows-2025') || inputs.os == 'windows-11-arm') && '18' || '2022' }}\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ endsWith(inputs.os, 'arm') && 'arm64' || 'x64' }} || exit /b
           echo ::endgroup::
           echo ::group::Configure
           cmake --preset %BUILD_CONFIG% ^
