@@ -82,7 +82,7 @@ void EFIKeySequenceEdit::keyPressEvent(QKeyEvent *event)
     if(!_keySequence.addKey(event->key(), event->modifiers(), event->text(), _maximumSequenceLength))
         return;
 
-    lineEdit->setText(_keySequence.toString(true) + "...");
+    lineEdit->setText(_keySequence.toString(true) + "…");
     event->accept();
 }
 
