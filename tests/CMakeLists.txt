@@ -18,5 +18,5 @@ target_link_libraries(testefibooteditor
         ${PROJECT_NAME}-core
 )
 
-add_test(NAME EFIBootData COMMAND testefibootdata)
-add_test(NAME EFIBootEditor COMMAND testefibooteditor)
+add_test(NAME EFIBootData COMMAND testefibootdata WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+add_test(NAME EFIBootEditor COMMAND testefibooteditor WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})

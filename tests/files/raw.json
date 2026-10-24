@@ -1,0 +1,97 @@
+{
+    "Boot": {
+        "0000": {
+            "efi_attributes": 7,
+            "raw_data": "AQAAAHQAVwBpAG4AZABvAHcAcwAgAEIAbwBvAHQAIABNAGEAbgBhAGcAZQByAAAABAEqAAEAAADWHAAAAAAAADIAAAAAAAAAZosccmxChk6OmTRXxGqwuQICBARGAFwARQBGAEkAXABNAGkAYwByAG8AcwBvAGYAdABcAEIAbwBvAHQAXABiAG8AbwB0AG0AZwBmAHcALgBlAGYAaQAAAH//BABXSU5ET1dTAAEAAACIAAAAeAAAAEIAQwBEAE8AQgBKAEUAQwBUAD0AewA5AGQAZQBhADgANgAyAGMALQA1AGMAZABkAC0ANABlADcAMAAtAGEAYwBjADEALQBmADMAMgBiADMANAA0AGQANAA3ADkANQB9AAAAOQABAAAAEAAAAAQAAAB//wQA"
+        },
+        "0001": {
+            "efi_attributes": 7,
+            "raw_data": "AQAAAFAAQQByAGMAaAAgAEwAaQBuAHUAeAAAAAQBKgABAAAAdlgBAAAAAAAyAAAAAAAAAGaLHHJsQoZOjpk0V8RqsLkCAgQEIgBcAHYAbQBsAGkAbgB1AHoALQBsAGkAbgB1AHgAAAB//wQAcgBvAG8AdAA9AC8AZABlAHYALwBzAGQAYQAyACAAcgB3ACAAaQBuAGkAdAByAGQAPQBcAGkAbgBpAHQAcgBhAG0AZgBzAC0AbABpAG4AdQB4AC4AaQBtAGcAIABpAG4AaQB0AD0ALwBsAGkAYgAvAHMAeQBzAHQAZQBtAGQALwBzAHkAcwB0AGUAbQBkACAAcQB1AGkAZQB0ACAAbABvAGcAbwAuAG4AbwBsAG8AZwBvACAAYwBvAG4AcwBvAGwAZQA9AHQAdAB5ADEA"
+        },
+        "0010": {
+            "efi_attributes": 7,
+            "raw_data": "AAEAABgAUwBlAHQAdQBwAAAABAYUAGaLHHJsQoZOjpk0V8RqsLl//wQA"
+        },
+        "0011": {
+            "efi_attributes": 7,
+            "raw_data": "AAEAABgAQgBvAG8AdAAgAE0AZQBuAHUAAAAEBhQAZosccmxChk6OmTRXxGqwuX//BAA="
+        },
+        "0012": {
+            "efi_attributes": 7,
+            "raw_data": "AAEAABgARABpAGEAZwBuAG8AcwB0AGkAYwAgAFMAcABsAGEAcwBoAAAABAYUAGaLHHJsQoZOjpk0V8RqsLl//wQA"
+        },
+        "0017": {
+            "efi_attributes": 7,
+            "raw_data": "AQEAAFwAUABDAEkAIABMAEEATgA6ACAARQBGAEkAIABOAGUAdAB3AG8AcgBrACAAKABJAFAAdgA0ACkAAAACAQwA0EEDCgAAAAABAQYAAxwBAQYAAAADCyUAVO51YuCcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwwbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/8EAHioSq8rKvxOp5z1zI89OAM="
+        },
+        "0019": {
+            "efi_attributes": 7,
+            "raw_data": "gQEAAH0AUABDAEkAIABMAEEATgA6ACAARQBGAEkAIABOAGUAdAB3AG8AcgBrACAAKABJAFAAdgA2ACkAAAACAQwA0EEDCgAAAAABAQYAAxwBAQYAAAADCyUAVO51YuCcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAw08AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAf/8EAHioSq8rKvxOp5z1zI89OAM="
+        }
+    },
+    "BootCurrent": {
+        "efi_attributes": 6,
+        "raw_data": "AgA="
+    },
+    "BootOptionSupport": {
+        "efi_attributes": 6,
+        "raw_data": "EwMAAA=="
+    },
+    "BootOrder": {
+        "efi_attributes": 7,
+        "raw_data": "AAABAA=="
+    },
+    "Key": {
+        "0000": {
+            "efi_attributes": 7,
+            "raw_data": "AAAAQDOXvNoRAAwAAAA="
+        },
+        "0001": {
+            "efi_attributes": 7,
+            "raw_data": "AAAAQDOXvNoRAAgAAAA="
+        },
+        "0002": {
+            "efi_attributes": 7,
+            "raw_data": "AAAAQI/kuaABAAAAYQA="
+        },
+        "0003": {
+            "efi_attributes": 7,
+            "raw_data": "AAAAQKoPJxMAAAAAdwA="
+        },
+        "0004": {
+            "efi_attributes": 7,
+            "raw_data": "AAQAQCpFCj8QAAAAUwA="
+        }
+    },
+    "OsIndications": {
+        "efi_attributes": 7,
+        "raw_data": "AAAAAAAAAAA="
+    },
+    "OsIndicationsSupported": {
+        "efi_attributes": 6,
+        "raw_data": "QQAAAAAAAAA="
+    },
+    "PlatformRecovery": {
+        "0000": {
+            "efi_attributes": 6,
+            "raw_data": "AQAAADQARABlAGYAYQB1AGwAdAAgAFAAbABhAHQAZgBvAHIAbQBSAGUAYwBvAHYAZQByAHkAAAAEBDAAXABFAEYASQBcAEIATwBPAFQAXABCAE8ATwBUAFgANgA0AC4ARQBGAEkAAAB//wQA"
+        }
+    },
+    "SecureBoot": {
+        "efi_attributes": 6,
+        "raw_data": "AA=="
+    },
+    "SetupMode": {
+        "efi_attributes": 6,
+        "raw_data": "AQ=="
+    },
+    "Timeout": {
+        "efi_attributes": 7,
+        "raw_data": "CgA="
+    },
+    "VendorKeys": {
+        "efi_attributes": 6,
+        "raw_data": "AQ=="
+    },
+    "_Type": "raw"
+}
