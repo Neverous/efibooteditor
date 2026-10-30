@@ -167,7 +167,7 @@ jobs:
       matrix:
         os: [windows-2025]
         qt-version:
-          - 6.11.2  # Supported until 2026-09-22
+          - 6.12.0  # Supported until 2027-04-01
         compiler:
           - MSVC
     steps:
