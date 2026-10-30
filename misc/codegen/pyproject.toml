@@ -12,8 +12,8 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "ruff>=0.16.10",
-    "ty>=0.0.85",
+    "ruff>=0.17.2",
+    "ty>=0.0.91",
     "types-beautifulsoup4>=4.12.0.20250516",
     "types-pyyaml>=6.0.12.20260906",
 ]
