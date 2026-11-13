@@ -58,7 +58,7 @@ jobs:
           append-timestamp: false
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@24c54180a607b1449ed407dd24f251e4e9147c8d
+        uses: github/codeql-action/init@33d7b85da1a04171e211befe2c739303b9a4c066
         with:
           languages: cpp
           queries: security-and-quality
@@ -66,12 +66,12 @@ jobs:
         continue-on-error: true
 
       - name: Install python
-        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
         with:
           python-version: '3.14'
 
       - name: Set up Qt environment
-        uses: jurplel/install-qt-action@a9c63c7c123f3069cff414e7e482d95dfa9d8125
+        uses: jurplel/install-qt-action@b344308e4483fc892e0d27b3cd1b173ebdd95f06
         with:
           cache: false
           version: ${{ matrix.qt-version }}
@@ -320,7 +320,7 @@ jobs:
           path: build/${{ inputs.build-config }}/dist/EFIBootEditor-*
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@24c54180a607b1449ed407dd24f251e4e9147c8d
+        uses: github/codeql-action/analyze@33d7b85da1a04171e211befe2c739303b9a4c066
         if: ${{ inputs.build-config == 'Debug' && inputs.compiler != 'Emscripten' }}
         continue-on-error: true
 
