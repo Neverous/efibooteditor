@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-slim
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-      - uses: cpp-linter/cpp-linter-action@8120e05c7fbd25fa09fa93424ec49f55f7b304ab
+      - uses: cpp-linter/cpp-linter-action@71cf8e84d4876ee304e3330f314df15b9da49c67
         id: linter
         with:
           version: 22
